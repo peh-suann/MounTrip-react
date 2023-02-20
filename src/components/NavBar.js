@@ -31,7 +31,7 @@ export default function NavBar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className={styles.link} to="/">
+                <Link className={styles.link} to="/member-list">
                   難易分級
                 </Link>
               </li>

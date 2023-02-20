@@ -6,6 +6,7 @@ import './styles/Mountrip.module.css'
 
 import NavBar from './components/NavBar'
 import Home from './components/Home'
+import TestMemberList from './pages/TestMemberList'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           {/* <Home /> */}
           {/* <h1>hey</h1> */}
           <Route path="/" element={<Home />} />
+          <Route path="/member-list" element={<TestMemberList />} />
           {/* <Route path="/" element={<Home />} /> */}
         </Routes>
       </Router>
