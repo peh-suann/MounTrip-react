@@ -38,6 +38,7 @@ export default function TestMemberList() {
   }, [])
   return (
     <div className="container">
+      {console.log('----', data.rows)}
       <TestMemberTable rows={data.rows} removeItem={removeItem} />
     </div>
   )

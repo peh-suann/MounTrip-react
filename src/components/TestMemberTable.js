@@ -23,7 +23,7 @@ export default function TestMemberTable(props) {
         </tr>
       </thead>
       <tbody>
-        {rows?.map((r) => {
+        {rows.map((r) => {
           return (
             <tr key={r.sid}>
               <td>
@@ -37,7 +37,10 @@ export default function TestMemberTable(props) {
                 </a>
               </td>
               <td>{r.sid}</td>
-              <td>{r.name}</td>
+              <td>
+                {r.lastname}
+                {r.firstname}
+              </td>
               <td>{r.email}</td>
               <td>{r.mobile}</td>
               <td>{dayjs(r.birthday).format('YYYY-MM-DD')}</td>
@@ -50,3 +53,8 @@ export default function TestMemberTable(props) {
     </table>
   )
 }
+
+// TestMemberTable.defaultProps = {
+//   rows: [],
+//   removeItem: () => {},
+// }
