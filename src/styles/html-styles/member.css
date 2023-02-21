@@ -1,4 +1,4 @@
-/* Mountrip品牌色定義 */
+/* 要先將 Mountrip.module.css 檔案內的 :root 設定都複製過來才能用 */
 :root{
     /* primary/green */
     --mtgreen-1:#6cba7c;
@@ -23,21 +23,14 @@
     --mtred-2: #ED7F7D;
     --mtred-3: #f6Bfbe;
     --mtred-4: #fadfde;
-
-    /* 中文字型 */
-    --mtfont-ch: 'Noto Sans TC', sans-serif;
-
-    /* ENG FONT */
-    --mtfont-eng: 'Noto Sans', sans-serif;
-    
+}
+h1{
+    color:var(--mtgreen-3)
 }
 
-/* global通用css屬性 */
+.box1{
+    background-color:var(--mtgreen-2);
+    width: 100px;
+    height: 100px;
 
-:global(.section){
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--mtyellow-1);
 }
