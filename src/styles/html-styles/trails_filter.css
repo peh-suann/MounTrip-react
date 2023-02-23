@@ -23,6 +23,11 @@
   --mtred-3: #f6Bfbe;
   --mtred-4: #fadfde;
 }
+
+html, body{
+  font-family: 'Noto Sans TC';
+}
+
 h1{
   color:var(--mtgreen-3)
 }
@@ -32,4 +37,23 @@ h1{
   width: 100px;
   height: 100px;
 
+}
+
+/* main */
+
+.h5-sub-title{
+  color:var(--mtgreen-1)
+}
+
+.left-card{
+  box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
+}
+
+input{
+  border: 2px solid var(--mtgreen-3);
+  background-color: #CEE8CB99;
+}
+
+.p-content{
+  color:var(--mtgrey-3)  
 }
