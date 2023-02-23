@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../styles/html-styles/trails_filter.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
+
 <body>
   <!-- <header>
     <div class="row">
@@ -85,154 +87,136 @@
         <div class="card left-card" style="width: 18rem;">
           <div class="card-body d-flex flex-column ms-2 me-2">
             <h5 class="h5-sub-title">搜尋</h5>
-            <div class="d-flex flex-column " >
+            
+            <div class="d-flex flex-column ">
               <p class="mb-0 p-content">目的地</p>
-              <div class="input-with-icon d-flex rounded-3">
-                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.11108 16.2222C13.0384 16.2222 16.2222 13.0384 16.2222 9.11108C16.2222 5.18374 13.0384 2 9.11108 2C5.18374 2 2 5.18374 2 9.11108C2 13.0384 5.18374 16.2222 9.11108 16.2222Z" stroke="#6CBA7C" stroke-width="2" stroke-linecap="square"/>
-                  <path d="M18.0002 18.0002L14.1335 14.1335" stroke="#6CBA7C" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <input class="flex-fill" type="text ">
+              <!-- input-with-icon with bootstrap -->
+              <div class="input-group mb-3 rounded-3 input-with-icon">
+                <span class="input-group-text" id="basic-addon1" style="background-color: #CEE8CB99;" > 
+                  <svg width="20" height="21" viewBox="0 0 20 21"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.11108 16.2222C13.0384 16.2222 16.2222 13.0384 16.2222 9.11108C16.2222 5.18374 13.0384 2 9.11108 2C5.18374 2 2 5.18374 2 9.11108C2 13.0384 5.18374 16.2222 9.11108 16.2222Z"
+                      stroke="#6CBA7C" stroke-width="2" stroke-linecap="square" />
+                    <path d="M18.0002 18.0002L14.1335 14.1335" stroke="#6CBA7C" stroke-width="2"
+                      stroke-linecap="round" />
+                  </svg>
+                </span>
+                <input type="text" style="background-color: #CEE8CB99;" class="form-control"  aria-label="Username"
+                  aria-describedby="basic-addon1">
               </div>
-
             </div>
-            <div class="d-flex flex-column " >
+
+            <div class="d-flex flex-column ">
               <p class="mb-0 p-content">出發日期</p>
-              <input class="flex-fill rounded-3" type="text">
-            </div>
-            <div class="d-flex flex-column " >
-              <p class="mb-0 p-content">返程日期</p>
-              <input class="flex-fill rounded-3" type="text">
-            </div>
-            <div class="d-flex flex-column mb-4" >
-              <p class="mb-0 p-content">人數</p>
-              <input class="flex-fill rounded-3" type="text">
+              <!-- input-with-icon with bootstrap -->
+              <div class="input-group mb-3 rounded-3 input-with-icon">
+                <span class="input-group-text" id="basic-addon1" style="background-color: #CEE8CB99;" > 
+                  <svg width="20" height="21" viewBox="0 0 20 21"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.11108 16.2222C13.0384 16.2222 16.2222 13.0384 16.2222 9.11108C16.2222 5.18374 13.0384 2 9.11108 2C5.18374 2 2 5.18374 2 9.11108C2 13.0384 5.18374 16.2222 9.11108 16.2222Z"
+                      stroke="#6CBA7C" stroke-width="2" stroke-linecap="square" />
+                    <path d="M18.0002 18.0002L14.1335 14.1335" stroke="#6CBA7C" stroke-width="2"
+                      stroke-linecap="round" />
+                  </svg>
+                </span>
+                <input type="text" style="background-color: #CEE8CB99;" class="form-control"  aria-label="Username"
+                  aria-describedby="basic-addon1">
+              </div>
             </div>
 
-            <button type="button" class="btn btn-success mb-4">搜尋</button>
+            <div class="d-flex flex-column ">
+              <p class="mb-0 p-content">返程日期</p>
+              <!-- input-with-icon with bootstrap -->
+              <div class="input-group mb-3 rounded-3 input-with-icon">
+                <span class="input-group-text" id="basic-addon1" style="background-color: #CEE8CB99;" > 
+                  <svg width="20" height="21" viewBox="0 0 20 21"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.11108 16.2222C13.0384 16.2222 16.2222 13.0384 16.2222 9.11108C16.2222 5.18374 13.0384 2 9.11108 2C5.18374 2 2 5.18374 2 9.11108C2 13.0384 5.18374 16.2222 9.11108 16.2222Z"
+                      stroke="#6CBA7C" stroke-width="2" stroke-linecap="square" />
+                    <path d="M18.0002 18.0002L14.1335 14.1335" stroke="#6CBA7C" stroke-width="2"
+                      stroke-linecap="round" />
+                  </svg>
+                </span>
+                <input type="text" style="background-color: #CEE8CB99;" class="form-control"  aria-label="Username"
+                  aria-describedby="basic-addon1">
+              </div>
+            </div>
+
+            <div class="d-flex flex-column ">
+              <p class="mb-0 p-content">人數</p>
+              <!-- input-with-icon with bootstrap -->
+              <div class="input-group mb-4 rounded-3 input-with-icon">
+                <span class="input-group-text" id="basic-addon1" style="background-color: #CEE8CB99;" > 
+                  <svg width="20" height="21" viewBox="0 0 20 21"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.11108 16.2222C13.0384 16.2222 16.2222 13.0384 16.2222 9.11108C16.2222 5.18374 13.0384 2 9.11108 2C5.18374 2 2 5.18374 2 9.11108C2 13.0384 5.18374 16.2222 9.11108 16.2222Z"
+                      stroke="#6CBA7C" stroke-width="2" stroke-linecap="square" />
+                    <path d="M18.0002 18.0002L14.1335 14.1335" stroke="#6CBA7C" stroke-width="2"
+                      stroke-linecap="round" />
+                  </svg>
+                </span>
+                <input type="text" style="background-color: #CEE8CB99;" class="form-control"  aria-label="Username"
+                  aria-describedby="basic-addon1">
+              </div>
+            </div>
+            
+            <button type="button" class="btn-search mb-4 ">搜尋</button>
           </div>
         </div>
       </div>
+
       <!-- right-card -->
-      <div class="right-card d-flex flex-column">
-        <div class="row sub_title">
-          <div class=" d-flex">
+      <div class="right-card d-flex flex-column ">
+        <div class="row sub_title mb-4">
+          
+          <div class=" d-flex align-items-end">
             <div class="col me-3">
               <svg width="380" height="20" viewBox="0 0 380 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 18.5L9.75694 14.8245H17.2373L24.0147 18.5L34.6363 14.8245L49.6135 11.149H55.9002L60.6834 14.8245L70.7781 11.149L81.849 3.65024L88.1346 1.5L99.8764 7.93268L109.574 12.5276L119.274 14.8245L129.394 10.0006L137.837 7.93268L151.987 12.0673L190.167 18.5L198.924 14.8245H206.404L213.181 18.5L223.803 14.8245L238.78 11.149H245.067L249.85 14.8245L259.945 11.149L271.016 3.65024L277.301 1.5L289.043 7.93268L298.741 12.5276L308.44 14.8245L318.561 10.0006L327.004 7.93268L341.154 12.0673L379.333 18.5" stroke="#6CBA7C" stroke-miterlimit="10" stroke-dasharray="4 4"/>
-                </svg>
+                <path
+                  d="M1 18.5L9.75694 14.8245H17.2373L24.0147 18.5L34.6363 14.8245L49.6135 11.149H55.9002L60.6834 14.8245L70.7781 11.149L81.849 3.65024L88.1346 1.5L99.8764 7.93268L109.574 12.5276L119.274 14.8245L129.394 10.0006L137.837 7.93268L151.987 12.0673L190.167 18.5L198.924 14.8245H206.404L213.181 18.5L223.803 14.8245L238.78 11.149H245.067L249.85 14.8245L259.945 11.149L271.016 3.65024L277.301 1.5L289.043 7.93268L298.741 12.5276L308.44 14.8245L318.561 10.0006L327.004 7.93268L341.154 12.0673L379.333 18.5"
+                  stroke="#6CBA7C" stroke-miterlimit="10" stroke-dasharray="4 4" />
+              </svg>
             </div>
             <div class="col">
               <h5 class="h5-sub-title-search">「草嶺古道」的搜尋結果</h5>
             </div>
             <div class="col ms-3">
               <svg width="380" height="20" viewBox="0 0 380 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 18.5L9.75694 14.8245H17.2373L24.0147 18.5L34.6363 14.8245L49.6135 11.149H55.9002L60.6834 14.8245L70.7781 11.149L81.849 3.65024L88.1346 1.5L99.8764 7.93268L109.574 12.5276L119.274 14.8245L129.394 10.0006L137.837 7.93268L151.987 12.0673L190.167 18.5L198.924 14.8245H206.404L213.181 18.5L223.803 14.8245L238.78 11.149H245.067L249.85 14.8245L259.945 11.149L271.016 3.65024L277.301 1.5L289.043 7.93268L298.741 12.5276L308.44 14.8245L318.561 10.0006L327.004 7.93268L341.154 12.0673L379.333 18.5" stroke="#6CBA7C" stroke-miterlimit="10" stroke-dasharray="4 4"/>
-                </svg>
+                <path
+                  d="M1 18.5L9.75694 14.8245H17.2373L24.0147 18.5L34.6363 14.8245L49.6135 11.149H55.9002L60.6834 14.8245L70.7781 11.149L81.849 3.65024L88.1346 1.5L99.8764 7.93268L109.574 12.5276L119.274 14.8245L129.394 10.0006L137.837 7.93268L151.987 12.0673L190.167 18.5L198.924 14.8245H206.404L213.181 18.5L223.803 14.8245L238.78 11.149H245.067L249.85 14.8245L259.945 11.149L271.016 3.65024L277.301 1.5L289.043 7.93268L298.741 12.5276L308.44 14.8245L318.561 10.0006L327.004 7.93268L341.154 12.0673L379.333 18.5"
+                  stroke="#6CBA7C" stroke-miterlimit="10" stroke-dasharray="4 4" />
+              </svg>
             </div>
           </div>
         </div>
 
-          <!-- right-card > trails-cards -->
+        <!-- right-card > trails-cards -->
         <div class="col">
-          <div class="card mb-3" >
+          <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="./imgs/1-1.jpg" class="img-fluid rounded-start" alt="...">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <h5 class="product-name">草嶺古道｜探索新北一日遊探索新北一日遊</h5>
+                  <p class="card-text">
+                    你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
+                  </p>
                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="./imgs/2-1.jpg" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="./imgs/3-1.jpg" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-3" >
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="./imgs/1-1.jpg" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="./imgs/2-1.jpg" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="./imgs/3-1.jpg" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div class="page-bar col">
           <nav aria-label="Page navigation example">
-            <ul class="pagination">
+            <ul class="pagination ">
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
                   <span aria-hidden="true">&laquo;</span>
@@ -240,7 +224,9 @@
               </li>
               <li class="page-item"><a class="page-link" href="#">1</a></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><span class="page-link"> ... </span></li>
+              <li class="page-item"><a class="page-link" href="#">9</a></li>
+              <li class="page-item"><a class="page-link" href="#">10</a></li>              
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
                   <span aria-hidden="true">&raquo;</span>
@@ -248,10 +234,13 @@
               </li>
             </ul>
           </nav>
-        </div>        
+        </div>
       </div>
     </div>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
