@@ -24,7 +24,7 @@
   --mtred-4: #fadfde;
 }
 
-
+/* ALL */
 html, body{
   font-family: 'Noto Sans TC';
 }
@@ -40,8 +40,12 @@ h1{
 
 }
 
-/* main */
+input{
+  border: none;
+}
 
+/* main */
+/* main left-card */
 .h5-sub-title{
   color:var(--mtgreen-1)
 }
@@ -50,11 +54,18 @@ h1{
   box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
 }
 
-input{
+.input-with-icon{
   border: 2px solid var(--mtgreen-3);
   background-color: #CEE8CB99;
 }
 
 .p-content{
   color:var(--mtgrey-3)  
+}
+
+
+/* main right-card */
+
+.h5-sub-title-search{
+  font-size: 1.2rem;
 }
