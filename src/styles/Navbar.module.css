@@ -26,38 +26,53 @@ nav {
   color: var(--mtgreen-1);
   text-decoration: none;
   font-size: 18 pt;
-  font-family: var(--mtfont-ch);
-  font-weight: 500;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out;
+  font-weight: 300;
+  line-height: 26px;
+
+  text-align: center;
+  letter-spacing: 0.1em;
 }
 .link:hover {
-  color: var(--mtyellow-1);
-}
-.brandlogo {
   color: var(--mtgreen-1);
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem;
-  font-size: 1.25rem;
-  font-family: var(--mtfont-ch);
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.brandlogo:hover {
-  color: var(--mtyellow-1);
+  text-decoration: underline;
 }
 .left {
-  margin-left: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 36px;
 }
 .right {
-  width: 100%;
-}
-.ulRight {
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
 }
-.liRight {
-  margin-left: 1rem;
+
+.search-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 8px;
+  gap: 15px;
+
+  width: 360px;
+  height: 100%;
+
+  background: rgba(206, 232, 203, 0.3);
+  border-radius: 6px;
+}
+.search-input span {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  color: var(--mtgrey-3);
+  user-select: none;
 }
