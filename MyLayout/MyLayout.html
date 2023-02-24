@@ -12,15 +12,20 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./MyLayout.css" />
+    <link rel="stylesheet" href="./../src/styles/Mountrip.module.css" />
+    <link rel="stylesheet" href="./../src/styles/Navbar.module.css" />
   </head>
   <body>
     <section>
-      <div class="firstbackground">
-        <p>Plan your Trip with</p>
-        <p>MOUNTRIP</p>
+      <div class="totalProduct_fbg">
+        <p class="totalProductBg_p">Plan your Trip with</p>
+        <div class="totalProductBg_spans">
+          <span>M</span><span>O</span><span>U</span><span>N</span><span>T</span
+          ><span>R</span><span>I</span><span>P</span>
+        </div>
         <div class="search_all d-flex">
-          <div class="col d-flex tPSearch">
-            <div class="d-flex align-items-center me-3">
+          <div class="col-3 d-flex tPSearch_first">
+            <div class="d-flex align-items-center mx-4">
               <svg
                 width="28"
                 height="28"
@@ -44,11 +49,15 @@
             </div>
             <div class="w-100">
               <p>目的地</p>
-              <input type="text" class="tP_search1" placeholder="要去哪..." />
+              <input
+                type="text"
+                class="tP_search1 w-100"
+                placeholder="要去哪..."
+              />
             </div>
           </div>
-          <div class="col d-flex tPSearch">
-            <div class="d-flex align-items-center me-3">
+          <div class="col-5 d-flex tPSearch_first">
+            <div class="d-flex align-items-center mx-4">
               <svg
                 width="28"
                 height="28"
@@ -89,14 +98,24 @@
             <div class="d-flex w-100 flex-column">
               <p>日期</p>
               <div class="d-flex">
-                <input type="date" class="tP_search1" />
-                <span>-</span>
-                <input type="date" class="tP_search1" />
+                <input type="date" class="tP_search1 me-3" />
+                <div class="d-flex align-items-center">
+                  <svg
+                    width="22"
+                    height="1"
+                    viewBox="0 0 22 1"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line y1="0.5" x2="22" y2="0.5" stroke="#6CBA7C" />
+                  </svg>
+                </div>
+                <input type="date" class="tP_search1 ms-3" />
               </div>
             </div>
           </div>
-          <div class="col d-flex tPSearch">
-            <div class="d-flex align-items-center me-3">
+          <div class="col d-flex tPSearch-sec">
+            <div class="d-flex align-items-center mx-4">
               <svg
                 width="22"
                 height="24"
@@ -122,10 +141,13 @@
             </div>
             <div class="w-100">
               <p>人數</p>
-              <input type="number" class="tP_search1" />
+              <input type="number" class="tP_search1 w-50" />
+              <span>人</span>
             </div>
           </div>
-          <button class="btn btn-unstyle searchbtn">搜尋</button>
+          <button class="col-1 btn btn-unstyle searchbtn">
+            <h4 class="searchBtnH4">搜尋</h4>
+          </button>
         </div>
       </div>
       <div>本月最熱門</div>
