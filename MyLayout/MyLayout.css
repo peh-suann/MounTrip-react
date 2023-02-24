@@ -177,7 +177,7 @@
 
 .totalProduct_fbg{
   height: 85vh;
-  background-image: url("./../imgs/2.jpg");
+  background-image: url("./imgs/2.jpg");
   background-size: 100%;
   background-position:30% 45%;        
   background-repeat: no-repeat;
