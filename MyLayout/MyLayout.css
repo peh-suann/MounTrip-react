@@ -68,3 +68,22 @@
     padding: 8px 24px;
     background-color: var(--mtgreen-2) ;
 }
+.tP_search1{
+    border:none;
+}
+.search_all{
+    width: 55%;
+    border-radius: 50%;
+}
+.search_all > div > i {
+    width: 24px;
+    height: 24px;
+}
+.tPSearch{
+    padding: 12px 40px;
+    background-color: var(--mtyellow-3);
+}
+.search_all > .searchbtn{
+    width: 140px;
+    background-color: var(--mtgreen-2);
+}
