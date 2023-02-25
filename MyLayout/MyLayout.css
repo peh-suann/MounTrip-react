@@ -254,7 +254,7 @@
   color: white;
   position: absolute ;
   top:12%;
-  left: 40%;
+  left: 41%;
   font-size: 35px;
   font-weight:900;
 }
@@ -265,4 +265,192 @@
   top:22%;
   left: 30%;
   font-weight:900;
+}
+
+.tP_secSection{
+  padding: 0px 120px;
+}
+
+
+div.sSCard_num{
+  width: 60px;
+  position: absolute;
+  top:-15px
+
+}
+
+div.sSCard_numsvg{
+  width: 100%;
+  position: relative;
+  padding: 0px;
+}
+
+.sScard_pic1{
+  height: 250px;
+  background: url("./imgs/101-3.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  flex-grow: 1;
+  border-radius: 10px;
+
+}
+
+.sSCard_num{
+  position: relative;
+  top: -18px;
+  left:480px;
+}
+
+.sSCard_bottom{
+  width: 100%;
+  position: absolute;
+  top: 215px;
+  padding: 0px 15px;
+}
+
+.sSCard_bottom p{
+  color: white;
+  margin: 0;
+}
+
+div.sSCard_numsvg > h3{
+  color:white;
+  position: absolute;
+  top:13px;
+  left: 19px;
+  font-weight: 700;
+}
+.sScard_body{
+  padding: 10px 0px;
+}
+
+
+.sScard_body p{
+ margin: 0;
+}
+
+
+.thirdbg{
+  height: 650px;
+  background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./imgs/2.jpg");
+  background-position: 50% 80%;background-size: cover;
+  position: relative;
+}
+
+.thBg_p{
+  width:26% ;
+  position: absolute;
+  top: 58%;
+  left: 37%;
+  
+}
+
+
+.thBg_p > p{
+  color: white;
+  margin: 0;
+}
+
+.thirdbg_btn{
+  border-radius: 5px;
+  padding: 8px 24px;
+  background-color: var(--mtgreen-1);
+  font-size: 20px;
+  color: white;
+  font-weight: 900;
+  border:none;
+}
+
+.thSCardsAll{
+  padding: 0px 120px;
+  position: relative;
+}
+.thSectionCards{
+  position: absolute;
+  top: -30px;
+  
+}
+
+
+.forthbg{
+  height: 650px;
+  background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./imgs/3.jpg");
+  background-position: 50% 80%;background-size: cover;
+  position: relative;
+}
+
+.forthBg_p{
+  width:26% ;
+  position: absolute;
+  top: 58%;
+  left: 37%;
+  
+}
+
+
+.forthBg_p > p{
+  color: white;
+  margin: 0;
+}
+
+.forthbg_btn{
+  border-radius: 5px;
+  padding: 8px 24px;
+  background-color: var(--mtgreen-1);
+  font-size: 20px;
+  color: white;
+  font-weight: 900;
+  border:none;
+}
+
+.forthSCardsAll{
+  padding: 0px 120px;
+  position: relative;
+}
+.forthSectionCards{
+  position: absolute;
+  top: -30px;
+  
+}
+
+
+.fivthbg{
+  height: 650px;
+  background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./imgs/4.jpg");
+  background-position: 50% 80%;background-size: cover;
+  position: relative;
+}
+
+.fivthBg_p{
+  width:26% ;
+  position: absolute;
+  top: 58%;
+  left: 37%;
+  
+}
+
+
+.fivthBg_p > p{
+  color: white;
+  margin: 0;
+}
+
+.fivthbg_btn{
+  border-radius: 5px;
+  padding: 8px 24px;
+  background-color: var(--mtgreen-1);
+  font-size: 20px;
+  color: white;
+  font-weight: 900;
+  border:none;
+}
+
+.fivthSCardsAll{
+  padding: 0px 120px;
+  position: relative;
+}
+.fivthSectionCards{
+  position: absolute;
+  top: -30px;
+  
 }
