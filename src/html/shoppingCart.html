@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShoppingCart</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/Mountrip.module.css" />
+    <link rel="stylesheet" href="../styles/Navbar.module.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .bg-image {
+        background-color: var(--mtyellow-4);
+        height: 100vh;
+      }
+
+      .shopping-cart-process {
+        height: 100px;
+      }
+
+      .shopping-cart-contain h3 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 43px;
+        align-items: center;
+        letter-spacing: 0.1em;
+        margin-bottom: 0;
+        color: var(--mtgreen-1);
+      }
+
+      .shopping-cart-contain .d-flex.align-items-center > img {
+        width: 32px;
+        height: 32px;
+        margin-right: 12px;
+      }
+
+      #shopping-cart-title {
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--mtgrey-3);
+      }
+
+      .w1 {
+        width: 5%;
+      }
+
+      .w2 {
+        width: 40%;
+      }
+
+      .w3 {
+        width: calc(50% / 4);
+      }
+
+      .w4 {
+        width: calc(50% / 4);
+      }
+
+      .w5 {
+        width: calc(50% / 4);
+      }
+
+      .w6 {
+        width: calc(50% / 4);
+      }
+
+      .w7 {
+        width: 5%;
+      }
+
+      .product-col-title {
+        color: var(--mtgrey-3);
+      }
+
+      .product-col {
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+      }
+
+      .product-img-wrap {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 10px;
+        /* border: 1px solid black; */
+        overflow: hidden;
+      }
+
+      .product-title {
+        font-weight: 700;
+        /* font-size: 20px; */
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        color: var(--mtgrey-1);
+      }
+
+      .product-subtitle {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        color: var(--mtgrey-2);
+      }
+
+      .product-date p {
+        font-weight: 400;
+        /* font-size: 20px; */
+        line-height: 32px;
+        letter-spacing: 0.05em;
+      }
+
+      .minus {
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        color: var(--mtgrey-3);
+      }
+
+      .product-number {
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        /* color: var(--mtgrey-3); */
+      }
+
+      .add {
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        color: var(--mtgreen-1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-image">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="left">
+            <a href="">
+              <img src="./../icons/logo.svg" alt="" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse navigations"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="link" to="/"> 商品總覽 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/member-list"> 難易分級 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/"> 季節推薦 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/"> 線上測驗 </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="right">
+            <ul class="navbar-nav me-auto mb-lg-0 ulRight">
+              <li class="nav-item liRight search">
+                <div class="search-input">
+                  <img src="./../icons/search-icon.svg" alt="" />
+                  <span>輸入登山路線、季節熱門路線</span>
+                </div>
+              </li>
+              <li class="nav-item liRight notification">
+                <a class="link" href="/">
+                  <img src="./../icons/bell.svg" alt="" />
+                </a>
+              </li>
+              <li class="nav-item liRight cart">
+                <a class="link" href="/">
+                  <img src="./../icons/shopping-cart.svg" alt="" />
+                </a>
+              </li>
+              <li class="nav-item liRight profile">
+                <a class="link" href="/">
+                  <img src="./../icons/profile.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="container">
+        <div class="row shopping-cart-process">
+          <!-- 購物車流程png & <li> -->
+        </div>
+        <div class="row shopping-cart-contain">
+          <div class="col-lg-9">
+            <div id="shopping-cart-title" class="d-flex align-items-center mb-4">
+              <img src="./../icons/shopping-cart.svg" class="" alt="" />
+              <h3>購物車</h3>
+            </div>
+            <div class="row w-100 mb-3 product-col-title">
+              <div class="w1"><input type="checkbox" /></div>
+              <div class="w2 ps-0">商品資料</div>
+              <div class="w3 ps-0">日期</div>
+              <div class="w4 ps-0">單件價格</div>
+              <div class="w5 ps-0">數量</div>
+              <div class="w6 ps-0">小計</div>
+              <div class="w7 ps-0"></div>
+            </div>
+            <div class="row w-100 product-col">
+              <div class="w1"><input type="checkbox" /></div>
+              <div class="w2">
+                <div class="row w-100">
+                  <div class="col-4 ps-0">
+                    <div class="product-img-wrap">
+                      <img src="./img/shopping-cart1.png" />
+                    </div>
+                  </div>
+                  <div class="col-8 px-0">
+                    <p class="product-title mb-3">
+                      草嶺古道｜探索新北一日遊探索新北一日遊
+                    </p>
+                    <p class="product-subtitle mb-0">草嶺古道單日行程</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w3 ps-0">
+                <p class="mb-0">2023/01/01</p>
+                <p class="mb-0">&emsp;&emsp;|</p>
+                <p class="mb-0">2023/01/02</p>
+              </div>
+              <div class="w4 ps-0">NTD 1,200</div>
+              <div class="w5 ps-0">
+                <div class="d-flex">
+                  <p class="minus me-3">-</p>
+                  <p class="product-number me-3">1</p>
+                  <p class="add">+</p>
+                </div>
+              </div>
+              <div class="w6 ps-0">NTD 1,200</div>
+              <div class="w7"><img src="./svg/trash-2.svg" /></div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div id="shopping-cart-title" class="d-flex align-items-center">
+              <img src="./svg/check-circle.svg" class="" alt="" />
+              <h3>訂單明細</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
