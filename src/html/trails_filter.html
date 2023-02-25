@@ -14,67 +14,70 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="left">
-      <a href="">
-        <img src="./../icons/logo.svg" alt="" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse navigations" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="link" to="/"> 商品總覽 </a>
+  <head>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="left">
+        <a href="">
+          <img src="./../icons/logo.svg" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navigations" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="link" to="/"> 商品總覽 </a>
+            </li>
+            <li class="nav-item">
+              <a class="link" to="/member-list"> 難易分級 </a>
+            </li>
+            <li class="nav-item">
+              <a class="link" to="/"> 季節推薦 </a>
+            </li>
+            <li class="nav-item">
+              <a class="link" to="/"> 線上測驗 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="right">
+        <ul class="navbar-nav me-auto mb-lg-0 ulRight">
+          <li class="nav-item liRight search">
+            <div class="search-input">
+                <img src="./../icons/search-icon.svg" alt="">
+                <span>輸入登山路線、季節熱門路線</span>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="link" to="/member-list"> 難易分級 </a>
+          <li class="nav-item liRight notification">
+            <a class="link" href="/">
+                <img src="./../icons/bell.svg" alt="">
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="link" to="/"> 季節推薦 </a>
+          <li class="nav-item liRight cart">
+            <a class="link" href="/">
+                <img src="./../icons/shopping-cart.svg" alt="">
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="link" to="/"> 線上測驗 </a>
+          <li class="nav-item liRight profile">
+            <a class="link" href="/">
+                <img src="./../icons/profile.svg" alt="">
+            </a>
           </li>
         </ul>
       </div>
-    </div>
-    <div class="right">
-      <ul class="navbar-nav me-auto mb-lg-0 ulRight">
-        <li class="nav-item liRight search">
-          <div class="search-input">
-              <img src="./../icons/search-icon.svg" alt="">
-              <span>輸入登山路線、季節熱門路線</span>
-          </div>
-        </li>
-        <li class="nav-item liRight notification">
-          <a class="link" href="/">
-              <img src="./../icons/bell.svg" alt="">
-          </a>
-        </li>
-        <li class="nav-item liRight cart">
-          <a class="link" href="/">
-              <img src="./../icons/shopping-cart.svg" alt="">
-          </a>
-        </li>
-        <li class="nav-item liRight profile">
-          <a class="link" href="/">
-              <img src="./../icons/profile.svg" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
+    </nav>
+  </head>
 
+
+  <main>
     <div class="d-flex flex-row m-5 ">
       <!-- left-card -->
       <div class="me-3">
@@ -191,11 +194,11 @@
         <!-- right-card > trails-cards -->
         <div class="col">
           <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
+            <div class="row g-0 d-flex flex-row justify-content-end border border-primary justify-content-between">
+              <div class="col-4 border border-primary">
                 <img src="./imgs/1-1.jpg" class="img-fluid rounded-start" alt="...">
               </div>
-              <div class="col-md-8">
+              <div class="col border border-primary">
                 <div class="card-body">
                   <h5 class="product-name">草嶺古道｜探索新北一日遊探索新北一日遊</h5>
                   <p class="card-text">
@@ -203,6 +206,14 @@
                   </p>
                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
+              </div>
+              <div class="col-1 border border-primary d-flex justify-content-end align-items-start">
+                <span class="border-primary " >
+                  <svg width="50" height="75" viewBox="0 0 50 75" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M20.3882 29.6118C19.8775 29.1008 19.271 28.6955 18.6036 28.4189C17.9361 28.1423 17.2207 28 16.4982 28C15.7757 28 15.0603 28.1423 14.3929 28.4189C13.7254 28.6955 13.119 29.1008 12.6082 29.6118L11.5482 30.6718L10.4882 29.6118C9.45652 28.5801 8.05725 28.0005 6.59821 28.0005C5.13918 28.0005 3.73991 28.5801 2.70821 29.6118C1.67652 30.6435 1.09692 32.0428 1.09692 33.5018C1.09692 34.9609 1.67652 36.3601 2.70821 37.3918L3.76821 38.4518L11.5482 46.2318L19.3282 38.4518L20.3882 37.3918C20.8992 36.8811 21.3046 36.2746 21.5811 35.6072C21.8577 34.9397 22 34.2243 22 33.5018C22 32.7793 21.8577 32.0639 21.5811 31.3965C21.3046 30.729 20.8992 30.1226 20.3882 29.6118Z" stroke="#6CBA7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                  
               </div>
             </div>
           </div>

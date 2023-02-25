@@ -15,8 +15,9 @@ h1 {
 
 }
 
-input {
+.btn{
   border: none;
+  background-color: none;
 }
 
 /* main */

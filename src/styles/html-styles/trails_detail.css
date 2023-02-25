@@ -1,0 +1,31 @@
+/* html,
+body {
+  border: 1.5px solid black;
+} */
+
+* {
+  border: 1px dashed brown
+}
+
+
+/* Breadcrumb */
+.bread {
+  background-color: transparent;
+}
+
+
+/* category button group */
+.ca_btn {
+  background-color: rgb(108, 186, 124, 0.4);
+}
+
+.ca_h6 {
+  color: #033A13;
+}
+
+/* category content group */
+.ca_content {
+  height: 70px;
+  background: rgba(206, 232, 203, 0.5);
+  border-radius: 10px;
+}
