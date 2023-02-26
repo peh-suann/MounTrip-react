@@ -4,13 +4,24 @@ body {
 } */
 
 * {
-  border: 1px dashed brown
+  /* border: 1px dashed brown */
 }
 
 
 /* Breadcrumb */
 .bread {
   background-color: transparent;
+}
+
+/* trails card > left-card > puctures */
+.img_cover_one {
+  width: 100%;
+  object-fit: cover;
+}
+
+.img_cover_three {
+  width: 33.3%;
+  object-fit: fill;
 }
 
 
@@ -28,4 +39,56 @@ body {
   height: 70px;
   background: rgba(206, 232, 203, 0.5);
   border-radius: 10px;
+}
+
+.paragraph_i {
+  text-indent: 2rem;
+}
+
+.img_contain {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* shop-button-group */
+.shop-btn {
+  border: solid 2px var(--mtgreen-1);
+  border-radius: 5px;
+}
+
+.batch {
+  color: var(--mtgrey-4);
+  background-color: var(--mtgreen-1);
+}
+
+.level3 {
+  color: var(--mtgrey-4);
+  background-color: var(--mtgreen-1);
+}
+
+
+.Vector_long {
+  width: 100%;
+}
+
+/* commont card: right-card * n */
+
+.card-b-b {
+  border-bottom: 1px solid var(--mtgrey-3);
+}
+
+/* commont card: right-card > level3 > imges */
+.img_cover {
+  width: 33.3%;
+  object-fit: cover;
+}
+
+.more_img {
+  width: 100%;
+  object-fit: fill;
+}
+
+.img_wrap {
+  width: 100%;
+  background: linear-gradient(0deg, rgba(1, 19, 6, 0.5), rgba(1, 19, 6, 0.5));
 }
