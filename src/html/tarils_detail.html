@@ -89,15 +89,15 @@
         <!-- trails card -->
         <div class=" d-flex flex-row col mb-5">
           <!-- left-card -->
-          <div class="col d-flex flex-column align-items-center">
+          <div class="col d-flex flex-column me-5">
             <!-- puctures -->
-            <div class="col">
+            <div class="mb-3">
               <img class="img_cover_one" src="./imgs/3-1.jpg" alt="">
             </div>
-            <div class="d-flex flex-row">
-              <img class="img_cover_three" src="./imgs/3-1.jpg" alt="">
-              <img class="img_cover_three" src="./imgs/4-1.jpg" alt="">
-              <img class="img_cover_three" src="./imgs/4-1.jpg" alt="">
+            <div class="d-flex flex-row justify-content-between">
+              <img class="img_cover_three " src="./imgs/3-1.jpg" alt="">
+              <img class="img_cover_three " src="./imgs/4-1.jpg" alt="">
+              <img class="img_cover_three " src="./imgs/5-1.jpg" alt="">
             </div>
 
           </div>
@@ -128,38 +128,66 @@
 
             <!-- category button group -->
             <div class="d-flex flex-row mb-5">
-              <button class="ca_btn rounded-1 me-3">
+              <button class="ca_btn rounded-1 me-3 border-0">
                 <h6 class="m-1 ca_h6">難度 低</h6>
               </button>
-              <button class="ca_btn rounded-1 me-3">
+              <button class="ca_btn rounded-1 me-3 border-0">
                 <h6 class="m-1">花季中</h6>
               </button>
-              <button class="ca_btn rounded-1 me-3">
+              <button class="ca_btn rounded-1 me-3 border-0">
                 <h6 class="m-1">熱門路線</h6>
               </button>
             </div>
 
             <!-- category content group -->
-            <div class="ca_content d-flex mb-5">
-              <div class="ca_content_a d-flex flex-row m-3 p-1 ">
-                <div class="me-3">
-                  <img src="../icons/Frame 166.svg" alt="">
+            <div class="ca_content d-flex mb-5 ">
+              <div class=" ca_border d-flex flex-row  ">
+                <div class="ca_content_a d-flex flex-row m-3 me-4 p-1">
+                  <div class="me-3">
+                    <img src="../icons/Frame 166.svg" alt="">
+                  </div>
+                  <h6 class="mb-0 align-self-center">路線總長 4km</h6>
                 </div>
-                <h6 class="mb-0">路線總長 7.5km</h6>
               </div>
-              <div class="ca_content_a d-flex flex-row m-3 p-1 ">
-                <div class="me-3">
-                  <img src="../icons/Frame 166.svg" alt="">
+              <div class=" ca_border d-flex flex-row  ">
+                <div class="ca_content_a d-flex flex-row m-3 me-4 p-1">
+                  <div class="me-3">
+                    <img src="../icons/clock.svg" alt="">
+                  </div>
+                  <h6 class="mb-0 align-self-center">所需時間 2.5hr</h6>
                 </div>
-                <h6 class="mb-0">路線總長 7.5km</h6>
               </div>
-              <div class="ca_content_a d-flex flex-row m-3 p-1 ">
-                <div class="me-3">
-                  <img src="../icons/Frame 166.svg" alt="">
+              <div class=" d-flex flex-row  ">
+                <div class="ca_content_a d-flex flex-row m-3 p-1">
+                  <div class="me-3">
+                    <img src="../icons/upArrow.svg" alt="">
+                  </div>
+                  <h6 class="mb-0 align-self-center">爬升高度 1120m</h6>
                 </div>
-                <h6 class="mb-0">路線總長 7.5km</h6>
               </div>
+
             </div>
+
+            <!-- <div class="ca_content d-flex mb-5 ">
+              <div class="ca_content_a ca_border d-flex flex-row m-3 p-1 ">
+                <div class="me-3">
+                  <img src="../icons/Frame 166.svg" alt="">
+                </div>
+                <h6 class="mb-0 align-self-center">路線總長 4km</h6>
+              </div>
+              <div class="ca_content_a ca_border d-flex flex-row m-3 p-1 ">
+                <div class="me-3">
+                  <img src="../icons/clock.svg" alt="">
+                </div>
+                <h6 class="mb-0 align-self-center">所需時間 2.5hr</h6>
+              </div>
+              <div class="ca_content_a d-flex flex-row m-3 p-1 ">
+                <div class="me-3">
+                  <img src="../icons/upArrow.svg" alt="">
+                </div>
+                <h6 class="mb-0 align-self-center">爬升高度 1120m</h6>
+              </div>
+            </div>             -->
 
             <!-- paragraph -->
             <p class="paragraph_i mb-2">
@@ -218,7 +246,25 @@
         <!--commont card -->
         <div class="d-flex flex-row ">
           <!-- left-card -->
-          <div class="col-3"></div>
+          <div class="col-3 d-flex flex-row left_card align-content-center">
+            <div class="col-2 rate_point me-3 ">
+              <!-- FIXME: -->
+              <h1 class="mb-0 point_h1 mt-2 ">4.5</h1>
+            </div>
+            <div class="col-8 d-flex flex-column ">
+              <div class="col p-2">
+                <img src="./imgs/Star_bigger.svg" alt="">
+                <img src="./imgs/Star_bigger.svg" alt="">
+                <img src="./imgs/Star_bigger.svg" alt="">
+                <img src="./imgs/Star_bigger.svg" alt="">
+                <img src="./imgs/Star_bigger.svg" alt="">
+              </div>
+              <div class="col ps-2">
+                <p class="mb-0">1000個人已評論</p>
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
           <!-- right-card -->
           <div class="col d-flex flex-column">
 
@@ -229,14 +275,15 @@
               <!-- --commont content -->
               <div class="col d-flex flex-column ">
                 <!-- level1 -->
-                <div class="col d-flex flex-row">
-                  <h5 class="mb-0">Lorem</h5>
+                <div class="col d-flex flex-row mb-3">
+                  <h5 class="mb-0 me-3">Lorem</h5>
                   <div class="">
-                    <p class="mb-0">超級嚮導</p>
+                    <p class="mb-0 member_ca">超級嚮導</p>
                   </div>
                 </div>
                 <!-- level2 -->
-                <div class="col d-flex flex-row">
+                <!-- FIXME:星號切齊 -->
+                <div class="col d-flex flex-row mb-3">
                   <div class="col-2 d-flex flex-row me-3">
                     <img src="../icons/star.svg" alt="">
                     <img src="../icons/star.svg" alt="">
@@ -260,6 +307,7 @@
                   <div class="col-5 d-flex flex-row">
                     <img class="img_cover me-1" src="./imgs/3-1.jpg" alt="">
                     <img class="img_cover me-1" src="./imgs/4-1.jpg" alt="">
+                    <!-- FIXME: img_wrap -->
                     <!-- <img class="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> -->
                     <div class="img_wrap">
                     </div>
@@ -268,8 +316,9 @@
               </div>
             </div>
 
+
             <!-- pagination -->
-            <div class="page-bar col">
+            <div class="page-bar col d-flex align-self-center">
               <nav aria-label="Page navigation example">
                 <ul class="pagination ">
                   <li class="page-item">

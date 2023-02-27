@@ -20,7 +20,7 @@ body {
 }
 
 .img_cover_three {
-  width: 33.3%;
+  width: 32%;
   object-fit: fill;
 }
 
@@ -39,6 +39,10 @@ body {
   height: 70px;
   background: rgba(206, 232, 203, 0.5);
   border-radius: 10px;
+}
+
+.ca_border{
+  border-right:2px solid var(--mtgreen-3)
 }
 
 .paragraph_i {
@@ -71,6 +75,26 @@ body {
   width: 100%;
 }
 
+/* commont card: left-card  */
+
+.left_card{
+  height: 7%;
+}
+
+.rate_point{
+  background-color: var(--mtgreen-1);
+  flex-grow: 1;
+  text-align: center;
+  color: #FFFFF2;
+}
+
+.point_h1{
+  padding-top: 5px;
+  align-self: center;
+  font-weight: 700;
+  font-size: 30px;
+}
+
 /* commont card: right-card * n */
 
 .card-b-b {
@@ -91,4 +115,12 @@ body {
 .img_wrap {
   width: 100%;
   background: linear-gradient(0deg, rgba(1, 19, 6, 0.5), rgba(1, 19, 6, 0.5));
+}
+
+.member_ca{
+  background-color: var(--mtyellow-1);
+  color: var(--mtyellow-4);
+  border-radius: 18px;
+  padding: 1px 7px;
+  font-weight: 700;
 }
