@@ -4,6 +4,10 @@ body {
   font-family: 'Noto Sans TC';
 }
 
+* {
+  /* border: 1px dashed brown; */
+}
+
 h1 {
   color: var(--mtgreen-3)
 }
@@ -15,7 +19,7 @@ h1 {
 
 }
 
-.btn{
+.btn {
   border: none;
   background-color: none;
 }
@@ -29,15 +33,37 @@ h1 {
 
 .left-card {
   box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
+  width: 18rem;
 }
+
+/* input-with-icon */
 
 .input-with-icon {
   border: 2px solid var(--mtgreen-3);
-  background-color: #CEE8CB99;
+  background: rgba(206, 232, 203, 0.6);
+}
+
+.icon_span {
+  display: flex;
+  align-items: center;
+  /* padding: 0.375rem 0.75rem; */
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  white-space: nowrap;
+  background: rgba(206, 232, 203, 0.6);
+}
+
+.input_style{
+  border: none;
+  background: rgba(206, 232, 203, 0.6);
+  height: 2.5rem;
 }
 
 .input-i {
-  background-color: #CEE8CB99;
+  background: rgba(206, 232, 203, 0.6);
 }
 
 .p-content {
@@ -66,10 +92,42 @@ h1 {
 }
 
 
+/* right-card > trails-cards */
+
+.card_shadow {
+  box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
+}
+
 .product-name {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 0.05em;
   font-size: 22px;
   line-height: 150%;
+}
+
+/* 隱藏三行以上段落文字 */
+.overflow_p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.p_line_clamp {
+  -webkit-line-clamp: 3;
+}
+
+.price_h3 {
+  color: var(--mtgreen-1)
+}
+
+
+.trails_img {
+  width: 100%;
+  height: 250px;
+  object-fit: fill;
+}
+
+.page_bar {
+  background-color: transparent;
 }

@@ -14,21 +14,15 @@
 </head>
 
 <body>
+
   <head>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="left">
         <a href="">
           <img src="./../icons/logo.svg" alt="" />
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse navigations" id="navbarSupportedContent">
@@ -52,23 +46,23 @@
         <ul class="navbar-nav me-auto mb-lg-0 ulRight">
           <li class="nav-item liRight search">
             <div class="search-input">
-                <img src="./../icons/search-icon.svg" alt="">
-                <span>輸入登山路線、季節熱門路線</span>
+              <img src="./../icons/search-icon.svg" alt="">
+              <span>輸入登山路線、季節熱門路線</span>
             </div>
           </li>
           <li class="nav-item liRight notification">
             <a class="link" href="/">
-                <img src="./../icons/bell.svg" alt="">
+              <img src="./../icons/bell.svg" alt="">
             </a>
           </li>
           <li class="nav-item liRight cart">
             <a class="link" href="/">
-                <img src="./../icons/shopping-cart.svg" alt="">
+              <img src="./../icons/shopping-cart.svg" alt="">
             </a>
           </li>
           <li class="nav-item liRight profile">
             <a class="link" href="/">
-                <img src="./../icons/profile.svg" alt="">
+              <img src="./../icons/profile.svg" alt="">
             </a>
           </li>
         </ul>
@@ -81,86 +75,49 @@
     <div class="d-flex flex-row m-5 ">
       <!-- left-card -->
       <div class="me-3">
-        <div class="card left-card" style="width: 18rem;">
+        <div class="card left-card" >
           <div class="card-body d-flex flex-column ms-2 me-2">
             <h5 class="h5-sub-title">搜尋</h5>
-            
+            <!-- input group -->
             <div class="d-flex flex-column ">
               <p class="mb-0 p-content">目的地</p>
-              <!-- input-with-icon with bootstrap -->
-              <div class="input-group mb-3 rounded-3 input-with-icon">
-                <span class="input-group-text" id="basic-addon1" style="background-color: #CEE8CB99;" > 
-                  <svg width="20" height="21" viewBox="0 0 20 21"
-                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.11108 16.2222C13.0384 16.2222 16.2222 13.0384 16.2222 9.11108C16.2222 5.18374 13.0384 2 9.11108 2C5.18374 2 2 5.18374 2 9.11108C2 13.0384 5.18374 16.2222 9.11108 16.2222Z"
-                      stroke="#6CBA7C" stroke-width="2" stroke-linecap="square" />
-                    <path d="M18.0002 18.0002L14.1335 14.1335" stroke="#6CBA7C" stroke-width="2"
-                      stroke-linecap="round" />
-                  </svg>
+              <!-- input-with-icon  -->
+              <div class=" input-with-icon mb-3 rounded-3 d-flex flex-row ">
+                <span class="icon_span col ps-2" >
+                  <img class="" src="../icons/search-icon.svg" alt="">
                 </span>
-                <input type="text" style="background-color: #CEE8CB99;" class="form-control"  aria-label="Username"
-                  aria-describedby="basic-addon1">
+                <div class="col">
+                  <input class="input_style" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-column ">
+              <p class="mb-0 p-content">目的地</p>
+              <!-- input-with-icon  -->
+              <div class=" input-with-icon mb-3 rounded-3 d-flex flex-row ">
+                <span class="icon_span col ps-2" >
+                  <img class="" src="../icons/search-icon.svg" alt="">
+                </span>
+                <div class="col">
+                  <input class="input_style" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-column ">
+              <p class="mb-0 p-content">目的地</p>
+              <!-- input-with-icon  -->
+              <div class=" input-with-icon mb-3 rounded-3 d-flex flex-row ">
+                <span class="icon_span col ps-2" >
+                  <img class="" src="../icons/search-icon.svg" alt="">
+                </span>
+                <div class="col">
+                  <input class="input_style" type="text">
+                </div>
               </div>
             </div>
 
-            <div class="d-flex flex-column ">
-              <p class="mb-0 p-content">出發日期</p>
-              <!-- input-with-icon with bootstrap -->
-              <div class="input-group mb-3 rounded-3 input-with-icon">
-                <span class="input-group-text" id="basic-addon1" style="background-color: #CEE8CB99;" > 
-                  <svg width="20" height="21" viewBox="0 0 20 21"
-                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.11108 16.2222C13.0384 16.2222 16.2222 13.0384 16.2222 9.11108C16.2222 5.18374 13.0384 2 9.11108 2C5.18374 2 2 5.18374 2 9.11108C2 13.0384 5.18374 16.2222 9.11108 16.2222Z"
-                      stroke="#6CBA7C" stroke-width="2" stroke-linecap="square" />
-                    <path d="M18.0002 18.0002L14.1335 14.1335" stroke="#6CBA7C" stroke-width="2"
-                      stroke-linecap="round" />
-                  </svg>
-                </span>
-                <input type="text" style="background-color: #CEE8CB99;" class="form-control"  aria-label="Username"
-                  aria-describedby="basic-addon1">
-              </div>
-            </div>
 
-            <div class="d-flex flex-column ">
-              <p class="mb-0 p-content">返程日期</p>
-              <!-- input-with-icon with bootstrap -->
-              <div class="input-group mb-3 rounded-3 input-with-icon">
-                <span class="input-group-text" id="basic-addon1" style="background-color: #CEE8CB99;" > 
-                  <svg width="20" height="21" viewBox="0 0 20 21"
-                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.11108 16.2222C13.0384 16.2222 16.2222 13.0384 16.2222 9.11108C16.2222 5.18374 13.0384 2 9.11108 2C5.18374 2 2 5.18374 2 9.11108C2 13.0384 5.18374 16.2222 9.11108 16.2222Z"
-                      stroke="#6CBA7C" stroke-width="2" stroke-linecap="square" />
-                    <path d="M18.0002 18.0002L14.1335 14.1335" stroke="#6CBA7C" stroke-width="2"
-                      stroke-linecap="round" />
-                  </svg>
-                </span>
-                <input type="text" style="background-color: #CEE8CB99;" class="form-control"  aria-label="Username"
-                  aria-describedby="basic-addon1">
-              </div>
-            </div>
 
-            <div class="d-flex flex-column ">
-              <p class="mb-0 p-content">人數</p>
-              <!-- input-with-icon with bootstrap -->
-              <div class="input-group mb-4 rounded-3 input-with-icon">
-                <span class="input-group-text" id="basic-addon1" style="background-color: #CEE8CB99;" > 
-                  <svg width="20" height="21" viewBox="0 0 20 21"
-                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.11108 16.2222C13.0384 16.2222 16.2222 13.0384 16.2222 9.11108C16.2222 5.18374 13.0384 2 9.11108 2C5.18374 2 2 5.18374 2 9.11108C2 13.0384 5.18374 16.2222 9.11108 16.2222Z"
-                      stroke="#6CBA7C" stroke-width="2" stroke-linecap="square" />
-                    <path d="M18.0002 18.0002L14.1335 14.1335" stroke="#6CBA7C" stroke-width="2"
-                      stroke-linecap="round" />
-                  </svg>
-                </span>
-                <input type="text" style="background-color: #CEE8CB99;" class="form-control"  aria-label="Username"
-                  aria-describedby="basic-addon1">
-              </div>
-            </div>
-            
             <button type="button" class="btn-search mb-4 ">搜尋</button>
           </div>
         </div>
@@ -168,8 +125,9 @@
 
       <!-- right-card -->
       <div class="right-card d-flex flex-column ">
+
+        <!-- right-card > sub_title -->
         <div class="row sub_title mb-4">
-          
           <div class=" d-flex align-items-end">
             <div class="col me-3">
               <svg width="380" height="20" viewBox="0 0 380 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -193,36 +151,108 @@
 
         <!-- right-card > trails-cards -->
         <div class="col">
-          <div class="card mb-3">
-            <div class="row g-0 d-flex flex-row justify-content-end border border-primary justify-content-between">
-              <div class="col-4 border border-primary">
-                <img src="./imgs/1-1.jpg" class="img-fluid rounded-start" alt="...">
+          <!-- card group > card*n -->
+          <div class="card mb-3 card_shadow ">
+            <div class="row g-0 d-flex flex-row  ">
+              <div class="col-4 trails_img_wrap ">
+                <img src="./imgs/5-1.jpg" class="trails_img rounded-start" alt="...">
               </div>
-              <div class="col border border-primary">
+              <div class="col ">
                 <div class="card-body">
                   <h5 class="product-name">草嶺古道｜探索新北一日遊探索新北一日遊</h5>
-                  <p class="card-text">
-                    你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
-                  </p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <div class="mb-2">
+                    <p class="overflow_p p_line_clamp">
+                      你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
+                    </p>
+                  </div>
+                  <!-- location-group -->
+                  <div class="d-flex flex-row align-items-center mb-3">
+                    <div class="mb-2 me-2">
+                      <img src="../icons/map-pin.svg" alt="">
+                    </div>
+                    <span class="pe-3 ">
+                      <p class="mb-0">臺北市北投區</p>
+                    </span>
+                    <div class="mb-1 pe-3">
+                      <p class="mb-0">|</p>
+                    </div>
+
+                    <span class="d-flex mb-1">
+                      <img src="../icons/star.svg" alt="">
+                      <img src="../icons/star.svg" alt="">
+                      <img src="../icons/star.svg" alt="">
+                      <img src="../icons/star.svg" alt="">
+                      <img src="../icons/star.svg" alt="">
+                    </span>
+                  </div>
+                  <div class="col">
+                    <h3 class="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
+                  </div>
                 </div>
               </div>
-              <div class="col-1 border border-primary d-flex justify-content-end align-items-start">
-                <span class="border-primary " >
-                  <svg width="50" height="75" viewBox="0 0 50 75" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M20.3882 29.6118C19.8775 29.1008 19.271 28.6955 18.6036 28.4189C17.9361 28.1423 17.2207 28 16.4982 28C15.7757 28 15.0603 28.1423 14.3929 28.4189C13.7254 28.6955 13.119 29.1008 12.6082 29.6118L11.5482 30.6718L10.4882 29.6118C9.45652 28.5801 8.05725 28.0005 6.59821 28.0005C5.13918 28.0005 3.73991 28.5801 2.70821 29.6118C1.67652 30.6435 1.09692 32.0428 1.09692 33.5018C1.09692 34.9609 1.67652 36.3601 2.70821 37.3918L3.76821 38.4518L11.5482 46.2318L19.3282 38.4518L20.3882 37.3918C20.8992 36.8811 21.3046 36.2746 21.5811 35.6072C21.8577 34.9397 22 34.2243 22 33.5018C22 32.7793 21.8577 32.0639 21.5811 31.3965C21.3046 30.729 20.8992 30.1226 20.3882 29.6118Z" stroke="#6CBA7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+              <div class="col-1  d-flex justify-content-end align-items-start">
+                <span class="border-primary ">
+                  <!-- FIXME: 要可以切換 點按 -->
+                  <img src="./imgs/heart.svg" alt="">
                 </span>
-                  
               </div>
             </div>
           </div>
+
+          <div class="card mb-3 card_shadow ">
+            <div class="row g-0 d-flex flex-row  ">
+              <div class="col-4 trails_img_wrap ">
+                <img src="./imgs/5-1.jpg" class="trails_img rounded-start" alt="...">
+              </div>
+              <div class="col ">
+                <div class="card-body">
+                  <h5 class="product-name">草嶺古道｜探索新北一日遊探索新北一日遊</h5>
+                  <div class="mb-2">
+                    <p class="overflow_p p_line_clamp">
+                      你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
+                    </p>
+                  </div>
+                  <!-- location-group -->
+                  <div class="d-flex flex-row align-items-center mb-3">
+                    <div class="mb-2 me-2">
+                      <img src="../icons/map-pin.svg" alt="">
+                    </div>
+                    <span class="pe-3 ">
+                      <p class="mb-0">臺北市北投區</p>
+                    </span>
+                    <div class="mb-1 pe-3">
+                      <p class="mb-0">|</p>
+                    </div>
+
+                    <span class="d-flex mb-1">
+                      <img src="../icons/star.svg" alt="">
+                      <img src="../icons/star.svg" alt="">
+                      <img src="../icons/star.svg" alt="">
+                      <img src="../icons/star.svg" alt="">
+                      <img src="../icons/star.svg" alt="">
+                    </span>
+                  </div>
+                  <div class="col">
+                    <h3 class="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1  d-flex justify-content-end align-items-start">
+                <span class="border-primary ">
+                  <!-- FIXME: 要可以切換 點按 -->
+                  <img src="./imgs/heart.svg" alt="">
+                </span>
+              </div>
+            </div>
+          </div>
+          
         </div>
 
-        <div class="page-bar col">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination ">
-              <li class="page-item">
+        <!-- pagination -->
+        <div class="col align-self-center">
+          <nav class="page_bar" aria-label="Page navigation example">
+            <ul class="pagination  ">
+              <li class="page-item ">
                 <a class="page-link" href="#" aria-label="Previous">
                   <span aria-hidden="true">&laquo;</span>
                 </a>
@@ -231,7 +261,7 @@
               <li class="page-item"><a class="page-link" href="#">2</a></li>
               <li class="page-item"><span class="page-link"> ... </span></li>
               <li class="page-item"><a class="page-link" href="#">9</a></li>
-              <li class="page-item"><a class="page-link" href="#">10</a></li>              
+              <li class="page-item"><a class="page-link" href="#">10</a></li>
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
                   <span aria-hidden="true">&raquo;</span>
