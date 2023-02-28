@@ -1,0 +1,543 @@
+/* Mountrip品牌色定義 */
+:root{
+    /* primary/green */
+    --mtgreen-1:#6cba7c;
+    --mtgreen-2:#8dc996;
+    --mtgreen-3:#add9b1;
+    --mtgreen-4:#cee8cb;
+
+    /* secondary/yellow */
+    --mtyellow-1: #F3c969;
+    --mtyellow-2: #f7db97;
+    --mtyellow-3: #FBEDC4;
+    --mtyellow-4: #FFFFF2;
+
+    /* neutral-color/ black/ grey */
+    --mtgrey-1: #011306;
+    --mtgrey-2: #4d5a51;
+    --mtgrey-3: #9aa09b;
+    --mtgrey-4: #e6E7E6;
+
+    /* danger-color /red */
+    --mtred-1:#E85F5c;
+    --mtred-2: #ED7F7D;
+    --mtred-3: #f6Bfbe;
+    --mtred-4: #fadfde;
+
+    /* 中文字型 */
+    --mtfont-ch: 'Noto Sans TC', sans-serif;
+
+    /* ENG FONT */
+    --mtfont-eng: 'Noto Sans', sans-serif;
+    
+}
+
+
+/* Define the font family for English characters */
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('./../fonts/NotoSans-Black.ttf');
+    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+      U+FFFD;
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('./../fonts/NotoSans-ExtraBold.ttf');
+    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+      U+FFFD;
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('./../fonts/NotoSans-Bold.ttf');
+    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+      U+FFFD;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('./../fonts/NotoSans-SemiBold.ttf');
+    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+      U+FFFD;
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('./../fonts/NotoSans-Medium.ttf');
+    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+      U+FFFD;
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('./../fonts/NotoSans-Regular.ttf');
+    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+      U+FFFD;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('./../fonts/NotoSans-Light.ttf');
+    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+      U+FFFD;
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('./../fonts/NotoSans-ExtraLight.ttf');
+    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+      U+FFFD;
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('./../fonts/NotoSans-Thin.ttf');
+    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+      U+FFFD;
+    font-weight: 100;
+  }
+  
+  /* Define the font family for Traditional Chinese characters */
+  @font-face {
+    font-family: 'Noto Sans TC';
+    src: url('./../fonts/NotoSansTC-Black.otf');
+    unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+      U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
+    font-weight: 900;
+  }
+  @font-face {
+      font-family: 'Noto Sans TC';
+      src: url('./../fonts/NotoSansTC-Bold.otf');
+      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Noto Sans TC';
+      src: url('./../fonts/NotoSansTC-Medium.otf');
+      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Noto Sans TC';
+      src: url('./../fonts/NotoSansTC-Regular.otf');
+      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Noto Sans TC';
+      src: url('./../fonts/NotoSansTC-Light.otf');
+      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
+      font-weight: 300;
+    }
+    @font-face {
+      font-family: 'Noto Sans TC';
+      src: url('./../fonts/NotoSansTC-Thin.otf');
+      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
+      font-weight: 100;
+    }
+  
+  * {
+    font-family: 'Noto Sans', 'Noto Sans TC', sans-serif;
+  }
+
+/* global通用css屬性 */
+
+:global(.section){
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--mtyellow-4);
+}
+
+.body{
+  background-color:var(--mtyellow-4);
+}
+/* All section */
+.allSectionCard_svg{
+  position:absolute ;
+  top: 140px;
+  left: 1680px;
+}
+.allSection_btn{
+  border-radius: 5px;
+  padding: 8px 24px;
+  background-color: var(--mtgreen-1);
+  font-size: 20px;
+  color: white;
+  font-weight: 900;
+  border:none;
+}
+.allSection_btn > span{
+  letter-spacing: 0.1em;
+}
+
+/* section1 */
+.totalProduct_firstBg{
+  height: 85vh;
+  background-image: url("./../img/1.jpg");
+  background-size: 100%;
+  background-position:30% 45%;        
+  background-repeat: no-repeat;
+  position: relative;
+}
+.tPFSearch_first{
+  padding: 12px;
+  background-color: var(--mtyellow-4);
+  border-right:4px solid var(--mtgrey-4);
+}
+.tPFSearch-third{
+  padding: 12px;
+  background-color: var(--mtyellow-4);
+}
+.totalProductfirstBg_searchAll > .tPFSearch_btn{
+  width: 140px;
+  background-color: var(--mtgreen-2);
+}
+.tPFSearch_H4{
+  color: white;
+  margin-bottom: 0;
+}
+.tPFirstSection_search{
+  height: 36px;
+  border:none;
+  background-color:var(--mtyellow-4);
+}
+.totalProductfirstBg_searchAll{
+  width: 55%;
+  /* border: 3px solid red; */
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  top:94%;
+  left:22%;
+}
+.totalProductfirstBg_searchAll > div > i {
+  width: 24px;
+  height: 24px;
+}
+.totalProduct_firstBg > div > span {
+  font-size: 50px;
+  margin-right: 70px;
+}
+.totalProductfirstBg_text{
+  color: white;
+  position: absolute ;
+  top:12%;
+  left: 41%;
+  font-size: 35px;
+  font-weight:900;
+}
+.totalProductfirstBg_spans{
+  color: white;
+  width: 35%;
+  position: absolute ;
+  top:22%;
+  left: 30%;
+  font-weight:900;
+}
+
+/* section2 */
+.totalProduct_secondSection{
+  padding: 0px 120px;
+  margin-top: 150px;
+}
+div.tPSSCard_num{
+  width: 60px;
+  position: absolute;
+  top:-15px
+}
+div.tPSSCard_numsvg{
+  width: 100%;
+  position: relative;
+  padding: 0px;
+}
+.tPSSCard_pic1{
+  height: 250px;
+  background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-3.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  flex-grow: 1;
+  border-radius: 10px;
+
+}
+.tPSSCard_num{
+  position: relative;
+  top: -18px;
+  left:480px;
+}
+.tPSSCard_bottom{
+  width: 100%;
+  position: absolute;
+  top: 215px;
+  padding: 0px 15px;
+}
+.tPSSCard_bottom p{
+  color: white;
+  margin: 0;
+}
+div.tPSSCard_numsvg > h3{
+  color:white;
+  position: absolute;
+  top:13px;
+  left: 19px;
+  font-weight: 700;
+}
+.tPSSCard_body{
+  padding: 10px 0px;
+}
+.tPSSCard_body p{
+ margin: 0;
+}
+
+/* section3 */
+.thSectioncard1{
+  padding-right:20px;
+}
+
+.thirdBg{
+height: 650px;
+background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./../img/2.jpg");
+background-position: 50% 80%;background-size: cover;
+position: relative;
+}
+.thirdBg_text{
+width:26% ;
+position: absolute;
+top: 60%;
+left: 37%;
+
+}
+.thirdBg_text > h1{
+color: white;
+font-size: 45px;
+font-weight: 900
+}
+.thirdBg_text > p{
+color: white;
+letter-spacing: 0.1em;
+line-height: 26px;
+}
+.thirdSCardsAll{
+padding: 0px 120px;
+position: relative;
+}
+.thirdSectionCards{
+width: 1680px;
+position: absolute;
+top: -30px;
+
+}
+
+/* section4 */
+
+.forthBg{
+height: 650px;
+background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./../img/3.jpg");
+background-position: 50% 80%;background-size: cover;
+position: relative;
+}
+.forthBg_text{
+width:26% ;
+position: absolute;
+top: 60%;
+left: 37%;
+
+}
+.forthBg_text > h1{
+color: white;
+font-size: 45px;
+font-weight: 900;
+}
+.forthBg_text > p{
+color: white;
+letter-spacing: 0.1em;
+line-height: 26px
+}
+.forthSCardsAll{
+width: 1680px;
+padding: 0px 120px;
+position: relative;
+}
+.forthSectionCards{
+position: absolute;
+top: -30px;
+
+}
+
+/* section5 */
+.fivthBg{
+height: 650px;
+background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./../img/4.jpg");
+background-position: 50% 80%;background-size: cover;
+position: relative;
+}
+.fivthBg_text{
+width:26% ;
+position: absolute;
+top: 60%;
+left: 37%;
+
+}
+.fivthBg_text > h1{
+color: white;
+font-size: 45px;
+font-weight: 900;
+}
+.fivthBg_text > p{
+color: white;
+letter-spacing: 0.1em;
+line-height: 26px
+}
+.fivthSCardsAll{
+width: 1680px;
+padding: 0px 120px;
+position: relative;
+}
+.fivthSectionCards{
+position: absolute;
+top: -30px;
+
+}
+
+
+/* section6 */
+
+.sixthSection_All{
+width: 100%;
+padding: 0px 120px;
+display: flex;
+margin-top: 410px;
+}
+.sixthSection_left >.sixthSection > div > h3{
+font-weight: 700;
+letter-spacing: 0.1em;
+}
+.sixthSection_left >.sixthSection > div > p{
+font-size: 18px;
+font-weight: 400;
+letter-spacing: 0.1em;
+}
+.sixthSection{
+width: 545px;
+display: flex;
+margin-bottom: 70px;
+}
+.sixthSEasy_pic{
+width: 180px;
+height: 180px;
+background-color: var(--mtgreen-3);
+border-radius: 50%;
+}
+.sixthSMedium{
+width: 267px;
+display: flex;
+justify-content: center;
+}
+.sixthSMedium_pic{
+width: 140px;
+height: 140px;
+background-color: var(--mtgreen-3);
+}
+.sixthSHard_pic{
+width: 180px;
+height: 180px;
+background-color: var(--mtgreen-3);
+}
+.sixthSRight_cards{
+position: relative;
+}
+.sixthSectionCard_svg{
+position: absolute;
+top: 130px;
+left: 1120px;
+}
+.thSectioncard2{
+  padding-left:20px;
+}
+
+/* section7 */
+
+.totalProduct_seventhSection{
+  width: 100%;
+  margin-top:50px ;
+}
+.totalProduct_seventhSBg{
+  position: relative;
+   width: 100%;
+  height: 80vh;
+  background: url("./../img/bgimgs.jpg") no-repeat;
+  
+}
+
+.tPSeventhSection_card{
+  position: absolute;
+  top: 28%;
+  left: 31%;
+  width: 40%;
+  background-color: var(--mtyellow-4);
+  padding: 45px 40px;
+}
+.tPSeventhSectionCard_text{
+  margin-bottom:30px;
+  line-height: 26px;
+  letter-spacing: 0.1em;
+}
+.tPSeventhSection_card > h1{
+  margin-bottom:30px;
+  font-weight: 900;
+}
+.tPSeventhSection_card .btn{
+  padding: 8px 24px;
+  background-color: var(--mtgreen-2) ;
+}
+.allSection_btn{
+  border-radius: 5px;
+  padding: 8px 24px;
+  background-color: var(--mtgreen-1);
+  font-size: 20px;
+  color: white;
+  font-weight: 900;
+  border:none;
+}
+
+/* footer */
+footer{
+  height: 130px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--mtgreen-1);
+  padding: 36px 120px;
+  margin-top:150px ;
+}
+footer > div > span{
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+}
