@@ -7,8 +7,12 @@
     <!-- <link rel="stylesheet" href="../styles/html-styles/season.css"> -->
     <link rel="stylesheet" href="./../styles/Mountrip.module.css" />
     <link rel="stylesheet" href="./../styles/Navbar.module.css" />
+    <link rel="stylesheet" href="./../styles/Navbar.module.mobile.css" />
     <link rel="stylesheet" href="./../styles/Footer.module.css" />
+    <link rel="stylesheet" href="./../styles/Footer.module.mobile.css" />
+
     <link rel="stylesheet" href="./../styles/html-styles/season.css" />
+    <link rel="stylesheet" href="./../styles/html-styles/season.mobile.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,70 +24,56 @@
   </head>
   <body>
     <!-- navbar/ start -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="left">
-        <button class="menu">
-            <img src="./../icons/menu.svg" alt="">
-        </button>
-        <img src="./../icons/logo.svg" alt="" />
-        <!-- <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
-        <div
-          class="collapse navbar-collapse navigations"
-          id="navbarSupportedContent"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
+    <nav>
+      <div class="navbar">
+        <div class="left">
+          <button class="menu">
+            <img src="./../icons/menu.svg" alt="" />
+          </button>
+          <img id="logo" src="./../icons/logo.svg" alt="" />
+          <ul class="nav-navigations">
+            <li>
               <a class="link" href="/"> 商品總覽 </a>
             </li>
-            <li class="nav-item">
-              <a class="link" href="/member-list"> 難易分級 </a>
+            <li>
+              <a class="link" href="/"> 難易分級 </a>
             </li>
-            <li class="nav-item">
+            <li>
               <a class="link" href="/"> 季節推薦 </a>
             </li>
-            <li class="nav-item">
+            <li>
               <a class="link" href="/"> 線上測驗 </a>
             </li>
           </ul>
         </div>
-      </div>
-      <div class="right">
-        <ul class="navbar-nav me-auto mb-lg-0 ulRight">
-          <li class="nav-item liRight search">
-            <a class="link" href="/">
-              <img src="./../icons/search.svg" alt="" />
-            </a>
-            <div class="search-input-unfold">
-              <img src="./../icons/search-icon.svg" alt="" />
-              <span>輸入登山路線、季節熱門路線</span>
-            </div>
-          </li>
-          <li class="nav-item liRight notification">
-            <a class="link" href="/">
-              <img src="./../icons/bell.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item liRight cart">
-            <a class="link" href="/">
-              <img src="./../icons/shopping-cart.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item liRight profile">
-            <a class="link" href="/">
-              <img src="./../icons/profile.svg" alt="" />
-            </a>
-          </li>
-        </ul>
+        <div class="right">
+          <ul class="nav-icons">
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/search.svg" alt="" />
+              </a>
+              <div class="search-input-unfold">
+                <img src="./../icons/search-icon.svg" alt="" />
+                <span>輸入登山路線、季節熱門路線</span>
+              </div>
+            </li>
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/bell.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/shopping-cart.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/profile.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <!-- navbar/ end -->
@@ -91,7 +81,7 @@
     <section id="season_top_bar">
       <h1>櫻花季開跑啦！</h1>
       <p>
-        武陵農場是著名的賞櫻景點，是攝影愛好者的最愛，是追花愛好者必遊的地方<br />
+        武陵農場是著名的賞櫻景點，是攝影愛好者的最愛，<br />
         不必出國就可以看到滿到快炸出來的櫻花林～<br />
         櫻花樹下的約定 整個浪漫到不行！
       </p>

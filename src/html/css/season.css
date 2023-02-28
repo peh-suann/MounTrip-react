@@ -6,10 +6,6 @@ html body {
   /* border: 1px solid red; */
   box-sizing: border-box;
 }
-/* nav bar ------------------- */
-
-
-
 /* top bar ------------------- */
 #season_top_bar {
   display: flex;
@@ -40,7 +36,7 @@ html body {
   text-align: center;
   margin-bottom: 50px;
 
-  font-weight: 350;
+  font-weight: 300;
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.1em;
@@ -112,6 +108,7 @@ section.products {
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
+  letter-spacing: 0.05em;
 }
 .information {
   display: flex;
@@ -169,7 +166,7 @@ button.load-more-btn {
 
   background: var(--mtgreen-1);
   border-radius: 5px;
-  border: 0px;
+  border: none;
 
   font-weight: 700;
   font-size: 20px;
@@ -181,6 +178,7 @@ button.load-more-btn {
 
 /* carousel ------------------- */
 section.comments {
+  width: 100%;
   margin-top: 140px;
   margin-bottom: 120px;
   padding: 40px 120px;
@@ -190,6 +188,7 @@ section.comments {
   /* justify-content: center; */
 }
 section.comments h3 {
+  width: 100%;
   margin: 0;
   margin-bottom: 50px;
   font-weight: 700;

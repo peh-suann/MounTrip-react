@@ -7,8 +7,10 @@
     <!-- <link rel="stylesheet" href="../styles/html-styles/season.css"> -->
     <link rel="stylesheet" href="./../styles/Mountrip.module.css" />
     <link rel="stylesheet" href="./../styles/Navbar.module.css" />
+    <link rel="stylesheet" href="./../styles/Navbar.module.mobile.css" />
     <link rel="stylesheet" href="./../styles/Footer.module.css" />
     <link rel="stylesheet" href="./../styles/html-styles/test.css" />
+    <link rel="stylesheet" href="./../styles/html-styles/test.mobile.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -28,115 +30,205 @@
   </head>
   <body>
     <!-- navbar/ start -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="left">
-        <img src="./../icons/logo.svg" alt="" />
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse navigations"
-          id="navbarSupportedContent"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
+    <nav>
+      <div class="navbar">
+        <div class="left">
+          <button class="menu">
+            <img src="./../icons/menu.svg" alt="" />
+          </button>
+          <img id="logo" src="./../icons/logo.svg" alt="" />
+          <ul class="nav-navigations">
+            <li>
               <a class="link" href="/"> 商品總覽 </a>
             </li>
-            <li class="nav-item">
-              <a class="link" href="/member-list"> 難易分級 </a>
+            <li>
+              <a class="link" href="/"> 難易分級 </a>
             </li>
-            <li class="nav-item">
+            <li>
               <a class="link" href="/"> 季節推薦 </a>
             </li>
-            <li class="nav-item">
+            <li>
               <a class="link" href="/"> 線上測驗 </a>
             </li>
           </ul>
         </div>
-      </div>
-      <div class="right">
-        <ul class="navbar-nav me-auto mb-lg-0 ulRight">
-          <li class="nav-item liRight search">
-            <a class="link" href="/">
-              <img src="./../icons/search.svg" alt="" />
-            </a>
-            <div class="search-input-unfold">
-              <img src="./../icons/search-icon.svg" alt="" />
-              <span>輸入登山路線、季節熱門路線</span>
-            </div>
-          </li>
-          <li class="nav-item liRight notification">
-            <a class="link" href="/">
-              <img src="./../icons/bell.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item liRight cart">
-            <a class="link" href="/">
-              <img src="./../icons/shopping-cart.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item liRight profile">
-            <a class="link" href="/">
-              <img src="./../icons/profile.svg" alt="" />
-            </a>
-          </li>
-        </ul>
+        <div class="right">
+          <ul class="nav-icons">
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/search.svg" alt="" />
+              </a>
+              <div class="search-input-unfold">
+                <img src="./../icons/search-icon.svg" alt="" />
+                <span>輸入登山路線、季節熱門路線</span>
+              </div>
+            </li>
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/bell.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/shopping-cart.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/profile.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <!-- navbar/ end -->
 
     <section class="intro-page">
-      <img src="./../images/test/clouds/pic20.png" alt="cloud" /><img
+      <!-- 😀web-clouds  -->
+      <img
+        class="clouds-web"
+        src="./../images/test/clouds/pic20.png"
+        alt="cloud"
+      /><img
+        class="clouds-web"
         src="./../images/test/clouds/pic19.png"
         alt="cloud"
-      /><img src="./../images/test/clouds/pic18.png" alt="cloud" /><img
+      /><img
+        class="clouds-web"
+        src="./../images/test/clouds/pic18.png"
+        alt="cloud"
+      /><img
+        class="clouds-web"
         src="./../images/test/clouds/pic17.png"
         alt="cloud"
-      /><img src="./../images/test/clouds/pic16.png" alt="cloud" /><img
+      /><img
+        class="clouds-web"
+        src="./../images/test/clouds/pic16.png"
+        alt="cloud"
+      /><img
+        class="clouds-web"
         src="./../images/test/clouds/pic15.png"
         alt="cloud"
-      /><img src="./../images/test/clouds/pic14.png" alt="cloud" /><img
+      /><img
+        class="clouds-web"
+        src="./../images/test/clouds/pic14.png"
+        alt="cloud"
+      /><img
+        class="clouds-web"
         src="./../images/test/clouds/pic13.png"
         alt="cloud"
-      /><img src="./../images/test/clouds/pic12.png" alt="cloud" /><img
+      /><img
+        class="clouds-web"
+        src="./../images/test/clouds/pic12.png"
+        alt="cloud"
+      /><img
+        class="clouds-web"
         src="./../images/test/clouds/pic11.png"
         alt="cloud"
-      /><img src="./../images/test/clouds/pic10.png" alt="cloud" /><img
+      /><img
+        class="clouds-web"
+        src="./../images/test/clouds/pic10.png"
+        alt="cloud"
+      /><img
+        class="clouds-web"
         src="./../images/test/clouds/pic09.png"
         alt="cloud"
-      /><img src="./../images/test/clouds/pic08.png" alt="cloud" /><img
+      /><img
+        class="clouds-web"
+        src="./../images/test/clouds/pic08.png"
+        alt="cloud"
+      /><img
+        class="clouds-web"
         src="./../images/test/clouds/pic07.png"
         alt="cloud"
-      /><img src="./../images/test/clouds/pic06.png" alt="cloud" /><img
+      /><img
+        class="clouds-web"
+        src="./../images/test/clouds/pic06.png"
+        alt="cloud"
+      /><img
+        class="clouds-web"
         src="./../images/test/clouds/pic05.png"
         alt="cloud"
-      /><img src="./../images/test/clouds/pic04.png" alt="cloud" /><img
+      /><img
+        class="clouds-web"
+        src="./../images/test/clouds/pic04.png"
+        alt="cloud"
+      /><img
+        class="clouds-web"
         src="./../images/test/clouds/pic03.png"
         alt="cloud"
-      /><img src="./../images/test/clouds/pic02.png" alt="cloud" /><img
+      /><img
+        class="clouds-web"
+        src="./../images/test/clouds/pic02.png"
+        alt="cloud"
+      /><img
+        class="clouds-web"
         src="./../images/test/clouds/pic01.png"
         alt="cloud"
       />
-      <img src="./../images/test/mountain/g-2.svg" alt="" />
-      <img src="./../images/test/mountain/y-2.svg" alt="" />
-      <img src="./../images/test/mountain/g-1.svg" alt="" />
+      <!-- web-clouds  -->
+      <!-- mobile-clouds -->
+      <img
+        src="./../images/test/clouds/mobile/pic11.png"
+        alt=""
+        0
+        class="clouds-mobile"
+      /><img
+        src="./../images/test/clouds/mobile/pic10.png"
+        alt=""
+        class="clouds-mobile"
+      /><img
+        src="./../images/test/clouds/mobile/pic09.png"
+        alt=""
+        class="clouds-mobile"
+      /><img
+        src="./../images/test/clouds/mobile/pic08.png"
+        alt=""
+        class="clouds-mobile"
+      /><img
+        src="./../images/test/clouds/mobile/pic07.png"
+        alt=""
+        class="clouds-mobile"
+      /><img
+        src="./../images/test/clouds/mobile/pic06.png"
+        alt=""
+        class="clouds-mobile"
+      /><img
+        src="./../images/test/clouds/mobile/pic05.png"
+        alt=""
+        class="clouds-mobile"
+      /><img
+        src="./../images/test/clouds/mobile/pic04.png"
+        alt=""
+        class="clouds-mobile"
+      /><img
+        src="./../images/test/clouds/mobile/pic03.png"
+        alt=""
+        class="clouds-mobile"
+      /><img
+        src="./../images/test/clouds/mobile/pic02.png"
+        alt=""
+        class="clouds-mobile"
+      /><img
+        src="./../images/test/clouds/mobile/pic01.png"
+        alt=""
+        class="clouds-mobile"
+      />
+      <!-- mobile-clouds -->
+
+      <img class="mountains" src="./../images/test/mountain/g-2.svg" alt="" />
+      <img class="mountains" src="./../images/test/mountain/y-2.svg" alt="" />
+      <img class="mountains" src="./../images/test/mountain/g-1.svg" alt="" />
 
       <button class="start_test">開始<br />作答</button>
 
-      <img src="./../images/test/mountain/y-1.svg" alt="" />
+      <img class="mountains" src="./../images/test/mountain/y-1.svg" alt="" />
       <!-- <div class="ball"></div> -->
     </section>
     <section class="intro-text">
       <div class="intro-title">登山小測驗</div>
-      <h3>在山上迷路了，你能平安下山嗎?</h3>
+      <h3>在山上迷路了，你能平安下山？</h3>
       <p>
         在山上迷路，一直以來是山難發生的最大主因。許多人遇到迷路時會嚇到，一下子陷入慌張，反而容易做錯決定，降低自己求救成功、平安下山的機會；假如你今天在山上迷路了你有辦法順利脫困嗎？接下來你將置身於8種迷路常見的情境中，嘗試做出讓自己能平安獲救的選擇吧～
       </p>
@@ -144,8 +236,12 @@
     <section class="questions ques-odd">
       <img src="./../images/test/questions/01.jpg" alt="" />
       <div class="num">1</div>
-      <div class="ques-box">
+      <div class="ques-box ques-box-web">
         好像迷路了，這條路感覺沒辦法抵達目的地<br />
+        看起來不像是人走的......現在該怎麼辦？
+      </div>
+      <div class="ques-box ques-box-mobile">
+        好像迷路了，這條路感覺沒辦法抵達目的地
         看起來不像是人走的......現在該怎麼辦？
       </div>
       <img src="./../images/test/hill-yellow.svg" alt="" />
@@ -158,8 +254,12 @@
     <section class="questions ques-even">
       <img src="./../images/test/questions/02.jpg" alt="" />
       <div class="num">2</div>
-      <div class="ques-box">
+      <div class="ques-box ques-box-web">
         好像迷路了，這條路感覺沒辦法抵達目的地<br />
+        看起來不像是人走的......現在該怎麼辦？
+      </div>
+      <div class="ques-box ques-box-mobile">
+        好像迷路了，這條路感覺沒辦法抵達目的地
         看起來不像是人走的......現在該怎麼辦？
       </div>
       <img src="./../images/test/hill-green.svg" alt="" />
@@ -170,10 +270,14 @@
       </div>
     </section>
     <section class="questions ques-odd">
-      <img src="./../images/test/questions/01.jpg" alt="" />
+      <img src="./../images/test/questions/03.jpg" alt="" />
       <div class="num">3</div>
-      <div class="ques-box">
+      <div class="ques-box ques-box-web">
         好像迷路了，這條路感覺沒辦法抵達目的地<br />
+        看起來不像是人走的......現在該怎麼辦？
+      </div>
+      <div class="ques-box ques-box-mobile">
+        好像迷路了，這條路感覺沒辦法抵達目的地
         看起來不像是人走的......現在該怎麼辦？
       </div>
       <img src="./../images/test/hill-yellow.svg" alt="" />
@@ -184,10 +288,14 @@
       </div>
     </section>
     <section class="questions ques-even">
-      <img src="./../images/test/questions/02.jpg" alt="" />
+      <img src="./../images/test/questions/04.jpg" alt="" />
       <div class="num">4</div>
-      <div class="ques-box">
+      <div class="ques-box ques-box-web">
         好像迷路了，這條路感覺沒辦法抵達目的地<br />
+        看起來不像是人走的......現在該怎麼辦？
+      </div>
+      <div class="ques-box ques-box-mobile">
+        好像迷路了，這條路感覺沒辦法抵達目的地
         看起來不像是人走的......現在該怎麼辦？
       </div>
       <img src="./../images/test/hill-green.svg" alt="" />
@@ -198,10 +306,14 @@
       </div>
     </section>
     <section class="questions ques-odd">
-      <img src="./../images/test/questions/01.jpg" alt="" />
+      <img src="./../images/test/questions/05.jpg" alt="" />
       <div class="num">5</div>
-      <div class="ques-box">
+      <div class="ques-box ques-box-web">
         好像迷路了，這條路感覺沒辦法抵達目的地<br />
+        看起來不像是人走的......現在該怎麼辦？
+      </div>
+      <div class="ques-box ques-box-mobile">
+        好像迷路了，這條路感覺沒辦法抵達目的地
         看起來不像是人走的......現在該怎麼辦？
       </div>
       <img src="./../images/test/hill-yellow.svg" alt="" />
@@ -212,10 +324,11 @@
       </div>
     </section>
     <section class="price">
+        <img src="./../images/test/price-bgtext.svg" alt="">
       <div class="price-text">
         <h1 class="congrats">Congrats!!!</h1>
         <h3 class="num-of-Ques">
-          您在此測驗中一共答對 <span>5/5</span> 題，登山小達人就是你！
+          您在此測驗中一共答對 <span>5/5</span> 題，<br />登山小達人就是你！
         </h3>
         <p>
           恭喜獲得 優惠券 乙張
