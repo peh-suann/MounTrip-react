@@ -34,13 +34,14 @@ h1 {
 .left-card {
   box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
   width: 18rem;
+  height: 25rem;
 }
 
 /* input-with-icon */
 
 .input-with-icon {
   border: 2px solid var(--mtgreen-3);
-  background: rgba(206, 232, 203, 0.6);
+  /* background: rgba(206, 232, 203, 0.6); */
 }
 
 /* input:focus {
@@ -85,9 +86,9 @@ h1 {
 }
 
 /* input-with-icon date */
-::-webkit-calendar-picker-indicator{
+/* ::-webkit-calendar-picker-indicator{
   
-}
+} */
 
 
 /* main right-card */
@@ -116,6 +117,12 @@ h1 {
   line-height: 150%;
 }
 
+.heart_btn{
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
 /* 隱藏三行以上段落文字 */
 .overflow_p {
   display: -webkit-box;
@@ -141,3 +148,19 @@ h1 {
 .page_bar {
   background-color: transparent;
 }
+
+/* pagination */
+
+.page-item {
+  margin: 4px;
+}
+
+.pagination .page-link{
+  color: var(--mtgreen-1);
+  border-radius: 5px;
+  border: 1px solid var(--mtgreen-4);
+}
+
+/* .pagination .page-link:active{
+  color: var(--mtgreen-1);
+} */

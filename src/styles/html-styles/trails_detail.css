@@ -185,6 +185,8 @@ body {
   margin: 4px;
 }
 
-.page-link{
+.pagination .page-link{
   color: var(--mtgreen-1);
+  border-radius: 5px;
+  border: 1px solid var(--mtgreen-4);
 }
