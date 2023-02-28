@@ -25,7 +25,33 @@
       }
 
       .shopping-cart-process {
-        height: 100px;
+        /* height: 100px; */
+      }
+
+      .shopping-cart-process img {
+        display: block;
+        padding-top: 68px;
+        width: 700px;
+        padding-bottom: 12px;
+        /* height: 100px; */
+      }
+
+      .var-mtgrey-1 {
+        color: var(--mtgrey-1);
+        letter-spacing: 0.1em;
+      }
+
+      .var-mtgrey-3 {
+        color: var(--mtgrey-3);
+        letter-spacing: 0.1em;
+      }
+
+      .me-142 {
+        margin-right: 142px;
+      }
+
+      .mb-42 {
+        margin-bottom: 42px;
       }
 
       .shopping-cart-contain h3 {
@@ -85,6 +111,7 @@
         font-size: 20px;
         line-height: 150%;
         letter-spacing: 0.05em;
+        margin-bottom: 40px;
       }
 
       .product-img-wrap {
@@ -137,6 +164,58 @@
         line-height: 150%;
         letter-spacing: 0.05em;
         color: var(--mtgreen-1);
+      }
+
+      .input-group .form-outline {
+        width: 80%;
+      }
+
+      .input-group .form-outline input {
+        background-color: var(--mtyellow-4);
+        border: 2px solid var(--mtgreen-1);
+        color: var(--mtgrey-3);
+        border-radius: 8px 0px 0px 8px;
+      }
+
+      .input-group button {
+        width: 20%;
+        border-color: var(--mtgreen-1);
+        background-color: var(--mtgreen-1);
+        color: white;
+        letter-spacing: 0.1em;
+        border-radius: 0px 8px 8px 0px;
+      }
+
+      .col-lg-3 .p {
+        font-size: 20px;
+        letter-spacing: 0.1em;
+        color: var(--mtgrey-1);
+      }
+
+      .col-lg-3 .p-bold {
+        font-size: 20px;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+      }
+
+      .padding-30 {
+        padding-bottom: 30px;
+      }
+
+      .margin-30 {
+        margin-bottom: 30px;
+      }
+
+      .coupon {
+        border-bottom: 2px solid #6cba7c;
+      }
+
+      button.w-100 {
+        border-color: var(--mtgreen-1);
+        background-color: var(--mtgreen-1);
+        color: white;
+        letter-spacing: 0.1em;
+        border-radius: 5px;
       }
     </style>
   </head>
@@ -208,12 +287,22 @@
       </div>
 
       <div class="container">
-        <div class="row shopping-cart-process">
+        <section class="row shopping-cart-process justify-content-center">
           <!-- 購物車流程png & <li> -->
-        </div>
-        <div class="row shopping-cart-contain">
+          <img src="./svg/shopping-cart1.svg" />
+          <div class="d-flex justify-content-center mb-42">
+            <p class="me-142 var-mtgrey-1">確認訂單</p>
+            <p class="me-142 var-mtgrey-3">填寫資料</p>
+            <p class="me-142 var-mtgrey-3">付款頁面</p>
+            <p class="var-mtgrey-3">完成訂單</p>
+          </div>
+        </section>
+        <section class="row shopping-cart-contain">
           <div class="col-lg-9">
-            <div id="shopping-cart-title" class="d-flex align-items-center mb-4">
+            <div
+              id="shopping-cart-title"
+              class="d-flex align-items-center mb-4"
+            >
               <img src="./../icons/shopping-cart.svg" class="" alt="" />
               <h3>購物車</h3>
             </div>
@@ -259,14 +348,111 @@
               <div class="w6 ps-0">NTD 1,200</div>
               <div class="w7"><img src="./svg/trash-2.svg" /></div>
             </div>
+            <div class="row w-100 product-col">
+              <div class="w1"><input type="checkbox" /></div>
+              <div class="w2">
+                <div class="row w-100">
+                  <div class="col-4 ps-0">
+                    <div class="product-img-wrap">
+                      <img src="./img/shopping-cart1.png" />
+                    </div>
+                  </div>
+                  <div class="col-8 px-0">
+                    <p class="product-title mb-3">
+                      草嶺古道｜探索新北一日遊探索新北一日遊
+                    </p>
+                    <p class="product-subtitle mb-0">草嶺古道單日行程</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w3 ps-0">
+                <p class="mb-0">2023/01/01</p>
+                <p class="mb-0">&emsp;&emsp;|</p>
+                <p class="mb-0">2023/01/02</p>
+              </div>
+              <div class="w4 ps-0">NTD 1,200</div>
+              <div class="w5 ps-0">
+                <div class="d-flex">
+                  <p class="minus me-3">-</p>
+                  <p class="product-number me-3">1</p>
+                  <p class="add">+</p>
+                </div>
+              </div>
+              <div class="w6 ps-0">NTD 1,200</div>
+              <div class="w7"><img src="./svg/trash-2.svg" /></div>
+            </div>
+            <div class="row w-100 product-col">
+              <div class="w1"><input type="checkbox" /></div>
+              <div class="w2">
+                <div class="row w-100">
+                  <div class="col-4 ps-0">
+                    <div class="product-img-wrap">
+                      <img src="./img/shopping-cart1.png" />
+                    </div>
+                  </div>
+                  <div class="col-8 px-0">
+                    <p class="product-title mb-3">
+                      草嶺古道｜探索新北一日遊探索新北一日遊
+                    </p>
+                    <p class="product-subtitle mb-0">草嶺古道單日行程</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w3 ps-0">
+                <p class="mb-0">2023/01/01</p>
+                <p class="mb-0">&emsp;&emsp;|</p>
+                <p class="mb-0">2023/01/02</p>
+              </div>
+              <div class="w4 ps-0">NTD 1,200</div>
+              <div class="w5 ps-0">
+                <div class="d-flex">
+                  <p class="minus me-3">-</p>
+                  <p class="product-number me-3">1</p>
+                  <p class="add">+</p>
+                </div>
+              </div>
+              <div class="w6 ps-0">NTD 1,200</div>
+              <div class="w7"><img src="./svg/trash-2.svg" /></div>
+            </div>
           </div>
           <div class="col-lg-3">
-            <div id="shopping-cart-title" class="d-flex align-items-center">
+            <div
+              id="shopping-cart-title"
+              class="d-flex align-items-center mb-4"
+            >
               <img src="./svg/check-circle.svg" class="" alt="" />
               <h3>訂單明細</h3>
             </div>
+            <div class="input-group padding-30">
+              <div class="form-outline">
+                <input
+                  type="text"
+                  id="form1"
+                  class="form-control"
+                  placeholder="輸入優惠代碼"
+                />
+              </div>
+              <button type="button" class="btn btn-primary">套用</button>
+            </div>
+            <div class="d-flex justify-content-between padding-30">
+              <p class="p">小計</p>
+              <p class="p-bold">NTD 7,200</p>
+            </div>
+            <div
+              class="coupon d-flex justify-content-between padding-30 margin-30"
+            >
+              <p class="p">優惠碼 HAPPY10</p>
+              <p class="p">-NTD 100</p>
+            </div>
+            <div
+              class="coupon d-flex justify-content-between padding-30 margin-30"
+            >
+              <p class="p-bold">合計</p>
+              <p class="p-bold">NTD $2,330</p>
+            </div>
+            <button class="w-100 btn">下一步</button>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </body>
