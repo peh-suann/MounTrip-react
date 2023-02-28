@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShoppingCart</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/Mountrip.module.css" />
+    <link rel="stylesheet" href="../styles/Navbar.module.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .mtgrey1 {
+        color: var(--mtgrey-1);
+      }
+
+      .mtgrey2 {
+        color: var(--mtgrey-2);
+      }
+
+      .mtgrey3 {
+        color: var(--mtgrey-3);
+      }
+
+      .mtgreen1 {
+        color: var(--mtgreen-1);
+      }
+
+      .mtgreen4 {
+        color: var(--mtgreen-4);
+      }
+
+      .letter5 {
+        letter-spacing: 0.05em;
+      }
+
+      .mt-19 {
+        margin-top: 19px;
+      }
+
+      .mb-20 {
+        margin-bottom: 20px;
+      }
+
+      .mb-28 {
+        margin-bottom: 28px;
+      }
+
+      .bg-image {
+        background-color: var(--mtyellow-4);
+        height: 100vh;
+      }
+
+      .map-product {
+        position: absolute;
+        top: 0;
+        left: 787px;
+        width: 25%;
+        /* height: 100vh; */
+        background-color: rgba(206, 232, 203, 1);
+        box-shadow: 0px 0px 20px rgba(1, 19, 6, 0.12);
+      }
+
+      .search-input2 {
+        display: flex;
+        flex-direction: row;
+        padding: 4px 12px;
+        gap: 5px;
+        height: 42px;
+        width: 90%;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 6px;
+      }
+
+      .card {
+        width: 90%;
+        background-color: transparent;
+        border: none;
+      }
+
+      .img-wrap {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 71.43%,
+            rgba(0, 0, 0, 0.74) 96.19%
+          ),
+          url('./img/index-product.jpg');
+        height: 239px;
+        border-radius: 10px;
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 1;
+        /* z-index: 10; */
+        margin-bottom: 8px;
+      }
+
+      .rates-wrap {
+        position: absolute;
+        margin: 0 auto;
+        width: 90%;
+        left: 15px;
+        right: 15px;
+        bottom: 12px;
+      }
+
+      .rates {
+        padding-left: 5px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0.05em;
+        margin-bottom: 0;
+      }
+
+      .information-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0.05em;
+        margin-bottom: 5px;
+      }
+
+      .information-site {
+        font-weight: 350;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.1em;
+      }
+
+      .information-mark {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: right;
+        letter-spacing: 0.05em;
+      }
+
+      .information-price {
+        font-weight: 900;
+        font-size: 22px;
+        line-height: 140%;
+        text-align: right;
+        letter-spacing: 0.05em;
+      }
+
+      .map-product-detail {
+        position: absolute;
+        top: 0;
+        left: 1290px;
+        width: 33%;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: 0px 0px 20px rgba(1, 19, 6, 0.08);
+      }
+
+      .detail-img-wrap {
+        width: 100%;
+        height: 284px;
+        background-size: cover;
+        background-image: url('./img/index-product.jpg');
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-image">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="left">
+            <a href="">
+              <img src="./../icons/logo.svg" alt="" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse navigations"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="link" to="/"> 商品總覽 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/member-list"> 難易分級 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/"> 季節推薦 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/"> 線上測驗 </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="right">
+            <ul class="navbar-nav me-auto mb-lg-0 ulRight">
+              <li class="nav-item liRight search">
+                <div class="search-input">
+                  <img src="./../icons/search-icon.svg" alt="" />
+                  <span>輸入登山路線、季節熱門路線</span>
+                </div>
+              </li>
+              <li class="nav-item liRight notification">
+                <a class="link" href="/">
+                  <img src="./../icons/bell.svg" alt="" />
+                </a>
+              </li>
+              <li class="nav-item liRight cart">
+                <a class="link" href="/">
+                  <img src="./../icons/shopping-cart.svg" alt="" />
+                </a>
+              </li>
+              <li class="nav-item liRight profile">
+                <a class="link" href="/">
+                  <img src="./../icons/profile.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div>
+        <button class="btn btn-primary">click</button>
+      </div>
+      <div
+        class="map-product row flex-column align-items-center justify-content-between"
+      >
+        <div class="search-input2 align-items-center mb-28 mt-19">
+          <img src="./../icons/search-icon.svg" alt="" />
+          <span>＃新北市最熱門行程</span>
+        </div>
+        <div class="card d-flex flex-column px-0 mb-20">
+          <div class="img-wrap">
+            <!-- <img src="./img/index-product.jpg" alt="" /> -->
+            <div class="d-flex justify-content-between rates-wrap">
+              <div class="d-flex align-items-center">
+                <img src="./svg/star.svg" alt="" />
+                <p class="mtgreen4 rates">4.5</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <p class="mtgreen4 rates">難度</p>
+                <p class="mtgreen4 rates">EASY</p>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column justify-content-start">
+              <p class="information-title mtgrey1">草嶺古道｜探索新北一日遊</p>
+              <p class="information-site mb-0 mtgrey2">新北市雙溪區</p>
+            </div>
+            <div class="d-flex flex-column">
+              <p class="information-mark mb-0 mtgrey3">NTD</p>
+              <p class="information-price mb-0 mtgreen1">1,200</p>
+            </div>
+          </div>
+        </div>
+        <div class="card d-flex flex-column px-0 mb-20">
+          <div class="img-wrap">
+            <!-- <img src="./img/index-product.jpg" alt="" /> -->
+            <div class="d-flex justify-content-between rates-wrap">
+              <div class="d-flex align-items-center">
+                <img src="./svg/star.svg" alt="" />
+                <p class="mtgreen4 rates">4.5</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <p class="mtgreen4 rates">難度</p>
+                <p class="mtgreen4 rates">EASY</p>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column justify-content-start">
+              <p class="information-title mtgrey1">草嶺古道｜探索新北一日遊</p>
+              <p class="information-site mb-0 mtgrey2">新北市雙溪區</p>
+            </div>
+            <div class="d-flex flex-column">
+              <p class="information-mark mb-0 mtgrey3">NTD</p>
+              <p class="information-price mb-0 mtgreen1">1,200</p>
+            </div>
+          </div>
+        </div>
+        <div class="card d-flex flex-column px-0 mb-20">
+          <div class="img-wrap">
+            <!-- <img src="./img/index-product.jpg" alt="" /> -->
+            <div class="d-flex justify-content-between rates-wrap">
+              <div class="d-flex align-items-center">
+                <img src="./svg/star.svg" alt="" />
+                <p class="mtgreen4 rates">4.5</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <p class="mtgreen4 rates">難度</p>
+                <p class="mtgreen4 rates">EASY</p>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column justify-content-start">
+              <p class="information-title mtgrey1">草嶺古道｜探索新北一日遊</p>
+              <p class="information-site mb-0 mtgrey2">新北市雙溪區</p>
+            </div>
+            <div class="d-flex flex-column">
+              <p class="information-mark mb-0 mtgrey3">NTD</p>
+              <p class="information-price mb-0 mtgreen1">1,200</p>
+            </div>
+          </div>
+        </div>
+        <div class="card d-flex flex-column px-0 mb-20">
+          <div class="img-wrap">
+            <!-- <img src="./img/index-product.jpg" alt="" /> -->
+            <div class="d-flex justify-content-between rates-wrap">
+              <div class="d-flex align-items-center">
+                <img src="./svg/star.svg" alt="" />
+                <p class="mtgreen4 rates">4.5</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <p class="mtgreen4 rates">難度</p>
+                <p class="mtgreen4 rates">EASY</p>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column justify-content-start">
+              <p class="information-title mtgrey1">草嶺古道｜探索新北一日遊</p>
+              <p class="information-site mb-0 mtgrey2">新北市雙溪區</p>
+            </div>
+            <div class="d-flex flex-column">
+              <p class="information-mark mb-0 mtgrey3">NTD</p>
+              <p class="information-price mb-0 mtgreen1">1,200</p>
+            </div>
+          </div>
+        </div>
+        <div class="card d-flex flex-column px-0 mb-20">
+          <div class="img-wrap">
+            <!-- <img src="./img/index-product.jpg" alt="" /> -->
+            <div class="d-flex justify-content-between rates-wrap">
+              <div class="d-flex align-items-center">
+                <img src="./svg/star.svg" alt="" />
+                <p class="mtgreen4 rates">4.5</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <p class="mtgreen4 rates">難度</p>
+                <p class="mtgreen4 rates">EASY</p>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column justify-content-start">
+              <p class="information-title mtgrey1">草嶺古道｜探索新北一日遊</p>
+              <p class="information-site mb-0 mtgrey2">新北市雙溪區</p>
+            </div>
+            <div class="d-flex flex-column">
+              <p class="information-mark mb-0 mtgrey3">NTD</p>
+              <p class="information-price mb-0 mtgreen1">1,200</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="map-product-detail row flex-column align-items-center justify-content-between"
+      >
+        <div class="detail-img-wrap"></div>
+      </div>
+    </div>
+  </body>
+</html>
