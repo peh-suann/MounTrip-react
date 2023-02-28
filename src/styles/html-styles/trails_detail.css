@@ -7,16 +7,28 @@ body {
   /* border: 1px dashed brown */
 }
 
+/* button{
+  outline: none;
+} */
+
+/* ALL */
+.btn_style {
+  border: none;
+  background-color: transparent;
+  padding: 0 3px;
+}
+
 
 /* Breadcrumb */
 .bread {
   background-color: transparent;
 }
 
-.li_font{
+.li_font {
   color: #033A13
 }
-.underline{
+
+.underline {
   text-decoration: underline;
 }
 
@@ -48,8 +60,8 @@ body {
   border-radius: 10px;
 }
 
-.ca_border{
-  border-right:2px solid var(--mtgreen-3)
+.ca_border {
+  border-right: 2px solid var(--mtgreen-3)
 }
 
 .paragraph_i {
@@ -62,30 +74,42 @@ body {
 }
 
 /* shop-button-group */
-.shop_btn {
+.shop_btn_one {
   border: solid 2px var(--mtgreen-1);
   border-radius: 5px;
 }
 
-.shop_btn_sm{
+.shop_btn_two {
+  border: solid 2px var(--mtgreen-1);
+  border-radius: 5px;
+}
+
+
+
+.batch {
+  color: var(--mtgrey-4);
+  background-color: var(--mtgreen-1);
+  border-radius: 3px 0px 0px 3px;
+}
+
+
+.shop_btn_sm {
   color: var(--mtgreen-1);
   border: 2px solid var(--mtgreen-1);
   border-radius: 5px;
 }
 
-.icon_color{
+.shop_btn_three {
+  border: solid 2px var(--mtgreen-1);
+  border-radius: 5px;
+  color: white;
+  background-color: var(--mtgreen-1);
+}
+
+.icon_color {
   color: var(--mtgreen-1);
 }
 
-.batch {
-  color: var(--mtgrey-4);
-  background-color: var(--mtgreen-1);
-}
-
-.level3 {
-  color: var(--mtgrey-4);
-  background-color: var(--mtgreen-1);
-}
 
 
 .Vector_long {
@@ -94,19 +118,18 @@ body {
 
 /* commont card: left-card  */
 
-.left_card{
+.left_card {
   height: 7%;
 }
 
-.rate_point{
+.rate_point {
   background-color: var(--mtgreen-1);
   flex-grow: 1;
   text-align: center;
   color: #FFFFF2;
 }
 
-.point_h1{
-  padding-top: 5px;
+.point_h1 {
   align-self: center;
   font-weight: 700;
   font-size: 30px;
@@ -119,11 +142,15 @@ body {
 }
 
 /* head picture */
-.rounded-circle{
+.rounded-circle {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   background-color: var(--mtgreen-1);
+}
+
+.star {
+  margin-left: -4px;
 }
 
 /* commont card: right-card > level3 > imges */
@@ -139,13 +166,25 @@ body {
 
 .img_wrap {
   width: 100%;
-  background: linear-gradient(0deg, rgba(1, 19, 6, 0.5), rgba(1, 19, 6, 0.5));
+  background: linear-gradient(0deg, rgba(1, 19, 6, 0.5), rgba(1, 19, 6, 0.5)), url(../../html/imgs/5-1.jpg);
+  background-size: 100% 100%;
+  color: var(--mtgrey-4);
 }
 
-.member_ca{
+.member_ca {
   background-color: var(--mtyellow-1);
   color: var(--mtyellow-4);
   border-radius: 18px;
   padding: 1px 7px;
   font-weight: 700;
+}
+
+/* pagination */
+
+.page-item {
+  margin: 4px;
+}
+
+.page-link{
+  color: var(--mtgreen-1);
 }

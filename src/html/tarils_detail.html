@@ -230,40 +230,41 @@
             <div class="d-flex flex-column">
               <!-- level1 -->
               <div class="col d-flex flex-row mb-2">
-                <div class="col shop_btn d-flex flex-row align-items-center me-2">
-                  <span><img src="../icons/minus.svg" alt=""></span>
+                <div class="col shop_btn_one d-flex flex-row align-items-center me-2">
+                  <!-- FIXME: button outline -->
+                  <button class="btn_style"><img src="../icons/minus.svg" alt=""></button>
+                  <!-- <span><img src="../icons/minus.svg" alt=""></span> -->
                   <div class="col"></div>
-                  <span><img src="../icons/plus.svg" alt=""></span>
+                  <button class="btn_style"><img src="../icons/plus.svg" alt=""></button>
                 </div>
-                <span><img src="../icons/add to favs.svg" alt=""></span>
+                <button class="btn_style"><img src="../icons/add to favs.svg" alt=""></button>
               </div>
               <!-- level2 -->
-              <div class="col mb-2">
-                <div class="shop_btn d-flex flex-row align-items-center ">
-                  <div class="batch col-2 col-lg-1">
-                    <h5 class="ps-2 mb-0 fw-bolder">梯次</h5>
+              <div class="col mb-2 shop_btn_two">
+                <div class=" d-flex flex-row align-items-center ">
+                  <div class="batch col-2 col-lg-1 ">
+                    <h5 class="ps-2 mb-0 fw-bolder lh-lg">梯次</h5>
                   </div>
                   <div class="col d-flex justify-content-center">
                     <h5 class="mb-0">2023/01/01 - 2023/01/03</h5>
                   </div>
-                  <!-- FIXME:產生白邊 -->
-                    <img src="../icons/chevron-right.svg" alt="">
+                    <button class="btn_style"><img src="../icons/chevron-right.svg" alt=""></button>
                 </div>
               </div>
               <!-- for 手機板 -->
               <div class="col shop_btn_sm d-flex flex-row justify-content-center mb-2 d-lg-none">
-                <h5 class="mb-0">查看更多</h5>
+                <button class="btn_style"><h5 class="mb-0 lh-lg">查看更多</h5></button>
                 <span>
-                  <img src="../icons/right-green.svg" alt="">
+                  <img class="mt-2" src="../icons/right-green.svg" alt="">
                 </span>
               </div>
               <!-- level3 -->
-              <div class="col shop_btn level3 d-flex flex-row justify-content-center mb-2">
-                <h5 class="mb-0">加入購物車</h5>
+              <button class="col shop_btn_three d-flex flex-row justify-content-center  mb-2">
+                <h5 class="mb-0 lh-lg fw-bold ">加入購物車</h5>
                 <span>
-                  <img src="./imgs/arrow_right.svg" alt="">
+                  <img class="mt-2" src="./imgs/arrow_right.svg" alt="">
                 </span>
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -285,8 +286,7 @@
           <div class="col col-lg-3 d-flex flex-lg-row left_card align-content-center mb-3">
 
             <div class="col-lg-2 rate_point me-3 col-4 rounded-3">
-              <!-- FIXME: -->
-              <h1 class="mb-0 point_h1 mt-2 ">4.5</h1>
+              <h1 class="mb-0 point_h1 mt-2 lh-lg">4.5</h1>
             </div>
 
             <div class="col-8 d-flex flex-column ">
@@ -323,9 +323,8 @@
                   </div>
                 </div>
                 <!-- level2 -->
-                <!-- FIXME:星號切齊 -->
                 <div class="col d-flex flex-row mb-3">
-                  <div class="col-5 col-lg-2 d-flex flex-row ">
+                  <div class="star col-5 col-lg-2 d-flex flex-row ">
                     <img src="../icons/star.svg" alt="">
                     <img src="../icons/star.svg" alt="">
                     <img src="../icons/star.svg" alt="">
@@ -348,9 +347,10 @@
                   <div class="col col-lg-5 d-flex flex-row">
                     <img class="img_cover me-1" src="./imgs/3-1.jpg" alt="">
                     <img class="img_cover me-1" src="./imgs/4-1.jpg" alt="">
-                    <!-- FIXME: img_wrap -->
+                    <!-- FIXME: background url 寫在css 要如何置換圖片 -->
                     <!-- <img class="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> -->
-                    <div class="img_wrap">
+                    <div class="img_wrap d-flex justify-content-around">
+                      <h4 class="mb-0 lh-lg fw-bold align-self-center ">+2張</h4>
                     </div>
                   </div>
                 </div>
@@ -370,9 +370,8 @@
                   </div>
                 </div>
                 <!-- level2 -->
-                <!-- FIXME:星號切齊 -->
                 <div class="col d-flex flex-row mb-3">
-                  <div class="col-5 col-lg-2 d-flex flex-row ">
+                  <div class="star col-5 col-lg-2 d-flex flex-row ">
                     <img src="../icons/star.svg" alt="">
                     <img src="../icons/star.svg" alt="">
                     <img src="../icons/star.svg" alt="">
@@ -395,9 +394,10 @@
                   <div class="col col-lg-5 d-flex flex-row">
                     <img class="img_cover me-1" src="./imgs/3-1.jpg" alt="">
                     <img class="img_cover me-1" src="./imgs/4-1.jpg" alt="">
-                    <!-- FIXME: img_wrap -->
+                    <!-- FIXME: background url 寫在css 要如何置換圖片 -->
                     <!-- <img class="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> -->
-                    <div class="img_wrap">
+                    <div class="img_wrap d-flex justify-content-around">
+                      <h4 class="mb-0 lh-lg fw-bold align-self-center ">+2張</h4>
                     </div>
                   </div>
                 </div>
@@ -417,9 +417,8 @@
                   </div>
                 </div>
                 <!-- level2 -->
-                <!-- FIXME:星號切齊 -->
                 <div class="col d-flex flex-row mb-3">
-                  <div class="col-5 col-lg-2 d-flex flex-row ">
+                  <div class="star col-5 col-lg-2 d-flex flex-row ">
                     <img src="../icons/star.svg" alt="">
                     <img src="../icons/star.svg" alt="">
                     <img src="../icons/star.svg" alt="">
@@ -442,14 +441,16 @@
                   <div class="col col-lg-5 d-flex flex-row">
                     <img class="img_cover me-1" src="./imgs/3-1.jpg" alt="">
                     <img class="img_cover me-1" src="./imgs/4-1.jpg" alt="">
-                    <!-- FIXME: img_wrap -->
+                    <!-- FIXME: background url 寫在css 要如何置換圖片 -->
                     <!-- <img class="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> -->
-                    <div class="img_wrap">
+                    <div class="img_wrap d-flex justify-content-around">
+                      <h4 class="mb-0 lh-lg fw-bold align-self-center ">+2張</h4>
                     </div>
                   </div>
                 </div>
               </div>
             </div>                        
+                     
 
 
 
@@ -462,11 +463,11 @@
                       <span aria-hidden="true">&laquo;</span>
                     </a>
                   </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><span class="page-link"> ... </span></li>
-                  <li class="page-item"><a class="page-link" href="#">9</a></li>
-                  <li class="page-item"><a class="page-link" href="#">10</a></li>
+                  <li class="page-item"><a class="page-link fw-bold" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link fw-bold" href="#">2</a></li>
+                  <li class="page-item"><span class="page-link fw-bold"> ... </span></li>
+                  <li class="page-item"><a class="page-link fw-bold" href="#">9</a></li>
+                  <li class="page-item"><a class="page-link fw-bold" href="#">10</a></li>
                   <li class="page-item">
                     <a class="page-link" href="#" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
