@@ -13,6 +13,13 @@ body {
   background-color: transparent;
 }
 
+.li_font{
+  color: #033A13
+}
+.underline{
+  text-decoration: underline;
+}
+
 /* trails card > left-card > puctures */
 .img_cover_one {
   width: 100%;
@@ -55,9 +62,19 @@ body {
 }
 
 /* shop-button-group */
-.shop-btn {
+.shop_btn {
   border: solid 2px var(--mtgreen-1);
   border-radius: 5px;
+}
+
+.shop_btn_sm{
+  color: var(--mtgreen-1);
+  border: 2px solid var(--mtgreen-1);
+  border-radius: 5px;
+}
+
+.icon_color{
+  color: var(--mtgreen-1);
 }
 
 .batch {
@@ -99,6 +116,14 @@ body {
 
 .card-b-b {
   border-bottom: 1px solid var(--mtgrey-3);
+}
+
+/* head picture */
+.rounded-circle{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--mtgreen-1);
 }
 
 /* commont card: right-card > level3 > imges */

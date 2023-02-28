@@ -16,8 +16,8 @@
 
 <body>
 
-  <!-- <head>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <head>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-lg-flex flex-lg-row mb-3 d-none">
       <div class="left">
         <a href="">
           <img src="./../icons/logo.svg" alt="" />
@@ -69,27 +69,27 @@
         </ul>
       </div>
     </nav>
-  </head> -->
+  </head>
 
   <body>
-    <div class="container  d-flex flex-column  ">
+    <div class="container d-flex flex-column ">
       <!-- Breadcrumb -->
       <div class="col ">
         <nav class="bread"
           style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
           aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">臺北市</a></li>
-            <li class="breadcrumb-item active" aria-current="page">北投區</li>
-            <li class="breadcrumb-item active" aria-current="page">七星山主峰、東峰步道</li>
+          <ol class="breadcrumb ">
+            <li class="breadcrumb-item  "><a class="text-decoration-none li_font" href="#">臺北市</a></li>
+            <li class="breadcrumb-item li_font" aria-current="page">北投區</li>
+            <li class="breadcrumb-item li_font underline" aria-current="page">七星山主峰、東峰步道</li>
           </ol>
         </nav>
       </div>
       <section>
         <!-- trails card -->
-        <div class=" d-flex flex-row col mb-5">
+        <div class=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
           <!-- left-card -->
-          <div class="col d-flex flex-column me-5">
+          <div class="col flex-column me-5 d-none d-lg-flex">
             <!-- puctures -->
             <div class="mb-3">
               <img class="img_cover_one" src="./imgs/3-1.jpg" alt="">
@@ -106,15 +106,15 @@
             <h4 class="fw-bold">七星山主峰、東峰步道</h4>
 
             <!-- location-group -->
-            <div class="d-flex flex-row align-items-center ">
+            <div class="d-lg-flex flex-row align-items-center d-none ">
               <div class="mb-2 me-2">
                 <img src="../icons/map-pin.svg" alt="">
               </div>
               <span class="pe-3 ">
-                <h5>臺北市北投區</h5>
+                <h6>臺北市北投區</h6>
               </span>
               <div class="mb-1 pe-3">
-                <h5>|</h5>
+                <h6>|</h6>
               </div>
 
               <span class="d-flex mb-2">
@@ -127,20 +127,24 @@
             </div>
 
             <!-- category button group -->
-            <div class="d-flex flex-row mb-5">
+            <div class="d-flex flex-row mb-3 mb-lg-5">
               <button class="ca_btn rounded-1 me-3 border-0">
                 <h6 class="m-1 ca_h6">難度 低</h6>
               </button>
               <button class="ca_btn rounded-1 me-3 border-0">
                 <h6 class="m-1">花季中</h6>
               </button>
-              <button class="ca_btn rounded-1 me-3 border-0">
+              <button class="d-lg-flex ca_btn rounded-1 me-3 border-0 d-none">
                 <h6 class="m-1">熱門路線</h6>
+              </button>
+              <button class="d-flex ca_btn rounded-1 me-3 border-0  d-lg-none">
+                <img class="align-self-center" src="../icons/star.svg" alt="">
+                <h6 class="m-1">4.5</h6>
               </button>
             </div>
 
-            <!-- category content group -->
-            <div class="ca_content d-flex mb-5 ">
+            <!-- category content group for 電腦版 -->
+            <div class="ca_content d-lg-flex mb-5 d-none">
               <div class=" ca_border d-flex flex-row  ">
                 <div class="ca_content_a d-flex flex-row m-3 me-4 p-1">
                   <div class="me-3">
@@ -165,29 +169,35 @@
                   <h6 class="mb-0 align-self-center">爬升高度 1120m</h6>
                 </div>
               </div>
-
             </div>
+              <!-- category content group for 手機板 -->
+              <div class=" d-lg-none mb-2">
+                <div class="  d-flex flex-row  mb-3">
+                  <div class="ca_content_a d-flex flex-row  ">
+                    <div class="me-3">
+                      <img src="../icons/Frame 166.svg" alt="">
+                    </div>
+                    <h6 class="mb-0 align-self-center">路線總長 4km</h6>
+                  </div>
+                </div>
+                <div class="  d-flex flex-row  mb-3">
+                  <div class="ca_content_a d-flex flex-row ">
+                    <div class="me-3">
+                      <img src="../icons/clock.svg" alt="">
+                    </div>
+                    <h6 class="mb-0 align-self-center">所需時間 2.5hr</h6>
+                  </div>
+                </div>
+                <div class=" d-flex flex-row  mb-3">
+                  <div class="ca_content_a d-flex flex-row ">
+                    <div class="me-3">
+                      <img src="../icons/upArrow.svg" alt="">
+                    </div>
+                    <h6 class="mb-0 align-self-center">爬升高度 1120m</h6>
+                  </div>
+                </div>
+              </div>
 
-            <!-- <div class="ca_content d-flex mb-5 ">
-              <div class="ca_content_a ca_border d-flex flex-row m-3 p-1 ">
-                <div class="me-3">
-                  <img src="../icons/Frame 166.svg" alt="">
-                </div>
-                <h6 class="mb-0 align-self-center">路線總長 4km</h6>
-              </div>
-              <div class="ca_content_a ca_border d-flex flex-row m-3 p-1 ">
-                <div class="me-3">
-                  <img src="../icons/clock.svg" alt="">
-                </div>
-                <h6 class="mb-0 align-self-center">所需時間 2.5hr</h6>
-              </div>
-              <div class="ca_content_a d-flex flex-row m-3 p-1 ">
-                <div class="me-3">
-                  <img src="../icons/upArrow.svg" alt="">
-                </div>
-                <h6 class="mb-0 align-self-center">爬升高度 1120m</h6>
-              </div>
-            </div>             -->
 
             <!-- paragraph -->
             <p class="paragraph_i mb-2">
@@ -195,6 +205,20 @@
               由於受冬季東北季風影響，山南山北呈現全然不同的自然景觀。山北受強風吹拂，植物生長不易，白背芒與包籜矢竹成為優勢植物，每年秋季芒花開花時，甚是壯觀；山南則因有山頭遮去烈風，因此呈現典型的亞熱帶林相，林下豐富的多樣性生物，和山北截然不同。而七星山主、東峰步道貫穿山南北，走過步道，正好可以體驗兩種不同的生態景觀。
               七星山還是天然的地質教室，小油坑、大油坑、夢幻湖、冷水坑，都是認識火山地形的絕佳處所。還有七星主峰上的展望，可以360度的全覽北市、北海岸等地，「登七星而小台北」，登臨的快意也使七星山備受山客喜愛。
             </p>
+
+            <!-- 手機板 -->
+            <div class="col flex-column d-flex d-lg-none mb-3">
+              <!-- puctures -->
+              <div class="mb-3">
+                <img class="img_cover_one" src="./imgs/3-1.jpg" alt="">
+              </div>
+              <div class="d-flex flex-row justify-content-between">
+                <img class="img_cover_three " src="./imgs/3-1.jpg" alt="">
+                <img class="img_cover_three " src="./imgs/4-1.jpg" alt="">
+                <img class="img_cover_three " src="./imgs/5-1.jpg" alt="">
+              </div>
+  
+            </div>
 
             <!-- gpx -->
             <div class="mb-3">
@@ -206,7 +230,7 @@
             <div class="d-flex flex-column">
               <!-- level1 -->
               <div class="col d-flex flex-row mb-2">
-                <div class="col shop-btn d-flex flex-row align-items-center me-2">
+                <div class="col shop_btn d-flex flex-row align-items-center me-2">
                   <span><img src="../icons/minus.svg" alt=""></span>
                   <div class="col"></div>
                   <span><img src="../icons/plus.svg" alt=""></span>
@@ -215,19 +239,26 @@
               </div>
               <!-- level2 -->
               <div class="col mb-2">
-                <div class="shop-btn d-flex flex-row align-items-center">
-                  <div class="batch col-1">
+                <div class="shop_btn d-flex flex-row align-items-center ">
+                  <div class="batch col-2 col-lg-1">
                     <h5 class="ps-2 mb-0 fw-bolder">梯次</h5>
                   </div>
                   <div class="col d-flex justify-content-center">
                     <h5 class="mb-0">2023/01/01 - 2023/01/03</h5>
                   </div>
-                  <span>
-                    <img src="../icons/chevron-right.svg" alt=""></span>
+                  <!-- FIXME:產生白邊 -->
+                    <img src="../icons/chevron-right.svg" alt="">
                 </div>
               </div>
+              <!-- for 手機板 -->
+              <div class="col shop_btn_sm d-flex flex-row justify-content-center mb-2 d-lg-none">
+                <h5 class="mb-0">查看更多</h5>
+                <span>
+                  <img src="../icons/right-green.svg" alt="">
+                </span>
+              </div>
               <!-- level3 -->
-              <div class="col shop-btn level3 d-flex flex-row justify-content-center mb-2">
+              <div class="col shop_btn level3 d-flex flex-row justify-content-center mb-2">
                 <h5 class="mb-0">加入購物車</h5>
                 <span>
                   <img src="./imgs/arrow_right.svg" alt="">
@@ -237,20 +268,27 @@
           </div>
         </div>
       </section>
-      <!-- Vector_long -->
-      <div class="mb-5">
+      <!-- Vector_long for lg -->
+      <div class="mb-lg-5 d-none d-lg-flex">
         <img class="Vector_long" src="./imgs/Vector_long.svg" alt="">
       </div>
+      <!-- Vector for 手機板 -->
+      <div class="mb-5 d-lg-none">
+        <img class="Vector_long" src="./imgs/Vector_small.svg" alt="">
+      </div>
+
 
       <section>
         <!--commont card -->
-        <div class="d-flex flex-row ">
+        <div class="d-flex flex-column flex-lg-row ">
           <!-- left-card -->
-          <div class="col-3 d-flex flex-row left_card align-content-center">
-            <div class="col-2 rate_point me-3 ">
+          <div class="col col-lg-3 d-flex flex-lg-row left_card align-content-center mb-3">
+
+            <div class="col-lg-2 rate_point me-3 col-4 rounded-3">
               <!-- FIXME: -->
               <h1 class="mb-0 point_h1 mt-2 ">4.5</h1>
             </div>
+
             <div class="col-8 d-flex flex-column ">
               <div class="col p-2">
                 <img src="./imgs/Star_bigger.svg" alt="">
@@ -259,20 +297,23 @@
                 <img src="./imgs/Star_bigger.svg" alt="">
                 <img src="./imgs/Star_bigger.svg" alt="">
               </div>
+
               <div class="col ps-2">
                 <p class="mb-0">1000個人已評論</p>
               </div>
             </div>
             <div class="col"></div>
           </div>
+
           <!-- right-card -->
           <div class="col d-flex flex-column">
 
             <!-- right-card * n -->
             <div class="col d-flex flex-row pb-3 mb-5 card-b-b">
-              <!-- head picture -->
-              <div class="col-1"></div>
-              <!-- --commont content -->
+              <!-- head picture (left col-1) -->
+              <div class="col-1 rounded-circle m-3">
+              </div>
+              <!-- --commont content (right col) -->
               <div class="col d-flex flex-column ">
                 <!-- level1 -->
                 <div class="col d-flex flex-row mb-3">
@@ -284,7 +325,7 @@
                 <!-- level2 -->
                 <!-- FIXME:星號切齊 -->
                 <div class="col d-flex flex-row mb-3">
-                  <div class="col-2 d-flex flex-row me-3">
+                  <div class="col-5 col-lg-2 d-flex flex-row ">
                     <img src="../icons/star.svg" alt="">
                     <img src="../icons/star.svg" alt="">
                     <img src="../icons/star.svg" alt="">
@@ -296,15 +337,15 @@
                   </div>
                   <div class="col"></div>
                 </div>
-                <!-- level3 -->
-                <div class="col d-flex flex-row">
-                  <div class="col-7">
+                <!-- level3 內文與圖片 -->
+                <div class="col d-flex flex-column flex-lg-row">
+                  <div class="col col-lg-7">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut placeat natus facere saepe architecto
                       aperiam praesentium tempora, voluptas voluptate fugiat, non sunt fuga quos voluptatem impedit qui
                       officia a dolorum.</p>
                   </div>
                   <!-- imges -->
-                  <div class="col-5 d-flex flex-row">
+                  <div class="col col-lg-5 d-flex flex-row">
                     <img class="img_cover me-1" src="./imgs/3-1.jpg" alt="">
                     <img class="img_cover me-1" src="./imgs/4-1.jpg" alt="">
                     <!-- FIXME: img_wrap -->
@@ -315,6 +356,101 @@
                 </div>
               </div>
             </div>
+            <div class="col d-flex flex-row pb-3 mb-5 card-b-b">
+              <!-- head picture (left col-1) -->
+              <div class="col-1 rounded-circle m-3">
+              </div>
+              <!-- --commont content (right col) -->
+              <div class="col d-flex flex-column ">
+                <!-- level1 -->
+                <div class="col d-flex flex-row mb-3">
+                  <h5 class="mb-0 me-3">Lorem</h5>
+                  <div class="">
+                    <p class="mb-0 member_ca">超級嚮導</p>
+                  </div>
+                </div>
+                <!-- level2 -->
+                <!-- FIXME:星號切齊 -->
+                <div class="col d-flex flex-row mb-3">
+                  <div class="col-5 col-lg-2 d-flex flex-row ">
+                    <img src="../icons/star.svg" alt="">
+                    <img src="../icons/star.svg" alt="">
+                    <img src="../icons/star.svg" alt="">
+                    <img src="../icons/star.svg" alt="">
+                    <img src="../icons/star.svg" alt="">
+                  </div>
+                  <div class="col-2">
+                    <p class="mb-0">2022/01/01</p>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <!-- level3 內文與圖片 -->
+                <div class="col d-flex flex-column flex-lg-row">
+                  <div class="col col-lg-7">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut placeat natus facere saepe architecto
+                      aperiam praesentium tempora, voluptas voluptate fugiat, non sunt fuga quos voluptatem impedit qui
+                      officia a dolorum.</p>
+                  </div>
+                  <!-- imges -->
+                  <div class="col col-lg-5 d-flex flex-row">
+                    <img class="img_cover me-1" src="./imgs/3-1.jpg" alt="">
+                    <img class="img_cover me-1" src="./imgs/4-1.jpg" alt="">
+                    <!-- FIXME: img_wrap -->
+                    <!-- <img class="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> -->
+                    <div class="img_wrap">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex flex-row pb-3 mb-5 card-b-b">
+              <!-- head picture (left col-1) -->
+              <div class="col-1 rounded-circle m-3">
+              </div>
+              <!-- --commont content (right col) -->
+              <div class="col d-flex flex-column ">
+                <!-- level1 -->
+                <div class="col d-flex flex-row mb-3">
+                  <h5 class="mb-0 me-3">Lorem</h5>
+                  <div class="">
+                    <p class="mb-0 member_ca">超級嚮導</p>
+                  </div>
+                </div>
+                <!-- level2 -->
+                <!-- FIXME:星號切齊 -->
+                <div class="col d-flex flex-row mb-3">
+                  <div class="col-5 col-lg-2 d-flex flex-row ">
+                    <img src="../icons/star.svg" alt="">
+                    <img src="../icons/star.svg" alt="">
+                    <img src="../icons/star.svg" alt="">
+                    <img src="../icons/star.svg" alt="">
+                    <img src="../icons/star.svg" alt="">
+                  </div>
+                  <div class="col-2">
+                    <p class="mb-0">2022/01/01</p>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <!-- level3 內文與圖片 -->
+                <div class="col d-flex flex-column flex-lg-row">
+                  <div class="col col-lg-7">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut placeat natus facere saepe architecto
+                      aperiam praesentium tempora, voluptas voluptate fugiat, non sunt fuga quos voluptatem impedit qui
+                      officia a dolorum.</p>
+                  </div>
+                  <!-- imges -->
+                  <div class="col col-lg-5 d-flex flex-row">
+                    <img class="img_cover me-1" src="./imgs/3-1.jpg" alt="">
+                    <img class="img_cover me-1" src="./imgs/4-1.jpg" alt="">
+                    <!-- FIXME: img_wrap -->
+                    <!-- <img class="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> -->
+                    <div class="img_wrap">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>                        
+
 
 
             <!-- pagination -->
