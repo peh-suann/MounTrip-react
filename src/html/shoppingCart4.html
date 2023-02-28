@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShoppingCart</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/Mountrip.module.css" />
+    <link rel="stylesheet" href="../styles/Navbar.module.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .bg-image {
+        background-color: var(--mtyellow-4);
+        /* height: 100vh; */
+      }
+
+      .shopping-cart-process img {
+        display: block;
+        padding-top: 68px;
+        width: 700px;
+        padding-bottom: 12px;
+      }
+
+      .var-mtgrey-1 {
+        color: var(--mtgrey-1);
+        letter-spacing: 0.1em;
+      }
+
+      .var-mtgrey-2 {
+        color: var(--mtgrey-2);
+        letter-spacing: 0.1em;
+      }
+
+      .var-mtgrey-3 {
+        color: var(--mtgrey-3);
+        letter-spacing: 0.1em;
+      }
+
+      .me-142 {
+        margin-right: 142px;
+      }
+
+      .me-12 {
+        margin-right: 12px;
+      }
+
+      .mt-36 {
+        margin-top: 36px;
+      }
+
+      .mb-102 {
+        margin-bottom: 102px;
+      }
+
+      .mb-68 {
+        margin-bottom: 68px;
+      }
+
+      .mb-42 {
+        margin-bottom: 42px;
+      }
+
+      .mb-40 {
+        margin-bottom: 40px;
+      }
+
+      .mb-28 {
+        margin-bottom: 28px;
+      }
+
+      .mb-15 {
+        margin-bottom: 15px;
+      }
+
+      .pd-40 {
+        padding-bottom: 40px;
+      }
+
+      .wrap-container {
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .shopping-cart-contain > img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .shopping-cart-contain > p {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.1em;
+        color: var(--mtgrey-1);
+      }
+
+      h3 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 43px;
+        align-items: center;
+        letter-spacing: 0.1em;
+        margin-bottom: 0;
+        color: var(--mtgreen-1);
+      }
+
+      #shopping-cart-title {
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--mtgrey-3);
+      }
+
+      .shopping-cart-contain > .d-flex > p {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 29px;
+        align-items: center;
+        letter-spacing: 0.1em;
+      }
+
+      .shopping-cart-contain > .d-flex.border-green {
+        padding-bottom: 60px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid var(--mtgreen-1);
+      }
+
+      .shopping-cart-contain .d-flex > p.fw-600 {
+        font-weight: 600;
+      }
+
+      .w2 {
+        width: 45%;
+      }
+
+      .w3 {
+        width: calc(60% / 4);
+      }
+
+      .w4 {
+        width: calc(60% / 4);
+      }
+
+      .w5 {
+        width: 12%;
+        /* calc(60% / 4); */
+      }
+
+      .w6 {
+        width: 13%;
+        /* calc(60% / 4); */
+      }
+
+      .product-col-title {
+        color: var(--mtgrey-3);
+      }
+
+      .product-col {
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        /* margin-bottom: 40px; */
+      }
+
+      .product-img-wrap {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 10px;
+        /* border: 1px solid black; */
+        overflow: hidden;
+      }
+
+      .product-title {
+        font-weight: 700;
+        /* font-size: 20px; */
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        color: var(--mtgrey-1);
+        margin-bottom: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-image">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="left">
+            <a href="">
+              <img src="./../icons/logo.svg" alt="" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse navigations"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="link" to="/"> 商品總覽 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/member-list"> 難易分級 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/"> 季節推薦 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/"> 線上測驗 </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="right">
+            <ul class="navbar-nav me-auto mb-lg-0 ulRight">
+              <li class="nav-item liRight search">
+                <div class="search-input">
+                  <img src="./../icons/search-icon.svg" alt="" />
+                  <span>輸入登山路線、季節熱門路線</span>
+                </div>
+              </li>
+              <li class="nav-item liRight notification">
+                <a class="link" href="/">
+                  <img src="./../icons/bell.svg" alt="" />
+                </a>
+              </li>
+              <li class="nav-item liRight cart">
+                <a class="link" href="/">
+                  <img src="./../icons/shopping-cart.svg" alt="" />
+                </a>
+              </li>
+              <li class="nav-item liRight profile">
+                <a class="link" href="/">
+                  <img src="./../icons/profile.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="container">
+        <section class="row shopping-cart-process justify-content-center">
+          <img src="./svg/shopping-cart4.svg" />
+          <div class="d-flex justify-content-center mb-42">
+            <p class="me-142 var-mtgrey-3">確認訂單</p>
+            <p class="me-142 var-mtgrey-3">填寫資料</p>
+            <p class="me-142 var-mtgrey-3">付款頁面</p>
+            <p class="var-mtgrey-1">完成訂單</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="wrap-container shopping-cart-contain mb-50">
+        <img src="./svg/complete.svg" alt="" />
+        <p class="mt-36 mb-68">
+          謝謝您的購買！<br />
+          您的訂單正在處理中
+        </p>
+
+        <div id="shopping-cart-title" class="d-flex align-items-center mb-28">
+          <img src="./svg/check-circle.svg" alt="" class="me-12" />
+          <h3>訂單細節</h3>
+        </div>
+        <div class="d-flex justify-content-between mb-15">
+          <p class="var-mtgrey-2">訂單編號</p>
+          <p class="var-mtgrey-1 fw-600">S12345678</p>
+        </div>
+        <div class="d-flex justify-content-between mb-15">
+          <p class="var-mtgrey-2">訂單編號</p>
+          <p class="var-mtgrey-1 fw-600">2023/01/01</p>
+        </div>
+        <div class="d-flex justify-content-between border-green">
+          <p class="var-mtgrey-2">付款方式</p>
+          <p class="var-mtgrey-1 fw-600">信用卡支付</p>
+        </div>
+
+        <div class="row mb-102">
+          <div class="col-7"></div>
+          <div class="col-5">
+            <div class="d-flex justify-content-between">
+              <p class="var-mtgrey-2">小計</p>
+              <p class="var-mtgrey-1">NTD $2,330</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="var-mtgrey-2">優惠券</p>
+              <p class="var-mtgrey-1">-NTD $100</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="var-mtgrey-2 fw-600">合計</p>
+              <p class="var-mtgrey-1 fw-600">NTD $2,230</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row w-100 product-col justify-content-between mb-40">
+          <div class="w2">
+            <div class="row w-100">
+              <div class="col-4">
+                <div class="product-img-wrap">
+                  <img src="./img/shopping-cart1.png" />
+                </div>
+              </div>
+              <div class="col-8 px-0">
+                <p class="product-title">
+                  草嶺古道｜探索新北一日遊探索新北一日遊
+                </p>
+                <p class="product-subtitle mb-0">草嶺古道單日行程</p>
+              </div>
+            </div>
+          </div>
+          <div class="w3 ps-0">
+            <p class="mb-0 var-mtgrey-3">2023/01/01</p>
+            <p class="mb-0 var-mtgrey-3">&emsp;&emsp;|</p>
+            <p class="mb-0 var-mtgrey-3">2023/01/02</p>
+          </div>
+          <div class="w4 ps-0">NTD 1,200</div>
+          <div class="w5 ps-0">
+            <div class="d-flex">
+              <p class="product-number me-3">x 1</p>
+            </div>
+          </div>
+          <div class="w6 ps-0">NTD 1,200</div>
+        </div>
+        <div class="row w-100 product-col justify-content-between mb-40">
+          <div class="w2">
+            <div class="row w-100">
+              <div class="col-4">
+                <div class="product-img-wrap">
+                  <img src="./img/shopping-cart1.png" />
+                </div>
+              </div>
+              <div class="col-8 px-0">
+                <p class="product-title">
+                  草嶺古道｜探索新北一日遊探索新北一日遊
+                </p>
+                <p class="product-subtitle mb-0">草嶺古道單日行程</p>
+              </div>
+            </div>
+          </div>
+          <div class="w3 ps-0">
+            <p class="mb-0 var-mtgrey-3">2023/01/01</p>
+            <p class="mb-0 var-mtgrey-3">&emsp;&emsp;|</p>
+            <p class="mb-0 var-mtgrey-3">2023/01/02</p>
+          </div>
+          <div class="w4 ps-0">NTD 1,200</div>
+          <div class="w5 ps-0">
+            <div class="d-flex">
+              <p class="product-number me-3">x 1</p>
+            </div>
+          </div>
+          <div class="w6 ps-0">NTD 1,200</div>
+        </div>
+        <div class="row w-100 product-col justify-content-between pd-40">
+          <div class="w2">
+            <div class="row w-100">
+              <div class="col-4">
+                <div class="product-img-wrap">
+                  <img src="./img/shopping-cart1.png" />
+                </div>
+              </div>
+              <div class="col-8 px-0">
+                <p class="product-title">
+                  草嶺古道｜探索新北一日遊探索新北一日遊
+                </p>
+                <p class="product-subtitle mb-0">草嶺古道單日行程</p>
+              </div>
+            </div>
+          </div>
+          <div class="w3 ps-0">
+            <p class="mb-0 var-mtgrey-3">2023/01/01</p>
+            <p class="mb-0 var-mtgrey-3">&emsp;&emsp;|</p>
+            <p class="mb-0 var-mtgrey-3">2023/01/02</p>
+          </div>
+          <div class="w4 ps-0">NTD 1,200</div>
+          <div class="w5 ps-0">
+            <div class="d-flex">
+              <p class="product-number me-3">x 1</p>
+            </div>
+          </div>
+          <div class="w6 ps-0">NTD 1,200</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
