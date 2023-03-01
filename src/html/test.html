@@ -90,79 +90,98 @@
         class="clouds-web"
         src="./../images/test/clouds/pic20.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic19.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic18.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic17.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic16.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic15.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic14.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic13.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic12.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic11.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic10.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic09.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic08.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic07.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic06.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic05.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic04.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic03.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic02.png"
         alt="cloud"
-      /><img
+      />
+      <img
         class="clouds-web"
         src="./../images/test/clouds/pic01.png"
         alt="cloud"
@@ -170,10 +189,9 @@
       <!-- web-clouds  -->
       <!-- mobile-clouds -->
       <img
+        class="clouds-mobile"
         src="./../images/test/clouds/mobile/pic11.png"
         alt=""
-        0
-        class="clouds-mobile"
       /><img
         src="./../images/test/clouds/mobile/pic10.png"
         alt=""
@@ -324,7 +342,7 @@
       </div>
     </section>
     <section class="price">
-        <img src="./../images/test/price-bgtext.svg" alt="">
+      <img src="./../images/test/price-bgtext.svg" alt="" />
       <div class="price-text">
         <h1 class="congrats">Congrats!!!</h1>
         <h3 class="num-of-Ques">
@@ -390,98 +408,105 @@
     </footer> -->
     <script>
       const images = document.querySelectorAll('.intro-page img')
-      const mount_g2 = images[20]
+      const mount_g2 = images[31]
       const g2_left = window.getComputedStyle(mount_g2).left
       const g2_top = window.getComputedStyle(mount_g2).top
 
-      const mount_y2 = images[21]
+      const mount_y2 = images[32]
       const y2_left = window.getComputedStyle(mount_y2).left
       const y2_top = window.getComputedStyle(mount_y2).top
 
-      const mount_g1 = images[22]
+      const mount_g1 = images[33]
       const g1_left = window.getComputedStyle(mount_g1).left
       const g1_top = window.getComputedStyle(mount_g1).top
 
-      const mount_y1 = images[23]
+      const mount_y1 = images[34]
       const y1_left = window.getComputedStyle(mount_y1).left
       const y1_top = window.getComputedStyle(mount_y1).top
 
       console.log(images)
 
-      //   let mouseX, mouseY
-      //   let originMouseX, originMouseY
+      let mouseX, mouseY
+      let originMouseX, originMouseY
+
+      let timeoutId
 
       document.addEventListener('mousemove', function (e) {
-        const windowHeight = window.innerHeight
-        const windowWidth = window.innerWidth
+        clearTimeout(timeoutId)
+        timeoutId = setTimeout(function () {
+          // code to be executed after 100ms delay
+          const windowHeight = window.innerHeight
+          const windowWidth = window.innerWidth
 
-        mouseX = e.clientX
-        mouseY = e.clientY
+          mouseX = e.clientX
+          mouseY = e.clientY
 
-        const moveX = 10
-        const moveY = 10
+          const moveX = 10
+          const moveY = 10
 
-        if (mouseX >= originMouseX) {
-          if (mouseY >= originMouseY) {
-            mount_g2.style.left = `${parseInt(g2_left) + moveX}px`
-            mount_g2.style.top = `${parseInt(g2_top) + moveY}px`
+          if (mouseX >= originMouseX) {
+            if (mouseY >= originMouseY) {
+              mount_g2.style.left = `${parseInt(g2_left) + moveX}px`
+              mount_g2.style.top = `${parseInt(g2_top) + moveY}px`
 
-            mount_g1.style.left = `${parseInt(g1_left) + moveX}px`
-            mount_g1.style.top = `${parseInt(g1_top) - moveY}px`
+              mount_g1.style.left = `${parseInt(g1_left) + moveX}px`
+              mount_g1.style.top = `${parseInt(g1_top) - moveY}px`
 
-            mount_y2.style.left = `${parseInt(y2_left) - moveX}px`
-            mount_y2.style.top = `${parseInt(y2_top) + moveY}px`
+              mount_y2.style.left = `${parseInt(y2_left) - moveX}px`
+              mount_y2.style.top = `${parseInt(y2_top) + moveY}px`
 
-            mount_y1.style.left = `${parseInt(y1_left) - moveX}px`
-            mount_y1.style.top = `${parseInt(y1_top) - moveY}px`
+              mount_y1.style.left = `${parseInt(y1_left) - moveX}px`
+              mount_y1.style.top = `${parseInt(y1_top) - moveY}px`
+            } else {
+              mount_g2.style.left = `${parseInt(g2_left) + moveX}px`
+              mount_g2.style.top = `${parseInt(g2_top) - moveY}px`
+
+              mount_g1.style.left = `${parseInt(g1_left) - moveX}px`
+              mount_g1.style.top = `${parseInt(g1_top) + moveY}px`
+
+              mount_y2.style.left = `${parseInt(y2_left) - moveX}px`
+              mount_y2.style.top = `${parseInt(y2_top) - moveY}px`
+
+              mount_y1.style.left = `${parseInt(y1_left) + moveX}px`
+              mount_y1.style.top = `${parseInt(y1_top) + moveY}px`
+            }
           } else {
-            mount_g2.style.left = `${parseInt(g2_left) + moveX}px`
-            mount_g2.style.top = `${parseInt(g2_top) - moveY}px`
+            if (mouseY >= originMouseY) {
+              mount_g2.style.left = `${parseInt(g2_left) - moveX}px`
+              mount_g2.style.top = `${parseInt(g2_top) + moveY}px`
 
-            mount_g1.style.left = `${parseInt(g1_left) - moveX}px`
-            mount_g1.style.top = `${parseInt(g1_top) + moveY}px`
+              mount_g1.style.left = `${parseInt(g1_left) - moveX}px`
+              mount_g1.style.top = `${parseInt(g1_top) - moveY}px`
 
-            mount_y2.style.left = `${parseInt(y2_left) - moveX}px`
-            mount_y2.style.top = `${parseInt(y2_top) - moveY}px`
+              mount_y2.style.left = `${parseInt(y2_left) + moveX}px`
+              mount_y2.style.top = `${parseInt(y2_top) + moveY}px`
 
-            mount_y1.style.left = `${parseInt(y1_left) + moveX}px`
-            mount_y1.style.top = `${parseInt(y1_top) + moveY}px`
+              mount_y1.style.left = `${parseInt(y1_left) + moveX}px`
+              mount_y1.style.top = `${parseInt(y1_top) - moveY}px`
+            } else {
+              mount_g2.style.left = `${parseInt(g2_left) - moveX}px`
+              mount_g2.style.top = `${parseInt(g2_top) - moveY}px`
+
+              mount_g1.style.left = `${parseInt(g1_left) + moveX}px`
+              mount_g1.style.top = `${parseInt(g1_top) + moveY}px`
+
+              mount_y2.style.left = `${parseInt(y2_left) + moveX}px`
+              mount_y2.style.top = `${parseInt(y2_top) - moveY}px`
+
+              mount_y1.style.left = `${parseInt(y1_left) - moveX}px`
+              mount_y1.style.top = `${parseInt(y1_top) + moveY}px`
+            }
           }
-        } else {
-          if (mouseY >= originMouseY) {
-            mount_g2.style.left = `${parseInt(g2_left) - moveX}px`
-            mount_g2.style.top = `${parseInt(g2_top) + moveY}px`
 
-            mount_g1.style.left = `${parseInt(g1_left) - moveX}px`
-            mount_g1.style.top = `${parseInt(g1_top) - moveY}px`
-
-            mount_y2.style.left = `${parseInt(y2_left) + moveX}px`
-            mount_y2.style.top = `${parseInt(y2_top) + moveY}px`
-
-            mount_y1.style.left = `${parseInt(y1_left) + moveX}px`
-            mount_y1.style.top = `${parseInt(y1_top) - moveY}px`
-          } else {
-            mount_g2.style.left = `${parseInt(g2_left) - moveX}px`
-            mount_g2.style.top = `${parseInt(g2_top) - moveY}px`
-
-            mount_g1.style.left = `${parseInt(g1_left) + moveX}px`
-            mount_g1.style.top = `${parseInt(g1_top) + moveY}px`
-
-            mount_y2.style.left = `${parseInt(y2_left) + moveX}px`
-            mount_y2.style.top = `${parseInt(y2_top) - moveY}px`
-
-            mount_y1.style.left = `${parseInt(y1_left) - moveX}px`
-            mount_y1.style.top = `${parseInt(y1_top) + moveY}px`
-          }
-        }
-
-        originMouseX = mouseX
-        originMouseY = mouseY
-        // console.log('g2_left: ', g2_left)
-        console.log('----------------------')
-        console.log('mouseX: ', mouseX)
-        console.log('moveX: ', moveX)
-        console.log('moveY: ', moveY)
+          originMouseX = mouseX
+          originMouseY = mouseY
+          // console.log('g2_left: ', g2_left)
+          console.log('----------------------')
+          console.log('mouseX: ', mouseX)
+          console.log('moveX: ', moveX)
+          console.log('moveY: ', moveY)
+          console.log('Mouse moved after debounce')
+        }, 10)
       })
     </script>
   </body>
