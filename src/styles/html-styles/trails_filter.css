@@ -1,7 +1,7 @@
 /* ALL */
 html,
 body {
-  font-family: 'Noto Sans TC';
+  background-color: #FFFFF2;
 }
 
 * {
@@ -25,16 +25,26 @@ h1 {
 }
 
 /* main */
+
+.main_all{
+  margin: 3.125% 6.25%;
+}
 /* main left-card */
+.main_card{
+  margin-right: 52px;
+}
+
 .h5-sub-title {
   color: var(--mtgreen-1);
   font-weight: 700;
 }
 
 .left-card {
+  position: absolute;
+  margin: 0;
+  background: var(--mtyellow-4);
   box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
-  width: 18rem;
-  height: 25rem;
+  border-radius: 10px;
 }
 
 /* input-with-icon */
@@ -61,7 +71,7 @@ h1 {
   background: rgba(206, 232, 203, 0.6);
 }
 
-.input_style{
+.input_style {
   border: none;
   background: rgba(206, 232, 203, 0.6);
   height: 2.5rem;
@@ -117,7 +127,7 @@ h1 {
   line-height: 150%;
 }
 
-.heart_btn{
+.heart_btn {
   border: none;
   padding: 0;
   background-color: transparent;
@@ -151,11 +161,15 @@ h1 {
 
 /* pagination */
 
+.page-bar nav {
+  background-color: transparent;
+}
+
 .page-item {
   margin: 4px;
 }
 
-.pagination .page-link{
+.pagination .page-link {
   color: var(--mtgreen-1);
   border-radius: 5px;
   border: 1px solid var(--mtgreen-4);

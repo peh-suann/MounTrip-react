@@ -1,7 +1,7 @@
-/* html,
+html,
 body {
-  border: 1.5px solid black;
-} */
+  background-color: #FFFFF2;
+}
 
 * {
   /* border: 1px dashed brown */
@@ -180,12 +180,15 @@ body {
 }
 
 /* pagination */
+.page-bar nav {
+  background-color: transparent;
+}
 
 .page-item {
   margin: 4px;
 }
 
-.pagination .page-link{
+.pagination .page-link {
   color: var(--mtgreen-1);
   border-radius: 5px;
   border: 1px solid var(--mtgreen-4);
