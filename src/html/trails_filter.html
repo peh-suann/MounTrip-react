@@ -74,16 +74,16 @@
   <main>
     <div class="d-flex flex-row main_all ">
       <!-- left-card for 電腦版 -->
-      <div class="main_card ">
-        <div class="card left-card">
-          <div class="card-body d-flex flex-column ms-2 me-2">
+      <div class="left-card ">
+        <div class="card ">
+          <div class="card-body d-flex flex-column ">
             <h5 class="h5-sub-title">搜尋</h5>
             <!-- input group -->
             <!-- FIXME: input:focus -->
-            <div class="d-flex flex-column ">
+            <div class="d-flex flex-column search">
               <p class="mb-0 p-content">目的地</p>
               <!-- input-with-icon  -->
-              <div class=" input-with-icon mb-3 rounded-3 d-flex flex-row ">
+              <div class=" input-with-icon  rounded-3 d-flex flex-row ">
                 <span class="icon_span col ps-2">
                   <img class="" src="../icons/search-icon.svg" alt="">
                 </span>
@@ -93,10 +93,10 @@
               </div>
             </div>
 
-            <div class="d-flex flex-column ">
+            <div class="d-flex flex-column search">
               <p class="mb-0 p-content">出發日期</p>
               <!-- input-with-icon date -->
-              <div class=" input-with-icon mb-3 rounded-3 d-flex flex-row ">
+              <div class=" input-with-icon  rounded-3 d-flex flex-row ">
                 <span class="icon_span col ps-2">
                   <img class="" src="../icons/calendar.svg" alt="">
                 </span>
@@ -107,10 +107,24 @@
               </div>
             </div>
 
-            <div class="d-flex flex-column ">
+            <div class="d-flex flex-column search">
+              <p class="mb-0 p-content">出發日期</p>
+              <!-- input-with-icon date -->
+              <div class=" input-with-icon  rounded-3 d-flex flex-row ">
+                <span class="icon_span col ps-2">
+                  <img class="" src="../icons/calendar.svg" alt="">
+                </span>
+                <div class="col">
+                  <!-- FIXME:如何點擊input 或 改以左邊的圖示顯示日期表 -->
+                  <input class="input_style" type="date" id="picker" pseudo="-webkit-calendar-picker-indicator">
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column search_count">
               <p class="mb-0 p-content">人數</p>
               <!-- input-with-icon  -->
-              <div class=" input-with-icon mb-3 rounded-3 d-flex flex-row ">
+              <div class=" input-with-icon  rounded-3 d-flex flex-row">
                 <span class="icon_span col ps-2">
                   <img class="" src="../icons/num_people.svg" alt="">
                 </span>
@@ -129,15 +143,15 @@
       <div class="right-card d-flex flex-column ">
 
         <!-- right-card > sub_title -->
-        <div class="row mb-4">
+        <div class="row sub_title">
           <div class=" d-flex ">
-            <div class="col me-3 d-none d-lg-flex">
+            <div class="col-4 d-none d-lg-flex Vector_long">
               <img src="./imgs/Vector.svg" alt="">
             </div>
-            <div class="col">
+            <div class="col-4">
               <h5 class="h5-sub-title-search">「草嶺古道」的搜尋結果</h5>
             </div>
-            <div class="col ms-3 d-none d-lg-flex">
+            <div class="col-4 d-none d-lg-flex Vector_long">
               <img src="./imgs/Vector.svg" alt="">
             </div>
           </div>
@@ -146,7 +160,7 @@
         <!-- right-card > trails-cards -->
         <div class="col">
           <!-- card group > card*n -->
-          <div class="card mb-3 card_shadow ">
+          <div class="mb-3 card_shadow ">
             <div class="row g-0 d-flex flex-row  ">
               <div class="col-4 trails_img_wrap ">
                 <img src="./imgs/5-1.jpg" class="trails_img rounded-start" alt="...">
@@ -155,7 +169,7 @@
                 <div class="card-body">
                   <h5 class="product-name">草嶺古道｜探索新北一日遊探索新北一日遊</h5>
                   <div class="mb-2">
-                    <p class="overflow_p p_line_clamp">
+                    <p class="overflow_p p_line_clamp mb-0">
                       你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
                     </p>
                   </div>
@@ -191,7 +205,7 @@
               </div>
             </div>
           </div>
-          <div class="card mb-3 card_shadow ">
+          <div class="mb-3 card_shadow ">
             <div class="row g-0 d-flex flex-row  ">
               <div class="col-4 trails_img_wrap ">
                 <img src="./imgs/5-1.jpg" class="trails_img rounded-start" alt="...">
@@ -200,7 +214,7 @@
                 <div class="card-body">
                   <h5 class="product-name">草嶺古道｜探索新北一日遊探索新北一日遊</h5>
                   <div class="mb-2">
-                    <p class="overflow_p p_line_clamp">
+                    <p class="overflow_p p_line_clamp mb-0">
                       你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
                     </p>
                   </div>
@@ -236,7 +250,7 @@
               </div>
             </div>
           </div>
-          <div class="card mb-3 card_shadow ">
+          <div class="mb-3 card_shadow ">
             <div class="row g-0 d-flex flex-row  ">
               <div class="col-4 trails_img_wrap ">
                 <img src="./imgs/5-1.jpg" class="trails_img rounded-start" alt="...">
@@ -245,7 +259,7 @@
                 <div class="card-body">
                   <h5 class="product-name">草嶺古道｜探索新北一日遊探索新北一日遊</h5>
                   <div class="mb-2">
-                    <p class="overflow_p p_line_clamp">
+                    <p class="overflow_p p_line_clamp mb-0">
                       你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
                     </p>
                   </div>
@@ -281,6 +295,7 @@
               </div>
             </div>
           </div>
+
         </div>
 
         <!-- pagination -->

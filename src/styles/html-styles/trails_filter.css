@@ -16,35 +16,54 @@ h1 {
   background-color: var(--mtgreen-2);
   width: 100px;
   height: 100px;
-
 }
 
+/* 
 .btn {
   border: none;
   background-color: none;
-}
+} */
 
 /* main */
 
-.main_all{
-  margin: 3.125% 6.25%;
+.main_all {
+  /* border: 1px solid black; */
+  margin: 60px 100px;
 }
+
 /* main left-card */
-.main_card{
-  margin-right: 52px;
+.left-card {
+  /* border: 1px solid black; */
+  width: 373px;
+  height: 16.5%;
+  margin-right: 45px;
+  background: var(--mtyellow-4);
+  box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
+  border-radius: 10px;
 }
+
+.left-card .card .card-body{
+  padding: 36px;
+}
+
+main .right-card {
+  /* border: 1px solid black; */
+  width: 1000px;
+  margin: 0;
+}
+
+.left-card .search{
+  padding-bottom: 12px;
+}
+
+.search_count{
+  padding-bottom: 36px;  
+}
+
 
 .h5-sub-title {
   color: var(--mtgreen-1);
   font-weight: 700;
-}
-
-.left-card {
-  position: absolute;
-  margin: 0;
-  background: var(--mtyellow-4);
-  box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
-  border-radius: 10px;
 }
 
 /* input-with-icon */
@@ -103,8 +122,19 @@ h1 {
 
 /* main right-card */
 
+
+.right-card .sub_title {
+  /* border: 1px solid black; */
+  margin-bottom: 5%;
+}
+
+.right-card .Vector_long{
+  width: 378px;
+}
+
 .h5-sub-title-search {
-  font-size: 24px;
+  white-space: nowrap;
+  font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 7px;
