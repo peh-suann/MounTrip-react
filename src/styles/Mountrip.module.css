@@ -160,7 +160,8 @@
     }
   
   * {
-    font-family: 'Noto Sans', 'Noto Sans TC', sans-serif;
+    /* font-family: 'Noto Sans', 'Noto Sans TC', sans-serif; */
+    font-family:  'Noto Sans TC','Noto Sans', sans-serif;
   }
 
 /* global通用css屬性 */
