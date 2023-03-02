@@ -175,6 +175,11 @@
 }
 
 /* difficultyMountain */
+
+.difficultyAll{
+  height:70vh;
+  background-color:var(--mtyellow-4);
+}
 .difficulty{
 height:64vh;
 width: 100%;
@@ -183,18 +188,16 @@ background-color: rgba(255, 255, 242, 0.9);
 position: relative;
 overflow: hidden;
 }
-
 .difficulty_text{
 width: 29%;
 background-color: rgba(255, 255, 242, 0.9);
 position: absolute;
 top: 12%;
-left: 36%;
+left: 35%;
 }
 .difficulty_text > p{
 margin:0;
 }
-
 .difficulty_firstText > span{
 color:black;
 font-weight: 700;
@@ -203,7 +206,6 @@ line-height: 41px;
 text-align: center;
 letter-spacing: 0.1em;
 }
-
 .difficulty_secondText,.difficulty_secondText >span  {
 font-weight: 400;
 font-size: 18px; 
@@ -217,13 +219,11 @@ font-size: 18px;
 line-height: 26px;
 letter-spacing: 0.1em;
 }
-
 .dMountain_hard{
 position: absolute;
 top:60%;
 left: 0%;
 }
-
 .difficultyMountain_focus{
 width: 180px;
 height: 180px;
@@ -241,17 +241,13 @@ left: 26.5%;
 }
 .dMountain_medium{
 position: absolute;
-/* top: 34%;
-left: 85%; */
 top: 75%;
-left: 40%;
+left: 39%;
 }
 .dMountain_easy{
 position: absolute;
-/* top: 60.5%;
-left: 155%; */
 top: 85%;
-left: 73%;
+left: 71%;
 }
 
 
@@ -262,7 +258,7 @@ left: 73%;
 padding: 90px 120px 0px 120px;
 /* margin-top: 5%; */
 background-color: rgba(255, 255, 242, 0.9);
-height:90vh ;
+height:120vh ;
 }
 .tPSecondSectionH5_text{
 font-weight: 900;
@@ -272,11 +268,6 @@ font-weight: 700;
 line-height: 26px;
 letter-spacing: 0.1em;
 }
-/* .tPSSection_cards{
-width: 100%;
-} */
-
-
 div.tPSSCard_num{
 width: 60px;
 position: absolute;
@@ -287,8 +278,6 @@ width: 100%;
 position: relative;
 padding: 0px;
 }
-
-
 .tPSSCard_pic1{
 height: 250px;
 background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-1.jpg") no-repeat;
@@ -343,9 +332,6 @@ flex-grow: 1;
 border-radius: 10px;
 
 }
-
-
-
 .tPSSCard_num{
 position: relative;
 top: -18px;
@@ -377,13 +363,11 @@ margin: 0;
 
 /* footer */
 footer{
-/* padding-top:%; */
 height: 130px;
 display: flex;
 justify-content: space-between;
 background-color: var(--mtgreen-1);
 padding: 36px 120px;
-margin-top:150px ;
 }
 footer > div > a,span{
 color:white;
@@ -395,27 +379,29 @@ letter-spacing: 0.1em;
 }
 
 /* button */
-
-.difficultySection_button{
-/* padding-top:5% ; */
-}
 .allSection_btn{
-margin:auto;
-border-radius: 5px;
-padding: 8px 24px;
-background-color: var(--mtgreen-1);
-font-size: 20px;
-color: white;
-font-weight: 900;
-border:none;
-}
-.allSection_btn > span{
-letter-spacing: 0.1em;
-}
+  margin:auto;
+  border-radius: 5px;
+  padding: 8px 24px;
+  background-color: var(--mtgreen-1);
+  color: white;
+  
+  border:none;
+  }
+  .allSection_btn > span{
+  letter-spacing: 0.1em;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 900;
+  }
 
 
 
 @media screen and (max-width:391px) {
+
+.difficultyAll{
+  height: 55vh;
+}
 
 .difficulty{
   height: 60vh;
@@ -426,6 +412,13 @@ letter-spacing: 0.1em;
   position: absolute;
   top: 10%;
   left: 0%;
+}
+
+/* secondSection2 */
+.totalProduct_secondSection{
+  padding: 0px;
+  height: 300vh;
+  background-color: var(--mtyellow-4);
 }
   .difficulty_firstText > span{
   font-size: 22px;
@@ -456,32 +449,30 @@ left:-12%;
 .dMountain_medium{
 width: 80%;
 position: absolute;
-top: 70%;
+top: 67%;
 left: 25%;
 }
 .dMountain_easy{
 width: 80%;
 position: absolute;
-top: 80%;
+top: 75%;
 left: 40%;
 }
 .difficulty_flag{
 width: 7%;
 position: absolute;
-top: 64%;
-
+top: 62%;
 }
 
 /* button */
-.allSection_btn{
-width: 90%;
-}
-
-
-  /* secondSection */
-.totalProduct_secondSection{
-  padding: 0px;
-}
+  .allSection_btn{
+  width: 90%;
+  border-radius: 5px;
+  padding: 8px 24px;
+  background-color: var(--mtgreen-1);
+  color: white;
+  border:none;
+  }
 
 /* footer */
 footer{

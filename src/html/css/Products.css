@@ -177,23 +177,25 @@
 .body{
 background-color:var(--mtyellow-4);
 }
-/* All section */
+
+/* All section use*/
 .allSectionCard_svg{
 position:absolute ;
 top: 140px;
 left: 94%;
 }
-.allSection_btn{
+button.allSection_btn{
 border-radius: 5px;
 padding: 8px 24px;
 background-color: var(--mtgreen-1);
-font-size: 20px;
 color: white;
-font-weight: 900;
 border:none;
 }
-.allSection_btn > span{
+button.allSection_btn > span{
 letter-spacing: 0.1em;
+font-size: 20px;
+font-weight: 900;
+line-height: 27px;
 }
 
 /* section1 */
@@ -227,60 +229,53 @@ font-size: 37px;
 font-weight:900;
 line-height: 50px;
 }
-
-
-
-.tPFSearch_first{
+.tPFirstSectionSearch_first{
 position: relative;
 padding: 12px;
 background-color: var(--mtyellow-4);
 border-right:4px solid var(--mtgrey-4);
 order: 0;
 }
-.tPFSearch_first > div > svg{
+.tPFirstSectionSearch_first > div > svg{
 position: absolute;
 left: 20px;
 }
-
-
-.tPFSearch_second{
+.tPFirstSectionSearch_second{
 position: relative;
 padding: 12px;
 background-color: var(--mtyellow-4);
 border-right:4px solid var(--mtgrey-4);
 order: 1;
 }
-.tPFSearch_second > div > svg{
+.tPFirstSectionSearch_second > div > svg{
 position: absolute;
 left: 20px;
 }
-.dateSecond_svg{
+.tPFirstSectionSearch_secondSvg{
 display: none;
 }
-.tPFSearch_third{
+.tPFirstSectionSearch_third{
 position: relative;
 padding: 12px;
 background-color: var(--mtyellow-4);
 order: 2;
 }
-.tPthirdSection_search > input{
+.tPthirdSection_thirdSearch > input{
 border:none;
 background-color: var(--mtyellow-4);
 } 
-.tPthirdSection_search > span {
+.tPthirdSection_thirdSearch > span {
 color:var(--mtgreen-1) ;
 font-weight: 500;
 font-size: 22px;
 line-height: 32px;
 letter-spacing: 0.05em;
 }
-.tPFSearch_third > div > svg{
+.tPFirstSectionSearch_third > div > svg{
 position: absolute;
 left: 20px;
 }
-
-.totalProductfirstBg_searchAll > .tPFSearch_btn{
-width: 140px;
+.totalProductfirstBg_searchAll > .tPFirstSeactionSearch_btn{
 background-color: var(--mtgreen-2);
 order: 3;
 }
@@ -290,8 +285,7 @@ font-size: 20px;
 line-height: 29px;
 letter-spacing: 0.05em;
 }
-
-.tPFSearch_btn > h4{
+.tPFirstSeactionSearch_btn > h4{
 color: white;
 margin-bottom: 0;
 font-weight: 400;
@@ -299,7 +293,7 @@ font-size: 26px;
 line-height: 33px;
 letter-spacing: 0.05em;
 }
-.tPFirstSection_search{
+.tPFirstSectionSearch_input{
 color: black;
 height: 36px;
 border:none;
@@ -309,7 +303,7 @@ font-size: 22px;
 line-height: 32px;
 letter-spacing: 0.05em;
 }
-.tPthirdSection_search{
+.tPthirdSection_thirdSearch{
 color: black;
 height: 36px;
 border:none;
@@ -332,12 +326,13 @@ width: 24px;
 height: 24px;
 }
 
+
+
 /* section2 */
 .totalProduct_secondSection{
-padding: 90px 120px 0px 120px;
-/* margin-top: 5%; */
+padding: 0px 120px;
+padding-top: 120px;
 background-color: rgba(255, 255, 242, 0.9);
-height:110vh ;
 }
 .tPSecondSectionH5_text{
 font-weight: 900;
@@ -347,11 +342,11 @@ font-weight: 700;
 line-height: 26px;
 letter-spacing: 0.1em;
 }
-.tPSSWeb_svg{
+.totalProductSecondSection_WebSvg{
 /* display: none; */
 display: block;
 }
-.tPSSRWD_svg{
+.totalProductSecondSection_RWDSvg{
 display: none;
 /* display: block; */
 }
@@ -364,16 +359,13 @@ left: 89%;
 div.tPSSCard_numsvg{
 padding: 0px;
 }
-
-
 .tPSSCard_pic1{
-height: 250px;
-background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-1.jpg") no-repeat;
-background-size: cover;
-position: relative;
-flex-grow: 1;
-border-radius: 10px;
-
+    height: 250px;
+    background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-1.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+    flex-grow: 1;
+    border-radius: 10px;
 }
 .tPSSCard_pic2{
 height: 250px;
@@ -420,6 +412,16 @@ flex-grow: 1;
 border-radius: 10px;
 
 }
+.tPSSCard_bottom_firstCard{
+  width: 100%;
+  position: absolute;
+  top: 215px;
+  padding: 0px 15px;
+}
+.tPSSCard_bottom_firstCard p{
+  color: white;
+  margin: 0;
+}
 .tPSSCard_bottom{
 width: 100%;
 position: absolute;
@@ -443,16 +445,23 @@ padding: 10px 0px;
 .tPSSCard_body p{
 margin: 0;
 }
+.tPSSCard_bottom_firstCard{
+  width: 100%;
+  position: absolute;
+  top: 165px;
+  padding: 0px 15px;
+  }
+  .tPSSCard_bottom_firstCard p{
+  color: white;
+  margin: 0;
+  }
+
 
 /* section3 */
-.totalProduct_thirdSection{
-
+.totalProduct_secondSection{
+  background-color: var(--mtyellow-4);
+  height: 110vh;
 }
-
-.thSectioncard1{
-padding-right:20px;
-}
-
 .thirdBg{
 height: 650px;
 background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./../img/2.jpg");
@@ -485,104 +494,124 @@ padding:0px 120px;
 position: absolute;
 top: -50px;
 }
+.tPthirdSectionCard_bottom{
+  width: 100%;
+position: absolute;
+top: 215px;
+padding: 0px 15px;
+}
+.tPthirdSectionCard_bottom p{
+  color: white;
+  margin: 0;
+}
+
 
 /* section4 */
-
+.totalProduct_forthSection{
+  padding-top: 20%;
+  background-color: var(--mtyellow-4);
+}
 .forthBg{
-height: 650px;
-background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./../img/3.jpg");
-background-position: 50% 80%;background-size: cover;
-position: relative;
-}
-.forthBg_text{
-width:26% ;
-position: absolute;
-top: 60%;
-left: 37%;
+  height: 650px;
+  background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./../img/3.jpg");
+  background-position: 50% 80%;background-size: cover;
+  position: relative;
+  }
+  .forthBg_text{
+  width:26% ;
+  position: absolute;
+  top: 60%;
+  left: 37%;
+  
+  }
+  .forthBg_text > h1{
+  color: white;
+  font-size: 45px;
+  font-weight: 900
+  }
+  .forthBg_text > p{
+  color: white;
+  letter-spacing: 0.1em;
+  line-height: 26px;
+  }
+  .forthSCardsAll{
+  position: relative;
+  }
+  .forthSectionCards{
+  width: 100%;
+  padding:0px 120px;
+  position: absolute;
+  top: -50px;
+  }
 
-}
-.forthBg_text > h1{
-color: white;
-font-size: 45px;
-font-weight: 900;
-}
-.forthBg_text > p{
-color: white;
-letter-spacing: 0.1em;
-line-height: 26px
-}
-.forthSCardsAll{
-width: 1680px;
-padding: 0px 120px;
-position: relative;
-}
-.forthSectionCards{
-position: absolute;
-top: -30px;
-}
-.forthSectionCard_svg{
-position:absolute ;
-top: 140px;
-left: 100%;
-}
 
 
 /* section5 */
+.totalProduct_fivthSection{
+  padding-top: 20%;
+  background-color: var(--mtyellow-4);
+}
 .fivthBg{
-height: 650px;
-background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./../img/4.jpg");
-background-position: 50% 80%;background-size: cover;
-position: relative;
-}
-.fivthBg_text{
-width:26% ;
-position: absolute;
-top: 60%;
-left: 37%;
-
-}
-.fivthBg_text > h1{
-color: white;
-font-size: 45px;
-font-weight: 900;
-}
-.fivthBg_text > p{
-color: white;
-letter-spacing: 0.1em;
-line-height: 26px
-}
-.fivthSCardsAll{
-width: 1680px;
-padding: 0px 120px;
-position: relative;
-}
-.fivthSectionCards{
-position: absolute;
-top: -30px;
-}
-.forthSectionCard_svg{
-position:absolute ;
-top: 140px;
-left: 100%;
-}
+  height: 650px;
+  background: linear-gradient(180deg, rgba(1, 19, 6, 0) 55.54%, #011306 90.54%),url("./../img/4.jpg");
+  background-position: 50% 80%;background-size: cover;
+  position: relative;
+  }
+  .fivthBg_text{
+  width:26% ;
+  position: absolute;
+  top: 60%;
+  left: 37%;
+  
+  }
+  .fivthBg_text > h1{
+  color: white;
+  font-size: 45px;
+  font-weight: 900
+  }
+  .fivthBg_text > p{
+  color: white;
+  letter-spacing: 0.1em;
+  line-height: 26px;
+  }
+  .fivthSCardsAll{
+  position: relative;
+  }
+  .fivthSectionCards{
+  width: 100%;
+  padding:0px 120px;
+  position: absolute;
+  top: -50px;
+  }
 
 
 /* section6 */
-
-.sixthSection_All{
+.totalProduct_sixthSection{
 width: 100%;
+height: 130vh;
 padding: 0px 120px;
 display: flex;
-margin-top: 410px;
+padding-top: 20%;
+background-color: var(--mtyellow-4);
 }
-.sixthSection_left >.sixthSection > div > h3{
+.sixthSection_left >.sixthSection > div > div > h3{
 font-weight: 700;
-letter-spacing: 0.1em;
+font-size: 30px;
+line-height: 41px;
+letter-spacing: 0.05em;
 }
 .sixthSection_left >.sixthSection > div > p{
 font-size: 18px;
 font-weight: 400;
 letter-spacing: 0.1em;
+line-height: 26px;
+}
+.sixthSection > div > p > span{
+font-size: 18px;
+font-weight: 400;
+letter-spacing: 0.1em;
+line-height: 26px;
+  color: var(--mtgreen-1);
 }
 .sixthSection{
 width: 545px;
@@ -595,15 +624,11 @@ height: 180px;
 background-color: var(--mtgreen-3);
 border-radius: 50%;
 }
-.sixthSMedium{
-width: 267px;
-display: flex;
-justify-content: center;
-}
 .sixthSMedium_pic{
 width: 140px;
 height: 140px;
 background-color: var(--mtgreen-3);
+margin: 0px 20px;
 }
 .sixthSHard_pic{
 width: 180px;
@@ -618,22 +643,19 @@ position: absolute;
 top: 130px;
 left: 1120px;
 }
-.thSectioncard2{
-padding-left:20px;
-}
 
 /* section7 */
 
 .totalProduct_seventhSection{
 width: 100%;
-margin-top:50px ;
+height: 95vh;
+background-color: var(--mtyellow-4);
 }
 .totalProduct_seventhSBg{
 position: relative;
  width: 100%;
 height: 80vh;
 background: url("./../img/bgimgs.jpg") no-repeat;
-
 }
 
 .tPSeventhSection_card{
@@ -646,36 +668,36 @@ padding: 45px 40px;
 }
 .tPSeventhSectionCard_text{
 margin-bottom:30px;
+font-weight: 350;
+font-size: 18px;
 line-height: 26px;
+text-align: center;
 letter-spacing: 0.1em;
 }
 .tPSeventhSection_card > h1{
-margin-bottom:30px;
+margin-bottom:10px;
 font-weight: 900;
+font-size: 36px;
+line-height: 52px;
+text-align: center;
+letter-spacing: 0.1em;
 }
 .tPSeventhSection_card .btn{
 padding: 8px 24px;
 background-color: var(--mtgreen-2) ;
 }
-.allSection_btn{
-border-radius: 5px;
-padding: 8px 24px;
-background-color: var(--mtgreen-1);
-font-size: 20px;
-color: white;
-font-weight: 900;
-border:none;
-}
+
+
+
+
 
 /* footer */
 footer{
-/* padding-top:%; */
 height: 15vh;
 display: flex;
 justify-content: space-between;
 background-color: var(--mtgreen-1);
 padding: 36px 120px;
-margin-top:150px ;
 }
 footer > div > a,span{
 color:white;
@@ -692,16 +714,6 @@ letter-spacing: 0.1em;
 .difficultySection_button{
 /* padding-top:5% ; */
 }
-.allSection_btn{
-margin:auto;
-border-radius: 5px;
-padding: 8px 24px;
-background-color: var(--mtgreen-1);
-font-size: 20px;
-color: white;
-font-weight: 900;
-border:none;
-}
 .allSection_btn > span{
 letter-spacing: 0.1em;
 }
@@ -712,14 +724,26 @@ letter-spacing: 0.1em;
 
 
 @media screen and (max-width:391px) {
-.totalProduct_firstSection{
-padding-bottom: 70%;
-background-color: var(--mtyellow-4);
-}
 
+  .allSection_btn{
+    border-radius: 5px;
+    padding: 4px 12px;
+    background-color: var(--mtgreen-1);
+    color: white;
+    font-weight: 900;
+    border:none;
+    }
+    .allSection_btn > span{
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    }
+
+
+
+/* section1 */
 .totalProduct_firstBg{
 width: 100%;
-background-position:0px 0px;
+background-position:-50px 0px;
 background-size: cover;
 letter-spacing: 0.05em;
 overflow: hidden;
@@ -728,7 +752,7 @@ overflow: hidden;
 color: white;
 position: absolute ;
 top:10%;
-left: 12%;
+left: 15%;
 font-weight:900;
 font-size: 24px;
 line-height: 33px;
@@ -737,7 +761,7 @@ letter-spacing: 0.05em;
 .totalProductfirstBg_spans{
 position: absolute ;
 top:21%;
-left: 5%;
+left: 6%;
 }
 .totalProduct_firstBg > div > span {
 color: white;
@@ -746,68 +770,84 @@ font-size: 36px;
 line-height: 49px;
 letter-spacing: 0.5em;
 }
+.tPFirstSectionSearch_input{
+  color: black;
+  height: 36px;
+  background-color:var(--mtgreen-4);
+  border: 2px solid var(--mtgreen-2);
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.1em;
+  padding-left: 50px;
+  }
 
-/* search */
+/* First Section Search */
 .totalProductfirstBg_searchAll{
+background-color: var(--mtyellow-4);
+border-radius: 0;
 width: 100%;
 position: absolute;
-top:85%;
+top:55%;
 left:0%;
 display: flex;
 flex-wrap: wrap;
+padding: 16px 16px 39px 16px;
 }
-.tPFSearch_first{
-padding-left: 12px;
-width: 60%;
+.totalProductfirstBg_searchAll > div > div > p{
+  font-weight: 350;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+  margin: 0;
+  }
+.tPFirstSectionSearch_first{
+padding: 0;
+width: 57%;
 height: 10%;
 background-color: var(--mtyellow-4);
 order: 0;
 border: none;
 }
-.tPFSearch_first > div > svg{
-height: 25%;
+.tPFirstSectionSearch_first > div > svg{
 position: absolute;
-top: 41px;
+top: 28px;
+left: 10px;
 }
-
-.tPFSearch_second{
-/* padding: 12px; */
+.tPFirstSectionSearch_second{
+padding: 0;
 background-color: var(--mtyellow-4);
 border:none;
 order: 2;
 position: relative;
 }
-.tPFSearch_second > div > svg{
+.tPFirstSectionSearchSecond_dashSvg{
+  display: none;
+  }
+.tPFirstSectionSearch_second > div > svg{
 position: absolute;
-top: 39px;
+top: 28px;
+left: 10px;
 }
-.dateSecond_svg{
+.tPFirstSectionSearch_secondSvg{
 display: block;
 position: absolute;
-top: 39px;
-left: 210px;
+top: 28px;
+left: 195px;
 }
-
-.totalProductfirstBg_searchAll > div > div > p{
-font-weight: 350;
-font-size: 16px;
-line-height: 23px;
-letter-spacing: 0.05em;
-margin: 0;
-}
-
-.tPFSearch_third{
-padding-right: 12px;
+.tPFirstSectionSearch_third{
+padding: 0;
 width: 40%;
-/* padding: 12px; */
 background-color: var(--mtyellow-4);
 order: 1;
 }
-.tPFSearch_third > div > svg{
+.tPFirstSectionSearch_third > div > svg{
 position: absolute;
-top: 39px;
+top: 29px;
+left: 15px;
 }
-.tPFSearch_btn > h4{
+.tPFirstSeactionSearch_btn > h4{
 color: white;
 margin-bottom: 0;
 font-weight: 700;
@@ -815,7 +855,7 @@ font-size: 20px;
 line-height: 27px;
 letter-spacing: 0.1em;
 }
-.tPFirstSection_search{
+.tPthirdSection_thirdSearch{
 color: black;
 height: 36px;
 background-color:var(--mtgreen-4);
@@ -827,53 +867,34 @@ line-height: 25px;
 letter-spacing: 0.1em;
 padding-left: 50px;
 }
-.tPthirdSection_search{
-color: black;
-height: 36px;
-background-color:var(--mtgreen-4);
-border: 2px solid var(--mtgreen-2);
-border-radius: 8px;
-font-weight: 400;
-font-size: 18px;
-line-height: 25px;
-letter-spacing: 0.1em;
-padding-left: 50px;
-}
-.tPthirdSection_search > input{
+.tPthirdSection_thirdSearch > input{
 height: 75%;
 background-color: var(--mtgreen-4);
 border:none ;
 }
-.tPthirdSection_search > span{
+.tPthirdSection_thirdSearch > span{
 color: var(--mtgreen-1);
 }
-.tPFSearch_btn{
-width: 100%;
-}
-.dash_svg{
-display: none;
-}
-.totalProductfirstBg_searchAll > .tPFSearch_btn{
+.totalProductfirstBg_searchAll > .tPFirstSeactionSearch_btn{
 width: 140px;
 background-color: var(--mtgreen-2);
 order: 3;
 }
 
-/* section2 */
 
-.tPSSWeb_svg{
+/* section2 */
+.totalProductSecondSection_WebSvg{
 display: none;
 }
-.tPSSRWD_svg{
+.totalProductSecondSection_RWDSvg{
 display: block;
 }
 .totalProduct_secondSection{
 padding: 0px;
-height:390vh ;
+height:260vh ;
 background-color: var(--mtyellow-4);
 
 }
-
 div.tPSSCard_numsvg{
 padding: 0px;
 }
@@ -883,38 +904,34 @@ top:-15px;
 left: 85%;
 
 }
+div.tPSSCard_numsvg > h3{
+  color:white;
+  position: absolute;
+  top:17px;
+  left: 21px;
+  font-weight: 700;
+  }
+
+
 /* section3 */
-
 .totalProduct_thirdSection{
+background-color: var(--mtyellow-4);
 width: 100%;
+height: 95vh;
 }
-
 .thirdBg{
 width:100%;
+height: 60vh;
 overflow: hidden;
-background-position: -370px 0px;
+background-position: -250px 0px;
 background-size: cover;
 position: relative;
 }
-
-.thirdSCardsAll{
-
-padding: 0px;
-position: relative;
-}
-.thirdSectionCards{
-  position: absolute;
-  top: 0px;
-}
-.thirdSectionCards{
-position: absolute;
-top: -50px;
-
-}
 .thirdBg_text{
 width: 100%;
+padding: 45px;
 position: absolute;
-top: 60%;
+top: 50%;
 left: 0%;
 }
 .thirdBg_text > h1{
@@ -930,6 +947,26 @@ font-size: 12px;
 line-height: 20px;
 letter-spacing: 0.1em;
 }
+.thirdSCardsAll{
+position: relative;
+}
+.thirdSectionCards{
+  padding: 0px;
+  position: absolute;
+  top: 0px;
+}
+.thirdSectionCards{
+position: absolute;
+top: -40px;
+}
+.tPSSCard_pic1{
+  height: 198px;
+}
+.tPthirdSectionCard_bottom{
+  position: absolute;
+  top: 170px;
+  padding: 0px 15px;
+}
 .thirdSectionBtn_svg{
 display: none;
 }
@@ -937,77 +974,195 @@ display: none;
 display: none;
 }
 
-
-
-
-
-/* difficulty */
-.difficulty{
-  height: 60vh;
-}
-/* difficultyMountain_text */
-.difficulty_text{
+/* section4 */
+.totalProduct_forthSection{
+  padding-top: 0px;
+  background-color: var(--mtyellow-4);
   width: 100%;
+  height: 95vh;
+}
+  .forthBg{
+  width:100%;
+  height: 60vh;
+  overflow: hidden;
+  background-position: -250px 0px;
+  background-size: cover;
+  position: relative;
+  }
+  .forthBg_text{
+  width: 100%;
+  padding: 45px;
   position: absolute;
-  top: 10%;
+  top: 50%;
   left: 0%;
-}
-  .difficulty_firstText > span{
-  font-size: 22px;
   }
-  .difficulty_secondText{
+  .forthBg_text > h1{
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  }
+  
+  .forthBg_text > p{
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  }
+  .forthSCardsAll{
+  position: relative;
+  }
+  .forthSectionCards{
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+  }
+  .forthSectionCards{
+  position: absolute;
+  top: -40px;
+  }
+
+
+/* section5 */
+.totalProduct_fivthSection{
+  padding-top: 0px;
+  background-color: var(--mtyellow-4);
+  width: 100%;
+  height: 95vh;
+}
+  .fivthBg{
+  width:100%;
+  height: 60vh;
+  overflow: hidden;
+  background-position: -250px 0px;
+  background-size: cover;
+  position: relative;
+  }
+  .fivthBg_text{
+  width: 100%;
+  padding: 45px;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  }
+  .fivthBg_text > h1{
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  }
+  
+  .fivthBg_text > p{
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  }
+  .fivthSCardsAll{
+  position: relative;
+  }
+  .fivthSectionCards{
+    padding: 0px;
+    position: absolute;
+    top: -40px;
+  }
+
+/* section6 */
+.totalProduct_sixthSection{
+  height: 85vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mtyellow-4);
+}
+.sixthSection_left{
+width: 100%;
+display: flex;
+padding: 15px;
+}
+.sixthSEasy_pic{
+  width: 50px;
+  height: 50px;
+}
+.sixthSMedium_pic{
+    width: 40px;
+    height: 40px;
+    margin: 5px 0px;
+}
+.sixthSHard_pic{
+  width: 50px;
+  height: 50px;
+}
+.sixthSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width:113px;
+  display: flex;
+  margin-bottom: 0px;
+}
+.sixthSection_left >.sixthSection > div > div > h3{
+  font-weight: 700;
   font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+}
+.sixthSection_left >.sixthSection > div > p{
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0.1em;
+}
+.sixthSection > div > p > span{
+color: var(--mtgreen-1);
+text-decoration: underline;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0.1em;
+}
+.sixthSection_right > div > svg{
+  width: 100%;
+  height: 150px;
+}
+
+
+/* section7 */
+.totalProduct_seventhSection{
+  height: 50vh;
+}
+.totalProduct_seventhSBg{
+  position: relative;
+  width: 100%;
+  background: url("./../img/Group35.jpg") no-repeat;
+  margin-top:0px;
+  background-color: var(--mtyellow-4);
+  } 
+.tPSeventhSection_card{
+  position: absolute;
+  top: 7%;
+  left: 10%;
+  width: 80%;
+  background-color: var(--mtyellow-4);
+  padding: 30px 30px;
+}
+.tPSeventhSectionCard_text{
+  margin-bottom:30px;
+font-weight: 350;
+font-size: 12px;
+line-height: 17px;
+text-align: center;
+letter-spacing: 0.1em;
   }
-  .difficulty_secondText > span{
-  font-size: 16px; 
+.tPSeventhSection_card > h1{
+margin-bottom:10px;
+font-weight: 900;
+font-size: 20px;
+line-height: 29px;
+text-align: center;
+letter-spacing: 0.1em;
   }
-  .difficulty_thirdText{
-  font-size: 13px;
-  line-height: 18.82px;
-  }
-
-/* difficultyMountain_mountain */
-
-
-.dMountain_hard > svg, .dMountain_medium > svg, .dMountain_easy > svg {
-width:100%;
-}
-.dMountain_hard{
-width: 80%;
-position: absolute;
-top: 57%;
-left:-12%;
-}
-.dMountain_medium{
-width: 80%;
-position: absolute;
-top: 70%;
-left: 25%;
-}
-.dMountain_easy{
-width: 80%;
-position: absolute;
-top: 80%;
-left: 40%;
-}
-.difficulty_flag{
-width: 7%;
-position: absolute;
-top: 64%;
-
-}
-
-/* button */
-.allSection_btn{
-width: 90%;
-}
-
-.forthSection_All, .fivthSection_All, .sixthSection_All, .totalProduct_seventhSection{
-display: none;
-}
-
-
-
 /* footer */
 footer{
 display: none;
