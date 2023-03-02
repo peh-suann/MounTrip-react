@@ -1,0 +1,42 @@
+.mtgrey1 {
+  color: var(--mtgrey-1);
+}
+
+.mtgrey2 {
+  color: var(--mtgrey-2);
+}
+
+.mtgrey3 {
+  color: var(--mtgrey-3);
+}
+
+.mtgreen1 {
+  color: var(--mtgreen-1);
+}
+
+.mtgreen2 {
+  color: var(--mtgreen-2);
+}
+.mtgreen4 {
+  color: var(--mtgreen-4);
+}
+
+.mtyellow4 {
+  color: var(--mtyellow-4);
+}
+
+.me-06 {
+  margin-right: 6px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
