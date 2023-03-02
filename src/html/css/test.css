@@ -144,8 +144,8 @@ section.intro-page img:nth-child(32) {
   transition-duration: 1.5s ease;
 }
 section.intro-page img:nth-child(33) {
-  left: 110px;
-  top: 760px;
+  left: 1%;
+  bottom: 7%;
   transform: scale(1.1);
 
   transition-duration: 1.5s ease;
@@ -191,7 +191,7 @@ button.start_test {
     top: 100%;
   }
   to {
-    top: 89%;
+    top: 86%;
   }
 }
 section.intro-text {
