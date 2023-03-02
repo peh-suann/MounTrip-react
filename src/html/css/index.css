@@ -243,10 +243,16 @@
 }
 
 .detail-img-wrap {
-  width: 100%;
+  display: block;
   height: 284px;
-  background-size: cover;
-  background-image: url('../img/index-product.jpg');
+  background-color: red;
+  width: 100%;
+}
+
+.detail-img-wrap > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .map-product-detail h3 {
