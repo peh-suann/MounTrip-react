@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+body, html{
+  width: 100%;
+}
 nav {
   position: fixed;
   padding: 0px 120px;
