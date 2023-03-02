@@ -1,322 +1,456 @@
 /* Mountrip品牌色定義 */
 :root{
-    /* primary/green */
-    --mtgreen-1:#6cba7c;
-    --mtgreen-2:#8dc996;
-    --mtgreen-3:#add9b1;
-    --mtgreen-4:#cee8cb;
+  /* primary/green */
+  --mtgreen-1:#6cba7c;
+  --mtgreen-2:#8dc996;
+  --mtgreen-3:#add9b1;
+  --mtgreen-4:#cee8cb;
 
-    /* secondary/yellow */
-    --mtyellow-1: #F3c969;
-    --mtyellow-2: #f7db97;
-    --mtyellow-3: #FBEDC4;
-    --mtyellow-4: #FFFFF2;
+  /* secondary/yellow */
+  --mtyellow-1: #F3c969;
+  --mtyellow-2: #f7db97;
+  --mtyellow-3: #FBEDC4;
+  --mtyellow-4: #FFFFF2;
 
-    /* neutral-color/ black/ grey */
-    --mtgrey-1: #011306;
-    --mtgrey-2: #4d5a51;
-    --mtgrey-3: #9aa09b;
-    --mtgrey-4: #e6E7E6;
+  /* neutral-color/ black/ grey */
+  --mtgrey-1: #011306;
+  --mtgrey-2: #4d5a51;
+  --mtgrey-3: #9aa09b;
+  --mtgrey-4: #e6E7E6;
 
-    /* danger-color /red */
-    --mtred-1:#E85F5c;
-    --mtred-2: #ED7F7D;
-    --mtred-3: #f6Bfbe;
-    --mtred-4: #fadfde;
+  /* danger-color /red */
+  --mtred-1:#E85F5c;
+  --mtred-2: #ED7F7D;
+  --mtred-3: #f6Bfbe;
+  --mtred-4: #fadfde;
 
-    /* 中文字型 */
-    --mtfont-ch: 'Noto Sans TC', sans-serif;
+  /* 中文字型 */
+  --mtfont-ch: 'Noto Sans TC', sans-serif;
 
-    /* ENG FONT */
-    --mtfont-eng: 'Noto Sans', sans-serif;
-    
+  /* ENG FONT */
+  --mtfont-eng: 'Noto Sans', sans-serif;
+  
 }
 
 
 /* Define the font family for English characters */
 @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Black.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
-    font-weight: 900;
-  }
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-ExtraBold.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
-    font-weight: 800;
-  }
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Bold.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Black.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-ExtraBold.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Bold.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-SemiBold.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Medium.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Regular.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Light.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-ExtraLight.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Thin.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 100;
+}
+
+/* Define the font family for Traditional Chinese characters */
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('./../fonts/NotoSansTC-Black.otf');
+  unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+    U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
+  font-weight: 900;
+}
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url('./../fonts/NotoSansTC-Bold.otf');
+    unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+      U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
     font-weight: 700;
   }
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-SemiBold.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
-    font-weight: 600;
-  }
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Medium.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
+    font-family: 'Noto Sans TC';
+    src: url('./../fonts/NotoSansTC-Medium.otf');
+    unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+      U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
     font-weight: 500;
   }
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Regular.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
+    font-family: 'Noto Sans TC';
+    src: url('./../fonts/NotoSansTC-Regular.otf');
+    unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+      U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
     font-weight: 400;
   }
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Light.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
+    font-family: 'Noto Sans TC';
+    src: url('./../fonts/NotoSansTC-Light.otf');
+    unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+      U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
     font-weight: 300;
   }
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-ExtraLight.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
-    font-weight: 200;
-  }
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Thin.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
-    font-weight: 100;
-  }
-  
-  /* Define the font family for Traditional Chinese characters */
-  @font-face {
     font-family: 'Noto Sans TC';
-    src: url('./../fonts/NotoSansTC-Black.otf');
+    src: url('./../fonts/NotoSansTC-Thin.otf');
     unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
       U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-    font-weight: 900;
+    font-weight: 100;
   }
-  @font-face {
-      font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Bold.otf');
-      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
-        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-      font-weight: 700;
-    }
-    @font-face {
-      font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Medium.otf');
-      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
-        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-      font-weight: 500;
-    }
-    @font-face {
-      font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Regular.otf');
-      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
-        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-      font-weight: 400;
-    }
-    @font-face {
-      font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Light.otf');
-      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
-        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-      font-weight: 300;
-    }
-    @font-face {
-      font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Thin.otf');
-      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
-        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-      font-weight: 100;
-    }
-  
-  * {
-    font-family: 'Noto Sans', 'Noto Sans TC', sans-serif;
-  }
+
+* {
+  font-family: 'Noto Sans', 'Noto Sans TC', sans-serif;
+}
 
 /* global通用css屬性 */
 
 :global(.section){
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--mtyellow-4);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--mtyellow-4);
 }
 
 .body{
-  background-color:var(--mtyellow-4);
+background-color:var(--mtyellow-4);
 }
 /* All section */
 .allSectionCard_svg{
-  position:absolute ;
-  top: 140px;
-  left: 1680px;
+position:absolute ;
+top: 140px;
+left: 94%;
 }
 .allSection_btn{
-  border-radius: 5px;
-  padding: 8px 24px;
-  background-color: var(--mtgreen-1);
-  font-size: 20px;
-  color: white;
-  font-weight: 900;
-  border:none;
+border-radius: 5px;
+padding: 8px 24px;
+background-color: var(--mtgreen-1);
+font-size: 20px;
+color: white;
+font-weight: 900;
+border:none;
 }
 .allSection_btn > span{
-  letter-spacing: 0.1em;
+letter-spacing: 0.1em;
 }
 
 /* section1 */
 .totalProduct_firstBg{
-  height: 85vh;
-  background-image: url("./../img/1.jpg");
-  background-size: 100%;
-  background-position:30% 45%;        
-  background-repeat: no-repeat;
-  position: relative;
-}
-.tPFSearch_first{
-  padding: 12px;
-  background-color: var(--mtyellow-4);
-  border-right:4px solid var(--mtgrey-4);
-}
-.tPFSearch-third{
-  padding: 12px;
-  background-color: var(--mtyellow-4);
-}
-.totalProductfirstBg_searchAll > .tPFSearch_btn{
-  width: 140px;
-  background-color: var(--mtgreen-2);
-}
-.tPFSearch_H4{
-  color: white;
-  margin-bottom: 0;
-}
-.tPFirstSection_search{
-  height: 36px;
-  border:none;
-  background-color:var(--mtyellow-4);
-}
-.totalProductfirstBg_searchAll{
-  width: 55%;
-  /* border: 3px solid red; */
-  border-radius: 10px;
-  overflow: hidden;
-  position: absolute;
-  top:94%;
-  left:22%;
-}
-.totalProductfirstBg_searchAll > div > i {
-  width: 24px;
-  height: 24px;
+width: 100%;
+height: 85vh;
+background-image: url("./../img/1.jpg");
+background-size: 100%;
+background-position:30% 45%;        
+background-repeat: no-repeat;
+position: relative;
 }
 .totalProduct_firstBg > div > span {
-  font-size: 50px;
-  margin-right: 70px;
-}
-.totalProductfirstBg_text{
-  color: white;
-  position: absolute ;
-  top:12%;
-  left: 41%;
-  font-size: 35px;
-  font-weight:900;
+color: white;
+font-weight:900;
+font-size: 48px;
+line-height: 65px;
+letter-spacing: 1.23em;
 }
 .totalProductfirstBg_spans{
-  color: white;
-  width: 35%;
-  position: absolute ;
-  top:22%;
-  left: 30%;
-  font-weight:900;
+position: absolute ;
+top:21%;
+left: 31.5%;
+}
+.totalProductfirstBg_text{
+color: white;
+position: absolute ;
+top:10%;
+left: 40%;
+font-size: 37px;
+font-weight:900;
+line-height: 50px;
+}
+
+
+
+.tPFSearch_first{
+position: relative;
+padding: 12px;
+background-color: var(--mtyellow-4);
+border-right:4px solid var(--mtgrey-4);
+order: 0;
+}
+.tPFSearch_first > div > svg{
+position: absolute;
+left: 20px;
+}
+
+
+.tPFSearch_second{
+position: relative;
+padding: 12px;
+background-color: var(--mtyellow-4);
+border-right:4px solid var(--mtgrey-4);
+order: 1;
+}
+.tPFSearch_second > div > svg{
+position: absolute;
+left: 20px;
+}
+.dateSecond_svg{
+display: none;
+}
+.tPFSearch_third{
+position: relative;
+padding: 12px;
+background-color: var(--mtyellow-4);
+order: 2;
+}
+.tPthirdSection_search > input{
+border:none;
+background-color: var(--mtyellow-4);
+} 
+.tPthirdSection_search > span {
+color:var(--mtgreen-1) ;
+font-weight: 500;
+font-size: 22px;
+line-height: 32px;
+letter-spacing: 0.05em;
+}
+.tPFSearch_third > div > svg{
+position: absolute;
+left: 20px;
+}
+
+.totalProductfirstBg_searchAll > .tPFSearch_btn{
+width: 140px;
+background-color: var(--mtgreen-2);
+order: 3;
+}
+.totalProductfirstBg_searchAll > div > div > p{
+font-weight: 350;
+font-size: 20px;
+line-height: 29px;
+letter-spacing: 0.05em;
+}
+
+.tPFSearch_btn > h4{
+color: white;
+margin-bottom: 0;
+font-weight: 400;
+font-size: 26px;
+line-height: 33px;
+letter-spacing: 0.05em;
+}
+.tPFirstSection_search{
+color: black;
+height: 36px;
+border:none;
+background-color:var(--mtyellow-4);
+font-weight: 500;
+font-size: 22px;
+line-height: 32px;
+letter-spacing: 0.05em;
+}
+.tPthirdSection_search{
+color: black;
+height: 36px;
+border:none;
+background-color:var(--mtyellow-4);
+font-weight: 500;
+font-size: 22px;
+line-height: 32px;
+letter-spacing: 0.05em;
+}
+.totalProductfirstBg_searchAll{
+/* border: 3px solid red; */
+border-radius: 10px;
+overflow: hidden;
+position: absolute;
+top:79%;
+left:22%;
+}
+.totalProductfirstBg_searchAll > div > i {
+width: 24px;
+height: 24px;
 }
 
 /* section2 */
 .totalProduct_secondSection{
-  padding: 0px 120px;
-  margin-top: 150px;
+padding: 90px 120px 0px 120px;
+/* margin-top: 5%; */
+background-color: rgba(255, 255, 242, 0.9);
+height:110vh ;
+}
+.tPSecondSectionH5_text{
+font-weight: 900;
+margin: 0;
+color: var(--mtgreen-1);
+font-weight: 700;
+line-height: 26px;
+letter-spacing: 0.1em;
+}
+.tPSSWeb_svg{
+/* display: none; */
+display: block;
+}
+.tPSSRWD_svg{
+display: none;
+/* display: block; */
 }
 div.tPSSCard_num{
-  width: 60px;
-  position: absolute;
-  top:-15px
-}
-div.tPSSCard_numsvg{
-  width: 100%;
-  position: relative;
-  padding: 0px;
-}
-.tPSSCard_pic1{
-  height: 250px;
-  background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-3.jpg") no-repeat;
-  background-size: cover;
-  position: relative;
-  flex-grow: 1;
-  border-radius: 10px;
+position: absolute;
+top: -15px;
+left: 89%;
 
 }
-.tPSSCard_num{
-  position: relative;
-  top: -18px;
-  left:480px;
+div.tPSSCard_numsvg{
+padding: 0px;
+}
+
+
+.tPSSCard_pic1{
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-1.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
+
+}
+.tPSSCard_pic2{
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-2.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
+
+}
+.tPSSCard_pic3{
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-3.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
+
+}
+.tPSSCard_pic4{
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/102-1.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
+
+}
+.tPSSCard_pic5{
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/102-2.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
+
+}
+.tPSSCard_pic6{
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/102-3.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
+
 }
 .tPSSCard_bottom{
-  width: 100%;
-  position: absolute;
-  top: 215px;
-  padding: 0px 15px;
+width: 100%;
+position: absolute;
+top: 215px;
+padding: 0px 15px;
 }
 .tPSSCard_bottom p{
-  color: white;
-  margin: 0;
+color: white;
+margin: 0;
 }
 div.tPSSCard_numsvg > h3{
-  color:white;
-  position: absolute;
-  top:13px;
-  left: 19px;
-  font-weight: 700;
+color:white;
+position: absolute;
+top:13px;
+left: 19px;
+font-weight: 700;
 }
 .tPSSCard_body{
-  padding: 10px 0px;
+padding: 10px 0px;
 }
 .tPSSCard_body p{
- margin: 0;
+margin: 0;
 }
 
 /* section3 */
+.totalProduct_thirdSection{
+
+}
+
 .thSectioncard1{
-  padding-right:20px;
+padding-right:20px;
 }
 
 .thirdBg{
@@ -343,14 +477,13 @@ letter-spacing: 0.1em;
 line-height: 26px;
 }
 .thirdSCardsAll{
-padding: 0px 120px;
 position: relative;
 }
 .thirdSectionCards{
-width: 1680px;
+width: 100%;
+padding:0px 120px;
 position: absolute;
-top: -30px;
-
+top: -50px;
 }
 
 /* section4 */
@@ -386,8 +519,13 @@ position: relative;
 .forthSectionCards{
 position: absolute;
 top: -30px;
-
 }
+.forthSectionCard_svg{
+position:absolute ;
+top: 140px;
+left: 100%;
+}
+
 
 /* section5 */
 .fivthBg{
@@ -421,7 +559,11 @@ position: relative;
 .fivthSectionCards{
 position: absolute;
 top: -30px;
-
+}
+.forthSectionCard_svg{
+position:absolute ;
+top: 140px;
+left: 100%;
 }
 
 
@@ -477,67 +619,397 @@ top: 130px;
 left: 1120px;
 }
 .thSectioncard2{
-  padding-left:20px;
+padding-left:20px;
 }
 
 /* section7 */
 
 .totalProduct_seventhSection{
-  width: 100%;
-  margin-top:50px ;
+width: 100%;
+margin-top:50px ;
 }
 .totalProduct_seventhSBg{
-  position: relative;
-   width: 100%;
-  height: 80vh;
-  background: url("./../img/bgimgs.jpg") no-repeat;
-  
+position: relative;
+ width: 100%;
+height: 80vh;
+background: url("./../img/bgimgs.jpg") no-repeat;
+
 }
 
 .tPSeventhSection_card{
-  position: absolute;
-  top: 28%;
-  left: 31%;
-  width: 40%;
-  background-color: var(--mtyellow-4);
-  padding: 45px 40px;
+position: absolute;
+top: 28%;
+left: 31%;
+width: 40%;
+background-color: var(--mtyellow-4);
+padding: 45px 40px;
 }
 .tPSeventhSectionCard_text{
-  margin-bottom:30px;
-  line-height: 26px;
-  letter-spacing: 0.1em;
+margin-bottom:30px;
+line-height: 26px;
+letter-spacing: 0.1em;
 }
 .tPSeventhSection_card > h1{
-  margin-bottom:30px;
-  font-weight: 900;
+margin-bottom:30px;
+font-weight: 900;
 }
 .tPSeventhSection_card .btn{
-  padding: 8px 24px;
-  background-color: var(--mtgreen-2) ;
+padding: 8px 24px;
+background-color: var(--mtgreen-2) ;
 }
 .allSection_btn{
-  border-radius: 5px;
-  padding: 8px 24px;
-  background-color: var(--mtgreen-1);
-  font-size: 20px;
-  color: white;
-  font-weight: 900;
-  border:none;
+border-radius: 5px;
+padding: 8px 24px;
+background-color: var(--mtgreen-1);
+font-size: 20px;
+color: white;
+font-weight: 900;
+border:none;
 }
 
 /* footer */
 footer{
-  height: 130px;
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--mtgreen-1);
-  padding: 36px 120px;
-  margin-top:150px ;
+/* padding-top:%; */
+height: 15vh;
+display: flex;
+justify-content: space-between;
+background-color: var(--mtgreen-1);
+padding: 36px 120px;
+margin-top:150px ;
 }
-footer > div > span{
-  color: white;
-  font-weight: 400;
+footer > div > a,span{
+color:white;
+text-decoration:none;
+font-weight: 400;
+font-size: 16px;
+line-height: 23px;
+letter-spacing: 0.1em;
+}
+
+
+/* button */
+
+.difficultySection_button{
+/* padding-top:5% ; */
+}
+.allSection_btn{
+margin:auto;
+border-radius: 5px;
+padding: 8px 24px;
+background-color: var(--mtgreen-1);
+font-size: 20px;
+color: white;
+font-weight: 900;
+border:none;
+}
+.allSection_btn > span{
+letter-spacing: 0.1em;
+}
+
+
+
+
+
+
+@media screen and (max-width:391px) {
+.totalProduct_firstSection{
+padding-bottom: 70%;
+background-color: var(--mtyellow-4);
+}
+
+.totalProduct_firstBg{
+width: 100%;
+background-position:0px 0px;
+background-size: cover;
+letter-spacing: 0.05em;
+overflow: hidden;
+}
+.totalProductfirstBg_text{
+color: white;
+position: absolute ;
+top:10%;
+left: 12%;
+font-weight:900;
+font-size: 24px;
+line-height: 33px;
+letter-spacing: 0.05em;
+}
+.totalProductfirstBg_spans{
+position: absolute ;
+top:21%;
+left: 5%;
+}
+.totalProduct_firstBg > div > span {
+color: white;
+font-weight:900;
+font-size: 36px;
+line-height: 49px;
+letter-spacing: 0.5em;
+}
+
+/* search */
+.totalProductfirstBg_searchAll{
+width: 100%;
+position: absolute;
+top:85%;
+left:0%;
+display: flex;
+flex-wrap: wrap;
+}
+.tPFSearch_first{
+padding-left: 12px;
+width: 60%;
+height: 10%;
+background-color: var(--mtyellow-4);
+order: 0;
+border: none;
+}
+.tPFSearch_first > div > svg{
+height: 25%;
+position: absolute;
+top: 41px;
+}
+
+.tPFSearch_second{
+/* padding: 12px; */
+background-color: var(--mtyellow-4);
+border:none;
+order: 2;
+position: relative;
+}
+.tPFSearch_second > div > svg{
+position: absolute;
+top: 39px;
+}
+.dateSecond_svg{
+display: block;
+position: absolute;
+top: 39px;
+left: 210px;
+}
+
+.totalProductfirstBg_searchAll > div > div > p{
+font-weight: 350;
+font-size: 16px;
+line-height: 23px;
+letter-spacing: 0.05em;
+margin: 0;
+}
+
+.tPFSearch_third{
+padding-right: 12px;
+width: 40%;
+/* padding: 12px; */
+background-color: var(--mtyellow-4);
+order: 1;
+}
+.tPFSearch_third > div > svg{
+position: absolute;
+top: 39px;
+}
+.tPFSearch_btn > h4{
+color: white;
+margin-bottom: 0;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+letter-spacing: 0.1em;
+}
+.tPFirstSection_search{
+color: black;
+height: 36px;
+background-color:var(--mtgreen-4);
+border: 2px solid var(--mtgreen-2);
+border-radius: 8px;
+font-weight: 400;
+font-size: 18px;
+line-height: 25px;
+letter-spacing: 0.1em;
+padding-left: 50px;
+}
+.tPthirdSection_search{
+color: black;
+height: 36px;
+background-color:var(--mtgreen-4);
+border: 2px solid var(--mtgreen-2);
+border-radius: 8px;
+font-weight: 400;
+font-size: 18px;
+line-height: 25px;
+letter-spacing: 0.1em;
+padding-left: 50px;
+}
+.tPthirdSection_search > input{
+height: 75%;
+background-color: var(--mtgreen-4);
+border:none ;
+}
+.tPthirdSection_search > span{
+color: var(--mtgreen-1);
+}
+.tPFSearch_btn{
+width: 100%;
+}
+.dash_svg{
+display: none;
+}
+.totalProductfirstBg_searchAll > .tPFSearch_btn{
+width: 140px;
+background-color: var(--mtgreen-2);
+order: 3;
+}
+
+/* section2 */
+
+.tPSSWeb_svg{
+display: none;
+}
+.tPSSRWD_svg{
+display: block;
+}
+.totalProduct_secondSection{
+padding: 0px;
+height:390vh ;
+background-color: var(--mtyellow-4);
+
+}
+
+div.tPSSCard_numsvg{
+padding: 0px;
+}
+div.tPSSCard_num{
+position: absolute;
+top:-15px;
+left: 85%;
+
+}
+/* section3 */
+
+.totalProduct_thirdSection{
+width: 100%;
+}
+
+.thirdBg{
+width:100%;
+overflow: hidden;
+background-position: -370px 0px;
+background-size: cover;
+position: relative;
+}
+
+.thirdSCardsAll{
+
+padding: 0px;
+position: relative;
+}
+.thirdSectionCards{
+  position: absolute;
+  top: 0px;
+}
+.thirdSectionCards{
+position: absolute;
+top: -50px;
+
+}
+.thirdBg_text{
+width: 100%;
+position: absolute;
+top: 60%;
+left: 0%;
+}
+.thirdBg_text > h1{
+font-weight: 900;
+font-size: 28px;
+line-height: 140%;
+letter-spacing: 0.05em;
+}
+
+.thirdBg_text > p{
+font-weight: 350;
+font-size: 12px;
+line-height: 20px;
+letter-spacing: 0.1em;
+}
+.thirdSectionBtn_svg{
+display: none;
+}
+.tPSSection_card2, .tPSSection_card3{
+display: none;
+}
+
+
+
+
+
+/* difficulty */
+.difficulty{
+  height: 60vh;
+}
+/* difficultyMountain_text */
+.difficulty_text{
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  left: 0%;
+}
+  .difficulty_firstText > span{
+  font-size: 22px;
+  }
+  .difficulty_secondText{
   font-size: 16px;
-  line-height: 23px;
-  letter-spacing: 0.1em;
+  }
+  .difficulty_secondText > span{
+  font-size: 16px; 
+  }
+  .difficulty_thirdText{
+  font-size: 13px;
+  line-height: 18.82px;
+  }
+
+/* difficultyMountain_mountain */
+
+
+.dMountain_hard > svg, .dMountain_medium > svg, .dMountain_easy > svg {
+width:100%;
+}
+.dMountain_hard{
+width: 80%;
+position: absolute;
+top: 57%;
+left:-12%;
+}
+.dMountain_medium{
+width: 80%;
+position: absolute;
+top: 70%;
+left: 25%;
+}
+.dMountain_easy{
+width: 80%;
+position: absolute;
+top: 80%;
+left: 40%;
+}
+.difficulty_flag{
+width: 7%;
+position: absolute;
+top: 64%;
+
+}
+
+/* button */
+.allSection_btn{
+width: 90%;
+}
+
+.forthSection_All, .fivthSection_All, .sixthSection_All, .totalProduct_seventhSection{
+display: none;
+}
+
+
+
+/* footer */
+footer{
+display: none;
+}
 }

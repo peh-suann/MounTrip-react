@@ -1,202 +1,202 @@
 /* Mountrip品牌色定義 */
 :root{
-    /* primary/green */
-    --mtgreen-1:#6cba7c;
-    --mtgreen-2:#8dc996;
-    --mtgreen-3:#add9b1;
-    --mtgreen-4:#cee8cb;
+  /* primary/green */
+  --mtgreen-1:#6cba7c;
+  --mtgreen-2:#8dc996;
+  --mtgreen-3:#add9b1;
+  --mtgreen-4:#cee8cb;
 
-    /* secondary/yellow */
-    --mtyellow-1: #F3c969;
-    --mtyellow-2: #f7db97;
-    --mtyellow-3: #FBEDC4;
-    --mtyellow-4: #FFFFF2;
+  /* secondary/yellow */
+  --mtyellow-1: #F3c969;
+  --mtyellow-2: #f7db97;
+  --mtyellow-3: #FBEDC4;
+  --mtyellow-4: #FFFFF2;
 
-    /* neutral-color/ black/ grey */
-    --mtgrey-1: #011306;
-    --mtgrey-2: #4d5a51;
-    --mtgrey-3: #9aa09b;
-    --mtgrey-4: #e6E7E6;
+  /* neutral-color/ black/ grey */
+  --mtgrey-1: #011306;
+  --mtgrey-2: #4d5a51;
+  --mtgrey-3: #9aa09b;
+  --mtgrey-4: #e6E7E6;
 
-    /* danger-color /red */
-    --mtred-1:#E85F5c;
-    --mtred-2: #ED7F7D;
-    --mtred-3: #f6Bfbe;
-    --mtred-4: #fadfde;
+  /* danger-color /red */
+  --mtred-1:#E85F5c;
+  --mtred-2: #ED7F7D;
+  --mtred-3: #f6Bfbe;
+  --mtred-4: #fadfde;
 
-    /* 中文字型 */
-    --mtfont-ch: 'Noto Sans TC', sans-serif;
+  /* 中文字型 */
+  --mtfont-ch: 'Noto Sans TC', sans-serif;
 
-    /* ENG FONT */
-    --mtfont-eng: 'Noto Sans', sans-serif;
-    
+  /* ENG FONT */
+  --mtfont-eng: 'Noto Sans', sans-serif;
+  
 }
 
 
 /* Define the font family for English characters */
 @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Black.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
-    font-weight: 900;
-  }
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-ExtraBold.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
-    font-weight: 800;
-  }
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Bold.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Black.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-ExtraBold.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Bold.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-SemiBold.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Medium.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Regular.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Light.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-ExtraLight.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../fonts/NotoSans-Thin.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 100;
+}
+
+/* Define the font family for Traditional Chinese characters */
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('./../fonts/NotoSansTC-Black.otf');
+  unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+    U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
+  font-weight: 900;
+}
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url('./../fonts/NotoSansTC-Bold.otf');
+    unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+      U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
     font-weight: 700;
   }
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-SemiBold.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
-    font-weight: 600;
-  }
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Medium.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
+    font-family: 'Noto Sans TC';
+    src: url('./../fonts/NotoSansTC-Medium.otf');
+    unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+      U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
     font-weight: 500;
   }
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Regular.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
+    font-family: 'Noto Sans TC';
+    src: url('./../fonts/NotoSansTC-Regular.otf');
+    unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+      U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
     font-weight: 400;
   }
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Light.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
+    font-family: 'Noto Sans TC';
+    src: url('./../fonts/NotoSansTC-Light.otf');
+    unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
+      U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
     font-weight: 300;
   }
   @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-ExtraLight.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
-    font-weight: 200;
-  }
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Thin.ttf');
-    unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
-      U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
-      U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
-      U+FFFD;
-    font-weight: 100;
-  }
-  
-  /* Define the font family for Traditional Chinese characters */
-  @font-face {
     font-family: 'Noto Sans TC';
-    src: url('./../fonts/NotoSansTC-Black.otf');
+    src: url('./../fonts/NotoSansTC-Thin.otf');
     unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
       U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-    font-weight: 900;
+    font-weight: 100;
   }
-  @font-face {
-      font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Bold.otf');
-      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
-        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-      font-weight: 700;
-    }
-    @font-face {
-      font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Medium.otf');
-      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
-        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-      font-weight: 500;
-    }
-    @font-face {
-      font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Regular.otf');
-      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
-        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-      font-weight: 400;
-    }
-    @font-face {
-      font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Light.otf');
-      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
-        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-      font-weight: 300;
-    }
-    @font-face {
-      font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Thin.otf');
-      unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
-        U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
-      font-weight: 100;
-    }
-  
-  * {
-    font-family: 'Noto Sans', 'Noto Sans TC', sans-serif;
-  }
+
+* {
+  font-family: 'Noto Sans', 'Noto Sans TC', sans-serif;
+}
 
 /* global通用css屬性 */
 
 :global(.section){
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100vh;
-    background-color:rgba(255, 255, 242, 0.9);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-color:rgba(255, 255, 242, 0.9);
 }
 
 /* difficultyMountain */
 .difficulty{
-  height:64vh;
-  width: 100%;
-  background-color: rgba(255, 255, 242, 0.9);
-  /* background-color: gray; */
-  position: relative;
-  overflow: hidden;
+height:64vh;
+width: 100%;
+background-color: rgba(255, 255, 242, 0.9);
+/* background-color: gray; */
+position: relative;
+overflow: hidden;
 }
 
 .difficulty_text{
-  width: 29%;
-  background-color: rgba(255, 255, 242, 0.9);
-  position: absolute;
-  top: 12%;
-  left: 36%;
+width: 29%;
+background-color: rgba(255, 255, 242, 0.9);
+position: absolute;
+top: 12%;
+left: 36%;
 }
 .difficulty_text > p{
-  margin:0;
+margin:0;
 }
 
 .difficulty_firstText > span{
-  color:black;
+color:black;
 font-weight: 700;
 font-size: 30px;
 line-height: 41px;
@@ -219,39 +219,39 @@ letter-spacing: 0.1em;
 }
 
 .dMountain_hard{
-  position: absolute;
-  top:60%;
-  left: 0%;
+position: absolute;
+top:60%;
+left: 0%;
 }
 
 .difficultyMountain_focus{
-  width: 180px;
-  height: 180px;
-  background-color: var(--mtgreen-4);
-  border-radius: 50%;
-  position: absolute;
-  top: -120px;
-  left: 430px;
-  z-index: 1;
+width: 180px;
+height: 180px;
+background-color: var(--mtgreen-4);
+border-radius: 50%;
+position: absolute;
+top: -120px;
+left: 430px;
+z-index: 1;
 }
 .difficulty_flag{
-  position: absolute;
-  top: 50%;
-  left: 26.5%;
+position: absolute;
+top: 50%;
+left: 26.5%;
 }
 .dMountain_medium{
-  position: absolute;
-  /* top: 34%;
-  left: 85%; */
-  top: 75%;
-  left: 40%;
+position: absolute;
+/* top: 34%;
+left: 85%; */
+top: 75%;
+left: 40%;
 }
 .dMountain_easy{
-  position: absolute;
-  /* top: 60.5%;
-  left: 155%; */
-  top: 85%;
-  left: 73%;
+position: absolute;
+/* top: 60.5%;
+left: 155%; */
+top: 85%;
+left: 73%;
 }
 
 
@@ -259,155 +259,155 @@ letter-spacing: 0.1em;
 
 /* section2 */
 .totalProduct_secondSection{
-  padding: 90px 120px 0px 120px;
-  /* margin-top: 5%; */
-  background-color: rgba(255, 255, 242, 0.9);
-  height:90vh ;
+padding: 90px 120px 0px 120px;
+/* margin-top: 5%; */
+background-color: rgba(255, 255, 242, 0.9);
+height:90vh ;
 }
 .tPSecondSectionH5_text{
-  font-weight: 900;
-  margin: 0;
-  color: var(--mtgreen-1);
-  font-weight: 700;
-  line-height: 26px;
-  letter-spacing: 0.1em;
-  }
+font-weight: 900;
+margin: 0;
+color: var(--mtgreen-1);
+font-weight: 700;
+line-height: 26px;
+letter-spacing: 0.1em;
+}
 /* .tPSSection_cards{
-  width: 100%;
+width: 100%;
 } */
 
 
 div.tPSSCard_num{
-  width: 60px;
-  position: absolute;
-  top:-15px
+width: 60px;
+position: absolute;
+top:-15px
 }
 div.tPSSCard_numsvg{
-  width: 100%;
-  position: relative;
-  padding: 0px;
+width: 100%;
+position: relative;
+padding: 0px;
 }
 
 
 .tPSSCard_pic1{
-  height: 250px;
-  background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-1.jpg") no-repeat;
-  background-size: cover;
-  position: relative;
-  flex-grow: 1;
-  border-radius: 10px;
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-1.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
 
 }
 .tPSSCard_pic2{
-  height: 250px;
-  background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-2.jpg") no-repeat;
-  background-size: cover;
-  position: relative;
-  flex-grow: 1;
-  border-radius: 10px;
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-2.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
 
 }
 .tPSSCard_pic3{
-  height: 250px;
-  background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-3.jpg") no-repeat;
-  background-size: cover;
-  position: relative;
-  flex-grow: 1;
-  border-radius: 10px;
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/101-3.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
 
 }
 .tPSSCard_pic4{
-  height: 250px;
-  background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/102-1.jpg") no-repeat;
-  background-size: cover;
-  position: relative;
-  flex-grow: 1;
-  border-radius: 10px;
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/102-1.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
 
 }
 .tPSSCard_pic5{
-  height: 250px;
-  background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/102-2.jpg") no-repeat;
-  background-size: cover;
-  position: relative;
-  flex-grow: 1;
-  border-radius: 10px;
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/102-2.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
 
 }
 .tPSSCard_pic6{
-  height: 250px;
-  background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/102-3.jpg") no-repeat;
-  background-size: cover;
-  position: relative;
-  flex-grow: 1;
-  border-radius: 10px;
+height: 250px;
+background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../img/102-3.jpg") no-repeat;
+background-size: cover;
+position: relative;
+flex-grow: 1;
+border-radius: 10px;
 
 }
 
 
 
 .tPSSCard_num{
-  position: relative;
-  top: -18px;
-  left:480px;
+position: relative;
+top: -18px;
+left:480px;
 }
 .tPSSCard_bottom{
-  width: 100%;
-  position: absolute;
-  top: 215px;
-  padding: 0px 15px;
+width: 100%;
+position: absolute;
+top: 215px;
+padding: 0px 15px;
 }
 .tPSSCard_bottom p{
-  color: white;
-  margin: 0;
+color: white;
+margin: 0;
 }
 div.tPSSCard_numsvg > h3{
-  color:white;
-  position: absolute;
-  top:13px;
-  left: 19px;
-  font-weight: 700;
+color:white;
+position: absolute;
+top:13px;
+left: 19px;
+font-weight: 700;
 }
 .tPSSCard_body{
-  padding: 10px 0px;
+padding: 10px 0px;
 }
 .tPSSCard_body p{
- margin: 0;
+margin: 0;
 }
 
 /* footer */
 footer{
-  /* padding-top:%; */
-  height: 130px;
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--mtgreen-1);
-  padding: 36px 120px;
-  margin-top:150px ;
+/* padding-top:%; */
+height: 130px;
+display: flex;
+justify-content: space-between;
+background-color: var(--mtgreen-1);
+padding: 36px 120px;
+margin-top:150px ;
 }
 footer > div > a,span{
-  color:white;
-  text-decoration:none;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 23px;
-  letter-spacing: 0.1em;
+color:white;
+text-decoration:none;
+font-weight: 400;
+font-size: 16px;
+line-height: 23px;
+letter-spacing: 0.1em;
 }
 
 /* button */
 
 .difficultySection_button{
-  /* padding-top:5% ; */
+/* padding-top:5% ; */
 }
 .allSection_btn{
-  margin:auto;
-  border-radius: 5px;
-  padding: 8px 24px;
-  background-color: var(--mtgreen-1);
-  font-size: 20px;
-  color: white;
-  font-weight: 900;
-  border:none;
+margin:auto;
+border-radius: 5px;
+padding: 8px 24px;
+background-color: var(--mtgreen-1);
+font-size: 20px;
+color: white;
+font-weight: 900;
+border:none;
 }
 .allSection_btn > span{
 letter-spacing: 0.1em;
@@ -417,74 +417,74 @@ letter-spacing: 0.1em;
 
 @media screen and (max-width:391px) {
 
-  .difficulty{
-    height: 60vh;
+.difficulty{
+  height: 60vh;
+}
+/* difficultyMountain_text */
+.difficulty_text{
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  left: 0%;
+}
+  .difficulty_firstText > span{
+  font-size: 22px;
   }
-  /* difficultyMountain_text */
-  .difficulty_text{
-    width: 100%;
-    position: absolute;
-    top: 10%;
-    left: 0%;
+  .difficulty_secondText{
+  font-size: 16px;
   }
-    .difficulty_firstText > span{
-    font-size: 22px;
-    }
-    .difficulty_secondText{
-    font-size: 16px;
-    }
-    .difficulty_secondText > span{
-    font-size: 16px; 
-    }
-    .difficulty_thirdText{
-    font-size: 13px;
-    line-height: 18.82px;
-    }
-  
+  .difficulty_secondText > span{
+  font-size: 16px; 
+  }
+  .difficulty_thirdText{
+  font-size: 13px;
+  line-height: 18.82px;
+  }
+
 /* difficultyMountain_mountain */
 
 
 .dMountain_hard > svg, .dMountain_medium > svg, .dMountain_easy > svg {
-  width:100%;
+width:100%;
 }
 .dMountain_hard{
-  width: 80%;
-  position: absolute;
-  top: 57%;
-  left:-12%;
+width: 80%;
+position: absolute;
+top: 57%;
+left:-12%;
 }
 .dMountain_medium{
-  width: 80%;
-  position: absolute;
-  top: 70%;
-  left: 25%;
+width: 80%;
+position: absolute;
+top: 70%;
+left: 25%;
 }
 .dMountain_easy{
-  width: 80%;
-  position: absolute;
-  top: 80%;
-  left: 40%;
+width: 80%;
+position: absolute;
+top: 80%;
+left: 40%;
 }
 .difficulty_flag{
-  width: 7%;
-  position: absolute;
-  top: 64%;
-  
+width: 7%;
+position: absolute;
+top: 64%;
+
 }
 
 /* button */
 .allSection_btn{
-  width: 90%;
+width: 90%;
 }
 
 
-    /* secondSection */
-  .totalProduct_secondSection{
-    padding: 0px;
-  }
+  /* secondSection */
+.totalProduct_secondSection{
+  padding: 0px;
+}
 
 /* footer */
 footer{
-  display: none;
+display: none;
 }
 }
