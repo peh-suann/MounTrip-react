@@ -135,29 +135,34 @@ section.intro-page .clouds-mobile {
 section.intro-page .mountains {
   /* display: none; */
 }
+
 section.intro-page img:nth-child(32) {
   left: -60px;
   top: 710px;
+  transform: scale(1.1);
 
-  transition-duration: 1s;
+  transition-duration: 1.5s ease;
 }
 section.intro-page img:nth-child(33) {
   left: 110px;
   top: 760px;
+  transform: scale(1.1);
 
-  transition-duration: 1s;
+  transition-duration: 1.5s ease;
 }
 section.intro-page img:nth-child(34) {
-  left: 12px;
-  top: 825px;
+  left: 0.0006%;
+  bottom: 0.1%;
+  transform: scale(1.1);
 
-  transition-duration: 1s;
+  transition-duration: 1.5s ease;
 }
 section.intro-page img:nth-child(36) {
-  left: 0px;
-  top: 825px;
+  left: 0%;
+  bottom: -0.3%;
+  transform: scale(1.1);
 
-  transition-duration: 1s;
+  transition-duration: 1.5s ease;
 }
 
 button.start_test {

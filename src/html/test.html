@@ -409,26 +409,11 @@
     <script>
       const images = document.querySelectorAll('.intro-page img')
       const mount_g2 = images[31]
-      const g2_left = window.getComputedStyle(mount_g2).left
-      const g2_top = window.getComputedStyle(mount_g2).top
-
       const mount_y2 = images[32]
-      const y2_left = window.getComputedStyle(mount_y2).left
-      const y2_top = window.getComputedStyle(mount_y2).top
-
       const mount_g1 = images[33]
-      const g1_left = window.getComputedStyle(mount_g1).left
-      const g1_top = window.getComputedStyle(mount_g1).top
-
       const mount_y1 = images[34]
-      const y1_left = window.getComputedStyle(mount_y1).left
-      const y1_top = window.getComputedStyle(mount_y1).top
-
-      console.log(images)
 
       let mouseX, mouseY
-      let originMouseX, originMouseY
-
       let timeoutId
 
       document.addEventListener('mousemove', function (e) {
@@ -437,76 +422,25 @@
           // code to be executed after 100ms delay
           const windowHeight = window.innerHeight
           const windowWidth = window.innerWidth
+          const halfHeight = windowHeight / 2
+          const halfWidth = windowWidth / 2
 
           mouseX = e.clientX
           mouseY = e.clientY
 
-          const moveX = 10
-          const moveY = 10
+          const moveX = (mouseX - halfWidth) / halfWidth
+          const moveY = (mouseY - halfHeight) / halfHeight
 
-          if (mouseX >= originMouseX) {
-            if (mouseY >= originMouseY) {
-              mount_g2.style.left = `${parseInt(g2_left) + moveX}px`
-              mount_g2.style.top = `${parseInt(g2_top) + moveY}px`
-
-              mount_g1.style.left = `${parseInt(g1_left) + moveX}px`
-              mount_g1.style.top = `${parseInt(g1_top) - moveY}px`
-
-              mount_y2.style.left = `${parseInt(y2_left) - moveX}px`
-              mount_y2.style.top = `${parseInt(y2_top) + moveY}px`
-
-              mount_y1.style.left = `${parseInt(y1_left) - moveX}px`
-              mount_y1.style.top = `${parseInt(y1_top) - moveY}px`
-            } else {
-              mount_g2.style.left = `${parseInt(g2_left) + moveX}px`
-              mount_g2.style.top = `${parseInt(g2_top) - moveY}px`
-
-              mount_g1.style.left = `${parseInt(g1_left) - moveX}px`
-              mount_g1.style.top = `${parseInt(g1_top) + moveY}px`
-
-              mount_y2.style.left = `${parseInt(y2_left) - moveX}px`
-              mount_y2.style.top = `${parseInt(y2_top) - moveY}px`
-
-              mount_y1.style.left = `${parseInt(y1_left) + moveX}px`
-              mount_y1.style.top = `${parseInt(y1_top) + moveY}px`
-            }
-          } else {
-            if (mouseY >= originMouseY) {
-              mount_g2.style.left = `${parseInt(g2_left) - moveX}px`
-              mount_g2.style.top = `${parseInt(g2_top) + moveY}px`
-
-              mount_g1.style.left = `${parseInt(g1_left) - moveX}px`
-              mount_g1.style.top = `${parseInt(g1_top) - moveY}px`
-
-              mount_y2.style.left = `${parseInt(y2_left) + moveX}px`
-              mount_y2.style.top = `${parseInt(y2_top) + moveY}px`
-
-              mount_y1.style.left = `${parseInt(y1_left) + moveX}px`
-              mount_y1.style.top = `${parseInt(y1_top) - moveY}px`
-            } else {
-              mount_g2.style.left = `${parseInt(g2_left) - moveX}px`
-              mount_g2.style.top = `${parseInt(g2_top) - moveY}px`
-
-              mount_g1.style.left = `${parseInt(g1_left) + moveX}px`
-              mount_g1.style.top = `${parseInt(g1_top) + moveY}px`
-
-              mount_y2.style.left = `${parseInt(y2_left) + moveX}px`
-              mount_y2.style.top = `${parseInt(y2_top) - moveY}px`
-
-              mount_y1.style.left = `${parseInt(y1_left) - moveX}px`
-              mount_y1.style.top = `${parseInt(y1_top) + moveY}px`
-            }
-          }
-
-          originMouseX = mouseX
-          originMouseY = mouseY
-          // console.log('g2_left: ', g2_left)
           console.log('----------------------')
           console.log('mouseX: ', mouseX)
+          console.log('mouseY: ', mouseY)
           console.log('moveX: ', moveX)
           console.log('moveY: ', moveY)
-          console.log('Mouse moved after debounce')
-        }, 10)
+          mount_g2.style.transform = `translate(${moveX * 1}%,${moveY * 4}%) scale(1.1)`
+          mount_y2.style.transform = `translate(${moveX * -1}%,${moveY * 2}%) scale(1.105)`
+          mount_g1.style.transform = `translate(${moveX * 0.5}%,${moveY * 2}%) scale(1.2)`
+          mount_y1.style.transform = `translate(${moveX * -0.5}%,${moveY * -3}%) scale(1.11)`
+        })
       })
     </script>
   </body>
