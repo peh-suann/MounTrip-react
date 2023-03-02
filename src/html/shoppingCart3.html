@@ -12,144 +12,9 @@
     />
     <link rel="stylesheet" href="../styles/Mountrip.module.css" />
     <link rel="stylesheet" href="../styles/Navbar.module.css" />
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      .bg-image {
-        background-color: var(--mtyellow-4);
-        /* height: 100vh; */
-      }
-
-      .shopping-cart-process img {
-        display: block;
-        padding-top: 68px;
-        width: 700px;
-        padding-bottom: 12px;
-      }
-
-      .var-mtgrey-1 {
-        color: var(--mtgrey-1);
-        letter-spacing: 0.1em;
-      }
-
-      .var-mtgrey-3 {
-        color: var(--mtgrey-3);
-        letter-spacing: 0.1em;
-      }
-
-      .me-142 {
-        margin-right: 142px;
-      }
-
-      .me-12 {
-        margin-right: 12px;
-      }
-
-      .me-20 {
-        margin-right: 20px;
-      }
-
-      .me-40 {
-        margin-right: 40px;
-      }
-
-      .pd-40 {
-        padding-bottom: 40px;
-      }
-
-      .mb-42 {
-        margin-bottom: 42px;
-      }
-
-      .mb-48 {
-        margin-bottom: 48px;
-      }
-
-      .mb-50 {
-        margin-bottom: 48px;
-      }
-
-      .mb-28 {
-        margin-bottom: 28px;
-      }
-
-      .mb-20 {
-        margin-bottom: 20px;
-      }
-
-      .mb-15 {
-        margin-bottom: 15px;
-      }
-
-      .mb-88 {
-        margin-bottom: 88px;
-      }
-
-      .wrap-container {
-        width: 35%;
-        margin: 0 auto;
-      }
-
-      h3 {
-        font-weight: 700;
-        font-size: 30px;
-        line-height: 43px;
-        align-items: center;
-        letter-spacing: 0.1em;
-        margin-bottom: 0;
-        color: var(--mtgreen-1);
-      }
-
-      #shopping-cart-title {
-        padding-bottom: 28px;
-        border-bottom: 1px solid var(--mtgrey-3);
-      }
-
-      .form-inline input {
-        background: rgba(206, 232, 203, 0.6);
-        /* primary/03 */
-
-        border: 2px solid var(--mtgreen-3);
-        border-radius: 10px;
-      }
-
-      .form-inline label {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 140%;
-        color: var(--mtgrey-1);
-      }
-
-      .btn.btn-primary {
-        display: block;
-        margin: 0 auto;
-        border-color: var(--mtgreen-1);
-        background-color: var(--mtgreen-1);
-        color: white;
-        letter-spacing: 0.1em;
-        border-radius: 5px;
-        width: 285px;
-        height: 55px;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 27px;
-        letter-spacing: 0.1em;
-      }
-
-      .description {
-        font-weight: 350;
-        font-size: 16px;
-        line-height: 31px;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 0.1em;
-        color: var(--mtgrey-1);
-      }
-    </style>
+    <link rel="stylesheet" href="./css/basicSetting.css" />
+    <link rel="stylesheet" href="./css/shoppingCart3.css" />
+    <style></style>
   </head>
   <body>
     <div class="bg-image">
@@ -219,13 +84,28 @@
       </div>
 
       <div class="container">
-        <section class="row shopping-cart-process justify-content-center">
+        <section
+          class="row shopping-cart-process justify-content-center mobile-none"
+        >
           <img src="./svg/shopping-cart3.svg" />
           <div class="d-flex justify-content-center mb-42">
-            <p class="me-142 var-mtgrey-3">確認訂單</p>
-            <p class="me-142 var-mtgrey-3">填寫資料</p>
-            <p class="me-142 var-mtgrey-1">付款頁面</p>
-            <p class="var-mtgrey-3">完成訂單</p>
+            <p class="me-142 mtgrey3">確認訂單</p>
+            <p class="me-142 mtgrey3">填寫資料</p>
+            <p class="me-142 mtgrey1">付款頁面</p>
+            <p class="mtgrey3">完成訂單</p>
+          </div>
+        </section>
+
+        <section
+          class="row shopping-cart-process justify-content-center web-none"
+        >
+          <!-- 購物車流程png & <li> -->
+          <img src="./svg/shopping-cart3-mobile.svg" />
+          <div class="d-flex justify-content-center mb-42">
+            <p class="me-27 mtgrey3 mb-0">確認訂單</p>
+            <p class="me-27 mtgrey3 mb-0">填寫資料</p>
+            <p class="me-27 mtgrey1 mb-0">付款頁面</p>
+            <p class="mtgrey3 mb-0">完成訂單</p>
           </div>
         </section>
       </div>
@@ -235,7 +115,7 @@
           <img src="./svg/credit-card.svg" class="me-12" alt="" />
           <h3>付款方式</h3>
         </div>
-        <div class="d-flex mb-50">
+        <div class="d-flex mb-50 credit-card-type">
           <img src="./svg/Visa.svg" alt="" class="me-20" />
           <img src="./svg/Mastercard.svg" alt="" class="me-20" />
           <img src="./svg/Linepay.svg" alt="" />

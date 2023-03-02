@@ -12,153 +12,9 @@
     />
     <link rel="stylesheet" href="../styles/Mountrip.module.css" />
     <link rel="stylesheet" href="../styles/Navbar.module.css" />
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      .bg-image {
-        background-color: var(--mtyellow-4);
-        /* height: 100vh; */
-      }
-
-      .shopping-cart-process img {
-        display: block;
-        padding-top: 68px;
-        width: 700px;
-        padding-bottom: 12px;
-      }
-
-      .var-mtgrey-1 {
-        color: var(--mtgrey-1);
-        letter-spacing: 0.1em;
-      }
-
-      .var-mtgrey-3 {
-        color: var(--mtgrey-3);
-        letter-spacing: 0.1em;
-      }
-
-      .me-142 {
-        margin-right: 142px;
-      }
-
-      .me-12 {
-        margin-right: 12px;
-      }
-
-      .me-20 {
-        margin-right: 20px;
-      }
-
-      .me-40 {
-        margin-right: 40px;
-      }
-
-      .pd-40 {
-        padding-bottom: 40px;
-      }
-
-      .mb-42 {
-        margin-bottom: 42px;
-      }
-
-      .mb-48 {
-        margin-bottom: 48px;
-      }
-
-      .mb-50 {
-        margin-bottom: 48px;
-      }
-
-      .mb-28 {
-        margin-bottom: 28px;
-      }
-
-      .mb-20 {
-        margin-bottom: 20px;
-      }
-
-      .mb-15 {
-        margin-bottom: 15px;
-      }
-
-      .mb-88 {
-        margin-bottom: 88px;
-      }
-
-      .wrap-container {
-        width: 50%;
-        margin: 0 auto;
-      }
-
-      h3 {
-        font-weight: 700;
-        font-size: 30px;
-        line-height: 43px;
-        align-items: center;
-        letter-spacing: 0.1em;
-        margin-bottom: 0;
-        color: var(--mtgreen-1);
-      }
-
-      #shopping-cart-title {
-        padding-bottom: 28px;
-        border-bottom: 1px solid var(--mtgrey-3);
-      }
-
-      .form-inline input {
-        background: rgba(206, 232, 203, 0.6);
-        /* primary/03 */
-
-        border: 2px solid var(--mtgreen-3);
-        border-radius: 10px;
-      }
-
-      .form-inline label {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 140%;
-        color: var(--mtgrey-1);
-      }
-
-      .order-title {
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 150%;
-        letter-spacing: 0.05em;
-        color: var(--mtgrey-1);
-      }
-
-      .order-title-detail {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 140%;
-        color: var(--mtgrey-2);
-      }
-
-      .checkmark.grey2 {
-        color: var(--mtgrey-2);
-      }
-
-      .btn.btn-primary {
-        display: block;
-        margin: 0 auto;
-        border-color: var(--mtgreen-1);
-        background-color: var(--mtgreen-1);
-        color: white;
-        letter-spacing: 0.1em;
-        border-radius: 5px;
-        width: 285px;
-        height: 55px;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 27px;
-        letter-spacing: 0.1em;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/basicSetting.css" />
+    <link rel="stylesheet" href="./css/shoppingCart2.css" />
+    <style></style>
   </head>
   <body>
     <div class="bg-image">
@@ -228,13 +84,28 @@
       </div>
 
       <div class="container">
-        <section class="row shopping-cart-process justify-content-center">
+        <section
+          class="row shopping-cart-process justify-content-center mobile-none"
+        >
           <img src="./svg/shopping-cart2.svg" />
           <div class="d-flex justify-content-center mb-42">
-            <p class="me-142 var-mtgrey-3">確認訂單</p>
-            <p class="me-142 var-mtgrey-1">填寫資料</p>
-            <p class="me-142 var-mtgrey-3">付款頁面</p>
-            <p class="var-mtgrey-3">完成訂單</p>
+            <p class="me-142 mtgrey3">確認訂單</p>
+            <p class="me-142 mtgrey1">填寫資料</p>
+            <p class="me-142 mtgrey3">付款頁面</p>
+            <p class="mtgrey3">完成訂單</p>
+          </div>
+        </section>
+
+        <section
+          class="row shopping-cart-process justify-content-center web-none"
+        >
+          <!-- 購物車流程png & <li> -->
+          <img src="./svg/shopping-cart2-mobile.svg" />
+          <div class="d-flex justify-content-center mb-42">
+            <p class="me-27 mtgrey3 mb-0">確認訂單</p>
+            <p class="me-27 mtgrey1 mb-0">填寫資料</p>
+            <p class="me-27 mtgrey3 mb-0">付款頁面</p>
+            <p class="mtgrey3 mb-0">完成訂單</p>
           </div>
         </section>
       </div>
@@ -274,16 +145,14 @@
             <img src="./svg/chevron-down.svg" />
           </div>
           <div class="col-11">
-            <p class="order-title mb-15">
-              草嶺古道｜探索新北一日遊探索新北一日遊
-            </p>
+            <p class="order-title">草嶺古道｜探索新北一日遊探索</p>
             <div class="d-flex order-title-detail">
-              <p class="me-40">
-                <img class="me-20" src="./svg/users_grey.svg" />
+              <p class="order-title-detail-number">
+                <img class="" src="./svg/users_grey.svg" />
                 <span>2張</span>
               </p>
               <p>
-                <img class="me-20" src="./svg/calendar_grey.svg" />
+                <img class="" src="./svg/calendar_grey.svg" />
                 <span>2022/01/01 - 2022/01/03</span>
               </p>
             </div>
@@ -386,12 +255,12 @@
               草嶺古道｜探索新北一日遊探索新北一日遊
             </p>
             <div class="d-flex order-title-detail">
-              <p class="me-40">
-                <img class="me-20" src="./svg/users_grey.svg" />
+              <p class="order-title-detail-number">
+                <img class="" src="./svg/users_grey.svg" />
                 <span>2張</span>
               </p>
               <p>
-                <img class="me-20" src="./svg/calendar_grey.svg" />
+                <img class="" src="./svg/calendar_grey.svg" />
                 <span>2022/01/01 - 2022/01/03</span>
               </p>
             </div>
@@ -407,12 +276,12 @@
               草嶺古道｜探索新北一日遊探索新北一日遊
             </p>
             <div class="d-flex order-title-detail">
-              <p class="me-40">
-                <img class="me-20" src="./svg/users_grey.svg" />
+              <p class="order-title-detail-number">
+                <img class="" src="./svg/users_grey.svg" />
                 <span>2張</span>
               </p>
               <p>
-                <img class="me-20" src="./svg/calendar_grey.svg" />
+                <img class="" src="./svg/calendar_grey.svg" />
                 <span>2022/01/01 - 2022/01/03</span>
               </p>
             </div>
@@ -420,7 +289,7 @@
         </div>
       </div>
 
-      <div class="pd-40">
+      <div class="pd-40 mobile-button-width">
         <button type="button" class="btn btn-primary">前往付款</button>
       </div>
     </div>
