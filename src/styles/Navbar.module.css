@@ -17,10 +17,12 @@ nav {
   align-items: center;
   background-color: rgba(255, 255, 242);
 }
-.navbar{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.navbar.navbar-expand-lg.bg-body-tertiary {
+  position: fixed;
+  top: 0;
+  padding: 0px 120px;
+  justify-content: space-between;
+  height: var(--navbar-height);
 }
 .left {
   display: flex;
@@ -83,13 +85,14 @@ nav {
 }
 .right .nav-icons li:first-of-type {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
 }
-.right .nav-icons li:first-of-type a {
-  display: none;
-}
-.search-input-unfold {
+
+.search-input {
   display: flex;
+  flex-direction: row;
   align-items: center;
   padding: 6px 8px;
   gap: 15px;
@@ -100,7 +103,7 @@ nav {
   background: rgba(206, 232, 203, 0.3);
   border-radius: 6px;
 }
-.search-input-unfold span {
+.search-input span {
   font-weight: 300;
   font-size: 18px;
   line-height: 26px;

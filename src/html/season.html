@@ -22,8 +22,11 @@
     <!-- navbar/ start -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="left">
+        <button class="menu">
+            <img src="./../icons/menu.svg" alt="">
+        </button>
         <img src="./../icons/logo.svg" alt="" />
-        <button
+        <!-- <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -33,7 +36,7 @@
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
         <div
           class="collapse navbar-collapse navigations"
           id="navbarSupportedContent"
@@ -57,7 +60,10 @@
       <div class="right">
         <ul class="navbar-nav me-auto mb-lg-0 ulRight">
           <li class="nav-item liRight search">
-            <div class="search-input">
+            <a class="link" href="/">
+              <img src="./../icons/search.svg" alt="" />
+            </a>
+            <div class="search-input-unfold">
               <img src="./../icons/search-icon.svg" alt="" />
               <span>輸入登山路線、季節熱門路線</span>
             </div>
