@@ -330,6 +330,7 @@ height: 24px;
 
 /* section2 */
 .totalProduct_secondSection{
+height: 120vh;
 padding: 0px 120px;
 padding-top: 120px;
 background-color: rgba(255, 255, 242, 0.9);
@@ -438,9 +439,9 @@ margin: 0;
 }
 
 /* section3 */
-.totalProduct_secondSection{
+.totalProduct_thirdSection{
   background-color: var(--mtyellow-4);
-  height: 110vh;
+  height: 80vh;
 }
 .thirdBg{
 height: 650px;
