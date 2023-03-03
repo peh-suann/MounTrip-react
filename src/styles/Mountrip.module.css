@@ -1,10 +1,11 @@
 /* Mountrip品牌色定義 */
 :root{
     /* primary/green */
-    --mtgreen-1:#6cba7c;
+    --mtgreen-1:rgb(108, 186, 124);
     --mtgreen-2:#8dc996;
     --mtgreen-3:#add9b1;
     --mtgreen-4:#cee8cb;
+    --mtgreen-5:rgba(206, 232, 203, 0.4);
 
     /* secondary/yellow */
     --mtyellow-1: #F3c969;
@@ -35,7 +36,7 @@
 /* Define the font family for English characters */
 @font-face {
     font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Black.ttf');
+    src: url('./fonts/NotoSans-Black.ttf');
     unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
       U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
       U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -44,7 +45,7 @@
   }
   @font-face {
     font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-ExtraBold.ttf');
+    src: url('./fonts/NotoSans-ExtraBold.ttf');
     unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
       U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
       U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -53,7 +54,7 @@
   }
   @font-face {
     font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Bold.ttf');
+    src: url('./fonts/NotoSans-Bold.ttf');
     unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
       U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
       U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -62,7 +63,7 @@
   }
   @font-face {
     font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-SemiBold.ttf');
+    src: url('./fonts/NotoSans-SemiBold.ttf');
     unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
       U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
       U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -71,7 +72,7 @@
   }
   @font-face {
     font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Medium.ttf');
+    src: url('./fonts/NotoSans-Medium.ttf');
     unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
       U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
       U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -80,7 +81,7 @@
   }
   @font-face {
     font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Regular.ttf');
+    src: url('./fonts/NotoSans-Regular.ttf');
     unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
       U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
       U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -89,7 +90,7 @@
   }
   @font-face {
     font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Light.ttf');
+    src: url('./fonts/NotoSans-Light.ttf');
     unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
       U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
       U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -98,7 +99,7 @@
   }
   @font-face {
     font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-ExtraLight.ttf');
+    src: url('./fonts/NotoSans-ExtraLight.ttf');
     unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
       U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
       U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -107,7 +108,7 @@
   }
   @font-face {
     font-family: 'Noto Sans';
-    src: url('./../fonts/NotoSans-Thin.ttf');
+    src: url('./fonts/NotoSans-Thin.ttf');
     unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
       U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
       U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -118,42 +119,42 @@
   /* Define the font family for Traditional Chinese characters */
   @font-face {
     font-family: 'Noto Sans TC';
-    src: url('./../fonts/NotoSansTC-Black.otf');
+    src: url('./fonts/NotoSansTC-Black.otf');
     unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
       U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
     font-weight: 900;
   }
   @font-face {
       font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Bold.otf');
+      src: url('./fonts/NotoSansTC-Bold.otf');
       unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
         U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
       font-weight: 700;
     }
     @font-face {
       font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Medium.otf');
+      src: url('./fonts/NotoSansTC-Medium.otf');
       unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
         U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
       font-weight: 500;
     }
     @font-face {
       font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Regular.otf');
+      src: url('./fonts/NotoSansTC-Regular.otf');
       unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
         U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
       font-weight: 400;
     }
     @font-face {
       font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Light.otf');
+      src: url('./fonts/NotoSansTC-Light.otf');
       unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
         U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
       font-weight: 300;
     }
     @font-face {
       font-family: 'Noto Sans TC';
-      src: url('./../fonts/NotoSansTC-Thin.otf');
+      src: url('./fonts/NotoSansTC-Thin.otf');
       unicode-range: U+2E80-2EFF, U+2F00-2FDF, U+3400-4DBF, U+20000-2A6DF,
         U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF;
       font-weight: 100;
