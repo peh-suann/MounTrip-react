@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../styles/html-styles/season.css"> -->
+    <link rel="stylesheet" href="./../styles/Mountrip.module.css" />
+    <link rel="stylesheet" href="./../styles/Navbar.module.css" />
+    <link rel="stylesheet" href="./../styles/Footer.module.css" />
+    <link rel="stylesheet" href="./../styles/html-styles/test.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <title>Test</title>
+    <style>
+      footer {
+        position: absolute;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar/ start -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="left">
+        <img src="./../icons/logo.svg" alt="" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse navigations"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="link" href="/"> 商品總覽 </a>
+            </li>
+            <li class="nav-item">
+              <a class="link" href="/member-list"> 難易分級 </a>
+            </li>
+            <li class="nav-item">
+              <a class="link" href="/"> 季節推薦 </a>
+            </li>
+            <li class="nav-item">
+              <a class="link" href="/"> 線上測驗 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="right">
+        <ul class="navbar-nav me-auto mb-lg-0 ulRight">
+          <li class="nav-item liRight search">
+            <div class="search-input">
+              <img src="./../icons/search-icon.svg" alt="" />
+              <span>輸入登山路線、季節熱門路線</span>
+            </div>
+          </li>
+          <li class="nav-item liRight notification">
+            <a class="link" href="/">
+              <img src="./../icons/bell.svg" alt="" />
+            </a>
+          </li>
+          <li class="nav-item liRight cart">
+            <a class="link" href="/">
+              <img src="./../icons/shopping-cart.svg" alt="" />
+            </a>
+          </li>
+          <li class="nav-item liRight profile">
+            <a class="link" href="/">
+              <img src="./../icons/profile.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- navbar/ end -->
+
+    <section class="intro-page">
+      <img src="./../images/test/clouds/pic20.png" alt="cloud" /><img
+        src="./../images/test/clouds/pic19.png"
+        alt="cloud"
+      /><img src="./../images/test/clouds/pic18.png" alt="cloud" /><img
+        src="./../images/test/clouds/pic17.png"
+        alt="cloud"
+      /><img src="./../images/test/clouds/pic16.png" alt="cloud" /><img
+        src="./../images/test/clouds/pic15.png"
+        alt="cloud"
+      /><img src="./../images/test/clouds/pic14.png" alt="cloud" /><img
+        src="./../images/test/clouds/pic13.png"
+        alt="cloud"
+      /><img src="./../images/test/clouds/pic12.png" alt="cloud" /><img
+        src="./../images/test/clouds/pic11.png"
+        alt="cloud"
+      /><img src="./../images/test/clouds/pic10.png" alt="cloud" /><img
+        src="./../images/test/clouds/pic09.png"
+        alt="cloud"
+      /><img src="./../images/test/clouds/pic08.png" alt="cloud" /><img
+        src="./../images/test/clouds/pic07.png"
+        alt="cloud"
+      /><img src="./../images/test/clouds/pic06.png" alt="cloud" /><img
+        src="./../images/test/clouds/pic05.png"
+        alt="cloud"
+      /><img src="./../images/test/clouds/pic04.png" alt="cloud" /><img
+        src="./../images/test/clouds/pic03.png"
+        alt="cloud"
+      /><img src="./../images/test/clouds/pic02.png" alt="cloud" /><img
+        src="./../images/test/clouds/pic01.png"
+        alt="cloud"
+      />
+      <img src="./../images/test/mountain/g-2.svg" alt="" />
+      <img src="./../images/test/mountain/y-2.svg" alt="" />
+      <img src="./../images/test/mountain/g-1.svg" alt="" />
+      <img src="./../images/test/mountain/y-1.svg" alt="" />
+      <div class="ball"></div>
+    </section>
+
+    <!-- <footer>
+        <div class="left-links">
+            <a href="">聯絡我們</a>
+            <span>|</span>
+            <a href="">隱私權條款</a>
+            <span>|</span>
+            <a href="">常見問題及幫助</a>
+        </div>
+        <h6 class="copyright">
+            COPYRIGHT © 2023 MOUNTRIP All rights reserved.
+        </h6>
+    </footer> -->
+    <script>
+      const images = document.querySelectorAll('.intro-page img')
+      const mount_g2 = images[20]
+      let g2_left = window.getComputedStyle(mount_g2).left
+      let g2_top = window.getComputedStyle(mount_g2).top
+
+      const mount_y2 = images[21]
+      const y2_left = window.getComputedStyle(mount_g2).left
+      const y2_top = window.getComputedStyle(mount_g2).top
+
+      const mount_g1 = images[22]
+      const g1_left = window.getComputedStyle(mount_g2).left
+      const g1_top = window.getComputedStyle(mount_g2).top
+
+      const mount_y1 = images[23]
+      const y1_left = window.getComputedStyle(mount_g2).left
+      const y1_top = window.getComputedStyle(mount_g2).top
+
+      let mouseX = 0
+      let mouseY = 0
+
+      document.addEventListener('mousemove', function (e) {
+        const windowHeight = window.innerHeight
+        const windowWidth = window.innerWidth
+
+        mouseX = e.clientX
+        mouseY = e.clientY
+
+        let moveX, moveY
+        if (mouseX >= windowWidth / 2) {
+          // right side
+          if (mouseY >= windowHeight / 2) {
+            // bottom right
+            moveX = 10
+          } else {
+            // top right
+            moveX = 20
+          }
+        } else {
+          // left side
+          if (mouseY >= windowHeight / 2) {
+            // bottom left
+            moveX = 30
+          } else {
+            // top left
+            moveX = 40
+          }
+        }
+
+        console.log('g2_left: ', g2_left)
+        console.log('moveX: ', moveX)
+        mount_g2.style.left = `${parseInt(g2_left) + moveX}px`
+
+        // console.log('mouseX: ', mouseX)
+        // console.log('mouseY: ', mouseY)
+        // console.log('windowHeight: ', windowHeight)
+        // console.log('windowWidth: ', windowWidth)
+        // console.log(`${percentageX} / ${percentageY}`)
+        // g2_left = parseInt(g2_left)
+
+        // console.log("g2_left: ",g2_left, typeof g2_left);
+        // console.log("percentageX: ",percentageX, typeof percentageX);
+        // move_g2_left = g2_left + percentageX
+        // mount_g2.style.left = `${move_g2_left}px`
+      })
+    </script>
+  </body>
+</html>

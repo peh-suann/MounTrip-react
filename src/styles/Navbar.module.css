@@ -33,19 +33,22 @@ nav {
   background-color: transparent;
   border: none;
 
-  display: none;
+  background-color: rgba(255, 255, 242, 0.9);
 }
 .left .nav-navigations {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   padding: 0px;
   margin: 0;
   gap: 36px;
 }
-.left .nav-navigations li {
-  list-style: none;
+.navbar.navbar-expand-lg.bg-body-tertiary {
+  padding: 0px 120px;
+  justify-content: space-between;
+  height: 80px;
 }
-.left .link {
+.link {
   display: block;
   padding: 0.5rem 1rem;
   color: var(--mtgreen-1);
@@ -60,13 +63,11 @@ nav {
 .left .link:hover {
   color: var(--mtgreen-1);
   text-decoration: underline;
-
-  cursor: pointer;
 }
 
 .right {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
   align-items: center;
   padding: 0px;
 }
@@ -98,7 +99,6 @@ nav {
 
   background: rgba(206, 232, 203, 0.3);
   border-radius: 6px;
-  cursor: text;
 }
 .search-input-unfold span {
   font-weight: 300;
