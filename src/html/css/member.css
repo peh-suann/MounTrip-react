@@ -1,0 +1,36 @@
+/* 要先將 Mountrip.module.css 檔案內的 :root 設定都複製過來才能用 */
+:root{
+    /* primary/green */
+    --mtgreen-1:#6cba7c;
+    --mtgreen-2:#8dc996;
+    --mtgreen-3:#add9b1;
+    --mtgreen-4:#cee8cb;
+
+    /* secondary/yellow */
+    --mtyellow-1: #F3c969;
+    --mtyellow-2: #f7db97;
+    --mtyellow-3: #FBEDC4;
+    --mtyellow-4: #FFFFF2;
+
+    /* neutral-color/ black/ grey */
+    --mtgrey-1: #011306;
+    --mtgrey-2: #4d5a51;
+    --mtgrey-3: #9aa09b;
+    --mtgrey-4: #e6E7E6;
+
+    /* danger-color /red */
+    --mtred-1:#E85F5c;
+    --mtred-2: #ED7F7D;
+    --mtred-3: #f6Bfbe;
+    --mtred-4: #fadfde;
+}
+h1{
+    color:var(--mtgreen-3)
+}
+
+.box1{
+    background-color:var(--mtgreen-2);
+    width: 100px;
+    height: 100px;
+
+}

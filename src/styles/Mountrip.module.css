@@ -29,7 +29,9 @@
 
     /* ENG FONT */
     /* --mtfont-eng: 'Noto Sans', sans-serif; */
-    
+
+    --navbar-height: 80px;
+    --navbar-mobile-height: 80px;
 }
 
 /* Define the font family for English characters */

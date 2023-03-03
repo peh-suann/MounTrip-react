@@ -1,0 +1,116 @@
+@media screen and (max-width: 390px) {
+  /* top bar ------------------- */
+  #season_top_bar {
+    height: calc(var(--navbar-mobile-height) + 500px);
+  }
+  #season_top_bar h1 {
+    font-size: 28px;
+  }
+  #season_top_bar p {
+    margin-bottom: 44px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  /* top bar ------------------- */
+
+  /* products ------------------- */
+  section.products {
+    width: 100%;
+    padding: 0px 15px;
+    margin-top: -20px;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 24px;
+  }
+  .row-of-products {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  section.products .row-of-products:first-child .product:first-child .pic {
+    box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.2);
+  }
+  section.products .row-of-products:not(:first-child) {
+    display: none;
+  }
+  section.products .pic {
+    height: 200px;
+  }
+  .rates p {
+    font-weight: 400;
+    font-size: 13px;
+  }
+  .info h4 {
+    font-size: 16px;
+  }
+  .info p {
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .price p {
+    font-size: 12px;
+    line-height: 130%;
+  }
+  .price h4 {
+    font-size: 18px;
+    line-height: 130%;
+  }
+  button.load-more-btn {
+    margin-top: 8px;
+    font-size: 16px;
+    padding: 4px 36px;
+  }
+  /* products ------------------- */
+
+  /* carousel ------------------- */
+  section.comments {
+    margin-top: 64px;
+    margin-bottom: 0;
+    padding: 0px 15px;
+    overflow-x: hidden;
+  }
+  section.comments h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    padding: 0px 30px;
+
+    gap: 0;
+    justify-content: space-between;
+  }
+  section.comments h3 span:not(:nth-child(2)) {
+    gap: 2px;
+  }
+  section.comments h3 span:not(:nth-child(2)) img {
+    width: 22px;
+    aspect-ratio: 1/1;
+  }
+  section.comments .comment-carousel {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 48px;
+  }
+  section.comments .comment-carousel button {
+    display: none;
+  }
+  section.comments .comment {
+    flex-shrink: 0;
+    width: 300px;
+    height: 375px;
+  }
+  section.comments .comment h5 {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  section.comments .comment p {
+    font-size: 13px;
+  }
+  /* carousel ------------------- */
+}
