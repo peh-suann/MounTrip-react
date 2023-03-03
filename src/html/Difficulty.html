@@ -11,74 +11,11 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/Difficulty.css" />
+    <!-- <link rel="stylesheet" href="./css/Difficulty.css" /> -->
     <link rel="stylesheet" href="./../styles/Mountrip.module.css" />
-    <link rel="stylesheet" href="./../src/styles/Navbar.module.css" />
+    <link rel="stylesheet" href="./../styles/Navbar.module.css" />
   </head>
   <body>
-    <!-- navbar -->
-    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="left">
-        <a href="">
-          <img src="./../icons/logo.svg" alt="" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse navigations"
-          id="navbarSupportedContent"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="link" to="/"> 商品總覽 </a>
-            </li>
-            <li class="nav-item">
-              <a class="link" to="/member-list"> 難易分級 </a>
-            </li>
-            <li class="nav-item">
-              <a class="link" to="/"> 季節推薦 </a>
-            </li>
-            <li class="nav-item">
-              <a class="link" to="/"> 線上測驗 </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="right">
-        <ul class="navbar-nav me-auto mb-lg-0 ulRight">
-          <li class="nav-item liRight search">
-            <div class="search-input">
-              <img src="./../icons/search-icon.svg" alt="" />
-              <span>輸入登山路線、季節熱門路線</span>
-            </div>
-          </li>
-          <li class="nav-item liRight notification">
-            <a class="link" href="/">
-              <img src="./../icons/bell.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item liRight cart">
-            <a class="link" href="/">
-              <img src="./../icons/shopping-cart.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item liRight profile">
-            <a class="link" href="/">
-              <img src="./../icons/profile.svg" alt="" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav> -->
     <!-- difficultyMountain -->
     <section class="difficultyAll">
       <div class="difficulty">
@@ -111,6 +48,7 @@
           </svg>
           <div class="dMountain_hard">
             <svg
+              onclick="flagmove()"
               class="dMountain_hard"
               width="876"
               height="230"
@@ -739,5 +677,13 @@
         <span>COPYRIGHT © 2023 MOUNTRIP All rights reserved.</span>
       </div>
     </footer>
+
+    <script>
+      // const flag = document.querySelector('.difficulty_flag')
+      // let translateX =
+      // flag.onclick = function () {
+      //   flag.style = translateX('20px')
+      // }
+    </script>
   </body>
 </html>
