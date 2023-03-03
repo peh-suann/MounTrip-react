@@ -108,7 +108,7 @@ h3 {
   font-size: 18px;
   line-height: 150%;
   letter-spacing: 0.05em;
-  /* margin-bottom: 40px; */
+  margin-bottom: 40px;
 }
 
 .product-img-wrap {
@@ -189,5 +189,33 @@ h3 {
     font-size: 16px;
     line-height: 140%;
     color: var(--mtgrey-1);
+  }
+
+  .product-col-mobile {
+    margin-bottom: 24px;
+  }
+
+  .single-price {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: end;
+    letter-spacing: 0.05em;
+  }
+
+  .total-price {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: end;
+    letter-spacing: 0.05em;
+  }
+
+  .ticketnumber {
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
   }
 }
