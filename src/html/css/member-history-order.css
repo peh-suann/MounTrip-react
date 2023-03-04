@@ -65,7 +65,7 @@ section{
     border-radius: 100%;
     background-color: var(--mtgreen-3);
     position:absolute;
-    bottom:1px;
+    bottom:0px;
     right:15px;
     /* z-index: 2; */
 }
@@ -119,7 +119,7 @@ section{
 .edit-btn{
     width: 100%;
     color:var(--mtgreen-1);
-    background-color: var(--mtgreen-5);
+    background-color: var(--mtgreen-4);
     border-radius: 5px;
     border: none;
     font-size: 20px;
@@ -168,7 +168,6 @@ section{
 .member-data h1{
     color:var(--mtgreen-1);
     margin-left: 15px;
-    font-weight: 700;
 }
 .title{
     display: flex;
@@ -176,133 +175,9 @@ section{
 .title svg{
     transform: translateY(25%) scale(1.2);
 }
-.data-area{
-    margin-top: 28px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px 100px 100px;
-    grid-template-areas:
-    "name name name name fname fname fname fname gender gender gender gender"
-    "birth birth birth birth id id  id id phone phone phone phone"
-    "account account account account account account email email email email email email"
-    "zip city city address address address address address address address address address"
-    ;
-    column-gap: 20px;
-    row-gap: 24px;
-    grid-auto-columns: 1fr; /* 指定自適應列的寬度為 1fr */
-    position: relative;
-}
-.input-blocks{
-    display: flex;
-    flex-direction: column;
-}
-.input-blocks label{
-    /* width: 100px; */
-    font-size: 20px;
-    color: var(--mtgrey-1);
-    margin-bottom: 10px;
-}
-.fake-label-city{
-    height: 40px;
-}
-.fake-label-add{
-    height: 40px;
-}
-.input-blocks input {
-    border: 2px solid var(--mtgreen-3);
-    background-color: rgba(206, 232, 203, 0.6);
-    border-radius: 10px;
-    height: 55px;
-    color:var(--mtgreen-1);
-    font-size: 20px;
-    font-weight: 500;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.input-blocks input:focus{
-    outline: none;
-    border: 2px solid var(--mtgreen-1);
-    background-color: var(--mtyellow-4);
-    box-shadow: 0 0 0 4px var(--mtgreen-4);
-}
-.input-blocks select {
-    border: 2px solid var(--mtgreen-3);
-    background-color: rgba(206, 232, 203, 0.6);
-    border-radius: 10px;
-    height: 55px;
-    color:var(--mtgreen-1);
-    font-size: 20px;
-    font-weight: 500;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.input-blocks select:focus{
-    outline: none;
-    border: 2px solid var(--mtgreen-1);
-    background-color: var(--mtyellow-4);
-    box-shadow: 0 0 0 4px var(--mtgreen-4);
-}
-.input-blocks option{
-    color:var(--mtgreen-1);
-    font-size: 20px;
-    font-weight: 500;
-    padding-left: 20px;
-    padding-right: 20px;
-}
 
-.name-wrap{
-    grid-area: name;
-}
-.fname-wrap{
-    grid-area: fname;
-}
-.gender-wrap{
-    grid-area: gender;
-}
-.birth-wrap{
-    grid-area: birth;
-}
-.id-wrap{
-    grid-area: id;
-}
-.phone-wrap{
-    grid-area: phone;
-}
-.account-wrap{
-    grid-area: account;
-}
-.email-wrap{
-    grid-area: email;
-}
-.zip-wrap{
-    grid-area: zip;
-    width: 90px;
-}
-.city-wrap{
-    grid-area: city;
-}
-.address-wrap{
-    grid-area: address;
-}
-.save-btn{
-    width: 134px;
-    height: 51px;
-    color:white;
-    background-color: var(--mtgreen-4);
-    border-radius: 5px;
-    border: none;
-    font-size: 20px;
-    /* margin-top: 52px; */
-    padding-top: 8px;
-    padding-bottom: 8px;
-    position: absolute;
-    right:0;
-    top:510px;
 
-}
-.save-btn:hover{
-    box-shadow: 0 0 0 4px var(--mtgreen-4);
-}
+
 /* footer */
 .footer{
     background-color: var(--mtgreen-1);
@@ -398,7 +273,7 @@ section{
         border-radius: 100%;
         background-color: var(--mtgreen-3);
         position:absolute;
-        bottom:-50px;
+        bottom:0px;
         left:80px;
         /* z-index: 2; */
     }
@@ -420,7 +295,7 @@ section{
     }
     .camera{
         /* position: absolute; */
-        transform:  scale(0.7) translateX(14%) translateY(-10%);
+        transform:  scale(0.7) translateX(14%) translateY(-20%);
     }
     .member-name{
         display: flex;
