@@ -102,7 +102,7 @@ nav {
   background: rgba(206, 232, 203, 0.3);
   border-radius: 6px;
 }
-.search-input span {
+.search-input-unfold span {
   font-weight: 300;
   font-size: 18px;
   line-height: 26px;
