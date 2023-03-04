@@ -1,0 +1,482 @@
+/* 要先將 Mountrip.module.css 檔案內的 :root 設定都複製過來才能用 */
+:root{
+    /* primary/green */
+    --mtgreen-1:#6cba7c;
+    --mtgreen-2:#8dc996;
+    --mtgreen-3:#add9b1;
+    --mtgreen-4:#cee8cb;
+    --mtgreen-5:rgba(206, 232, 203, 0.4);
+
+
+    /* secondary/yellow */
+    --mtyellow-1: #F3c969;
+    --mtyellow-2: #f7db97;
+    --mtyellow-3: #FBEDC4;
+    --mtyellow-4: #FFFFF2;
+
+    /* neutral-color/ black/ grey */
+    --mtgrey-1: #011306;
+    --mtgrey-2: #4d5a51;
+    --mtgrey-3: #9aa09b;
+    --mtgrey-4: #e6E7E6;
+
+    /* danger-color /red */
+    --mtred-1:#E85F5c;
+    --mtred-2: #ED7F7D;
+    --mtred-3: #f6Bfbe;
+    --mtred-4: #fadfde;
+}
+section{
+    height: 100vh;
+    width: 100%;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 248px 2fr ;
+    grid-template-rows: 100%;
+    gap:10px 75px;
+    padding-top: 69px;
+    padding-right: 240px;
+    padding-left: 240px;
+    background-color: var(--mtyellow-4);
+    width: 100%;
+    /* height: 100%; */
+}
+.sidebar{
+    /* border: 1px solid red; */
+    width: 100%;
+    margin-bottom: 80px;
+}
+.profile{
+    position: relative;
+}
+.profile-wrap{
+    height: 248px;
+    width: 248px;
+    background-color: #faf;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.pic-btn{
+    content:"yes";
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--mtyellow-4);
+    border-radius: 100%;
+    background-color: var(--mtgreen-3);
+    position:absolute;
+    bottom:0px;
+    right:15px;
+    /* z-index: 2; */
+}
+.pic-btn:hover{
+    border: 4px solid var(--mtyellow-3);
+    background-color: var(--mtgreen-1);
+}
+
+
+.profile-pic{
+    width: 100%;
+}
+.camera{
+    /* position: absolute; */
+    transform: translateX(50%) translateY(38%);
+}
+
+/* 會員姓名帳號 */
+.member-name{
+    display: flex;
+    margin-top: 36px;
+    height: 38px;
+    position: relative;
+    text-align: center;
+}
+.member-name::after{
+    content:'超級嚮導';
+    color:white;
+    font-size:18px;
+    background-color: var(--mtyellow-1);
+    border-radius: 18px;
+    padding: .5px 10px .5px 10px;
+    align-content: center;
+    /* height: 100%; */
+    position: absolute;
+    top:4px;
+    right:0px;
+}
+.member-name p{
+    font-size: 24px;
+    font-weight: 700;
+}
+.first-name{
+    margin-right: 1rem;
+}
+.member-account{
+    margin-top: 7px;
+    font-size: 18px;
+    color:var(--mtgrey-3);
+}
+.edit-btn{
+    width: 100%;
+    color:var(--mtgreen-1);
+    background-color: var(--mtgreen-4);
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    margin-top: 26px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.edit-btn:hover{
+    box-shadow: 0 0 0 4px var(--mtgreen-4);
+}
+.btn-border{
+    border: 1px solid var(--mtgreen-1);
+    width: 100%;
+    margin-top: 40px;
+}
+.sidebar-menu{
+    margin-top: 40px;
+    /* display: flex; */
+    /* flex-direction: row; */
+    
+}
+.sidebar-menu li{
+    margin-bottom: 18px;
+    list-style: none;
+}
+.sidebar-menu a{
+    text-decoration: none;
+    color:var(--mtgrey-3);
+    font-size: 20px;
+    font-weight: 400;
+}
+.sidebar-menu a:hover{
+    font-weight: 700;
+}
+.menu-icon{
+    margin-right: 10px;
+    transform: translateY(-10%);
+}
+
+
+/* 右邊的會元資料 */
+.member-data{
+    /* border: 1px solid blueviolet; */
+    width: 100%;
+}
+.member-data h1{
+    color:var(--mtgreen-1);
+    margin-left: 15px;
+}
+.title{
+    display: flex;
+}
+.title svg{
+    transform: translateY(25%) scale(1.2);
+}
+
+
+
+/* footer */
+.footer{
+    background-color: var(--mtgreen-1);
+    width: 100%;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.footer-right{
+    color:#FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 5rem;
+}
+.footer-left{
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer-ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+.footer-link{
+    color:#FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 1rem;
+}
+.link:hover{
+    color: var(--mtyellow-1)
+}
+.footer-barbar{
+    width: 0;
+    height: 16px;
+    border: .8px solid #FFFFFF;
+    margin-right: 1rem;
+
+}
+
+/* w:390px RWD */
+@media screen and (max-width:390px){
+    section{
+        width: 390px;
+    }
+    .grid-container{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 390px ;
+        grid-template-rows: 113px 1fr ;
+        gap:40px;
+        padding-top: 70px;
+        padding-right: 15px;
+        padding-left: 15px;
+        background-color: var(--mtyellow-4);
+        /* width: 100%; */
+        /* height: 100%; */
+    }
+
+    .footer{
+        display: none;
+    }
+}
+
+/* 使用者照片區 */
+@media screen and (max-width:390px) {
+    .sidebar{
+        width: 360px;
+    }
+    .profile{
+        position: relative;
+    }
+    .profile-wrap{
+        height: 113px;
+        width: 113px;
+        /* background-color: #faf; */
+        border-radius: 100%;
+        overflow: hidden;
+        grid-area: pic;
+    }
+    .pic-btn{
+        content:"yes";
+        width: 30px;
+        height: 30px;
+        border: 3px solid var(--mtyellow-4);
+        border-radius: 100%;
+        background-color: var(--mtgreen-3);
+        position:absolute;
+        bottom:0px;
+        left:80px;
+        /* z-index: 2; */
+    }
+    .member-profile{
+        display: grid;
+        grid-template-columns: 113px 1fr;
+        grid-template-rows: 56.5px 56.5px;
+        grid-template-areas: 
+        "pic name"
+        "pic account"
+        ;
+        column-gap: 20px;
+        row-gap: 4px;
+    }
+    
+    
+    .profile-pic{
+        width: 100%;
+    }
+    .camera{
+        /* position: absolute; */
+        transform:  scale(0.7) translateX(14%) translateY(-20%);
+    }
+    .member-name{
+        display: flex;
+        margin-top: 36px;
+        height: 38px;
+        position: relative;
+        text-align: center;
+        grid-area: name;
+    }
+    .member-name::after{
+        content:'超級嚮導';
+        color:white;
+        font-size:14px;
+        background-color: var(--mtyellow-1);
+        border-radius: 18px;
+        padding: 4px 10px 4px 10px;
+        align-items: center;
+        /* height: 100%; */
+        position: absolute;
+        top:-2px;
+        /* right:0px; */
+    }
+    .member-name p{
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+    .first-name{
+        margin-right: 1rem;
+    }
+    .member-account{
+        /* margin-top: 7px; */
+        font-size: 16px;
+        color:var(--mtgrey-3);
+        grid-area: account;
+    }
+    .edit-btn{
+        width: 100%;
+        color:var(--mtgreen-1);
+        background-color: var(--mtgreen-4);
+        border-radius: 5px;
+        border: none;
+        font-size: 20px;
+        margin-top: 26px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    
+}
+
+@media screen and (max-width:390px) {
+
+    .sidebar-menu{
+        display: none;
+    }
+    .edit-btn{
+        display: none;
+    }
+    .btn-border{
+        display: none;
+    }
+    .title{
+        display: none;
+    }
+    .fake-label-add{
+        display: none;
+    }
+    .fake-label-city{
+        height: 32px;
+    }
+}
+@media screen and (max-width:390px){
+    .member-data{
+        width: 360px;
+    }
+    
+    .data-area{
+        margin-top: 0px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 175px 175px   ;
+        grid-template-rows: 100px 100px 100px 100px 100px 100px 90px 55px 100px;
+        column-gap: 10px;
+        row-gap: 10px;
+        grid-template-areas: 
+        "name fname"
+        " gender gender" 
+        " phone phone"
+        "email email"
+        "id birth"
+        "account account"
+        "zip city"
+        "address address"
+        "btn btn"
+        /* ""; */
+        /* grid-auto-columns: 1fr; 指定自適應列的寬度為 1fr */
+    }
+    .input-blocks label{
+        /* width: 100px; */
+        font-size: 16px;
+        color: var(--mtgrey-1);
+        margin-bottom: 8px;
+    }
+    .input-blocks input {
+        border: 2px solid var(--mtgreen-3);
+        background-color: rgba(206, 232, 203, 0.6);
+        border-radius: 10px;
+        height: 55px;
+        color:var(--mtgreen-1);
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .input-blocks select {
+        border: 2px solid var(--mtgreen-3);
+        background-color: rgba(206, 232, 203, 0.6);
+        border-radius: 10px;
+        height: 55px;
+        color:var(--mtgreen-1);
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+   
+    .input-blocks option{
+        color:var(--mtgreen-1);
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .name-wrap{
+        grid-area: name;
+    }
+    .fname-wrap{
+        grid-area: fname;
+    }
+    .gender-wrap{
+        grid-area: gender;
+    }
+    .birth-wrap{
+        grid-area: birth;
+    }
+    .id-wrap{
+        grid-area: id;
+    }
+    .phone-wrap{
+        grid-area: phone;
+    }
+    .account-wrap{
+        grid-area: account;
+    }
+    .email-wrap{
+        grid-area: email;
+    }
+    .zip-wrap{
+        grid-area: zip;
+        width: 100%;
+    }
+    .city-wrap{
+        grid-area: city;
+    }
+    .address-wrap{
+        grid-area: address;
+    }
+    .save-btn{
+        grid-area: btn;
+        width: 100%;
+    height: 51px;
+    color:white;
+    background-color: var(--mtgreen-1);
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    margin-top: 14px;
+    position: relative;
+    right:0px;
+    top:0px;
+    }
+}

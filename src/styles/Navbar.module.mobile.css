@@ -1,0 +1,49 @@
+@media screen and (max-width: 390px) {
+    nav {
+      position: fixed;
+      padding: 0px 15px;
+      padding-bottom: 8px;
+      height: var(--navbar-height);
+      width: 390px;
+  
+      align-items: flex-end;
+    }
+    .navbar{
+      width: 100%;
+      padding: 0 !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .left {
+      gap: 20px;
+    }
+    .left button {
+      padding: 0;
+      display: inline-block;
+    }
+    .left #logo {
+      width: 65px;
+    }
+    .left ul.nav-navigations {
+      display: none;
+    }
+    .right .nav-icons {
+      display: flex;
+      align-items: center;
+      padding: 0px;
+      margin: 0;
+      gap: 22px;
+    }
+    .right .nav-icons li a img{
+      width: 24px;
+      aspect-ratio: 1/1;
+    }
+    .right .nav-icons li:first-of-type a {
+      display: inline-block;
+    }
+    .right .nav-icons li:first-of-type .search-input-unfold {
+      display: none;
+    }
+  }
+  
