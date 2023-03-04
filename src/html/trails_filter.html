@@ -1,329 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../styles/html-styles/trails_filter.css">
-  <link rel="stylesheet" href="../styles/Mountrip.module.css">
-  <link rel="stylesheet" href="../styles/Navbar.module.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-
-<body class="main_bg">
-
   <head>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-      <div class="left">
-        <img src="./../icons/logo.svg" alt="" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse navigations" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="link" href="/"> 商品總覽 </a>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/trails_filter.css" />
+    <link rel="stylesheet" href="../styles/Mountrip.module.css" />
+    <link rel="stylesheet" href="../styles/Navbar.module.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="main_bg">
+    <head>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="left">
+          <img src="./../icons/logo.svg" alt="" />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse navigations"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="link" href="/"> 商品總覽 </a>
+              </li>
+              <li class="nav-item">
+                <a class="link" href="/member-list"> 難易分級 </a>
+              </li>
+              <li class="nav-item">
+                <a class="link" href="/"> 季節推薦 </a>
+              </li>
+              <li class="nav-item">
+                <a class="link" href="/"> 線上測驗 </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <ul class="navbar-nav me-auto mb-lg-0 ulRight">
+            <li class="nav-item liRight search">
+              <div class="search-input">
+                <img src="./../icons/search-icon.svg" alt="" />
+                <span>輸入登山路線、季節熱門路線</span>
+              </div>
             </li>
-            <li class="nav-item">
-              <a class="link" href="/member-list"> 難易分級 </a>
+            <li class="nav-item liRight notification">
+              <a class="link" href="/">
+                <img src="./../icons/bell.svg" alt="" />
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="link" href="/"> 季節推薦 </a>
+            <li class="nav-item liRight cart">
+              <a class="link" href="/">
+                <img src="./../icons/shopping-cart.svg" alt="" />
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="link" href="/"> 線上測驗 </a>
+            <li class="nav-item liRight profile">
+              <a class="link" href="/">
+                <img src="./../icons/profile.svg" alt="" />
+              </a>
             </li>
           </ul>
         </div>
-      </div>
-      <div class="right">
-        <ul class="navbar-nav me-auto mb-lg-0 ulRight">
-          <li class="nav-item liRight search">
-            <div class="search-input">
-              <img src="./../icons/search-icon.svg" alt="" />
-              <span>輸入登山路線、季節熱門路線</span>
-            </div>
-          </li>
-          <li class="nav-item liRight notification">
-            <a class="link" href="/">
-              <img src="./../icons/bell.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item liRight cart">
-            <a class="link" href="/">
-              <img src="./../icons/shopping-cart.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item liRight profile">
-            <a class="link" href="/">
-              <img src="./../icons/profile.svg" alt="" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </head>
+      </nav>
+    </head>
 
-
-  <main >
-    <div class="d-flex flex-row main_all ">
-      <!-- left-card for 電腦版 -->
-      <div class="left-card card-body d-flex flex-column">
-        <h5 class="h5-sub-title">搜尋</h5>
-        <!-- input group -->
-        <!-- FIXME: input:focus -->
-        <div class="d-flex flex-column search">
-          <p class="mb-0 p-content">目的地</p>
-          <!-- input_with_icon  -->
-          <div class=" input_with_icon  d-flex flex-row ">
-            <span class="icon_span col">
-              <img class="icon_size" src="../icons/search-icon.svg" alt="">
-            </span>
-            <div class="col">
-              <input class="input_style" type="text">
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex flex-column search">
-          <p class="mb-0 p-content">出發日期</p>
-          <!-- input_with_icon date -->
-          <div class=" input_with_icon d-flex flex-row ">
-            <span class="icon_span ">
-              <img class="icon_size" src="../icons/calendar.svg" alt="">
-            </span>
-            <div class="col">
-              <!-- FIXME:如何點擊input 或 改以左邊的圖示顯示日期表 -->
-              <input class="input_style" type="date" id="picker" pseudo="-webkit-calendar-picker-indicator">
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex flex-column search">
-          <p class="mb-0 p-content">返程日期</p>
-          <!-- input_with_icon date -->
-          <div class=" input_with_icon d-flex flex-row ">
-            <span class="icon_span ">
-              <img class="icon_size" src="../icons/calendar.svg" alt="">
-            </span>
-            <div class="col">
-              <!-- FIXME:如何點擊input 或 改以左邊的圖示顯示日期表 -->
-              <input class="input_style" type="date" id="picker" pseudo="-webkit-calendar-picker-indicator">
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex flex-column search_count">
-          <p class="mb-0 p-content">人數</p>
-          <!-- input_with_icon  -->
-          <div class=" input_with_icon  d-flex flex-row">
-            <span class="icon_span col">
-              <img class="icon_size" src="../icons/num_people.svg" alt="">
-            </span>
-            <div class="col">
-              <input class="input_style" type="number">
-            </div>
-          </div>
-        </div>
-
-        <button type="button" class="btn-search ">搜尋</button>
-
-
-      </div>
-
-      <!-- right-card -->
-      <div class="right-card d-flex flex-column ">
-
-        <!-- right-card > sub_title -->
-        <div class="sub_title">
-          <div class="d-flex p-0">
-            <span class=" d-none d-lg-flex">
-              <img class="Vector_long" src="./imgs/Vector.svg" alt="">
-            </span>
-            <div class="">
-              <h5 class="h5-sub-title-search">「草嶺古道」的搜尋結果</h5>
-            </div>
-            <span class=" d-none d-lg-flex">
-              <img class="Vector_long" src="./imgs/Vector.svg" alt="">
-            </span>
-          </div>
-        </div>
-
-        <!-- right-card > trails-cards -->
-        <div class="col">
-          <!-- card group > card*n  FIXME:卡片寬度-->
-          <div class=" trails_card ">
-            <div class="row g-0 d-flex flex-row ">
-              <div class="col-4 trails_img_wrap ">
-                <img src="./imgs/5-1.jpg" class="trails_img rounded-start" alt="...">
+    <main>
+      <div class="d-flex flex-row main_all">
+        <!-- left-card for 電腦版 -->
+        <div class="left-card card-body d-flex flex-column">
+          <h5 class="h5-sub-title">搜尋</h5>
+          <!-- input group -->
+          <!-- FIXME: input:focus -->
+          <div class="d-flex flex-column search">
+            <p class="mb-0 p-content">目的地</p>
+            <!-- input_with_icon  -->
+            <div class="input_with_icon d-flex flex-row">
+              <span class="icon_span col">
+                <img class="icon_size" src="../icons/search-icon.svg" alt="" />
+              </span>
+              <div class="col">
+                <input class="input_style" type="text" />
               </div>
-              <div class="col ">
-                <div class="card-body">
-                  <h5 class="product-name">草嶺古道｜探索新北一日遊探索新北一日遊</h5>
-                  <div class="mb-2">
-                    <p class="overflow_p p_line_clamp mb-0">
-                      你見過南橫之美嗎？<br/>自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
-                    </p>
-                  </div>
-                  <!-- location-group -->
-                  <div class="d-flex flex-row align-items-center mb-3">
-                    <div class="mb-2 me-2">
-                      <img src="../icons/map-pin.svg" alt="">
-                    </div>
-                    <span class="pe-3 ">
-                      <p class="mb-0">臺北市北投區</p>
-                    </span>
-                    <div class="mb-1 pe-3">
-                      <p class="mb-0">|</p>
-                    </div>
+            </div>
+          </div>
 
-                    <span class="d-flex mb-1">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                    </span>
-                  </div>
-                  <div class="col">
-                    <h3 class="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
+          <div class="d-flex flex-column search">
+            <p class="mb-0 p-content">出發日期</p>
+            <!-- input_with_icon date -->
+            <div class="input_with_icon d-flex flex-row">
+              <span class="icon_span">
+                <img class="icon_size" src="../icons/calendar.svg" alt="" />
+              </span>
+              <div class="col">
+                <!-- FIXME:如何點擊input 或 改以左邊的圖示顯示日期表 -->
+                <input
+                  class="input_style"
+                  type="date"
+                  id="picker"
+                  pseudo="-webkit-calendar-picker-indicator"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column search">
+            <p class="mb-0 p-content">返程日期</p>
+            <!-- input_with_icon date -->
+            <div class="input_with_icon d-flex flex-row">
+              <span class="icon_span">
+                <img class="icon_size" src="../icons/calendar.svg" alt="" />
+              </span>
+              <div class="col">
+                <!-- FIXME:如何點擊input 或 改以左邊的圖示顯示日期表 -->
+                <input
+                  class="input_style"
+                  type="date"
+                  id="picker"
+                  pseudo="-webkit-calendar-picker-indicator"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column search_count">
+            <p class="mb-0 p-content">人數</p>
+            <!-- input_with_icon  -->
+            <div class="input_with_icon d-flex flex-row">
+              <span class="icon_span col">
+                <img class="icon_size" src="../icons/num_people.svg" alt="" />
+              </span>
+              <div class="col">
+                <input class="input_style" type="number" />
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-search">搜尋</button>
+        </div>
+
+        <!-- right-card -->
+        <div class="right-card d-flex flex-column">
+          <!-- right-card > sub_title -->
+          <div class="sub_title">
+            <div class="d-flex p-0">
+              <span class="d-none d-lg-flex">
+                <img class="Vector_long" src="./imgs/Vector.svg" alt="" />
+              </span>
+              <div class="">
+                <h5 class="h5-sub-title-search">「草嶺古道」的搜尋結果</h5>
+              </div>
+              <span class="d-none d-lg-flex">
+                <img class="Vector_long" src="./imgs/Vector.svg" alt="" />
+              </span>
+            </div>
+          </div>
+
+          <!-- right-card > trails-cards -->
+          <div class="col">
+            <!-- card group > card*n  FIXME:卡片寬度-->
+            <div class="trails_card">
+              <div class="row g-0 d-flex flex-row">
+                <div class="col-4 trails_img_wrap">
+                  <img
+                    src="./imgs/5-1.jpg"
+                    class="trails_img rounded-start"
+                    alt="..."
+                  />
+                </div>
+                <div class="col">
+                  <div class="card-body">
+                    <h5 class="product-name">
+                      草嶺古道｜探索新北一日遊探索新北一日遊
+                    </h5>
+                    <div class="mb-2">
+                      <p class="overflow_p p_line_clamp mb-0">
+                        你見過南橫之美嗎？<br />自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
+                      </p>
+                    </div>
+                    <!-- location-group -->
+                    <div class="d-flex flex-row align-items-center mb-3">
+                      <div class="mb-2 me-2">
+                        <img src="../icons/map-pin.svg" alt="" />
+                      </div>
+                      <span class="pe-3">
+                        <p class="mb-0">臺北市北投區</p>
+                      </span>
+                      <div class="mb-1 pe-3">
+                        <p class="mb-0">|</p>
+                      </div>
+
+                      <span class="d-flex mb-1">
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                      </span>
+                    </div>
+                    <div class="col">
+                      <h3 class="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-1  d-flex justify-content-end align-items-start">
-                <button class="heart_btn">
-                  <img src="./imgs/heart.svg" alt="">
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class=" trails_card ">
-            <div class="row g-0 d-flex flex-row  ">
-              <div class="col-4 trails_img_wrap ">
-                <img src="./imgs/5-1.jpg" class="trails_img rounded-start" alt="...">
-              </div>
-              <div class="col ">
-                <div class="card-body">
-                  <h5 class="product-name ">草嶺古道｜探索新北一日遊探索新北一日遊</h5>
-                  <div class="mb-2">
-                    <p class="overflow_p p_line_clamp mb-0">
-                      你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
-                    </p>
-                  </div>
-                  <!-- location-group -->
-                  <div class="d-flex flex-row align-items-center mb-3">
-                    <div class="mb-2 me-2">
-                      <img src="../icons/map-pin.svg" alt="">
-                    </div>
-                    <span class="pe-3 ">
-                      <p class="mb-0">臺北市北投區</p>
-                    </span>
-                    <div class="mb-1 pe-3">
-                      <p class="mb-0">|</p>
-                    </div>
-
-                    <span class="d-flex mb-1">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                    </span>
-                  </div>
-                  <div class="col">
-                    <h3 class="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
-                  </div>
+                <div class="col-1 d-flex justify-content-end align-items-start">
+                  <button class="heart_btn">
+                    <img src="./imgs/heart.svg" alt="" />
+                  </button>
                 </div>
               </div>
-              <div class="col-1  d-flex justify-content-end align-items-start">
-                <button class="heart_btn">
-                  <img src="./imgs/heart.svg" alt="">
-                </button>
-              </div>
             </div>
-          </div>
-          <div class=" trails_card ">
-            <div class="row g-0 d-flex flex-row  ">
-              <div class="col-4 trails_img_wrap ">
-                <img src="./imgs/5-1.jpg" class="trails_img rounded-start" alt="...">
-              </div>
-              <div class="col ">
-                <div class="card-body">
-                  <h5 class="product-name">草嶺古道｜探索新北一日遊探索新北一日遊</h5>
-                  <div class="mb-2">
-                    <p class="overflow_p p_line_clamp mb-0">
-                      你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
-                    </p>
-                  </div>
-                  <!-- location-group -->
-                  <div class="d-flex flex-row align-items-center mb-3">
-                    <div class="mb-2 me-2">
-                      <img src="../icons/map-pin.svg" alt="">
+            <div class="trails_card">
+              <div class="row g-0 d-flex flex-row">
+                <div class="col-4 trails_img_wrap">
+                  <img
+                    src="./imgs/5-1.jpg"
+                    class="trails_img rounded-start"
+                    alt="..."
+                  />
+                </div>
+                <div class="col">
+                  <div class="card-body">
+                    <h5 class="product-name">
+                      草嶺古道｜探索新北一日遊探索新北一日遊
+                    </h5>
+                    <div class="mb-2">
+                      <p class="overflow_p p_line_clamp mb-0">
+                        你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
+                      </p>
                     </div>
-                    <span class="pe-3 ">
-                      <p class="mb-0">臺北市北投區</p>
-                    </span>
-                    <div class="mb-1 pe-3">
-                      <p class="mb-0">|</p>
-                    </div>
+                    <!-- location-group -->
+                    <div class="d-flex flex-row align-items-center mb-3">
+                      <div class="mb-2 me-2">
+                        <img src="../icons/map-pin.svg" alt="" />
+                      </div>
+                      <span class="pe-3">
+                        <p class="mb-0">臺北市北投區</p>
+                      </span>
+                      <div class="mb-1 pe-3">
+                        <p class="mb-0">|</p>
+                      </div>
 
-                    <span class="d-flex mb-1">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                      <img src="../icons/star.svg" alt="">
-                    </span>
-                  </div>
-                  <div class="col">
-                    <h3 class="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
+                      <span class="d-flex mb-1">
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                      </span>
+                    </div>
+                    <div class="col">
+                      <h3 class="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
+                    </div>
                   </div>
                 </div>
+                <div class="col-1 d-flex justify-content-end align-items-start">
+                  <button class="heart_btn">
+                    <img src="./imgs/heart.svg" alt="" />
+                  </button>
+                </div>
               </div>
-              <div class="col-1  d-flex justify-content-end align-items-start">
-                <button class="heart_btn">
-                  <img src="./imgs/heart.svg" alt="">
-                </button>
+            </div>
+            <div class="trails_card">
+              <div class="row g-0 d-flex flex-row">
+                <div class="col-4 trails_img_wrap">
+                  <img
+                    src="./imgs/5-1.jpg"
+                    class="trails_img rounded-start"
+                    alt="..."
+                  />
+                </div>
+                <div class="col">
+                  <div class="card-body">
+                    <h5 class="product-name">
+                      草嶺古道｜探索新北一日遊探索新北一日遊
+                    </h5>
+                    <div class="mb-2">
+                      <p class="overflow_p p_line_clamp mb-0">
+                        你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
+                      </p>
+                    </div>
+                    <!-- location-group -->
+                    <div class="d-flex flex-row align-items-center mb-3">
+                      <div class="mb-2 me-2">
+                        <img src="../icons/map-pin.svg" alt="" />
+                      </div>
+                      <span class="pe-3">
+                        <p class="mb-0">臺北市北投區</p>
+                      </span>
+                      <div class="mb-1 pe-3">
+                        <p class="mb-0">|</p>
+                      </div>
+
+                      <span class="d-flex mb-1">
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                        <img src="../icons/star.svg" alt="" />
+                      </span>
+                    </div>
+                    <div class="col">
+                      <h3 class="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-1 d-flex justify-content-end align-items-start">
+                  <button class="heart_btn">
+                    <img src="./imgs/heart.svg" alt="" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
-        </div>
-
-        <!-- pagination -->
-        <div class="page-bar col d-flex align-self-center">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination ">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link fw-bold" href="#">1</a></li>
-              <li class="page-item"><a class="page-link fw-bold" href="#">2</a></li>
-              <li class="page-item"><span class="page-link fw-bold"> ... </span></li>
-              <li class="page-item"><a class="page-link fw-bold" href="#">9</a></li>
-              <li class="page-item"><a class="page-link fw-bold" href="#">10</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <!-- pagination -->
+          <div class="page-bar col d-flex align-self-center">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link fw-bold" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link fw-bold" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <span class="page-link fw-bold"> ... </span>
+                </li>
+                <li class="page-item">
+                  <a class="page-link fw-bold" href="#">9</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link fw-bold" href="#">10</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-    crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
