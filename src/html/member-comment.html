@@ -12,8 +12,8 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
-    <title>MounTrip會員頁面</title>
-    <link rel="stylesheet" tyle="text/css" href="./css//member.css">
+    <title>MounTrip會員-過往評論</title>
+    <link rel="stylesheet" tyle="text/css" href="./css//member-comment.css">
     
 </head>
 <body>
@@ -100,7 +100,7 @@
             <button class="edit-btn ">編輯個人資料</button>
             <div class="btn-border"></div>
             <div class="sidebar-menu">
-                
+            
                   <li class="coupon-link"> 
                     <a href="">
                       <svg class="menu-icon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +146,7 @@
                       過往評論
                     </a>
                   </li>
-                  <li class="favorite-link">
+                  <li class="fav-link">
                     <a href="">
                       <svg class="menu-icon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.8401 5.10999C20.3294 4.599 19.7229 4.19364 19.0555 3.91708C18.388 3.64052 17.6726 3.49817 16.9501 3.49817C16.2276 3.49817 15.5122 3.64052 14.8448 3.91708C14.1773 4.19364 13.5709 4.599 13.0601 5.10999L12.0001 6.16999L10.9401 5.10999C9.90843 4.0783 8.50915 3.4987 7.05012 3.4987C5.59109 3.4987 4.19181 4.0783 3.16012 5.10999C2.12843 6.14169 1.54883 7.54096 1.54883 8.99999C1.54883 10.459 2.12843 11.8583 3.16012 12.89L4.22012 13.95L12.0001 21.73L19.7801 13.95L20.8401 12.89C21.3511 12.3792 21.7565 11.7728 22.033 11.1053C22.3096 10.4379 22.4519 9.72248 22.4519 8.99999C22.4519 8.27751 22.3096 7.5621 22.033 6.89464C21.7565 6.22718 21.3511 5.62075 20.8401 5.10999Z" stroke="#9AA09B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -158,73 +158,144 @@
             </div>
         </div>
         <div class="member-data">
-              <div class="title">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M28.4446 30.0001V26.889C28.4446 25.2387 27.789 23.6561 26.6221 22.4892C25.4552 21.3223 23.8726 20.6667 22.2223 20.6667H9.77789C8.12765 20.6667 6.545 21.3223 5.37811 22.4892C4.21122 23.6561 3.55566 25.2387 3.55566 26.889V30.0001" stroke="#6CBA7C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M16.0005 14.4444C19.437 14.4444 22.2228 11.6587 22.2228 8.22222C22.2228 4.78578 19.437 2 16.0005 2C12.5641 2 9.77832 4.78578 9.77832 8.22222C9.77832 11.6587 12.5641 14.4444 16.0005 14.4444Z" stroke="#6CBA7C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                <h1>會員中心</h1>
-              </div>
-              <div class="data-area">
-                <div class="input-blocks name-wrap">
-                  <label for="" class="">名字</label>
-                  <input type="text" class="" id="" name="" required>
-                </div>
-                <div class="input-blocks fname-wrap">
-                  <label for="" class="">姓氏</label>
-                  <input type="text" class="" id="" name="" required>
-                </div>
-                <div class="input-blocks gender-wrap">
-                  <label for="" class="">性別</label>
-                  <select>
-                    <option>男性</option>
-                    <option>女性</option>
-                    <option>不透露</option>
-                  </select>
-                </div>
-                <div class="birth-wrap input-blocks">
-                  <label for="" class="">出生年月日</label>
-                  <input type="date" class="" id="" name="" required>
-                </div>
-                <div class="id-wrap input-blocks">
-                  <label for="" class="">身分證字號</label>
-                  <input type="text" class="" id="" name="" required>
-                </div>
-                <div class="phone-wrap input-blocks">
-                  <label for="" class="">聯絡電話</label>
-                  <input type="text" class="" id="" name="" required>
-                </div>
-                <div class="account-wrap input-blocks">
-                  <label for="" class="">會員帳號</label>
-                  <input type="text" class="" id="" name="" required>
-                </div>
-                <div class="email-wrap input-blocks">
-                  <label for="" class="">電子信箱</label>
-                  <input type="email" class="" id="" name="" required>
-                </div>
-                <div class="zip-wrap input-blocks">
-                  <label for="" class="">聯絡地址</label>
-                  <input type="text" class="" id="" name="" required>
-                
-                </div>
-                <div class="city-wrap input-blocks">
-                  <div class="fake-label-city"></div>
-                  <select>
-                    <option>台北市</option>
-                    <option>新北市</option>
-                    <option>桃園市</option>
-                    <option>台中市</option>
-                    <option>台南市</option>
-                    <option>高雄市</option>
-                  </select>
-                </div>
-                <div class="address-wrap input-blocks">
-                  <div class="fake-label-add"></div>
-                  <input type="text" class="" id="" name="" required>
-                </div>
-                <button class="save-btn">儲存變更</button>
-              </div>
+          <div class="title">
+            <svg width="32" height="32" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 12C21.0034 13.3199 20.6951 14.6219 20.1 15.8C19.3944 17.2118 18.3098 18.3992 16.9674 19.2293C15.6251 20.0594 14.0782 20.4994 12.5 20.5C11.1801 20.5035 9.87812 20.1951 8.7 19.6L3 21.5L4.9 15.8C4.30493 14.6219 3.99656 13.3199 4 12C4.00061 10.4218 4.44061 8.87488 5.27072 7.53258C6.10083 6.19028 7.28825 5.1056 8.7 4.40003C9.87812 3.80496 11.1801 3.49659 12.5 3.50003H13C15.0843 3.61502 17.053 4.49479 18.5291 5.97089C20.0052 7.44699 20.885 9.41568 21 11.5V12Z" stroke="#6cba7c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
               
+            <h1>過往評論</h1>
+          </div>
+          <div class="container">
+            <div class="filter-area">
+              <div class="show-number">
+                <p>共有</p>
+                <p id="comment-amount">4</p>
+                <p>則評論</p>
+              </div>
+              <div class="filter-btn">
+                <select>
+                  <option>排列順序</option>
+                  <option>未回覆在前</option>
+                  <option>已回覆在前</option>
+                  <option>依照評論順序</option>
+                </select>
+              </div>
+            </div>
+            <div class="comment-list">
+              <div class="comment-card">
+                <div class="title-area">
+                  <div class="product-title">
+                    <h6>草嶺古道｜探索新北一日遊探索新北一日遊</h6>
+                    <p>2022/01/01 - 2022/01/03</p>
+                  </div>
+                  <div class="order-id">
+                    <svg width="16" height="18" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 4.5H18C18.5304 4.5 19.0391 4.71071 19.4142 5.08579C19.7893 5.46086 20 5.96957 20 6.5V20.5C20 21.0304 19.7893 21.5391 19.4142 21.9142C19.0391 22.2893 18.5304 22.5 18 22.5H6C5.46957 22.5 4.96086 22.2893 4.58579 21.9142C4.21071 21.5391 4 21.0304 4 20.5V6.5C4 5.96957 4.21071 5.46086 4.58579 5.08579C4.96086 4.71071 5.46957 4.5 6 4.5H8" stroke="#9AA09B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M15 2.5H9C8.44772 2.5 8 2.94772 8 3.5V5.5C8 6.05228 8.44772 6.5 9 6.5H15C15.5523 6.5 16 6.05228 16 5.5V3.5C16 2.94772 15.5523 2.5 15 2.5Z" stroke="#9AA09B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      
+                    <p>訂單編號：</p>
+                    <p>S12345678</p>
+                  </div>
+                </div>
+                <div class="comment-bar"></div>
+                <div class="comment-text">
+                  <div class="customer-comment">
+                    <h6>您的評論：</h6>
+                    <p>高鐵台北站不僅是台灣高速鐵路的車站之一，同時也是台灣鐵路縱貫線、台北捷運紅線、藍線、機場捷運的轉運車站，是大台北地區最大的交通轉運中心。</p>
+                  </div>
+                  <div class="reply">
+                    <h6>業主回覆：</h6>
+                    <p>高鐵台北站整體建築地上六層、地下四層，［地上一樓］為大廳樓層，設有東、南、北、西每面各三個出口，［地上二樓］是由微風廣場接手的微風台北車站以精緻的美食料理為商場招牌，［地上三樓至六樓］則為台鐵和高鐵的行政中心</p>
+                  </div>
+                </div>
+              </div>
+              <div class="comment-card">
+                <div class="title-area">
+                  <div class="product-title">
+                    <h6>名樹，斷崖，十峻之一  |  武陵四秀 三天三夜夜夜夜夜夜</h6>
+                    <p>2022/10/01 - 2022/10/04</p>
+                  </div>
+                  <div class="order-id">
+                    <svg width="16" height="18" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 4.5H18C18.5304 4.5 19.0391 4.71071 19.4142 5.08579C19.7893 5.46086 20 5.96957 20 6.5V20.5C20 21.0304 19.7893 21.5391 19.4142 21.9142C19.0391 22.2893 18.5304 22.5 18 22.5H6C5.46957 22.5 4.96086 22.2893 4.58579 21.9142C4.21071 21.5391 4 21.0304 4 20.5V6.5C4 5.96957 4.21071 5.46086 4.58579 5.08579C4.96086 4.71071 5.46957 4.5 6 4.5H8" stroke="#9AA09B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M15 2.5H9C8.44772 2.5 8 2.94772 8 3.5V5.5C8 6.05228 8.44772 6.5 9 6.5H15C15.5523 6.5 16 6.05228 16 5.5V3.5C16 2.94772 15.5523 2.5 15 2.5Z" stroke="#9AA09B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      
+                    <p>訂單編號：</p>
+                    <p>S12565689</p>
+                  </div>
+                </div>
+                <div class="comment-bar"></div>
+                <div class="comment-text">
+                  <div class="customer-comment">
+                    <h6>您的評論：</h6>
+                    <p>地下一樓有高鐵相關事宜服務台，地下二樓則是兩個［島式台鐵］月台和兩個［島式高鐵］月台；地下三樓和四樓分別為台北捷運藍線和紅線的島式月台，捷運月台共設有8個出入口</p>
+                  </div>
+                  <div class="reply">
+                    <h6>業主回覆：</h6>
+                    <p>高鐵台北站形成路線密集可與其他地區互通有無的交通樞紐地帶；高鐵台北站從台北火車站發展而來</p>
+                  </div>
+                </div>
+              </div>
+              <div class="comment-card">
+                <div class="title-area">
+                  <div class="product-title">
+                    <h6>草嶺古道｜探索新北一日遊探索新北一日遊</h6>
+                    <p>2022/01/01 - 2022/01/03</p>
+                  </div>
+                  <div class="order-id">
+                    <svg width="16" height="18" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 4.5H18C18.5304 4.5 19.0391 4.71071 19.4142 5.08579C19.7893 5.46086 20 5.96957 20 6.5V20.5C20 21.0304 19.7893 21.5391 19.4142 21.9142C19.0391 22.2893 18.5304 22.5 18 22.5H6C5.46957 22.5 4.96086 22.2893 4.58579 21.9142C4.21071 21.5391 4 21.0304 4 20.5V6.5C4 5.96957 4.21071 5.46086 4.58579 5.08579C4.96086 4.71071 5.46957 4.5 6 4.5H8" stroke="#9AA09B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M15 2.5H9C8.44772 2.5 8 2.94772 8 3.5V5.5C8 6.05228 8.44772 6.5 9 6.5H15C15.5523 6.5 16 6.05228 16 5.5V3.5C16 2.94772 15.5523 2.5 15 2.5Z" stroke="#9AA09B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      
+                    <p>訂單編號：</p>
+                    <p>S12345678</p>
+                  </div>
+                </div>
+                <div class="comment-bar"></div>
+                <div class="comment-text">
+                  <div class="customer-comment">
+                    <h6>您的評論：</h6>
+                    <p>高鐵台北站不僅是台灣高速鐵路的車站之一，同時也是台灣鐵路縱貫線、台北捷運紅線、藍線、機場捷運的轉運車站，是大台北地區最大的交通轉運中心。</p>
+                  </div>
+                  <div class="reply">
+                    <h6>業主回覆：</h6>
+                    <p>高鐵台北站整體建築地上六層、地下四層，［地上一樓］為大廳樓層，設有東、南、北、西每面各三個出口，［地上二樓］是由微風廣場接手的微風台北車站以精緻的美食料理為商場招牌，［地上三樓至六樓］則為台鐵和高鐵的行政中心</p>
+                  </div>
+                </div>
+              </div>
+              <div class="comment-card">
+                <div class="title-area">
+                  <div class="product-title">
+                    <h6>草嶺古道｜探索新北一日遊探索新北一日遊</h6>
+                    <p>2022/01/01 - 2022/01/03</p>
+                  </div>
+                  <div class="order-id">
+                    <svg width="16" height="18" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 4.5H18C18.5304 4.5 19.0391 4.71071 19.4142 5.08579C19.7893 5.46086 20 5.96957 20 6.5V20.5C20 21.0304 19.7893 21.5391 19.4142 21.9142C19.0391 22.2893 18.5304 22.5 18 22.5H6C5.46957 22.5 4.96086 22.2893 4.58579 21.9142C4.21071 21.5391 4 21.0304 4 20.5V6.5C4 5.96957 4.21071 5.46086 4.58579 5.08579C4.96086 4.71071 5.46957 4.5 6 4.5H8" stroke="#9AA09B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M15 2.5H9C8.44772 2.5 8 2.94772 8 3.5V5.5C8 6.05228 8.44772 6.5 9 6.5H15C15.5523 6.5 16 6.05228 16 5.5V3.5C16 2.94772 15.5523 2.5 15 2.5Z" stroke="#9AA09B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      
+                    <p>訂單編號：</p>
+                    <p>S12345678</p>
+                  </div>
+                </div>
+                <div class="comment-bar"></div>
+                <div class="comment-text">
+                  <div class="customer-comment">
+                    <h6>您的評論：</h6>
+                    <p>高鐵台北站不僅是台灣高速鐵路的車站之一，同時也是台灣鐵路縱貫線、台北捷運紅線、藍線、機場捷運的轉運車站，是大台北地區最大的交通轉運中心。</p>
+                  </div>
+                  <div class="reply">
+                    <h6>業主回覆：</h6>
+                    <p>高鐵台北站整體建築地上六層、地下四層，［地上一樓］為大廳樓層，設有東、南、北、西每面各三個出口，［地上二樓］是由微風廣場接手的微風台北車站以精緻的美食料理為商場招牌，［地上三樓至六樓］則為台鐵和高鐵的行政中心</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
           <!-- footer -->
