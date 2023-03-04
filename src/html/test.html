@@ -18,8 +18,7 @@
       crossorigin="anonymous"
     />
     <title>Test</title>
-    <style>
-    </style>
+    <style></style>
   </head>
   <body>
     <!-- navbar/ start -->
@@ -228,13 +227,29 @@
       />
       <!-- mobile-clouds -->
 
-      <img class="mountains g2" src="./../images/test/mountain/g-2.svg" alt="" />
-      <img class="mountains y2" src="./../images/test/mountain/y-2.svg" alt="" />
-      <img class="mountains g1" src="./../images/test/mountain/g-1.svg" alt="" />
+      <img
+        class="mountains g2"
+        src="./../images/test/mountain/g-2.svg"
+        alt=""
+      />
+      <img
+        class="mountains y2"
+        src="./../images/test/mountain/y-2.svg"
+        alt=""
+      />
+      <img
+        class="mountains g1"
+        src="./../images/test/mountain/g-1.svg"
+        alt=""
+      />
 
       <button class="start_test">開始<br />作答</button>
 
-      <img class="mountains y1" src="./../images/test/mountain/y-1.svg" alt="" />
+      <img
+        class="mountains y1"
+        src="./../images/test/mountain/y-1.svg"
+        alt=""
+      />
       <!-- <div class="ball"></div> -->
     </section>
     <section class="intro-text">
@@ -429,10 +444,18 @@
           console.log('mouseY: ', mouseY)
           console.log('moveX: ', moveX)
           console.log('moveY: ', moveY)
-          mount_g2.style.transform = `translate(${moveX * 1}%,${moveY * 4}%) scale(1.1)`
-          mount_y2.style.transform = `translate(${moveX * -1}%,${moveY * 2}%) scale(1.105)`
-          mount_g1.style.transform = `translate(${moveX * 0.5}%,${moveY * 2}%) scale(1.2)`
-          mount_y1.style.transform = `translate(${moveX * -0.5}%,${moveY * -3}%) scale(1.11)`
+          mount_g2.style.transform = `translate(${moveX * 1}%,${
+            moveY * 4
+          }%) scale(1.1)`
+          mount_y2.style.transform = `translate(${moveX * -1}%,${
+            moveY * 2
+          }%) scale(1.105)`
+          mount_g1.style.transform = `translate(${moveX * 0.5}%,${
+            moveY * 2
+          }%) scale(1.2)`
+          mount_y1.style.transform = `translate(${moveX * -0.5}%,${
+            moveY * -3
+          }%) scale(1.11)`
         })
       })
     </script>

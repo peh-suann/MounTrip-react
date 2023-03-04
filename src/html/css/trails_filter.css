@@ -1,0 +1,211 @@
+/* ALL */
+/* html,
+body {
+  background-color: #FFFFF2;
+} */
+
+
+/* main */
+
+.main_all {
+  /* border: 1px solid black; */
+  margin: 3.125% 6.25%;
+}
+
+.main_bg{
+  background-color: var(--mtyellow-4);
+}
+
+/* main left-card */
+.left-card {
+  /* border: 1px solid black; */
+  width: 23%;
+  height: 16.5%;
+  margin-right: 45px;
+  background: var(--mtyellow-4);
+  box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
+  border-radius: 10px;
+}
+
+/* FIXME: */
+.main_all .card-body {
+  /* padding-left: 30px; */
+  padding: 25px 28px;
+}
+
+main .right-card {
+  /* border: 1px solid black; */
+  /* width: 76%; */
+  margin: 0;
+}
+
+.left-card .search {
+  padding-bottom: 12px;
+}
+
+.search_count {
+  padding-bottom: 36px;
+}
+
+
+.h5-sub-title {
+  color: var(--mtgreen-1);
+  font-weight: 700;
+}
+
+/* input_with_icon */
+
+.left-card .input_with_icon {
+  border: 2px solid var(--mtgreen-3);
+  border-radius: 10px;
+  background: rgba(206, 232, 203, 0.6);
+  z-index: 1;
+}
+
+/* input:focus {
+
+} */
+
+.icon_span {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  text-align: center;
+}
+
+.icon_size {
+  width: 16px;
+}
+
+.input_style {
+  border: none;
+  background: transparent;
+  height: 33px;
+  outline: none;
+}
+
+.input-i {
+  background: rgba(206, 232, 203, 0.6);
+}
+
+.p-content {
+  color: var(--mtgrey-3)
+}
+
+.btn-search {
+  color: var(--mtgrey-4);
+  background-color: var(--mtgreen-1);
+  border-radius: 5px;
+  border: none;
+  height: 2.5rem;
+  font-weight: 700;
+}
+
+/* input_with_icon date */
+/* ::-webkit-calendar-picker-indicator{
+  
+} */
+
+
+/* main right-card */
+
+
+.right-card .sub_title {
+  /* border: 1px solid black; */
+  margin-bottom: 5%;
+}
+
+.right-card .vector_wrap {
+  padding: 0%;
+}
+
+.right-card .Vector_long {
+  width: 270px;
+}
+
+.h5-sub-title-search {
+  margin: 0px 35px;
+
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 7px;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* right-card > trails-cards */
+
+/* FIXME: 卡片高度 */
+.trails_card {
+  box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
+  height: 220px;
+  margin-bottom: 13px;
+}
+
+.product-name {
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  letter-spacing: 0.05em;
+  font-size: 22px;
+  line-height: 150%;
+}
+
+.heart_btn {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+/* 隱藏三行以上段落文字 */
+.overflow_p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.p_line_clamp {
+  -webkit-line-clamp: 3;
+  text-align: justify;
+  font-size: 13px;
+  line-height: 155%;
+  /* letter-spacing: 0.1em; */
+  flex: none;
+}
+
+.price_h3 {
+  color: var(--mtgreen-1)
+}
+
+
+.trails_img {
+  width: 100%;
+  height: 220px;
+  object-fit: fill;
+}
+
+.page_bar {
+  background-color: transparent;
+}
+
+/* pagination */
+
+.page-bar nav {
+  background-color: transparent;
+}
+
+.page-item {
+  margin: 4px;
+}
+
+.pagination .page-link {
+  color: var(--mtgreen-1);
+  border-radius: 5px;
+  border: 1px solid var(--mtgreen-4);
+}
+
+/* .pagination .page-link:active{
+  color: var(--mtgreen-1);
+} */
