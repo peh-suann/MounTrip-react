@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../styles/Mountrip.module.css" />
     <link rel="stylesheet" href="./../styles/Navbar.module.css" />
+    <link rel="stylesheet" href="./../styles/Navbar.module.mobile.css" />
+    <link rel="stylesheet" href="./../styles/Footer.module.css" />
+    <link rel="stylesheet" href="./../styles/Footer.module.mobile.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,65 +21,58 @@
 </head>
 <body>
     <section>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav>
+        <div class="navbar">
           <div class="left">
-            <a href="">
-              <img src="./../icons/logo.svg" alt="" />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
+            <button class="menu">
+              <img src="./../icons/menu.svg" alt="" />
             </button>
-            <div class="collapse navbar-collapse navigations" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="link" to="/"> 商品總覽 </a>
-                </li>
-                <li class="nav-item">
-                  <a class="link" to="/member-list"> 難易分級 </a>
-                </li>
-                <li class="nav-item">
-                  <a class="link" to="/"> 季節推薦 </a>
-                </li>
-                <li class="nav-item">
-                  <a class="link" to="/"> 線上測驗 </a>
-                </li>
-              </ul>
-            </div>
+            <img id="logo" src="./../icons/logo.svg" alt="" />
+            <ul class="nav-navigations">
+              <li>
+                <a class="link" href="/"> 商品總覽 </a>
+              </li>
+              <li>
+                <a class="link" href="/"> 難易分級 </a>
+              </li>
+              <li>
+                <a class="link" href="/"> 季節推薦 </a>
+              </li>
+              <li>
+                <a class="link" href="/"> 線上測驗 </a>
+              </li>
+            </ul>
           </div>
           <div class="right">
-            <ul class="navbar-nav me-auto mb-lg-0 ulRight">
-              <li class="nav-item liRight search">
-                <div class="search-input">
-                    <img src="./../icons/search-icon.svg" alt="">
-                    <span>輸入登山路線、季節熱門路線</span>
+            <ul class="nav-icons">
+              <li>
+                <a class="link" href="/">
+                  <img src="./../icons/search.svg" alt="" />
+                </a>
+                <div class="search-input-unfold">
+                  <img src="./../icons/search-icon.svg" alt="" />
+                  <span>輸入登山路線、季節熱門路線</span>
                 </div>
               </li>
-              <li class="nav-item liRight notification">
+              <li>
                 <a class="link" href="/">
-                    <img src="./../icons/bell.svg" alt="">
+                  <img src="./../icons/bell.svg" alt="" />
                 </a>
               </li>
-              <li class="nav-item liRight cart">
+              <li>
                 <a class="link" href="/">
-                    <img src="./../icons/shopping-cart.svg" alt="">
+                  <img src="./../icons/shopping-cart.svg" alt="" />
                 </a>
               </li>
-              <li class="nav-item liRight profile">
+              <li>
                 <a class="link" href="/">
-                    <img src="./../icons/profile.svg" alt="">
+                  <img src="./../icons/profile.svg" alt="" />
                 </a>
               </li>
             </ul>
           </div>
-        </nav>
+        </div>
+      </nav>
       <div class="grid-container">
         <div class="sidebar">
             <div class="member-profile">
@@ -299,33 +295,16 @@
         </div>
       </div>
           <!-- footer -->
-      <div class="footer">
-            <div class="footer-left">
-              <ul class="footer-ul">
-                <li class="">
-                  <a class="footer-link" href="">
-                    聯絡我們
-                  </a>
-                </li>
-                <div class="footer-bar"></div>
-                <li class="">
-                  <a class="footer-link" href="">
-                    隱私權條款
-                  </a>
-                </li>
-                <div class="footer-bar"></div>
-      
-                <li class="">
-                  <a class="footer-link" href="">
-                    常見問題及幫助
-                  </a>
-                </li>
-              </ul>
+          <footer>
+            <div class="left-links">
+              <a href="">聯絡我們</a>
+              <span>|</span>
+              <a href="">隱私權條款</a>
+              <span>|</span>
+              <a href="">常見問題及幫助</a>
             </div>
-            <div class="footer-right">
-              COPYRIGHTⓒ 2023 MOUNTRIP All rights reserved
-            </div>
-      </div>
+            <h6 class="copyright">COPYRIGHT © 2023 MOUNTRIP All rights reserved.</h6>
+          </footer>
     </section>
       
 
