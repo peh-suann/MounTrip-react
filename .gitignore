@@ -6,9 +6,9 @@
 .FIXME
 
 #picture
-.jpg
-.jpeg
-.png
+*.jpg
+*.jpeg
+*.png
 
 
 # dependencies
