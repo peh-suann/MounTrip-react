@@ -109,6 +109,11 @@ section.products {
   font-size: 16px;
   line-height: 140%;
   letter-spacing: 0.05em;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
 }
 .information {
   display: flex;

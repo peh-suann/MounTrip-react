@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../styles/html-styles/season.css"> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./../styles/Mountrip.module.css" />
+    <link rel="stylesheet" href="./../styles/Navbar.module.css" />
+    <link rel="stylesheet" href="./../styles/Navbar.module.mobile.css" />
+    <link rel="stylesheet" href="./../styles/Footer.module.css" />
+    <link rel="stylesheet" href="./../styles/Footer.module.mobile.css" />
+
+    <link rel="stylesheet" href="./css/yichun_products.css" />
+    <title>Products</title>
+    <style>
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar/ start -->
+    <nav>
+      <div class="navbar">
+        <div class="left">
+          <button class="menu">
+            <img src="./../icons/menu.svg" alt="" />
+          </button>
+          <img id="logo" src="./../icons/logo.svg" alt="" />
+          <ul class="nav-navigations">
+            <li>
+              <a class="link" href="/"> 商品總覽 </a>
+            </li>
+            <li>
+              <a class="link" href="/"> 難易分級 </a>
+            </li>
+            <li>
+              <a class="link" href="/"> 季節推薦 </a>
+            </li>
+            <li>
+              <a class="link" href="/"> 線上測驗 </a>
+            </li>
+          </ul>
+        </div>
+        <div class="right">
+          <ul class="nav-icons">
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/search.svg" alt="" />
+              </a>
+              <div class="search-input-unfold">
+                <img src="./../icons/search-icon.svg" alt="" />
+                <span>輸入登山路線、季節熱門路線</span>
+              </div>
+            </li>
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/bell.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/shopping-cart.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a class="link" href="/">
+                <img src="./../icons/profile.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar/ end -->
+    <section id="product_top_bar"></section>
+    <section id="search_bar">
+      <div class="search_item location">
+        <div class="icon">
+          <img
+            src="./../images/product-page-img/searchbar-icon/search.svg"
+            alt=""
+          />
+        </div>
+        <div class="input_field">
+          <label for="location">目的地</label>
+          <input type="text" id="location" placeholder="想去的地方..." />
+        </div>
+      </div>
+      <div class="search_item date">
+        <div class="icon">
+          <img
+            src="./../images/product-page-img/searchbar-icon/calendar.svg"
+            alt=""
+          />
+        </div>
+        <div class="input_field">
+          <label for="date">日期</label>
+          <div class="inputs">
+            <input type="date" id="date_start" />
+            <span>—</span>
+            <input type="date" id="date_end" />
+          </div>
+        </div>
+      </div>
+      <div class="search_item num_of_ppl">
+        <div class="icon">
+          <img
+            src="./../images/product-page-img/searchbar-icon/num of ppl.svg"
+            alt=""
+          />
+        </div>
+        <div class="input_field">
+          <label for="person">人數</label>
+          <div class="inputs">
+            <input type="number" id="person" placeholder="2" />人
+          </div>
+        </div>
+      </div>
+      <button>搜尋</button>
+    </section>
+    <section class="products">
+      <div class="products_title">
+        <img src="./../images/product-page-img/mountain_left.svg" alt="" />
+        <h2>本月最熱門</h2>
+        <img src="./../images/product-page-img/mountain_right.svg" alt="" />
+      </div>
+      <div class="row-of-products">
+        <div class="product">
+          <div class="pic">
+            <div class="ranking">1</div>
+            <div class="rates">
+              <p>
+                <img src="./../icons/star.svg" alt="" />
+                4.5
+              </p>
+              <p class="difficulty">難度 EASY</p>
+            </div>
+          </div>
+          <div class="information">
+            <div class="info">
+              <h4>草嶺古道｜探索新北一日遊</h4>
+              <p>新北市雙溪區</p>
+            </div>
+            <div class="price">
+              <p>NTD</p>
+              <h4>1,200</h4>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="pic">
+            <div class="ranking">1</div>
+            <div class="rates">
+              <p>
+                <img src="./../icons/star.svg" alt="" />
+                4.5
+              </p>
+              <p class="difficulty">難度 EASY</p>
+            </div>
+          </div>
+          <div class="information">
+            <div class="info">
+              <h4>草嶺古道｜探索新北一日遊</h4>
+              <p>新北市雙溪區</p>
+            </div>
+            <div class="price">
+              <p>NTD</p>
+              <h4>1,200</h4>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="pic">
+            <div class="ranking">1</div>
+            <div class="rates">
+              <p>
+                <img src="./../icons/star.svg" alt="" />
+                4.5
+              </p>
+              <p class="difficulty">難度 EASY</p>
+            </div>
+          </div>
+          <div class="information">
+            <div class="info">
+              <h4>草嶺古道｜探索新北一日遊</h4>
+              <p>新北市雙溪區</p>
+            </div>
+            <div class="price">
+              <p>NTD</p>
+              <h4>1,200</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row-of-products">
+        <div class="product">
+          <div class="pic">
+            <div class="ranking">1</div>
+            <div class="rates">
+              <p>
+                <img src="./../icons/star.svg" alt="" />
+                4.5
+              </p>
+              <p class="difficulty">難度 EASY</p>
+            </div>
+          </div>
+          <div class="information">
+            <div class="info">
+              <h4>草嶺古道｜探索新北一日遊</h4>
+              <p>新北市雙溪區</p>
+            </div>
+            <div class="price">
+              <p>NTD</p>
+              <h4>1,200</h4>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="pic">
+            <div class="ranking">1</div>
+            <div class="rates">
+              <p>
+                <img src="./../icons/star.svg" alt="" />
+                4.5
+              </p>
+              <p class="difficulty">難度 EASY</p>
+            </div>
+          </div>
+          <div class="information">
+            <div class="info">
+              <h4>草嶺古道｜探索新北一日遊</h4>
+              <p>新北市雙溪區</p>
+            </div>
+            <div class="price">
+              <p>NTD</p>
+              <h4>1,200</h4>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="pic">
+            <div class="ranking">1</div>
+            <div class="rates">
+              <p>
+                <img src="./../icons/star.svg" alt="" />
+                4.5
+              </p>
+              <p class="difficulty">難度 EASY</p>
+            </div>
+          </div>
+          <div class="information">
+            <div class="info">
+              <h4>草嶺古道｜探索新北一日遊</h4>
+              <p>新北市雙溪區</p>
+            </div>
+            <div class="price">
+              <p>NTD</p>
+              <h4>1,200</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="theme">
+      <div class="theme_intro"></div>
+      <div class="row-of-products">
+        <button><img src="./../icons/chevron-left.svg" alt="" /></button>
+        <div class="product">
+          <div class="pic">
+            <div class="rates">
+              <p>
+                <img src="./../icons/star.svg" alt="" />
+                4.5
+              </p>
+              <p class="difficulty">難度 EASY</p>
+            </div>
+          </div>
+          <div class="information">
+            <div class="info">
+              <h4>草嶺古道｜探索新北一日遊</h4>
+              <p>新北市雙溪區</p>
+            </div>
+            <div class="price">
+              <p>NTD</p>
+              <h4>1,200</h4>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="pic">
+            <div class="rates">
+              <p>
+                <img src="./../icons/star.svg" alt="" />
+                4.5
+              </p>
+              <p class="difficulty">難度 EASY</p>
+            </div>
+          </div>
+          <div class="information">
+            <div class="info">
+              <h4>草嶺古道｜探索新北一日遊</h4>
+              <p>新北市雙溪區</p>
+            </div>
+            <div class="price">
+              <p>NTD</p>
+              <h4>1,200</h4>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="pic">
+            <div class="rates">
+              <p>
+                <img src="./../icons/star.svg" alt="" />
+                4.5
+              </p>
+              <p class="difficulty">難度 EASY</p>
+            </div>
+          </div>
+          <div class="information">
+            <div class="info">
+              <h4>草嶺古道｜探索新北一日遊</h4>
+              <p>新北市雙溪區</p>
+            </div>
+            <div class="price">
+              <p>NTD</p>
+              <h4>1,200</h4>
+            </div>
+          </div>
+        </div>
+        <button><img src="./../icons/chevron-right.svg" alt="" /></button>
+      </div>
+    </section>
+    <section class="difficulty">
+      <div class="diff_intro_list">
+        <div class="rank">
+          <img src="./../images/product-page-img/difficulty/easy.svg" alt="" />
+          <div class="diff_intro">
+            <h4>初級 EASY</h4>
+            <p>初級山是大家的 <u>#好朋友</u></p>
+            <button>查看更多</button>
+          </div>
+        </div>
+        <div class="rank">
+          <img
+            src="./../images/product-page-img/difficulty/medium.svg"
+            alt=""
+          />
+          <div class="diff_intro">
+            <h4>初級 EASY</h4>
+            <p>初級山是大家的 <u>#好朋友</u></p>
+            <button>查看更多</button>
+          </div>
+        </div>
+        <div class="rank">
+          <img src="./../images/product-page-img/difficulty/hard.svg" alt="" />
+          <div class="diff_intro">
+            <h4>初級 EASY</h4>
+            <p>初級山是大家的 <u>#好朋友</u></p>
+            <button>查看更多</button>
+          </div>
+        </div>
+      </div>
+      <div class="diff_recommend">
+        <div class="select_diff">
+          <img src="./../images/product-page-img/difficulty/ridge.svg" alt="" />
+        </div>
+        <div class="diff_products">
+          <div class="product">
+            <div class="pic">
+              <div class="rates">
+                <p>
+                  <img src="./../icons/star.svg" alt="" />
+                  4.5
+                </p>
+                <p class="difficulty">難度 EASY</p>
+              </div>
+            </div>
+            <div class="information">
+              <div class="info">
+                <h4>草嶺古道｜探索新北一日遊</h4>
+                <p>新北市雙溪區</p>
+              </div>
+              <div class="price">
+                <p>NTD</p>
+                <h4>1,200</h4>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="pic">
+              <div class="rates">
+                <p>
+                  <img src="./../icons/star.svg" alt="" />
+                  4.5
+                </p>
+                <p class="difficulty">難度 EASY</p>
+              </div>
+            </div>
+            <div class="information">
+              <div class="info">
+                <h4>草嶺古道｜探索新北一日遊</h4>
+                <p>新北市雙溪區</p>
+              </div>
+              <div class="price">
+                <p>NTD</p>
+                <h4>1,200</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="test">
+      <div class="test_info">
+        <h5>登山知識大補帖</h5>
+        <p>
+          身為一名登山客，快樂登山當然也要平安回家！不論你是初級登山者、資深登山者，或是即將踏入登山的新手，都應該了解自然步道分級與分類，評估自身體能與技巧，選擇適合自己的行程再出發。
+        </p>
+        <button>立即測驗</button>
+      </div>
+    </section>
+    <!-- footer/ start -->
+    <footer>
+      <div class="left-links">
+        <a href="">聯絡我們</a>
+        <span>|</span>
+        <a href="">隱私權條款</a>
+        <span>|</span>
+        <a href="">常見問題及幫助</a>
+      </div>
+      <h6 class="copyright">COPYRIGHT © 2023 MOUNTRIP All rights reserved.</h6>
+    </footer>
+    <!-- footer/ end -->
+  </body>
+</html>
