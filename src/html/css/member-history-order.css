@@ -285,6 +285,7 @@ section{
 .dropdown{
     display: none;
     height: 0px;
+    width: 100%;
     opacity: 0;
     transition: all .3s cubic-bezier(0.16, 1, 0.5, 1);
     /* display: none; */
@@ -314,7 +315,7 @@ section{
     grid-template-areas:
     "img sprice amount tprice"    
     ;
-    gap: 65.5px;
+    gap: 60px;
 
     /* flex-direction: row; */
     width: 100%;
