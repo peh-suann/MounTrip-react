@@ -9,14 +9,14 @@ body {
 
 /* ALL */
 
-.container_all{
+.container_all {
   margin: 20px 85px;
 }
 
 @media (max-width: 391px) {
-.container_all{
-  margin: 0px 15px;
-}
+  .container_all {
+    margin: 0px 15px;
+  }
 }
 
 .btn_style {
@@ -28,6 +28,7 @@ body {
 /* Breadcrumb */
 .bread {
   background-color: transparent;
+  -bsBreadcrumbDivider: 'url("data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="8" height="8"%3E%3Cpath d="M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z" fill="currentColor"/%3E%3C/svg%3E")'
 }
 
 .li_font {
@@ -45,7 +46,7 @@ body {
   margin-bottom: 12px;
 }
 
-.img_wrap_three{
+.img_wrap_three {
   gap: 12px;
 }
 
@@ -77,14 +78,14 @@ body {
 
 /* FIXME: */
 
-.ca_h6{
+.ca_h6 {
   font-size: 14px;
 }
 
 .paragraph_i {
   /* text-indent: 2rem; */
   font-size: 14px;
-  text-align:justify;
+  text-align: justify;
   font-weight: 350;
 }
 
@@ -127,7 +128,7 @@ body {
   background-color: var(--mtgreen-1);
 }
 
-.btn_font{
+.btn_font {
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 0.1em;
@@ -186,7 +187,7 @@ body {
 }
 
 /* commont card: right-card > level3 > imges */
-.commont_p{
+.commont_p {
   text-align: justify;
   font-size: 13px;
   padding-right: 15px;

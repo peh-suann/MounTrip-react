@@ -4,11 +4,11 @@ function TrailsDetailTable(props) {
   const { rows } = props
   return (
     <table className="table">
-      {/* <thead>
+      <thead>
         <tr>
           <th scope="col">#</th>
         </tr>
-      </thead> */}
+      </thead>
       <tbody>
         {rows.map((r) => {
           return (
