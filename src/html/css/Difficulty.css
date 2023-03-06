@@ -479,22 +479,7 @@ padding: 10px 0px;
 margin: 0;
 }
 
-/* footer */
-footer{
-height: 130px;
-display: flex;
-justify-content: space-between;
-background-color: var(--mtgreen-1);
-padding: 36px 120px;
-}
-footer > div > a,span{
-color:white;
-text-decoration:none;
-font-weight: 400;
-font-size: 16px;
-line-height: 23px;
-letter-spacing: 0.1em;
-}
+
 
 /* button */
 .allSection_btn{
@@ -669,9 +654,4 @@ width:100%;
   color: white;
   border:none;
   }
-
-/* footer */
-footer{
-display: none;
-}
 }

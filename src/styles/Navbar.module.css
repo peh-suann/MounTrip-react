@@ -112,7 +112,6 @@ nav {
   color: var(--mtgrey-3);
   user-select: none;
 }
-
 @media screen and (max-width: 390px) {
   nav {
     position: fixed;
@@ -133,7 +132,7 @@ nav {
   .left {
     gap: 20px;
   }
-  .left button {
+  .left button.menu {
     padding: 0;
     display: inline-block;
   }
@@ -157,7 +156,7 @@ nav {
   .right .nav_icons li:first-of-type a {
     display: inline-block;
   }
-  .right .nav_icons li:first-of-type .search-input-unfold {
+  .right .nav_icons li:first-of-type .search_input_unfold {
     display: none;
   }
 }
