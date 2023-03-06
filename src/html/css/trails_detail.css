@@ -3,6 +3,10 @@ body {
   background-color: #FFFFF2;
 }
 
+#commont_card {
+
+}
+
 * {
   /* border: 1px dashed brown */
 }
@@ -293,6 +297,7 @@ nav .page-bar {
 /* phone_bottom */
 .phone_bottom {
   display: flex;
+  height: 350px;
   flex-direction: column;
   align-items: flex-start;
   padding: 20px 15px 48px;
@@ -300,7 +305,7 @@ nav .page-bar {
   box-shadow: 0px -2px 28px rgba(1, 19, 6, 0.12);
 }
 
-.phone_bottom .phone_bottom_btn{
+.phone_bottom .phone_bottom_btn {
   border: solid 2px var(--mtgreen-1);
   border-radius: 5px;
   height: 35px;
@@ -315,5 +320,14 @@ nav .page-bar {
 }
 
 .phone_bottom .btn_group {
-  gap: 12px
+  gap: 12px;
+  height: 40px;
 }
+
+/* .phone_bottom .phone_bottom_btn{
+  border: solid 2px var(--mtgreen-1);
+  border-radius: 5px;
+  color: white;
+  background-color: var(--mtgreen-1);
+  height: 40px;
+} */
