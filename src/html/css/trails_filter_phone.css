@@ -1,6 +1,7 @@
 @media (max-width: 391px) {
   .phone_container {
     display: flex;
+    height: 165vh;
   }
 
   .input_with_icon {
