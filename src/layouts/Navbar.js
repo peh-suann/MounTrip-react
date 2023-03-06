@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './../styles/Navbar.module.css'
-// import ExpandInput from '../components/ExpandInput'
+import ExpandInput from './ExpandInput'
 
 export default function NavBar() {
   return (
