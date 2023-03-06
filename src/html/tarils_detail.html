@@ -9,78 +9,20 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
   <link rel="stylesheet" href="../styles/Mountrip.module.css">
-  <link rel="stylesheet" href="./css/Navbar.module.css">
+  <link rel="stylesheet" href="../styles/Navbar.module.css">
+  <link rel="stylesheet" href="../styles/Navbar.module.mobile.css">
   <link rel="stylesheet" href="./css/trails_detail.css">
 
 </head>
 
 <body>
 
-  <!-- <head>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary d-none d-lg-flex ">
-      <div class="left">
-        <img src="./../icons/logo.svg" alt="" />
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse navigations"
-          id="navbarSupportedContent"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="link" href="/"> 商品總覽 </a>
-            </li>
-            <li class="nav-item">
-              <a class="link" href="/member-list"> 難易分級 </a>
-            </li>
-            <li class="nav-item">
-              <a class="link" href="/"> 季節推薦 </a>
-            </li>
-            <li class="nav-item">
-              <a class="link" href="/"> 線上測驗 </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="right">
-        <ul class="navbar-nav me-auto mb-lg-0 ulRight">
-          <li class="nav-item liRight search">
-            <div class="search-input">
-              <img src="./../icons/search-icon.svg" alt="" />
-              <span>輸入登山路線、季節熱門路線</span>
-            </div>
-          </li>
-          <li class="nav-item liRight notification">
-            <a class="link" href="/">
-              <img src="./../icons/bell.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item liRight cart">
-            <a class="link" href="/">
-              <img src="./../icons/shopping-cart.svg" alt="" />
-            </a>
-          </li>
-          <li class="nav-item liRight profile">
-            <a class="link" href="/">
-              <img src="./../icons/profile.svg" alt="" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </head> -->
-
   <body>
     <div class="container_all d-flex flex-column ">
+      <!-- top-img -->
+      <div class="top_img d-flex d-lg-none">
+        <img class="w-100" src="./imgs/3-1.jpg" alt="">
+      </div>
       <!-- Breadcrumb -->
       <div class="col ">
         <nav class="bread"
@@ -178,40 +120,42 @@
                 </div>
               </div>
             </div>
-              <!-- category content group for 手機板 -->
-              <div class=" d-lg-none mb-2">
-                <div class="  d-flex flex-row  mb-3">
-                  <div class="ca_content_a d-flex flex-row  ">
-                    <div class="me-3">
-                      <img src="../icons/Frame 166.svg" alt="">
-                    </div>
-                    <h6 class="mb-0 align-self-center">路線總長 4km</h6>
+            <!-- category content group for 手機板 -->
+            <div class=" d-lg-none mb-2">
+              <div class="  d-flex flex-row  mb-3">
+                <div class="ca_content_a d-flex flex-row  ">
+                  <div class="me-3">
+                    <img src="../icons/Frame 166.svg" alt="">
                   </div>
-                </div>
-                <div class="  d-flex flex-row  mb-3">
-                  <div class="ca_content_a d-flex flex-row ">
-                    <div class="me-3">
-                      <img src="../icons/clock.svg" alt="">
-                    </div>
-                    <h6 class="mb-0 align-self-center">所需時間 2.5hr</h6>
-                  </div>
-                </div>
-                <div class=" d-flex flex-row  mb-3">
-                  <div class="ca_content_a d-flex flex-row ">
-                    <div class="me-3">
-                      <img src="../icons/upArrow.svg" alt="">
-                    </div>
-                    <h6 class="mb-0 align-self-center">爬升高度 1120m</h6>
-                  </div>
+                  <h6 class="mb-0 align-self-center">路線總長 4km</h6>
                 </div>
               </div>
+              <div class="  d-flex flex-row  mb-3">
+                <div class="ca_content_a d-flex flex-row ">
+                  <div class="me-3">
+                    <img src="../icons/clock.svg" alt="">
+                  </div>
+                  <h6 class="mb-0 align-self-center">所需時間 2.5hr</h6>
+                </div>
+              </div>
+              <div class=" d-flex flex-row  mb-3">
+                <div class="ca_content_a d-flex flex-row ">
+                  <div class="me-3">
+                    <img src="../icons/upArrow.svg" alt="">
+                  </div>
+                  <h6 class="mb-0 align-self-center">爬升高度 1120m</h6>
+                </div>
+              </div>
+            </div>
 
 
             <!-- paragraph  -->
             <p class="paragraph_i mb-2">
-              你見過南橫之美嗎？<br/>
-              自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！ 塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，Mountrip 還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
-              自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！ 塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，Mountrip 還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
+              你見過南橫之美嗎？<br />
+              自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！
+              塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，Mountrip 還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
+              自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！
+              塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，Mountrip 還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
             </p>
 
             <!-- 手機板 -->
@@ -225,7 +169,7 @@
                 <img class="img_cover_three " src="./imgs/4-1.jpg" alt="">
                 <img class="img_cover_three " src="./imgs/5-1.jpg" alt="">
               </div>
-  
+
             </div>
 
             <!-- gpx -->
@@ -256,12 +200,14 @@
                   <div class="col d-flex justify-content-center">
                     <h5 class="mb-0">2023/01/01 - 2023/01/03</h5>
                   </div>
-                    <button class="btn_style"><img src="../icons/chevron-right.svg" alt=""></button>
+                  <button class="btn_style"><img src="../icons/chevron-right.svg" alt=""></button>
                 </div>
               </div>
               <!-- for 手機板 -->
               <div class="col shop_btn_sm d-flex flex-row justify-content-center mb-2 d-lg-none">
-                <button class="btn_style"><h5 class="mb-0 lh-lg">查看更多</h5></button>
+                <button class="btn_style">
+                  <h5 class="mb-0 lh-lg">查看更多</h5>
+                </button>
                 <span>
                   <img class="mt-2" src="../icons/right-green.svg" alt="">
                 </span>
@@ -348,7 +294,9 @@
                 <div class="col d-flex flex-column flex-lg-row">
                   <div class="col col-lg-7 ">
                     <!-- FIXME:若評論為中文字則左右對齊 -->
-                    <p class="commont_p ">內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字。</p>
+                    <p class="commont_p ">
+                      內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字。
+                    </p>
                   </div>
                   <!-- imges -->
                   <div class="col col-lg-5 d-flex flex-row">
@@ -393,7 +341,9 @@
                 <!-- level3 內文與圖片 -->
                 <div class="col d-flex flex-column flex-lg-row">
                   <div class="col col-lg-7">
-                    <p class="commont_p">內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字。</p>
+                    <p class="commont_p">
+                      內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字。
+                    </p>
                   </div>
                   <!-- imges -->
                   <div class="col col-lg-5 d-flex flex-row">
@@ -438,7 +388,9 @@
                 <!-- level3 內文與圖片 -->
                 <div class="col d-flex flex-column flex-lg-row">
                   <div class="col col-lg-7">
-                    <p class="commont_p">內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字。</p>
+                    <p class="commont_p">
+                      內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字。
+                    </p>
                   </div>
                   <!-- imges -->
                   <div class="col col-lg-5 d-flex flex-row">
@@ -452,14 +404,11 @@
                   </div>
                 </div>
               </div>
-            </div>                        
-                     
-
-
+            </div>
 
             <!-- pagination -->
-            <div class="page-bar col d-flex align-self-center">
-              <nav aria-label="Page navigation example">
+            <div class=" page-bar col d-none d-lg-flex align-self-center">
+              <nav class="pagination_nav" aria-label=" Page navigation example">
                 <ul class="pagination ">
                   <li class="page-item">
                     <a class="page-link" href="#" aria-label="Previous">
@@ -482,6 +431,25 @@
           </div>
         </div>
       </section>
+    </div>
+    <div class="phone_bottom d-flex d-lg-none ">
+      <div class="w-100  mb-2 shop_btn_two">
+        <div class=" d-flex flex-row align-items-center ">
+          <div class="batch col-2 col-lg-1 ">
+            <h5 class="btn_font ps-3 mb-0  lh-lg">梯次</h5>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <h5 class="mb-0">2023/01/01 - 2023/01/03</h5>
+          </div>
+          <button class="btn_style"><img src="../icons/chevron-right.svg" alt=""></button>
+        </div>
+      </div>
+      <button class="col shop_btn_three d-flex flex-row justify-content-center  mb-2">
+        <h5 class="btn_font mb-0 lh-lg  ">加入購物車</h5>
+        <span>
+          <img class="mt-2" src="./imgs/arrow_right.svg" alt="">
+        </span>
+      </button>
     </div>
   </body>
 </body>
