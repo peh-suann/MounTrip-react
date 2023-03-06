@@ -4,19 +4,26 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './styles/Mountrip.module.css'
 
-import NavBar from './components/NavBar'
-import Footer from './components/Footer'
-
-import YichunProducts from './pages/YichunProducts'
+import Layout from './layouts/Layout'
+import Home from './components/Home'
+import TestMemberList from './pages/TestMemberList'
+import Login from './pages/KexinLogin'
 
 function App() {
   return (
     <>
       <Router>
-        <NavBar />
         <Routes>
-          <Route>
-            <Route path="/products" element={<YichunProducts />} />
+          <Route path="/" element={<Layout />}>
+            {/* <Home /> */}
+            {/* <h1>hey</h1> */}
+            <Route path="/" element={<Home />} />
+            <Route path="/member-list" element={<TestMemberList />} />
+
+            {/* <Route path="/" element={<Home />} /> */}
+          </Route>
+          <Route path="/">
+            <Route path="/Login" element={<Login />} />
           </Route>
         </Routes>
         <Footer />
