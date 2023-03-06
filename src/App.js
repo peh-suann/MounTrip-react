@@ -21,8 +21,6 @@ function App() {
         </Routes>
         <Footer />
       </Router>
-
-      {/* <MounTripTest1 /> */}
     </>
   )
 }
