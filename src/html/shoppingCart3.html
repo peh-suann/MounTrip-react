@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShoppingCart</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/Mountrip.module.css" />
+    <link rel="stylesheet" href="../styles/Navbar.module.css" />
+    <link rel="stylesheet" href="./css/basicSetting.css" />
+    <link rel="stylesheet" href="./css/shoppingCart3.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="bg-image">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="left">
+            <a href="">
+              <img src="./../icons/logo.svg" alt="" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse navigations"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="link" to="/"> 商品總覽 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/member-list"> 難易分級 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/"> 季節推薦 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/"> 線上測驗 </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="right">
+            <ul class="navbar-nav me-auto mb-lg-0 ulRight">
+              <li class="nav-item liRight search">
+                <div class="search-input">
+                  <img src="./../icons/search-icon.svg" alt="" />
+                  <span>輸入登山路線、季節熱門路線</span>
+                </div>
+              </li>
+              <li class="nav-item liRight notification">
+                <a class="link" href="/">
+                  <img src="./../icons/bell.svg" alt="" />
+                </a>
+              </li>
+              <li class="nav-item liRight cart">
+                <a class="link" href="/">
+                  <img src="./../icons/shopping-cart.svg" alt="" />
+                </a>
+              </li>
+              <li class="nav-item liRight profile">
+                <a class="link" href="/">
+                  <img src="./../icons/profile.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="container">
+        <section
+          class="row shopping-cart-process justify-content-center mobile-none"
+        >
+          <img src="./svg/shopping-cart3.svg" />
+          <div class="d-flex justify-content-center mb-42">
+            <p class="me-142 mtgrey3">確認訂單</p>
+            <p class="me-142 mtgrey3">填寫資料</p>
+            <p class="me-142 mtgrey1">付款頁面</p>
+            <p class="mtgrey3">完成訂單</p>
+          </div>
+        </section>
+
+        <section
+          class="row shopping-cart-process justify-content-center web-none"
+        >
+          <!-- 購物車流程png & <li> -->
+          <img src="./svg/shopping-cart3-mobile.svg" />
+          <div class="d-flex justify-content-center mb-42">
+            <p class="me-27 mtgrey3 mb-0">確認訂單</p>
+            <p class="me-27 mtgrey3 mb-0">填寫資料</p>
+            <p class="me-27 mtgrey1 mb-0">付款頁面</p>
+            <p class="mtgrey3 mb-0">完成訂單</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="wrap-container shopping-cart-contain mb-50">
+        <div id="shopping-cart-title" class="d-flex align-items-center mb-28">
+          <img src="./svg/credit-card.svg" class="me-12" alt="" />
+          <h3>付款方式</h3>
+        </div>
+        <div class="d-flex mb-50 credit-card-type">
+          <img src="./svg/Visa.svg" alt="" class="me-20" />
+          <img src="./svg/Mastercard.svg" alt="" class="me-20" />
+          <img src="./svg/Linepay.svg" alt="" />
+        </div>
+        <form class="form-inline mb-88" action="">
+          <div class="form-group col-12 mb-20">
+            <label for="creditcard">信用卡號碼</label>
+            <input
+              type="tel"
+              maxlength="16"
+              class="form-control"
+              id="creditcard"
+              placeholder="4512&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-"
+            />
+          </div>
+          <div class="row justify-content-between mb-20">
+            <div class="form-group col-8">
+              <label
+                for="
+              expirationdate"
+                >有效期限</label
+              >
+              <input
+                type="date"
+                class="form-control"
+                id="expirationdate"
+                name="expirationdate"
+              />
+            </div>
+            <div class="form-group col-4">
+              <label for="CVV2">末三碼</label>
+              <input
+                type="tel"
+                maxlength="3"
+                class="form-control"
+                id="CVV2"
+                name="CVV2"
+              />
+            </div>
+          </div>
+        </form>
+        <p class="description mb-50">
+          請注意本平台不會向您收取任何平台交易手續費，但你下單時使用的信用卡或第三方支付平台可能會向您收取相關手續費，請參考其相關服務政策和規定，並向你所選的交易服務商取得更多資訊。
+        </p>
+      </div>
+
+      <div class="pd-40">
+        <button type="button" class="btn btn-primary">確認訂單</button>
+      </div>
+    </div>
+  </body>
+</html>
