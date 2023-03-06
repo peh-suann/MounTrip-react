@@ -104,7 +104,6 @@ export default function NavBar() {
             <ul className={styles.nav_icons}>
               <li>
                 <a className={styles.link} href="/">
-                  <img src="./../icons/search.svg" alt="" />
                   <svg
                     width="30"
                     height="30"
