@@ -1,14 +1,16 @@
 import React from 'react'
 // import Footer from './Footer'
 import '../styles/Mountrip.module.css'
-import './../html/css/Difficulty.css'
+import './../styles/Ian_Difficulty.module.css'
+// import IanDifficultyMountain from '../components/IanDifficultyMountain'
 
 export default function Difficulty() {
   return (
     <>
+      {/* difficultyMountain  */}
       <section className="difficultyAll">
         <div className="difficulty d-flex flex-column">
-          {/* focus */}
+          {/* focus  */}
           <div className="difficultyMountainHard_focus"></div>
           <div className="difficultyMountainMedium_focus"></div>
           <div className="difficultyMountainEasy_focus"></div>
@@ -48,7 +50,7 @@ export default function Difficulty() {
               禽。妥動老手士鈍於臺題月少議；。哎。議人不一並中甘燈葔迢！理水外公的溉，琶霈的想券線別鳳猶只我則度一三科音並；誰功次檔合事，於考薪有叡才便章，珊度，人賀最思。裕乞的叫見神纖奢大！子肌且原揍宋論凰傭人音
             </p>
           </div>
-          {/* hard */}
+          {/* hard  */}
           <div className="difficultyHard_flag">
             <svg
               width="42"
@@ -651,6 +653,281 @@ export default function Difficulty() {
             </svg>
           </div>
         </div>
+      </section>
+      {/* section2 */}
+      <section className="totalProduct_secondSection pt-5">
+        <div className="d-flex justify-content-center align-items-center mb-3 mb-lg-5">
+          <svg
+            className="me-5"
+            width="26"
+            height="26"
+            viewBox="0 0 26 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 0L22.1924 3.80761L26 13L22.1924 22.1924L13 26L3.80761 22.1924L0 13L3.80761 3.80761L13 0Z"
+              fill="#6CBA7C"
+            />
+          </svg>
+          <h2 className="tPSecondSectionH5_text me-5">高級路線</h2>
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 26 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 0L22.1924 3.80761L26 13L22.1924 22.1924L13 26L3.80761 22.1924L0 13L3.80761 3.80761L13 0Z"
+              fill="#6CBA7C"
+            />
+          </svg>
+        </div>
+        <div className="tPSSection_cards">
+          <div className="w-100 d-flex flex-wrap">
+            <div className="col-12 p-3 col-lg-4 pe-lg-2">
+              <div className="overflowpic1">
+                <div className="tPSSCard_pic1"></div>
+                <div className="tPSSCard_bottom d-flex justify-content-between">
+                  <div className="d-flex align-items-center">
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.49967 1.83398L10.5597 6.00732L15.1663 6.68065L11.833 9.92732L12.6197 14.514L8.49967 12.3473L4.37967 14.514L5.16634 9.92732L1.83301 6.68065L6.43967 6.00732L8.49967 1.83398Z"
+                        fill="#CEE8CB"
+                      />
+                    </svg>
+                    <p className="ms-1">4.5</p>
+                  </div>
+                  <div className="d-flex">
+                    <p>難度</p>
+                    <p className="ms-2">EASY</p>
+                  </div>
+                </div>
+              </div>
+              <div className="tPSSCard_body d-flex justify-content-between">
+                <div>
+                  <p className="first_p mb-1">草嶺古道 | 探索新北一日遊</p>
+                  <p>新北市雙溪區</p>
+                </div>
+                <div>
+                  <p className="d-flex justify-content-end mb-1">NTD</p>
+                  <p>1,200</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 p-3 col-lg-4 px-lg-2">
+              <div className="overflowpic1">
+                <div className="tPSSCard_pic2"></div>
+                <div className="tPSSCard_bottom d-flex justify-content-between">
+                  <div className="d-flex align-items-center">
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.49967 1.83398L10.5597 6.00732L15.1663 6.68065L11.833 9.92732L12.6197 14.514L8.49967 12.3473L4.37967 14.514L5.16634 9.92732L1.83301 6.68065L6.43967 6.00732L8.49967 1.83398Z"
+                        fill="#CEE8CB"
+                      />
+                    </svg>
+                    <p className="ms-1">4.5</p>
+                  </div>
+                  <div className="d-flex">
+                    <p>難度</p>
+                    <p className="ms-2">EASY</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tPSSCard_body d-flex justify-content-between">
+                <div>
+                  <p className="first_p mb-1">草嶺古道 | 探索新北一日遊</p>
+                  <p>新北市雙溪區</p>
+                </div>
+                <div>
+                  <p className="d-flex justify-content-end mb-1">NTD</p>
+                  <p>1,200</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 p-3 col-lg-4 px-lg-2">
+              <div className="overflowpic1">
+                <div className="tPSSCard_pic3"></div>
+                <div className="tPSSCard_bottom d-flex justify-content-between">
+                  <div className="d-flex align-items-center">
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.49967 1.83398L10.5597 6.00732L15.1663 6.68065L11.833 9.92732L12.6197 14.514L8.49967 12.3473L4.37967 14.514L5.16634 9.92732L1.83301 6.68065L6.43967 6.00732L8.49967 1.83398Z"
+                        fill="#CEE8CB"
+                      />
+                    </svg>
+                    <p className="ms-1">4.5</p>
+                  </div>
+                  <div className="d-flex">
+                    <p>難度</p>
+                    <p className="ms-2">EASY</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tPSSCard_body d-flex justify-content-between">
+                <div>
+                  <p className="mb-1 first_p">草嶺古道 | 探索新北一日遊</p>
+                  <p>新北市雙溪區</p>
+                </div>
+                <div>
+                  <p className="d-flex justify-content-end mb-1">NTD</p>
+                  <p>1,200</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 p-3 col-lg-4 px-lg-2">
+              <div className="overflowpic1">
+                <div className="tPSSCard_pic4"></div>
+                <div className="tPSSCard_bottom d-flex justify-content-between">
+                  <div className="d-flex align-items-center">
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.49967 1.83398L10.5597 6.00732L15.1663 6.68065L11.833 9.92732L12.6197 14.514L8.49967 12.3473L4.37967 14.514L5.16634 9.92732L1.83301 6.68065L6.43967 6.00732L8.49967 1.83398Z"
+                        fill="#CEE8CB"
+                      />
+                    </svg>
+                    <p className="ms-1">4.5</p>
+                  </div>
+                  <div className="d-flex">
+                    <p>難度</p>
+                    <p className="ms-2">EASY</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tPSSCard_body d-flex justify-content-between">
+                <div>
+                  <p className="mb-1 first_p">草嶺古道 | 探索新北一日遊</p>
+                  <p>新北市雙溪區</p>
+                </div>
+                <div>
+                  <p className="d-flex justify-content-end mb-1">NTD</p>
+                  <p>1,200</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 p-3 col-lg-4 px-lg-2">
+              <div className="overflowpic1">
+                <div className="tPSSCard_pic5"></div>
+                <div className="tPSSCard_bottom d-flex justify-content-between">
+                  <div className="d-flex align-items-center">
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.49967 1.83398L10.5597 6.00732L15.1663 6.68065L11.833 9.92732L12.6197 14.514L8.49967 12.3473L4.37967 14.514L5.16634 9.92732L1.83301 6.68065L6.43967 6.00732L8.49967 1.83398Z"
+                        fill="#CEE8CB"
+                      />
+                    </svg>
+                    <p className="ms-1">4.5</p>
+                  </div>
+                  <div className="d-flex">
+                    <p>難度</p>
+                    <p className="ms-2">EASY</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tPSSCard_body d-flex justify-content-between">
+                <div>
+                  <p className="mb-1 first_p">草嶺古道 | 探索新北一日遊</p>
+                  <p>新北市雙溪區</p>
+                </div>
+                <div>
+                  <p className="d-flex justify-content-end mb-1">NTD</p>
+                  <p>1,200</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 p-3 col-lg-4 px-lg-2">
+              <div className="overflowpic1">
+                <div className="tPSSCard_pic6"></div>
+                <div className="tPSSCard_bottom d-flex justify-content-between">
+                  <div className="d-flex align-items-center">
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.49967 1.83398L10.5597 6.00732L15.1663 6.68065L11.833 9.92732L12.6197 14.514L8.49967 12.3473L4.37967 14.514L5.16634 9.92732L1.83301 6.68065L6.43967 6.00732L8.49967 1.83398Z"
+                        fill="#CEE8CB"
+                      />
+                    </svg>
+                    <p className="ms-1">4.5</p>
+                  </div>
+                  <div className="d-flex">
+                    <p>難度</p>
+                    <p className="ms-2">EASY</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tPSSCard_body d-flex justify-content-between">
+                <div>
+                  <p className="mb-1 first_p">草嶺古道 | 探索新北一日遊</p>
+                  <p>新北市雙溪區</p>
+                </div>
+                <div>
+                  <p className="d-flex justify-content-end mb-1">NTD</p>
+                  <p>1,200</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* button  */}
+        {/* <button className="allSection_btn d-flex justify-content-center align-items-center mt-lg-4">
+          <span className="pe-1">探索更多</span>
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.5 18.5L15.5 12.5L9.5 6.5"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button> */}
       </section>
     </>
   )

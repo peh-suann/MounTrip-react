@@ -177,12 +177,12 @@
 /* difficultyMountain */
 
 .difficultyAll{
-margin-top:2%;
-height:70vh;
+padding-top:1%;
+height:100vh;
 background-color:var(--mtyellow-4);
 }
 .difficulty{
-height:80vh;
+height:70vh;
 width: 100%;
 background-color: rgba(255, 255, 242, 0.9);
 /* background-color: gray; */
@@ -246,7 +246,7 @@ letter-spacing: 0.1em;
 .dMountain_hard{
 position: absolute;
 top:60%;
-left: -7%;
+left: 0%;
 z-index: 1;
 }
 :hover.hard_svg > path{
@@ -256,7 +256,7 @@ stroke-width:5;
 }
 .difficultyHard_flag{
 position: absolute;
-top: 50%;
+top: 51%;
 left: 26.5%;
 }
 .difficultyMountainHard_focus{
@@ -266,7 +266,7 @@ background-color: var(--mtgreen-4);
 border-radius: 50%;
 position: absolute;
 top: 40%;
-left: 21.5%;
+left: 22.5%;
 z-index: 0;
 }
 
@@ -283,8 +283,8 @@ z-index: 0;
 
 .dMountain_medium{
 position: absolute;
-top: 74%;
-left: 35%;
+top: 75%;
+left: 40%;
 /* opacity:0.5; */
 z-index: 2;
 /* background-color:rgba(255, 255, 242, 0.9) */
@@ -297,9 +297,9 @@ z-index: 2;
 }
 .difficultyMedium_flag{
 position: absolute;
-top: 65%;
+top: 66%;
 /* top: 100%; */
-left: 54%;
+left: 55.5%;
 z-index: 2;
 
 }
@@ -310,7 +310,7 @@ background-color: var(--mtgreen-4);
 border-radius: 50%;
 position: absolute;
 top: 56%;
-left: 49%;
+left: 51.5%;
 z-index: 1;
 /* opacity: 0; */
 opacity: 1;
@@ -320,7 +320,7 @@ opacity: 1;
 .dMountain_easy{
 position: absolute;
 top: 85%;
-left:65%;
+left:73%;
 z-index: 3;
 }
 :hover.easy_svg > path{
@@ -330,9 +330,9 @@ z-index: 3;
   }
 .difficultyEasy_flag{
   position: absolute;
-  top: 75%;
+  top: 76%;
   /* top: 100%; */
-  left: 85%;
+  left: 90%;
 }
 .difficultyMountainEasy_focus{
   width: 180px;
@@ -341,9 +341,10 @@ z-index: 3;
   border-radius: 50%;
   position: absolute;
   top: 65%;
-  /* top: 100%; */
-  left: 80%;
+  left:86%;
   z-index: 0;
+  /* opacity: 0; */
+opacity: 1;
   }
 
 
@@ -477,6 +478,8 @@ padding: 10px 0px;
 }
 .tPSSCard_body p{
 margin: 0;
+font-size: 20px;
+font-weight: 900
 }
 
 /* footer */
