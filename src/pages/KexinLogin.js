@@ -6,7 +6,7 @@ function KexinLogin() {
   return (
     <>
       <div className="bg-image">
-        <Navbar />
+        {/* <Navbar /> */}
 
         <div className="row">
           <div className="loginForm-wrap col-lg-3 col-sm-12">
@@ -49,6 +49,7 @@ function KexinLogin() {
                     className="form-control"
                     id="password"
                     name="password"
+                    required
                   />
                   <div className="form-text"></div>
                 </div>

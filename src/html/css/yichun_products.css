@@ -414,7 +414,8 @@ section.test {
   width: 100%;
   height: 670px;
   margin-bottom: 200px;
-  background-image: url(./../../images/product-page-img/test_bgi.png);
+  /* background-image: url(./../../images/product-page-img/test_bgi.png); */
+  background-image: url(./../../images/product-page-img/test_bgi.jpg);
   background-size: cover;
   background-color: var(--mtyellow-4);
   position: relative;

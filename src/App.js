@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './styles/Mountrip.module.css'
 
 import Layout from './layouts/Layout'
-import Home from './components/Home'
 import TestMemberList from './pages/TestMemberList'
 import Login from './pages/KexinLogin'
+import YichunProducts from './pages/YichunProducts'
 
 function App() {
   return (
@@ -15,18 +15,14 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
-            {/* <Home /> */}
-            {/* <h1>hey</h1> */}
-            <Route path="/" element={<Home />} />
-            <Route path="/member-list" element={<TestMemberList />} />
-
-            {/* <Route path="/" element={<Home />} /> */}
+            {/* 其他頁面Navbar+Footer */}
+            <Route path="/products" element={<YichunProducts />} />
           </Route>
           <Route path="/">
+            {/* 登入頁面Navbar+Footer */}
             <Route path="/Login" element={<Login />} />
           </Route>
         </Routes>
-        <Footer />
       </Router>
     </>
   )

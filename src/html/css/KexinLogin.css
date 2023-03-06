@@ -30,6 +30,14 @@
   width: 100%;
 }
 
+#account {
+  width: 100%;
+}
+
+#password {
+  width: 100%;
+}
+
 .button {
   display: flex;
   flex-direction: column;
