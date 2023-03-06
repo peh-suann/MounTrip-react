@@ -1,17 +1,18 @@
 // import '../styles/M'
 import styles from './../styles/Member.module.css'
+// import styles from './../styles/Member.module.css'
 import React from 'react'
 
 export default function Member() {
   return (
     <>
-      <div className={styles.gridContainer}>
-        <div className={styles.sidebar}>
-          <div className={styles.memberProfile}>
-            <div className={styles.profile}>
-              <div className={styles.picBtn}>
+      <div className={styles['grid-container']}>
+        <div className={styles['sidebar']}>
+          <div className={styles['member-profile']}>
+            <div className={styles['profile']}>
+              <div className={styles['pic-btn']}>
                 <svg
-                  className={styles.camera}
+                  className={styles['camera']}
                   width="20"
                   height="18"
                   viewBox="0 0 20 18"
@@ -35,27 +36,23 @@ export default function Member() {
                   />
                 </svg>
               </div>
-              <div className={styles.profileWrap}>
-                <img
-                  className={styles.profilePic}
-                  src="../../public/profile-picture.jpeg"
-                  alt=""
-                />
+              <div className={styles['profile-wrap']}>
+                <div className={styles['profile-pic']}></div>
               </div>
             </div>
-            <div className={styles.memberName}>
-              <p className={styles.firstName}>趙</p>
-              <p className={styles.lastName}>宜展</p>
+            <div className={styles['member-name']}>
+              <p className={styles['first-name']}>趙</p>
+              <p className={styles['last-name']}>宜展</p>
             </div>
-            <div className={styles.memberAccount}>yichunccc0830</div>
+            <div className={styles['member-account']}>yichunccc0830</div>
           </div>
-          <button className={styles.editBtn}>編輯個人資料</button>
-          <div className="btn-border"></div>
-          <div className="sidebar-menu">
-            <li className="coupon-link">
-              <a href="">
+          <button className={styles['edit-btn']}>編輯個人資料</button>
+          <div className={styles['btn-border']}></div>
+          <div className={styles['sidebar-menu']}>
+            <li className={styles['coupon-link']}>
+              <a href="/">
                 <svg
-                  className="menu-icon"
+                  className={styles['menu-icon']}
                   width="24"
                   height="25"
                   viewBox="0 0 24 25"
@@ -101,10 +98,10 @@ export default function Member() {
                 我的優惠券
               </a>
             </li>
-            <li className="achievement-link">
-              <a href="">
+            <li className={styles['achievement-link']}>
+              <a href="/">
                 <svg
-                  className="menu-icon"
+                  className={styles['menu-icon']}
                   width="24"
                   height="25"
                   viewBox="0 0 24 25"
@@ -141,10 +138,10 @@ export default function Member() {
                 成就獎章
               </a>
             </li>
-            <li className="history-order-link">
-              <a href="">
+            <li className={styles['history-order-link']}>
+              <a href="/">
                 <svg
-                  className="menu-icon"
+                  className={styles['menu-icon']}
                   width="24"
                   height="25"
                   viewBox="0 0 24 25"
@@ -169,10 +166,10 @@ export default function Member() {
                 歷史訂單
               </a>
             </li>
-            <li className="comment-link">
-              <a href="">
+            <li className={styles['comment-link']}>
+              <a href="/">
                 <svg
-                  className="menu-icon"
+                  className={styles['menu-icon']}
                   width="24"
                   height="25"
                   viewBox="0 0 24 25"
@@ -190,10 +187,10 @@ export default function Member() {
                 過往評論
               </a>
             </li>
-            <li className="favorite-link">
-              <a href="">
+            <li className={styles['favorite-link']}>
+              <a href="/">
                 <svg
-                  className="menu-icon"
+                  className={styles['menu-icon']}
                   width="24"
                   height="25"
                   viewBox="0 0 24 25"
@@ -213,8 +210,8 @@ export default function Member() {
             </li>
           </div>
         </div>
-        <div className="member-data">
-          <div className="title">
+        <div className={styles['member-data']}>
+          <div className={styles['title']}>
             <svg
               width="32"
               height="32"
@@ -239,21 +236,25 @@ export default function Member() {
             </svg>
             <h1>會員中心</h1>
           </div>
-          <div className="data-area">
-            <div class="input-blocks name-wrap">
-              <label for="" className="">
+          <div className={styles['data-area']}>
+            <div className={`${styles['name-wrap']} ${styles['input-blocks']}`}>
+              <label htmlFor="" className="">
                 名字
               </label>
               <input type="text" className="" id="" name="" required />
             </div>
-            <div className="input-blocks fname-wrap">
-              <label for="" className="">
+            <div
+              className={`${styles['fname-wrap']} ${styles['input-blocks']}`}
+            >
+              <label htmlFor="" className={''}>
                 姓氏
               </label>
-              <input type="text" className="" id="" name="" required />
+              <input type="text" className={''} id="" name="" required />
             </div>
-            <div className="input-blocks gender-wrap">
-              <label for="" className="">
+            <div
+              className={`${styles['gender-wrap']} ${styles['input-blocks']}`}
+            >
+              <label htmlFor="" className="">
                 性別
               </label>
               <select>
@@ -262,44 +263,53 @@ export default function Member() {
                 <option>不透露</option>
               </select>
             </div>
-            <div className="birth-wrap input-blocks">
-              <label for="" className="">
+            <div
+              className={`${styles['birth-wrap']} ${styles['input-blocks']}`}
+              //   className={styles['birth-wrap']}
+            >
+              <label htmlFor="" className="">
                 出生年月日
               </label>
               <input type="date" className="" id="" name="" required />
             </div>
-            <div className="id-wrap input-blocks">
-              <label for="" className="">
+            <div className={`${styles['id-wrap']} ${styles['input-blocks']}`}>
+              <label htmlFor="" className="">
                 身分證字號
               </label>
               <input type="text" className="" id="" name="" required />
             </div>
-            <div className="phone-wrap input-blocks">
-              <label for="" className="">
+            <div
+              className={`${styles['phone-wrap']} ${styles['input-blocks']}`}
+            >
+              <label htmlFor="" className="">
                 聯絡電話
               </label>
               <input type="text" className="" id="" name="" required />
             </div>
-            <div className="account-wrap input-blocks">
-              <label for="" className="">
+            <div
+              className={`${styles['account-wrap']} ${styles['input-blocks']}`}
+            >
+              <label htmlFor="" className="">
                 會員帳號
               </label>
-              <input type="text" className="" id="" name="" required />
+              <input type="text" className={''} id="" name="" required />
             </div>
-            <div className="email-wrap input-blocks">
-              <label for="" className="">
+            <div
+              className={`${styles['email-wrap']} ${styles['input-blocks']}`}
+            >
+              <label htmlFor="" className="">
                 電子信箱
               </label>
               <input type="email" className="" id="" name="" required />
             </div>
-            <div className="zip-wrap input-blocks">
-              <label for="" className="">
+            <div className={`${styles['zip-wrap']} ${styles['input-blocks']}`}>
+              <label htmlFor="" className="">
                 聯絡地址
               </label>
               <input type="text" className="" id="" name="" required />
             </div>
-            <div className="city-wrap input-blocks">
-              <div className="fake-label-city"></div>
+            <div className={`${styles['city-wrap']} ${styles['input-blocks']}`}>
+              <div className={styles['fake-label-city']}></div>
               <select>
                 <option>台北市</option>
                 <option>新北市</option>
@@ -309,11 +319,13 @@ export default function Member() {
                 <option>高雄市</option>
               </select>
             </div>
-            <div className="address-wrap input-blocks">
-              <div className="fake-label-add"></div>
+            <div
+              className={`${styles['address-wrap']} ${styles['input-blocks']}`}
+            >
+              <div className={styles['fake-label-add']}></div>
               <input type="text" className="" id="" name="" required />
             </div>
-            <button className="save-btn">儲存變更</button>
+            <button className={styles['save-btn']}>儲存變更</button>
           </div>
         </div>
       </div>
