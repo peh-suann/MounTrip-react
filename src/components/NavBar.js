@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import styles from './../styles/Navbar.module.css'
-import ExpandInput from './ExpandInput'
+// import ExpandInput from './ExpandInput'
 
-export default function NavBar() {
+function NavBar() {
   return (
     <>
       <nav>
@@ -76,26 +76,22 @@ export default function NavBar() {
             <ul className={styles.nav_navigations}>
               <li>
                 <a className={styles.link} href="/">
-                  {' '}
-                  商品總覽{' '}
+                  商品總覽
                 </a>
               </li>
               <li>
                 <a className={styles.link} href="/">
-                  {' '}
-                  難易分級{' '}
+                  難易分級
                 </a>
               </li>
               <li>
                 <a className={styles.link} href="/">
-                  {' '}
-                  季節推薦{' '}
+                  季節推薦
                 </a>
               </li>
               <li>
                 <a className={styles.link} href="/">
-                  {' '}
-                  線上測驗{' '}
+                  線上測驗
                 </a>
               </li>
             </ul>
@@ -226,3 +222,4 @@ export default function NavBar() {
     </>
   )
 }
+export default NavBar

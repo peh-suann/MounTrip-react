@@ -3,11 +3,10 @@ import './App.css'
 // import MounTripTest1 from './pages/MounTripTest1'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './styles/Mountrip.module.css'
-
+import Difficulty from './components/Difficulty'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
-
-import YichunProducts from './pages/YichunProducts'
+import Home from './components/Home'
 
 function App() {
   return (
@@ -15,9 +14,10 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route>
-            <Route path="/products" element={<YichunProducts />} />
-          </Route>
+          {/* <Home /> */}
+          {/* <h1>hey</h1> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/difficulty" element={<Difficulty />} />
         </Routes>
         <Footer />
       </Router>
