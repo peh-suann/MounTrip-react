@@ -26,20 +26,24 @@ nav {
   padding: 0px;
   gap: 36px;
 }
-.left button {
+.left button.menu {
   background-color: transparent;
   border: none;
 
   display: none;
 }
-.left .nav-navigations {
+.left button.logo {
+  background-color: transparent;
+  border: none;
+}
+.left .nav_navigations {
   display: flex;
   align-items: center;
   padding: 0px;
   margin: 0;
   gap: 36px;
 }
-.left .nav-navigations li {
+.left .nav_navigations li {
   list-style: none;
 }
 .left .link {
@@ -72,24 +76,24 @@ nav {
   align-items: center;
   padding: 0px;
 }
-.right .nav-icons {
+.right .nav_icons {
   display: flex;
   align-items: center;
   padding: 0px;
   margin: 0;
   gap: 36px;
 }
-.right .nav-icons li {
+.right .nav_icons li {
   list-style: none;
 }
-.right .nav-icons li:first-of-type {
+.right .nav_icons li:first-of-type {
   display: flex;
   align-items: center;
 }
-.right .nav-icons li:first-of-type a {
+.right .nav_icons li:first-of-type a {
   display: none;
 }
-.search-input-unfold {
+.search_input_unfold {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,7 +106,7 @@ nav {
   background: rgba(206, 232, 203, 0.3);
   border-radius: 6px;
 }
-.search-input-unfold span {
+.search_input_unfold span {
   font-weight: 300;
   font-size: 18px;
   line-height: 26px;

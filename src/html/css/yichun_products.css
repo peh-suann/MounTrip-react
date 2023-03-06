@@ -198,11 +198,11 @@ section.products .products_title h2 {
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   font-weight: 700;
   font-size: 28px;
-  line-height: 140%;
+  line-height: 50px;
   letter-spacing: 0.05em;
   color: #ffffff;
 
@@ -291,7 +291,7 @@ section.theme {
 
   width: 100%;
 
-  display: none;
+  /* display: none; */
 
   /* border: 2px solid blue; */
 }

@@ -17,12 +17,12 @@ footer {
   
     color: #ffffff;
   }
-  footer .left-links a {
+  footer .left_links a {
     text-decoration: none;
   
     color: #ffffff;
   }
-  footer .left-links a:hover {
+  footer .left_links a:hover {
     text-decoration: underline;
   
     color: #ffffff;
