@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShoppingCart</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/Mountrip.module.css" />
+    <link rel="stylesheet" href="../styles/Navbar.module.css" />
+    <link rel="stylesheet" href="./css/basicSetting.css" />
+    <link rel="stylesheet" href="./css/shoppingCart2.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="bg-image">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="left">
+            <a href="">
+              <img src="./../icons/logo.svg" alt="" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse navigations"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="link" to="/"> 商品總覽 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/member-list"> 難易分級 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/"> 季節推薦 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="link" to="/"> 線上測驗 </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="right">
+            <ul class="navbar-nav me-auto mb-lg-0 ulRight">
+              <li class="nav-item liRight search">
+                <div class="search-input">
+                  <img src="./../icons/search-icon.svg" alt="" />
+                  <span>輸入登山路線、季節熱門路線</span>
+                </div>
+              </li>
+              <li class="nav-item liRight notification">
+                <a class="link" href="/">
+                  <img src="./../icons/bell.svg" alt="" />
+                </a>
+              </li>
+              <li class="nav-item liRight cart">
+                <a class="link" href="/">
+                  <img src="./../icons/shopping-cart.svg" alt="" />
+                </a>
+              </li>
+              <li class="nav-item liRight profile">
+                <a class="link" href="/">
+                  <img src="./../icons/profile.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="container">
+        <section
+          class="row shopping-cart-process justify-content-center mobile-none"
+        >
+          <img src="./svg/shopping-cart2.svg" />
+          <div class="d-flex justify-content-center mb-42">
+            <p class="me-142 mtgrey3">確認訂單</p>
+            <p class="me-142 mtgrey1">填寫資料</p>
+            <p class="me-142 mtgrey3">付款頁面</p>
+            <p class="mtgrey3">完成訂單</p>
+          </div>
+        </section>
+
+        <section
+          class="row shopping-cart-process justify-content-center web-none"
+        >
+          <!-- 購物車流程png & <li> -->
+          <img src="./svg/shopping-cart2-mobile.svg" />
+          <div class="d-flex justify-content-center mb-42">
+            <p class="me-27 mtgrey3 mb-0">確認訂單</p>
+            <p class="me-27 mtgrey1 mb-0">填寫資料</p>
+            <p class="me-27 mtgrey3 mb-0">付款頁面</p>
+            <p class="mtgrey3 mb-0">完成訂單</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="wrap-container shopping-cart-contain mb-88">
+        <div id="shopping-cart-title" class="d-flex align-items-center mb-28">
+          <img src="./svg/user.svg" class="me-12" alt="" />
+          <h3>訂購人資料</h3>
+        </div>
+        <form class="form-inline" action="">
+          <div class="row justify-content-between mb-20">
+            <div class="form-group col-6">
+              <label for="firstName">名字</label>
+              <input type="text" class="form-control" id="firstName" />
+            </div>
+            <div class="form-group col-6">
+              <label for="lastName">姓氏</label>
+              <input type="text" class="form-control" id="lastName" />
+            </div>
+          </div>
+          <div class="form-group col-12 mb-20">
+            <label for="phone">聯絡電話</label>
+            <input type="tel" class="form-control" id="phone" />
+          </div>
+          <div class="form-group col-12 mb-88">
+            <label for="email">電子郵件信箱</label>
+            <input type="email" class="form-control" id="email" />
+          </div>
+        </form>
+
+        <div id="shopping-cart-title" class="d-flex align-items-center mb-28">
+          <img src="./svg/users.svg" class="me-12" alt="" />
+          <h3>旅客資料</h3>
+        </div>
+        <div class="row order-detail align-items-center">
+          <div class="col-1">
+            <img src="./svg/chevron-down.svg" />
+          </div>
+          <div class="col-11">
+            <p class="order-title">草嶺古道｜探索新北一日遊探索</p>
+            <div class="d-flex order-title-detail">
+              <p class="order-title-detail-number">
+                <img class="" src="./svg/users_grey.svg" />
+                <span>2張</span>
+              </p>
+              <p>
+                <img class="" src="./svg/calendar_grey.svg" />
+                <span>2022/01/01 - 2022/01/03</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <form class="form-inline mb-50" action="">
+          <div class="row justify-content-between mb-20">
+            <div class="form-group col-6">
+              <label
+                for="
+              traveler1-firstName"
+                >名字</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="traveler1-firstName"
+              />
+            </div>
+            <div class="form-group col-6">
+              <label for="traveler1-lastName">姓氏</label>
+              <input type="text" class="form-control" id="traveler1-lastName" />
+            </div>
+          </div>
+          <div class="form-group col-12 mb-20">
+            <label for="traveler1-phone">聯絡電話</label>
+            <input type="tel" class="form-control" id="traveler1-phone" />
+          </div>
+          <div class="form-group col-12 mb-20">
+            <label for="traveler1-email">電子郵件信箱</label>
+            <input type="email" class="form-control" id="traveler1-email" />
+          </div>
+          <div class="row justify-content-between mb-20">
+            <div class="form-group col-6">
+              <label
+                for="
+              traveler1-id"
+                >身分證字號</label
+              >
+              <input type="text" class="form-control" id="traveler1-id" />
+            </div>
+            <div class="form-group col-6">
+              <label for="traveler1-birthday">出生年月日</label>
+              <input type="date" class="form-control" id="traveler1-birthday" />
+            </div>
+          </div>
+          <div class="mb-48">
+            <input type="checkbox" id="sameOrder" name="sameOrder" />
+            <label class="checkmark grey2" for="sameOrder">同訂購人資料</label>
+          </div>
+
+          <div class="row justify-content-between mb-20">
+            <div class="form-group col-6">
+              <label
+                for="
+            traveler1-firstName"
+                >名字</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="traveler1-firstName"
+              />
+            </div>
+            <div class="form-group col-6">
+              <label for="traveler2-lastName">姓氏</label>
+              <input type="text" class="form-control" id="traveler2-lastName" />
+            </div>
+          </div>
+          <div class="form-group col-12 mb-20">
+            <label for="traveler2-phone">聯絡電話</label>
+            <input type="tel" class="form-control" id="traveler2-phone" />
+          </div>
+          <div class="form-group col-12 mb-20">
+            <label for="traveler2-email">電子郵件信箱</label>
+            <input type="email" class="form-control" id="traveler2-email" />
+          </div>
+          <div class="row justify-content-between mb-20">
+            <div class="form-group col-6">
+              <label
+                for="
+            traveler2-id"
+                >身分證字號</label
+              >
+              <input type="text" class="form-control" id="traveler2-id" />
+            </div>
+            <div class="form-group col-6">
+              <label for="traveler2-birthday">出生年月日</label>
+              <input type="date" class="form-control" id="traveler2-birthday" />
+            </div>
+          </div>
+        </form>
+
+        <div class="row order-detail align-items-center mb-40">
+          <div class="col-1">
+            <img src="./svg/chevron-down-right.svg" />
+          </div>
+          <div class="col-11">
+            <p class="order-title mb-15">
+              草嶺古道｜探索新北一日遊探索新北一日遊
+            </p>
+            <div class="d-flex order-title-detail">
+              <p class="order-title-detail-number">
+                <img class="" src="./svg/users_grey.svg" />
+                <span>2張</span>
+              </p>
+              <p>
+                <img class="" src="./svg/calendar_grey.svg" />
+                <span>2022/01/01 - 2022/01/03</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row order-detail align-items-center pd-40">
+          <div class="col-1">
+            <img src="./svg/chevron-down-right.svg" />
+          </div>
+          <div class="col-11">
+            <p class="order-title mb-15">
+              草嶺古道｜探索新北一日遊探索新北一日遊
+            </p>
+            <div class="d-flex order-title-detail">
+              <p class="order-title-detail-number">
+                <img class="" src="./svg/users_grey.svg" />
+                <span>2張</span>
+              </p>
+              <p>
+                <img class="" src="./svg/calendar_grey.svg" />
+                <span>2022/01/01 - 2022/01/03</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pd-40 mobile-button-width">
+        <button type="button" class="btn btn-primary">前往付款</button>
+      </div>
+    </div>
+  </body>
+</html>
