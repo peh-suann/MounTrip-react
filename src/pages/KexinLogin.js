@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginCss from '../../src/html/css/KexinLogin.css'
+import styles from '../styles/kexinLogin.module.css'
 import Navbar from '../layouts/Navbar'
 
 function KexinLogin() {

@@ -5,7 +5,7 @@
 }
 
 .bg-image {
-  background: url('../img/login-background.jpg') center center/cover;
+  background: url('../html/img/login-background.jpg') center center/cover;
   height: 100vh;
 }
 
