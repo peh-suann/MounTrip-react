@@ -6,6 +6,7 @@
 
 .bg-image {
   background: url('../img/login-background.jpg') center center/cover;
+  height: 100vh;
 }
 
 .web-none {
@@ -26,6 +27,14 @@
 }
 
 .loginForm {
+  width: 100%;
+}
+
+#account {
+  width: 100%;
+}
+
+#password {
   width: 100%;
 }
 
@@ -92,7 +101,7 @@ input.form-control {
 
 @media screen and (max-width: 400px) {
   nav {
-    display: none;
+    /* display: none; */
   }
 
   .bg-image {
