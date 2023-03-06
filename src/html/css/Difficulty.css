@@ -177,11 +177,12 @@
 /* difficultyMountain */
 
 .difficultyAll{
-  height:70vh;
-  background-color:var(--mtyellow-4);
+margin-top:2%;
+height:70vh;
+background-color:var(--mtyellow-4);
 }
 .difficulty{
-height:64vh;
+height:80vh;
 width: 100%;
 background-color: rgba(255, 255, 242, 0.9);
 /* background-color: gray; */
@@ -245,7 +246,7 @@ letter-spacing: 0.1em;
 .dMountain_hard{
 position: absolute;
 top:60%;
-left: 0%;
+left: -7%;
 z-index: 1;
 }
 :hover.hard_svg > path{
@@ -265,14 +266,13 @@ background-color: var(--mtgreen-4);
 border-radius: 50%;
 position: absolute;
 top: 40%;
-left: 22.5%;
+left: 21.5%;
 z-index: 0;
 }
 
 .RWDhard_svg{
   display: none;
 }
-
 .RWDmedium_svg{
   display: none;
 }
@@ -283,8 +283,8 @@ z-index: 0;
 
 .dMountain_medium{
 position: absolute;
-top: 75%;
-left: 39%;
+top: 74%;
+left: 35%;
 /* opacity:0.5; */
 z-index: 2;
 /* background-color:rgba(255, 255, 242, 0.9) */
@@ -297,8 +297,8 @@ z-index: 2;
 }
 .difficultyMedium_flag{
 position: absolute;
-/* top: 65%; */
-top: 100%;
+top: 65%;
+/* top: 100%; */
 left: 54%;
 z-index: 2;
 
@@ -310,16 +310,17 @@ background-color: var(--mtgreen-4);
 border-radius: 50%;
 position: absolute;
 top: 56%;
-left: 50%;
+left: 49%;
 z-index: 1;
-opacity: 0;
+/* opacity: 0; */
+opacity: 1;
 }
 
 
 .dMountain_easy{
 position: absolute;
 top: 85%;
-left: 71%;
+left:65%;
 z-index: 3;
 }
 :hover.easy_svg > path{
@@ -330,8 +331,8 @@ z-index: 3;
 .difficultyEasy_flag{
   position: absolute;
   top: 75%;
-  top: 100%;
-  /* left: 88%; */
+  /* top: 100%; */
+  left: 85%;
 }
 .difficultyMountainEasy_focus{
   width: 180px;
@@ -339,9 +340,9 @@ z-index: 3;
   background-color: var(--mtgreen-4);
   border-radius: 50%;
   position: absolute;
-  /* top: 65%; */
-  top: 100%;
-  left: 84%;
+  top: 65%;
+  /* top: 100%; */
+  left: 80%;
   z-index: 0;
   }
 
