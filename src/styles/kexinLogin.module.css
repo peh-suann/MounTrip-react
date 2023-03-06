@@ -4,6 +4,42 @@
   padding: 0;
 }
 
+.mtgrey1 {
+  color: var(--mtgrey-1);
+}
+
+.mtgrey2 {
+  color: var(--mtgrey-2);
+}
+
+.mtgrey3 {
+  color: var(--mtgrey-3);
+}
+
+.mtgreen1 {
+  color: var(--mtgreen-1);
+}
+
+.mtgreen2 {
+  color: var(--mtgreen-2);
+}
+
+.mtgreen4 {
+  color: var(--mtgreen-4);
+}
+
+.mtyellow4 {
+  color: var(--mtyellow-4);
+}
+
+.me-06 {
+  margin-right: 6px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
 .bg-image {
   background: url('../html/img/login-background.jpg') center center/cover;
   height: 100vh;
@@ -77,10 +113,10 @@ input.form-control {
   border-color: var(--mtgreen-3);
 }
 
-.checkbox {
+#rememberme {
   /* background-color: rgba(var(--mtgreen-3), 0.6); */
-  width: 100%;
-  height: 100%;
+  width: 22px;
+  /* height: 22px; */
   background: #fffff2;
   /* primary/03 */
   border: 2px solid var(--mtgreen-3);
@@ -115,6 +151,7 @@ input.form-control {
 
   .mobile-x {
     display: block;
+    margin-bottom: 60px;
     /* padding-left: 15px; */
     /* padding-top: 80px; */
   }
