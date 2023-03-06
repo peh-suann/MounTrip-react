@@ -34,10 +34,10 @@ export default function TrailsDetail() {
   }, [])
   return (
     <>
-      {/* <div className="container">
+      <div className="container">
         {console.log('----', data.rows)}
         <TrailsDetailTable rows={data.rows} />
-      </div> */}
+      </div>
       <div class="container_all d-flex flex-column ">
         <div className="col ">
           <nav className="bread" aria-label="breadcrumb">

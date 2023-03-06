@@ -192,6 +192,11 @@ main .right-card {
 
 /* pagination */
 
+.page-bar .pagination_nav{
+  position: relative;
+  padding: 0px;
+}
+
 .page-bar nav {
   background-color: transparent;
 }
