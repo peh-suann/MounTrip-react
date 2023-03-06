@@ -4,108 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Signin</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/Mountrip.module.css" />
-    <link rel="stylesheet" href="../styles/Navbar.module.css" />
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      .liRight {
-        margin-left: 0rem;
-      }
-      .link:hover {
-        text-decoration: underline;
-        color: #fff;
-      }
-      .link {
-        color: #fff;
-      }
-
-      .bg-image {
-        background: url('img/login-background.jpg') center center/cover;
-      }
-
-      .loginForm-wrap {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(255, 255, 242, 0.7);
-        box-shadow: 0px 10px 16px rgba(1, 19, 6, 0.15);
-        backdrop-filter: blur(3px);
-        /* Note: backdrop-filter has minimal browser support */
-        border-radius: 10px;
-        padding: 60px;
-      }
-
-      .loginForm {
-        width: 100%;
-      }
-
-      .button {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 20px;
-      }
-
-      .button div {
-        width: 100%;
-      }
-
-      .button #login {
-        display: block;
-        width: 100%;
-        background-color: var(--mtgreen-1);
-        border-color: var(--mtgreen-1);
-        line-height: 27px;
-        letter-spacing: 0.1em;
-      }
-
-      .button #quick-login {
-        display: block;
-        width: 100%;
-        color: var(--mtgreen-1);
-        background-color: var(--mtyellow-4);
-        border-color: var(--mtgreen-1);
-        /* font-size: 20px; */
-        line-height: 27px;
-        letter-spacing: 0.1em;
-      }
-
-      input.form-control {
-        /* background-color: rgba(var(--mtgreen-3), 0.6); */
-        background-color: rgba(206, 232, 203, 0.6);
-        border-color: var(--mtgreen-3);
-      }
-
-      .checkbox {
-        /* background-color: rgba(var(--mtgreen-3), 0.6); */
-        width: 100%;
-        height: 100%;
-        background: #fffff2;
-        /* primary/03 */
-        border: 2px solid var(--mtgreen-3);
-        border-radius: 7px;
-      }
-    </style>
+    <link rel="stylesheet" href="../styles/loginNavbar.module.css" />
+    <link rel="stylesheet" href="./css/basicSetting.css" />
+    <link rel="stylesheet" href="./css/signin.css" />
+    <style></style>
   </head>
   <body>
     <div class="bg-image" style="height: 100vh">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-            <a class="brandlogo" href="/">
-              <img src="./svg//logo.svg" alt="Mountrip logo" />
+          <div class="left">
+            <a href="">
+              <img src="./../icons/logoLogin.svg" alt="" />
             </a>
             <button
               class="navbar-toggler"
@@ -118,33 +35,41 @@
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div
+              class="collapse navbar-collapse navigations"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="link" aria-current="page" href="/"> 商品總覽 </a>
+                  <a class="link" to="/"> 商品總覽 </a>
                 </li>
                 <li class="nav-item">
-                  <a class="link" href="/member-list"> 難易分級 </a>
+                  <a class="link" to="/member-list"> 難易分級 </a>
                 </li>
                 <li class="nav-item">
-                  <a class="link" href="/"> 季節推薦 </a>
+                  <a class="link" to="/"> 季節推薦 </a>
                 </li>
                 <li class="nav-item">
-                  <a class="link" href="/"> 線上測驗 </a>
+                  <a class="link" to="/"> 線上測驗 </a>
                 </li>
               </ul>
             </div>
           </div>
           <div class="right">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ulRight">
-              <li class="nav-item liRight">
+            <ul class="navbar-nav me-auto mb-lg-0 ulRight">
+              <li class="nav-item liRight search">
+                <div class="link" href="/">
+                  <img src="./../icons/search-iconLogin.svg" alt="" />
+                </div>
+              </li>
+              <li class="nav-item liRight notification">
                 <a class="link" href="/">
-                  <img src="./svg/search.svg" alt="search icon" />
+                  <img src="./../icons/bellLogin.svg" alt="" />
                 </a>
               </li>
-              <li class="nav-item liRight">
+              <li class="nav-item liRight cart">
                 <a class="link" href="/">
-                  <img src="./svg/shopping-cart.svg" alt="shopping-cart icon" />
+                  <img src="./../icons/shopping-cartLogin.svg" alt="" />
                 </a>
               </li>
             </ul>
@@ -153,7 +78,22 @@
       </div>
 
       <div class="row">
-        <div class="loginForm-wrap col-3">
+        <div class="loginForm-wrap col-lg-3 col-sm-12">
+          <img class="mobile-x web-none mb-40" src="./svg/x.svg" alt="" />
+          <div class="mobile-welcome web-none d-flex flex-column">
+            <h3 class="mb-0 mtgreen1 web-none">歡迎回來！</h3>
+            <p class="mb-0 mtgreen2 web-none">
+              與Mountrip一起繼續探索更多美好的旅程
+            </p>
+          </div>
+          <div class="mobile-tag d-flex web-none">
+            <a href="./login.html" class="w-50 text-decoration-none"
+              ><p class="mb-0 text-center mtgreen1 web-none">登入</p></a
+            >
+            <a href="./signin.html" class="w-50 text-decoration-none"
+              ><p class="mb-0 text-center mtgrey3 web-none">註冊</p></a
+            >
+          </div>
           <div class="loginForm">
             <form name="form1" method="post">
               <div class="mb-3">
@@ -177,29 +117,34 @@
                 />
                 <div class="form-text"></div>
               </div>
-              <div class="mb-3 d-flex justify-content-between">
-                <div>
-                  <input type="checkbox" id="rememberme" name="rememberme" />
-                  <label class="checkmark" for="rememberme">記住我</label>
-                </div>
-                <div>
-                  <a href="#">忘記密碼</a>
-                </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">密碼確認</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                />
+                <div class="form-text"></div>
               </div>
-              <div class="button pt-3">
-                <div class="mb-3">
+              <div class="button">
+                <div class="mb-1">
                   <button id="login" type="submit" class="btn btn-primary">
-                    登入
+                    註冊
                   </button>
                 </div>
-                <div class="mb-3">
+                <div class="mb-1">
                   <button
                     id="quick-login"
                     type="submit"
-                    class="btn btn-primary"
+                    class="btn btn-primary mb-2"
                   >
-                    使用Google帳號快速登入
+                    使用Google帳號快速註冊
                   </button>
+                  <div class="d-flex justify-content-center mobile-none">
+                    <p class="me-2 mobile-none">已經有帳號了嗎?</p>
+                    <a href="./login.html" class="mobile-none">立即登入</a>
+                  </div>
                 </div>
               </div>
             </form>
