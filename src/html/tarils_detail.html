@@ -179,7 +179,7 @@
 
             <!-- shop-button-group -->
 
-            <div class="d-flex flex-column">
+            <div class="d-none d-lg-flex flex-column ">
               <!-- level1 -->
               <div class="col d-flex flex-row mb-2">
                 <div class="col shop_btn_one d-flex flex-row align-items-center me-2">
@@ -203,15 +203,6 @@
                   <button class="btn_style"><img src="../icons/chevron-right.svg" alt=""></button>
                 </div>
               </div>
-              <!-- for 手機板 -->
-              <div class="col shop_btn_sm d-flex flex-row justify-content-center mb-2 d-lg-none">
-                <button class="btn_style">
-                  <h5 class="mb-0 lh-lg">查看更多</h5>
-                </button>
-                <span>
-                  <img class="mt-2" src="../icons/right-green.svg" alt="">
-                </span>
-              </div>
               <!-- level3 -->
               <button class="col shop_btn_three d-flex flex-row justify-content-center  mb-2">
                 <h5 class="btn_font mb-0 lh-lg  ">加入購物車</h5>
@@ -228,9 +219,43 @@
         <img class="Vector_long" src="./imgs/Vector_long.svg" alt="">
       </div>
       <!-- Vector for 手機板 -->
-      <div class="mb-5 d-lg-none">
+      <div class="mb-4 d-lg-none">
         <img class="Vector_long" src="./imgs/Vector_small.svg" alt="">
       </div>
+      <!-- login commont for phone -->
+      <div class="d-flex w-100 col flex-column">
+        <div class="login_commont_star w-100 d-flex flex-row mb-lg-5">
+          <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M16.1579 0L21.525 9.15073L31.9473 11.392L24.8421 19.2887L25.9163 29.8245L16.1579 25.5542L6.39945 29.8245L7.47367 19.2887L0.368408 11.392L10.7907 9.15073L16.1579 0Z"
+              fill="#F2F2F2" />
+          </svg>
+          <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M16.1579 0L21.525 9.15073L31.9473 11.392L24.8421 19.2887L25.9163 29.8245L16.1579 25.5542L6.39945 29.8245L7.47367 19.2887L0.368408 11.392L10.7907 9.15073L16.1579 0Z"
+              fill="#F2F2F2" />
+          </svg>
+          <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M16.1579 0L21.525 9.15073L31.9473 11.392L24.8421 19.2887L25.9163 29.8245L16.1579 25.5542L6.39945 29.8245L7.47367 19.2887L0.368408 11.392L10.7907 9.15073L16.1579 0Z"
+              fill="#F2F2F2" />
+          </svg>
+          <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M16.1579 0L21.525 9.15073L31.9473 11.392L24.8421 19.2887L25.9163 29.8245L16.1579 25.5542L6.39945 29.8245L7.47367 19.2887L0.368408 11.392L10.7907 9.15073L16.1579 0Z"
+              fill="#F2F2F2" />
+          </svg>
+          <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M16.1579 0L21.525 9.15073L31.9473 11.392L24.8421 19.2887L25.9163 29.8245L16.1579 25.5542L6.39945 29.8245L7.47367 19.2887L0.368408 11.392L10.7907 9.15073L16.1579 0Z"
+              fill="#F2F2F2" />
+          </svg>
+        </div>
+        <textarea class="login_commont" name="login_commont" id="login_commont" cols="30" rows="10"></textarea>
+        <button class="enter_commont_phone d-lg-none">發布評論</button>
+        <button class="enter_commont d-none d-lg-flex">發布評論</button>
+      </div>
+
 
 
       <section>
@@ -444,13 +469,24 @@
           <button class="btn_style"><img src="../icons/chevron-right.svg" alt=""></button>
         </div>
       </div>
-      <button class="col shop_btn_three d-flex flex-row justify-content-center  mb-2">
-        <h5 class="btn_font mb-0 lh-lg  ">加入購物車</h5>
-        <span>
-          <img class="mt-2" src="./imgs/arrow_right.svg" alt="">
-        </span>
-      </button>
+      <div class="w-100 d-flex flex-row ">
+        <div class="col w-100 d-flex flex-row btn_group">
+          <div class="col-4 shop_btn_one d-flex flex-row align-items-center">
+            <button class="btn_style"><img src="../icons/minus.svg" alt=""></button>
+            <h5 class="col h5_count">1</h5>
+            <button class="btn_style"><img src="../icons/plus.svg" alt=""></button>
+          </div>
+          <button class="col shop_btn_three d-flex flex-row justify-content-center">
+            <h5 class="btn_font mb-0 lh-lg  ">加入購物車</h5>
+            <span>
+              <img class="mt-2" src="./imgs/arrow_right.svg" alt="">
+            </span>
+          </button>
+        </div>
+
+      </div>
     </div>
+
   </body>
 </body>
 
