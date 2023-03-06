@@ -8,6 +8,7 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 
 import YichunProducts from './pages/YichunProducts'
+import Member from './pages/Member'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route>
             <Route path="/products" element={<YichunProducts />} />
+            <Route path="/member" element={<Member />} />
           </Route>
         </Routes>
         <Footer />
