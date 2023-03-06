@@ -2,85 +2,86 @@
 /* difficultyMountain */
 
 .difficultyAll{
-    height:80vh;
-    background-color:var(--mtyellow-4);
-    }
+  height:80vh;
+  padding-top: 0px;
+  background-color:var(--mtyellow-4);
+}
 .difficulty{
-    height:70vh;
-    width: 100%;
-    background-color: rgba(255, 255, 242, 0.9);
-    /* background-color: gray; */
-    position: relative;
-    overflow: hidden;
-    }
-    .difficultyHard_text{
-    width: 29%;
-    background-color: transparent;
-    position: absolute;
-    top: 12%;
-    /* top: 100%; */
-    left: 35.5%;
-    }
-    .difficultyMedium_text{
-    width: 29%;
-    background-color: transparent;
-    position: absolute;
-    /* top: 12%; */
-    top: 100%;
-    left: 35.5%;
-    }
-    .difficultyEasy_text{
-    width: 29%;
-    background-color: transparent;
-    position: absolute;
-    /* top: 12%; */
-    top: 100%;
-    left: 35.5%;
-    z-index: 0;
-    }
-    
-    /* difficulty Text style */
-    .difficulty_firstText{
-      margin:0;
-      }
-    .difficulty_firstText > span{
-      color:black;
-      font-weight: 700;
-      font-size: 30px;
-      line-height: 41px;
-      text-align: center;
-      letter-spacing: 0.1em;
-      }
-    .difficulty_secondText,.difficulty_secondText >span  {
-    font-weight: 400;
-    font-size: 18px; 
-    line-height: 26px;
-    letter-spacing: 0.1em;
-    color: var(--mtgreen-1);
-    }
-    .difficulty_thirdText{
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 26px;
-    letter-spacing: 0.1em;
-    }
-    
-    
-    
-    .dMountain_hard{
-    position: absolute;
-    top:60%;
-    left: 0%;
-    z-index: 1;
-    }
-    :hover.hard_svg > path{
-    stroke: rgb(127, 222, 127);
+height:72vh;
+width: 100%;
+background-color: rgba(255, 255, 242, 0.9);
+/* background-color: gray; */
+position: relative;
+overflow: hidden;
+}
+.difficultyHard_text{
+width: 29%;
+background-color: transparent;
+position: absolute;
+top: 20%;
+/* top: 100%; */
+left: 35.5%;
+}
+.difficultyMedium_text{
+width: 29%;
+background-color: transparent;
+position: absolute;
+/* top: 20%; */
+top: 100%;
+left: 35.5%;
+}
+.difficultyEasy_text{
+width: 29%;
+background-color: transparent;
+position: absolute;
+/* top: 20%; */
+top: 100%;
+left: 35.5%;
+z-index: 0;
+}
+
+/* difficulty Text style */
+.difficulty_firstText{
+  margin:0;
+  }
+.difficulty_firstText > span{
+  color:black;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 41px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  }
+.difficulty_secondText,.difficulty_secondText >span  {
+font-weight: 400;
+font-size: 18px; 
+line-height: 26px;
+letter-spacing: 0.1em;
+color: var(--mtgreen-1);
+}
+.difficulty_thirdText{
+font-weight: 400;
+font-size: 18px;
+line-height: 26px;
+letter-spacing: 0.1em;
+}
+
+
+
+.dMountain_hard{
+position: absolute;
+top:65%;
+left: 0%;
+z-index: 1;
+}
+:hover.hard_svg > path{
+stroke: rgb(127, 222, 127);
     stroke-width:5;
     /* fill:blue ; */
     }
     .difficultyHard_flag{
     position: absolute;
-    top: 51%;
+    top: 56%;
     left: 26.5%;
     }
     .difficultyMountainHard_focus{
@@ -89,8 +90,8 @@
     background-color: var(--mtgreen-4);
     border-radius: 50%;
     position: absolute;
-    top: 40%;
-    left: 21.5%;
+    top: 45%;
+    left: 22.5%;
     z-index: 0;
     }
     
@@ -107,9 +108,8 @@
     
     .dMountain_medium{
     position: absolute;
-    top: 75%;
-    left: 40%;
-    /* opacity:0.5; */
+    top: 77%;
+    left: 39%;
     z-index: 2;
     /* background-color:rgba(255, 255, 242, 0.9) */
     
@@ -121,9 +121,9 @@
     }
     .difficultyMedium_flag{
     position: absolute;
-    top: 65%;
-    top: 100%;
-    /* left: 54%; */
+    top: 68%;
+    /* top: 100%; */
+    left: 54.5%;
     z-index: 2;
     
     }
@@ -133,18 +133,18 @@
     background-color: var(--mtgreen-4);
     border-radius: 50%;
     position: absolute;
-    top: 56%;
-    left: 49%;
+    top: 59%;
+    left: 50.5%;
     z-index: 1;
-    opacity: 0;
-    /* opacity: 1; */
+    /* opacity: 0; */
+    opacity: 1;
     }
     
     
     .dMountain_easy{
     position: absolute;
-    top: 85%;
-    left:73%;
+    top: 86%;
+    left:72%;
     z-index: 3;
     }
     :hover.easy_svg > path{
@@ -154,9 +154,9 @@
       }
     .difficultyEasy_flag{
       position: absolute;
-      top: 75%;
-      top: 100%;
-      /* left: 85%; */
+      top: 77%;
+      /* top: 100%; */
+      left: 89%;
     }
     .difficultyMountainEasy_focus{
       width: 180px;
@@ -164,11 +164,11 @@
       background-color: var(--mtgreen-4);
       border-radius: 50%;
       position: absolute;
-      top: 65%;
-      left: 80%;
+      top: 67%;
+      left: 85%;
       z-index: 0;
-      opacity: 0;
-    /* opacity: 1; */
+      /* opacity: 0; */
+    opacity: 1;
       }
     
     
@@ -177,7 +177,6 @@
     /* section2 */
     .totalProduct_secondSection{
     padding: 0px 120px;
-    /* margin-top: 5%; */
     background-color: rgba(255, 255, 242, 0.9);
     height:120vh ;
     }
@@ -300,11 +299,10 @@
     .tPSSCard_body{
     padding: 10px 0px;
     }
-    .tPSSCard_body > p > .first_p{
+    .first_p{
     margin: 0;
     font-size: 20px;
     font-weight: 700;
-    color: var(--mtgreen-1);
     }
     
     /* footer */
@@ -356,150 +354,176 @@
     
     
     
-    .hard_svg{
-      display: none;
+.hard_svg{
+  display: none;
+}
+.RWDhard_svg{
+  display: block;
+}
+:hover.RWDhard_svg > path{
+  stroke: rgb(127, 222, 127);
+  stroke-width:5;
+  /* fill:blue ; */
+  }
+.medium_svg{
+display: none;
+}
+.RWDmedium_svg{
+  display: block;
+}
+:hover.RWDmedium_svg > path{
+  stroke: rgb(127, 222, 127);
+  stroke-width:5;
+  /* fill:blue ; */
+  }
+.easy_svg{
+  display: none;
+}
+.RWDeasy_svg{
+  display: block;
+}
+:hover.RWDeasy_svg > path{
+  stroke: rgb(127, 222, 127);
+  stroke-width:5;
+  /* fill:blue ; */
+  }
+
+
+
+.dMountain_hard{
+position: absolute;
+  top: 60%;
     }
-    .RWDhard_svg{
-      display: block;
-    }
-    :hover.RWDhard_svg > path{
-      stroke: rgb(127, 222, 127);
-      stroke-width:5;
-      /* fill:blue ; */
-      }
-    .medium_svg{
-      display: none;
-    }
-    .RWDmedium_svg{
-      display: block;
-    }
-    :hover.RWDmedium_svg > path{
-      stroke: rgb(127, 222, 127);
-      stroke-width:5;
-      /* fill:blue ; */
-      }
-    .easy_svg{
-      display: none;
-    }
-    .RWDeasy_svg{
-      display: block;
-    }
-    :hover.RWDeasy_svg > path{
-      stroke: rgb(127, 222, 127);
-      stroke-width:5;
-      /* fill:blue ; */
-      }
+  .difficultyHard_flag > svg{
+    width: 70%;
+  }
+  .difficultyHard_flag{
+    position: absolute;
+    top: 50%;
+    left: 23%;
+  }
+.difficultyMountainHard_focus{
+width: 90px;
+height: 90px;
+position: absolute;
+top: 47%;
+left: 14%;
+z-index: 0;
+}
+
     
-    
-    
-    .dMountain_hard{
-      position: absolute;
-      top: 60%;
-      }
-    .difficultyHard_flag > svg{
-      width: 70%;
-    }
-    .difficultyHard_flag{
-      position: absolute;
-      top: 50%;
-      left: 23%;
-    }
-    
-    
-    .dMountain_medium{
-      position: absolute;
-      top: 66%;
-      left: 35%;
-      }
-    .difficultyMedium_flag > svg{
-      width: 70%;
-    }
-    .difficultyMedium_flag{
-      position: absolute;
-      /* top: 56%; */
-      top: 100%;
-      left: 53.5%;
-    }
-    
-    
-    .dMountain_easy{
-      position: absolute;
-      top: 71%;
-      left: 66%;
-      }
-    .difficultyEasy_flag > svg{
-      width: 70%;
-    }
-    .difficultyEasy_flag{
-      position: absolute;
-      /* top: 61%; */
-      top: 100%;
-      left: 85%;
-    }
-    
-    
-    
-    /* difficultyMountain_text */
-    .difficultyHard_text{
-      width: 100%;
-      position: absolute;
-      top: 10%;
-      left: 0%;
-    }
-    .difficultyMedium_text{
-      width: 100%;
-      position: absolute;
-      top: 100%;
-      left: 0%;
-    }
-    .difficultyEasy_text{
-      width: 100%;
-      position: absolute;
-      top: 100%;
-      left: 0%;
-      z-index: 0;
-    }
-    
-    
-    /* secondSection2 */
-    .totalProduct_secondSection{
-      padding: 0px;
-      height: 300vh;
-      background-color: var(--mtyellow-4);
-    }
-      .difficulty_firstText > span{
-      font-size: 22px;
-      }
-      .difficulty_secondText{
-      font-size: 16px;
-      }
-      .difficulty_secondText > span{
-      font-size: 16px; 
-      }
-      .difficulty_thirdText{
-      font-size: 13px;
-      line-height: 18.82px;
-      }
-    
-    /* difficultyMountain_mountain */
-    
-    
-    .dMountain_hard > svg, .dMountain_medium > svg, .dMountain_easy > svg {
-    width:100%;
-    }
-    
-    /* button */
-      .allSection_btn{
-      width: 90%;
-      border-radius: 5px;
-      padding: 8px 24px;
-      background-color: var(--mtgreen-1);
-      color: white;
-      border:none;
-      }
-    
-    /* footer */
-    footer{
-    display: none;
-    }
-    }
+.dMountain_medium{
+  position: absolute;
+  top: 66%;
+  left: 35%;
+  }
+.difficultyMedium_flag > svg{
+  width: 70%;
+}
+.difficultyMedium_flag{
+position: absolute;
+top: 56%;
+top: 100%;
+/* left: 53.5%; */
+}
+.difficultyMountainMedium_focus{
+width: 90px;
+height: 90px;
+position: absolute;
+top: 53%;
+left: 45%;
+z-index: 1;
+opacity: 0;
+/* opacity: 1; */
+}
+
+.dMountain_easy{
+position: absolute;
+top: 71%;
+left: 66%;
+  }
+.difficultyEasy_flag > svg{
+  width: 70%;
+}
+.difficultyEasy_flag{
+position: absolute;
+/* top: 61%; */
+top: 100%;
+  left: 85%;
+}
+.difficultyMountainEasy_focus{
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 58%;
+  left: 75%;
+  z-index: 0;
+  opacity: 0;
+/* opacity: 1; */
+  }
+
+
+/* difficultyMountain_text */
+.difficultyHard_text{
+width: 100%;
+  position: absolute;
+  top: 10%;
+  left: 0%;
+}
+.difficultyMedium_text{
+width: 100%;
+position: absolute;
+top: 100%;
+  left: 0%;
+}
+.difficultyEasy_text{
+width: 100%;
+position: absolute;
+top: 100%;
+left: 0%;
+z-index: 0;
+}
+
+
+/* secondSection2 */
+.totalProduct_secondSection{
+padding: 0px;
+  height: 300vh;
+  background-color: var(--mtyellow-4);
+}
+.difficulty_firstText > span{
+font-size: 22px;
+}
+.difficulty_secondText{
+font-size: 16px;
+}
+.difficulty_secondText > span{
+font-size: 16px; 
+}
+.difficulty_thirdText{
+font-size: 13px;
+  line-height: 18.82px;
+  }
+
+/* difficultyMountain_mountain */
+
+
+.dMountain_hard > svg, .dMountain_medium > svg, .dMountain_easy > svg {
+width:100%;
+}
+
+/* button */
+.allSection_btn{
+width: 90%;
+border-radius: 5px;
+padding: 8px 24px;
+background-color: var(--mtgreen-1);
+color: white;
+border:none;
+  }
+
+/* footer */
+footer{
+  display: none;
+  }
+}
