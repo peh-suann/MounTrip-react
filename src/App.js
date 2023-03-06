@@ -8,9 +8,6 @@ import Layout from './layouts/Layout'
 import Login from './pages/KexinLogin'
 import YichunProducts from './pages/YichunProducts'
 import Difficulty from './components/Difficulty'
-import NavBar from './components/NavBar'
-import Footer from './components/Footer'
-import Home from './components/Home'
 
 function App() {
   return (
@@ -18,17 +15,14 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
-            {/* 其他頁面Navbar+Footer */}
+            {/* 其他頁面Navbar+Footer */}{' '}
+            <Route path="/difficulty" element={<Difficulty />} />
             <Route path="/products" element={<YichunProducts />} />
           </Route>
           <Route path="/">
             {/* 登入頁面Navbar+Footer */}
             <Route path="/Login" element={<Login />} />
           </Route>
-          {/* <Home /> */}
-          {/* <h1>hey</h1> */}
-          <Route path="/" element={<Home />} />
-          <Route path="/difficulty" element={<Difficulty />} />
         </Routes>
       </Router>
     </>
