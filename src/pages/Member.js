@@ -25,14 +25,14 @@ export default function Member() {
                     stroke="#FFFFF2"
                     strokeWidth="1.66671"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M10.0004 13.1666C11.8414 13.1666 13.3338 11.6742 13.3338 9.83317C13.3338 7.99218 11.8414 6.49976 10.0004 6.49976C8.15941 6.49976 6.66699 7.99218 6.66699 9.83317C6.66699 11.6742 8.15941 13.1666 10.0004 13.1666Z"
                     stroke="#ADD9B1"
                     strokeWidth="1.66671"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </div>
@@ -64,35 +64,35 @@ export default function Member() {
                     stroke="#9AA09B"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M22 7.5H2V12.5H22V7.5Z"
                     stroke="#9AA09B"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M12 22.5V7.5"
                     stroke="#9AA09B"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M12 7.5H7.5C6.83696 7.5 6.20107 7.23661 5.73223 6.76777C5.26339 6.29893 5 5.66304 5 5C5 4.33696 5.26339 3.70107 5.73223 3.23223C6.20107 2.76339 6.83696 2.5 7.5 2.5C11 2.5 12 7.5 12 7.5Z"
                     stroke="#9AA09B"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M12 7.5H16.5C17.163 7.5 17.7989 7.23661 18.2678 6.76777C18.7366 6.29893 19 5.66304 19 5C19 4.33696 18.7366 3.70107 18.2678 3.23223C17.7989 2.76339 17.163 2.5 16.5 2.5C13 2.5 12 7.5 12 7.5Z"
                     stroke="#9AA09B"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 我的優惠券
@@ -108,20 +108,20 @@ export default function Member() {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_1298_10889)">
+                  <g clipPath="url(#clip0_1298_10889)">
                     <path
                       d="M12 15.5C15.866 15.5 19 12.366 19 8.5C19 4.63401 15.866 1.5 12 1.5C8.13401 1.5 5 4.63401 5 8.5C5 12.366 8.13401 15.5 12 15.5Z"
                       stroke="#9AA09B"
                       strokeWidth="2"
                       strokeLinecap="round"
-                      stroke-linejoin="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M8.21 14.39L7 23.5L12 20.5L17 23.5L15.79 14.38"
                       stroke="#9AA09B"
                       strokeWidth="2"
                       strokeLinecap="round"
-                      stroke-linejoin="round"
+                      strokeLinejoin="round"
                     />
                   </g>
                   <defs>
@@ -153,14 +153,14 @@ export default function Member() {
                     stroke="#9AA09B"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M12 6.5V12.5L16 14.5"
                     stroke="#9AA09B"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 歷史訂單
@@ -181,7 +181,7 @@ export default function Member() {
                     stroke="#9AA09B"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 過往評論
@@ -202,7 +202,7 @@ export default function Member() {
                     stroke="#9AA09B"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 收藏路線
@@ -224,14 +224,14 @@ export default function Member() {
                 stroke="#6CBA7C"
                 strokeWidth="3"
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M16.0005 14.4444C19.437 14.4444 22.2228 11.6587 22.2228 8.22222C22.2228 4.78578 19.437 2 16.0005 2C12.5641 2 9.77832 4.78578 9.77832 8.22222C9.77832 11.6587 12.5641 14.4444 16.0005 14.4444Z"
                 stroke="#6CBA7C"
                 strokeWidth="3"
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
               />
             </svg>
             <h1>會員中心</h1>
