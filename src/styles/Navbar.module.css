@@ -78,7 +78,7 @@ nav {
   margin: 0;
   gap: 36px;
 }
-.right .nav_icons li {
+.right .nav_icons li{
   list-style: none;
 }
 .right .nav_icons li:first-of-type {
