@@ -48,6 +48,10 @@ export default function DavisTrailsDetail() {
         // className="container_all d-flex flex-column "
       >
         <div className="col ">
+          {/* top-img */}
+          <div className={`d-flex d-lg-none ${styles.top_img}`}>
+            <img className="w-100" src="./imgs/Davis/3-1.jpg" alt="" />
+          </div>
           <nav className={`${styles.bread}`} aria-label="breadcrumb">
             <ol className="breadcrumb ">
               <li className="breadcrumb-item  ">
@@ -210,10 +214,14 @@ export default function DavisTrailsDetail() {
                   >
                     <h6 className="m-1">花季中</h6>
                   </button>
-                  <button className="d-lg-flex ca_btn rounded-1 me-3 border-0 d-none">
+                  <button
+                    className={`d-lg-flex rounded-1 me-3 border-0 d-none ${styles.ca_btn}`}
+                  >
                     <h6 className="m-1">熱門路線</h6>
                   </button>
-                  <button className="d-flex ca_btn rounded-1 me-3 border-0  d-lg-none">
+                  <button
+                    className={`d-flex rounded-1 me-3 border-0  d-lg-none ${styles.ca_btn}`}
+                  >
                     <svg
                       className="align-self-center"
                       width="16"
@@ -232,9 +240,11 @@ export default function DavisTrailsDetail() {
                 </div>
 
                 {/* category content group for 電腦版 */}
-                <div className="ca_content d-lg-flex mb-5 d-none">
-                  <div className=" ca_border d-flex flex-row  ">
-                    <div className="ca_content_a d-flex flex-row m-3 me-4 p-1">
+                <div className={`d-lg-flex mb-5 d-none ${styles.ca_content}`}>
+                  <div className={`d-flex flex-row  ${styles.ca_border}`}>
+                    <div
+                      className={`d-flex flex-row m-3 me-4 p-1 ${styles.ca_content_a}`}
+                    >
                       <div className="me-3">
                         <svg
                           width="30"
@@ -253,13 +263,15 @@ export default function DavisTrailsDetail() {
                           />
                         </svg>
                       </div>
-                      <h6 className="ca_h6 mb-0 align-self-center">
+                      <h6 className={`mb-0 align-self-center ${styles.ca_h6}`}>
                         路線總長 4km
                       </h6>
                     </div>
                   </div>
-                  <div className=" ca_border d-flex flex-row  ">
-                    <div className="ca_content_a d-flex flex-row m-3 me-4 p-1">
+                  <div className={`d-flex flex-row ${styles.ca_border}`}>
+                    <div
+                      className={`d-flex flex-row m-3 me-4 p-1 ${styles.ca_content_a}`}
+                    >
                       <div className="me-3">
                         <svg
                           width="31"
@@ -278,13 +290,15 @@ export default function DavisTrailsDetail() {
                           />
                         </svg>
                       </div>
-                      <h6 className="ca_h6 mb-0 align-self-center">
+                      <h6 className={`mb-0 align-self-center ${styles.ca_h6}`}>
                         所需時間 2.5hr
                       </h6>
                     </div>
                   </div>
                   <div className=" d-flex flex-row  ">
-                    <div className="ca_content_a d-flex flex-row m-3 p-1">
+                    <div
+                      className={` d-flex flex-row m-3 p-1 ${styles.ca_content_a}`}
+                    >
                       <div className="me-3">
                         <svg
                           width="30"
@@ -302,7 +316,7 @@ export default function DavisTrailsDetail() {
                           />
                         </svg>
                       </div>
-                      <h6 className="ca_h6 mb-0 align-self-center">
+                      <h6 className={`mb-0 align-self-center ${styles.ca_h6}`}>
                         海拔高度 1120m
                       </h6>
                     </div>
@@ -311,7 +325,7 @@ export default function DavisTrailsDetail() {
                 {/* category content group for 手機板 */}
                 <div className=" d-lg-none mb-2">
                   <div className="  d-flex flex-row  mb-3">
-                    <div className="ca_content_a d-flex flex-row  ">
+                    <div className={`d-flex flex-row ${styles.ca_content_a}`}>
                       <div className="me-3">
                         <svg
                           width="30"
@@ -334,7 +348,7 @@ export default function DavisTrailsDetail() {
                     </div>
                   </div>
                   <div className="  d-flex flex-row  mb-3">
-                    <div className="ca_content_a d-flex flex-row ">
+                    <div className={`d-flex flex-row ${styles.ca_content_a}`}>
                       <div className="me-3">
                         <svg
                           width="31"
@@ -357,7 +371,7 @@ export default function DavisTrailsDetail() {
                     </div>
                   </div>
                   <div className=" d-flex flex-row  mb-3">
-                    <div className="ca_content_a d-flex flex-row ">
+                    <div className={` d-flex flex-row ${styles.ca_content_a}`}>
                       <div className="me-3">
                         <svg
                           width="30"
@@ -381,7 +395,7 @@ export default function DavisTrailsDetail() {
                 </div>
 
                 {/* paragraph  */}
-                <p className="paragraph_i mb-2">
+                <p className={`mb-2 ${styles.paragraph_i}`}>
                   你見過南橫之美嗎？
                   <br />
                   自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！
@@ -397,24 +411,24 @@ export default function DavisTrailsDetail() {
                   {/* puctures */}
                   <div className="mb-3">
                     <img
-                      className="img_cover_one"
+                      className={`${styles.img_cover_one}`}
                       src="./imgs/3-1.jpg"
                       alt=""
                     />
                   </div>
                   <div className="d-flex flex-row justify-content-between">
                     <img
-                      className="img_cover_three "
+                      className={`${styles.img_cover_three}`}
                       src="./imgs/3-1.jpg"
                       alt=""
                     />
                     <img
-                      className="img_cover_three "
+                      className={`${styles.img_cover_three}`}
                       src="./imgs/4-1.jpg"
                       alt=""
                     />
                     <img
-                      className="img_cover_three "
+                      className={`${styles.img_cover_three}`}
                       src="./imgs/5-1.jpg"
                       alt=""
                     />
@@ -424,8 +438,8 @@ export default function DavisTrailsDetail() {
                 {/* gpx */}
                 <div className="mb-3">
                   <img
-                    className="img_contain"
-                    src="../html/imgs/2-gpx.jpg"
+                    className={`${styles.img_contain}`}
+                    src="./imgs/Davis/2-gpx.jpg"
                     alt=""
                   />
                 </div>
@@ -435,8 +449,10 @@ export default function DavisTrailsDetail() {
                 <div className="d-none d-lg-flex flex-column ">
                   {/* level1 */}
                   <div className="col d-flex flex-row mb-2">
-                    <div className="col shop_btn_one d-flex flex-row align-items-center me-2">
-                      <button className="btn_style">
+                    <div
+                      className={`col  d-flex flex-row align-items-center me-2 ${styles.shop_btn_one}`}
+                    >
+                      <button className={`${styles.btn_style}`}>
                         <svg
                           width="24"
                           height="25"
@@ -455,7 +471,7 @@ export default function DavisTrailsDetail() {
                       </button>
 
                       <div className="col"></div>
-                      <button className="btn_style">
+                      <button className={`${styles.btn_style}`}>
                         <svg
                           width="24"
                           height="25"
@@ -480,7 +496,7 @@ export default function DavisTrailsDetail() {
                         </svg>
                       </button>
                     </div>
-                    <button className="btn_style">
+                    <button className={`${styles.btn_style}`}>
                       <svg
                         width="43"
                         height="43"
@@ -504,15 +520,17 @@ export default function DavisTrailsDetail() {
                     </button>
                   </div>
                   {/* level2 */}
-                  <div className="col mb-2 shop_btn_two">
+                  <div className={`col mb-2 ${styles.shop_btn_two}`}>
                     <div className=" d-flex flex-row align-items-center ">
-                      <div className="batch col-2 col-lg-1 ">
-                        <h5 className="btn_font ps-3 mb-0  lh-lg">梯次</h5>
+                      <div className={`col-2 col-lg-1 ${styles.batch}`}>
+                        <h5 className={`ps-3 mb-0 lh-lg ${styles.btn_font}`}>
+                          梯次
+                        </h5>
                       </div>
                       <div className="col d-flex justify-content-center">
                         <h5 className="mb-0">2023/01/01 - 2023/01/03</h5>
                       </div>
-                      <button className="btn_style">
+                      <button className={`${styles.btn_style}`}>
                         <svg
                           width="30"
                           height="30"
@@ -532,8 +550,12 @@ export default function DavisTrailsDetail() {
                     </div>
                   </div>
                   {/* level3 */}
-                  <button className="col shop_btn_three d-flex flex-row justify-content-center  mb-2">
-                    <h5 className="btn_font mb-0 lh-lg  ">加入購物車</h5>
+                  <button
+                    className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
+                  >
+                    <h5 className={`mb-0 lh-lg ${styles.btn_font}`}>
+                      加入購物車
+                    </h5>
                     <span>
                       <svg
                         className="mt-2"
