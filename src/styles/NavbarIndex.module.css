@@ -2,9 +2,9 @@
   box-sizing: border-box;
 }
 
-nav#loginNav {
+nav#IndexNav {
   position: fixed;
-  padding: 0px 120px;
+  padding: 0px 30px;
   top: 0;
   height: var(--navbar-height);
   width: 100%;
@@ -13,16 +13,16 @@ nav#loginNav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
+  background-color: rgba(255, 255, 242);
 }
 
-#loginNav .navbar {
+#IndexNav .navbar {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-#loginNav .left {
+#IndexNav .left {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -30,19 +30,19 @@ nav#loginNav {
   gap: 36px;
 }
 
-#loginNav .left button.menu {
+#IndexNav .left button.menu {
   background-color: transparent;
   border: none;
 
   display: none;
 }
 
-#loginNav .left button.logo {
+#IndexNav .left button.logo {
   background-color: transparent;
   border: none;
 }
 
-#loginNav .left .nav_navigations {
+#IndexNav .left .nav_navigations {
   display: flex;
   align-items: center;
   padding: 0px;
@@ -50,14 +50,14 @@ nav#loginNav {
   gap: 36px;
 }
 
-#loginNav .left .nav_navigations li {
+#IndexNav .left .nav_navigations li {
   list-style: none;
 }
 
-#loginNav .left .link {
+#IndexNav .left .link {
   display: block;
   padding: 0.5rem 1rem;
-  color: var(--mtyellow-4);
+  color: var(--mtgreen-1);
   text-decoration: none;
   /* font-size: 18px; */
   font-weight: 300;
@@ -67,12 +67,12 @@ nav#loginNav {
   letter-spacing: 0.1em;
 }
 
-#loginNav .left .link:hover {
+#IndexNav .left .link:hover {
   color: var(--mtgreen-1);
   text-decoration: underline;
 }
 
-#loginNav .right {
+#IndexNav .right {
   width: 25%;
   display: flex;
   flex-direction: row;
@@ -81,7 +81,7 @@ nav#loginNav {
   padding: 0px;
 }
 
-#loginNav .right .nav_icons {
+#IndexNav .right .nav_icons {
   display: flex;
   align-items: center;
   padding: 0px;
@@ -89,20 +89,20 @@ nav#loginNav {
   gap: 36px;
 }
 
-#loginNav .right .nav_icons li {
+#IndexNav .right .nav_icons li {
   list-style: none;
 }
 
-#loginNav .right .nav_icons li:first-of-type {
+#IndexNav .right .nav_icons li:first-of-type {
   display: flex;
   align-items: center;
 }
 
-#loginNav .right .nav_icons li:first-of-type a {
+#IndexNav .right .nav_icons li:first-of-type a {
   display: none;
 }
 
-#loginNav .search_input_unfold {
+#IndexNav .search_input_unfold {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -116,7 +116,7 @@ nav#loginNav {
   border-radius: 6px;
 }
 
-#loginNav .search_input_unfold span {
+#IndexNav .search_input_unfold span {
   font-weight: 300;
   font-size: 18px;
   line-height: 26px;
@@ -129,7 +129,7 @@ nav#loginNav {
 }
 
 @media screen and (max-width: 390px) {
-  nav#loginNav {
+  nav#IndexNav {
     display: none;
     /* position: fixed;
     padding: 0px 15px;
@@ -140,7 +140,7 @@ nav#loginNav {
     align-items: flex-end; */
   }
 
-  #loginNav .navbar {
+  #IndexNav .navbar {
     width: 100%;
     padding: 0 !important;
     display: flex;
@@ -148,24 +148,24 @@ nav#loginNav {
     align-items: center;
   }
 
-  #loginNav .left {
+  #IndexNav .left {
     gap: 20px;
   }
 
-  #loginNav .left button.menu {
+  #IndexNav .left button.menu {
     padding: 0;
     display: inline-block;
   }
 
-  #loginNav .left #logo {
+  #IndexNav .left #logo {
     width: 65px;
   }
 
-  #loginNav .left ul.nav_navigations {
+  #IndexNav .left ul.nav_navigations {
     display: none;
   }
 
-  #loginNav .right .nav_icons {
+  #IndexNav .right .nav_icons {
     display: flex;
     align-items: center;
     padding: 0px;
@@ -173,16 +173,16 @@ nav#loginNav {
     gap: 22px;
   }
 
-  #loginNav .right .nav_icons li a img {
+  #IndexNav .right .nav_icons li a img {
     width: 24px;
     aspect-ratio: 1/1;
   }
 
-  #loginNav .right .nav_icons li:first-of-type a {
+  #IndexNav .right .nav_icons li:first-of-type a {
     display: inline-block;
   }
 
-  #loginNav .right .nav_icons li:first-of-type .search_input_unfold {
+  #IndexNav .right .nav_icons li:first-of-type .search_input_unfold {
     display: none;
   }
 }

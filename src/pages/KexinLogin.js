@@ -1,42 +1,44 @@
 import React from 'react'
 import loginStyles from '../styles/kexinLogin.module.css'
-import Navbar from '../layouts/NavbarLogin'
+import LoginNavbar from '../layouts/NavbarLogin'
 
 function KexinLogin() {
   return (
     <>
-      <div className={loginStyles['bg-image']}>
-        <Navbar />
+      <div className={`${loginStyles['bg-image']}`}>
+        <LoginNavbar />
 
-        <div className="row">
+        <div className={`${loginStyles['kexinLogin']} row`}>
           <div
             className={`${loginStyles['loginForm-wrap']} col-lg-3 col-sm-12`}
           >
-            <div className={`${loginStyles['mobile-x']}  ${loginStyles['web-none']}`}>
-              <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className={`${loginStyles['mobile-x']}  ${loginStyles['web-none']}`}
             >
-              <path
-                d="M24 8L8 24"
-                stroke="#011306"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M8 8L24 24"
-                stroke="#011306"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 8L8 24"
+                  stroke="#011306"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M8 8L24 24"
+                  stroke="#011306"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
-            
+
             <div
               className={`${loginStyles['mobile-welcome']} ${loginStyles['web-none']} d-flex flex-column`}
             >
@@ -78,7 +80,7 @@ function KexinLogin() {
             <div className={`${loginStyles['loginForm']}`}>
               <form name="form1" method="post">
                 <div className="mb-3">
-                  <label for="account" className="form-label">
+                  <label htmlFor="account" className="form-label">
                     帳號/Email
                   </label>
                   <input
@@ -91,7 +93,7 @@ function KexinLogin() {
                   <div className="form-text"></div>
                 </div>
                 <div className="mb-3">
-                  <label for="password" className="form-label">
+                  <label htmlFor="password" className="form-label">
                     密碼
                   </label>
                   <input
@@ -105,10 +107,14 @@ function KexinLogin() {
                 </div>
                 <div className="mb-3 d-flex justify-content-between">
                   <div>
-                    <input type="checkbox" id={loginStyles.rememberme} name="rememberme" />
+                    <input
+                      type="checkbox"
+                      id={loginStyles.rememberme}
+                      name="rememberme"
+                    />
                     <label
                       className={`${loginStyles['checkmark']}`}
-                      for="rememberme"
+                      htmlFor="rememberme"
                     >
                       記住我
                     </label>

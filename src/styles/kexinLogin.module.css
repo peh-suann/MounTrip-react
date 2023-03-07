@@ -4,39 +4,39 @@
   padding: 0;
 }
 
-.mtgrey1 {
+.kexinLogin .mtgrey1 {
   color: var(--mtgrey-1);
 }
 
-.mtgrey2 {
+.kexinLogin .mtgrey2 {
   color: var(--mtgrey-2);
 }
 
-.mtgrey3 {
+.kexinLogin .mtgrey3 {
   color: var(--mtgrey-3);
 }
 
-.mtgreen1 {
+.kexinLogin .mtgreen1 {
   color: var(--mtgreen-1);
 }
 
-.mtgreen2 {
+.kexinLogin .mtgreen2 {
   color: var(--mtgreen-2);
 }
 
-.mtgreen4 {
+.kexinLogin .mtgreen4 {
   color: var(--mtgreen-4);
 }
 
-.mtyellow4 {
+.kexinLogin .mtyellow4 {
   color: var(--mtyellow-4);
 }
 
-.me-06 {
+.kexinLogin .me-06 {
   margin-right: 6px;
 }
 
-.mb-40 {
+.kexinLogin .mb-40 {
   margin-bottom: 40px;
 }
 
@@ -45,11 +45,11 @@
   height: 100vh;
 }
 
-.web-none {
+.kexinLogin .web-none {
   display: none;
 }
 
-.loginForm-wrap {
+.kexinLogin .loginForm-wrap {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -62,19 +62,26 @@
   padding: 60px;
 }
 
-.loginForm {
+.kexinLogin .loginForm {
   width: 100%;
 }
 
-#account {
+.kexinLogin .loginForm input {
+  /* background-color: var(--mtyellow-4); */
+  background-color: rgba(206, 232, 203, 0.6);
+  border: 2px solid var(--mtgreen-3);
+  border-radius: 10px;
+}
+
+.kexinLogin #account {
   width: 100%;
 }
 
-#password {
+.kexinLogin #password {
   width: 100%;
 }
 
-.button {
+.kexinLogin .button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -82,11 +89,11 @@
   gap: 20px;
 }
 
-.button div {
+.kexinLogin .button div {
   width: 100%;
 }
 
-.button #login {
+.kexinLogin .button #login {
   display: block;
   width: 100%;
   background-color: var(--mtgreen-1);
@@ -96,7 +103,7 @@
   margin-bottom: 30px;
 }
 
-.button #quick-login {
+.kexinLogin .button #quick-login {
   display: block;
   width: 100%;
   color: var(--mtgreen-1);
@@ -107,13 +114,13 @@
   letter-spacing: 0.1em;
 }
 
-input.form-control {
+.kexinLogin input.form-control {
   /* background-color: rgba(var(--mtgreen-3), 0.6); */
   background-color: rgba(206, 232, 203, 0.6);
   border-color: var(--mtgreen-3);
 }
 
-#rememberme {
+.kexinLogin #rememberme {
   /* background-color: rgba(var(--mtgreen-3), 0.6); */
   width: 22px;
   /* height: 22px; */
@@ -123,84 +130,80 @@ input.form-control {
   border-radius: 7px;
 }
 
-.loginForm-wrap .d-flex.justify-content-between a {
+.kexinLogin .loginForm-wrap .d-flex.justify-content-between a {
   color: var(--mtgrey-1);
 }
 
-.loginForm-wrap .d-flex.justify-content-center a {
+.kexinLogin .loginForm-wrap .d-flex.justify-content-center a {
   color: var(--mtgreen-1);
 }
 
-.mobile-none {
+.kexinLogin .mobile-none {
   display: block;
 }
 
 @media screen and (max-width: 400px) {
-  nav {
-    /* display: none; */
-  }
-
   .bg-image {
     background: none;
     background-color: var(--mtyellow-4);
   }
 
-  .web-none {
+  .kexinLogin .web-none {
     display: block;
   }
 
-  .mobile-x {
+  .kexinLogin .mobile-x {
     display: block;
     margin-bottom: 60px;
     /* padding-left: 15px; */
     /* padding-top: 80px; */
   }
 
-  .mobile-welcome {
+  .kexinLogin .mobile-welcome {
     margin-bottom: 24px;
   }
 
-  .mobile-welcome h3 {
+  .kexinLogin .mobile-welcome h3 {
     font-weight: 900;
     font-size: 26px;
     line-height: 140%;
     letter-spacing: 0.1em;
   }
 
-  .mobile-welcome p {
+  .kexinLogin .mobile-welcome p {
     font-weight: 400;
     font-size: 16px;
     line-height: 160%;
   }
 
-  .mobile-tag {
+  .kexinLogin .mobile-tag {
     border-bottom: 2px solid var(--mtgrey-4);
     margin-bottom: 24px;
   }
 
-  .mobile-tag p {
+  .kexinLogin .mobile-tag p {
     font-weight: 500;
     font-size: 18px;
     line-height: 140%;
     padding-bottom: 10px;
   }
 
-  .mobile-tag p.mtgreen1 {
+  .kexinLogin .mobile-tag p.mtgreen1 {
     border-bottom: 4px solid var(--mtgreen-1);
   }
 
-  .mobile-none {
+  .kexinLogin .mobile-none {
     display: none;
   }
 
-  .loginForm-wrap {
+  .kexinLogin .loginForm-wrap {
     background: none;
     border: none;
     box-shadow: none;
     padding: 0px 15px;
   }
 
-  .button #login {
+  .kexinLogin .button #login {
     margin-bottom: 100px;
   }
 }
