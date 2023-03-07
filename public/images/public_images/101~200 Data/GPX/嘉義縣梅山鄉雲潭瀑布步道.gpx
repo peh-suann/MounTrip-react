@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wptx1="http://www.garmin.com/xmlschemas/WaypointExtension/v1" xmlns:gpxtrx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:trp="http://www.garmin.com/xmlschemas/TripExtensions/v1" xmlns:adv="http://www.garmin.com/xmlschemas/AdventuresExtensions/v1" xmlns:prs="http://www.garmin.com/xmlschemas/PressureExtension/v1" xmlns:tmd="http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1" xmlns:vptm="http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1" xmlns:ctx="http://www.garmin.com/xmlschemas/CreationTimeExtension/v1" xmlns:gpxacc="http://www.garmin.com/xmlschemas/AccelerationExtension/v1" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:vidx1="http://www.garmin.com/xmlschemas/VideoExtension/v1" creator="Garmin Desktop App" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/WaypointExtension/v1 http://www8.garmin.com/xmlschemas/WaypointExtensionv1.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/ActivityExtension/v1 http://www8.garmin.com/xmlschemas/ActivityExtensionv1.xsd http://www.garmin.com/xmlschemas/AdventuresExtensions/v1 http://www8.garmin.com/xmlschemas/AdventuresExtensionv1.xsd http://www.garmin.com/xmlschemas/PressureExtension/v1 http://www.garmin.com/xmlschemas/PressureExtensionv1.xsd http://www.garmin.com/xmlschemas/TripExtensions/v1 http://www.garmin.com/xmlschemas/TripExtensionsv1.xsd http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1 http://www.garmin.com/xmlschemas/TripMetaDataExtensionsv1.xsd http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1 http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensionsv1.xsd http://www.garmin.com/xmlschemas/CreationTimeExtension/v1 http://www.garmin.com/xmlschemas/CreationTimeExtensionsv1.xsd http://www.garmin.com/xmlschemas/AccelerationExtension/v1 http://www.garmin.com/xmlschemas/AccelerationExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.garmin.com/xmlschemas/VideoExtension/v1 http://www.garmin.com/xmlschemas/VideoExtensionv1.xsd">
+
+  <metadata>
+    <link href="http://www.garmin.com">
+      <text>Garmin International</text>
+    </link>
+    <time>2019-07-16T08:56:24Z</time>
+    <bounds maxlat="23.533354718238115" maxlon="120.65604742616415" minlat="23.531693760305643" minlon="120.65497756004333"/>
+  </metadata>
+
+  <wpt lat="23.531710943207145" lon="120.65553613007069">
+    <time>2019-07-16T08:51:55Z</time>
+    <name>步道入口</name>
+    <sym>Waypoint</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2019-07-16T08:51:55Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+
+  <wpt lat="23.533178195357323" lon="120.65568842925131">
+    <ele>851.25</ele>
+    <time>2019-07-13T08:20:41Z</time>
+    <name>涼亭</name>
+    <sym>Waypoint</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2019-07-13T08:20:41Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+
+  <wpt lat="23.533354718238115" lon="120.65604742616415">
+    <time>2019-07-16T08:50:45Z</time>
+    <name>雲潭瀑布</name>
+    <sym>Waypoint</sym>
+    <type>user</type>
+    <extensions>
+      <gpxx:WaypointExtension>
+        <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+      </gpxx:WaypointExtension>
+      <wptx1:WaypointExtension>
+        <wptx1:DisplayMode>SymbolAndName</wptx1:DisplayMode>
+      </wptx1:WaypointExtension>
+      <ctx:CreationTimeExtension>
+        <ctx:CreationTime>2019-07-16T08:50:45Z</ctx:CreationTime>
+      </ctx:CreationTimeExtension>
+    </extensions>
+  </wpt>
+
+  <trk>
+    <name>2019-07-13 16:19雲潭瀑布</name>
+    <desc>&lt;p&gt;開始時間: 07/13/2019 16:19&lt;br/&gt;結束時間: 07/13/2019 16:29&lt;br/&gt;距離: 0.3 km (00:10)&lt;br/&gt;移動時間: 00:09&lt;br/&gt;平均速度: 1.6 km/h&lt;br/&gt;平均移動速度: 1.84 km/h&lt;br/&gt;最大速度: 3.62 km/h&lt;br/&gt;最低海拔: 807 m&lt;br/&gt;最高海拔: 904 m&lt;br/&gt;上升速度: 535.5 m/h&lt;br/&gt;高度上升: 96 m&lt;br/&gt;上升時間: 00:10&lt;br/&gt;&lt;/p&gt;&lt;hr align="center" width="480" style="height: 2px; width: 517px"/&gt;</desc>
+    <extensions>
+      <gpxx:TrackExtension>
+        <gpxx:DisplayColor>DarkGray</gpxx:DisplayColor>
+      </gpxx:TrackExtension>
+    </extensions>
+    <trkseg>
+      <trkpt lat="23.533354718238115" lon="120.65604742616415">
+        <ele>807.07000000000005</ele>
+        <time>2019-07-13T08:19:07Z</time>
+      </trkpt>
+      <trkpt lat="23.533321609720588" lon="120.65574224106967">
+        <ele>843.82000000000005</ele>
+        <time>2019-07-13T08:19:29Z</time>
+      </trkpt>
+      <trkpt lat="23.533147685229778" lon="120.6556772813201">
+        <ele>850.07000000000005</ele>
+        <time>2019-07-13T08:20:49Z</time>
+      </trkpt>
+      <trkpt lat="23.533096807077527" lon="120.65548432990909">
+        <ele>842.00999999999999</ele>
+        <time>2019-07-13T08:21:31Z</time>
+      </trkpt>
+      <trkpt lat="23.532923217862844" lon="120.65540528856218">
+        <ele>839.89999999999998</ele>
+        <time>2019-07-13T08:22:28Z</time>
+      </trkpt>
+      <trkpt lat="23.53274853900075" lon="120.65546723082662">
+        <ele>850.16999999999996</ele>
+        <time>2019-07-13T08:23:28Z</time>
+      </trkpt>
+      <trkpt lat="23.532573189586401" lon="120.65540570765734">
+        <ele>862.39999999999998</ele>
+        <time>2019-07-13T08:24:38Z</time>
+      </trkpt>
+      <trkpt lat="23.532406222075224" lon="120.65529950894415">
+        <ele>889.65999999999997</ele>
+        <time>2019-07-13T08:26:38Z</time>
+      </trkpt>
+      <trkpt lat="23.532301532104611" lon="120.65512340515852">
+        <ele>895.38</ele>
+        <time>2019-07-13T08:27:07Z</time>
+      </trkpt>
+      <trkpt lat="23.532173624262214" lon="120.65497756004333">
+        <ele>904.00999999999999</ele>
+        <time>2019-07-13T08:27:41Z</time>
+      </trkpt>
+      <trkpt lat="23.531993078067899" lon="120.6550173740834">
+        <ele>904.12</ele>
+        <time>2019-07-13T08:28:35Z</time>
+      </trkpt>
+      <trkpt lat="23.531942283734679" lon="120.65520663745701">
+        <ele>904.75999999999999</ele>
+        <time>2019-07-13T08:28:55Z</time>
+      </trkpt>
+      <trkpt lat="23.531888974830508" lon="120.65546446479857">
+        <ele>903.98000000000002</ele>
+        <time>2019-07-13T08:29:29Z</time>
+      </trkpt>
+      <trkpt lat="23.531693760305643" lon="120.65554308705032">
+        <ele>903.63999999999999</ele>
+        <time>2019-07-13T08:29:57Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+
+</gpx>

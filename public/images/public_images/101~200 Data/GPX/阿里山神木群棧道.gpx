@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creator="OruxMaps v.7.0.5" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+<name><![CDATA[664-阿里山神木群棧道]]></name>
+<link href="http://www.oruxmaps.com">
+<text>OruxMaps</text>
+</link>
+<time>2018-07-13T03:38:37Z</time><bounds maxlat="23.5190150" maxlon="120.8097760" minlat="23.5170510" minlon="120.8067879"/>
+</metadata>
+<wpt lat="23.5170541" lon="120.8085121">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[千歲檜神木]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="23.5173049" lon="120.8085400">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[樹靈塔]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="23.5173506" lon="120.8081305">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[香林神木]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="23.5190085" lon="120.8066323">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[阿里山神木遺跡]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="23.5191736" lon="120.8066818">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[神木車站]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="23.5185755" lon="120.8080693">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[神怡橋]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="23.5175590" lon="120.8093930">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[吊橋]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<trk>
+<name><![CDATA[664-阿里山神木群棧道]]></name>
+<desc><![CDATA[<p>距離: 1 km (00:00)<br/>最低海拔: 0 m<br/>最高海拔: 0 m<br/></p><hr align="center" width="480" style="height: 2px; width: 517px"/>]]></desc>
+<type>登山</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="TYPE" subtype="0">7</om:ext>
+<om:ext type="DIFFICULTY">0</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+<trkseg>
+<trkpt lat="23.5170510" lon="120.8085030">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5172200" lon="120.8087360">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5173520" lon="120.8087570">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5174400" lon="120.8086610">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5175030" lon="120.8083520">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5178110" lon="120.8080510">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5179370" lon="120.8080510">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5179560" lon="120.8081740">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5177920" lon="120.8085170">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5178550" lon="120.8085440">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5180440" lon="120.8082430">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5181320" lon="120.8080230">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5183710" lon="120.8076870">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5184520" lon="120.8076530">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5186770" lon="120.8073960">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5188035" lon="120.8070964">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5188994" lon="120.8069354">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5189953" lon="120.8067879">
+<ele>0.00</ele>
+</trkpt>
+</trkseg>
+<trkseg>
+<trkpt lat="23.5189953" lon="120.8067879">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5189810" lon="120.8069890">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5190150" lon="120.8069650">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5189880" lon="120.8073730">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5188360" lon="120.8076820">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5186620" lon="120.8079250">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5186050" lon="120.8080210">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5185800" lon="120.8080640">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5185250" lon="120.8081640">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5185860" lon="120.8082470">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5186680" lon="120.8082560">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5187010" lon="120.8083690">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5185950" lon="120.8084860">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5186520" lon="120.8086120">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5187870" lon="120.8087420">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5188730" lon="120.8087440">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5188690" lon="120.8089080">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5189800" lon="120.8095460">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5188180" lon="120.8097070">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5187480" lon="120.8097760">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5184670" lon="120.8097070">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5182700" lon="120.8096250">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5181370" lon="120.8096040">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5180370" lon="120.8096380">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5179110" lon="120.8097480">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5178040" lon="120.8097480">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5176850" lon="120.8096790">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5176030" lon="120.8094050">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="23.5175590" lon="120.8093930">
+<ele>0.00</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

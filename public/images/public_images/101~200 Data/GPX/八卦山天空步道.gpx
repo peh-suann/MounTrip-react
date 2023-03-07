@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creator="OruxMaps v.7.0.5" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+<name><![CDATA[569-八卦山天空步道]]></name>
+<link href="http://www.oruxmaps.com">
+<text>OruxMaps</text>
+</link>
+<time>2018-05-29T05:16:17Z</time><bounds maxlat="24.0787510" maxlon="120.5571300" minlat="24.0764990" minlon="120.5487835"/>
+</metadata>
+<wpt lat="24.0812915" lon="120.5390798">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[YouBike 彰化火車站前站]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0784349" lon="120.5450683">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[YouBike 彰化縣立圖書館]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0780774" lon="120.5452645">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[「縣議會」站]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0769547" lon="120.5493081">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山大佛遊客服務中心]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0770237" lon="120.5490344">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山大佛牌樓]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0774352" lon="120.5492269">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山第一停車場]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0783713" lon="120.5486977">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山大佛前廣場]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0782765" lon="120.5496666">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山天空步道入口#1]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0780994" lon="120.5499744">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山天空步道入口#2]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0785620" lon="120.5513925">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山天空步道入口#3]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0777566" lon="120.5535793">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山天空步道入口#4]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0769230" lon="120.5554830">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山天空步道入口#5]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0767134" lon="120.5565888">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山天空步道入口#6]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0765368" lon="120.5571148">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山天空步道入口#7]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0761206" lon="120.5574673">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[國立彰化生活美學館]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0768873" lon="120.5574847">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[彰化縣立彰化藝術高級中學]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0770881" lon="120.5580035">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[八卦山生活美術館停車場]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0753435" lon="120.5543314">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[Ubike彰化藝術高中站]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0748841" lon="120.5522382">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[「龍泉橋」站]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0771732" lon="120.5571655">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[成功營區綠色環境學習營地]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="24.0756793" lon="120.5545859">
+<ele>0.00</ele>
+<time>1970-01-01T00:00:00Z</time>
+<name><![CDATA[彰化縣政府水利資源處]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<trk>
+<name><![CDATA[569-八卦山天空步道]]></name>
+<desc><![CDATA[<p>距離: 1.2 km (00:00)<br/>最低海拔: 0 m<br/>最高海拔: 86 m<br/>高度上升: 4 m<br/></p><hr align="center" width="480" style="height: 2px; width: 517px"/>]]></desc>
+<type>登山</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="TYPE" subtype="0">7</om:ext>
+<om:ext type="DIFFICULTY">0</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+<trkseg>
+<trkpt lat="24.0773966" lon="120.5492717">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="24.0774848" lon="120.5490786">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="24.0776415" lon="120.5488962">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="24.0778080" lon="120.5488962">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="24.0779305" lon="120.5488855">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="24.0780235" lon="120.5487835">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="24.0780970" lon="120.5489016">
+<ele>0.00</ele>
+</trkpt>
+<trkpt lat="24.0782765" lon="120.5496666">
+<ele>0.00</ele>
+</trkpt>
+</trkseg>
+<trkseg>
+<trkpt lat="24.0782710" lon="120.5496600">
+<ele>79.00</ele>
+</trkpt>
+<trkpt lat="24.0781590" lon="120.5498900">
+<ele>79.00</ele>
+</trkpt>
+<trkpt lat="24.0782120" lon="120.5500290">
+<ele>76.80</ele>
+</trkpt>
+<trkpt lat="24.0785010" lon="120.5502930">
+<ele>75.30</ele>
+</trkpt>
+<trkpt lat="24.0786720" lon="120.5503940">
+<ele>75.40</ele>
+</trkpt>
+<trkpt lat="24.0787510" lon="120.5505760">
+<ele>75.50</ele>
+</trkpt>
+<trkpt lat="24.0785930" lon="120.5511910">
+<ele>74.50</ele>
+</trkpt>
+<trkpt lat="24.0785230" lon="120.5515700">
+<ele>73.60</ele>
+</trkpt>
+<trkpt lat="24.0785760" lon="120.5517530">
+<ele>73.60</ele>
+</trkpt>
+<trkpt lat="24.0785450" lon="120.5519740">
+<ele>73.90</ele>
+</trkpt>
+<trkpt lat="24.0785540" lon="120.5523390">
+<ele>74.70</ele>
+</trkpt>
+<trkpt lat="24.0787250" lon="120.5526750">
+<ele>76.00</ele>
+</trkpt>
+<trkpt lat="24.0787380" lon="120.5528760">
+<ele>77.20</ele>
+</trkpt>
+<trkpt lat="24.0786680" lon="120.5530880">
+<ele>78.50</ele>
+</trkpt>
+<trkpt lat="24.0785760" lon="120.5532360">
+<ele>79.30</ele>
+</trkpt>
+<trkpt lat="24.0784620" lon="120.5533660">
+<ele>80.50</ele>
+</trkpt>
+<trkpt lat="24.0782860" lon="120.5534910">
+<ele>82.20</ele>
+</trkpt>
+<trkpt lat="24.0780980" lon="120.5535340">
+<ele>83.70</ele>
+</trkpt>
+<trkpt lat="24.0776420" lon="120.5535770">
+<ele>85.80</ele>
+</trkpt>
+<trkpt lat="24.0773270" lon="120.5535720">
+<ele>86.00</ele>
+</trkpt>
+<trkpt lat="24.0772260" lon="120.5536540">
+<ele>85.70</ele>
+</trkpt>
+<trkpt lat="24.0772260" lon="120.5538410">
+<ele>85.20</ele>
+</trkpt>
+<trkpt lat="24.0773180" lon="120.5540050">
+<ele>84.70</ele>
+</trkpt>
+<trkpt lat="24.0774670" lon="120.5541250">
+<ele>83.70</ele>
+</trkpt>
+<trkpt lat="24.0774840" lon="120.5542540">
+<ele>83.30</ele>
+</trkpt>
+<trkpt lat="24.0774010" lon="120.5543930">
+<ele>82.90</ele>
+</trkpt>
+<trkpt lat="24.0773090" lon="120.5546190">
+<ele>81.60</ele>
+</trkpt>
+<trkpt lat="24.0771200" lon="120.5549550">
+<ele>80.60</ele>
+</trkpt>
+<trkpt lat="24.0769230" lon="120.5554830">
+<ele>78.80</ele>
+</trkpt>
+<trkpt lat="24.0766910" lon="120.5557570">
+<ele>78.40</ele>
+</trkpt>
+<trkpt lat="24.0767430" lon="120.5561890">
+<ele>77.50</ele>
+</trkpt>
+<trkpt lat="24.0767210" lon="120.5565590">
+<ele>76.30</ele>
+</trkpt>
+<trkpt lat="24.0766380" lon="120.5569090">
+<ele>74.10</ele>
+</trkpt>
+<trkpt lat="24.0765460" lon="120.5571300">
+<ele>72.30</ele>
+</trkpt>
+<trkpt lat="24.0764990" lon="120.5570980">
+<ele>71.40</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>
