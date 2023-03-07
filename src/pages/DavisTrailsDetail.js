@@ -1,12 +1,15 @@
 import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
-import TrailsDetailTable from '../components/TrailsDetailTable'
+import DavisTrailsDetailTable from '../components/DavisTrailsDetailTable'
 import { TRAILS_DATA } from '../connections/api-config'
 import { useLocation } from 'react-router-dom'
-import '../html/css/trails_detail.css'
+// import styles from '../styles/Mountrip.module.css'
+import styles from '../styles/DavisTrailsDetail.module.css'
 
-export default function TrailsDetail() {
+// import '../html/css/trails_filter.css'
+
+export default function DavisTrailsDetail() {
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
   const [data, setData] = useState({
@@ -36,9 +39,12 @@ export default function TrailsDetail() {
     <>
       <div className="container">
         {console.log('----', data.rows)}
-        <TrailsDetailTable rows={data.rows} />
+        <DavisTrailsDetailTable rows={data.rows} />
       </div>
-      <div class="container_all d-flex flex-column ">
+      <div
+        className={styles.container_all}
+        // class="container_all d-flex flex-column "
+      >
         <div className="col ">
           <nav className="bread" aria-label="breadcrumb">
             <ol className="breadcrumb ">
@@ -65,12 +71,12 @@ export default function TrailsDetail() {
         <div class=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
           <div class="col flex-column me-5 d-none d-lg-flex">
             <div class="">
-              <img class="img_cover_one" src="./imgs/3-1.jpg" alt="" />
+              <img class="img_cover_one" src="./imgs/Davis/3-1.jpg" alt="" />
             </div>
             <div class="d-flex flex-row  img_wrap_three">
-              <img class="img_cover_three " src="./imgs/3-1.jpg" alt="" />
-              <img class="img_cover_three " src="./imgs/3-1.jpg" alt="" />
-              <img class="img_cover_three " src="./imgs/3-1.jpg" alt="" />
+              <img class="img_cover_three " src="./imgs/Davis/3-1.jpg" alt="" />
+              <img class="img_cover_three " src="./imgs/Davis/3-1.jpg" alt="" />
+              <img class="img_cover_three " src="./imgs/Davis/3-1.jpg" alt="" />
             </div>
           </div>
         </div>

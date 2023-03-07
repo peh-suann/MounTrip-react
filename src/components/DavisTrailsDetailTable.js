@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TrailsDetailTable(props) {
+function DavisTrailsDetailTable(props) {
   const { rows } = props
   return (
     <table className="table">
@@ -26,4 +26,4 @@ function TrailsDetailTable(props) {
   )
 }
 
-export default TrailsDetailTable
+export default DavisTrailsDetailTable
