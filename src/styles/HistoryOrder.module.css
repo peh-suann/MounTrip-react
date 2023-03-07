@@ -1,0 +1,816 @@
+/* 要先將 Mountrip.module.css 檔案內的 :root 設定都複製過來才能用 */
+:root{
+    /* primary/green */
+    --mtgreen-1:#6cba7c;
+    --mtgreen-2:#8dc996;
+    --mtgreen-3:#add9b1;
+    --mtgreen-4:#cee8cb;
+    --mtgreen-5:rgba(206, 232, 203, 0.4);
+
+
+    /* secondary/yellow */
+    --mtyellow-1: #F3c969;
+    --mtyellow-2: #f7db97;
+    --mtyellow-3: #FBEDC4;
+    --mtyellow-4: #FFFFF2;
+
+    /* neutral-color/ black/ grey */
+    --mtgrey-1: #011306;
+    --mtgrey-2: #4d5a51;
+    --mtgrey-3: #9aa09b;
+    --mtgrey-4: #e6E7E6;
+
+    /* danger-color /red */
+    --mtred-1:#E85F5c;
+    --mtred-2: #ED7F7D;
+    --mtred-3: #f6Bfbe;
+    --mtred-4: #fadfde;
+}
+section{
+    height: 100vh;
+    width: 100%;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 248px 2fr ;
+    grid-template-rows: 100%;
+    gap:10px 75px;
+    padding-top: 150px;
+    padding-right: 240px;
+    padding-left: 240px;
+    background-color: var(--mtyellow-4);
+    width: 100%;
+    /* height: 100%; */
+}
+.sidebar{
+    /* border: 1px solid red; */
+    width: 100%;
+}
+.profile{
+    position: relative;
+}
+.profile-wrap{
+    height: 248px;
+    width: 248px;
+    background-color: #faf;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.pic-btn{
+    content:"yes";
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--mtyellow-4);
+    border-radius: 100%;
+    background-color: var(--mtgreen-3);
+    position:absolute;
+    right:15px;
+    bottom:1px;
+    /* z-index: 2; */
+}
+.pic-btn:hover{
+    border: 4px solid var(--mtyellow-3);
+    background-color: var(--mtgreen-1);
+}
+
+
+.profile-pic{
+    width: 100%;
+}
+.camera{
+    /* position: absolute; */
+    transform: translateX(50%) translateY(38%);
+}
+
+/* 會員姓名帳號 */
+.member-name{
+    display: flex;
+    margin-top: 36px;
+    height: 38px;
+    position: relative;
+    text-align: center;
+}
+.member-name::after{
+    content:'超級嚮導';
+    color:white;
+    font-size:18px;
+    background-color: var(--mtyellow-1);
+    border-radius: 18px;
+    padding: .5px 10px .5px 10px;
+    align-content: center;
+    /* height: 100%; */
+    position: absolute;
+    top:4px;
+    right:0px;
+}
+.member-name p{
+    font-size: 24px;
+    font-weight: 700;
+}
+.first-name{
+    margin-right: 1rem;
+}
+.member-account{
+    margin-top: 7px;
+    font-size: 18px;
+    color:var(--mtgrey-3);
+}
+.edit-btn{
+    width: 100%;
+    color:var(--mtgreen-1);
+    background-color: var(--mtgreen-4);
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    margin-top: 26px;
+    padding-top: 8px;
+}
+.edit-btn:hover{
+    box-shadow: 0 0 0 4px var(--mtgreen-4);
+}
+.btn-border{
+    border: 1px solid var(--mtgreen-1);
+    width: 100%;
+    margin-top: 40px;
+}
+.sidebar-menu{
+    margin-top: 40px;
+    /* display: flex; */
+    /* flex-direction: row; */
+    
+}
+.sidebar-menu li{
+    list-style: none;
+}
+.sidebar-menu a{
+    text-decoration: none;
+    color:var(--mtgrey-3);
+    font-size: 20px;
+    font-weight: 400;
+}
+.sidebar-menu a:hover{
+    font-weight: 700;
+}
+.menu-icon{
+    margin-right: 10px;
+    transform: translateY(-10%);
+}
+.history-order-link a{
+    color:var(--mtgreen-1)
+}
+.history-order-link path{
+    stroke:var(--mtgreen-1)
+}
+
+/* accordion / collapse 收摺式卡片 */
+.order-card{
+    background-color: var(--mtyellow-4);
+    width: 100%;
+    /* height: 205px; */
+    border-radius: 10px;
+    box-shadow: 0 2px 25px 1px rgba(1, 19, 6, 0.1);
+    margin-top: 28px;
+    padding: 28px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    transition: all .3s cubic-bezier(0.16, 1, 0.5, 1);
+
+}
+.order-card:last-child{
+    margin-bottom: 130px;
+}
+.toggle-btn{
+    height: 35px;
+    background-color: var(--mtyellow-4);
+    border: none;
+}
+.toggle-btn svg{
+    transform: translateY(4%) rotate(-90deg);
+    transition: all .5s cubic-bezier(0.16, 1, 0.5, 1);
+}
+.toggle-btn svg.show{
+    transform: translateY(4%) rotate(0deg);
+}
+
+.order-state{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    width: 100%;
+}
+.order-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.order-title-id{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+.order-title-id p{
+    color: var(--mtgrey-1);
+    font-size: 26px;
+    font-weight: 700;
+}
+.order-title-id svg{
+    transform: translateY(-25%);
+}
+.order-status-tag{
+    
+    height: 37px;
+    width: 127px;
+    padding-top: 5px;
+    text-align: center;
+    background-color: var(--mtgreen-1);
+    border-radius: 23px;
+}
+.order-status-tag2{
+    
+    height: 37px;
+    width: 127px;
+    padding-top: 5px;
+    text-align: center;
+    background-color: var(--mtyellow-1);
+    border-radius: 23px;
+}
+.order-status-tag p{
+    color: var(--mtyellow-4);
+    font-size: 18px;
+    font-weight: 700;
+}
+.order-status-tag2 p{
+    color: var(--mtyellow-4);
+    font-size: 18px;
+    font-weight: 700;
+}
+.order-content{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+.price-wrap{
+    display: flex;
+    flex-direction: row;
+}
+.price-wrap p{
+    color: var(--mtgreen-1);
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: .5rem;
+}
+#price{
+    font-weight: 700;
+}
+.time-wrap{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.time-wrap p{
+    color: var(--mtgrey-3);
+    font-size: 19px;
+}
+.bill-wrap{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+}
+.bill-wrap p{
+    color: var(--mtgrey-3);
+    font-size: 19px;
+}
+/* 收折的部分 */
+/* 收折的動畫 */
+.dropdown{
+    display: block;
+    height: 100%;
+    width: 100%;
+    /* opacity: 1; */
+    transition: all .3s cubic-bezier(0.16, 1, 0.5, 1);
+    /* display: none; */
+}
+.dropdown.show{
+    display: block;
+    height: 100%;
+    opacity: 1;
+
+}
+/* .arrow{
+    transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
+    transform: translateY(4%) rotate(90deg);
+} */
+/* .toggle-btn-show {
+    transform: translateY(4%) rotate(0deg);
+} */
+.dropdown-bar{
+    border-top: 1px solid var(--mtgrey-4);
+    margin-top: 12px;
+    margin-bottom: 28px;
+}
+.product-wrap{
+    display: grid;
+    grid-template-columns: 560px 3fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "img sprice amount tprice"    
+    ;
+    gap: 60px;
+
+    /* flex-direction: row; */
+    width: 100%;
+    /* justify-content: space-between; */
+    margin-bottom: 18px;
+}
+.img-title-wrap{
+    display: grid;
+    grid-template-columns:125px 230px 200px;
+    /* grid-template-rows: 1fr; */
+    /* flex-direction: row; */
+    width: 100%;
+    column-gap: 20px;
+    grid-area: img;
+}
+.title-wrap{
+    width: 230px;
+}
+.title-wrap h6{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--mtgrey-1);
+}
+.title-wrap p{
+    font-size: 18px;
+    color: var(--mtgrey-2);
+}
+.time-wrap p{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--mtgrey-3);
+}
+.img-wrap{
+    width: 125px;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.img-wrap-img{
+    background: url('../../public/trail1.png');
+    /* width: 100%; */
+    height: 100%;
+    background-size: cover;
+    /* src="../images/product-img/10.jpg"  */
+}
+.img-wrap img{
+    height: 100%;;
+}
+.date-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* grid-area: date; */
+}
+.date-wrap p{
+    font-size: 20px;
+    color: var(--mtgrey-3);
+    font-weight: 400;
+    margin: 0;
+}
+.date-dash{
+    height: 20px;
+    margin: 10px;
+    border-right: 1.5px solid var(--mtgrey-3) ;
+}
+.single-price-wrap{
+    display: flex;
+    flex-direction: row;
+    grid-area: sprice;
+}
+.single-price-wrap p{
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--mtgrey-1);
+    padding-right: 10px;
+    margin: 0;
+}
+.total-price-wrap{
+    display: flex;
+    flex-direction: row;
+    grid-area: tprice;
+}
+.total-price-wrap p{
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--mtgrey-1);
+    padding-right: 10px;
+    margin: 0;
+}
+.amount-wrap{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    grid-area: amount;
+}
+.amount-wrap svg{
+    transform: translateY(20%);
+}
+.amount-wrap p {
+    font-size: 22px;
+    font-weight: 700;
+}
+/* 右邊的會元資料 */
+.member-data{
+    /* border: 1px solid blueviolet; */
+    width: 100%;
+}
+.member-data h1{
+    color:var(--mtgreen-1);
+    margin-left: 15px;
+}
+.title{
+    display: flex;
+}
+.title svg{
+    transform: translateY(25%) scale(1.2);
+}
+
+
+
+/* footer */
+.footer{
+    background-color: var(--mtgreen-1);
+    width: 100%;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.footer-right{
+    color:#FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 5rem;
+}
+.footer-left{
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer-ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+.footer-link{
+    color:#FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 1rem;
+}
+.link:hover{
+    color: var(--mtyellow-1)
+}
+.footer-barbar{
+    width: 0;
+    height: 16px;
+    border: .8px solid #FFFFFF;
+    margin-right: 1rem;
+
+}
+
+/* w:390px RWD */
+
+/* w:390px RWD */
+@media screen and (max-width:390px){
+    section{
+        width: 390px;
+    }
+    .grid-container{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 390px ;
+        grid-template-rows: 1fr ;
+        gap:40px;
+        padding-top: 120px;
+        padding-right: 15px;
+        padding-left: 15px;
+        background-color: var(--mtyellow-4);
+        /* width: 100%; */
+        /* height: 100%; */
+    }
+
+    .footer{
+        display: none;
+    }
+}
+
+/* 使用者照片區 */
+@media screen and (max-width:390px) {
+    .sidebar{
+        width: 360px;
+        display: none;
+    }
+}
+/* filter */
+@media screen and (max-width:390px) {
+
+    .sidebar-menu{
+        display: none;
+    }
+    .edit-btn{
+        display: none;
+    }
+    .btn-border{
+        display: none;
+    }
+    .title{
+         display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .title svg{
+        transform: translateY(0%) scale(1);
+
+    }
+    .title h1{
+    }
+    .filter-area{
+        width: 100%;
+    }
+    .filter-btn select{
+        border: 2px solid var(--mtgreen-1);
+        background-color: var(--mtyellow-4);
+        border-radius: 5px;
+        height: 35px;
+        color:var(--mtgreen-1);
+        font-size: 16px;
+        font-weight: 500;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .show-number{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        /* padding-top: 30px; */
+    }
+    .show-number p {
+        margin-top: 0px;
+    }
+    #comment-amount{
+        padding: 0 10px 0 10px;
+        margin-top: 0;
+    }
+
+}
+@media screen and (max-width:390px){
+    .member-data{
+        width: 360px;
+    }  
+}
+
+/* card */
+@media screen and (max-width:390px){
+    
+    .order-card{
+        padding-left: 16px;
+        padding-top: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+        position: relative;
+    }
+    .order-state{
+        gap:8px;
+    }
+    .order-title{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .order-title-id{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+    .order-title-id p{
+        color: var(--mtgrey-1);
+        font-size: 15px;
+        font-weight: 700;
+        margin: 0;
+    }
+    .order-title-id p:last-child{
+        font-size: 18px;
+    }
+    .order-title-id svg{
+        display: none;
+    }
+    .order-status-tag{
+        transform: translateY();   
+        height: 25px;
+        width: 85px;
+        padding-top: 3px;
+    }
+    .order-status-tag p{
+        font-size: 12px;
+        font-weight: 700;
+    }
+    .order-status-tag2{
+        transform: translateY();   
+        height: 25px;
+        width: 85px;
+        padding-top: 3px;
+    }
+    .order-status-tag2 p{
+        font-size: 12px;
+        font-weight: 700;
+    }
+    .toggle-btn svg{
+        height: 28px;
+        width: 28px;
+    }
+    .price-wrap p{
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    #price{
+        font-weight: 700;
+    }
+    
+    .time-wrap p{
+        font-size: 14px;
+        margin-bottom: 0;
+        color: var(--mtgrey-3);
+    }
+    
+    .bill-wrap p{
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .order-content{
+        gap:4px;
+    }
+
+    .order-card:last-child{
+        margin-bottom: 48px;
+    }
+
+
+    
+}
+
+/* 折疊的內容RWD */
+@media screen and (max-width:390px) {
+    .dropdown-bar{
+        margin-top: 6px;
+        margin-bottom: 18px;
+    }
+    .product-wrap{
+        display: grid;
+        grid-template-columns: 70px 15px 1fr;
+        grid-template-rows: 1fr 24px;
+        grid-template-areas:
+        "img img img"
+        "sprice amount tprice"    
+        ;
+        /* gap: 65.5px; */
+        column-gap:12px;
+        row-gap: 8px;
+        /* flex-direction: row; */
+        width: 100%;
+        /* justify-content: space-between; */
+        margin-bottom: 20px;
+    }
+    .img-title-wrap{
+        display: grid;
+        grid-template-columns:100px 1fr;
+        grid-template-rows: 1fr 21px;
+        /* flex-direction: row; */
+        grid-template-areas: 
+        "pic title"
+        "pic date";
+        width: 100%;
+        column-gap: 20px;
+        grid-area: img;
+    }
+    .title-wrap{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap:8px;
+        grid-area: title;
+    }
+    .title-wrap h6{
+        font-size: 16px;
+        font-weight: 700;
+        width: 100%;
+        word-break: break-all;
+        margin: 0;
+        color: var(--mtgrey-1);
+    }
+    .title-wrap p{
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--mtgrey-2);
+        margin: 0;
+    }
+
+    .bill-wrap p{
+        font-size: 14px;
+        font-weight: 500;
+
+    }
+    .time-wrap p{
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--mtgrey-3);
+    }
+    .img-wrap{
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        overflow: hidden;
+        grid-area: pic;
+    }
+    .img-wrap img{
+        height: 100%;;
+    }
+    .date-wrap{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap:3px;
+        align-items: center;
+        grid-area: date;
+    }
+    .date-wrap p{
+        font-size: 13px;
+        color: var(--mtgrey-1);
+        font-weight: 400;
+        margin: 0;
+    }
+    .date-dash{
+        height: 5px;
+        margin: 2px;
+        transform: rotate(90deg);
+        border-right: 1px solid var(--mtgrey-1) ;
+    }
+    .single-price-wrap{
+        display: flex;
+        flex-direction: row;
+        grid-area: sprice;
+        align-items: center;
+    }
+    .single-price-wrap p{
+        font-size: 12px;
+        color: var(--mtgrey-2);
+        padding-right: 10px;
+        margin: 0;
+    }
+    .total-price-wrap{
+        display: flex;
+        flex-direction: row;
+        grid-area: tprice;
+        align-items: baseline;
+        justify-self:end;
+
+    }
+    .total-price-wrap p{
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--mtgrey-1);
+        padding-right: 0px;
+        margin: 0;
+    }
+    .total-price-wrap:first-child{
+        padding-right: 10px;
+    }
+    .amount-wrap{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        grid-area: amount;
+        align-items: center;
+
+    }
+    .amount-wrap svg{
+        transform: scale(2) translateY(0%) translateX(-20%);
+    }
+    .amount-wrap svg path{
+        stroke-width: 1px;
+    }
+    .amount-wrap p {
+        font-size: 12px;
+        font-weight: 400;
+        margin: 0;
+    }
+}

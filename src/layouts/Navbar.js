@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './../styles/Navbar.module.css'
-import ExpandInput from './ExpandInput'
 
 export default function NavBar() {
   return (
@@ -104,7 +103,6 @@ export default function NavBar() {
             <ul className={styles.nav_icons}>
               <li>
                 <a className={styles.link} href="/">
-                  <img src="./../icons/search.svg" alt="" />
                   <svg
                     width="30"
                     height="30"
