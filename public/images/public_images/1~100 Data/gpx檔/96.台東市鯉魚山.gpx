@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creator="OruxMaps v.7.0.2" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+<name><![CDATA[2019-03-01 16:54]]></name>
+<link href="http://www.oruxmaps.com">
+<text>OruxMaps</text>
+</link>
+<time>2019-03-01T08:54:20Z</time><bounds maxlat="22.7563657" maxlon="121.1442495" minlat="22.7516375" minlon="121.1410850"/>
+</metadata>
+<wpt lat="22.7534804" lon="121.1442356">
+<ele>30.97</ele>
+<time>2019-03-01T08:54:23Z</time>
+<name><![CDATA[鯉魚山登山口]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="22.7545550" lon="121.1437974">
+<ele>56.96</ele>
+<time>2019-03-01T08:58:42Z</time>
+<name><![CDATA[觀景平台]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="22.7549784" lon="121.1427883">
+<ele>58.05</ele>
+<time>2019-03-01T09:02:17Z</time>
+<name><![CDATA[老榕樹]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="22.7546966" lon="121.1421504">
+<ele>72.02</ele>
+<time>2019-03-01T09:04:28Z</time>
+<name><![CDATA[鯉眼觀景平台]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="22.7563266" lon="121.1411447">
+<ele>71.22</ele>
+<time>2019-03-01T09:09:45Z</time>
+<name><![CDATA[鯉首觀景台]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="22.7534267" lon="121.1420123">
+<ele>80.80</ele>
+<time>2019-03-01T09:17:18Z</time>
+<name><![CDATA[背嶺觀景平台]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="22.7516379" lon="121.1427650">
+<ele>65.31</ele>
+<time>2019-03-01T09:23:04Z</time>
+<name><![CDATA[鯉尾觀景平台]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="22.7534210" lon="121.1442611">
+<ele>3.37</ele>
+<time>2019-03-01T09:33:30Z</time>
+<name><![CDATA[登山口]]></name>
+<sym>Waypoint</sym>
+<type>方位點</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<trk>
+<name><![CDATA[2019-03-01 16:54]]></name>
+<desc><![CDATA[<p>開始時間: 03/01/2019 16:54<br/>結束時間: 03/01/2019 17:33<br/>距離: 1.5 km (00:39)<br/>移動時間: 00:34<br/>平均速度: 2.37 km/h<br/>平均移動速度: 2.72 km/h<br/>最大速度: 5.69 km/h<br/>最低海拔: 3 m<br/>最高海拔: 87 m<br/>上升速度: 250.4 m/h<br/>下降速度: -473.1 m/h<br/>高度上升: 90 m<br/>高度下降: -114 m<br/>上升時間: 00:21<br/>下降時間: 00:14<br/></p><hr align="center" width="480" style="height: 2px; width: 517px"/>]]></desc>
+<type>未定義</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="TYPE" subtype="0">0</om:ext>
+<om:ext type="DIFFICULTY">0</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+<trkseg>
+<trkpt lat="22.7534859" lon="121.1442305">
+<ele>30.95</ele>
+<time>2019-03-01T08:54:22Z</time>
+</trkpt>
+<trkpt lat="22.7536841" lon="121.1441508">
+<ele>31.52</ele>
+<time>2019-03-01T08:54:42Z</time>
+</trkpt>
+<trkpt lat="22.7538047" lon="121.1439964">
+<ele>24.56</ele>
+<time>2019-03-01T08:55:04Z</time>
+</trkpt>
+<trkpt lat="22.7539630" lon="121.1439015">
+<ele>21.15</ele>
+<time>2019-03-01T08:55:22Z</time>
+</trkpt>
+<trkpt lat="22.7541371" lon="121.1439566">
+<ele>25.35</ele>
+<time>2019-03-01T08:55:52Z</time>
+</trkpt>
+<trkpt lat="22.7542548" lon="121.1438000">
+<ele>30.46</ele>
+<time>2019-03-01T08:56:28Z</time>
+</trkpt>
+<trkpt lat="22.7544094" lon="121.1436931">
+<ele>36.84</ele>
+<time>2019-03-01T08:57:01Z</time>
+</trkpt>
+<trkpt lat="22.7545625" lon="121.1435874">
+<ele>44.58</ele>
+<time>2019-03-01T08:57:36Z</time>
+</trkpt>
+<trkpt lat="22.7545558" lon="121.1437850">
+<ele>56.86</ele>
+<time>2019-03-01T08:58:40Z</time>
+</trkpt>
+<trkpt lat="22.7546219" lon="121.1435972">
+<ele>59.26</ele>
+<time>2019-03-01T09:00:12Z</time>
+</trkpt>
+<trkpt lat="22.7546253" lon="121.1433963">
+<ele>56.71</ele>
+<time>2019-03-01T09:00:43Z</time>
+</trkpt>
+<trkpt lat="22.7546664" lon="121.1432047">
+<ele>58.77</ele>
+<time>2019-03-01T09:00:58Z</time>
+</trkpt>
+<trkpt lat="22.7547161" lon="121.1430141">
+<ele>60.57</ele>
+<time>2019-03-01T09:01:18Z</time>
+</trkpt>
+<trkpt lat="22.7548484" lon="121.1428705">
+<ele>58.58</ele>
+<time>2019-03-01T09:01:37Z</time>
+</trkpt>
+<trkpt lat="22.7549830" lon="121.1427395">
+<ele>60.33</ele>
+<time>2019-03-01T09:02:30Z</time>
+</trkpt>
+<trkpt lat="22.7548963" lon="121.1425659">
+<ele>61.46</ele>
+<time>2019-03-01T09:02:51Z</time>
+</trkpt>
+<trkpt lat="22.7548095" lon="121.1423911">
+<ele>61.48</ele>
+<time>2019-03-01T09:03:26Z</time>
+</trkpt>
+<trkpt lat="22.7547463" lon="121.1422041">
+<ele>66.18</ele>
+<time>2019-03-01T09:03:50Z</time>
+</trkpt>
+<trkpt lat="22.7546915" lon="121.1420118">
+<ele>75.43</ele>
+<time>2019-03-01T09:05:17Z</time>
+</trkpt>
+<trkpt lat="22.7547791" lon="121.1418302">
+<ele>77.27</ele>
+<time>2019-03-01T09:05:33Z</time>
+</trkpt>
+<trkpt lat="22.7548807" lon="121.1416642">
+<ele>78.42</ele>
+<time>2019-03-01T09:05:50Z</time>
+</trkpt>
+<trkpt lat="22.7550011" lon="121.1415159">
+<ele>72.47</ele>
+<time>2019-03-01T09:06:12Z</time>
+</trkpt>
+<trkpt lat="22.7551294" lon="121.1413737">
+<ele>64.82</ele>
+<time>2019-03-01T09:06:39Z</time>
+</trkpt>
+<trkpt lat="22.7553101" lon="121.1413392">
+<ele>61.88</ele>
+<time>2019-03-01T09:06:54Z</time>
+</trkpt>
+<trkpt lat="22.7554936" lon="121.1414024">
+<ele>61.61</ele>
+<time>2019-03-01T09:07:14Z</time>
+</trkpt>
+<trkpt lat="22.7556756" lon="121.1414067">
+<ele>64.55</ele>
+<time>2019-03-01T09:07:44Z</time>
+</trkpt>
+<trkpt lat="22.7558321" lon="121.1413077">
+<ele>63.16</ele>
+<time>2019-03-01T09:08:01Z</time>
+</trkpt>
+<trkpt lat="22.7560011" lon="121.1412238">
+<ele>58.97</ele>
+<time>2019-03-01T09:08:22Z</time>
+</trkpt>
+<trkpt lat="22.7561834" lon="121.1411986">
+<ele>61.96</ele>
+<time>2019-03-01T09:08:52Z</time>
+</trkpt>
+<trkpt lat="22.7563657" lon="121.1411888">
+<ele>66.61</ele>
+<time>2019-03-01T09:09:18Z</time>
+</trkpt>
+<trkpt lat="22.7562131" lon="121.1410850">
+<ele>76.89</ele>
+<time>2019-03-01T09:10:21Z</time>
+</trkpt>
+<trkpt lat="22.7560459" lon="121.1411630">
+<ele>76.76</ele>
+<time>2019-03-01T09:10:39Z</time>
+</trkpt>
+<trkpt lat="22.7558845" lon="121.1412553">
+<ele>74.41</ele>
+<time>2019-03-01T09:10:58Z</time>
+</trkpt>
+<trkpt lat="22.7557099" lon="121.1413163">
+<ele>72.85</ele>
+<time>2019-03-01T09:11:22Z</time>
+</trkpt>
+<trkpt lat="22.7555297" lon="121.1413585">
+<ele>73.30</ele>
+<time>2019-03-01T09:11:45Z</time>
+</trkpt>
+<trkpt lat="22.7553448" lon="121.1413574">
+<ele>73.26</ele>
+<time>2019-03-01T09:11:58Z</time>
+</trkpt>
+<trkpt lat="22.7551978" lon="121.1412374">
+<ele>76.36</ele>
+<time>2019-03-01T09:12:21Z</time>
+</trkpt>
+<trkpt lat="22.7550569" lon="121.1413651">
+<ele>77.97</ele>
+<time>2019-03-01T09:12:47Z</time>
+</trkpt>
+<trkpt lat="22.7549293" lon="121.1415074">
+<ele>81.37</ele>
+<time>2019-03-01T09:13:10Z</time>
+</trkpt>
+<trkpt lat="22.7548126" lon="121.1416696">
+<ele>80.87</ele>
+<time>2019-03-01T09:13:28Z</time>
+</trkpt>
+<trkpt lat="22.7547379" lon="121.1418529">
+<ele>79.78</ele>
+<time>2019-03-01T09:13:41Z</time>
+</trkpt>
+<trkpt lat="22.7546643" lon="121.1420432">
+<ele>81.50</ele>
+<time>2019-03-01T09:14:00Z</time>
+</trkpt>
+<trkpt lat="22.7544698" lon="121.1420474">
+<ele>85.61</ele>
+<time>2019-03-01T09:14:19Z</time>
+</trkpt>
+<trkpt lat="22.7542883" lon="121.1420782">
+<ele>87.38</ele>
+<time>2019-03-01T09:14:40Z</time>
+</trkpt>
+<trkpt lat="22.7540961" lon="121.1421335">
+<ele>78.59</ele>
+<time>2019-03-01T09:15:56Z</time>
+</trkpt>
+<trkpt lat="22.7539203" lon="121.1421876">
+<ele>77.11</ele>
+<time>2019-03-01T09:16:17Z</time>
+</trkpt>
+<trkpt lat="22.7537401" lon="121.1421978">
+<ele>76.94</ele>
+<time>2019-03-01T09:16:30Z</time>
+</trkpt>
+<trkpt lat="22.7535891" lon="121.1420771">
+<ele>80.36</ele>
+<time>2019-03-01T09:16:49Z</time>
+</trkpt>
+<trkpt lat="22.7534237" lon="121.1419986">
+<ele>81.77</ele>
+<time>2019-03-01T09:17:34Z</time>
+</trkpt>
+<trkpt lat="22.7532427" lon="121.1420003">
+<ele>84.35</ele>
+<time>2019-03-01T09:19:26Z</time>
+</trkpt>
+<trkpt lat="22.7530798" lon="121.1421036">
+<ele>82.57</ele>
+<time>2019-03-01T09:19:45Z</time>
+</trkpt>
+<trkpt lat="22.7529655" lon="121.1422635">
+<ele>78.04</ele>
+<time>2019-03-01T09:20:08Z</time>
+</trkpt>
+<trkpt lat="22.7528044" lon="121.1423594">
+<ele>75.84</ele>
+<time>2019-03-01T09:20:21Z</time>
+</trkpt>
+<trkpt lat="22.7526413" lon="121.1424590">
+<ele>72.89</ele>
+<time>2019-03-01T09:20:38Z</time>
+</trkpt>
+<trkpt lat="22.7524931" lon="121.1425714">
+<ele>69.58</ele>
+<time>2019-03-01T09:21:02Z</time>
+</trkpt>
+<trkpt lat="22.7523058" lon="121.1425574">
+<ele>61.14</ele>
+<time>2019-03-01T09:21:44Z</time>
+</trkpt>
+<trkpt lat="22.7521211" lon="121.1425615">
+<ele>59.43</ele>
+<time>2019-03-01T09:21:59Z</time>
+</trkpt>
+<trkpt lat="22.7519745" lon="121.1426879">
+<ele>62.14</ele>
+<time>2019-03-01T09:22:17Z</time>
+</trkpt>
+<trkpt lat="22.7518182" lon="121.1427945">
+<ele>62.99</ele>
+<time>2019-03-01T09:22:31Z</time>
+</trkpt>
+<trkpt lat="22.7516375" lon="121.1427970">
+<ele>63.33</ele>
+<time>2019-03-01T09:22:56Z</time>
+</trkpt>
+<trkpt lat="22.7518237" lon="121.1427741">
+<ele>72.30</ele>
+<time>2019-03-01T09:23:50Z</time>
+</trkpt>
+<trkpt lat="22.7519661" lon="121.1426158">
+<ele>69.15</ele>
+<time>2019-03-01T09:24:31Z</time>
+</trkpt>
+<trkpt lat="22.7521343" lon="121.1425070">
+<ele>70.55</ele>
+<time>2019-03-01T09:24:58Z</time>
+</trkpt>
+<trkpt lat="22.7523194" lon="121.1425230">
+<ele>70.91</ele>
+<time>2019-03-01T09:25:25Z</time>
+</trkpt>
+<trkpt lat="22.7524969" lon="121.1425618">
+<ele>74.77</ele>
+<time>2019-03-01T09:25:51Z</time>
+</trkpt>
+<trkpt lat="22.7525562" lon="121.1427470">
+<ele>77.72</ele>
+<time>2019-03-01T09:26:22Z</time>
+</trkpt>
+<trkpt lat="22.7525506" lon="121.1429450">
+<ele>70.43</ele>
+<time>2019-03-01T09:27:20Z</time>
+</trkpt>
+<trkpt lat="22.7526774" lon="121.1430895">
+<ele>60.62</ele>
+<time>2019-03-01T09:28:19Z</time>
+</trkpt>
+<trkpt lat="22.7527351" lon="121.1432747">
+<ele>64.00</ele>
+<time>2019-03-01T09:28:44Z</time>
+</trkpt>
+<trkpt lat="22.7528519" lon="121.1434277">
+<ele>50.27</ele>
+<time>2019-03-01T09:29:40Z</time>
+</trkpt>
+<trkpt lat="22.7528485" lon="121.1436254">
+<ele>30.09</ele>
+<time>2019-03-01T09:30:42Z</time>
+</trkpt>
+<trkpt lat="22.7530393" lon="121.1436192">
+<ele>29.71</ele>
+<time>2019-03-01T09:31:19Z</time>
+</trkpt>
+<trkpt lat="22.7532043" lon="121.1437150">
+<ele>22.00</ele>
+<time>2019-03-01T09:32:02Z</time>
+</trkpt>
+<trkpt lat="22.7532788" lon="121.1438937">
+<ele>14.08</ele>
+<time>2019-03-01T09:32:40Z</time>
+</trkpt>
+<trkpt lat="22.7533855" lon="121.1440544">
+<ele>8.21</ele>
+<time>2019-03-01T09:33:03Z</time>
+</trkpt>
+<trkpt lat="22.7534161" lon="121.1442495">
+<ele>3.46</ele>
+<time>2019-03-01T09:33:28Z</time>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

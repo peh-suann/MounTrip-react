@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creator="GPS Visualizer http://www.gpsvisualizer.com/" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="23.6069064" lon="120.6868315">
+  <name>&#x5167;&#x6E56;&#x7AD9;&#x724C;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5802774" lon="120.6941405">
+  <name>&#x4ED9;&#x971E;&#x5DBA;&#x9910;&#x5EF3;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5801093" lon="120.6939393">
+  <name>&#x6C34;&#x6FC2;&#x6D1E;&#x6B65;&#x9053;&#x5165;&#x53E3;(&#x4ED9;&#x971E;&#x5DBA;)</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5770749" lon="120.691232">
+  <name>&#x6C34;&#x6FC2;&#x6D1E;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5771442" lon="120.692304">
+  <name>&#x9752;&#x86D9;&#x77F3;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.58066" lon="120.694347">
+  <name>&#x8304;&#x82F3;&#x6B65;&#x9053;&#x5165;&#x53E3;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5857091" lon="120.691005">
+  <name>&#x5E7D;&#x60C5;&#x8C37;&#x6B65;&#x9053;&#x5165;&#x53E3;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5810779" lon="120.6914878">
+  <name>&#x5751;&#x5E95;&#x6A4B;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5799766" lon="120.6919277">
+  <name>&#x58FA;&#x7A74;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5784279" lon="120.6919223">
+  <name>&#x9999;&#x83C7;&#x5BEE;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5790596" lon="120.6905531">
+  <name>&#x5E7D;&#x60C5;&#x8C37;&#x6B65;&#x9053;&#x5165;&#x53E3;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5799667" lon="120.6969326">
+  <name>&#x8304;&#x82F3;&#x6B65;&#x9053;&#x5165;&#x53E3;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5801191" lon="120.6969166">
+  <name>&#x5CED;&#x58C1;&#x6B65;&#x9053;&#x5165;&#x53E3;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.578201" lon="120.697437">
+  <name>&#x5CED;&#x58C1;&#x96C4;&#x98A8;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.6012839" lon="120.6816075">
+  <name>921&#x5927;&#x8D70;&#x5C71;&#x89C0;&#x666F;&#x53F0;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.5806999" lon="120.6832219">
+  <name>&#x65B0;&#x8349;&#x5DBA;&#x6F6D;&#x89C0;&#x666F;&#x53F0;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="23.583963" lon="120.695804">
+  <name>&#x8349;&#x5DBA;&#x5730;&#x8CEA;&#x516C;&#x5712;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<trk>
+  <name>&#x624B;&#x7E6A;&#x8DEF;&#x7DDA;(&#x50C5;&#x4F9B;&#x53C3;&#x8003;)</name>
+  <trkseg>
+    <trkpt lat="23.5800946" lon="120.6941164"/>
+    <trkpt lat="23.5796422" lon="120.6938052"/>
+    <trkpt lat="23.5793571" lon="120.6934297"/>
+    <trkpt lat="23.5790523" lon="120.6932366"/>
+    <trkpt lat="23.5787671" lon="120.6928933"/>
+    <trkpt lat="23.5783148" lon="120.6923461"/>
+    <trkpt lat="23.5783099" lon="120.6920189"/>
+    <trkpt lat="23.5781181" lon="120.6918955"/>
+    <trkpt lat="23.577833" lon="120.6918955"/>
+    <trkpt lat="23.577538" lon="120.6918311"/>
+    <trkpt lat="23.5774691" lon="120.6924266"/>
+    <trkpt lat="23.5773118" lon="120.6915736"/>
+    <trkpt lat="23.5771442" lon="120.692304"/>
+    <trkpt lat="23.5768293" lon="120.6919343"/>
+    <trkpt lat="23.5767456" lon="120.6914866"/>
+    <trkpt lat="23.5770749" lon="120.691232"/>
+  </trkseg>
+</trk>
+</gpx>

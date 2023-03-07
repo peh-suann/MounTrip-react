@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="GPS Visualizer http://www.gpsvisualizer.com/" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="22.6255312" lon="120.3634644">
+  <name>捷運大東站1號出入口</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1459-trans-train.png</sym>
+</wpt>
+<wpt lat="22.6258654" lon="120.3633088">
+  <name>鳳山轉運站(捷運大東站)</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1423-trans-bus.png</sym>
+</wpt>
+<wpt lat="22.6251029" lon="120.3626731">
+  <name>高雄市公共腳踏車大東文化藝術中心站2</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1419-trans-bicycle.png</sym>
+</wpt>
+<wpt lat="22.6240154" lon="120.3622279">
+  <name>大東藝文活動中心停車場</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1453-trans-parking.png</sym>
+</wpt>
+<wpt lat="22.6250162" lon="120.3641939">
+  <name>大東濕地公園大門</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1371-rec-hiking.png</sym>
+</wpt>
+<wpt lat="22.6267963" lon="120.3647974">
+  <name>椰林大道</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.6271742" lon="120.3647793">
+  <name>濕地跨橋</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.6285467" lon="120.3652588">
+  <name>濱水步道</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.6249694" lon="120.3634886">
+  <name>大東文化藝術中心</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.6272787" lon="120.3635385">
+  <name>慈恩紀念圖書館</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.628806" lon="120.3641126">
+  <name>高雄市鳳山老人活動中心</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<trk>
+  <name>大東濕地公園步道</name>
+  <desc>從匯入資料計算的統計資料&lt;br&gt;&lt;br&gt;距離：1.0 公里&lt;br&gt;海拔高度最低：15 公尺&lt;br&gt;海拔高度最高：17 公尺&lt;br&gt;總上升：0 公尺&lt;br&gt;總下降：2 公尺</desc>
+  <trkseg>
+    <trkpt lat="22.6250162" lon="120.3641939"/>
+    <trkpt lat="22.6251872" lon="120.3643207"/>
+    <trkpt lat="22.6252565" lon="120.3644045"/>
+    <trkpt lat="22.625391" lon="120.3645091"/>
+    <trkpt lat="22.6255952" lon="120.3644823"/>
+    <trkpt lat="22.6257292" lon="120.3644543"/>
+    <trkpt lat="22.6259052" lon="120.3645013"/>
+    <trkpt lat="22.6261092" lon="120.3645983"/>
+    <trkpt lat="22.6261212" lon="120.3646043"/>
+    <trkpt lat="22.6262372" lon="120.3647113"/>
+    <trkpt lat="22.6264062" lon="120.3648003"/>
+    <trkpt lat="22.6265822" lon="120.3648143"/>
+    <trkpt lat="22.6267592" lon="120.3648003"/>
+    <trkpt lat="22.6270202" lon="120.3647953"/>
+    <trkpt lat="22.6270642" lon="120.3647903"/>
+    <trkpt lat="22.6271392" lon="120.3647823"/>
+    <trkpt lat="22.6271742" lon="120.3647793"/>
+    <trkpt lat="22.6273752" lon="120.3646703"/>
+    <trkpt lat="22.6275992" lon="120.3646323"/>
+    <trkpt lat="22.6278612" lon="120.3645743"/>
+    <trkpt lat="22.6281092" lon="120.3644823"/>
+    <trkpt lat="22.6282992" lon="120.3645993"/>
+    <trkpt lat="22.6284012" lon="120.3646363"/>
+    <trkpt lat="22.6284822" lon="120.3646643"/>
+    <trkpt lat="22.6285192" lon="120.3646823"/>
+    <trkpt lat="22.6286182" lon="120.3648323"/>
+    <trkpt lat="22.6286562" lon="120.3649843"/>
+    <trkpt lat="22.6286422" lon="120.3650573"/>
+    <trkpt lat="22.6286022" lon="120.3652643"/>
+    <trkpt lat="22.6283792" lon="120.3652203"/>
+    <trkpt lat="22.6278582" lon="120.3651173"/>
+    <trkpt lat="22.6275432" lon="120.3651273"/>
+    <trkpt lat="22.6272502" lon="120.3652073"/>
+    <trkpt lat="22.6271092" lon="120.3652453"/>
+    <trkpt lat="22.6266212" lon="120.3655423"/>
+    <trkpt lat="22.6263742" lon="120.3656303"/>
+    <trkpt lat="22.6262182" lon="120.3656753"/>
+    <trkpt lat="22.6259732" lon="120.3656283"/>
+    <trkpt lat="22.6259252" lon="120.3656033"/>
+    <trkpt lat="22.6255992" lon="120.3654353"/>
+    <trkpt lat="22.6248062" lon="120.3650103"/>
+    <trkpt lat="22.6251435" lon="120.3643156"/>
+  </trkseg>
+</trk>
+</gpx>

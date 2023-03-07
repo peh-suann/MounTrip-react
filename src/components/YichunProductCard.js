@@ -1,27 +1,56 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { StylesContext } from './../pages/YichunProducts'
 
-function YichunProductCard() {
+function YichunProductCard(props) {
+  const { ranking, el, shadow } = props
+  const styles = useContext(StylesContext)
+
   return (
     <>
-      <div class="product">
-        <div class="pic">
-          <div class="ranking">1</div>
-          <div class="rates">
+      <div className={styles.product}>
+        <div
+          className={`${styles.pic} ${shadow ? styles.pic_shadow : ''}`}
+          style={{
+            backgroundImage: `linear-gradient(180deg,rgba(0, 0, 0, 0) 71.43%,rgba(0, 0, 0, 0.6) 96.19%),
+            url(images/public_images/product_image/${el.trail_img})`,
+          }}
+        >
+          <div
+            className={styles.ranking}
+            style={ranking ? {} : { display: 'none' }}
+          >
+            {ranking}
+          </div>
+          <div className={styles.rates}>
             <p>
-              <img src="./../icons/star.svg" alt="" />
+              <svg
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                  fill="#fffff2"
+                />
+              </svg>
               4.5
             </p>
-            <p class="difficulty">難度 EASY</p>
+            <p className={styles.difficulty}>難度 {el.difficulty_list_sid}</p>
           </div>
         </div>
-        <div class="information">
-          <div class="info">
-            <h4>草嶺古道｜探索新北一日遊</h4>
-            <p>新北市雙溪區</p>
+        <div className={styles.information}>
+          <div className={styles.info}>
+            <h4>{el.trail_name}</h4>
+            <p>
+              {el.county}
+              {el.town}
+            </p>
           </div>
-          <div class="price">
+          <div className={styles.price}>
             <p>NTD</p>
-            <h4>1,200</h4>
+            <h4>{el.price}</h4>
           </div>
         </div>
       </div>

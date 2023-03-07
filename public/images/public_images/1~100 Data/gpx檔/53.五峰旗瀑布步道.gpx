@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="GPS Visualizer http://www.gpsvisualizer.com/" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="24.8297603" lon="121.7518991">
+  <name>「五峰旗風景特定區」站</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1423-trans-bus.png</sym>
+</wpt>
+<wpt lat="24.8299842" lon="121.7526823">
+  <name>停車場</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1453-trans-parking.png</sym>
+</wpt>
+<wpt lat="24.829793" lon="121.752048">
+  <name>五峰旗風景區收費亭</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="24.8308485" lon="121.7475829">
+  <name>得子口溪攔沙壩</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="24.832506" lon="121.746635">
+  <name>五峰旗瀑布步道入口</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1059-biz-outdoor.png</sym>
+</wpt>
+<wpt lat="24.8332461" lon="121.7464113">
+  <name>第三層瀑布</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="24.834144" lon="121.746821">
+  <name>第二層瀑布</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="24.834865" lon="121.746939">
+  <name>第一層瀑布(封閉中)</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<trk>
+  <name>五峰旗瀑布步道</name>
+  <desc>從匯入資料計算的統計資料&lt;br&gt;&lt;br&gt;距離：0.9 公里&lt;br&gt;海拔高度最低：73 公尺&lt;br&gt;海拔高度最高：164 公尺&lt;br&gt;總上升：91 公尺&lt;br&gt;總下降：0 公尺</desc>
+  <trkseg>
+    <trkpt lat="24.829793" lon="121.752048">
+      <ele>72.0</ele>
+    </trkpt>
+    <trkpt lat="24.829754" lon="121.752046">
+      <ele>72.0</ele>
+    </trkpt>
+    <trkpt lat="24.829696" lon="121.752065">
+      <ele>72.0</ele>
+    </trkpt>
+    <trkpt lat="24.829659" lon="121.752022">
+      <ele>72.0</ele>
+    </trkpt>
+    <trkpt lat="24.829653" lon="121.751966">
+      <ele>72.0</ele>
+    </trkpt>
+    <trkpt lat="24.829686" lon="121.751577">
+      <ele>72.3</ele>
+    </trkpt>
+    <trkpt lat="24.829668" lon="121.751341">
+      <ele>72.4</ele>
+    </trkpt>
+    <trkpt lat="24.829788" lon="121.749823">
+      <ele>74.2</ele>
+    </trkpt>
+    <trkpt lat="24.829893" lon="121.748878">
+      <ele>75.7</ele>
+    </trkpt>
+    <trkpt lat="24.829978" lon="121.748693">
+      <ele>76.0</ele>
+    </trkpt>
+    <trkpt lat="24.830293" lon="121.748287">
+      <ele>77.0</ele>
+    </trkpt>
+    <trkpt lat="24.830398" lon="121.748179">
+      <ele>77.2</ele>
+    </trkpt>
+    <trkpt lat="24.830541" lon="121.748093">
+      <ele>77.4</ele>
+    </trkpt>
+    <trkpt lat="24.830644" lon="121.748035">
+      <ele>77.7</ele>
+    </trkpt>
+    <trkpt lat="24.831339" lon="121.747456">
+      <ele>81.3</ele>
+    </trkpt>
+    <trkpt lat="24.831437" lon="121.747236">
+      <ele>82.4</ele>
+    </trkpt>
+    <trkpt lat="24.83149" lon="121.747071">
+      <ele>82.9</ele>
+    </trkpt>
+    <trkpt lat="24.831481" lon="121.746997">
+      <ele>83.4</ele>
+    </trkpt>
+    <trkpt lat="24.831527" lon="121.746967">
+      <ele>83.9</ele>
+    </trkpt>
+    <trkpt lat="24.831709" lon="121.746846">
+      <ele>86.3</ele>
+    </trkpt>
+    <trkpt lat="24.831844" lon="121.746808">
+      <ele>87.7</ele>
+    </trkpt>
+    <trkpt lat="24.831902" lon="121.74676">
+      <ele>89.1</ele>
+    </trkpt>
+    <trkpt lat="24.832111" lon="121.746693">
+      <ele>91.9</ele>
+    </trkpt>
+    <trkpt lat="24.832393" lon="121.746624">
+      <ele>98.3</ele>
+    </trkpt>
+    <trkpt lat="24.832593" lon="121.746409">
+      <ele>108.5</ele>
+    </trkpt>
+    <trkpt lat="24.832725" lon="121.746352">
+      <ele>112.3</ele>
+    </trkpt>
+    <trkpt lat="24.83273" lon="121.746407">
+      <ele>116.0</ele>
+    </trkpt>
+    <trkpt lat="24.833118" lon="121.746405">
+      <ele>130.8</ele>
+    </trkpt>
+    <trkpt lat="24.833191" lon="121.746283">
+      <ele>134.5</ele>
+    </trkpt>
+    <trkpt lat="24.833445" lon="121.746358">
+      <ele>145.8</ele>
+    </trkpt>
+    <trkpt lat="24.833516" lon="121.746403">
+      <ele>151.4</ele>
+    </trkpt>
+    <trkpt lat="24.833628" lon="121.746512">
+      <ele>157.0</ele>
+    </trkpt>
+    <trkpt lat="24.833739" lon="121.746646">
+      <ele>162.6</ele>
+    </trkpt>
+    <trkpt lat="24.833954" lon="121.746739">
+      <ele>171.4</ele>
+    </trkpt>
+    <trkpt lat="24.83403" lon="121.746767">
+      <ele>175.0</ele>
+    </trkpt>
+    <trkpt lat="24.834093" lon="121.746754">
+      <ele>178.1</ele>
+    </trkpt>
+    <trkpt lat="24.834144" lon="121.746821">
+      <ele>180.9</ele>
+    </trkpt>
+    <trkpt lat="24.834156" lon="121.746813">
+      <ele>185.2</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

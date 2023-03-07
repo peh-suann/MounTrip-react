@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wptx1="http://www.garmin.com/xmlschemas/WaypointExtension/v1" xmlns:gpxtrx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:trp="http://www.garmin.com/xmlschemas/TripExtensions/v1" xmlns:adv="http://www.garmin.com/xmlschemas/AdventuresExtensions/v1" xmlns:prs="http://www.garmin.com/xmlschemas/PressureExtension/v1" xmlns:tmd="http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1" xmlns:vptm="http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1" xmlns:ctx="http://www.garmin.com/xmlschemas/CreationTimeExtension/v1" xmlns:gpxacc="http://www.garmin.com/xmlschemas/AccelerationExtension/v1" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:vidx1="http://www.garmin.com/xmlschemas/VideoExtension/v1" creator="Garmin Desktop App" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/WaypointExtension/v1 http://www8.garmin.com/xmlschemas/WaypointExtensionv1.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/ActivityExtension/v1 http://www8.garmin.com/xmlschemas/ActivityExtensionv1.xsd http://www.garmin.com/xmlschemas/AdventuresExtensions/v1 http://www8.garmin.com/xmlschemas/AdventuresExtensionv1.xsd http://www.garmin.com/xmlschemas/PressureExtension/v1 http://www.garmin.com/xmlschemas/PressureExtensionv1.xsd http://www.garmin.com/xmlschemas/TripExtensions/v1 http://www.garmin.com/xmlschemas/TripExtensionsv1.xsd http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1 http://www.garmin.com/xmlschemas/TripMetaDataExtensionsv1.xsd http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1 http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensionsv1.xsd http://www.garmin.com/xmlschemas/CreationTimeExtension/v1 http://www.garmin.com/xmlschemas/CreationTimeExtensionsv1.xsd http://www.garmin.com/xmlschemas/AccelerationExtension/v1 http://www.garmin.com/xmlschemas/AccelerationExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.garmin.com/xmlschemas/VideoExtension/v1 http://www.garmin.com/xmlschemas/VideoExtensionv1.xsd">
+
+  <metadata>
+    <name>健筆路線／象鼻岩步道</name>
+  </metadata>
+
+  <wpt lat="25.133607387542725" lon="121.82312250137329">
+    <ele>3.13671875</ele>
+    <name>象鼻岩停車場</name>
+    <sym>Parking Area</sym>
+    <type>user</type>
+  </wpt>
+
+  <wpt lat="25.135538578033447" lon="121.82460308074951">
+    <ele>13.76171875</ele>
+    <name>象鼻岩展望點</name>
+    <sym>Scenic Area</sym>
+    <type>user</type>
+  </wpt>
+
+  <trk>
+    <name>健筆路線／象鼻岩步道</name>
+    <trkseg>
+      <trkpt lat="25.133606381714344" lon="121.82312518358231">
+        <ele>3.10546875</ele>
+      </trkpt>
+      <trkpt lat="25.133733032271266" lon="121.82324588298798">
+        <ele>4.4921875</ele>
+      </trkpt>
+      <trkpt lat="25.13380846939981" lon="121.82331352494657">
+        <ele>4.8359375</ele>
+      </trkpt>
+      <trkpt lat="25.133875859901309" lon="121.82344889268279">
+        <ele>4.0390625</ele>
+      </trkpt>
+      <trkpt lat="25.133916344493628" lon="121.82351066730917">
+        <ele>4.03125</ele>
+      </trkpt>
+      <trkpt lat="25.134007958695292" lon="121.82359599508345">
+        <ele>4.92578125</ele>
+      </trkpt>
+      <trkpt lat="25.134083395823836" lon="121.82367838919163">
+        <ele>5.390625</ele>
+      </trkpt>
+      <trkpt lat="25.134177692234516" lon="121.82379607111216">
+        <ele>5.5625</ele>
+      </trkpt>
+      <trkpt lat="25.134239718317986" lon="121.82388726621866">
+        <ele>5.48828125</ele>
+      </trkpt>
+      <trkpt lat="25.134339379146695" lon="121.82397552765906">
+        <ele>5.74609375</ele>
+      </trkpt>
+      <trkpt lat="25.134428311139345" lon="121.82404618710279">
+        <ele>5.85546875</ele>
+      </trkpt>
+      <trkpt lat="25.1344876550138" lon="121.82417267002165">
+        <ele>5.16015625</ele>
+      </trkpt>
+      <trkpt lat="25.134598128497601" lon="121.82434332557023">
+        <ele>5.0703125</ele>
+      </trkpt>
+      <trkpt lat="25.134727461263537" lon="121.82459050789475">
+        <ele>4.60546875</ele>
+      </trkpt>
+      <trkpt lat="25.134786805137992" lon="121.82469938881695">
+        <ele>4.45703125</ele>
+      </trkpt>
+      <trkpt lat="25.134956538677216" lon="121.824752362445">
+        <ele>6.59375</ele>
+      </trkpt>
+      <trkpt lat="25.135153261944652" lon="121.82476703077555">
+        <ele>11.01953125</ele>
+      </trkpt>
+      <trkpt lat="25.135355433449149" lon="121.82482000440359">
+        <ele>13.2734375</ele>
+      </trkpt>
+      <trkpt lat="25.135487448424101" lon="121.82485235854983">
+        <ele>14.2890625</ele>
+      </trkpt>
+      <trkpt lat="25.13554947450757" lon="121.82478178292513">
+        <ele>14.1015625</ele>
+      </trkpt>
+      <trkpt lat="25.135544026270509" lon="121.82466996833682">
+        <ele>14.94140625</ele>
+      </trkpt>
+      <trkpt lat="25.135527849197388" lon="121.82457877323031">
+        <ele>13.55859375</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+
+</gpx>
