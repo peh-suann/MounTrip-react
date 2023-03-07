@@ -168,7 +168,7 @@ function YichunProducts() {
             <p>
               身為一名登山客，快樂登山當然也要平安回家！不論你是初級登山者、資深登山者，或是即將踏入登山的新手，都應該了解自然步道分級與分類，評估自身體能與技巧，選擇適合自己的行程再出發。
             </p>
-            <button>立即測驗</button>
+            <Button text={'立即測驗'} />
           </div>
         </section>
       </StylesContext.Provider>
