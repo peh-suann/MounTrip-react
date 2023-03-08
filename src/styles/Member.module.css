@@ -6,6 +6,7 @@
     --mtgreen-3:#add9b1;
     --mtgreen-4:#cee8cb;
     --mtgreen-5:rgba(206, 232, 203, 0.4);
+    --mtgreen-6:rgba(206, 232, 203, 0.8);
 
 
     /* secondary/yellow */
@@ -646,5 +647,89 @@ section{
     position: relative;
     right:0px;
     top:0px;
+    }
+}
+
+/* 手機版的浮動menu */
+.mobile-menu{
+    display: none;
+}
+@media screen and (max-width:390px) {
+    .mobile-menu{
+        display: block;
+        position: relative;
+        width: 100px;
+        margin: 0;
+    }
+    .mobile-dropdown-btn{
+        background-color: var(--mtgreen-4);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow:0 2px 25px 1px rgba(1, 19, 6, 0.1); 
+        margin: 0;
+        position: fixed;
+        left:10px;
+        transition: 0.2s ease-out;
+    }
+    .mobile-dropdown{
+        background-color: var(--mtgreen-6);
+        border-radius: 15px;
+        padding: 20px;
+        width: 170px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: fixed;
+        /* top:100px; */
+        left:45px;
+        transition: 0.2s ease-out;
+        box-shadow:0 2px 25px 1px rgba(1, 19, 6, 0.1)
+    }
+    .dropdown-icon{
+        transform: translateX(45%) translateY(15%);
+        position: absolute;
+    }
+    .mobile-dropdown p{
+        color: var(--mtgrey-3);
+        margin-bottom: 0;
+        
+    }
+    .mobile-dropdown.active{
+
+    }
+    .mobile-dropdown.inactive{
+
+    }
+    .mobile-wrap{
+        display: flex;
+        transition: .2s
+    }
+    .mobile-wrap:hover{
+        filter:brightness(0.75);
+        /* filter:contrast(1.3); */
+        /* filter:hue-rotate(90deg); */
+    }
+    .mobile-icon{
+        margin-right: 10px;
+        transform: translateY(-10%);
+    }
+    .mobile-member{
+
+    }
+    .mobile-coupon{
+
+    }
+    .mobile-achievement{
+
+    }
+    .mobile-history{
+
+    }
+    .mobile-comment{
+
+    }
+    .mobile-favorite{
+
     }
 }

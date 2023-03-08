@@ -494,13 +494,17 @@ section{
     }
     .badge{
         width: 100%;
-        height: 120px;
+        height: 240px;
         margin-top: 24px;
         margin-bottom: 16px;
+        margin-left: 20px;
+        /* margin-right: auto; */
     }
-    .badge img{
-        width: 215px;
-        transform: translateY(-25%);
+    .badge-pic{
+        width: 375px;
+        height: 220px;
+        /* background-position: center center; */
+        background-size: cover;
     }
     .progress-bars{
         width: 100%;

@@ -55,6 +55,7 @@ export default function LaiHistoryOrder() {
           <HistoryProduct />
           <HistoryProduct />
         </OrderCard>
+        <OrderCard />
         {/* <OrderCard /> */}
         {/* <OrderCard /> */}
         {/* <div className={styles['order-card']}>
