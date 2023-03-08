@@ -1006,6 +1006,51 @@ export default function DavisTrailsDetail() {
                         1
                       </Link>
                     </li>
+                    <li className={`page-item ${styles.li_margin}`}>
+                      <Link
+                        className={`page-link fw-bold ${styles.a_decoration}`}
+                        aria-label="Previous"
+                        to="/"
+                      >
+                        2
+                      </Link>
+                    </li>
+                    <li className={`page-item ${styles.li_margin}`}>
+                      <span
+                        className={`page-link fw-bold ${styles.a_decoration}`}
+                      >
+                        {' '}
+                        ...{' '}
+                      </span>
+                    </li>
+                    <li className={`page-item ${styles.li_margin}`}>
+                      <Link
+                        className={`page-link fw-bold ${styles.a_decoration}`}
+                        aria-label="Previous"
+                        to="/"
+                      >
+                        9
+                      </Link>
+                    </li>
+                    <li className={`page-item ${styles.li_margin}`}>
+                      <Link
+                        className={`page-link fw-bold ${styles.a_decoration}`}
+                        aria-label="Previous"
+                        to="/"
+                      >
+                        10
+                      </Link>
+                    </li>
+                    <li className={`page-item ${styles.li_margin}`}>
+                      <Link
+                        className={`page-link ${styles.a_decoration}`}
+                        aria-label="Next"
+                        to="/"
+                      >
+                        {' '}
+                        <span aria-hidden="true">&raquo;</span>
+                      </Link>
+                    </li>
                     {/* <li className="page-item li_margin">
                         <a className="page-link a_decoration fw-bold" href="#">
                           1
@@ -1044,16 +1089,17 @@ export default function DavisTrailsDetail() {
           </div>
         </section>
       </div>
-      <div class="phone_bottom d-flex d-lg-none ">
-        <div class="w-100  mb-2 shop_btn_two">
-          <div class=" d-flex flex-row align-items-center ">
-            <div class="batch col-2 col-lg-1 ">
-              <h5 class="btn_font ps-3 mb-0  lh-lg">梯次</h5>
+
+      <div className={`d-flex d-lg-none ${styles.phone_bottom}`}>
+        <div className={`w-100 mb-2 ${styles.shop_btn_two}`}>
+          <div className=" d-flex flex-row align-items-center ">
+            <div className={`col-2 col-lg-1 ${styles.batch}`}>
+              <h5 className={`ps-3 mb-0  lh-lg ${styles.btn_font}`}>梯次</h5>
             </div>
-            <div class="col d-flex justify-content-center">
-              <h5 class="mb-0">2023/01/01 - 2023/01/03</h5>
+            <div className="col d-flex justify-content-center">
+              <h5 className="mb-0">2023/01/01 - 2023/01/03</h5>
             </div>
-            <button class="btn_style">
+            <button className={`${styles.btn_style}`}>
               <svg
                 width="30"
                 height="30"
@@ -1072,10 +1118,12 @@ export default function DavisTrailsDetail() {
             </button>
           </div>
         </div>
-        <div class="w-100 d-flex flex-row ">
-          <div class="col w-100 d-flex flex-row btn_group">
-            <div class="col-4 shop_btn_one d-flex flex-row align-items-center">
-              <button class="btn_style">
+        <div className="w-100 d-flex flex-row ">
+          <div className={`col w-100 d-flex flex-row ${styles.btn_group}`}>
+            <div
+              className={`col-4 d-flex flex-row align-items-center ${styles.shop_btn_one}`}
+            >
+              <button className={`${styles.btn_style}`}>
                 <svg
                   width="24"
                   height="25"
@@ -1092,8 +1140,8 @@ export default function DavisTrailsDetail() {
                   />
                 </svg>
               </button>
-              <h5 class="col h5_count">1</h5>
-              <button class="btn_style">
+              <h5 className={`col ${styles.h5_count}`}>1</h5>
+              <button className={`${styles.btn_style}`}>
                 <svg
                   width="24"
                   height="25"
@@ -1118,11 +1166,13 @@ export default function DavisTrailsDetail() {
                 </svg>
               </button>
             </div>
-            <button class="col shop_btn_three d-flex flex-row justify-content-center">
-              <h5 class="btn_font mb-0 lh-lg  ">加入購物車</h5>
+            <button
+              className={`col d-flex flex-row justify-content-center ${styles.shop_btn_three}`}
+            >
+              <h5 className={`mb-0 lh-lg ${styles.btn_font}`}>加入購物車</h5>
               <span>
                 <svg
-                  class="mt-2"
+                  className="mt-2"
                   width="24"
                   height="25"
                   viewBox="0 0 24 25"

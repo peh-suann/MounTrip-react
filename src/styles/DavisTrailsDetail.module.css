@@ -289,7 +289,7 @@ body {
   margin: 4px;
 }
 
-.pagination .a_decoration {
+.pagination_nav .a_decoration {
   color: var(--mtgreen-1);
   border-radius: 5px;
   border: 1px solid var(--mtgreen-4);
