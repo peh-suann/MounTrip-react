@@ -78,18 +78,6 @@ function KexinIndex() {
         .on('mouseout', mouseOutHandler)
         .on('click', clickHandler)
 
-      // d3.select("svg").on("dblclick.zoom", null);
-
-      d3.select(mapRef.current).on('click', clickReset)
-
-      // function clickReset(e) {
-      //   if (e.target.style.fill == 'none') {
-      //     console.log('reset')
-      //     svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
-      //     d3.select(mapRef.current).selectAll("path").style("fill", "rgba(10, 140, 45, 0.2)");
-      //   }
-      //   // d3.select(mapRef.current)
-      // }
     }
 
   }, [])
