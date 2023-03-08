@@ -4,7 +4,7 @@ import styles from './../styles/Button.module.css'
 export default function Button(props) {
   const { text, iconFront, iconEnd } = props
   return (
-    <button>
+    <button className={styles.btn}>
       {iconFront ? (
         <svg
           width="20"

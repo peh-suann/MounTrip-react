@@ -1,0 +1,28 @@
+.calendarWrap {
+    position: relative;
+    width: 300px;
+  }
+.calendarWrap input{
+      width: 100%;
+  }
+.calendarElement {
+    position: absolute;
+    top: 50px;
+    left: -97px;
+  
+    /* background-color: #d9e8d7; */
+    background-color: var(--mtyellow-4);
+    font-size: 16px;
+    border-radius: 10px;
+  }
+.calendarWrap .calendarElement span{
+    /* color: var(--mtgrey-3); */
+    font-weight: 500;
+  }
+  .calendarWrap .calendarElement span:after{
+    background: var(--mtgreen-1);
+  }
+.calendarWrap input {
+    user-select: none;
+  }
+  

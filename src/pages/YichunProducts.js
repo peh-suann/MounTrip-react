@@ -11,7 +11,7 @@ import Button from '../components/Button'
 // Connections
 import { PRODUCTS } from '../connections/api-config'
 
-// CSS
+// Styles
 import styles from './../styles/yichun_styles/YichunProducts.module.css'
 export const StylesContext = createContext(styles)
 
