@@ -13,11 +13,13 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Home from './components/Home'
 
+import Iantext from './components/Iantext'
+
 function App() {
   return (
     <>
       <Router>
-        <NavBar />
+        {/* <NavBar /> */}
         <Routes>
           {/* <Home /> */}
           {/* <h1>hey</h1> */}
@@ -28,8 +30,9 @@ function App() {
           <Route path="/SC2" element={<IanShoppingCart2 />} />
           <Route path="/SC3" element={<IanShoppingCart3 />} />
           <Route path="/SC4" element={<IanShoppingCart4 />} />
+          <Route path="/I" element={<Iantext />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   )

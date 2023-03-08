@@ -1,0 +1,15 @@
+.wrap{
+    padding: 10%;
+    height: 50vh;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+}
+    .box2{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}

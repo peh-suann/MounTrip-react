@@ -1,9 +1,25 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import styles from '../styles/IanDifficulty.module.css'
 // import Footer from './Footer'
 import IanDifficultyMountain from '../components/IanDifficultyMountain'
+import { TRAILS_DIFF } from '../connections/api-config'
 
-export default function IanDifficulty() {
+function IanDifficulty() {
+  const [diff, setDiff] = useState({
+    rows: [],
+  })
+
+  const getDifficultData = async () => {
+    const r = await fetch(TRAILS_DIFF)
+    const json = await r.json()
+    console.log(json)
+    setDiff(json)
+  }
+
+  useEffect(() => {
+    getDifficultData()
+  }, [])
+
   return (
     <>
       {/* difficultyMountain  */}
@@ -48,49 +64,55 @@ export default function IanDifficulty() {
         </div>
         <div className={styles.tPSSection_cards}>
           <div className={'w-100 d-flex flex-wrap'}>
-            <div className={'col-12 p-3 col-lg-4 pe-lg-2'}>
-              <div className={styles.overflowpic1}>
-                <div className={styles.tPSSCard_pic1}></div>
-                <div
-                  className={`${styles.tPSSCard_bottom} d-flex justify-content-between`}
-                >
-                  <div className={'d-flex align-items-center'}>
-                    <svg
-                      width="17"
-                      height="17"
-                      viewBox="0 0 17 17"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+            {diff.rows.map((v, i) => {
+              return (
+                <div className={'col-12 p-3 col-lg-4 pe-lg-2'}>
+                  <div className={styles.overflowpic1}>
+                    <div className={styles.tPSSCard_pic1}></div>
+                    <div
+                      className={`${styles.tPSSCard_bottom} d-flex justify-content-between`}
                     >
-                      <path
-                        d="M8.49967 1.83398L10.5597 6.00732L15.1663 6.68065L11.833 9.92732L12.6197 14.514L8.49967 12.3473L4.37967 14.514L5.16634 9.92732L1.83301 6.68065L6.43967 6.00732L8.49967 1.83398Z"
-                        fill="#CEE8CB"
-                      />
-                    </svg>
-                    <p className={'ms-1'}>4.5</p>
+                      <div className={'d-flex align-items-center'}>
+                        <svg
+                          width="17"
+                          height="17"
+                          viewBox="0 0 17 17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.49967 1.83398L10.5597 6.00732L15.1663 6.68065L11.833 9.92732L12.6197 14.514L8.49967 12.3473L4.37967 14.514L5.16634 9.92732L1.83301 6.68065L6.43967 6.00732L8.49967 1.83398Z"
+                            fill="#CEE8CB"
+                          />
+                        </svg>
+                        <p className={'ms-1'}>4.5</p>
+                      </div>
+                      <div className={'d-flex'}>
+                        <p>難度</p>
+                        <p className={'ms-2'}>{v.difficulty_list_sid}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className={'d-flex'}>
-                    <p>難度</p>
-                    <p className={'ms-2'}>EASY</p>
+                  <div
+                    className={`${styles.tPSSCard_body} d-flex justify-content-between`}
+                  >
+                    <div>
+                      <p className={`${styles.first_p} mb-1`}>{v.trail_name}</p>
+                      <p>
+                        {v.geo_location_sid}
+                        {v.geo_location_town_sid}
+                      </p>
+                    </div>
+                    <div>
+                      <p className={'d-flex justify-content-end mb-1'}>NTD</p>
+                      <p>{v.price}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div
-                className={`${styles.tPSSCard_body} d-flex justify-content-between`}
-              >
-                <div>
-                  <p className={`${styles.first_p} mb-1`}>
-                    草嶺古道 | 探索新北一日遊
-                  </p>
-                  <p>新北市雙溪區</p>
-                </div>
-                <div>
-                  <p className={'d-flex justify-content-end mb-1'}>NTD</p>
-                  <p>1,200</p>
-                </div>
-              </div>
-            </div>
-            <div className={'col-12 p-3 col-lg-4 px-lg-2'}>
+              )
+            })}
+
+            {/* <div className={'col-12 p-3 col-lg-4 px-lg-2'}>
               <div className={styles.overflowpic1}>
                 <div className={styles.tPSSCard_pic2}></div>
                 <div
@@ -262,7 +284,7 @@ export default function IanDifficulty() {
                 </div>
               </div>
             </div>
-            <div className={'col-12 p-3 col-lg-4 px-lg-2'}>
+            <div className={'col-12 p-3 col-lg-4 px-lg-2'}> 
               <div className={styles.overflowpic1}>
                 <div className={styles.tPSSCard_pic6}></div>
                 <div
@@ -304,7 +326,7 @@ export default function IanDifficulty() {
                   <p>1,200</p>
                 </div>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
         {/* button  */}
@@ -332,3 +354,4 @@ export default function IanDifficulty() {
     </>
   )
 }
+export default IanDifficulty

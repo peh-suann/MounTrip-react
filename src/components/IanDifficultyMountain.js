@@ -2,27 +2,29 @@ import React, { useState } from 'react'
 import styles from '../styles/IanDifficulty.module.css'
 function IanDifficultyMountain() {
   const [clickClass, setClickClass] = useState('')
-  const transX = () => {
-    return (
-      <>
-        <svg
-          style={`tansform:translateY("200px")`}
-          width="42"
-          height="61"
-          viewBox="0 0 42 61"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M35 19.0158L3 4V32.1545L35 19.0158Z" fill="#6CBA7C" />
-          <path
-            d="M3 61V32.1545M3 32.1545V4L35 19.0158L3 32.1545Z"
-            stroke="#6CBA7C"
-            stroke-width="5"
-          />
-        </svg>
-      </>
-    )
-  }
+  // const transX = () => {
+  //   const a = '200px'
+  //   const css = { transform: `translateY(${a})` }
+  //   return (
+  //     <>
+  //       <svg
+  //         style={css}
+  //         width="42"
+  //         height="61"
+  //         viewBox="0 0 42 61"
+  //         fill="none"
+  //         xmlns="http://www.w3.org/2000/svg"
+  //       >
+  //         <path d="M35 19.0158L3 4V32.1545L35 19.0158Z" fill="#6CBA7C" />
+  //         <path
+  //           d="M3 61V32.1545M3 32.1545V4L35 19.0158L3 32.1545Z"
+  //           stroke="#6CBA7C"
+  //           stroke-width="5"
+  //         />
+  //       </svg>
+  //     </>
+  //   )
+  // }
   return (
     <>
       {/* focus */}
@@ -333,9 +335,9 @@ function IanDifficultyMountain() {
       <div className={styles.dMountain_medium}>
         <svg
           className={styles.medium_svg}
-          onClick={(e) => {
-            setClickClass(transX)
-          }}
+          // onClick={(e) => {
+          //   setClickClass(transX)
+          // }}
           width="748"
           height="152"
           viewBox="0 0 748 152"

@@ -212,6 +212,7 @@ button.w-100 {
   }
 
   .bg-image {
+    height: 130vh;
     background: none;
     background-color: var(--mtyellow-4);
   }
