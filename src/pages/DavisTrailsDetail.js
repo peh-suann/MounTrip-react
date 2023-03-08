@@ -863,7 +863,7 @@ export default function DavisTrailsDetail() {
                 className={`col d-flex flex-row pb-3 mb-5 ${styles.card_b_b}`}
               >
                 {/* head picture (left col-1) */}
-                <div className="col-1 rounded-circle "></div>
+                <div className={`col-1 ${styles.rounded_circle}`}></div>
                 {/* --commont content (right col) */}
                 <div className="col d-flex flex-column ">
                   {/* level1 */}
