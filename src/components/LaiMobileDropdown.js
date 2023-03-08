@@ -13,7 +13,7 @@ const LaiMobileDropdown = React.forwardRef((props, ref) => {
       <div
         className={styles['mobile-dropdown']}
         ref={ref}
-        style={{ top: `${scrollPosition}px` }}
+        style={{ top: `${scrollPosition}%` }}
       >
         <div
           onClick={() => {

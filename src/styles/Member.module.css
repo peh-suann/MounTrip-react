@@ -7,6 +7,7 @@
     --mtgreen-4:#cee8cb;
     --mtgreen-5:rgba(206, 232, 203, 0.4);
     --mtgreen-6:rgba(206, 232, 203, 0.8);
+    --mtgreen-7:#bbdab8;
 
 
     /* secondary/yellow */
@@ -72,7 +73,7 @@ section{
     /* z-index: 2; */
 }
 .pic-btn:hover{
-    border: 4px solid var(--mtyellow-3);
+    border: 4px solid var(--mtgreen-7);
     background-color: var(--mtgreen-1);
 }
 
@@ -87,7 +88,7 @@ section{
 }
 .camera{
     /* position: absolute; */
-    transform: translateX(50%) translateY(38%);
+    transform: translateX(50%) translateY(30%);
 }
 
 /* 會員姓名帳號 */
@@ -143,42 +144,65 @@ section{
     margin-top: 40px;
 }
 .sidebar-menu{
-    margin-top: 40px;
+    margin-top: 30px;
     /* display: flex; */
     /* flex-direction: row; */
     
 }
 .sidebar-menu li{
-    margin-bottom: 18px;
+    /* margin-bottom: 18px; */
+    
+   
     list-style: none;
 }
-.sidebar-menu a{
-    text-decoration: none;
-    color:var(--mtgrey-3);
-    font-size: 20px;
-    font-weight: 400;
-}
-.sidebar-menu a:hover{
-    font-weight: 700;
-}
-.sidebar-menu button{
+
+.sidebar-menu li{
     text-decoration: none;
     border: none;
     background-color: var(--mtyellow-4);
     color:var(--mtgrey-3);
+    border-radius: 10px;
     font-size: 20px;
     font-weight: 400;
-    transition: .2s ;
+    transition: .1s ;
+}
+.sidebar-menu li:hover{
+    /* background-color:  #bbdab8; */
+    background-color: var(--mtgreen-7);
+    
+}
+.sidebar-menu button{
+    text-decoration: none;
+    border: none;
+    background-color: inherit;
+    color:var(--mtgrey-3);
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 100px;
+    padding-left: 10px;
+    border-radius: 10px;
+    /* transition: .2s ; */
 }
 .sidebar-menu button:hover{
-    /* filter: hue-rotate(45deg); */
-    filter: sepia(100%);
-    /* filter:drop-shadow(15px 15px 20px var(--mtgreen-3)); */
+    background-color: var(--mtgreen-7);
     font-weight: 700;
 }
 .menu-icon{
     margin-right: 10px;
     transform: translateY(-10%);
+}
+
+/* 頁面渲染時該頁面的sidebar-tag背景色也會改變用的 */
+.active{
+    background-color: var(--mtgreen-7);
+}
+.coupon-link{
+
+}
+.achievement-link{
+    
 }
 
 
@@ -669,22 +693,24 @@ section{
         box-shadow:0 2px 25px 1px rgba(1, 19, 6, 0.1); 
         margin: 0;
         position: fixed;
-        left:10px;
-        transition: 0.2s ease-out;
+        left:5px;
+        transition: 0.4s cubic-bezier(0,.37,.79,1.29);
+        z-index: 2;
     }
     .mobile-dropdown{
-        background-color: var(--mtgreen-6);
+        background-color: var(--mtgreen-4);
         border-radius: 15px;
-        padding: 20px;
+        /* padding: 20px; */
         width: 170px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        /* gap: 10px; */
         position: fixed;
         /* top:100px; */
         left:45px;
-        transition: 0.2s ease-out;
-        box-shadow:0 2px 25px 1px rgba(1, 19, 6, 0.1)
+        transition: 0.4s cubic-bezier(0,.37,.79,1.29);
+        box-shadow:0 2px 25px 1px rgba(1, 19, 6, 0.1);
+        z-index: 3;
     }
     .dropdown-icon{
         transform: translateX(45%) translateY(15%);
@@ -703,12 +729,23 @@ section{
     }
     .mobile-wrap{
         display: flex;
-        transition: .2s
+        transition: .2s;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        transition: 0.2s ease-in;
+    }
+    .mobile-wrap:first-child{
+        border-radius: 15px 15px 0 0;
+    }
+    .mobile-wrap:last-child{
+        border-radius: 0 0 15px 15px;
     }
     .mobile-wrap:hover{
-        filter:brightness(0.75);
-        /* filter:contrast(1.3); */
-        /* filter:hue-rotate(90deg); */
+        background-color: #bbdab8;
+        font-weight: 700;
+       
     }
     .mobile-icon{
         margin-right: 10px;

@@ -18,6 +18,25 @@ export default function Member() {
   const handleDisplayPage = (page) => {
     setDisplayPage(page)
   }
+  //電腦版的sidebar-tag 在該頁面會有active的樣式
+  useEffect(() => {
+    switch (displayPage) {
+      case 'member':
+        break
+      case 'coupon':
+        const couponLink = document.querySelector(`.${styles['coupon-link']}`)
+        couponLink.classList.add('active')
+        console.log(couponLink)
+
+      case 'achievement':
+        const achievementLink = document.querySelector(
+          `.${styles['achievement-link']}`
+        )
+        achievementLink.classList.toggle('active')
+        console.log(achievementLink)
+    }
+    return
+  }, [])
   //手機版的menu 開河狀態
   const [mobileMenu, setMobileMenu] = useState(false)
 
@@ -49,6 +68,12 @@ export default function Member() {
     }
   }, [])
 
+  //設定與瀏覽器視窗的比例關係
+  const windowHeight = window.innerHeight
+  const btnTopPosition = Math.max(
+    15,
+    Math.min(60, (scrollPosition / windowHeight) * 100)
+  )
   return (
     <>
       <div className={styles['grid-container']}>
@@ -294,7 +319,7 @@ export default function Member() {
       <div className={styles['mobile-menu']}>
         <div
           className={styles['mobile-dropdown-btn']}
-          style={{ top: `${scrollPosition}px` }}
+          style={{ top: `${btnTopPosition}%` }}
           onClick={() => {
             setMobileMenu(!mobileMenu)
           }}
@@ -335,7 +360,7 @@ export default function Member() {
             displayPage={displayPage}
             setDisplayPage={setDisplayPage}
             ref={menuRef}
-            scrollPosition={scrollPosition}
+            scrollPosition={btnTopPosition}
           />
         )}
         {/* <div className={styles['mobile-dropdown']}>
