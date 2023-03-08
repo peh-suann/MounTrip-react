@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom'
 // import styles from '../styles/Mountrip.module.css'
 import styles from '../styles/DavisTrailsDetail.module.css'
 
-// import '../html/css/trails_filter.css'
-
 export default function DavisTrailsDetail() {
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
@@ -778,9 +776,13 @@ export default function DavisTrailsDetail() {
           {/*commont card */}
           <div className="d-flex flex-column flex-lg-row ">
             {/* left-card */}
-            <div className="col col-lg-3 d-flex flex-lg-row left_card align-content-center mb-3">
-              <div className="col-lg-2 rate_point me-3 col-4 rounded-3">
-                <h1 className="point_h1 mb-0 lh-lg">4.5</h1>
+            <div
+              className={`col col-lg-3 d-flex flex-lg-row align-content-center mb-3 ${styles.left_card}`}
+            >
+              <div
+                className={`col-lg-2  me-3 col-4 rounded-3 ${styles.rate_point}`}
+              >
+                <h1 className={`mb-0 lh-lg ${styles.point_h1}`}>4.5</h1>
               </div>
 
               <div className="col-8 d-flex flex-column ">
@@ -857,8 +859,10 @@ export default function DavisTrailsDetail() {
             {/* right-card */}
             <div className="col d-flex flex-column">
               {/* right-card * n */}
-              <div className="col d-flex flex-row pb-3 mb-5 card-b-b">
-                {/* FIXME: head picture (left col-1) */}
+              <div
+                className={`col d-flex flex-row pb-3 mb-5 ${styles.card_b_b}`}
+              >
+                {/* head picture (left col-1) */}
                 <div className="col-1 rounded-circle "></div>
                 {/* --commont content (right col) */}
                 <div className="col d-flex flex-column ">
@@ -866,12 +870,14 @@ export default function DavisTrailsDetail() {
                   <div className="col d-flex flex-row mb-3">
                     <h5 className="mb-0 me-3">Lorem</h5>
                     <div className="">
-                      <p className="mb-0 member_ca">超級嚮導</p>
+                      <p className={`mb-0 ${styles.member_ca}`}>超級嚮導</p>
                     </div>
                   </div>
                   {/* level2 */}
                   <div className="col d-flex flex-row mb-3">
-                    <div className="star col-5 col-lg-2 d-flex flex-row ">
+                    <div
+                      className={`col-5 col-lg-2 d-flex flex-row ${styles.star}`}
+                    >
                       <svg
                         width="16"
                         height="17"
@@ -942,25 +948,27 @@ export default function DavisTrailsDetail() {
                   <div className="col d-flex flex-column flex-lg-row">
                     <div className="col col-lg-7 ">
                       {/* FIXME:若評論為中文字則左右對齊 */}
-                      <p className="commont_p ">
+                      <p className={`${styles.commont_p}`}>
                         內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字。
                       </p>
                     </div>
                     {/* imges */}
                     <div className="col col-lg-5 d-flex flex-row">
                       <img
-                        className="img_cover me-1"
-                        src="./../imgs/3-1.jpg"
+                        className={`me-1 ${styles.img_cover}`}
+                        src="./imgs/Davis/3-1.jpg"
                         alt=""
                       />
                       <img
-                        className="img_cover me-1"
-                        src="./../imgs/4-1.jpg"
+                        className={`me-1 ${styles.img_cover}`}
+                        src="./imgs/Davis/4-1.jpg"
                         alt=""
                       />
                       {/* FIXME: background url 寫在css 要如何置換圖片 */}
                       {/* <img className="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> */}
-                      <div className="img_wrap d-flex justify-content-around">
+                      <div
+                        className={`d-flex justify-content-around ${styles.img_wrap}`}
+                      >
                         <h4 className="mb-0 lh-lg fw-bold align-self-center ">
                           +2張
                         </h4>
@@ -971,51 +979,168 @@ export default function DavisTrailsDetail() {
               </div>
 
               {/* pagination */}
-              <div className=" page-bar col d-none d-lg-flex align-self-center">
+              <div
+                className={`page-bar col d-none d-lg-flex align-self-center ${styles.details_pagination}`}
+              >
                 <nav
-                  className="pagination_nav"
+                  className={`${styles.pagination_nav}`}
                   aria-label=" Page navigation example"
                 >
                   <ul className="pagination ">
-                    <li className="page-item">
-                      <a className="page-link" href="#" aria-label="Previous">
+                    <li className={`page-item ${styles.li_margin}`}>
+                      <Link
+                        className={`page-link ${styles.a_decoration}`}
+                        aria-label="Previous"
+                        to="/"
+                      >
+                        {' '}
                         <span aria-hidden="true">&laquo;</span>
-                      </a>
+                      </Link>
                     </li>
-                    <li className="page-item">
-                      <a className="page-link fw-bold" href="#">
+                    <li className={`page-item ${styles.li_margin}`}>
+                      <Link
+                        className={`page-link fw-bold ${styles.a_decoration}`}
+                        aria-label="Previous"
+                        to="/"
+                      >
                         1
-                      </a>
+                      </Link>
                     </li>
-                    <li className="page-item">
-                      <a className="page-link fw-bold" href="#">
-                        2
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <span className="page-link fw-bold"> ... </span>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link fw-bold" href="#">
-                        9
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link fw-bold" href="#">
-                        10
-                      </a>
-                    </li>
-                    <li className="page-item">
-                      <a className="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                      </a>
-                    </li>
+                    {/* <li className="page-item li_margin">
+                        <a className="page-link a_decoration fw-bold" href="#">
+                          1
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link a_decoration fw-bold" href="#">
+                          2
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <span className="page-link a_decoration fw-bold">
+                          {' '}
+                          ...{' '}
+                        </span>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link a_decoration fw-bold" href="#">
+                          9
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link fw-bold" href="#">
+                          10
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li> */}
                   </ul>
                 </nav>
               </div>
             </div>
           </div>
         </section>
+      </div>
+      <div class="phone_bottom d-flex d-lg-none ">
+        <div class="w-100  mb-2 shop_btn_two">
+          <div class=" d-flex flex-row align-items-center ">
+            <div class="batch col-2 col-lg-1 ">
+              <h5 class="btn_font ps-3 mb-0  lh-lg">梯次</h5>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <h5 class="mb-0">2023/01/01 - 2023/01/03</h5>
+            </div>
+            <button class="btn_style">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.25 25L21.25 15L11.25 5"
+                  stroke="#6CBA7C"
+                  stroke-width="3.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="w-100 d-flex flex-row ">
+          <div class="col w-100 d-flex flex-row btn_group">
+            <div class="col-4 shop_btn_one d-flex flex-row align-items-center">
+              <button class="btn_style">
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12.5H19"
+                    stroke="#6CBA7C"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <h5 class="col h5_count">1</h5>
+              <button class="btn_style">
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 5.5V19.5"
+                    stroke="#6CBA7C"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M5 12.5H19"
+                    stroke="#6CBA7C"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button class="col shop_btn_three d-flex flex-row justify-content-center">
+              <h5 class="btn_font mb-0 lh-lg  ">加入購物車</h5>
+              <span>
+                <svg
+                  class="mt-2"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 18.5L15 12.5L9 6.5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     </>
   )

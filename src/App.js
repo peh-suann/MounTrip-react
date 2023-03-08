@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Router>
-        {/* <NavBar /> */}
+        <NavBar />
         <Routes>
           {/* <Home /> */}
           {/* <h1>hey</h1> */}

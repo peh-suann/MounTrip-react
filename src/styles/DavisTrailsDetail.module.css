@@ -223,7 +223,7 @@ body {
 
 /* commont card: right-card * n */
 
-.card-b-b {
+.card_b_b {
   border-bottom: 1px solid var(--mtgrey-3);
 }
 
@@ -276,20 +276,20 @@ body {
 
 
 /* pagination */
-.page-bar .pagination_nav {
+.details_pagination .pagination_nav {
   position: relative;
   padding: 0px;
 }
 
-nav .page-bar {
+/* nav .page-bar {
   background-color: transparent;
-}
+} */
 
-.page-item {
+.pagination_nav .li_margin {
   margin: 4px;
 }
 
-.pagination .page-link {
+.pagination .a_decoration {
   color: var(--mtgreen-1);
   border-radius: 5px;
   border: 1px solid var(--mtgreen-4);
