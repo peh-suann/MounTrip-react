@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import TestMemberList from './pages/TestMemberList'
 import DavisTrailsDetail from './pages/DavisTrailsDetail'
+import DavisTrailsFilter from './pages/DavisTrailsFilter'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/member-list" element={<TestMemberList />} />
           <Route path="/trails-detail" element={<DavisTrailsDetail />} />
+          <Route path="/trails-filter" element={<DavisTrailsFilter />} />
           {/* <Route path="/" element={<Home />} /> */}
         </Routes>
       </Router>

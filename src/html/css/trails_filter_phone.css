@@ -117,6 +117,10 @@
     color: var(--mtgreen-4);    
   }
 
+  .trails_img_wrap{
+    /* overflow: hidden */
+  }
+
   .img_style {
     width: 100%;
     object-fit: cover;
@@ -124,6 +128,7 @@
     margin-bottom: 8px;
     border-radius: 10px;
   }
+  
 
   .phone_h6_sub_t {
     font-weight: 700;
