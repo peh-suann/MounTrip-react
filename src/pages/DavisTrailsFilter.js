@@ -1,19 +1,20 @@
 import React from 'react'
 import styles from '../styles/DavisTrailsFilter.module.css'
+import { Link } from 'react-router-dom'
 
 function DavisTrailsFilter() {
   return (
     <>
       <main>
-        <div className="d-none d-lg-flex flex-row main_all ">
+        <div className={`d-none d-lg-flex flex-row ${styles.main_all}`}>
           <div
             className={`card-body d-flex flex-column ${styles['card_padding']} ${styles['left_card']} `}
           >
             <h5 className="h5-sub-title">搜尋</h5>
-            <div className="d-flex flex-column search">
-              <p className="mb-0 p-content">目的地</p>
+            <div className={`d-flex flex-column ${styles.search}`}>
+              <p className={`mb-0 ${styles.p_content}`}>目的地</p>
               <div className={`d-flex flex-row ${styles.input_with_icon}`}>
-                <span className="icon_span col">
+                <span className={`col ${styles.icon_span}`}>
                   <svg
                     className={`${styles.icon_size}`}
                     width="21"
@@ -42,10 +43,10 @@ function DavisTrailsFilter() {
               </div>
             </div>
 
-            <div className="d-flex flex-column search">
-              <p className="mb-0 p-content">出發日期</p>
+            <div className={`d-flex flex-column ${styles.search}`}>
+              <p className={`mb-0 ${styles.p_content}`}>出發日期</p>
               <div className={`d-flex flex-row ${styles.input_with_icon}`}>
-                <span className="icon_span ">
+                <span className={`${styles.icon_span}`}>
                   <svg
                     className={`${styles.icon_size}`}
                     width="20"
@@ -91,10 +92,10 @@ function DavisTrailsFilter() {
               </div>
             </div>
 
-            <div className="d-flex flex-column search">
-              <p className="mb-0 p-content">返程日期</p>
+            <div className={`d-flex flex-column ${styles.search}`}>
+              <p className={`mb-0 ${styles.p_content}`}>返程日期</p>
               <div className={`d-flex flex-row ${styles.input_with_icon}`}>
-                <span className="icon_span ">
+                <span className={`${styles.icon_span}`}>
                   <svg
                     className={`${styles.icon_size}`}
                     width="20"
@@ -140,10 +141,10 @@ function DavisTrailsFilter() {
               </div>
             </div>
 
-            <div className="d-flex flex-column search_count">
-              <p className="mb-0 p-content">人數</p>
+            <div className={`d-flex flex-column ${styles.search_count}`}>
+              <p className={`mb-0 ${styles.p_content}`}>人數</p>
               <div className={`d-flex flex-row ${styles.input_with_icon}`}>
-                <span className="icon_span col">
+                <span className={`col ${styles.icon_span}`}>
                   <svg
                     className={`${styles.icon_size}`}
                     width="20"
@@ -173,17 +174,16 @@ function DavisTrailsFilter() {
                 </div>
               </div>
             </div>
-
-            <button type="button" className="btn-search ">
+            <button className={`${styles.btn_search}`} type="button">
               搜尋
             </button>
           </div>
-          <div className="right-card d-flex flex-column ">
-            <div className="sub_title">
+          <div className={` d-flex flex-column ${styles.right_card}`}>
+            <div className={`${styles.sub_title}`}>
               <div className="d-flex p-0">
                 <span className=" d-none d-lg-flex">
                   <svg
-                    className="Vector_long"
+                    className={`${styles.Vector_long}`}
                     width="300px"
                     height="20"
                     viewBox="0 0 380 20"
@@ -199,13 +199,13 @@ function DavisTrailsFilter() {
                   </svg>
                 </span>
                 <div className="">
-                  <h5 className="h5-sub-title-search">
+                  <h5 className={`${styles.h5_sub_title_search}`}>
                     「草嶺古道」的搜尋結果
                   </h5>
                 </div>
                 <span className=" d-none d-lg-flex">
                   <svg
-                    className="Vector_long"
+                    className={`${styles.Vector_long}`}
                     width="300px"
                     height="20"
                     viewBox="0 0 380 20"
@@ -222,24 +222,26 @@ function DavisTrailsFilter() {
                 </span>
               </div>
             </div>
-
             <div className="col">
-              <div className=" trails_card ">
+              {/* card*n */}
+              <div className={`${styles.trails_card}`}>
                 <div className="row g-0 d-flex flex-row ">
-                  <div className="col-4 trails_img_wrap ">
+                  <div className={`col-4 ${styles.trails_img_wrap}`}>
                     <img
-                      src="./../imgs/5-1.jpg"
-                      className="trails_img rounded-start"
+                      src="./imgs/Davis/5-1.jpg"
+                      className={`rounded-start ${styles.trails_img}`}
                       alt="..."
                     />
                   </div>
                   <div className="col ">
-                    <div className="card-body card_padding">
-                      <h5 className="product-name">
+                    <div className={`card-body ${styles.card_padding}`}>
+                      <h5 className={`${styles.product_name}`}>
                         草嶺古道｜探索新北一日遊探索新北一日遊
                       </h5>
                       <div className="mb-2">
-                        <p className="overflow_p p_line_clamp mb-0">
+                        <p
+                          className={`mb-0 ${styles['overflow_p']} ${styles['p_line_clamp']} `}
+                        >
                           你見過南橫之美嗎？
                           <br />
                           自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
@@ -335,12 +337,14 @@ function DavisTrailsFilter() {
                         </span>
                       </div>
                       <div className="col">
-                        <h3 className="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
+                        <h3 className={`mb-0 fw-bolder ${styles.price_h3}`}>
+                          NTD 1,200
+                        </h3>
                       </div>
                     </div>
                   </div>
                   <div className="col-1  d-flex justify-content-end align-items-start">
-                    <button className="heart_btn">
+                    <button className={`${styles.heart_btn}`}>
                       <svg
                         width="50"
                         height="75"
@@ -360,22 +364,24 @@ function DavisTrailsFilter() {
                   </div>
                 </div>
               </div>
-              <div className=" trails_card ">
+              <div className={`${styles.trails_card}`}>
                 <div className="row g-0 d-flex flex-row ">
-                  <div className="col-4 trails_img_wrap ">
+                  <div className={`col-4 ${styles.trails_img_wrap}`}>
                     <img
-                      src="./imgs/5-1.jpg"
-                      className="trails_img rounded-start"
+                      src="./imgs/Davis/5-1.jpg"
+                      className={`rounded-start ${styles.trails_img}`}
                       alt="..."
                     />
                   </div>
                   <div className="col ">
-                    <div className="card-body card_padding">
-                      <h5 className="product-name">
+                    <div className={`card-body ${styles.card_padding}`}>
+                      <h5 className={`${styles.product_name}`}>
                         草嶺古道｜探索新北一日遊探索新北一日遊
                       </h5>
                       <div className="mb-2">
-                        <p className="overflow_p p_line_clamp mb-0">
+                        <p
+                          className={`mb-0 ${styles['overflow_p']} ${styles['p_line_clamp']} `}
+                        >
                           你見過南橫之美嗎？
                           <br />
                           自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
@@ -471,12 +477,14 @@ function DavisTrailsFilter() {
                         </span>
                       </div>
                       <div className="col">
-                        <h3 className="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
+                        <h3 className={`mb-0 fw-bolder ${styles.price_h3}`}>
+                          NTD 1,200
+                        </h3>
                       </div>
                     </div>
                   </div>
                   <div className="col-1  d-flex justify-content-end align-items-start">
-                    <button className="heart_btn">
+                    <button className={`${styles.heart_btn}`}>
                       <svg
                         width="50"
                         height="75"
@@ -496,22 +504,24 @@ function DavisTrailsFilter() {
                   </div>
                 </div>
               </div>
-              <div className=" trails_card ">
+              <div className={`${styles.trails_card}`}>
                 <div className="row g-0 d-flex flex-row ">
-                  <div className="col-4 trails_img_wrap ">
+                  <div className={`col-4 ${styles.trails_img_wrap}`}>
                     <img
-                      src="./imgs/5-1.jpg"
-                      className="trails_img rounded-start"
+                      src="./imgs/Davis/5-1.jpg"
+                      className={`rounded-start ${styles.trails_img}`}
                       alt="..."
                     />
                   </div>
                   <div className="col ">
-                    <div className="card-body card_padding">
-                      <h5 className="product-name">
+                    <div className={`card-body ${styles.card_padding}`}>
+                      <h5 className={`${styles.product_name}`}>
                         草嶺古道｜探索新北一日遊探索新北一日遊
                       </h5>
                       <div className="mb-2">
-                        <p className="overflow_p p_line_clamp mb-0">
+                        <p
+                          className={`mb-0 ${styles['overflow_p']} ${styles['p_line_clamp']} `}
+                        >
                           你見過南橫之美嗎？
                           <br />
                           自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。
@@ -607,12 +617,14 @@ function DavisTrailsFilter() {
                         </span>
                       </div>
                       <div className="col">
-                        <h3 className="mb-0 price_h3 fw-bolder">NTD 1,200</h3>
+                        <h3 className={`mb-0 fw-bolder ${styles.price_h3}`}>
+                          NTD 1,200
+                        </h3>
                       </div>
                     </div>
                   </div>
                   <div className="col-1  d-flex justify-content-end align-items-start">
-                    <button className="heart_btn">
+                    <button className={`${styles.heart_btn}`}>
                       <svg
                         width="50"
                         height="75"
@@ -633,58 +645,122 @@ function DavisTrailsFilter() {
                 </div>
               </div>
             </div>
-
-            <div className="page-bar col d-flex align-self-center">
+            {/* pagination */}
+            <div
+              className={`page-bar col d-none d-lg-flex align-self-center ${styles.details_pagination}`}
+            >
               <nav
-                className="pagination_nav"
-                aria-label="Page navigation example"
+                className={`${styles.pagination_nav}`}
+                aria-label=" Page navigation example"
               >
                 <ul className="pagination ">
-                  <li className="page-item">
-                    <a className="page-link" href="#" aria-label="Previous">
+                  <li className={`page-item ${styles.li_margin}`}>
+                    <Link
+                      className={`page-link ${styles.a_decoration}`}
+                      aria-label="Previous"
+                      to="/"
+                    >
+                      {' '}
                       <span aria-hidden="true">&laquo;</span>
-                    </a>
+                    </Link>
                   </li>
-                  <li className="page-item">
-                    <a className="page-link fw-bold" href="#">
+                  <li className={`page-item ${styles.li_margin}`}>
+                    <Link
+                      className={`page-link fw-bold ${styles.a_decoration}`}
+                      aria-label="Previous"
+                      to="/"
+                    >
                       1
-                    </a>
+                    </Link>
                   </li>
-                  <li className="page-item">
-                    <a className="page-link fw-bold" href="#">
+                  <li className={`page-item ${styles.li_margin}`}>
+                    <Link
+                      className={`page-link fw-bold ${styles.a_decoration}`}
+                      aria-label="Previous"
+                      to="/"
+                    >
                       2
-                    </a>
+                    </Link>
                   </li>
-                  <li className="page-item">
-                    <span className="page-link fw-bold"> ... </span>
+                  <li className={`page-item ${styles.li_margin}`}>
+                    <span
+                      className={`page-link fw-bold ${styles.a_decoration}`}
+                    >
+                      {' '}
+                      ...{' '}
+                    </span>
                   </li>
-                  <li className="page-item">
-                    <a className="page-link fw-bold" href="#">
+                  <li className={`page-item ${styles.li_margin}`}>
+                    <Link
+                      className={`page-link fw-bold ${styles.a_decoration}`}
+                      aria-label="Previous"
+                      to="/"
+                    >
                       9
-                    </a>
+                    </Link>
                   </li>
-                  <li className="page-item">
-                    <a className="page-link fw-bold" href="#">
+                  <li className={`page-item ${styles.li_margin}`}>
+                    <Link
+                      className={`page-link fw-bold ${styles.a_decoration}`}
+                      aria-label="Previous"
+                      to="/"
+                    >
                       10
-                    </a>
+                    </Link>
                   </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#" aria-label="Next">
+                  <li className={`page-item ${styles.li_margin}`}>
+                    <Link
+                      className={`page-link ${styles.a_decoration}`}
+                      aria-label="Next"
+                      to="/"
+                    >
+                      {' '}
                       <span aria-hidden="true">&raquo;</span>
-                    </a>
+                    </Link>
                   </li>
+                  {/* <li className="page-item li_margin">
+                        <a className="page-link a_decoration fw-bold" href="#">
+                          1
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link a_decoration fw-bold" href="#">
+                          2
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <span className="page-link a_decoration fw-bold">
+                          {' '}
+                          ...{' '}
+                        </span>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link a_decoration fw-bold" href="#">
+                          9
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link fw-bold" href="#">
+                          10
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li> */}
                 </ul>
               </nav>
             </div>
           </div>
         </div>
-
-        <div className="phone_container d-lg-none flex-column m-2">
+        {/* mobile_phone FIXME: */}
+        <div className={`d-lg-none flex-column m-2 ${styles.phone_container}`}>
           <div className=" d-flex flex-row ">
             <div className="col-8 d-flex flex-column search pe-2">
-              <p className="mb-0 p-content">目的地</p>
+              <p className={`mb-0 ${styles.p_content}`}>目的地</p>
               <div className={`d-flex flex-row ${styles.input_with_icon}`}>
-                <span className="icon_span ">
+                <span className={`${styles.icon_span}`}>
                   <svg
                     className={`${styles.icon_size}`}
                     width="21"
@@ -708,15 +784,15 @@ function DavisTrailsFilter() {
                   </svg>
                 </span>
                 <div className="">
-                  <input className=" input_style" type="text" />
+                  <input className={`${styles.input_style}`} type="text" />
                 </div>
               </div>
             </div>
 
-            <div className="col-4 d-flex flex-column search_count ">
-              <p className="mb-0 p-content">人數</p>
+            <div className={`col-4 d-flex flex-column ${styles.search_count}`}>
+              <p className={`mb-0 ${styles.p_content}`}>人數</p>
               <div className={`d-flex flex-row ${styles.input_with_icon}`}>
-                <span className="icon_span col">
+                <span className={`col ${styles.icon_span}`}>
                   <svg
                     className={`${styles.icon_size}`}
                     width="20"
@@ -747,11 +823,11 @@ function DavisTrailsFilter() {
               </div>
             </div>
           </div>
-          <div className=" d-flex flex-row row_2_mb">
-            <div className="w-100 d-flex flex-column search me-2">
-              <p className="mb-0 p-content">出發日期</p>
+          <div className={`d-flex flex-row ${styles.row_2_mb}`}>
+            <div className={`w-100 d-flex flex-column me-2 ${styles.search}`}>
+              <p className={`mb-0 ${styles.p_content}`}>出發日期</p>
               <div className={`d-flex ${styles.input_with_icon}`}>
-                <span className="icon_span col-3">
+                <span className={`col-3 ${styles.icon_span}`}>
                   <svg
                     className={`${styles.icon_size}`}
                     width="20"
@@ -796,10 +872,10 @@ function DavisTrailsFilter() {
               </div>
             </div>
 
-            <div className="w-100 d-flex flex-column search ">
-              <p className="mb-0 p-content">返程日期</p>
+            <div className={`w-100 d-flex flex-column ${styles.search}`}>
+              <p className={`mb-0 ${styles.p_content}`}>返程日期</p>
               <div className={`d-flex ${styles.input_with_icon}`}>
-                <span className="icon_span col-3">
+                <span className={`col-3 ${styles.icon_span}`}>
                   <svg
                     className={`${styles.icon_size}`}
                     width="20"
@@ -844,9 +920,11 @@ function DavisTrailsFilter() {
               </div>
             </div>
           </div>
-          <h5 className="phone_sub_title ">「草嶺古道」的搜尋結果</h5>
+          <h5 className={`${styles.phone_sub_title}`}>
+            「草嶺古道」的搜尋結果
+          </h5>
           <svg
-            className="vector_small"
+            className={`${styles.vector_small}`}
             width="365"
             height="28"
             viewBox="0 0 360 28"
@@ -936,125 +1014,200 @@ function DavisTrailsFilter() {
               </clipPath>
             </defs>
           </svg>
-
-          <div className="phone_card d-flex flex-column">
-            <div className="text_re">
-              <div className="trails_img_wrap">
+          {/* FIXME: phone_card*n */}
+          <div className={`d-flex flex-column ${styles.phone_card}`}>
+            <div className={`${styles.text_re}`}>
+              <div className={`${styles.trails_img_wrap}`}>
                 <img
-                  className="w-100 img_style"
-                  src="./../imgs/5-1.jpg"
+                  className={`w-100 ${styles.img_style}`}
+                  src="./imgs/Davis/5-1.jpg"
                   alt=""
                 />
               </div>
-              <div className="img_text">
-                <p className="rate">4.5</p>
-                <div className="d-flex flex-row p_wrap">
-                  <p className="difficulty">難度</p>
-                  <p className="difficulty_en">EASY</p>
+              <div className={`${styles.img_text}`}>
+                <p className={`${styles.rate}`}>4.5</p>
+                <div className={`d-flex flex-row ${styles.p_wrap}`}>
+                  <p className={`${styles.difficulty}`}>難度</p>
+                  <p className={`${styles.difficulty_en}`}>EASY</p>
                 </div>
               </div>
             </div>
             <div className="w-100 d-flex flex-row justify-content-between">
               <div>
-                <h6 className="phone_h6_sub_t mb-0">
+                <h6 className={`mb-0 ${styles.phone_h6_sub_t}`}>
                   草嶺古道｜探索新北一日遊
                 </h6>
-                <p className="phone_p_tag mb-0">新北市雙溪區</p>
+                <p className={`mb-0 ${styles.phone_p_tag}`}>新北市雙溪區</p>
               </div>
               <div>
-                <p className="phone_p_ntd mb-0">NTD</p>
-                <h6 className="phone_h6_price mb-0">1300</h6>
+                <p className={`mb-0 ${styles.phone_p_ntd}`}>NTD</p>
+                <h6 className={`mb-0 ${styles.phone_h6_price}`}>1300</h6>
               </div>
             </div>
           </div>
-          <div className="phone_card d-flex flex-column">
-            <div className="text_re">
-              <img className="w-100 img_style" src="./imgs/5-1.jpg" alt="" />
-              <div className="img_text">
-                <p className="rate">4.5</p>
-                <div className="d-flex flex-row p_wrap">
-                  <p className="difficulty">難度</p>
-                  <p className="difficulty_en">EASY</p>
+          <div className={`d-flex flex-column ${styles.phone_card}`}>
+            <div className={`${styles.text_re}`}>
+              <div className={`${styles.trails_img_wrap}`}>
+                <img
+                  className={`w-100 ${styles.img_style}`}
+                  src="./imgs/Davis/5-1.jpg"
+                  alt=""
+                />
+              </div>
+              <div className={`${styles.img_text}`}>
+                <p className={`${styles.rate}`}>4.5</p>
+                <div className={`d-flex flex-row ${styles.p_wrap}`}>
+                  <p className={`${styles.difficulty}`}>難度</p>
+                  <p className={`${styles.difficulty_en}`}>EASY</p>
                 </div>
               </div>
             </div>
             <div className="w-100 d-flex flex-row justify-content-between">
               <div>
-                <h6 className="phone_h6_sub_t mb-0">
+                <h6 className={`mb-0 ${styles.phone_h6_sub_t}`}>
                   草嶺古道｜探索新北一日遊
                 </h6>
-                <p className="phone_p_tag mb-0">新北市雙溪區</p>
+                <p className={`mb-0 ${styles.phone_p_tag}`}>新北市雙溪區</p>
               </div>
               <div>
-                <p className="phone_p_ntd mb-0">NTD</p>
-                <h6 className="phone_h6_price mb-0">1300</h6>
+                <p className={`mb-0 ${styles.phone_p_ntd}`}>NTD</p>
+                <h6 className={`mb-0 ${styles.phone_h6_price}`}>1300</h6>
               </div>
             </div>
           </div>
-          <div className="phone_card d-flex flex-column">
-            <div className="text_re">
-              <img className="w-100 img_style" src="./imgs/5-1.jpg" alt="" />
-              <div className="img_text">
-                <p className="rate">4.5</p>
-                <div className="d-flex flex-row p_wrap">
-                  <p className="difficulty">難度</p>
-                  <p className="difficulty_en">EASY</p>
+          <div className={`d-flex flex-column ${styles.phone_card}`}>
+            <div className={`${styles.text_re}`}>
+              <div className={`${styles.trails_img_wrap}`}>
+                <img
+                  className={`w-100 ${styles.img_style}`}
+                  src="./imgs/Davis/5-1.jpg"
+                  alt=""
+                />
+              </div>
+              <div className={`${styles.img_text}`}>
+                <p className={`${styles.rate}`}>4.5</p>
+                <div className={`d-flex flex-row ${styles.p_wrap}`}>
+                  <p className={`${styles.difficulty}`}>難度</p>
+                  <p className={`${styles.difficulty_en}`}>EASY</p>
                 </div>
               </div>
             </div>
             <div className="w-100 d-flex flex-row justify-content-between">
               <div>
-                <h6 className="phone_h6_sub_t mb-0">
+                <h6 className={`mb-0 ${styles.phone_h6_sub_t}`}>
                   草嶺古道｜探索新北一日遊
                 </h6>
-                <p className="phone_p_tag mb-0">新北市雙溪區</p>
+                <p className={`mb-0 ${styles.phone_p_tag}`}>新北市雙溪區</p>
               </div>
               <div>
-                <p className="phone_p_ntd mb-0">NTD</p>
-                <h6 className="phone_h6_price mb-0">1300</h6>
+                <p className={`mb-0 ${styles.phone_p_ntd}`}>NTD</p>
+                <h6 className={`mb-0 ${styles.phone_h6_price}`}>1300</h6>
               </div>
             </div>
           </div>
 
-          <div className="page-bar col d-flex align-self-center ">
+          {/* pagination */}
+          <div
+            className={`page-bar col d-flex align-self-center ${styles.details_pagination}`}
+          >
             <nav
-              className="pagination_nav"
-              aria-label="Page navigation example"
+              className={`${styles.pagination_nav}`}
+              aria-label=" Page navigation example"
             >
               <ul className="pagination ">
-                <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Previous">
+                <li className={`page-item ${styles.li_margin}`}>
+                  <Link
+                    className={`page-link ${styles.a_decoration}`}
+                    aria-label="Previous"
+                    to="/"
+                  >
+                    {' '}
                     <span aria-hidden="true">&laquo;</span>
-                  </a>
+                  </Link>
                 </li>
-                <li className="page-item">
-                  <a className="page-link fw-bold" href="#">
+                <li className={`page-item ${styles.li_margin}`}>
+                  <Link
+                    className={`page-link fw-bold ${styles.a_decoration}`}
+                    aria-label="Previous"
+                    to="/"
+                  >
                     1
-                  </a>
+                  </Link>
                 </li>
-                <li className="page-item">
-                  <a className="page-link fw-bold" href="#">
+                <li className={`page-item ${styles.li_margin}`}>
+                  <Link
+                    className={`page-link fw-bold ${styles.a_decoration}`}
+                    aria-label="Previous"
+                    to="/"
+                  >
                     2
-                  </a>
+                  </Link>
                 </li>
-                <li className="page-item">
-                  <span className="page-link fw-bold"> ... </span>
+                <li className={`page-item ${styles.li_margin}`}>
+                  <span className={`page-link fw-bold ${styles.a_decoration}`}>
+                    {' '}
+                    ...{' '}
+                  </span>
                 </li>
-                <li className="page-item">
-                  <a className="page-link fw-bold" href="#">
+                <li className={`page-item ${styles.li_margin}`}>
+                  <Link
+                    className={`page-link fw-bold ${styles.a_decoration}`}
+                    aria-label="Previous"
+                    to="/"
+                  >
                     9
-                  </a>
+                  </Link>
                 </li>
-                <li className="page-item">
-                  <a className="page-link fw-bold" href="#">
+                <li className={`page-item ${styles.li_margin}`}>
+                  <Link
+                    className={`page-link fw-bold ${styles.a_decoration}`}
+                    aria-label="Previous"
+                    to="/"
+                  >
                     10
-                  </a>
+                  </Link>
                 </li>
-                <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Next">
+                <li className={`page-item ${styles.li_margin}`}>
+                  <Link
+                    className={`page-link ${styles.a_decoration}`}
+                    aria-label="Next"
+                    to="/"
+                  >
+                    {' '}
                     <span aria-hidden="true">&raquo;</span>
-                  </a>
+                  </Link>
                 </li>
+                {/* <li className="page-item li_margin">
+                        <a className="page-link a_decoration fw-bold" href="#">
+                          1
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link a_decoration fw-bold" href="#">
+                          2
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <span className="page-link a_decoration fw-bold">
+                          {' '}
+                          ...{' '}
+                        </span>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link a_decoration fw-bold" href="#">
+                          9
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link fw-bold" href="#">
+                          10
+                        </a>
+                      </li>
+                      <li className="page-item li_margin">
+                        <a className="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li> */}
               </ul>
             </nav>
           </div>

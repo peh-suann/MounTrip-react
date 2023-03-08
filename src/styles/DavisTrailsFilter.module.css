@@ -26,7 +26,7 @@
   padding: 25px 28px;
 }
 
-main .right-card {
+main .right_card {
   /* border: 1px solid black; */
   /* width: 76%; */
   margin: 0;
@@ -81,11 +81,11 @@ main .right-card {
   background: rgba(206, 232, 203, 0.6);
 }
 
-.p-content {
+.p_content {
   color: var(--mtgrey-3)
 }
 
-.btn-search {
+.btn_search {
   color: var(--mtgrey-4);
   background-color: var(--mtgreen-1);
   border-radius: 5px;
@@ -100,23 +100,23 @@ main .right-card {
 } */
 
 
-/* main right-card */
+/* main right_card */
 
 
-.right-card .sub_title {
+.right_card .sub_title {
   /* border: 1px solid black; */
   margin-bottom: 5%;
 }
 
-.right-card .vector_wrap {
+.right_card .vector_wrap {
   padding: 0%;
 }
 
-.right-card .Vector_long {
+.right_card .Vector_long {
   width: 270px;
 }
 
-.h5-sub-title-search {
+.h5_sub_title_search {
   margin: 0px 35px;
 
   font-size: 24px;
@@ -128,7 +128,7 @@ main .right-card {
 }
 
 
-/* right-card > trails-cards */
+/* right_card > trails-cards */
 
 /* FIXME: 卡片高度 */
 .trails_card {
@@ -142,7 +142,7 @@ main .right-card {
   /* overflow: hidden */
 }
 
-.product-name {
+.product_name {
   font-size: 10px;
   font-weight: 700;
   margin-bottom: 3px;
@@ -188,30 +188,22 @@ main .right-card {
   background-color: transparent;
 }
 
-/* pagination */
 
-.page-bar .pagination_nav{
+/* pagination */
+.details_pagination .pagination_nav {
   position: relative;
   padding: 0px;
 }
 
-.page-bar nav {
-  background-color: transparent;
-}
-
-.page-item {
+.pagination_nav .li_margin {
   margin: 4px;
 }
 
-.pagination .page-link {
+.pagination_nav .a_decoration {
   color: var(--mtgreen-1);
   border-radius: 5px;
   border: 1px solid var(--mtgreen-4);
 }
-
-/* .pagination .page-link:active{
-  color: var(--mtgreen-1);
-} */
 
 /* mobile_phone */
 @media (max-width: 391px) {
@@ -232,7 +224,7 @@ main .right-card {
     width: 300px;
   }
 
-  .p-content {
+  .p_content {
     color: var(--mtgrey-3)
   }
 

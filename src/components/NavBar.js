@@ -5,7 +5,7 @@ import ExpandInput from './ExpandInput'
 
 export default function NavBar() {
   return (
-    <div className="container ">
+    <div className="container d-none d-lg-flex ">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <Link className={styles.brandlogo} to="/">
