@@ -19,6 +19,8 @@ export default function DavisTrailsDetail(rows) {
     // totalRows: 0,
   })
 
+  const [count, setCount] = useState(0)
+
   const getListData = async (page = 1) => {
     const response = await axios.get(TRAILS_DATA, {
       params: {
@@ -90,7 +92,7 @@ export default function DavisTrailsDetail(rows) {
                       <div className="">
                         <img
                           className={`${styles.img_cover_one}`}
-                          src={`/imgs/Davis/${r.trail_img}-1.jpg`}
+                          src={`/imgs/Davis/${r.sid}-1.jpg`}
                           alt=""
                         />
                       </div>
@@ -99,17 +101,17 @@ export default function DavisTrailsDetail(rows) {
                       >
                         <img
                           className={`${styles.img_cover_three}`}
-                          src={`/imgs/Davis/${r.trail_img}-1.jpg`}
+                          src={`/imgs/Davis/${r.sid}-1.jpg`}
                           alt=""
                         />
                         <img
                           className={`${styles.img_cover_three}`}
-                          src={`/imgs/Davis/${r.trail_img}-2.jpg`}
+                          src={`/imgs/Davis/${r.sid}-2.jpg`}
                           alt=""
                         />
                         <img
                           className={`${styles.img_cover_three}`}
-                          src={`/imgs/Davis/${r.trail_img}-3.jpg`}
+                          src={`/imgs/Davis/${r.sid}-3.jpg`}
                           alt=""
                         />
                       </div>
@@ -217,7 +219,7 @@ export default function DavisTrailsDetail(rows) {
                           className={`rounded-1 me-3 border-0 ${styles.ca_btn}`}
                         >
                           <h6 className={`m-1 ${styles.ca_h6}`}>
-                            難度 {r.difficulty_describ}
+                            難度 {r.difficulty_short}
                           </h6>
                         </button>
                         <button
@@ -250,7 +252,7 @@ export default function DavisTrailsDetail(rows) {
                         </button>
                       </div>
 
-                      {/* category content group for 電腦版 */}
+                      {/* category content group for 電腦版 FIXME: 修改樣式，字塞不下*/}
                       <div
                         className={`d-lg-flex mb-5 d-none ${styles.ca_content}`}
                       >
@@ -471,12 +473,17 @@ export default function DavisTrailsDetail(rows) {
                       {/* shop-button-group */}
 
                       <div className="d-none d-lg-flex flex-column ">
-                        {/* level1 */}
+                        {/* Count TODO:  */}
                         <div className="col d-flex flex-row mb-2">
                           <div
                             className={`col  d-flex flex-row align-items-center me-2 ${styles.shop_btn_one}`}
                           >
-                            <button className={`${styles.btn_style}`}>
+                            <button
+                              onClick={() => {
+                                setCount(count - 1)
+                              }}
+                              className={`${styles.btn_style}`}
+                            >
                               <svg
                                 width="24"
                                 height="25"
@@ -494,8 +501,15 @@ export default function DavisTrailsDetail(rows) {
                               </svg>
                             </button>
 
-                            <div className="col"></div>
-                            <button className={`${styles.btn_style}`}>
+                            <h3 className={`col mb-0 ${styles.count_style}`}>
+                              {count}
+                            </h3>
+                            <button
+                              onClick={() => {
+                                setCount(count + 1)
+                              }}
+                              className={`${styles.btn_style}`}
+                            >
                               <svg
                                 width="24"
                                 height="25"
@@ -1235,7 +1249,4 @@ export default function DavisTrailsDetail(rows) {
       </table>
     </>
   )
-}
-
-{
 }
