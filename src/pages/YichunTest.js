@@ -9,7 +9,7 @@ import YichunQuestionSection from '../components/YichunQuestionSection'
 import { TEST_QUES } from '../connections/api-config'
 
 // Styles
-import styles from './../styles/yichun_styles/Test.module.css'
+import styles from './../styles/yichun_styles/YichunTest.module.css'
 export const StylesContext = createContext(styles)
 
 function YichunTest() {

@@ -761,18 +761,18 @@ section.price img:nth-child(5) {
 
   pointer-events: none;
 }
-svg {
+section.price svg {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 0;
   user-select: none;
 }
-svg path {
+section.price svg path {
   position: absolute;
   fill: none;
 }
-svg text {
+section.price svg text {
   position: absolute;
   top: 0;
   left: 0;
