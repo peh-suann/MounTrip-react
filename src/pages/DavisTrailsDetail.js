@@ -40,8 +40,7 @@ export default function DavisTrailsDetail(rows) {
 
   return (
     <>
-      {/* FIXME: button group size/
-       mobile top picture/
+      {/* FIXME: 
        mobile 購物車fix
          */}
       {/* <div className="container">
@@ -57,7 +56,7 @@ export default function DavisTrailsDetail(rows) {
               // className={styles.container_all}
               // className="container_all d-flex flex-column "
             >
-              <div className="col ">
+              <div className="col p-0">
                 {/* top-img */}
                 <div className={`d-flex d-lg-none ${styles.top_img}`}>
                   <img className="w-100" src="./imgs/Davis/3-1.jpg" alt="" />
@@ -478,7 +477,7 @@ export default function DavisTrailsDetail(rows) {
 
                       <div className="d-none d-lg-flex flex-column ">
                         {/* Count TODO:  */}
-                        <div className="col d-flex flex-row mb-2">
+                        <div className="col d-flex flex-row mb-2 justify-content-between">
                           <div
                             className={`col  d-flex flex-row align-items-center me-2 ${styles.shop_btn_one}`}
                           >
@@ -540,8 +539,8 @@ export default function DavisTrailsDetail(rows) {
                           </div>
                           <button className={`${styles.btn_style}`}>
                             <svg
-                              width="43"
-                              height="43"
+                              width="35"
+                              height="35"
                               viewBox="0 0 43 43"
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
@@ -572,7 +571,9 @@ export default function DavisTrailsDetail(rows) {
                               </h5>
                             </div>
                             <div className="col d-flex justify-content-center">
-                              <h5 className="mb-0">2023/01/01 - 2023/01/03</h5>
+                              <h5 className={`mb-0 ${styles.batch_font}`}>
+                                2023/01/01 - 2023/01/03
+                              </h5>
                             </div>
                             <button className={`${styles.btn_style}`}>
                               <svg
@@ -597,12 +598,14 @@ export default function DavisTrailsDetail(rows) {
                         <button
                           className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
                         >
-                          <h5 className={`mb-0 lh-lg ${styles.btn_font}`}>
+                          <h5
+                            className={`mb-0 align-self-center ${styles.btn_font}`}
+                          >
                             加入購物車
                           </h5>
-                          <span>
+                          <span className="align-self-center">
                             <svg
-                              className="mt-2"
+                              className=""
                               width="24"
                               height="25"
                               viewBox="0 0 24 25"
@@ -737,10 +740,10 @@ export default function DavisTrailsDetail(rows) {
                 </svg>
               </div>
 
-              {/* login commont for phone */}
-              <div className="d-flex w-100 col flex-column">
+              {/* login commont */}
+              <div className="d-flex w-100 col flex-column ">
                 <div
-                  className={`w-100 d-flex flex-row mb-lg-5 ${styles.login_commont_star}`}
+                  className={`w-100 d-flex flex-row mb-lg-4 ${styles.login_commont_star}`}
                 >
                   <svg
                     width="32"
@@ -804,16 +807,25 @@ export default function DavisTrailsDetail(rows) {
                   </svg>
                 </div>
                 <textarea
-                  className={`${styles.login_commont}`}
+                  className={`d-none d-lg-flex col-lg-10 align-self-center ${styles.login_commont}`}
                   name="login_commont"
                   id="login_commont"
                   cols="30"
                   rows="10"
                 ></textarea>
-                <button className={`d-lg-none ${styles.enter_commont_phone}`}>
+                <textarea
+                  className={`d-flex d-lg-none ${styles.login_commont}`}
+                  name="login_commont"
+                  id="login_commont"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+                <button className={` d-lg-none ${styles.enter_commont_phone}`}>
                   發布評論
                 </button>
-                <button className={`d-none d-lg-flex ${styles.enter_commont}`}>
+                <button
+                  className={`d-none d-lg-flex col-lg-10 align-self-center ${styles.enter_commont}`}
+                >
                   發布評論
                 </button>
               </div>
@@ -1174,7 +1186,7 @@ export default function DavisTrailsDetail(rows) {
                     className={`col w-100 d-flex flex-row ${styles.btn_group}`}
                   >
                     <div
-                      className={`col-4 d-flex flex-row align-items-center ${styles.shop_btn_one}`}
+                      className={`col-4 d-flex flex-row align-items-center ${styles.btn_one_mobile}`}
                     >
                       <button className={`${styles.btn_style}`}>
                         <svg
@@ -1220,7 +1232,7 @@ export default function DavisTrailsDetail(rows) {
                       </button>
                     </div>
                     <button
-                      className={`col d-flex flex-row justify-content-center ${styles.shop_btn_three}`}
+                      className={`col d-flex flex-row justify-content-center ${styles.shop_btn_mobile}`}
                     >
                       <h5 className={`mb-0 lh-lg ${styles.btn_font}`}>
                         加入購物車
