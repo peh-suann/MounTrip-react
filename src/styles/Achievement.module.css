@@ -192,10 +192,24 @@ section{
     margin-bottom: 20px;
     width: 100%;
 }
-.badge-pic{
+.badge-pic-1{
     width: 375px;
     height: 220px;
     background: url('../../public/Mountrip_achievement_mei.png');
+    background-position: center center;
+    background-size: cover;
+}
+.badge-pic-2{
+    width: 375px;
+    height: 220px;
+    background: url('../../public/Mountrip_achievement_bamboo.png');
+    background-position: center center;
+    background-size: cover;
+}
+.badge-pic-3{
+    width: 375px;
+    height: 220px;
+    background: url('../../public/Mountrip_achievement_pine.png');
     background-position: center center;
     background-size: cover;
 }
@@ -220,7 +234,7 @@ section{
     border-radius: 33px ;
 }
 .bar-top{
-    width: 33%;
+    /* width: 33%; */
     height: 30px;
     background-color: var(--mtgreen-2);
     border-radius: 33px ;

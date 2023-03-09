@@ -3,7 +3,11 @@ import styles from './../styles/Coupon.module.css'
 import CouponCard from './../components/LaiCouponCard'
 import CouponAmount from './LaiCouponAmount'
 
-export default function LaiCouponContent() {
+export default function LaiCouponContent({ children }) {
+  // const countCard = React.Children.toArray(children).filter(
+  //   (child) => child.type === '<CouponCard />'
+  // ).length
+  // console.log(countCard)
   return (
     <>
       <div className={styles['member-data']}>
@@ -58,7 +62,7 @@ export default function LaiCouponContent() {
             <div className={styles['show-number']}>
               <p>共有</p>
               {/* TODO連結評論數量 */}
-              <CouponAmount amount={6} />
+              <CouponAmount amount={5} />
               <p>張優惠券</p>
             </div>
             <div className={styles['filter-btn']}>
@@ -96,144 +100,6 @@ export default function LaiCouponContent() {
               dateEnd={'2023/06/30'}
               state={'future'}
             />
-            {/* <div className={styles['coupon-item']}>
-              <p className={`${styles['coupon-tag']} ${styles['item1']}`}>
-                限量！
-              </p>
-              <div className={styles['coupon-card']}>
-                <p className={styles['coupon-name']}>happy30123</p>
-                <p className={styles['coupon-describ']}>
-                  消費滿 200 折！， 150 再享 30 次免外送費
-                </p>
-                <p className={styles['coupon-date']}>2023/01/01 - 2023/01/02</p>
-                <div
-                  className={`${styles['coupon-status-off']} ${styles['state-btn']}`}
-                >
-                  <p>已過期</p>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className={styles['coupon-item']}>
-              <p className={`${styles['coupon-tag']} ${styles['item2']}`}>
-                限量！
-              </p>
-              <div className={styles['coupon-card']}>
-                <p className={styles['coupon-name']}>NEW2023</p>
-                <p className={styles['coupon-describ']}>
-                  舊會員單筆消費滿 NT$300 折 NT$100
-                </p>
-                <p className={styles['coupon-date']}>2023/01/01 - 2023/01/02</p>
-                <div
-                  className={`${styles['coupon-status-off']} ${styles['state-btn']}`}
-                >
-                  <p>已過期</p>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className={styles[]}"coupon-item ">
-              <p className={styles[]}"coupon-tag item3">限量！</p>
-              <div className={styles[]}"coupon-card">
-                <p className={styles[]}"coupon-name">COFFEEYA</p>
-                <p className={styles[]}"coupon-describ">
-                  首購生鮮雜貨家樂福 消費享 5 折最高折 200
-                </p>
-                <p className={styles[]}"coupon-date">2023/01/01 - 2023/07/02</p>
-                <div className={styles[]}"coupon-status-on state-btn">
-                  <p>現正熱門</p>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className={styles[]}"coupon-item">
-              <p className={styles[]}"coupon-tag item4">限量！</p>
-              <div className={styles[]}"coupon-card">
-                <p className={styles[]}"coupon-name">HAPPYTRIP</p>
-                <p className={styles[]}"coupon-describ">
-                  消費滿 200 折 150 再享 30 次免外送費
-                </p>
-                <p className={styles[]}"coupon-date">2023/03/01 - 2023/12/02</p>
-                <div className={styles[]}"coupon-status-on state-btn">
-                  <p>現正熱門</p>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className={styles[]}"coupon-item ">
-              <p className={styles[]}"coupon-tag item5">限量！</p>
-              <div className={styles[]}"coupon-card">
-                <p className={styles[]}"coupon-name">happy40</p>
-                <p className={styles[]}"coupon-describ">
-                  消費滿 200 折 150 再享 30 次免外送費
-                </p>
-                <p className={styles[]}"coupon-date">2023/04/01 - 2023/12/02</p>
-                <div className={styles[]}"coupon-status-future state-btn">
-                  <p>即將生效</p>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className={styles[]}"coupon-item ">
-              <p className={styles[]}"coupon-tag item6">限量！</p>
-              <div className={styles[]}"coupon-card">
-                <p className={styles[]}"coupon-name">summer100</p>
-                <p className={styles[]}"coupon-describ">
-                  消費滿 200 折 150 再享 30 次免外送費
-                </p>
-                <p className={styles[]}"coupon-date">2023/7/01 - 2023/9/02</p>
-                <div className={styles[]}"coupon-status-future state-btn">
-                  <p>即將生效</p>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className={styles[]}"coupon-item ">
-              <p className={styles[]}"coupon-tag item7">限量！</p>
-              <div className={styles[]}"coupon-card">
-                <p className={styles[]}"coupon-name">autumntrip</p>
-                <p className={styles[]}"coupon-describ">
-                  消費滿 200 折 150 再享 30 次免外送費
-                </p>
-                <p className={styles[]}"coupon-date">2023/9/01 - 2023/12/30</p>
-                <div className={styles[]}"coupon-status-future state-btn">
-                  <p>即將生效</p>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className={styles[]}"coupon-item ">
-              <p className={styles[]}"coupon-tag item7">限量！</p>
-              <div className={styles[]}"coupon-card">
-                <p className={styles[]}"coupon-name">autumntrip</p>
-                <p className={styles[]}"coupon-describ">
-                  消費滿 200 折 150 再享 30 次免外送費
-                </p>
-                <p className={styles[]}"coupon-date">2023/9/01 - 2023/12/30</p>
-                <div className={styles[]}"coupon-status-future state-btn">
-                  <p>即將生效</p>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className={styles[]}"coupon-item ">
-              <p className={styles[]}"coupon-tag item7">限量！</p>
-              <div className={styles[]}"coupon-card">
-                <p className={styles[]}"coupon-name">autumntrip</p>
-                <p className={styles[]}"coupon-describ">
-                  消費滿 200 折 150 再享 30 次免外送費
-                </p>
-                <p className={styles[]}"coupon-date">2023/9/01 - 2023/12/30</p>
-                <div className={styles[]}"coupon-status-future state-btn">
-                  <p>即將生效</p>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className={styles[]}"coupon-item ">
-              <p className={styles[]}"coupon-tag item7">限量！</p>
-              <div className={styles[]}"coupon-card">
-                <p className={styles[]}"coupon-name">autumntrip</p>
-                <p className={styles[]}"coupon-describ">
-                  消費滿 200 折 150 再享 30 次免外送費
-                </p>
-                <p className={styles[]}"coupon-date">2023/9/01 - 2023/12/30</p>
-                <div className={styles[]}"coupon-status-future state-btn">
-                  <p>即將生效</p>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

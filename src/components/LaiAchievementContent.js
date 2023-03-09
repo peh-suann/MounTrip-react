@@ -1,5 +1,9 @@
 import React from 'react'
 import styles from './../styles/Achievement.module.css'
+import AchievementBadge from './LaiAchievementBadge'
+import ProgressBar from './LaiAchievementProgressBar'
+import AchievementDescrib from './LaiAchievementDescrib'
+import AchievementTreeBlock from './LaiAchievementTreeBlock'
 
 export default function LaiAchievementContent() {
   return (
@@ -40,14 +44,15 @@ export default function LaiAchievementContent() {
               </clipPath>
             </defs>
           </svg>
-
           <h1>成就獎章</h1>
         </div>
         <div className={styles['container']}>
-          <div className={styles['badge']}>
+          <AchievementBadge level={3}/>
+          {/* <div className={styles['badge']}>
             <div className={styles['badge-pic']}></div>
-          </div>
-          <div className={styles['progress-bars']}>
+          </div> */}
+          <ProgressBar current={'19,800'} target={'25,000'}/>
+          {/* <div className={styles['progress-bars']}>
             <div className={styles['bar-wrap']}>
               <div className={styles['bar-base']}></div>
               <div className={styles['bar-top']}></div>
@@ -56,8 +61,8 @@ export default function LaiAchievementContent() {
               <div className={styles['current-num']}>7,800</div>
               <div className={styles['goal-num']}>/25,000</div>
             </div>
-          </div>
-          <div className={styles['describ']}>
+          </div> */}
+          {/* <div className={styles['describ']}>
             <div className={styles['describ-tag-wrap']}>
               <div className={`${styles['des-tag']} ${styles['low']}`}>
                 新手山友
@@ -73,8 +78,10 @@ export default function LaiAchievementContent() {
             <div className={styles['describ-mid']}>
               <h6>累計消費滿25,000元解鎖</h6>
             </div>
-          </div>
-          <div className={styles['tree-block']}>
+          </div> */}
+          <AchievementDescrib />
+          <AchievementTreeBlock />
+          {/* <div className={styles['tree-block']}>
             <div className={styles['describ-rules']}>
               <p>
                 MounTrip與「財團法人慈心基金會」合作，自2018年開始，每年將營業收入的
@@ -94,7 +101,7 @@ export default function LaiAchievementContent() {
                 <p>顆樹，恭喜你！</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
