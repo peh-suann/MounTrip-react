@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creator="GPS Visualizer http://www.gpsvisualizer.com/" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="25.0455347" lon="121.780698">
+  <name>&#x5341;&#x5206;&#x5BEE;&#x98A8;&#x666F;&#x5340;&#x7AD9;&#x724C;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1423-trans-bus.png</sym>
+</wpt>
+<wpt lat="25.0457582" lon="121.7808241">
+  <name>&#x5341;&#x5206;&#x98A8;&#x666F;&#x5340;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.0471628" lon="121.7819613">
+  <name>&#x5341;&#x5206;&#x89C0;&#x5149;&#x5927;&#x6A4B;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.0472357" lon="121.782646">
+  <name>&#x5341;&#x5206;&#x904A;&#x5BA2;&#x4E2D;&#x5FC3;&#x7AD9;&#x724C;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1423-trans-bus.png</sym>
+</wpt>
+<wpt lat="25.0473474" lon="121.7829054">
+  <name>&#x5341;&#x5206;&#x65C5;&#x904A;&#x670D;&#x52D9;&#x4E2D;&#x5FC3;</name>
+  <desc>&lt;img src="https://lh3.googleusercontent.com/proxy/ihJUpQ-Y46sRqNR9y5myE4PtgJl_RYVCHxEqHIBAKybMBsP2GrH5pa9ki9-XB84IFztwfawot10hzp_INAv0kqOPv9JV0ajsg0gh" height="200" width="auto" /&gt;&lt;br&gt;&lt;br&gt;</desc>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1203-fac-info.png</sym>
+</wpt>
+<wpt lat="25.0482417" lon="121.7859444">
+  <name>&#x53E4;&#x539D;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.048269" lon="121.786116">
+  <ele>194.3</ele>
+  <name>&#x6728;&#x68E7;&#x9053;&#x8D77;&#x9EDE;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1371-rec-hiking.png</sym>
+</wpt>
+<wpt lat="25.048222" lon="121.786731">
+  <ele>188.0</ele>
+  <name>&#x5341;&#x5206;&#x6D88;&#x9059;&#x53C9;&#x8DEF;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.048268" lon="121.787503">
+  <ele>183.5</ele>
+  <name>&#x4F11;&#x61A9;&#x5340;</name>
+  <desc>2015-01-01 10:12:08AM</desc>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1037-biz-house.png</sym>
+</wpt>
+<wpt lat="25.048504" lon="121.78815">
+  <ele>183.0</ele>
+  <name>&#x5341;&#x5206;&#x7011;&#x5E03;&#x516C;&#x5712;&#x5165;&#x53E3;&#x7BA1;&#x5236;&#x9580;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.048784" lon="121.788653">
+  <ele>189.0</ele>
+  <name>&#x77F3;&#x968E;&#x53C9;&#x8DEF;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.048602" lon="121.789002">
+  <ele>201.5</ele>
+  <name>&#x6DBC;&#x4EAD;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1037-biz-house.png</sym>
+</wpt>
+<wpt lat="25.048948" lon="121.78897">
+  <ele>190.5</ele>
+  <name>&#x5C0E;&#x89BD;&#x5716;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1203-fac-info.png</sym>
+</wpt>
+<wpt lat="25.048852" lon="121.788533">
+  <ele>181.0</ele>
+  <name>&#x89C0;&#x7011;&#x53F0;&#x53C9;&#x8DEF;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.049014" lon="121.7881958">
+  <name>&#x89C0;&#x7011;&#x53F0;&#x2160;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1283-poi-lookout-point.png</sym>
+</wpt>
+<wpt lat="25.0487334" lon="121.7881721">
+  <name>&#x89C0;&#x7011;&#x53F0;&#x2161;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1283-poi-lookout-point.png</sym>
+</wpt>
+<wpt lat="25.0488002" lon="121.787569">
+  <name>&#x89C0;&#x7011;&#x53F0;&#x2162;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1283-poi-lookout-point.png</sym>
+</wpt>
+<wpt lat="25.0489293" lon="121.7875323">
+  <name>&#x5341;&#x5206;&#x7011;&#x5E03;</name>
+  <desc>&lt;img src="https://lh4.googleusercontent.com/proxy/296l9IlVvOyfs1yR4PcTp0cl3zCavdPiDFdSroW5SOm1RJUquOb8YXiBB4jyF9_b9-iGYSXVgSKdTGuZWiRB76-aoqRqtXj3FA3P" height="200" width="auto" /&gt;&lt;br&gt;&lt;br&gt;</desc>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.048673" lon="121.787451">
+  <ele>190.0</ele>
+  <name>&#x8CC7;&#x8A0A;&#x7AD9;</name>
+  <desc>2015-01-01 10:48:59AM</desc>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1203-fac-info.png</sym>
+</wpt>
+<wpt lat="25.0475467" lon="121.7836056">
+  <name>&#x56DB;&#x5EE3;&#x6F6D;&#x540A;&#x6A4B;</name>
+  <desc>&lt;img src="https://lh4.googleusercontent.com/proxy/VauIMJA-7VkDkPG6bCI_I3mQhf21RRQS8s8xV-_bQ1XE4OfIa3tpn3fKFOUbeVizgI64PU_nhQYRNMI8vvYbb3uI7BT8B077G3v0" height="200" width="auto" /&gt;&lt;br&gt;&lt;br&gt;</desc>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1233-poi-bridge.png</sym>
+</wpt>
+<wpt lat="25.0427839" lon="121.77679">
+  <name>&#x5341;&#x5206;&#x8001;&#x8857;</name>
+  <desc>&lt;img src="https://lh4.googleusercontent.com/proxy/q_g6xhFeOUOPfHHsylPFuYo5HShvkmJki1PkjxjNAs5tWeSpxOMxpz06WJMm0faSOXuYrHEL6BRSL2XMF6xksIJWKwWT2bcgXrVe" height="200" width="auto" /&gt;&lt;br&gt;&lt;br&gt;</desc>
+  <sym>http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png</sym>
+</wpt>
+<wpt lat="25.0490649" lon="121.7845929">
+  <name>&#x773C;&#x93E1;&#x6D1E;&#x7011;&#x5E03;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png</sym>
+</wpt>
+<wpt lat="25.0487471" lon="121.7853194">
+  <name>&#x89C0;&#x7011;&#x540A;&#x6A4B;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png</sym>
+</wpt>
+<wpt lat="25.053445" lon="121.801935">
+  <name>&#x5927;&#x83EF;&#x58FA;&#x7A74;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png</sym>
+</wpt>
+<wpt lat="25.0666107" lon="121.7631912">
+  <name>&#x5341;&#x5206;&#x53E4;&#x9053;&#x767B;&#x5C71;&#x53E3;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1059-biz-outdoor.png</sym>
+</wpt>
+<wpt lat="25.0523489" lon="121.7732812">
+  <name>&#x53F0;&#x7063;&#x7926;&#x696D;&#x6587;&#x5316;&#x535A;&#x7269;&#x9928;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png</sym>
+</wpt>
+<wpt lat="25.0528662" lon="121.7733156">
+  <name>&#x4E94;&#x5206;&#x5C71;&#x6B65;&#x9053;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1059-biz-outdoor.png</sym>
+</wpt>
+<wpt lat="25.070953" lon="121.780639">
+  <name>&#x4E94;&#x5206;&#x5C71;</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1377-rec-mountain.png</sym>
+</wpt>
+<trk>
+  <name>&#x8DEF;&#x7DDA;1</name>
+  <trkseg>
+    <trkpt lat="25.047368" lon="121.782767"/>
+    <trkpt lat="25.0472672" lon="121.7826989"/>
+    <trkpt lat="25.0471555" lon="121.782656"/>
+    <trkpt lat="25.0470413" lon="121.783061"/>
+    <trkpt lat="25.0466865" lon="121.7836243"/>
+    <trkpt lat="25.0464459" lon="121.7840883"/>
+    <trkpt lat="25.0464435" lon="121.7844611"/>
+    <trkpt lat="25.0467011" lon="121.7849305"/>
+    <trkpt lat="25.0470097" lon="121.7851666"/>
+    <trkpt lat="25.0472988" lon="121.785298"/>
+    <trkpt lat="25.0476415" lon="121.7853329"/>
+    <trkpt lat="25.0478966" lon="121.7853811"/>
+    <trkpt lat="25.0481007" lon="121.7855421"/>
+    <trkpt lat="25.048276" lon="121.785874"/>
+    <trkpt lat="25.048269" lon="121.786116"/>
+    <trkpt lat="25.048243" lon="121.786431"/>
+    <trkpt lat="25.0482076" lon="121.7866659"/>
+    <trkpt lat="25.048215" lon="121.787039"/>
+    <trkpt lat="25.0482489" lon="121.7873177"/>
+    <trkpt lat="25.048275" lon="121.787545"/>
+    <trkpt lat="25.048367" lon="121.787746"/>
+    <trkpt lat="25.0484166" lon="121.7878541"/>
+    <trkpt lat="25.0484361" lon="121.78794"/>
+    <trkpt lat="25.0484555" lon="121.788066"/>
+    <trkpt lat="25.0484968" lon="121.788125"/>
+    <trkpt lat="25.0484774" lon="121.7882645"/>
+    <trkpt lat="25.0484871" lon="121.7883772"/>
+    <trkpt lat="25.0485357" lon="121.7885971"/>
+    <trkpt lat="25.0485746" lon="121.7886373"/>
+    <trkpt lat="25.048738" lon="121.788652"/>
+    <trkpt lat="25.048784" lon="121.788653"/>
+    <trkpt lat="25.048818" lon="121.788765"/>
+    <trkpt lat="25.048779" lon="121.788825"/>
+    <trkpt lat="25.048728" lon="121.788891"/>
+    <trkpt lat="25.048679" lon="121.7889351"/>
+    <trkpt lat="25.048602" lon="121.789002"/>
+    <trkpt lat="25.048591" lon="121.78905"/>
+    <trkpt lat="25.04867" lon="121.789182"/>
+    <trkpt lat="25.0487617" lon="121.7892033"/>
+    <trkpt lat="25.048871" lon="121.7891496"/>
+    <trkpt lat="25.0489075" lon="121.7890719"/>
+    <trkpt lat="25.048915" lon="121.788968"/>
+    <trkpt lat="25.0489463" lon="121.7889056"/>
+    <trkpt lat="25.0489415" lon="121.7888063"/>
+    <trkpt lat="25.04892" lon="121.788672"/>
+    <trkpt lat="25.0489123" lon="121.7885917"/>
+    <trkpt lat="25.0488686" lon="121.7885381"/>
+    <trkpt lat="25.0488273" lon="121.7885247"/>
+    <trkpt lat="25.0489148" lon="121.7884898"/>
+    <trkpt lat="25.0489949" lon="121.7884013"/>
+    <trkpt lat="25.049031" lon="121.788347"/>
+    <trkpt lat="25.049022" lon="121.788284"/>
+    <trkpt lat="25.048994" lon="121.788226"/>
+    <trkpt lat="25.048996" lon="121.788193"/>
+    <trkpt lat="25.0489662" lon="121.7882129"/>
+    <trkpt lat="25.0489269" lon="121.7882288"/>
+    <trkpt lat="25.0488571" lon="121.7882411"/>
+    <trkpt lat="25.0488035" lon="121.7882371"/>
+    <trkpt lat="25.0487259" lon="121.7881667"/>
+    <trkpt lat="25.0486861" lon="121.7880501"/>
+    <trkpt lat="25.0486845" lon="121.7879087"/>
+    <trkpt lat="25.0487193" lon="121.7877378"/>
+    <trkpt lat="25.0487943" lon="121.7875542"/>
+    <trkpt lat="25.048784" lon="121.787446"/>
+    <trkpt lat="25.0486505" lon="121.7874392"/>
+    <trkpt lat="25.048559" lon="121.787363"/>
+    <trkpt lat="25.048527" lon="121.78742"/>
+    <trkpt lat="25.048636" lon="121.787536"/>
+    <trkpt lat="25.048554" lon="121.787581"/>
+    <trkpt lat="25.048545" lon="121.78769"/>
+    <trkpt lat="25.0486966" lon="121.7882888"/>
+    <trkpt lat="25.048852" lon="121.788533"/>
+    <trkpt lat="25.048937" lon="121.788685"/>
+    <trkpt lat="25.048904" lon="121.788886"/>
+    <trkpt lat="25.048878" lon="121.788754"/>
+    <trkpt lat="25.048784" lon="121.788653"/>
+  </trkseg>
+</trk>
+<trk>
+  <name>&#x8DEF;&#x7DDA;2</name>
+  <trkseg>
+    <trkpt lat="25.0471943" lon="121.7826748"/>
+    <trkpt lat="25.047277" lon="121.7827284"/>
+    <trkpt lat="25.0472089" lon="121.7829511"/>
+    <trkpt lat="25.0472502" lon="121.7830369"/>
+    <trkpt lat="25.0473669" lon="121.7831308"/>
+    <trkpt lat="25.0474422" lon="121.7832837"/>
+    <trkpt lat="25.0475151" lon="121.7835358"/>
+    <trkpt lat="25.0476196" lon="121.7838684"/>
+    <trkpt lat="25.0474252" lon="121.7832246"/>
+    <trkpt lat="25.0474325" lon="121.7831898"/>
+    <trkpt lat="25.0475661" lon="121.7831281"/>
+    <trkpt lat="25.0476172" lon="121.7830449"/>
+    <trkpt lat="25.0476172" lon="121.7829511"/>
+    <trkpt lat="25.0476172" lon="121.7827606"/>
+    <trkpt lat="25.0475977" lon="121.7826426"/>
+    <trkpt lat="25.0475175" lon="121.7825836"/>
+    <trkpt lat="25.0474373" lon="121.7825568"/>
+    <trkpt lat="25.0473353" lon="121.7826533"/>
+    <trkpt lat="25.0472843" lon="121.782707"/>
+    <trkpt lat="25.0471555" lon="121.782656"/>
+  </trkseg>
+</trk>
+</gpx>

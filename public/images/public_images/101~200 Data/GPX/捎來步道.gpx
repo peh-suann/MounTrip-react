@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="GPS Visualizer http://www.gpsvisualizer.com/" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="24.2028905" lon="121.0055605">
+  <name>谷關立體停車場</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="24.2028702" lon="121.0081092">
+  <name>谷關站</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1423-trans-bus.png</sym>
+</wpt>
+<wpt lat="24.2030564" lon="121.0080498">
+  <name>溫泉桂花巷入口</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="24.2039781" lon="121.0088908">
+  <name>谷關吊橋</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="24.2048898" lon="121.0093143">
+  <name>捎來步道登山口(四季溫泉)</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1371-rec-hiking.png</sym>
+</wpt>
+<wpt lat="24.2069348" lon="121.0086969">
+  <name>捎來步道高點觀景亭</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="24.2056354" lon="121.0057271">
+  <name>捎來步道登山口(捎來吊橋)</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1059-biz-outdoor.png</sym>
+</wpt>
+<wpt lat="24.2041924" lon="121.0062336">
+  <name>捎來吊橋</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="24.2031373" lon="121.0062245">
+  <name>和平谷關郵局豐原19支局</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="24.2034447" lon="121.0068084">
+  <name>谷關溫泉文化館</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<trk>
+  <name>捎來步道</name>
+  <desc>從匯入資料計算的統計資料&lt;br&gt;&lt;br&gt;距離：1.9 公里&lt;br&gt;海拔高度最低：725 公尺&lt;br&gt;海拔高度最高：851 公尺&lt;br&gt;總上升：123 公尺&lt;br&gt;總下降：126 公尺</desc>
+  <trkseg>
+    <trkpt lat="24.2030564" lon="121.0080498"/>
+    <trkpt lat="24.2031431" lon="121.0081272"/>
+    <trkpt lat="24.2033544" lon="121.0083511"/>
+    <trkpt lat="24.2035278" lon="121.0082261"/>
+    <trkpt lat="24.203723" lon="121.008133"/>
+    <trkpt lat="24.203755" lon="121.008113"/>
+    <trkpt lat="24.203869" lon="121.008231"/>
+    <trkpt lat="24.203988" lon="121.008477"/>
+    <trkpt lat="24.204276" lon="121.009349"/>
+    <trkpt lat="24.20427" lon="121.009395"/>
+    <trkpt lat="24.204189" lon="121.0096"/>
+    <trkpt lat="24.204188" lon="121.009654"/>
+    <trkpt lat="24.204232" lon="121.009755"/>
+    <trkpt lat="24.204318" lon="121.009619"/>
+    <trkpt lat="24.204626" lon="121.009319"/>
+    <trkpt lat="24.204738" lon="121.009271"/>
+    <trkpt lat="24.204847" lon="121.009264"/>
+    <trkpt lat="24.204957" lon="121.009323"/>
+    <trkpt lat="24.204967" lon="121.009299"/>
+    <trkpt lat="24.20494" lon="121.009029"/>
+    <trkpt lat="24.204986" lon="121.008777"/>
+    <trkpt lat="24.205003" lon="121.00874"/>
+    <trkpt lat="24.205033" lon="121.008756"/>
+    <trkpt lat="24.20498" lon="121.008906"/>
+    <trkpt lat="24.205006" lon="121.00892"/>
+    <trkpt lat="24.205098" lon="121.008674"/>
+    <trkpt lat="24.205131" lon="121.008688"/>
+    <trkpt lat="24.205101" lon="121.008771"/>
+    <trkpt lat="24.205132" lon="121.008784"/>
+    <trkpt lat="24.205194" lon="121.008655"/>
+    <trkpt lat="24.205199" lon="121.008534"/>
+    <trkpt lat="24.205231" lon="121.008491"/>
+    <trkpt lat="24.205269" lon="121.008469"/>
+    <trkpt lat="24.20531" lon="121.00852"/>
+    <trkpt lat="24.205352" lon="121.008537"/>
+    <trkpt lat="24.205385" lon="121.008625"/>
+    <trkpt lat="24.205445" lon="121.008624"/>
+    <trkpt lat="24.20548" lon="121.008708"/>
+    <trkpt lat="24.205484" lon="121.008781"/>
+    <trkpt lat="24.205522" lon="121.008922"/>
+    <trkpt lat="24.205571" lon="121.009017"/>
+    <trkpt lat="24.205598" lon="121.009131"/>
+    <trkpt lat="24.205666" lon="121.009202"/>
+    <trkpt lat="24.205825" lon="121.009314"/>
+    <trkpt lat="24.205856" lon="121.009404"/>
+    <trkpt lat="24.205863" lon="121.009486"/>
+    <trkpt lat="24.205896" lon="121.009541"/>
+    <trkpt lat="24.206047" lon="121.009594"/>
+    <trkpt lat="24.20614" lon="121.009641"/>
+    <trkpt lat="24.206189" lon="121.009691"/>
+    <trkpt lat="24.206319" lon="121.00975"/>
+    <trkpt lat="24.206319" lon="121.009725"/>
+    <trkpt lat="24.206256" lon="121.009661"/>
+    <trkpt lat="24.206191" lon="121.00954"/>
+    <trkpt lat="24.206221" lon="121.009366"/>
+    <trkpt lat="24.206211" lon="121.009351"/>
+    <trkpt lat="24.206192" lon="121.009369"/>
+    <trkpt lat="24.206178" lon="121.009364"/>
+    <trkpt lat="24.206224" lon="121.009194"/>
+    <trkpt lat="24.20625" lon="121.009158"/>
+    <trkpt lat="24.206253" lon="121.009055"/>
+    <trkpt lat="24.206287" lon="121.008978"/>
+    <trkpt lat="24.206307" lon="121.008881"/>
+    <trkpt lat="24.206379" lon="121.008942"/>
+    <trkpt lat="24.206414" lon="121.008893"/>
+    <trkpt lat="24.206439" lon="121.008773"/>
+    <trkpt lat="24.206382" lon="121.008606"/>
+    <trkpt lat="24.206387" lon="121.008521"/>
+    <trkpt lat="24.206404" lon="121.008511"/>
+    <trkpt lat="24.206422" lon="121.008533"/>
+    <trkpt lat="24.206496" lon="121.008539"/>
+    <trkpt lat="24.2066" lon="121.008517"/>
+    <trkpt lat="24.206683" lon="121.008562"/>
+    <trkpt lat="24.206764" lon="121.00858"/>
+    <trkpt lat="24.206783" lon="121.008579"/>
+    <trkpt lat="24.206841" lon="121.008647"/>
+    <trkpt lat="24.206858" lon="121.008671"/>
+    <trkpt lat="24.206931" lon="121.008708"/>
+    <trkpt lat="24.206964" lon="121.008703"/>
+    <trkpt lat="24.206981" lon="121.008682"/>
+    <trkpt lat="24.206992" lon="121.008669"/>
+    <trkpt lat="24.207023" lon="121.008647"/>
+    <trkpt lat="24.207009" lon="121.008615"/>
+    <trkpt lat="24.206921" lon="121.008516"/>
+    <trkpt lat="24.206864" lon="121.008534"/>
+    <trkpt lat="24.20683" lon="121.008523"/>
+    <trkpt lat="24.206627" lon="121.008272"/>
+    <trkpt lat="24.206438" lon="121.007916"/>
+    <trkpt lat="24.206306" lon="121.007817"/>
+    <trkpt lat="24.206245" lon="121.007772"/>
+    <trkpt lat="24.205939" lon="121.007494"/>
+    <trkpt lat="24.206017" lon="121.007315"/>
+    <trkpt lat="24.205778" lon="121.006966"/>
+    <trkpt lat="24.205757" lon="121.006469"/>
+    <trkpt lat="24.206125" lon="121.006628"/>
+    <trkpt lat="24.206498" lon="121.00656"/>
+    <trkpt lat="24.206312" lon="121.006189"/>
+    <trkpt lat="24.206471" lon="121.006176"/>
+    <trkpt lat="24.206599" lon="121.006127"/>
+    <trkpt lat="24.206568" lon="121.005988"/>
+    <trkpt lat="24.206409" lon="121.005855"/>
+    <trkpt lat="24.205783" lon="121.005678"/>
+    <trkpt lat="24.205522" lon="121.005716"/>
+    <trkpt lat="24.204962" lon="121.005953"/>
+    <trkpt lat="24.203984" lon="121.006362"/>
+    <trkpt lat="24.203569" lon="121.006157"/>
+    <trkpt lat="24.203146" lon="121.006201"/>
+    <trkpt lat="24.203221" lon="121.006892"/>
+    <trkpt lat="24.2032" lon="121.007436"/>
+    <trkpt lat="24.203195" lon="121.007476"/>
+    <trkpt lat="24.2031174" lon="121.0079657"/>
+    <trkpt lat="24.2030564" lon="121.0080498"/>
+  </trkseg>
+</trk>
+</gpx>

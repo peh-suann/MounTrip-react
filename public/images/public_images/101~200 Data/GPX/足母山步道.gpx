@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="GPS Visualizer http://www.gpsvisualizer.com/" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="22.911348" lon="120.688929">
+  <name>多納大橋</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.909458" lon="120.713967">
+  <name>多納公車站</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.908953" lon="120.714592">
+  <name>多納村部落停車場</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.911813" lon="120.718109">
+  <name>往溪床叉路(取左)</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.91362" lon="120.719119">
+  <name>多納巷底廢棄工寮(下溪床)</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.914321" lon="120.722619">
+  <name>足母山登山口</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.917786" lon="120.722113">
+  <ele>538.2</ele>
+  <name>駁坎</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.918545" lon="120.721885">
+  <ele>514.8</ele>
+  <name>石板屋遺址1</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.924022" lon="120.723159">
+  <ele>783.8</ele>
+  <name>石板屋遺址2</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.926777" lon="120.729158">
+  <ele>951.4</ele>
+  <name>攻頂點</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.931091" lon="120.730219">
+  <name>足母山</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.9108348" lon="120.7170391">
+  <name>多納勇士步道</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.917312" lon="120.73048">
+  <name>鬼斧神工峽谷入口</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="22.915964" lon="120.730712">
+  <name>多納一線天</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<trk>
+  <name>足母山步道</name>
+  <desc>從匯入資料計算的統計資料&lt;br&gt;&lt;br&gt;距離：3.0 公里&lt;br&gt;海拔高度最低：343 公尺&lt;br&gt;海拔高度最高：1071 公尺&lt;br&gt;總上升：728 公尺&lt;br&gt;總下降：13 公尺</desc>
+  <trkseg>
+    <trkpt lat="22.913612" lon="120.719131">
+      <ele>391.0</ele>
+    </trkpt>
+    <trkpt lat="22.913718" lon="120.719181">
+      <ele>374.0</ele>
+    </trkpt>
+    <trkpt lat="22.91423" lon="120.71927">
+      <ele>355.9</ele>
+    </trkpt>
+    <trkpt lat="22.914325" lon="120.71933">
+      <ele>354.3</ele>
+    </trkpt>
+    <trkpt lat="22.914484" lon="120.719401">
+      <ele>353.0</ele>
+    </trkpt>
+    <trkpt lat="22.914485" lon="120.719596">
+      <ele>352.0</ele>
+    </trkpt>
+    <trkpt lat="22.914492" lon="120.719856">
+      <ele>350.5</ele>
+    </trkpt>
+    <trkpt lat="22.914537" lon="120.720145">
+      <ele>348.3</ele>
+    </trkpt>
+    <trkpt lat="22.914504" lon="120.720454">
+      <ele>345.4</ele>
+    </trkpt>
+    <trkpt lat="22.914492" lon="120.720791">
+      <ele>343.4</ele>
+    </trkpt>
+    <trkpt lat="22.914186" lon="120.721382">
+      <ele>338.7</ele>
+    </trkpt>
+    <trkpt lat="22.914068" lon="120.721659">
+      <ele>339.5</ele>
+    </trkpt>
+    <trkpt lat="22.914001" lon="120.721836">
+      <ele>339.5</ele>
+    </trkpt>
+    <trkpt lat="22.914109" lon="120.721971">
+      <ele>339.5</ele>
+    </trkpt>
+    <trkpt lat="22.914301" lon="120.722035">
+      <ele>343.3</ele>
+    </trkpt>
+    <trkpt lat="22.914396" lon="120.722152">
+      <ele>346.2</ele>
+    </trkpt>
+    <trkpt lat="22.914389" lon="120.722382">
+      <ele>352.0</ele>
+    </trkpt>
+    <trkpt lat="22.914321" lon="120.722619">
+      <ele>359.8</ele>
+    </trkpt>
+    <trkpt lat="22.91436" lon="120.7227">
+      <ele>364.1</ele>
+    </trkpt>
+    <trkpt lat="22.914513" lon="120.722782">
+      <ele>368.3</ele>
+    </trkpt>
+    <trkpt lat="22.91464" lon="120.722902">
+      <ele>372.4</ele>
+    </trkpt>
+    <trkpt lat="22.914853" lon="120.722848">
+      <ele>380.2</ele>
+    </trkpt>
+    <trkpt lat="22.915145" lon="120.722736">
+      <ele>395.7</ele>
+    </trkpt>
+    <trkpt lat="22.91542" lon="120.722736">
+      <ele>413.5</ele>
+    </trkpt>
+    <trkpt lat="22.916126" lon="120.722512">
+      <ele>457.8</ele>
+    </trkpt>
+    <trkpt lat="22.916917" lon="120.722101">
+      <ele>499.2</ele>
+    </trkpt>
+    <trkpt lat="22.918191" lon="120.722101">
+      <ele>546.3</ele>
+    </trkpt>
+    <trkpt lat="22.918793" lon="120.721821">
+      <ele>569.3</ele>
+    </trkpt>
+    <trkpt lat="22.919842" lon="120.721447">
+      <ele>605.8</ele>
+    </trkpt>
+    <trkpt lat="22.920324" lon="120.721447">
+      <ele>619.7</ele>
+    </trkpt>
+    <trkpt lat="22.921047" lon="120.721485">
+      <ele>641.2</ele>
+    </trkpt>
+    <trkpt lat="22.921907" lon="120.721578">
+      <ele>663.2</ele>
+    </trkpt>
+    <trkpt lat="22.922371" lon="120.721821">
+      <ele>675.9</ele>
+    </trkpt>
+    <trkpt lat="22.923266" lon="120.722475">
+      <ele>701.6</ele>
+    </trkpt>
+    <trkpt lat="22.923645" lon="120.722867">
+      <ele>717.4</ele>
+    </trkpt>
+    <trkpt lat="22.923954" lon="120.723128">
+      <ele>728.0</ele>
+    </trkpt>
+    <trkpt lat="22.924298" lon="120.723259">
+      <ele>732.8</ele>
+    </trkpt>
+    <trkpt lat="22.924797" lon="120.723296">
+      <ele>736.5</ele>
+    </trkpt>
+    <trkpt lat="22.925124" lon="120.723465">
+      <ele>739.7</ele>
+    </trkpt>
+    <trkpt lat="22.9254" lon="120.723782">
+      <ele>738.0</ele>
+    </trkpt>
+    <trkpt lat="22.925709" lon="120.724193">
+      <ele>747.1</ele>
+    </trkpt>
+    <trkpt lat="22.925726" lon="120.724623">
+      <ele>765.0</ele>
+    </trkpt>
+    <trkpt lat="22.92583" lon="120.725146">
+      <ele>794.0</ele>
+    </trkpt>
+    <trkpt lat="22.926225" lon="120.7258">
+      <ele>827.4</ele>
+    </trkpt>
+    <trkpt lat="22.92638" lon="120.726509">
+      <ele>837.7</ele>
+    </trkpt>
+    <trkpt lat="22.926604" lon="120.72679">
+      <ele>848.0</ele>
+    </trkpt>
+    <trkpt lat="22.926604" lon="120.727051">
+      <ele>854.3</ele>
+    </trkpt>
+    <trkpt lat="22.926673" lon="120.727425">
+      <ele>857.7</ele>
+    </trkpt>
+    <trkpt lat="22.926793" lon="120.727612">
+      <ele>863.8</ele>
+    </trkpt>
+    <trkpt lat="22.926827" lon="120.727873">
+      <ele>873.1</ele>
+    </trkpt>
+    <trkpt lat="22.926827" lon="120.728172">
+      <ele>887.2</ele>
+    </trkpt>
+    <trkpt lat="22.926948" lon="120.728396">
+      <ele>896.5</ele>
+    </trkpt>
+    <trkpt lat="22.927" lon="120.728676">
+      <ele>904.7</ele>
+    </trkpt>
+    <trkpt lat="22.926862" lon="120.728975">
+      <ele>912.2</ele>
+    </trkpt>
+    <trkpt lat="22.926724" lon="120.729218">
+      <ele>916.4</ele>
+    </trkpt>
+    <trkpt lat="22.927085" lon="120.729181">
+      <ele>934.4</ele>
+    </trkpt>
+    <trkpt lat="22.92724" lon="120.729386">
+      <ele>942.7</ele>
+    </trkpt>
+    <trkpt lat="22.92755" lon="120.72948">
+      <ele>955.1</ele>
+    </trkpt>
+    <trkpt lat="22.927928" lon="120.729872">
+      <ele>973.6</ele>
+    </trkpt>
+    <trkpt lat="22.92829" lon="120.730208">
+      <ele>994.9</ele>
+    </trkpt>
+    <trkpt lat="22.928582" lon="120.730283">
+      <ele>1009.9</ele>
+    </trkpt>
+    <trkpt lat="22.928892" lon="120.730451">
+      <ele>1027.0</ele>
+    </trkpt>
+    <trkpt lat="22.929339" lon="120.73047">
+      <ele>1053.5</ele>
+    </trkpt>
+    <trkpt lat="22.929804" lon="120.730675">
+      <ele>1088.2</ele>
+    </trkpt>
+    <trkpt lat="22.930234" lon="120.730713">
+      <ele>1116.2</ele>
+    </trkpt>
+    <trkpt lat="22.930639" lon="120.730471">
+      <ele>1142.5</ele>
+    </trkpt>
+    <trkpt lat="22.930856" lon="120.730373">
+      <ele>1149.6</ele>
+    </trkpt>
+    <trkpt lat="22.931036" lon="120.730275">
+      <ele>1154.2</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

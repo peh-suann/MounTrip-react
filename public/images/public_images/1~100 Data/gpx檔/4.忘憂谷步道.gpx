@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="GPS Visualizer http://www.gpsvisualizer.com/" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="25.145984" lon="121.793724">
+  <name>油庫</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1423-trans-bus.png</sym>
+</wpt>
+<wpt lat="25.146553" lon="121.7938283">
+  <name>停車場 - 八斗子漁港堤內</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1453-trans-parking.png</sym>
+</wpt>
+<wpt lat="25.1466272" lon="121.7941358">
+  <name>忘憂谷步道(油庫入口)</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1371-rec-hiking.png</sym>
+</wpt>
+<wpt lat="25.1468021" lon="121.7964479">
+  <name>碉堡</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.146108" lon="121.796728">
+  <name>稜頂涼亭</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.1459997" lon="121.7975138">
+  <name>望幽谷</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.146215" lon="121.798565">
+  <name>望幽平台</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.145152" lon="121.798678">
+  <name>65高地</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.145656" lon="121.799667">
+  <name>80高地</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.146242" lon="121.800993">
+  <name>一〇一高地</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.1460325" lon="121.804551">
+  <name>忘憂谷步道(潮境公園)</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1059-biz-outdoor.png</sym>
+</wpt>
+<wpt lat="25.1461689" lon="121.8049891">
+  <name>停車場 - 環保復育公園</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/1453-trans-parking.png</sym>
+</wpt>
+<trk>
+  <name>忘憂谷步道</name>
+  <trkseg>
+    <trkpt lat="25.146479" lon="121.793908"/>
+    <trkpt lat="25.146621" lon="121.794168"/>
+    <trkpt lat="25.146565" lon="121.794162"/>
+    <trkpt lat="25.146478" lon="121.794216"/>
+    <trkpt lat="25.146317" lon="121.79436"/>
+    <trkpt lat="25.146187" lon="121.79449"/>
+    <trkpt lat="25.146113" lon="121.794593"/>
+    <trkpt lat="25.146515" lon="121.795168"/>
+    <trkpt lat="25.146559" lon="121.795284"/>
+    <trkpt lat="25.146392" lon="121.795482"/>
+    <trkpt lat="25.1461" lon="121.795722"/>
+    <trkpt lat="25.145921" lon="121.795811"/>
+    <trkpt lat="25.145934" lon="121.795888"/>
+    <trkpt lat="25.146106" lon="121.795954"/>
+    <trkpt lat="25.146296" lon="121.795907"/>
+    <trkpt lat="25.146392" lon="121.795978"/>
+    <trkpt lat="25.146565" lon="121.795955"/>
+    <trkpt lat="25.146666" lon="121.795994"/>
+    <trkpt lat="25.146912" lon="121.795863"/>
+    <trkpt lat="25.147101" lon="121.795819"/>
+    <trkpt lat="25.147045" lon="121.795891"/>
+    <trkpt lat="25.146974" lon="121.796075"/>
+    <trkpt lat="25.146889" lon="121.796494"/>
+    <trkpt lat="25.146722" lon="121.796575"/>
+    <trkpt lat="25.146686" lon="121.796635"/>
+    <trkpt lat="25.146618" lon="121.796747"/>
+    <trkpt lat="25.146542" lon="121.796787"/>
+    <trkpt lat="25.14634" lon="121.796746"/>
+    <trkpt lat="25.146142" lon="121.796727"/>
+    <trkpt lat="25.14634" lon="121.796746"/>
+    <trkpt lat="25.146542" lon="121.796787"/>
+    <trkpt lat="25.146448" lon="121.796897"/>
+    <trkpt lat="25.146397" lon="121.796996"/>
+    <trkpt lat="25.146375" lon="121.797103"/>
+    <trkpt lat="25.146392" lon="121.797224"/>
+    <trkpt lat="25.146358" lon="121.797324"/>
+    <trkpt lat="25.146409" lon="121.797399"/>
+    <trkpt lat="25.14642" lon="121.79749"/>
+    <trkpt lat="25.146332" lon="121.79753"/>
+    <trkpt lat="25.146151" lon="121.797484"/>
+    <trkpt lat="25.146285" lon="121.797666"/>
+    <trkpt lat="25.146238" lon="121.797774"/>
+    <trkpt lat="25.146202" lon="121.79809"/>
+    <trkpt lat="25.146256" lon="121.798314"/>
+    <trkpt lat="25.146234" lon="121.798441"/>
+    <trkpt lat="25.146197" lon="121.798446"/>
+    <trkpt lat="25.146075" lon="121.798361"/>
+    <trkpt lat="25.146005" lon="121.798336"/>
+    <trkpt lat="25.145824" lon="121.798308"/>
+    <trkpt lat="25.145766" lon="121.798398"/>
+    <trkpt lat="25.145547" lon="121.798624"/>
+    <trkpt lat="25.145491" lon="121.798666"/>
+    <trkpt lat="25.145451" lon="121.798654"/>
+    <trkpt lat="25.145453" lon="121.798686"/>
+    <trkpt lat="25.145399" lon="121.798691"/>
+    <trkpt lat="25.1454" lon="121.798619"/>
+    <trkpt lat="25.145332" lon="121.798624"/>
+    <trkpt lat="25.145335" lon="121.79859"/>
+    <trkpt lat="25.14531" lon="121.798595"/>
+    <trkpt lat="25.145309" lon="121.798553"/>
+    <trkpt lat="25.145288" lon="121.798558"/>
+    <trkpt lat="25.145286" lon="121.798543"/>
+    <trkpt lat="25.145249" lon="121.798547"/>
+    <trkpt lat="25.145237" lon="121.798564"/>
+    <trkpt lat="25.145223" lon="121.798631"/>
+    <trkpt lat="25.145189" lon="121.798661"/>
+    <trkpt lat="25.145178" lon="121.798669"/>
+    <trkpt lat="25.145126" lon="121.798709"/>
+    <trkpt lat="25.145148" lon="121.798758"/>
+    <trkpt lat="25.145159" lon="121.79885"/>
+    <trkpt lat="25.145116" lon="121.798976"/>
+    <trkpt lat="25.145093" lon="121.799125"/>
+    <trkpt lat="25.145103" lon="121.799276"/>
+    <trkpt lat="25.145135" lon="121.799419"/>
+    <trkpt lat="25.145306" lon="121.799818"/>
+    <trkpt lat="25.145322" lon="121.799884"/>
+    <trkpt lat="25.145422" lon="121.799893"/>
+    <trkpt lat="25.145522" lon="121.799866"/>
+    <trkpt lat="25.145588" lon="121.79981"/>
+    <trkpt lat="25.145631" lon="121.799748"/>
+    <trkpt lat="25.145656" lon="121.799667"/>
+    <trkpt lat="25.145631" lon="121.799748"/>
+    <trkpt lat="25.145588" lon="121.79981"/>
+    <trkpt lat="25.145522" lon="121.799866"/>
+    <trkpt lat="25.145422" lon="121.799893"/>
+    <trkpt lat="25.145322" lon="121.799884"/>
+    <trkpt lat="25.145317" lon="121.799961"/>
+    <trkpt lat="25.14529" lon="121.800029"/>
+    <trkpt lat="25.145129" lon="121.800187"/>
+    <trkpt lat="25.145119" lon="121.800292"/>
+    <trkpt lat="25.145219" lon="121.800516"/>
+    <trkpt lat="25.145379" lon="121.800658"/>
+    <trkpt lat="25.145635" lon="121.800748"/>
+    <trkpt lat="25.145854" lon="121.80076"/>
+    <trkpt lat="25.145927" lon="121.800793"/>
+    <trkpt lat="25.146087" lon="121.800969"/>
+    <trkpt lat="25.146202" lon="121.801031"/>
+    <trkpt lat="25.1463092" lon="121.801123"/>
+    <trkpt lat="25.1463433" lon="121.8012127"/>
+    <trkpt lat="25.1461927" lon="121.8013322"/>
+    <trkpt lat="25.1461686" lon="121.8013456"/>
+    <trkpt lat="25.1462048" lon="121.8015307"/>
+    <trkpt lat="25.1462728" lon="121.8016809"/>
+    <trkpt lat="25.1463311" lon="121.801756"/>
+    <trkpt lat="25.1463554" lon="121.8018472"/>
+    <trkpt lat="25.1464358" lon="121.8020293"/>
+    <trkpt lat="25.1463961" lon="121.8021327"/>
+    <trkpt lat="25.1463303" lon="121.8024974"/>
+    <trkpt lat="25.1462874" lon="121.8026602"/>
+    <trkpt lat="25.1462791" lon="121.8028478"/>
+    <trkpt lat="25.1462097" lon="121.8029684"/>
+    <trkpt lat="25.1461296" lon="121.8030247"/>
+    <trkpt lat="25.1461072" lon="121.8031008"/>
+    <trkpt lat="25.1460176" lon="121.8031191"/>
+    <trkpt lat="25.1458571" lon="121.8032195"/>
+    <trkpt lat="25.1457459" lon="121.8034485"/>
+    <trkpt lat="25.1456269" lon="121.8035677"/>
+    <trkpt lat="25.1456707" lon="121.8037462"/>
+    <trkpt lat="25.1457192" lon="121.8040708"/>
+    <trkpt lat="25.1457605" lon="121.8041754"/>
+    <trkpt lat="25.145869" lon="121.8042795"/>
+    <trkpt lat="25.1460082" lon="121.8044114"/>
+    <trkpt lat="25.1460316" lon="121.804494"/>
+    <trkpt lat="25.1460422" lon="121.8045241"/>
+  </trkseg>
+</trk>
+</gpx>

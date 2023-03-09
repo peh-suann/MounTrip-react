@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="GPS Visualizer http://www.gpsvisualizer.com/" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="25.1080515" lon="121.8567225">
+  <name>黃金博物館遊客服務中心</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.1075347" lon="121.8578969">
+  <name>新北市立黃金博物館</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<wpt lat="25.1049254" lon="121.858706">
+  <name>金瓜石神社遺址</name>
+  <sym>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</sym>
+</wpt>
+<trk>
+  <name>黃金神社步道</name>
+  <desc>從匯入資料計算的統計資料&lt;br&gt;&lt;br&gt;距離：0.7 公里&lt;br&gt;海拔高度最低：277 公尺&lt;br&gt;海拔高度最高：342 公尺&lt;br&gt;總上升：65 公尺&lt;br&gt;總下降：0 公尺</desc>
+  <trkseg>
+    <trkpt lat="25.108157" lon="121.856719">
+      <ele>270.0</ele>
+    </trkpt>
+    <trkpt lat="25.108079" lon="121.856776">
+      <ele>270.0</ele>
+    </trkpt>
+    <trkpt lat="25.107864" lon="121.856918">
+      <ele>270.0</ele>
+    </trkpt>
+    <trkpt lat="25.107695" lon="121.85694">
+      <ele>270.0</ele>
+    </trkpt>
+    <trkpt lat="25.107434" lon="121.856972">
+      <ele>274.3</ele>
+    </trkpt>
+    <trkpt lat="25.107228" lon="121.857017">
+      <ele>277.8</ele>
+    </trkpt>
+    <trkpt lat="25.107257" lon="121.857385">
+      <ele>280.8</ele>
+    </trkpt>
+    <trkpt lat="25.107258" lon="121.857404">
+      <ele>281.5</ele>
+    </trkpt>
+    <trkpt lat="25.107233" lon="121.858232">
+      <ele>286.2</ele>
+    </trkpt>
+    <trkpt lat="25.107247" lon="121.858324">
+      <ele>287.3</ele>
+    </trkpt>
+    <trkpt lat="25.107007" lon="121.858613">
+      <ele>290.1</ele>
+    </trkpt>
+    <trkpt lat="25.106773" lon="121.858708">
+      <ele>290.2</ele>
+    </trkpt>
+    <trkpt lat="25.106741" lon="121.858723">
+      <ele>290.0</ele>
+    </trkpt>
+    <trkpt lat="25.106385" lon="121.858847">
+      <ele>293.3</ele>
+    </trkpt>
+    <trkpt lat="25.106025" lon="121.859041">
+      <ele>299.0</ele>
+    </trkpt>
+    <trkpt lat="25.105793" lon="121.859031">
+      <ele>305.0</ele>
+    </trkpt>
+    <trkpt lat="25.105616" lon="121.859169">
+      <ele>309.8</ele>
+    </trkpt>
+    <trkpt lat="25.105528" lon="121.859306">
+      <ele>311.8</ele>
+    </trkpt>
+    <trkpt lat="25.105308" lon="121.859458">
+      <ele>315.9</ele>
+    </trkpt>
+    <trkpt lat="25.104935" lon="121.859291">
+      <ele>330.0</ele>
+    </trkpt>
+    <trkpt lat="25.104563" lon="121.859147">
+      <ele>348.3</ele>
+    </trkpt>
+    <trkpt lat="25.104597" lon="121.858988">
+      <ele>352.4</ele>
+    </trkpt>
+    <trkpt lat="25.104648" lon="121.85887">
+      <ele>356.5</ele>
+    </trkpt>
+    <trkpt lat="25.104727" lon="121.858781">
+      <ele>360.6</ele>
+    </trkpt>
+    <trkpt lat="25.104852" lon="121.858708">
+      <ele>364.7</ele>
+    </trkpt>
+    <trkpt lat="25.10499" lon="121.85864">
+      <ele>368.8</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>
