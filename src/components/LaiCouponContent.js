@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './../styles/Coupon.module.css'
+import CouponCard from './../components/LaiCouponCard'
+import CouponAmount from './LaiCouponAmount'
 
 export default function LaiCouponContent() {
   return (
@@ -55,7 +57,9 @@ export default function LaiCouponContent() {
           <div className={styles['filter-area']}>
             <div className={styles['show-number']}>
               <p>共有</p>
-              <p id="coupon-amount">7</p>
+              {/* TODO 七張優惠券 */}
+              <CouponAmount amount={6} />
+              {/* <p id={styles['coupon-amount']}>7</p> */}
               <p>張優惠券</p>
             </div>
             <div className={styles['filter-btn']}>
@@ -69,7 +73,31 @@ export default function LaiCouponContent() {
             </div>
           </div>
           <div className={styles['coupon-list']}>
-            <div className={styles['coupon-item']}>
+            <CouponCard
+              tag={''}
+              couponCode={'HAPPY123'}
+              couponDescrib={'消費滿 200 折！， 150 再享 30 次免外送費'}
+              dateStart={'2023/01/01'}
+              dateEnd={'2023/02/28'}
+              state={'on'}
+            />
+            <CouponCard
+              tag={'限量!'}
+              couponCode={'XMAS90'}
+              couponDescrib={'避難器具緩降機使用方法折90啦'}
+              dateStart={'2023/03/01'}
+              dateEnd={'2023/04/30'}
+              state={'off'}
+            />
+            <CouponCard
+              tag={'限量!'}
+              couponCode={'MOUNTRIP99'}
+              couponDescrib={'MOUNTRIP周年慶、歡慶地球日'}
+              dateStart={'2023/05/01'}
+              dateEnd={'2023/06/30'}
+              state={'future'}
+            />
+            {/* <div className={styles['coupon-item']}>
               <p className={`${styles['coupon-tag']} ${styles['item1']}`}>
                 限量！
               </p>
@@ -85,8 +113,8 @@ export default function LaiCouponContent() {
                   <p>已過期</p>
                 </div>
               </div>
-            </div>
-            <div className={styles['coupon-item']}>
+            </div> */}
+            {/* <div className={styles['coupon-item']}>
               <p className={`${styles['coupon-tag']} ${styles['item2']}`}>
                 限量！
               </p>
@@ -102,7 +130,7 @@ export default function LaiCouponContent() {
                   <p>已過期</p>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* <div className={styles[]}"coupon-item ">
               <p className={styles[]}"coupon-tag item3">限量！</p>
               <div className={styles[]}"coupon-card">

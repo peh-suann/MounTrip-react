@@ -196,15 +196,17 @@ section{
 
 /* 頁面渲染時該頁面的sidebar-tag背景色也會改變用的 */
 .active{
-    background-color: var(--mtgreen-7);
+    /* color: black ; */
+    background-color: var(--mtgreen-7) !important;
 }
-.coupon-link{
-
+.active span{
+    margin-bottom: 0;
+    color: var(--mtgrey-2);
+    font-weight: 600;
 }
-.achievement-link{
-    
+.active path{
+    stroke: var(--mtgrey-2)
 }
-
 
 /* 右邊的會元資料 */
 .member-data{
@@ -713,8 +715,11 @@ section{
         z-index: 3;
     }
     .dropdown-icon{
-        transform: translateX(45%) translateY(15%);
+        transform: translateX(50%) translateY(50%);
         position: absolute;
+    }
+    .dropdown-icon path{
+        transform: scale(0.1);
     }
     .mobile-dropdown p{
         color: var(--mtgrey-3);

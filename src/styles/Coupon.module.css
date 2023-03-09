@@ -216,8 +216,9 @@ section{
 #coupon-amount{
     color:var(--mtgreen-1);
     font-weight: 700;
-    padding: 0 10px 0 10px;
-    margin-top: 16px;
+    margin-right: 12px ;
+    margin-left: 12px ;
+    margin-top: 16px ;
     margin-bottom: 0;
 }
 .filter-btn select{
@@ -303,52 +304,66 @@ section{
     position: absolute;
     left:638px;
 }
-.coupon-status-on{
+.coupon_status_on{
     
     background-color: var(--mtgreen-1);
-    
     border-radius: 5px;
     display: flex;
     align-items: center;
-}
-.coupon-status-on p{
-    font-size: 16px;
-    font-weight: 600;
-    color:var(--mtyellow-4);
-    text-align:center;
-    margin-bottom: 0;
-}
-.state-btn{
+    justify-content: center;
     padding: 4px 16px 4px 16px ;
     height: 35px;
     width: 100px;
     position: absolute;
     right: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 }
-.coupon-status-off{
-    background-color: var(--mtgrey-4);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.coupon-status-off p{
+.coupon_status_on p{
     font-size: 16px;
     font-weight: 600;
     color:var(--mtyellow-4);
     text-align:center;
     margin-bottom: 0;
 }
-.coupon-status-future{
+/* 把state_btn搬到on/off/future裡面了 */
+.state_btn{
+    
+    align-items: center;
+}
+.state_btn p{
+    margin: 0;
+}
+.coupon_status_off{
+    background-color: var(--mtgrey-4);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 16px 4px 16px ;
+    height: 35px;
+    width: 100px;
+    position: absolute;
+    right: 20px;
+}
+.coupon_status_off p{
+    font-size: 16px;
+    font-weight: 600;
+    color:var(--mtyellow-4);
+    text-align:center;
+    margin-bottom: 0;
+}
+.coupon_status_future{
     background-color: var(--mtyellow-1);
     border-radius: 5px;
     display: flex;
     align-items: center;
+    padding: 4px 16px 4px 16px ;
+    height: 35px;
+    width: 100px;
+    position: absolute;
+    right: 20px;
 }
-.coupon-status-future p{
+.coupon_status_future p{
     font-size: 16px;
     font-weight: 600;
     color:var(--mtyellow-4);
