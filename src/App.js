@@ -6,6 +6,7 @@ import './styles/Mountrip.module.css'
 
 import Layout from './layouts/Layout'
 import Login from './pages/KexinLogin'
+import Signin from './pages/KexinSignin'
 import Index from './pages/KexinIndex'
 // import YichunProducts from './pages/YichunProducts'
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/">
             {/* 登入頁面Navbar+Footer */}
             <Route path="/Login" element={<Login />} />
+            <Route path="/Signin" element={<Signin />} />
             <Route path="/Index" element={<Index />} />
           </Route>
         </Routes>

@@ -1,20 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 import React from 'react'
-import loginStyles from '../styles/kexinLogin.module.css'
+import signinStyles from '../styles/kexinSignin.module.css'
 import LoginNavbar from '../layouts/NavbarLogin'
 
-function KexinLogin() {
+function kexinSignin() {
   return (
     <>
-      <div className={`${loginStyles['bg-image']}`}>
+      <div className={`${signinStyles['bg-image']}`}>
         <LoginNavbar />
 
-        <div className={`${loginStyles['kexinLogin']} row`}>
+        <div className={`${signinStyles['kexinSignin']} row`}>
           <div
-            className={`${loginStyles['loginForm-wrap']} col-lg-3 col-sm-12`}
+            className={`${signinStyles['loginForm-wrap']} col-lg-3 col-sm-12`}
           >
             <div
-              className={`${loginStyles['mobile-x']}  ${loginStyles['web-none']}`}
+              className={`${signinStyles['mobile-x']}  ${signinStyles['web-none']}`}
             >
               <svg
                 width="32"
@@ -41,43 +41,43 @@ function KexinLogin() {
             </div>
 
             <div
-              className={`${loginStyles['mobile-welcome']} ${loginStyles['web-none']} d-flex flex-column`}
+              className={`${signinStyles['mobile-welcome']} ${signinStyles['web-none']} d-flex flex-column`}
             >
               <h3
-                className={`mb-0 ${loginStyles['mtgreen1']} ${loginStyles['web-none']}`}
+                className={`mb-0 ${signinStyles['mtgreen1']} ${signinStyles['web-none']}`}
               >
                 歡迎回來！
               </h3>
               <p
-                className={`mb-0 ${loginStyles['mtgreen2']} ${loginStyles['web-none']}`}
+                className={`mb-0 ${signinStyles['mtgreen2']} ${signinStyles['web-none']}`}
               >
                 與Mountrip一起繼續探索更多美好的旅程
               </p>
             </div>
             <div
-              className={`${loginStyles['mobile-tag']} d-flex ${loginStyles['web-none']}`}
+              className={`${signinStyles['mobile-tag']} d-flex ${signinStyles['web-none']}`}
             >
               <Link
-                className={`w-50 text-decoration-none ${loginStyles['web-none']}`}
+                to="/login"
+                className={`w-50 text-decoration-none ${signinStyles['web-none']}`}
               >
                 <p
-                  className={`mb-0 text-center ${loginStyles['mtgreen1']} ${loginStyles['web-none']}`}
+                  className={`mb-0 text-center ${signinStyles['mtgrey3']} ${signinStyles['web-none']}`}
                 >
                   登入
                 </p>
               </Link>
               <Link
-                to="/signin"
-                className={`w-50 text-decoration-none ${loginStyles['web-none']}`}
+                className={`w-50 text-decoration-none ${signinStyles['web-none']}`}
               >
                 <p
-                  className={`mb-0 text-center ${loginStyles['mtgrey3']} ${loginStyles['web-none']}`}
+                  className={`mb-0 text-center ${signinStyles['mtgreen1']} ${signinStyles['web-none']}`}
                 >
                   註冊
                 </p>
               </Link>
             </div>
-            <div className={`${loginStyles['loginForm']}`}>
+            <div className={`${signinStyles['loginForm']}`}>
               <form name="form1" method="post">
                 <div className="mb-3">
                   <label htmlFor="account" className="form-label">
@@ -105,29 +105,21 @@ function KexinLogin() {
                   />
                   <div className="form-text"></div>
                 </div>
-                <div className="mb-3 d-flex justify-content-between">
-                  <div>
-                    <input
-                      type="checkbox"
-                      id={loginStyles.rememberme}
-                      name="rememberme"
-                    />
-                    <label
-                      className={`${loginStyles['checkmark']}`}
-                      htmlFor="rememberme"
-                    >
-                      記住我
-                    </label>
-                  </div>
-                  <div>
-                    <a href="#" className={loginStyles['mtgrey1']}>
-                      忘記密碼
-                    </a>
-                  </div>
+                <div className="mb-4">
+                  <label for="password" className="form-label">
+                    密碼確認
+                  </label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    name="password"
+                  />
+                  <div className="form-text"></div>
                 </div>
-                <div className={`${loginStyles['button']}`}>
+                <div className={`${signinStyles['button']}`}>
                   <button
-                    id={loginStyles['login']}
+                    id={signinStyles['login']}
                     type="submit"
                     className="btn btn-primary"
                   >
@@ -136,7 +128,7 @@ function KexinLogin() {
 
                   <div className="mb-0">
                     <button
-                      id={loginStyles['quick-login']}
+                      id={signinStyles['quick-login']}
                       type="submit"
                       className="btn btn-primary mb-2"
                     >
@@ -170,23 +162,25 @@ function KexinLogin() {
                             stroke-linejoin="round"
                           />
                         </svg>
-                        <span className={loginStyles['ms-06']}>
-                          使用Google帳號快速登入
+                        <span className={signinStyles['ms-06']}>
+                          使用Google帳號快速註冊
                         </span>
                       </div>
                     </button>
 
                     <div
-                      className={`${loginStyles['mobile-none']} d-flex justify-content-center`}
+                      className={`${signinStyles['mobile-none']} d-flex justify-content-center`}
                     >
-                      <p className={`${loginStyles['mobile-none']} mb-0 me-2`}>
-                        還沒有帳號嗎?
+                      <p className={`${signinStyles['mobile-none']} mb-0 me-2`}>
+                        已經有帳號了嗎?
                       </p>
 
-                      <Link className={`${loginStyles['mobile-none']} ${loginStyles['mtgreen1']}`} to="/signin">
-                        立即註冊
+                      <Link
+                        className={`${signinStyles['mobile-none']} ${signinStyles['mtgreen1']}`}
+                        to="/login"
+                      >
+                        立即登入
                       </Link>
-                      
                     </div>
                   </div>
                 </div>
@@ -199,4 +193,4 @@ function KexinLogin() {
   )
 }
 
-export default KexinLogin
+export default kexinSignin
