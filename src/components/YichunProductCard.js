@@ -44,8 +44,8 @@ function YichunProductCard(props) {
           <div className={styles.info}>
             <h4>{el.trail_name}</h4>
             <p>
-              {el.county}
-              {el.town}
+              {el.geo_location_sid}
+              {el.geo_location_town_sid}
             </p>
           </div>
           <div className={styles.price}>

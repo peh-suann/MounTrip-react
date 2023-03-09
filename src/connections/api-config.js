@@ -10,5 +10,8 @@
 
 // yichun's connect
 export const HOST = 'http://192.168.71.118:3000'
+// export const HOST = 'http://127.0.0.1:3000'
 
-export const PRODUCTS = `${HOST}/popular_products`
+export const ALL_PRODUCTS = `${HOST}/products`
+export const POP_PRODUCTS = `${HOST}/popular_products`
+export const TEST_QUES = `${HOST}/test`

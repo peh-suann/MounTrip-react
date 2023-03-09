@@ -1,8 +1,53 @@
-import React, { useContext } from 'react'
-import { StylesContext } from './../pages/YichunProducts'
+// Packages
+import React, { useContext, useState } from 'react'
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import format from 'date-fns/format'
+import { addDays } from 'date-fns'
+import axios from 'axios'
 
-function YichunSearchBar() {
-  const styles = useContext(StylesContext)
+// FontAwesome
+import { faMinus, faAdd } from '@fortawesome/free-solid-svg-icons'
+
+// Components
+import YichunDateSelect from './YichunDateSelect'
+
+// Connections
+import { ALL_PRODUCTS } from '../connections/api-config'
+
+// Styles
+import styles from './../styles/yichun_styles/YichunSearchBar.module.css'
+
+function YichunSearchBar(props) {
+  const { getListData, products, setProducts } = props
+  const [location, setLocation] = useState('想去的地方...')
+  const [dateRange, setDateRange] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 3),
+      key: 'selection',
+    },
+  ])
+  const [numOfPpl, setNumOfPpl] = useState(1)
+
+  // const searchProducts = (location) => {
+  //   const search = products.filter((el) => {
+  //     if (el.trail_name.includes(location)) {
+  //       console.log(el)
+  //       return el
+  //     }
+  //   })
+  //   setProducts(search)
+  // }
+
+  const getSearchData = async () => {
+    const response = await axios(ALL_PRODUCTS, {
+      params: {
+        location: location,
+      },
+    })
+  }
+
   return (
     <>
       <section id={styles.search_bar}>
@@ -31,7 +76,14 @@ function YichunSearchBar() {
           </div>
           <div className={styles.input_field}>
             <label htmlFor="location">目的地</label>
-            <input type="text" id="location" placeholder="想去的地方..." />
+            <input
+              type="text"
+              id="location"
+              placeholder={location}
+              onChange={(e) => {
+                setLocation(e.target.value)
+              }}
+            />
           </div>
         </div>
         <div className={`${styles.search_item} ${styles.date}`}>
@@ -76,9 +128,10 @@ function YichunSearchBar() {
           <div className={styles.input_field}>
             <label htmlFor="date">日期</label>
             <div className={styles.inputs}>
-              <input type="date" id="date_start" />
-              <span>—</span>
-              <input type="date" id="date_end" />
+              <YichunDateSelect
+                dateRange={dateRange}
+                setDateRange={setDateRange}
+              />
             </div>
           </div>
         </div>
@@ -110,11 +163,63 @@ function YichunSearchBar() {
           <div className={styles.input_field}>
             <label htmlFor="person">人數</label>
             <div className={styles.inputs}>
-              <input type="number" id="person" placeholder="2" />人
+              <button
+                className={`${styles.num_of_ppl} ${
+                  numOfPpl === 1 ? styles.disable : ''
+                }`}
+                onClick={() => {
+                  if (numOfPpl > 1) {
+                    setNumOfPpl(numOfPpl - 1)
+                  }
+                }}
+              >
+                <FontAwesomeIcon icon={faMinus} />
+              </button>
+              <span>{numOfPpl}</span>
+              <button
+                className={styles.num_of_ppl}
+                onClick={() => {
+                  setNumOfPpl(numOfPpl + 1)
+                }}
+              >
+                <FontAwesomeIcon icon={faAdd} />
+              </button>
             </div>
           </div>
         </div>
-        <button>搜尋</button>
+        <button
+          id={styles.search_btn}
+          onClick={() => {
+            console.log({
+              location: location,
+              startDate: format(dateRange[0].startDate, 'yyyy-MM-dd'),
+              endDate: format(dateRange[0].endDate, 'yyyy-MM-dd'),
+              numOfPpl: numOfPpl,
+            })
+            getListData()
+          }}
+        >
+          搜尋
+        </button>
+      </section>
+      <section>
+        {products
+          .filter((item) => {
+            if (item.trail_name.includes(location)) {
+              return item
+            }
+          })
+          .map((el, i) => {
+            return (
+              <div key={i}>
+                <span>
+                  {el.trail_name}/{el.price}/{el.geo_location_sid}
+                  {el.geo_location_town_sid}
+                </span>
+                <br />
+              </div>
+            )
+          })}
       </section>
     </>
   )

@@ -8,6 +8,7 @@ import Layout from './layouts/Layout'
 import Login from './pages/KexinLogin'
 import YichunProducts from './pages/YichunProducts'
 import Member from './pages/Member'
+import YichunTest from './pages/YichunTest'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             {/* 其他頁面Navbar+Footer */}{' '}
             <Route path="/products" element={<YichunProducts />} />
             <Route path="/member" element={<Member />} />
+            <Route path="/test" element={<YichunTest />} />
           </Route>
           <Route path="/">
             {/* 登入頁面Navbar+Footer */}
