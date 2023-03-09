@@ -10,7 +10,7 @@ function DavisTrailsFilter() {
           <div
             className={`card-body d-flex flex-column ${styles['card_padding']} ${styles['left_card']} `}
           >
-            <h5 className="h5-sub-title">搜尋</h5>
+            <h5 className={`${styles.h5_sub_title}`}>搜尋</h5>
             <div className={`d-flex flex-column ${styles.search}`}>
               <p className={`mb-0 ${styles.p_content}`}>目的地</p>
               <div className={`d-flex flex-row ${styles.input_with_icon}`}>
@@ -818,6 +818,7 @@ function DavisTrailsFilter() {
                   </svg>
                 </span>
                 <div className="">
+                  {/* FIXME: 點擊的按鈕跑掉了 */}
                   <input className={`${styles.input_style}`} type="number" />
                 </div>
               </div>

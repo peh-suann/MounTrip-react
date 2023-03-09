@@ -41,7 +41,7 @@ main .right_card {
 }
 
 
-.h5-sub-title {
+.h5_sub_title {
   color: var(--mtgreen-1);
   font-weight: 700;
 }
@@ -105,7 +105,7 @@ main .right_card {
 
 .right_card .sub_title {
   /* border: 1px solid black; */
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 
 .right_card .vector_wrap {
@@ -119,7 +119,7 @@ main .right_card {
 .h5_sub_title_search {
   margin: 0px 35px;
 
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 7px;
@@ -143,11 +143,10 @@ main .right_card {
 }
 
 .product_name {
-  font-size: 10px;
   font-weight: 700;
   margin-bottom: 3px;
   letter-spacing: 0.05em;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 150%;
 }
 
@@ -174,6 +173,7 @@ main .right_card {
 }
 
 .price_h3 {
+  font-size: 23px;
   color: var(--mtgreen-1)
 }
 

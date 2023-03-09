@@ -40,6 +40,10 @@ export default function DavisTrailsDetail(rows) {
 
   return (
     <>
+      {/* FIXME: button group size/
+       mobile top picture/
+       mobile 購物車fix
+         */}
       {/* <div className="container">
             {console.log('----', data.rows)}
             <DavisTrailsDetailTable rows={data.rows} />
@@ -465,7 +469,7 @@ export default function DavisTrailsDetail(rows) {
                       <div className="mb-3">
                         <img
                           className={`${styles.img_contain}`}
-                          src="./imgs/Davis/2-gpx.jpg"
+                          src="./imgs/Davis/3-1.jpg"
                           alt=""
                         />
                       </div>
@@ -1144,7 +1148,7 @@ export default function DavisTrailsDetail(rows) {
                       </h5>
                     </div>
                     <div className="col d-flex justify-content-center">
-                      <h5 className="mb-0">2023/01/01 - 2023/01/03</h5>
+                      <h6 className="mb-0">2023/01/01 - 2023/01/03</h6>
                     </div>
                     <button className={`${styles.btn_style}`}>
                       <svg
