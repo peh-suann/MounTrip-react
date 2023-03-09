@@ -7,6 +7,7 @@ import './styles/Mountrip.module.css'
 import Layout from './layouts/Layout'
 import Login from './pages/KexinLogin'
 import YichunProducts from './pages/YichunProducts'
+import YichunTest from './pages/YichunTest'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             {/* 其他頁面Navbar+Footer */}{' '}
             <Route path="/products" element={<YichunProducts />} />
+            <Route path="/test" element={<YichunTest />} />
           </Route>
           <Route path="/">
             {/* 登入頁面Navbar+Footer */}

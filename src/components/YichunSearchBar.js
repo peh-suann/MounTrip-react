@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import format from 'date-fns/format'
 import { addDays } from 'date-fns'
+import axios from 'axios'
 
 // FontAwesome
 import { faMinus, faAdd } from '@fortawesome/free-solid-svg-icons'
@@ -11,10 +12,14 @@ import { faMinus, faAdd } from '@fortawesome/free-solid-svg-icons'
 // Components
 import YichunDateSelect from './YichunDateSelect'
 
+// Connections
+import { ALL_PRODUCTS } from '../connections/api-config'
+
 // Styles
 import styles from './../styles/yichun_styles/YichunSearchBar.module.css'
 
-function YichunSearchBar() {
+function YichunSearchBar(props) {
+  const { getListData, products, setProducts } = props
   const [location, setLocation] = useState('想去的地方...')
   const [dateRange, setDateRange] = useState([
     {
@@ -24,6 +29,25 @@ function YichunSearchBar() {
     },
   ])
   const [numOfPpl, setNumOfPpl] = useState(1)
+
+  // const searchProducts = (location) => {
+  //   const search = products.filter((el) => {
+  //     if (el.trail_name.includes(location)) {
+  //       console.log(el)
+  //       return el
+  //     }
+  //   })
+  //   setProducts(search)
+  // }
+
+  const getSearchData = async () => {
+    const response = await axios(ALL_PRODUCTS, {
+      params: {
+        location: location,
+      },
+    })
+  }
+
   return (
     <>
       <section id={styles.search_bar}>
@@ -172,10 +196,30 @@ function YichunSearchBar() {
               endDate: format(dateRange[0].endDate, 'yyyy-MM-dd'),
               numOfPpl: numOfPpl,
             })
+            getListData()
           }}
         >
           搜尋
         </button>
+      </section>
+      <section>
+        {products
+          .filter((item) => {
+            if (item.trail_name.includes(location)) {
+              return item
+            }
+          })
+          .map((el, i) => {
+            return (
+              <div key={i}>
+                <span>
+                  {el.trail_name}/{el.price}/{el.geo_location_sid}
+                  {el.geo_location_town_sid}
+                </span>
+                <br />
+              </div>
+            )
+          })}
       </section>
     </>
   )

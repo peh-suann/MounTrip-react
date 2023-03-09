@@ -1,5 +1,5 @@
 // Packages
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import axios from 'axios'
 
 // Components
@@ -9,17 +9,30 @@ import YichunDiffRank from '../components/YichunDiffRank'
 import Button from '../components/Button'
 
 // Connections
-import { PRODUCTS } from '../connections/api-config'
+import { ALL_PRODUCTS, POP_PRODUCTS } from '../connections/api-config'
 
 // Styles
 import styles from './../styles/yichun_styles/YichunProducts.module.css'
 export const StylesContext = createContext(styles)
 
 function YichunProducts() {
+  const [products, setProducts] = useState([])
   const getListData = async () => {
     try {
-      const response = await axios.get(PRODUCTS)
-      console.log('getListData:', response.data)
+      const response = await axios.get(ALL_PRODUCTS)
+      console.log('getAllProducts', response.data)
+      setProducts(response.data)
+      return response.data
+    } catch (error) {
+      console.error(error)
+      return []
+    }
+  }
+
+  const getPopularProductsData = async () => {
+    try {
+      const response = await axios.get(POP_PRODUCTS)
+      console.log('getPopularProductsData:', response.data)
       return response.data
     } catch (error) {
       console.error(error)
@@ -31,7 +44,7 @@ function YichunProducts() {
 
   useEffect(() => {
     const getData = async () => {
-      const data = await getListData()
+      const data = await getPopularProductsData()
       setPopProducts(data)
     }
 
@@ -44,7 +57,11 @@ function YichunProducts() {
     <>
       <StylesContext.Provider value={styles}>
         <section id={styles.product_top_bar}></section>
-        <YichunSearchBar />
+        <YichunSearchBar
+          getListData={getListData}
+          products={products}
+          setProducts={setProducts}
+        />
         <section className={styles.products}>
           <div className={styles.products_title}>
             <img src="./../images/product-page-img/mountain_left.svg" alt="" />
