@@ -202,7 +202,7 @@ function YichunSearchBar(props) {
           搜尋
         </button>
       </section>
-      <section>
+      {/* <section>
         {products
           .filter((item) => {
             if (item.trail_name.includes(location)) {
@@ -220,7 +220,7 @@ function YichunSearchBar(props) {
               </div>
             )
           })}
-      </section>
+      </section> */}
     </>
   )
 }
