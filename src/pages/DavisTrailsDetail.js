@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
 // import DavisTrailsDetailTable from '../components/DavisTrailsDetailTable'
+// import DavisGpxTest from '../components/DavisGpxTest'
 import { TRAILS_DATA } from '../connections/api-config'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -47,6 +48,9 @@ export default function DavisTrailsDetail(rows) {
             {console.log('----', data.rows)}
             <DavisTrailsDetailTable rows={data.rows} />
           </div> */}
+      {/* <div className="container">
+        <DavisGpxTest />
+      </div> */}
       {console.log('----', data.rows)}
       <table className="table">
         <tbody>
