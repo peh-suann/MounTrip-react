@@ -1,9 +1,17 @@
-import { Link } from "react-router-dom";
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import React from 'react'
 import loginStyles from '../styles/kexinLogin.module.css'
 import LoginNavbar from '../layouts/NavbarLogin'
+import { LOGIN } from './../components/api_config.js'
+import axios from 'axios'
 
 function KexinLogin() {
+  const [myForm, setMyForm] = useState({
+    account: '',
+    password: '',
+  })
+
   return (
     <>
       <div className={`${loginStyles['bg-image']}`}>
@@ -78,7 +86,16 @@ function KexinLogin() {
               </Link>
             </div>
             <div className={`${loginStyles['loginForm']}`}>
-              <form name="form1" method="post">
+              <form
+                name="form1"
+                method="post"
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  axios.post(LOGIN, { ...myForm }).then((response) => {
+                    console.log(response.data)
+                  })
+                }}
+              >
                 <div className="mb-3">
                   <label htmlFor="account" className="form-label">
                     帳號/Email
@@ -89,6 +106,12 @@ function KexinLogin() {
                     id="account"
                     name="account"
                     required
+                    onChange={(e) => {
+                      setMyForm((prev) => ({
+                        ...myForm,
+                        account: e.target.value,
+                      }))
+                    }}
                   />
                   <div className="form-text"></div>
                 </div>
@@ -102,6 +125,12 @@ function KexinLogin() {
                     id="password"
                     name="password"
                     required
+                    onChange={(e) => {
+                      setMyForm((prev) => ({
+                        ...myForm,
+                        password: e.target.value,
+                      }))
+                    }}
                   />
                   <div className="form-text"></div>
                 </div>
@@ -183,10 +212,12 @@ function KexinLogin() {
                         還沒有帳號嗎?
                       </p>
 
-                      <Link className={`${loginStyles['mobile-none']} ${loginStyles['mtgreen1']}`} to="/signin">
+                      <Link
+                        className={`${loginStyles['mobile-none']} ${loginStyles['mtgreen1']}`}
+                        to="/signin"
+                      >
                         立即註冊
                       </Link>
-                      
                     </div>
                   </div>
                 </div>
