@@ -1,7 +1,17 @@
 import React from 'react'
 import styles from './../styles/HistoryOrder.module.css'
 
-export default function LaiHistoryProduct() {
+export default function LaiHistoryProduct(props) {
+  const { img, productTitle, productSubTi, dateStart, dateEnd, price, amount } =
+    props
+  const countTolPrice = (p, amount) => {
+    let priceNum = parseInt(p.replace(',', ''))
+    let tolPrice = priceNum * amount
+
+    return tolPrice.toLocaleString()
+  }
+  const TolPrice = countTolPrice(price, amount)
+
   return (
     <>
       <div className={styles['dropdown-bar']}></div>
@@ -11,18 +21,18 @@ export default function LaiHistoryProduct() {
             <div className={styles['img-wrap-img']}></div>
           </div>
           <div className={styles['title-wrap']}>
-            <h6>草嶺古道｜探索新北一探索新北一</h6>
-            <p>草嶺古道單日行程</p>
+            <h6>{productTitle}</h6>
+            <p>{productSubTi}</p>
           </div>
           <div className={styles['date-wrap']}>
-            <p>2023/01/01</p>
+            <p>{dateStart}</p>
             <div className={styles['date-dash']}></div>
-            <p>2023/01/02</p>
+            <p>{dateEnd}</p>
           </div>
         </div>
         <div className={styles['single-price-wrap']}>
           <p>NTD</p>
-          <p>1,200</p>
+          <p>{price}</p>
         </div>
         <div className={styles['amount-wrap']}>
           <svg
@@ -47,11 +57,12 @@ export default function LaiHistoryProduct() {
               strokeLinejoin="round"
             />
           </svg>
-          <p>1</p>
+          <p>{amount}</p>
         </div>
         <div className={styles['total-price-wrap']}>
           <p>NTD</p>
-          <p>1,200</p>
+          <p>{TolPrice}</p>
+          {/* <p>{price}</p> */}
         </div>
       </div>
     </>

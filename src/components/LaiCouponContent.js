@@ -57,9 +57,8 @@ export default function LaiCouponContent() {
           <div className={styles['filter-area']}>
             <div className={styles['show-number']}>
               <p>共有</p>
-              {/* TODO 七張優惠券 */}
+              {/* TODO連結評論數量 */}
               <CouponAmount amount={6} />
-              {/* <p id={styles['coupon-amount']}>7</p> */}
               <p>張優惠券</p>
             </div>
             <div className={styles['filter-btn']}>

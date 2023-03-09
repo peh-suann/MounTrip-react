@@ -1,10 +1,20 @@
 import React, { useState } from 'react'
 import styles from './../styles/HistoryOrder.module.css'
-// import HistoryProduct from './../components/LaiHistoryProduct'
+import HistoryProduct from './../components/LaiHistoryProduct'
 
 export default function LaiHistoryOrderCard(props) {
+  const { orderId, orderState, tolPrice, orderDate, orderPayment } = props
   const [open, setOpen] = useState(false)
-
+  const tagColor = (orderState) => {
+    switch (orderState) {
+      case '訂單處理中':
+        return { backgroundColor: '#F3C969' }
+        break
+      case '訂單已成立':
+        return { backgroundColor: '#6cba7c' }
+        break
+    }
+  }
   return (
     <>
       <div className={styles['order-card']}>
@@ -59,28 +69,54 @@ export default function LaiHistoryOrderCard(props) {
                 />
               </svg>
               <p>訂單編號：</p>
-              <p>S12345678</p>
+              <p>{orderId}</p>
             </div>
-            <div className={styles['order-status-tag']}>
-              <p>訂單已成立</p>
+            <div
+              className={styles['order-status-tag']}
+              style={tagColor(orderState)}
+            >
+              <p>{orderState}</p>
             </div>
+            {/* <div style={{ backgroundColor: 'blue' }}>cool</div> */}
           </div>
           <div className={styles['order-content']}>
             <div className={styles['price-wrap']}>
               <p>NTD</p>
-              <p id="price">4,800</p>
+              <p id={styles['price']}>{tolPrice}</p>
             </div>
             <div className={styles['time-wrap']}>
               <p>訂單日期：</p>
-              <p>2023/01/01</p>
+              <p>{orderDate}</p>
             </div>
             <div className={styles['bill-wrap']}>
               <p>付款方式：</p>
-              <p>信用卡一次付清</p>
+              <p>{orderPayment}</p>
             </div>
           </div>
           <div className={styles['dropdown']} id="dropdown1">
-            {open && props.children}
+            {/* {open && props.children} */}
+            {open ? (
+              <HistoryProduct
+                img={''}
+                productTitle={'草嶺古道｜探索新北一日遊'}
+                productSubTi={'古代淡蘭古道北路一部分'}
+                dateStart={'2023/01/01'}
+                dateEnd={'2023/01/02'}
+                price={'1,200'}
+                amount={3}
+              />
+            ) : null}
+            {open ? (
+              <HistoryProduct
+                img={''}
+                productTitle={'草嶺古道｜探索新北一日遊'}
+                productSubTi={'古代淡蘭古道北路一部分'}
+                dateStart={'2023/03/09'}
+                dateEnd={'2023/03/10'}
+                price={'1,600'}
+                amount={2}
+              />
+            ) : null}
           </div>
         </div>
       </div>

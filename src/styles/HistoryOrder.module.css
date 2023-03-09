@@ -219,21 +219,19 @@ section{
     transform: translateY(-25%);
 }
 .order-status-tag{
-    
     height: 37px;
     width: 127px;
     padding-top: 5px;
     text-align: center;
-    background-color: var(--mtgreen-1);
+    /* background-color: var(--mtgreen-1); */
     border-radius: 23px;
 }
 .order-status-tag2{
-    
     height: 37px;
     width: 127px;
     padding-top: 5px;
     text-align: center;
-    background-color: var(--mtyellow-1);
+    /* background-color: var(--mtyellow-1); */
     border-radius: 23px;
 }
 .order-status-tag p{
@@ -318,7 +316,7 @@ section{
     grid-template-areas:
     "img sprice amount tprice"    
     ;
-    gap: 60px;
+    gap: 50px;
 
     /* flex-direction: row; */
     width: 100%;
