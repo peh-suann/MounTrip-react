@@ -3,17 +3,16 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 // import DavisTrailsDetailTable from '../components/DavisTrailsDetailTable'
 // import DavisGpxTest from '../components/DavisGpxTest'
+import DavisTrailsImgGroup from '../components/DavisTrailsImgGroup'
 import DavisTrailsBatch from '../components/DavisTrailsBatch'
+import DavisTrailsShopBtn from '../components/DavisTrailsShopBtn'
 import { TRAILS_DATA } from '../connections/api-config'
-import { TRAILS_BATCH_DATA } from '../connections/api-config'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 // import styles from '../styles/Mountrip.module.css'
 import styles from '../styles/DavisTrailsDetail.module.css'
 
 export default function DavisTrailsDetail(rows) {
-  // const { rows, batch_rows } = props
-
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
   // trails_data
@@ -44,30 +43,9 @@ export default function DavisTrailsDetail(rows) {
     }
   }, [])
 
-  // batch_data
-  // const [batch, setBatch] = useState({
-  //   batch_rows: [],
-  // })
-
-  // const getBatchData = async (page = 1) => {
-  //   const response = await axios.get(TRAILS_BATCH_DATA, {
-  //     params: {
-  //       page,
-  //     },
-  //   })
-  //   setBatch(response.batch)
-  // }
-
-  // useEffect(() => {
-  //   getBatchData(+usp.get('page'))
-  //   return () => {
-  //     console.log('unmount')
-  //   }
-  // }, [])
-
   return (
     <>
-      {/* FIXME: 
+      {/* 
        mobile 購物車fix
          */}
       {/* <div className="container">
@@ -115,12 +93,12 @@ export default function DavisTrailsDetail(rows) {
               </ol>
             </nav>
           </div>
+
           <section>
             <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
               <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
-                {/* left-card  puctures*/}
-                <div className="col flex-column me-5 d-none d-lg-flex">
-                  {/* puctures */}
+                <DavisTrailsImgGroup />
+                {/* <div className="col flex-column me-5 d-none d-lg-flex">
                   <div className="">
                     <img
                       className={`${styles.img_cover_one}`}
@@ -145,7 +123,7 @@ export default function DavisTrailsDetail(rows) {
                       alt=""
                     />
                   </div>
-                </div>
+                </div> */}
                 {/* right-card */}
                 <div className="col">
                   <h4 className="fw-bold">{r.trail_name}</h4>
@@ -494,8 +472,7 @@ export default function DavisTrailsDetail(rows) {
                     />
                   </div>
 
-                  {/* shop-button-group */}
-
+                  {/* shop-button-group TODO:拆元件 */}
                   <div className="d-none d-lg-flex flex-column ">
                     {/* Count */}
                     <div className="col d-flex flex-row mb-2 justify-content-between">
@@ -591,8 +568,6 @@ export default function DavisTrailsDetail(rows) {
                         </div>
                         <div className="col d-flex justify-content-center">
                           <h5 className={`mb-0 ${styles.batch_font}`}>
-                            {/* 2023/01/01 - 2023/01/03 */}
-                            {/* TODO: */}
                             <select name="" id="">
                               <DavisTrailsBatch />
                               {/* {data.rows.map((r, i) => {
@@ -627,8 +602,9 @@ export default function DavisTrailsDetail(rows) {
                         </button>
                       </div>
                     </div>
-                    {/* level3 */}
-                    <button
+                    {/* level3 shop_btn FIXME: */}
+                    <DavisTrailsShopBtn />
+                    {/* <button
                       className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
                     >
                       <h5
@@ -654,13 +630,12 @@ export default function DavisTrailsDetail(rows) {
                           />
                         </svg>
                       </span>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
             </div>
           </section>
-
           {/* Vector_long for lg */}
           <div className="mb-lg-5 d-none d-lg-flex">
             <svg
@@ -772,7 +747,6 @@ export default function DavisTrailsDetail(rows) {
               </defs>
             </svg>
           </div>
-
           {/* login commont */}
           <div className="d-flex w-100 col flex-column ">
             <div
@@ -862,7 +836,6 @@ export default function DavisTrailsDetail(rows) {
               發布評論
             </button>
           </div>
-
           <section id="commont_card">
             {/*commont card */}
             <div className="d-flex flex-column flex-lg-row ">
