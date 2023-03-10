@@ -9,7 +9,8 @@
 // export const LIST_DATA = `${HOST}/member`
 
 export const HOST = 'http://localhost:3000/Ian'
-export const TRAILS_DATA = `${HOST}/Season`
 
+export const TRAILS_DATA = `${HOST}/Season`
 export const TRAILS_COMMENT = `${HOST}/seasonComment`
 export const TRAILS_DIFF = `${HOST}/difficulty`
+export const ShoppingCart = `${HOST}/sc1`

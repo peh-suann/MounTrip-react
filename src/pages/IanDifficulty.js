@@ -66,7 +66,7 @@ function IanDifficulty() {
           <div className={'w-100 d-flex flex-wrap'}>
             {diff.rows.map((v, i) => {
               return (
-                <div className={'col-12 p-3 col-lg-4 pe-lg-2'}>
+                <div className={'col-12 p-3 col-lg-4 pe-lg-2'} key={i}>
                   <div className={styles.overflowpic1}>
                     <div className={styles.tPSSCard_pic1}></div>
                     <div

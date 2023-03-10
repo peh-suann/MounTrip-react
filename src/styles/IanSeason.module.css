@@ -54,17 +54,13 @@ html body {
     height: 125vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    gap: 24px;
   }
   .row_of_products {
     width: 100%;
     display: flex;
-    /* gap: 20px; */
   }
   .product {
-    width: 30%;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -339,13 +335,12 @@ html body {
   /* carousel ------------------- */
   section.comments {
     width: 100%;
-    /* margin-top: 140px; */
+    height: 80vh;
     margin-bottom: 120px;
-    padding: 0px 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    position: relative;
   }
   section.comments h4 {
     margin: 0;
@@ -357,25 +352,29 @@ html body {
   }
   section.comments .comment_carousel {
     width: 100%;
-    position: relative;
+    padding: 0px 120px;
     display: flex;
     justify-content: space-between;
   }
-  section.comments .comment_carousel button {
-    border: 0px;
-    background-color: transparent;
+
+  section.comments > div.commentFirst_svg{
+    width: 100%;
     position: absolute;
-  
     top: 50%;
+    left: 2%;
   }
-  section.comments .comment_carousel button:first-child {
-    transform: translate(-120%, -50%);
+
+section.comments > div.commentSecond_svg{
+width: 100%;
+position: absolute;
+top: 50%;
+right: 2%;
+display: flex;
+justify-content: end;
   }
-  section.comments .comment_carousel button:last-child {
-    left: 100%;
-    transform: translate(20%, -50%);
-  }
+
   section.comments .comment {
+    width: 405px;
     height: 470px;
     padding: 20px;
   
@@ -417,3 +416,129 @@ html body {
   }
   /* carousel ------------------- */
   
+
+
+
+
+
+
+  @media screen and (max-width: 391px) {
+    /* top bar ------------------- */
+    .season_top_bar {
+      height: calc(var(--navbar-mobile-height) + 500px);
+    }
+    .season_top_bar h1 {
+      font-size: 28px;
+    }
+    .season_top_bar p {
+      margin-bottom: 44px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+    /* top bar ------------------- */
+  
+    /* products ------------------- */
+    section.products {
+      width: 100%;
+      height: 335vh;
+      padding: 0px 15px;
+      margin-top: -20px;
+  
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; */
+      align-items: center;
+      gap: 24px;
+    }
+    .row_of_products {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    section.products > .row_of_products > div.product{
+      padding: 0;
+      gap: 7px;
+    }
+    section.products .row-of-products:first-child .product:first-child .pic {
+      box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.2);
+    }
+    section.products .row-of-products:not(:first-child) {
+      display: none;
+    }
+    section.products .pic {
+      height: 200px;
+    }
+    .rates p {
+      font-weight: 400;
+      font-size: 13px;
+    }
+    .info h4 {
+      font-size: 16px;
+    }
+    .info p {
+      font-size: 12px;
+      line-height: 17px;
+    }
+    .price p {
+      font-size: 12px;
+      line-height: 130%;
+    }
+    .price h4 {
+      font-size: 18px;
+      line-height: 130%;
+    }
+    button.load-more-btn {
+      margin-top: 8px;
+      font-size: 16px;
+      padding: 4px 36px;
+    }
+    /* products ------------------- */
+  
+    /* carousel ------------------- */
+    section.comments {
+      height: 90vh;
+      margin-top: 64px;
+      margin-bottom: 0;
+      padding: 0px 15px;
+      overflow-x: hidden;
+    }
+    section.comments h4{
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 26px;
+      padding: 0px 30px;
+      justify-content: space-between;
+    }
+    /* section.comments h3 span:not(:nth-child(2)) {
+      gap: 2px;
+    } */
+    /* section.comments h3 span:not(:nth-child(2)) img {
+      width: 22px;
+      aspect-ratio: 1/1;
+    } */
+    section.comments .comment_carousel {
+      width: 100%;
+      padding: 10px;
+      justify-content: flex-start;
+    }
+    section > div.commentFirst_svg > svg, div.commentSecond_svg > svg{
+      display: none;
+    }
+    section.comments .comment {
+      width: 300px;
+      height: 374px;
+      padding: 4%;
+      margin: 2%;
+      flex-shrink: 0;
+    }
+    section.comments .comment h5 {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    section.comments .comment p {
+      font-size: 13px;
+    }
+    /* carousel ------------------- */
+  }

@@ -1,15 +1,24 @@
 import React from 'react'
-import './../html/css/shoppingCart4.css'
+// import './../html/css/shoppingCart4.css'
+import styles from './../styles/IanShoppingCart4.module.css'
+import './../styles/Mountrip.module.css'
+// shoppingcart - product,
+// product - subtitle,
+//   product - number,
+//   product - mobile,
+//   product - subtitle
 
 function IanShoppingCart4() {
   return (
     <>
-      <div className="bg-image">
-        <div className="container">
-          <section className="row shopping-cart-process justify-content-center mobile-none">
+      <div className={`${styles['bg-image']}`}>
+        <div className={`container`}>
+          <section
+            className={`${styles['shopping-cart-process']} ${styles['mobile-none']} row justify-content-center`}
+          >
             <svg
               width="700"
-              height="40"
+              height="30"
               viewBox="0 0 700 40"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -44,15 +53,23 @@ function IanShoppingCart4() {
               />
             </svg>
 
-            <div className="d-flex justify-content-center mb-42">
-              <p className="me-142 mtgrey3">確認訂單</p>
-              <p className="me-142 mtgrey3">填寫資料</p>
-              <p className="me-142 mtgrey3">付款頁面</p>
-              <p className="mtgrey1">完成訂單</p>
+            <div className={`${styles['mb-42']} d-flex justify-content-center`}>
+              <p className={`${styles['me-142']} ${styles.mtgrey3}`}>
+                確認訂單
+              </p>
+              <p className={`${styles['me-142']} ${styles.mtgrey3}`}>
+                填寫資料
+              </p>
+              <p className={`${styles['me-142']} ${styles.mtgrey3}`}>
+                付款頁面
+              </p>
+              <p className={`${styles.mtgrey1}`}>完成訂單</p>
             </div>
           </section>
 
-          <section className="row shopping-cart-process justify-content-center web-none">
+          <section
+            className={`${styles['shopping-cart-process']} ${styles['web-none']} row justify-content-center`}
+          >
             {/* 購物車流程png & li */}
             <svg
               width="296"
@@ -84,49 +101,58 @@ function IanShoppingCart4() {
               />
             </svg>
 
-            <div className="d-flex justify-content-center mb-42">
-              <p className="me-27 mtgrey3 mb-0">確認訂單</p>
-              <p className="me-27 mtgrey3 mb-0">填寫資料</p>
-              <p className="me-27 mtgrey3 mb-0">付款頁面</p>
-              <p className="mtgrey1 mb-0">完成訂單</p>
+            <div className={`${styles['mb-42']} d-flex justify-content-center`}>
+              <p className={`${styles['me-27']} ${styles.mtgrey3} mb-0`}>
+                確認訂單
+              </p>
+              <p className={`${styles['me-27']} ${styles.mtgrey3} mb-0`}>
+                填寫資料
+              </p>
+              <p className={`${styles['me-27']} ${styles.mtgrey3} mb-0`}>
+                付款頁面
+              </p>
+              <p className={`${styles.mtgrey1} mb-0`}>完成訂單</p>
             </div>
           </section>
         </div>
 
-        <div className="wrap-container shopping-cart-contain mb-50">
-          <svg
-            width="169"
-            height="169"
-            viewBox="0 0 169 169"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="84.5"
-              cy="84.5"
-              r="79.5"
-              stroke="#6CBA7C"
-              stroke-width="10"
-            />
-            <path
-              d="M39 90.1401L65.9196 123L129 46"
-              stroke="#6CBA7C"
-              stroke-width="10"
-            />
-          </svg>
+        <div
+          className={`${styles['wrap-container']} ${styles['shopping-cart-contain']} ${styles['mb-50']}`}
+        >
+          <div className={`d-flex justify-content-center`}>
+            <svg
+              width="169"
+              height="169"
+              viewBox="0 0 169 169"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="84.5"
+                cy="84.5"
+                r="79.5"
+                stroke="#6CBA7C"
+                stroke-width="10"
+              />
+              <path
+                d="M39 90.1401L65.9196 123L129 46"
+                stroke="#6CBA7C"
+                stroke-width="10"
+              />
+            </svg>
+          </div>
 
-          <p className="mt-36 mb-68">
+          <p className={`${styles['mt-36']} ${styles['mb-68']}`}>
             謝謝您的購買！
             <br />
             您的訂單正在處理中
           </p>
 
           <div
-            id="shopping-cart-title"
-            className="d-flex align-items-center mb-28"
+            className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center `}
           >
             <svg
-              className="me-12"
+              className={`${styles['me-12']}`}
               width="32"
               height="32"
               viewBox="0 0 32 32"
@@ -151,94 +177,120 @@ function IanShoppingCart4() {
 
             <h3>訂單細節</h3>
           </div>
-          <div className="d-flex justify-content-between mb-15">
-            <p className="mtgrey2">訂單編號</p>
-            <p className="mtgrey1 fw-600">S12345678</p>
+          <div className={`${styles['mb-15']} d-flex justify-content-between `}>
+            <p className={`${styles.mtgrey2}`}>訂單編號</p>
+            <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>S12345678</p>
           </div>
-          <div className="d-flex justify-content-between mb-15">
-            <p className="mtgrey2">訂單編號</p>
-            <p className="mtgrey1 fw-600">2023/01/01</p>
+          <div className={`${styles['mb-15']} d-flex justify-content-between `}>
+            <p className={`${styles.mtgrey2}`}>訂單編號</p>
+            <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>
+              2023/01/01
+            </p>
           </div>
-          <div className="d-flex justify-content-between border-green">
-            <p className="mtgrey2">付款方式</p>
-            <p className="mtgrey1 fw-600">信用卡支付</p>
+          <div
+            className={`${styles['border-green']} d-flex justify-content-between`}
+          >
+            <p className={`${styles.mtgrey2}`}>付款方式</p>
+            <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>
+              信用卡支付
+            </p>
           </div>
 
-          <div className="row mb-102">
-            <div className="col-7"></div>
-            <div className="col-5">
-              <div className="d-flex justify-content-between">
-                <p className="mtgrey2">小計</p>
-                <p className="mtgrey1">NTD $2,330</p>
+          <div className={`${styles['mb-102']} row `}>
+            <div className={`col-7`}></div>
+            <div className={`col-5`}>
+              <div className={`d-flex justify-content-between`}>
+                <p className={`${styles.mtgrey2}`}>小計</p>
+                <p className={`${styles.mtgrey1}`}>NTD $2,330</p>
               </div>
-              <div className="d-flex justify-content-between">
-                <p className="mtgrey2">優惠券</p>
-                <p className="mtgrey1">-NTD $100</p>
+              <div className={`d-flex justify-content-between`}>
+                <p className={`${styles.mtgrey2}`}>優惠券</p>
+                <p className={`${styles.mtgrey1}`}>-NTD $100</p>
               </div>
-              <div className="d-flex justify-content-between">
-                <p className="mtgrey2 fw-600">合計</p>
-                <p className="mtgrey1 fw-600">NTD $2,230</p>
+              <div className={`d-flex justify-content-between`}>
+                <p className={`${styles['fw-600']} ${styles.mtgrey2}`}>合計</p>
+                <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>
+                  NTD $2,230
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="shoppingcart-product">
+          <div className={`${styles['shoppingcart-product']}`}>
             {/* web購物車商品細節 */}
-            <div className="row d-flex w-100 product-col justify-content-between mobile-none">
-              <div className="w2 mobile-none">
-                <div className="row w-100">
-                  <div className="col-4">
-                    <div className="product-img-wrap">
-                      <img src="./img/shopping-cart1.png" />
+            <div
+              className={`${styles['product-col']} ${styles['mobile-none']} row d-flex w-100 justify-content-between`}
+            >
+              <div className={`${styles['mobile-none']} ${styles.w2}`}>
+                <div className={`row w-100`}>
+                  <div className={`col-4`}>
+                    <div className={`${styles['product-img-wrap']}`}>
+                      <img src="/imgs/Ian_img/shopping-cart1.png" />
                     </div>
                   </div>
-                  <div className="col-8 px-0">
-                    <p className="product-title">
+                  <div className={`col-8 px-0`}>
+                    <p className={`${styles['product-title']}`}>
                       草嶺古道｜探索新北一日遊探索新北一日遊
                     </p>
-                    <p className="product-subtitle mb-0">草嶺古道單日行程</p>
-                  </div>
-                </div>
-              </div>
-              <div className="w3 ps-0 mobile-none">
-                <p className="mb-0 mtgrey3">2023/01/01</p>
-                <p className="mb-0 mtgrey3">&emsp;&emsp;|</p>
-                <p className="mb-0 mtgrey3">2023/01/02</p>
-              </div>
-              <div className="w4 ps-0 mobile-none">NTD 1,200</div>
-              <div className="w5 ps-0 mobile-none">
-                <div className="d-flex">
-                  <p className="product-number me-3">x 1</p>
-                </div>
-              </div>
-              <div className="w6 ps-0 mobile-none">NTD 1,200</div>
-            </div>
-            {/* mobile購物車商品細節 */}
-            <div className="d-flex flex-column product-col-mobile web-none">
-              <div className="w-100 mb-12 web-none">
-                <div className="row w-100 justify-content-between mx-0">
-                  <div className="col-4 product-mobile ps-0">
-                    <div className="product-img-wrap">
-                      <img src="./img/shopping-cart1.png" />
-                    </div>
-                  </div>
-                  <div className="col-8 px-0">
-                    <p className="product-title mb-1 mtgrey1">
-                      草嶺古道｜探索新北一日遊探索新北一日遊
-                    </p>
-                    <p className="product-subtitle mb-0 mtgrey2">
+                    <p className={`${styles['product-subtitle']} mb-0`}>
                       草嶺古道單日行程
                     </p>
-                    <p className="product-subtitle mb-0 mtgrey1">
+                  </div>
+                </div>
+              </div>
+              <div className={`${styles['mobile-none']} ${styles.w3} ps-0`}>
+                <p className={`${styles.mtgrey3} mb-0`}>2023/01/01</p>
+                <p className={`${styles.mtgrey3} mb-0`}>&emsp;&emsp;|</p>
+                <p className={`${styles.mtgrey3} mb-0`}>2023/01/02</p>
+              </div>
+              <div className={`${styles['mobile-none']} ${styles.w4} ps-0`}>
+                NTD 1,200
+              </div>
+              <div className={`${styles['mobile-none']} ${styles.w5} ps-0`}>
+                <div className={`d-flex`}>
+                  <p className={`${styles['product-number']} me-3`}>x 1</p>
+                </div>
+              </div>
+              <div className={`${styles['mobile-none']} ${styles.w6} ps-0 `}>
+                NTD 1,200
+              </div>
+            </div>
+            {/* mobile購物車商品細節 */}
+            <div
+              className={`${styles['product-col-mobile']} ${styles['web-none']} d-flex flex-column`}
+            >
+              <div className={`${styles['mb-12']} ${styles['web-none']} w-100`}>
+                <div className={`row w-100 justify-content-between mx-0`}>
+                  <div className={`col-4 ps-0`}>
+                    <div className={`${styles['product-img-wrap']}`}>
+                      <img src="./img/shopping-cart1.png" />
+                    </div>
+                  </div>
+                  <div className={`col-8 px-0`}>
+                    <p
+                      className={`${styles['product-title']} ${styles.mtgrey1} mb-1 `}
+                    >
+                      草嶺古道｜探索新北一日遊探索新北一日遊
+                    </p>
+                    <p
+                      className={`${styles['product-subtitle']} ${styles.mtgrey2} mb-0 `}
+                    >
+                      草嶺古道單日行程
+                    </p>
+                    <p
+                      className={`${styles['product-subtitle']} ${styles.mtgrey1} mb-0 `}
+                    >
                       2023/01/01 - 2023/01/02
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="w-100 d-flex justify-content-between align-items-end web-none">
-                <div className="web-none d-flex">
+              <div
+                className={`w-100 d-flex justify-content-between align-items-end web-none`}
+              >
+                <div className={`${styles['web-none']} d-flex`}>
                   <svg
-                    className="me-12 web-none"
+                    className={`${styles['web-none']} ${styles['me-12']}`}
                     width="24"
                     height="25"
                     viewBox="0 0 24 25"
@@ -275,317 +327,23 @@ function IanShoppingCart4() {
                     />
                   </svg>
 
-                  <span className="mtgrey2 ticketnumber web-none">2張</span>
-                </div>
-                <div className="web-none">
-                  <p className="single-price mtgrey2 mb-0">NTD 1,200</p>
-                  <p className="total-price mtgrey1 mb-0">NTD 1,200</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="shoppingcart-product">
-            {/* web購物車商品細節 */}
-            <div className="row d-flex w-100 product-col justify-content-between mobile-none">
-              <div className="w2 mobile-none">
-                <div className="row w-100">
-                  <div className="col-4">
-                    <div className="product-img-wrap">
-                      <img src="./img/shopping-cart1.png" />
-                    </div>
-                  </div>
-                  <div className="col-8 px-0">
-                    <p className="product-title">
-                      草嶺古道｜探索新北一日遊探索新北一日遊
-                    </p>
-                    <p className="product-subtitle mb-0">草嶺古道單日行程</p>
-                  </div>
-                </div>
-              </div>
-              <div className="w3 ps-0 mobile-none">
-                <p className="mb-0 mtgrey3">2023/01/01</p>
-                <p className="mb-0 mtgrey3">&emsp;&emsp;|</p>
-                <p className="mb-0 mtgrey3">2023/01/02</p>
-              </div>
-              <div className="w4 ps-0 mobile-none">NTD 1,200</div>
-              <div className="w5 ps-0 mobile-none">
-                <div className="d-flex">
-                  <p className="product-number me-3">x 1</p>
-                </div>
-              </div>
-              <div className="w6 ps-0 mobile-none">NTD 1,200</div>
-            </div>
-            {/* mobile購物車商品細節 */}
-            <div className="d-flex flex-column product-col-mobile web-none">
-              <div className="w-100 mb-12 web-none">
-                <div className="row w-100 justify-content-between mx-0">
-                  <div className="col-4 product-mobile ps-0">
-                    <div className="product-img-wrap">
-                      <img src="./img/shopping-cart1.png" />
-                    </div>
-                  </div>
-                  <div className="col-8 px-0">
-                    <p className="product-title mb-1 mtgrey1">
-                      草嶺古道｜探索新北一日遊探索新北一日遊
-                    </p>
-                    <p className="product-subtitle mb-0 mtgrey2">
-                      草嶺古道單日行程
-                    </p>
-                    <p className="product-subtitle mb-0 mtgrey1">
-                      2023/01/01 - 2023/01/02
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-100 d-flex justify-content-between align-items-end web-none">
-                <div className="web-none d-flex">
-                  <svg
-                    className="me-12 web-none"
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    className={`${styles['web-none']} ${styles.ticketnumber} ${styles.mtgrey2}`}
                   >
-                    <path
-                      d="M17 21.5V19.5C17 18.4391 16.5786 17.4217 15.8284 16.6716C15.0783 15.9214 14.0609 15.5 13 15.5H5C3.93913 15.5 2.92172 15.9214 2.17157 16.6716C1.42143 17.4217 1 18.4391 1 19.5V21.5"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9 11.5C11.2091 11.5 13 9.70914 13 7.5C13 5.29086 11.2091 3.5 9 3.5C6.79086 3.5 5 5.29086 5 7.5C5 9.70914 6.79086 11.5 9 11.5Z"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M23 21.5009V19.5009C22.9993 18.6146 22.7044 17.7536 22.1614 17.0532C21.6184 16.3527 20.8581 15.8524 20 15.6309"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16 3.63086C16.8604 3.85116 17.623 4.35156 18.1676 5.05317C18.7122 5.75478 19.0078 6.61769 19.0078 7.50586C19.0078 8.39403 18.7122 9.25694 18.1676 9.95855C17.623 10.6602 16.8604 11.1606 16 11.3809"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span className="mtgrey2 ticketnumber web-none">2張</span>
+                    2張
+                  </span>
                 </div>
-                <div className="web-none">
-                  <p className="single-price mtgrey2 mb-0">NTD 1,200</p>
-                  <p className="total-price mtgrey1 mb-0">NTD 1,200</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="shoppingcart-product">
-            {/* web購物車商品細節 */}
-            <div className="row d-flex w-100 product-col justify-content-between mobile-none">
-              <div className="w2 mobile-none">
-                <div className="row w-100">
-                  <div className="col-4">
-                    <div className="product-img-wrap">
-                      <img src="./img/shopping-cart1.png" />
-                    </div>
-                  </div>
-                  <div className="col-8 px-0">
-                    <p className="product-title">
-                      草嶺古道｜探索新北一日遊探索新北一日遊
-                    </p>
-                    <p className="product-subtitle mb-0">草嶺古道單日行程</p>
-                  </div>
-                </div>
-              </div>
-              <div className="w3 ps-0 mobile-none">
-                <p className="mb-0 mtgrey3">2023/01/01</p>
-                <p className="mb-0 mtgrey3">&emsp;&emsp;|</p>
-                <p className="mb-0 mtgrey3">2023/01/02</p>
-              </div>
-              <div className="w4 ps-0 mobile-none">NTD 1,200</div>
-              <div className="w5 ps-0 mobile-none">
-                <div className="d-flex">
-                  <p className="product-number me-3">x 1</p>
-                </div>
-              </div>
-              <div className="w6 ps-0 mobile-none">NTD 1,200</div>
-            </div>
-            {/* mobile購物車商品細節 */}
-            <div className="d-flex flex-column product-col-mobile web-none">
-              <div className="w-100 mb-12 web-none">
-                <div className="row w-100 justify-content-between mx-0">
-                  <div className="col-4 product-mobile ps-0">
-                    <div className="product-img-wrap">
-                      <img src="./img/shopping-cart1.png" />
-                    </div>
-                  </div>
-                  <div className="col-8 px-0">
-                    <p className="product-title mb-1 mtgrey1">
-                      草嶺古道｜探索新北一日遊探索新北一日遊
-                    </p>
-                    <p className="product-subtitle mb-0 mtgrey2">
-                      草嶺古道單日行程
-                    </p>
-                    <p className="product-subtitle mb-0 mtgrey1">
-                      2023/01/01 - 2023/01/02
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-100 d-flex justify-content-between align-items-end web-none">
-                <div className="web-none d-flex">
-                  <svg
-                    className="me-12 web-none"
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                <div className={`${styles['web-none']}`}>
+                  <p
+                    className={`${styles['single-price']} ${styles.mtgrey2}mb-0`}
                   >
-                    <path
-                      d="M17 21.5V19.5C17 18.4391 16.5786 17.4217 15.8284 16.6716C15.0783 15.9214 14.0609 15.5 13 15.5H5C3.93913 15.5 2.92172 15.9214 2.17157 16.6716C1.42143 17.4217 1 18.4391 1 19.5V21.5"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9 11.5C11.2091 11.5 13 9.70914 13 7.5C13 5.29086 11.2091 3.5 9 3.5C6.79086 3.5 5 5.29086 5 7.5C5 9.70914 6.79086 11.5 9 11.5Z"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M23 21.5009V19.5009C22.9993 18.6146 22.7044 17.7536 22.1614 17.0532C21.6184 16.3527 20.8581 15.8524 20 15.6309"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16 3.63086C16.8604 3.85116 17.623 4.35156 18.1676 5.05317C18.7122 5.75478 19.0078 6.61769 19.0078 7.50586C19.0078 8.39403 18.7122 9.25694 18.1676 9.95855C17.623 10.6602 16.8604 11.1606 16 11.3809"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span className="mtgrey2 ticketnumber web-none">2張</span>
-                </div>
-                <div className="web-none">
-                  <p className="single-price mtgrey2 mb-0">NTD 1,200</p>
-                  <p className="total-price mtgrey1 mb-0">NTD 1,200</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="shoppingcart-product">
-            {/* web購物車商品細節 */}
-            <div className="row d-flex w-100 product-col justify-content-between mobile-none">
-              <div className="w2 mobile-none">
-                <div className="row w-100">
-                  <div className="col-4">
-                    <div className="product-img-wrap">
-                      <img src="./img/shopping-cart1.png" />
-                    </div>
-                  </div>
-                  <div className="col-8 px-0">
-                    <p className="product-title">
-                      草嶺古道｜探索新北一日遊探索新北一日遊
-                    </p>
-                    <p className="product-subtitle mb-0">草嶺古道單日行程</p>
-                  </div>
-                </div>
-              </div>
-              <div className="w3 ps-0 mobile-none">
-                <p className="mb-0 mtgrey3">2023/01/01</p>
-                <p className="mb-0 mtgrey3">&emsp;&emsp;|</p>
-                <p className="mb-0 mtgrey3">2023/01/02</p>
-              </div>
-              <div className="w4 ps-0 mobile-none">NTD 1,200</div>
-              <div className="w5 ps-0 mobile-none">
-                <div className="d-flex">
-                  <p className="product-number me-3">x 1</p>
-                </div>
-              </div>
-              <div className="w6 ps-0 mobile-none">NTD 1,200</div>
-            </div>
-            {/* mobile購物車商品細節 */}
-            <div className="d-flex flex-column product-col-mobile web-none">
-              <div className="w-100 mb-12 web-none">
-                <div className="row w-100 justify-content-between mx-0">
-                  <div className="col-4 product-mobile ps-0">
-                    <div className="product-img-wrap">
-                      <img src="./img/shopping-cart1.png" />
-                    </div>
-                  </div>
-                  <div className="col-8 px-0">
-                    <p className="product-title mb-1 mtgrey1">
-                      草嶺古道｜探索新北一日遊探索新北一日遊
-                    </p>
-                    <p className="product-subtitle mb-0 mtgrey2">
-                      草嶺古道單日行程
-                    </p>
-                    <p className="product-subtitle mb-0 mtgrey1">
-                      2023/01/01 - 2023/01/02
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-100 d-flex justify-content-between align-items-end web-none">
-                <div className="web-none d-flex">
-                  <svg
-                    className="me-12 web-none"
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                    NTD 1,200
+                  </p>
+                  <p
+                    className={`${styles['total-price']} ${styles.mtgrey1} mb-0`}
                   >
-                    <path
-                      d="M17 21.5V19.5C17 18.4391 16.5786 17.4217 15.8284 16.6716C15.0783 15.9214 14.0609 15.5 13 15.5H5C3.93913 15.5 2.92172 15.9214 2.17157 16.6716C1.42143 17.4217 1 18.4391 1 19.5V21.5"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9 11.5C11.2091 11.5 13 9.70914 13 7.5C13 5.29086 11.2091 3.5 9 3.5C6.79086 3.5 5 5.29086 5 7.5C5 9.70914 6.79086 11.5 9 11.5Z"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M23 21.5009V19.5009C22.9993 18.6146 22.7044 17.7536 22.1614 17.0532C21.6184 16.3527 20.8581 15.8524 20 15.6309"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16 3.63086C16.8604 3.85116 17.623 4.35156 18.1676 5.05317C18.7122 5.75478 19.0078 6.61769 19.0078 7.50586C19.0078 8.39403 18.7122 9.25694 18.1676 9.95855C17.623 10.6602 16.8604 11.1606 16 11.3809"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span className="mtgrey2 ticketnumber web-none">2張</span>
-                </div>
-                <div className="web-none">
-                  <p className="single-price mtgrey2 mb-0">NTD 1,200</p>
-                  <p className="total-price mtgrey1 mb-0">NTD 1,200</p>
+                    NTD 1,200
+                  </p>
                 </div>
               </div>
             </div>

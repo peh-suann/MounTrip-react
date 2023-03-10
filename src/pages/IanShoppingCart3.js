@@ -1,12 +1,15 @@
 import React from 'react'
-import './../html/css/shoppingCart3.css'
+// import './../html/css/shoppingCart3.css'
+import styles from './../styles/IanShoppingCart3.module.css'
 
 function IanShoppingCart3() {
   return (
     <>
-      <div className="bg-image">
-        <div className="container">
-          <section className="row shopping-cart-process justify-content-center mobile-none">
+      <div className={`${styles['bg-image']}`}>
+        <div className={`container`}>
+          <section
+            className={`${styles['shopping-cart-process']} ${styles['mobile-none']} row  justify-content-center `}
+          >
             <svg
               width="700"
               height="40"
@@ -44,15 +47,25 @@ function IanShoppingCart3() {
               />
             </svg>
 
-            <div className="d-flex justify-content-center mb-42">
-              <p className="me-142 mtgrey3">確認訂單</p>
-              <p className="me-142 mtgrey3">填寫資料</p>
-              <p className="me-142 mtgrey1">付款頁面</p>
-              <p className="mtgrey3">完成訂單</p>
+            <div
+              className={`${styles['mb-42']} d-flex justify-content-center `}
+            >
+              <p className={`${styles['me-142']} ${styles.mtgrey3} `}>
+                確認訂單
+              </p>
+              <p className={`${styles['me-142']} ${styles.mtgrey3} `}>
+                填寫資料
+              </p>
+              <p className={`${styles['me-142']} ${styles.mtgrey1} `}>
+                付款頁面
+              </p>
+              <p className={`${styles.mtgrey3} `}>完成訂單</p>
             </div>
           </section>
 
-          <section className="row shopping-cart-process justify-content-center web-none">
+          <section
+            className={`${styles['shopping-cart-process']} ${styles['web-none']} row  justify-content-center`}
+          >
             {/* 購物車流程png & li */}
             <svg
               width="296"
@@ -84,22 +97,31 @@ function IanShoppingCart3() {
               />
             </svg>
 
-            <div className="d-flex justify-content-center mb-42">
-              <p className="me-27 mtgrey3 mb-0">確認訂單</p>
-              <p className="me-27 mtgrey3 mb-0">填寫資料</p>
-              <p className="me-27 mtgrey1 mb-0">付款頁面</p>
-              <p className="mtgrey3 mb-0">完成訂單</p>
+            <div
+              className={`${styles['mb-42']} d-flex justify-content-center `}
+            >
+              <p className={`${styles['me-27']} ${styles.mtgrey3} mb-0`}>
+                確認訂單
+              </p>
+              <p className={`${styles['me-27']} ${styles.mtgrey3} mb-0`}>
+                填寫資料
+              </p>
+              <p className={`${styles['me-27']} ${styles.mtgrey1} mb-0`}>
+                付款頁面
+              </p>
+              <p className={`${styles.mtgrey3} mb-0`}>完成訂單</p>
             </div>
           </section>
         </div>
 
-        <div className="wrap-container shopping-cart-contain mb-50">
+        <div
+          className={`${styles['wrap-container']} ${styles['shopping-cart-contain']} ${styles['mb-50']}`}
+        >
           <div
-            id="shopping-cart-title"
-            className="d-flex align-items-center mb-28"
+            className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center `}
           >
             <svg
-              className="me-12"
+              className={`${styles['me-12']} `}
               width="32"
               height="32"
               viewBox="0 0 32 32"
@@ -131,9 +153,11 @@ function IanShoppingCart3() {
 
             <h3>付款方式</h3>
           </div>
-          <div className="d-flex mb-50 credit-card-type">
+          <div
+            className={`${styles['mb-50']} ${styles['credit-card-type']} d-flex align-items-center`}
+          >
             <svg
-              className="me-20"
+              className={`me-2`}
               width="183"
               height="116"
               viewBox="0 0 183 116"
@@ -179,7 +203,7 @@ function IanShoppingCart3() {
             </svg>
 
             <svg
-              className="me-20"
+              className={`me-2`}
               width="177"
               height="110"
               viewBox="0 0 177 110"
@@ -263,51 +287,52 @@ function IanShoppingCart3() {
               </defs>
             </svg>
           </div>
-          <form className="form-inline mb-88" action="">
-            <div className="form-group col-12 mb-20">
-              <label for="creditcard">信用卡號碼</label>
+          <form className={`${styles['form-inline']} mb-5`} action=" ">
+            <div className={`${styles['mb-20']} col-12 d-flex flex-column`}>
+              <label for="creditcard" className={`${styles['form-group']}`}>
+                信用卡號碼
+              </label>
               <input
                 type="tel"
                 maxlength="16"
-                className="form-control"
                 id="creditcard"
                 placeholder="4512&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-"
               />
             </div>
-            <div className="row justify-content-between mb-20">
-              <div className="form-group col-8">
+            <div className={`${styles['mb-20']} d-flex flex-row`}>
+              <div
+                className={`${styles['form-group']} d-flex flex-column col-8`}
+              >
                 <label
                   for="
               expirationdate"
                 >
                   有效期限
                 </label>
-                <input
-                  type="date"
-                  className="form-control"
-                  id="expirationdate"
-                  name="expirationdate"
-                />
+                <input type="date" id="expirationdate" name="expirationdate" />
               </div>
-              <div className="form-group col-4">
+              <div className={`${styles['form-group']} col-lg ms-3`}>
                 <label for="CVV2">末三碼</label>
                 <input
                   type="tel"
                   maxlength="3"
-                  className="form-control"
                   id="CVV2"
                   name="CVV2"
+                  className={styles.threeinput}
                 />
               </div>
             </div>
           </form>
-          <p className="description mb-50">
+          <p className={`${styles['mb-50']} ${styles.description} `}>
             請注意本平台不會向您收取任何平台交易手續費，但你下單時使用的信用卡或第三方支付平台可能會向您收取相關手續費，請參考其相關服務政策和規定，並向你所選的交易服務商取得更多資訊。
           </p>
         </div>
 
-        <div className="pd-40">
-          <button type="button" className="btn btn-primary">
+        <div className={`${styles['pd-40']}`}>
+          <button
+            type="button"
+            className={`${styles.btnChecked} btn btn-unstyle`}
+          >
             確認訂單
           </button>
         </div>

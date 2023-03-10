@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import styles from './../styles/IanSeason.module.css'
+// import './../html/css/season.css'
 import { TRAILS_DATA } from '../connections/api-config'
 import { TRAILS_COMMENT } from '../connections/api-config'
 import dayjs from 'dayjs'
@@ -50,7 +51,7 @@ function IanSeason() {
         <div className={`${styles.row_of_products} d-flex flex-wrap`}>
           {data.rows.map((v, i) => {
             return (
-              <div key={v.sid} className={styles.product}>
+              <div key={v.sid} className={`${styles.product} col-lg-4`}>
                 <div className={styles.pic1}>
                   <div className={styles.rates}>
                     <p>
@@ -93,9 +94,7 @@ function IanSeason() {
         <button className={styles.load_more_btn}>探索更多</button>
       </section>
       <section className={styles.comments}>
-        <div
-          className={`${styles.commentsTitle} d-flex align-items-center py-5`}
-        >
+        <div className={`d-flex align-items-center py-5`}>
           <span>
             <svg
               width="27"
@@ -131,7 +130,7 @@ function IanSeason() {
               />
             </svg>
           </span>
-          <h4 className={'px-5'}>櫻花季 旅客評論</h4>
+          <h4 className={'m-0 px-lg-5'}>櫻花季 旅客評論</h4>
           <span>
             <svg
               width="27"
@@ -168,58 +167,61 @@ function IanSeason() {
             </svg>
           </span>
         </div>
-        <div className={styles.comment_carousel}>
-          <button>
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M18.75 25L8.75 15L18.75 5"
-                stroke="#6CBA7C"
-                stroke-width="3.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
+        <div className={styles.commentFirst_svg}>
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.75 25L8.75 15L18.75 5"
+              stroke="#6CBA7C"
+              stroke-width="3.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <div className={`${styles.comment_carousel}`}>
           {comment.rows.map((v2, i2) => {
             return (
-              <div className={`${styles.comment} col-lg-3`} key={i2}>
-                <h5>
-                  <span className={styles.account}>
-                    @{v2.lastname}
-                    {v2.firstname}
-                  </span>
-                  <span>•</span>
-                  <span className={styles.date}>
-                    {dayjs(v2.rate_date).format('YYYY-MM-DD')}
-                  </span>
-                </h5>
-                <p>{v2.comment}</p>
+              <div className={`${styles.comment}`} key={i2}>
+                <div>
+                  <h5>
+                    <span className={styles.account}>
+                      @{v2.lastname}
+                      {v2.firstname}
+                    </span>
+                    <span>•</span>
+                    <span className={styles.date}>
+                      {dayjs(v2.rate_date).format('YYYY-MM-DD')}
+                    </span>
+                  </h5>
+                  <p>{v2.comment}</p>
+                </div>
               </div>
             )
           })}
-          <button>
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.25 25L21.25 15L11.25 5"
-                stroke="#6CBA7C"
-                stroke-width="3.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
+        </div>
+        <div className={styles.commentSecond_svg}>
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.25 25L21.25 15L11.25 5"
+              stroke="#6CBA7C"
+              stroke-width="3.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
       </section>
     </>

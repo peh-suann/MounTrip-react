@@ -1,12 +1,14 @@
 import React from 'react'
-import './../html/css/shoppingCart2.css'
+import styles from './../styles/IanShoppingCart2.module.css'
 
 function IanShoppingCart2() {
   return (
     <>
-      <div className="bg-image">
-        <div className="container">
-          <section className="row shopping-cart-process justify-content-center mobile-none">
+      <div className={`${styles['bg-image']}`}>
+        <div className={`container`}>
+          <section
+            className={`${styles['shopping-cart-process']} ${styles['mobile-none']} row  justify-content-center`}
+          >
             <svg
               width="700"
               height="40"
@@ -44,15 +46,23 @@ function IanShoppingCart2() {
               />
             </svg>
 
-            <div className="d-flex justify-content-center mb-42">
-              <p className="me-142 mtgrey3">確認訂單</p>
-              <p className="me-142 mtgrey1">填寫資料</p>
-              <p className="me-142 mtgrey3">付款頁面</p>
-              <p className="mtgrey3">完成訂單</p>
+            <div className={`${styles['mb-42']} d-flex justify-content-center`}>
+              <p className={`${styles['me-142']} ${styles.mtgrey3} `}>
+                確認訂單
+              </p>
+              <p className={`${styles['me-142']} ${styles.mtgrey1} `}>
+                填寫資料
+              </p>
+              <p className={`${styles['me-142']} ${styles.mtgrey3} `}>
+                付款頁面
+              </p>
+              <p className={`${styles.mtgrey3} `}>完成訂單</p>
             </div>
           </section>
 
-          <section className="row shopping-cart-process justify-content-center web-none">
+          <section
+            className={`${styles['shopping-cart-process']} ${styles['web-none']} row justify-content-center`}
+          >
             {/* 購物車流程png & li */}
             <svg
               width="296"
@@ -84,22 +94,31 @@ function IanShoppingCart2() {
               />
             </svg>
 
-            <div className="d-flex justify-content-center mb-42">
-              <p className="me-27 mtgrey3 mb-0">確認訂單</p>
-              <p className="me-27 mtgrey1 mb-0">填寫資料</p>
-              <p className="me-27 mtgrey3 mb-0">付款頁面</p>
-              <p className="mtgrey3 mb-0">完成訂單</p>
+            <div
+              className={`${styles['mb-42']} d-flex justify-content-center `}
+            >
+              <p className={`${styles['me-27']} ${styles.mtgrey3}  mb-0`}>
+                確認訂單
+              </p>
+              <p className={`${styles['me-27']} ${styles.mtgrey1}  mb-0`}>
+                填寫資料
+              </p>
+              <p className={`${styles['me-27']} ${styles.mtgrey3} mb-0`}>
+                付款頁面
+              </p>
+              <p className={`${styles.mtgrey3}  mb-0`}>完成訂單</p>
             </div>
           </section>
         </div>
 
-        <div className="wrap-container shopping-cart-contain mb-88">
+        <div
+          className={`${styles['wrap-container']} ${styles['shopping-cart-contain']} ${styles['mb-88']} `}
+        >
           <div
-            id="shopping-cart-title"
-            className="d-flex align-items-center mb-28"
+            className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center`}
           >
             <svg
-              className="me-12"
+              className={`${styles['me-12']}`}
               width="32"
               height="32"
               viewBox="0 0 32 32"
@@ -107,14 +126,14 @@ function IanShoppingCart2() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M29 30.5V27.5C29 25.9087 28.3152 24.3826 27.0962 23.2574C25.8772 22.1321 24.2239 21.5 22.5 21.5H9.5C7.77609 21.5 6.12279 22.1321 4.90381 23.2574C3.68482 24.3826 3 25.9087 3 27.5V30.5"
+                d="M28.4446 30.0001V26.889C28.4446 25.2387 27.789 23.6561 26.6221 22.4892C25.4552 21.3223 23.8726 20.6667 22.2223 20.6667H9.77789C8.12765 20.6667 6.545 21.3223 5.37811 22.4892C4.21122 23.6561 3.55566 25.2387 3.55566 26.889V30.0001"
                 stroke="#6CBA7C"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
-                d="M16 15.5C19.866 15.5 23 12.366 23 8.5C23 4.63401 19.866 1.5 16 1.5C12.134 1.5 9 4.63401 9 8.5C9 12.366 12.134 15.5 16 15.5Z"
+                d="M16.0005 14.4444C19.437 14.4444 22.2228 11.6587 22.2228 8.22222C22.2228 4.78578 19.437 2 16.0005 2C12.5641 2 9.77832 4.78578 9.77832 8.22222C9.77832 11.6587 12.5641 14.4444 16.0005 14.4444Z"
                 stroke="#6CBA7C"
                 stroke-width="3"
                 stroke-linecap="round"
@@ -123,33 +142,36 @@ function IanShoppingCart2() {
             </svg>
             <h3>訂購人資料</h3>
           </div>
-          <form className="form-inline" action="">
-            <div className="row justify-content-between mb-20">
-              <div className="form-group col-6">
+          <form className={`${styles['form-inline']}`} action=" ">
+            <div className={`${styles['mb-20']} row justify-content-between `}>
+              <div className={`${styles['form-group']} col-6`}>
                 <label for="firstName">名字</label>
-                <input type="text" className="form-control" id="firstName" />
+                <input type="text" id="firstName" />
               </div>
-              <div className="form-group col-6">
+              <div className={`${styles['form-group']} col-6`}>
                 <label for="lastName">姓氏</label>
-                <input type="text" className="form-control" id="lastName" />
+                <input type="text" id="lastName" />
               </div>
             </div>
-            <div className="form-group col-12 mb-20">
+            <div
+              className={`${styles['form-group']} ${styles['mb-20']}  col-12`}
+            >
               <label for="phone">聯絡電話</label>
-              <input type="tel" className="form-control" id="phone" />
+              <input type="tel" id="phone" />
             </div>
-            <div className="form-group col-12 mb-88">
+            <div
+              className={`${styles['form-group']} ${styles['mb-88']} col-12`}
+            >
               <label for="email">電子郵件信箱</label>
-              <input type="email" className="form-control" id="email" />
+              <input type="email" id="email" />
             </div>
           </form>
 
           <div
-            id="shopping-cart-title"
-            className="d-flex align-items-center mb-28"
+            className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center `}
           >
             <svg
-              className="me-12"
+              className={`${styles['me-12']} `}
               width="32"
               height="32"
               viewBox="0 0 32 32"
@@ -174,31 +196,34 @@ function IanShoppingCart2() {
 
             <h3>旅客資料</h3>
           </div>
-          <div className="row order-detail align-items-center">
-            <div className="col-1">
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7.5 11.25L15 18.75L22.5 11.25"
-                  stroke="#6CBA7C"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <div className="col-11">
-              <p className="order-title">草嶺古道｜探索新北一日遊探索</p>
-              <div className="d-flex order-title-detail">
-                <p className="order-title-detail-number">
+          <div
+            className={`${styles.productDetail} col-12 d-flex flex-row align-items-center p-0 mb-3`}
+          >
+            <svg
+              className={`me-2`}
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.5 11.25L15 18.75L22.5 11.25"
+                stroke="#6CBA7C"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div className={`col`}>
+              <p className={`${styles['order-title']} `}>
+                草嶺古道｜探索新北一日遊探索
+              </p>
+              <div className={`${styles['order-title-detail']} d-flex`}>
+                <p className={`${styles['order-title-detail-number']} me-3`}>
                   <svg
-                    width="24"
-                    height="25"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 25"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -232,13 +257,12 @@ function IanShoppingCart2() {
                       stroke-linejoin="round"
                     />
                   </svg>
-
                   <span>2張</span>
                 </p>
-                <p>
+                <p className={`${styles['order-title-detail-sec']} col`}>
                   <svg
-                    width="24"
-                    height="25"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 25"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -278,341 +302,116 @@ function IanShoppingCart2() {
               </div>
             </div>
           </div>
-          <form className="form-inline mb-50" action="">
-            <div className="row justify-content-between mb-20">
-              <div className="form-group col-6">
+
+          <form
+            className={`${styles['form-inline']} ${styles['mb-50']} `}
+            action=" "
+          >
+            <div className={`${styles['mb-20']} row justify-content-between `}>
+              <div className={`${styles['form-group']} col-6`}>
                 <label
                   for="
               traveler1-firstName"
                 >
                   名字
                 </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="traveler1-firstName"
-                />
+                <input type="text" id="traveler1-firstName" />
               </div>
-              <div className="form-group col-6">
+              <div className={`${styles['form-group']} col-6`}>
                 <label for="traveler1-lastName">姓氏</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={`${styles['form-control']} `}
                   id="traveler1-lastName"
                 />
               </div>
             </div>
-            <div className="form-group col-12 mb-20">
+            <div
+              className={`${styles['form-group']} ${styles['mb-20']} col-12`}
+            >
               <label for="traveler1-phone">聯絡電話</label>
-              <input type="tel" className="form-control" id="traveler1-phone" />
+              <input type="tel" id="traveler1-phone" />
             </div>
-            <div className="form-group col-12 mb-20">
+            <div
+              className={`${styles['form-group']} ${styles['mb-20']} col-12`}
+            >
               <label for="traveler1-email">電子郵件信箱</label>
-              <input
-                type="email"
-                className="form-control"
-                id="traveler1-email"
-              />
+              <input type="email" id="traveler1-email" />
             </div>
-            <div className="row justify-content-between mb-20">
-              <div className="form-group col-6">
+            <div className={`${styles['mb-20']} row justify-content-between`}>
+              <div className={`${styles['form-group']} col-6`}>
                 <label
                   for="
               traveler1-id"
                 >
                   身分證字號
                 </label>
-                <input type="text" className="form-control" id="traveler1-id" />
+                <input type="text" id="traveler1-id" />
               </div>
-              <div className="form-group col-6">
+              <div className={`${styles['form-group']} col-6`}>
                 <label for="traveler1-birthday">出生年月日</label>
-                <input
-                  type="date"
-                  className="form-control"
-                  id="traveler1-birthday"
-                />
+                <input type="date" id="traveler1-birthday" />
               </div>
             </div>
-            <div className="mb-48">
+
+            <div className={`${styles['mb-48']} d-flex align-items-center`}>
               <input type="checkbox" id="sameOrder" name="sameOrder" />
-              <label className="checkmark grey2" for="sameOrder">
+              <label for="sameOrder" className={`${styles.dataSame}`}>
                 同訂購人資料
               </label>
             </div>
 
-            <div className="row justify-content-between mb-20">
-              <div className="form-group col-6">
+            <div className={`${styles['mb-20']} row justify-content-between `}>
+              <div className={`${styles['form-group']} col-6`}>
                 <label
                   for="
-            traveler1-firstName"
+              traveler1-firstName"
                 >
                   名字
                 </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="traveler1-firstName"
-                />
+                <input type="text" id="traveler1-firstName" />
               </div>
-              <div className="form-group col-6">
-                <label for="traveler2-lastName">姓氏</label>
+              <div className={`${styles['form-group']} col-6`}>
+                <label for="traveler1-lastName">姓氏</label>
                 <input
                   type="text"
-                  className="form-control"
-                  id="traveler2-lastName"
+                  className={`${styles['form-control']} `}
+                  id="traveler1-lastName"
                 />
               </div>
             </div>
-            <div className="form-group col-12 mb-20">
-              <label for="traveler2-phone">聯絡電話</label>
-              <input type="tel" className="form-control" id="traveler2-phone" />
+            <div
+              className={`${styles['form-group']} ${styles['mb-20']} col-12`}
+            >
+              <label for="traveler1-phone">聯絡電話</label>
+              <input type="tel" id="traveler1-phone" />
             </div>
-            <div className="form-group col-12 mb-20">
-              <label for="traveler2-email">電子郵件信箱</label>
-              <input
-                type="email"
-                className="form-control"
-                id="traveler2-email"
-              />
+            <div
+              className={`${styles['form-group']} ${styles['mb-20']} col-12`}
+            >
+              <label for="traveler1-email">電子郵件信箱</label>
+              <input type="email" id="traveler1-email" />
             </div>
-            <div className="row justify-content-between mb-20">
-              <div className="form-group col-6">
+            <div className={`${styles['mb-20']} row justify-content-between`}>
+              <div className={`${styles['form-group']} col-6`}>
                 <label
                   for="
-            traveler2-id"
+              traveler1-id"
                 >
                   身分證字號
                 </label>
-                <input type="text" className="form-control" id="traveler2-id" />
+                <input type="text" id="traveler1-id" />
               </div>
-              <div className="form-group col-6">
-                <label for="traveler2-birthday">出生年月日</label>
-                <input
-                  type="date"
-                  className="form-control"
-                  id="traveler2-birthday"
-                />
+              <div className={`${styles['form-group']} col-6`}>
+                <label for="traveler1-birthday">出生年月日</label>
+                <input type="date" id="traveler1-birthday" />
               </div>
             </div>
           </form>
-
-          <div className="row order-detail align-items-center mb-40">
-            <div className="col-1">
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.25 22.5L18.75 15L11.25 7.5"
-                  stroke="#6CBA7C"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <div className="col-11">
-              <p className="order-title mb-15">
-                草嶺古道｜探索新北一日遊探索新北一日遊
-              </p>
-              <div className="d-flex order-title-detail">
-                <p className="order-title-detail-number">
-                  <svg
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17 21.5V19.5C17 18.4391 16.5786 17.4217 15.8284 16.6716C15.0783 15.9214 14.0609 15.5 13 15.5H5C3.93913 15.5 2.92172 15.9214 2.17157 16.6716C1.42143 17.4217 1 18.4391 1 19.5V21.5"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9 11.5C11.2091 11.5 13 9.70914 13 7.5C13 5.29086 11.2091 3.5 9 3.5C6.79086 3.5 5 5.29086 5 7.5C5 9.70914 6.79086 11.5 9 11.5Z"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M23 21.5009V19.5009C22.9993 18.6146 22.7044 17.7536 22.1614 17.0532C21.6184 16.3527 20.8581 15.8524 20 15.6309"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16 3.63086C16.8604 3.85116 17.623 4.35156 18.1676 5.05317C18.7122 5.75478 19.0078 6.61769 19.0078 7.50586C19.0078 8.39403 18.7122 9.25694 18.1676 9.95855C17.623 10.6602 16.8604 11.1606 16 11.3809"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span>2張</span>
-                </p>
-                <p>
-                  <svg
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19 4.5H5C3.89543 4.5 3 5.39543 3 6.5V20.5C3 21.6046 3.89543 22.5 5 22.5H19C20.1046 22.5 21 21.6046 21 20.5V6.5C21 5.39543 20.1046 4.5 19 4.5Z"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16 2.5V6.5"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M8 2.5V6.5"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M3 10.5H21"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span>2022/01/01 - 2022/01/03</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="row order-detail align-items-center mb-40">
-            <div className="col-1">
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.25 22.5L18.75 15L11.25 7.5"
-                  stroke="#6CBA7C"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <div className="col-11">
-              <p className="order-title mb-15">
-                草嶺古道｜探索新北一日遊探索新北一日遊
-              </p>
-              <div className="d-flex order-title-detail">
-                <p className="order-title-detail-number">
-                  <svg
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17 21.5V19.5C17 18.4391 16.5786 17.4217 15.8284 16.6716C15.0783 15.9214 14.0609 15.5 13 15.5H5C3.93913 15.5 2.92172 15.9214 2.17157 16.6716C1.42143 17.4217 1 18.4391 1 19.5V21.5"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9 11.5C11.2091 11.5 13 9.70914 13 7.5C13 5.29086 11.2091 3.5 9 3.5C6.79086 3.5 5 5.29086 5 7.5C5 9.70914 6.79086 11.5 9 11.5Z"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M23 21.5009V19.5009C22.9993 18.6146 22.7044 17.7536 22.1614 17.0532C21.6184 16.3527 20.8581 15.8524 20 15.6309"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16 3.63086C16.8604 3.85116 17.623 4.35156 18.1676 5.05317C18.7122 5.75478 19.0078 6.61769 19.0078 7.50586C19.0078 8.39403 18.7122 9.25694 18.1676 9.95855C17.623 10.6602 16.8604 11.1606 16 11.3809"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span>2張</span>
-                </p>
-                <p>
-                  <svg
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19 4.5H5C3.89543 4.5 3 5.39543 3 6.5V20.5C3 21.6046 3.89543 22.5 5 22.5H19C20.1046 22.5 21 21.6046 21 20.5V6.5C21 5.39543 20.1046 4.5 19 4.5Z"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16 2.5V6.5"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M8 2.5V6.5"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M3 10.5H21"
-                      stroke="#9AA09B"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span>2022/01/01 - 2022/01/03</span>
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div className="pd-40 mobile-button-width">
-          <button type="button" className="btn btn-primary">
+        <div className={`${styles['pd-40']} d-flex justify-content-center`}>
+          <button type="button" className={`${styles.paybtn} btn btn-unstyle`}>
             前往付款
           </button>
         </div>
