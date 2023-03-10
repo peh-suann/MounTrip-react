@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './../styles/Achievement.module.css'
 import AchievementBadge from './LaiAchievementBadge'
 import ProgressBar from './LaiAchievementProgressBar'
 import AchievementDescrib from './LaiAchievementDescrib'
 import AchievementTreeBlock from './LaiAchievementTreeBlock'
+import AchievementQuote from './LaiAchievementQuote'
 
 export default function LaiAchievementContent() {
+  const [clickedLevel, setClickedLevel] = useState(1)
+
+  // console.log({ clickedLevel })
+
   return (
     <>
       <div className={styles['member-data']}>
@@ -47,11 +52,11 @@ export default function LaiAchievementContent() {
           <h1>成就獎章</h1>
         </div>
         <div className={styles['container']}>
-          <AchievementBadge level={3}/>
+          <AchievementBadge level={2} />
           {/* <div className={styles['badge']}>
             <div className={styles['badge-pic']}></div>
           </div> */}
-          <ProgressBar current={'19,800'} target={'25,000'}/>
+          <ProgressBar current={'19,800'} target={'25,000'} />
           {/* <div className={styles['progress-bars']}>
             <div className={styles['bar-wrap']}>
               <div className={styles['bar-base']}></div>
@@ -79,7 +84,13 @@ export default function LaiAchievementContent() {
               <h6>累計消費滿25,000元解鎖</h6>
             </div>
           </div> */}
-          <AchievementDescrib />
+          <AchievementDescrib
+            level={3}
+            setClickedLevel={setClickedLevel}
+            clickedLevel={clickedLevel}
+          />
+          {/* FIXME */}
+          <AchievementQuote level={clickedLevel} />
           <AchievementTreeBlock />
           {/* <div className={styles['tree-block']}>
             <div className={styles['describ-rules']}>

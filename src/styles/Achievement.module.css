@@ -263,64 +263,60 @@ section{
     height: 200px;
     border-radius: 10px;
     background-color: var(--mtgreen-5);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .describ-tag-wrap{
     display: flex;
     flex-direction: row;
     /* gap: ; */
 }
+
 .des-tag{
     width: 125px;
     height: 54px;
     text-align: center;
     padding-top: 15px;
+    color:var(--mtgrey-2);
     /* vertical-align: baseline; */
 }
-.low{
-    color:var(--mtgrey-2);
-
-}
-.mid{
+/* 點擊的狀態 */
+.des-tag.active{
     color: var(--mtgreen-1);
     font-weight: 700;
 }
-.high{
-    color:var(--mtgrey-2)
-}
+
 .describ h6{
     font-size: 20px;
     font-weight: 500;
     color:var(--mtgrey-2)
 }
-.describ-low{
-    height: 146px;
-
-    display: flex;
-    text-align: center;
-}
-.describ-mid{
+.describ-block{
     height: 146px;
     display: flex;
+    flex-direction: column;
     align-items:center;
     justify-content: center;
-    /* text-align: center; */
 }
-.describ-high{
-    height: 146px;
+.describ-block p{
+    font-size: 14px;
+    font-weight: 500;
+    color:var(--mtgrey-2)
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* text-align: center; */
-}
 .tag-border{
     width: 100%;
     border-top: 1px solid var(--mtgrey-4);
 }
+.quotes{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.quotes h1{
+
+}
 .tree-block{
     width: 100%;
-    height: 665px;
+    /* height: 665px; */
     border-radius: 10px;
     background-color: var(--mtgreen-5);
     display: flex;
@@ -329,15 +325,29 @@ section{
     margin-bottom: 110px;
 }
 .describ-rules{
-    width: 60%;
-    padding-bottom: 40px;
-    margin-top: 65px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.describ-rules h2{
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+.describ-rules h3{
+    font-weight: 700;
+    padding-bottom: 10px;
 }
 .describ-rules p{
     /* text-overflow: ellipsis; */
     text-justify: distribute;
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: 10%;
+    margin-top: 20px;
 }
 .history-tree{
     color:var(--mtgreen-1);
@@ -353,11 +363,26 @@ section{
     padding-left: 5px;
     padding-right: 5px;
 }
+.percent2{
+    color:var(--mtgreen-1);
+    font-size: 32px;
+    font-weight: 900;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.percent3{
+    color:var(--mtgreen-1);
+    font-size: 40px;
+    
+    font-weight: 900;
+    padding-left: 5px;
+    padding-right: 10px;
+}
 
 .rules-border{
     width: 80%;
     border-top: 1px solid var(--mtgreen-1);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .achievement-state{
     width: 80%;
@@ -568,59 +593,99 @@ section{
 
 @media screen and (max-width:390px) {
     .describ{
-        height: 150px;
+        /* height: 150px; */
+        /* padding: ; */
+        height: 100%;
         margin-bottom: 20px;
+        padding-bottom: 10px;
     }
 
-    .describ-low{
-        height: 146px;
-        display: flex;
-        text-align: center;
-        display: none;
-    }
-    .describ-mid{
-        height: 97px;
-        display: flex;
-        align-items:center;
-        justify-content: center;
-        /* text-align: center; */
-    }
-    .describ-high{
-        height: 146px;
-        display: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* text-align: center; */
-    }
 }
+
 @media screen and (max-width:390px) {
+    .des-tag{
+        width: 125px;
+        height: 54px;
+        text-align: center;
+        padding-top: 15px;
+        color:var(--mtgrey-2);
+        /* vertical-align: baseline; */
+    }
+    /* 點擊的狀態 */
+    .des-tag.active{
+        color: var(--mtgreen-1);
+        font-weight: 700;
+    }
+    
+    .describ h6{
+        font-size: 20px;
+        font-weight: 500;
+        color:var(--mtgrey-2)
+    }
+    .describ-block{
+        /* height: 146px; */
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: center;
+    }
+    .describ-block p{
+        font-size: 12px;
+        font-weight: 400;
+        color:var(--mtgrey-2)
+    }
+    
+    .tag-border{
+        width: 100%;
+        border-top: 1px solid var(--mtgrey-4);
+    }
+    .quotes{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .quotes h1{
+    
+    }
     .tree-block{
-        height: 576px;
+        width: 100%;
+        /* height: 665px; */
         border-radius: 10px;
         background-color: var(--mtgreen-5);
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 48px;
+        margin-bottom: 100px;
     }
     .describ-rules{
-        width: 100%;
-        padding-right: 30px;
-        padding-left: 30px;
-        padding-top: 30px;
-        padding-bottom: 36px;
-        margin-top: 0px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+        padding-top: 40px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .describ-rules h2{
+        font-weight: 700;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .describ-rules h3{
+        font-weight: 700;
+        padding-bottom: 10px;
+        text-align: center;
+
     }
     .describ-rules p{
         /* text-overflow: ellipsis; */
-        color: var(--mtgrey-2);
         text-justify: distribute;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 28px;
+        font-size: 14px;
         letter-spacing: 10%;
-        text-align: center;
+        margin-top: 20px;
     }
     .history-tree{
         color:var(--mtgreen-1);
@@ -636,36 +701,60 @@ section{
         padding-left: 5px;
         padding-right: 5px;
     }
+    .percent2{
+        color:var(--mtgreen-1);
+        font-size: 32px;
+        font-weight: 900;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .percent3{
+        color:var(--mtgreen-1);
+        font-size: 40px;
+        
+        font-weight: 900;
+        padding-left: 5px;
+        padding-right: 10px;
+    }
     
     .rules-border{
-        width: 80%;
+        width: 90%;
         border-top: 1px solid var(--mtgreen-1);
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
     .achievement-state{
-        width: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
         /* justify-content: center; */
     }
     .achievement-state p{
-        font-size: 15px;
+        color: var(--mtgrey-1);
+        font-size: 20px;
+        font-weight: 700;
         margin-bottom: 0px;
-        line-height: 28px;
+        text-align: center;
+
     }
     .achievement-num{
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: baseline;
-        
     }
     .tree-num{
         color:var(--mtgreen-1);
-        font-size: 36px;
+        font-size: 52px;
         font-weight: 700;
         padding-left: 10px;
         padding-right: 10px;
     }
+}
+
+/* canvas */
+.tree_animation{
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
 }

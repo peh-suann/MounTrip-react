@@ -99,7 +99,18 @@ section{
     position: relative;
     text-align: center;
 }
-.member-name::after{
+.level-tag{
+    color:white;
+    font-size:14px;
+    background-color: var(--mtyellow-1);
+    border-radius: 18px;
+    padding: 4px 10px 4px 10px;
+    align-items: center;
+    position: absolute;
+    top:4px;
+    right: 0px;
+}
+/* .member-name::after{
     content:'超級嚮導';
     color:white;
     font-size:18px;
@@ -107,11 +118,10 @@ section{
     border-radius: 18px;
     padding: .5px 10px .5px 10px;
     align-content: center;
-    /* height: 100%; */
     position: absolute;
     top:4px;
     right:0px;
-}
+} */
 .member-name p{
     font-size: 24px;
     font-weight: 700;
@@ -431,7 +441,7 @@ section{
         grid-template-columns: 390px ;
         grid-template-rows: 113px 1fr ;
         gap:40px;
-        padding-top: 120px;
+        padding-top: 40px;
         padding-right: 15px;
         padding-left: 15px;
         background-color: var(--mtyellow-4);
@@ -500,7 +510,17 @@ section{
         text-align: center;
         grid-area: name;
     }
-    .member-name::after{
+    .level-tag{
+        color:white;
+        font-size:14px;
+        background-color: var(--mtyellow-1);
+        border-radius: 18px;
+        padding: 4px 10px 4px 10px;
+        align-items: center;
+        position: absolute;
+        top:-2px;
+    }
+    /* .member-name::after{
         content:'超級嚮導';
         color:white;
         font-size:14px;
@@ -508,11 +528,9 @@ section{
         border-radius: 18px;
         padding: 4px 10px 4px 10px;
         align-items: center;
-        /* height: 100%; */
         position: absolute;
         top:-2px;
-        /* right:0px; */
-    }
+    } */
     .member-name p{
         font-size: 20px;
         font-weight: 700;
