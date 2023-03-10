@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import DavisTrailsImgGroup from '../components/DavisTrailsImgGroup'
 import DavisTrailsBatch from '../components/DavisTrailsBatch'
 import DavisTrailsShopBtn from '../components/DavisTrailsShopBtn'
+import DavisTrailsGpx from '../components/DavisTrailsGpx'
 import { TRAILS_DATA } from '../connections/api-config'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -52,9 +53,6 @@ export default function DavisTrailsDetail(rows) {
             {console.log('----', data.rows)}
             <DavisTrailsDetailTable rows={data.rows} />
           </div> */}
-      {/* <div className="container">
-        <DavisGpxTest />
-      </div> */}
       {/* {console.log('----', data.rows)} */}
       {data.rows.map((r) => (
         <div
@@ -464,13 +462,7 @@ export default function DavisTrailsDetail(rows) {
                   </div>
 
                   {/* gpx */}
-                  <div className="mb-3">
-                    <img
-                      className={`${styles.img_contain}`}
-                      src="./imgs/Davis/3-1.jpg"
-                      alt=""
-                    />
-                  </div>
+                  <DavisTrailsGpx />
 
                   {/* shop-button-group TODO:拆元件 */}
                   <div className="d-none d-lg-flex flex-column ">

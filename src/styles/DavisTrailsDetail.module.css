@@ -3,10 +3,6 @@ body {
   background-color: #FFFFF2;
 }
 
-#commont_card {
-
-}
-
 * {
   /* border: 1px dashed brown */
 }
@@ -117,7 +113,7 @@ body {
   border-radius: 5px;
 }
 
-.count_style{
+.count_style {
   display: flex;
   justify-content: center;
   font-size: 18px;
@@ -138,7 +134,7 @@ body {
   height: 35px;
 }
 
-.batch_font{
+.batch_font {
   font-size: 15px;
 }
 
@@ -354,3 +350,19 @@ body {
   background-color: var(--mtgreen-1);
   height: 40px;
 } */
+
+/* #DavisTrailsGpx */
+.gpx_iframe {
+  width: 640px;
+  height: 480px;
+  position: relative;
+  top: -60px;
+  border: none;
+}
+
+.gpx_wrap {
+  height: 500px;
+  border: 2px solid #eee;
+  display: inline-block;
+  overflow: hidden;
+}
