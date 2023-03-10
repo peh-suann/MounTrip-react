@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './../styles/Navbar.module.css'
+import NavbarMobileMenu from './NavbarMobileMenu'
 
 export default function NavBar() {
   return (
@@ -221,6 +222,7 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
+      <NavbarMobileMenu />
     </>
   )
 }

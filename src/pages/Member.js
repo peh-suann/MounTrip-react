@@ -1,9 +1,62 @@
 // import '../styles/M'
 import styles from './../styles/Member.module.css'
+// import { Link } from 'react-router-dom'
 // import styles from './../styles/Member.module.css'
-import React from 'react'
+import { useState, useEffect, useRef } from 'react'
+import MemberContent from '../components/LaiMemberContent'
+import CouponContent from '../components/LaiCouponContent'
+import AchievementContent from '../components/LaiAchievementContent'
+import HistoryOrder from '../components/LaiHistoryOrder'
+import CommentContent from '../components/LaiCommentContent'
+import FavoriteContent from '../components/LaiFavoriteContent'
+import MobileDropdown from '../components/LaiMobileDropdown'
+// import Gift from '../../src/icons/gift.svg'
 
 export default function Member() {
+  //電腦版的sidebar分頁選擇狀態
+  const [displayPage, setDisplayPage] = useState('member')
+  const handleDisplayPage = (page) => {
+    setDisplayPage(page)
+  }
+  //電腦版的sidebar-tag 在該頁面會有active的樣式 //直接寫在sidebar連結的onclick事件就好
+
+  //手機版的menu 開合狀態
+  const [mobileMenu, setMobileMenu] = useState(false)
+
+  //用useEffect讓手機menu點擊外面也可以關閉
+  let menuRef = useRef()
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current?.contains(e.target)) {
+        setMobileMenu(false)
+      }
+    }
+    document.addEventListener('click', handler)
+    return () => {
+      document.removeEventListener('click', handler)
+    }
+  }, [])
+
+  //scroll位置改變mobile menu的位置
+  const [scrollPosition, setScrollPosition] = useState(0)
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY)
+    }
+    window.addEventListener('scroll', handleScroll)
+    //清除狀態
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  //設定與瀏覽器視窗的比例關係
+  const windowHeight = window.innerHeight
+  const btnTopPosition = Math.max(
+    15,
+    Math.min(60, (scrollPosition / windowHeight) * 100)
+  )
   return (
     <>
       <div className={styles['grid-container']}>
@@ -46,11 +99,22 @@ export default function Member() {
             </div>
             <div className={styles['member-account']}>yichunccc0830</div>
           </div>
-          <button className={styles['edit-btn']}>編輯個人資料</button>
+          <button
+            className={styles['edit-btn']}
+            onClick={() => {
+              handleDisplayPage('member')
+            }}
+          >
+            編輯個人資料
+          </button>
           <div className={styles['btn-border']}></div>
           <div className={styles['sidebar-menu']}>
-            <li className={styles['coupon-link']}>
-              <a href="/">
+            <li className={displayPage === 'coupon' ? styles['active'] : null}>
+              <button
+                onClick={() => {
+                  handleDisplayPage('coupon')
+                }}
+              >
                 <svg
                   className={styles['menu-icon']}
                   width="24"
@@ -95,11 +159,19 @@ export default function Member() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                我的優惠券
-              </a>
+                <span>我的優惠券</span>
+              </button>
             </li>
-            <li className={styles['achievement-link']}>
-              <a href="/">
+            <li
+              className={
+                displayPage === 'achievement' ? styles['active'] : null
+              }
+            >
+              <button
+                onClick={() => {
+                  handleDisplayPage('achievement')
+                }}
+              >
                 <svg
                   className={styles['menu-icon']}
                   width="24"
@@ -108,7 +180,7 @@ export default function Member() {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_1298_10889)">
+                  <g clipPath="url(#clip0_1298_10889)">
                     <path
                       d="M12 15.5C15.866 15.5 19 12.366 19 8.5C19 4.63401 15.866 1.5 12 1.5C8.13401 1.5 5 4.63401 5 8.5C5 12.366 8.13401 15.5 12 15.5Z"
                       stroke="#9AA09B"
@@ -135,11 +207,19 @@ export default function Member() {
                     </clipPath>
                   </defs>
                 </svg>
-                成就獎章
-              </a>
+                <span>成就獎章</span>
+              </button>
             </li>
-            <li className={styles['history-order-link']}>
-              <a href="/">
+            <li
+              className={
+                displayPage === 'history-order' ? styles['active'] : null
+              }
+            >
+              <button
+                onClick={() => {
+                  handleDisplayPage('history-order')
+                }}
+              >
                 <svg
                   className={styles['menu-icon']}
                   width="24"
@@ -163,11 +243,15 @@ export default function Member() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                歷史訂單
-              </a>
+                <span>歷史訂單</span>
+              </button>
             </li>
-            <li className={styles['comment-link']}>
-              <a href="/">
+            <li className={displayPage === 'comment' ? styles['active'] : null}>
+              <button
+                onClick={() => {
+                  handleDisplayPage('comment')
+                }}
+              >
                 <svg
                   className={styles['menu-icon']}
                   width="24"
@@ -184,11 +268,17 @@ export default function Member() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                過往評論
-              </a>
+                <span>過往評論</span>
+              </button>
             </li>
-            <li className={styles['favorite-link']}>
-              <a href="/">
+            <li
+              className={displayPage === 'favorite' ? styles['active'] : null}
+            >
+              <button
+                onClick={() => {
+                  handleDisplayPage('favorite')
+                }}
+              >
                 <svg
                   className={styles['menu-icon']}
                   width="24"
@@ -205,129 +295,78 @@ export default function Member() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                收藏路線
-              </a>
+                <span>收藏路線</span>
+              </button>
             </li>
           </div>
         </div>
-        <div className={styles['member-data']}>
-          <div className={styles['title']}>
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M28.4446 30.0001V26.889C28.4446 25.2387 27.789 23.6561 26.6221 22.4892C25.4552 21.3223 23.8726 20.6667 22.2223 20.6667H9.77789C8.12765 20.6667 6.545 21.3223 5.37811 22.4892C4.21122 23.6561 3.55566 25.2387 3.55566 26.889V30.0001"
-                stroke="#6CBA7C"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M16.0005 14.4444C19.437 14.4444 22.2228 11.6587 22.2228 8.22222C22.2228 4.78578 19.437 2 16.0005 2C12.5641 2 9.77832 4.78578 9.77832 8.22222C9.77832 11.6587 12.5641 14.4444 16.0005 14.4444Z"
-                stroke="#6CBA7C"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <h1>會員中心</h1>
-          </div>
-          <div className={styles['data-area']}>
-            <div className={`${styles['name-wrap']} ${styles['input-blocks']}`}>
-              <label htmlFor="" className="">
-                名字
-              </label>
-              <input type="text" className="" id="" name="" required />
-            </div>
-            <div
-              className={`${styles['fname-wrap']} ${styles['input-blocks']}`}
-            >
-              <label htmlFor="" className={''}>
-                姓氏
-              </label>
-              <input type="text" className={''} id="" name="" required />
-            </div>
-            <div
-              className={`${styles['gender-wrap']} ${styles['input-blocks']}`}
-            >
-              <label htmlFor="" className="">
-                性別
-              </label>
-              <select>
-                <option>男性</option>
-                <option>女性</option>
-                <option>不透露</option>
-              </select>
-            </div>
-            <div
-              className={`${styles['birth-wrap']} ${styles['input-blocks']}`}
-              //   className={styles['birth-wrap']}
-            >
-              <label htmlFor="" className="">
-                出生年月日
-              </label>
-              <input type="date" className="" id="" name="" required />
-            </div>
-            <div className={`${styles['id-wrap']} ${styles['input-blocks']}`}>
-              <label htmlFor="" className="">
-                身分證字號
-              </label>
-              <input type="text" className="" id="" name="" required />
-            </div>
-            <div
-              className={`${styles['phone-wrap']} ${styles['input-blocks']}`}
-            >
-              <label htmlFor="" className="">
-                聯絡電話
-              </label>
-              <input type="text" className="" id="" name="" required />
-            </div>
-            <div
-              className={`${styles['account-wrap']} ${styles['input-blocks']}`}
-            >
-              <label htmlFor="" className="">
-                會員帳號
-              </label>
-              <input type="text" className={''} id="" name="" required />
-            </div>
-            <div
-              className={`${styles['email-wrap']} ${styles['input-blocks']}`}
-            >
-              <label htmlFor="" className="">
-                電子信箱
-              </label>
-              <input type="email" className="" id="" name="" required />
-            </div>
-            <div className={`${styles['zip-wrap']} ${styles['input-blocks']}`}>
-              <label htmlFor="" className="">
-                聯絡地址
-              </label>
-              <input type="text" className="" id="" name="" required />
-            </div>
-            <div className={`${styles['city-wrap']} ${styles['input-blocks']}`}>
-              <div className={styles['fake-label-city']}></div>
-              <select>
-                <option>台北市</option>
-                <option>新北市</option>
-                <option>桃園市</option>
-                <option>台中市</option>
-                <option>台南市</option>
-                <option>高雄市</option>
-              </select>
-            </div>
-            <div
-              className={`${styles['address-wrap']} ${styles['input-blocks']}`}
-            >
-              <div className={styles['fake-label-add']}></div>
-              <input type="text" className="" id="" name="" required />
-            </div>
-            <button className={styles['save-btn']}>儲存變更</button>
-          </div>
+        {/* <MemberContent /> */}
+        {/* <CouponContent /> */}
+        {displayPage === 'member' && <MemberContent />}
+        {displayPage === 'coupon' && <CouponContent />}
+        {displayPage === 'achievement' && <AchievementContent />}
+        {displayPage === 'history-order' && <HistoryOrder />}
+        {displayPage === 'comment' && <CommentContent />}
+        {displayPage === 'favorite' && <FavoriteContent />}
+      </div>
+      <div className={styles['mobile-menu']}>
+        <div
+          className={styles['mobile-dropdown-btn']}
+          style={{ top: `${btnTopPosition}%` }}
+          onClick={(e) => {
+            e.stopPropagation()
+            setMobileMenu(!mobileMenu)
+          }}
+        >
+          <svg
+            className={`${styles['dropdown-icon']}`}
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 50 50"
+            fill="#6CBA7C"
+          >
+            {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> */}
+            <path
+              stroke="#6CBA7C"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M168.2 384.9c-15-5.4-31.7-3.1-44.6 6.4c-8.2 6-22.3 14.8-39.4 22.7c5.6-14.7 9.9-31.3 11.3-49.4c1-12.9-3.3-25.7-11.8-35.5C60.4 302.8 48 272 48 240c0-79.5 83.3-160 208-160s208 80.5 208 160s-83.3 160-208 160c-31.6 0-61.3-5.5-87.8-15.1zM26.3 423.8c-1.6 2.7-3.3 5.4-5.1 8.1l-.3 .5c-1.6 2.3-3.2 4.6-4.8 6.9c-3.5 4.7-7.3 9.3-11.3 13.5c-4.6 4.6-5.9 11.4-3.4 17.4c2.5 6 8.3 9.9 14.8 9.9c5.1 0 10.2-.3 15.3-.8l.7-.1c4.4-.5 8.8-1.1 13.2-1.9c.8-.1 1.6-.3 2.4-.5c17.8-3.5 34.9-9.5 50.1-16.1c22.9-10 42.4-21.9 54.3-30.6c31.8 11.5 67 17.9 104.1 17.9c141.4 0 256-93.1 256-208S397.4 32 256 32S0 125.1 0 240c0 45.1 17.7 86.8 47.7 120.9c-1.9 24.5-11.4 46.3-21.4 62.9zM144 272a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm144-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm80 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+            />
+          </svg>
+          {/* <svg
+            className={`${styles['dropdown-icon']}`}
+            width="25"
+            height="25"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.5 10C22.5 8.01088 21.7098 6.10322 20.3033 4.6967C18.8968 3.29018 16.9891 2.5 15 2.5C13.0109 2.5 11.1032 3.29018 9.6967 4.6967C8.29018 6.10322 7.5 8.01088 7.5 10C7.5 18.75 3.75 21.25 3.75 21.25H26.25C26.25 21.25 22.5 18.75 22.5 10Z"
+              stroke="#6CBA7C"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M17.1624 26.25C16.9426 26.6288 16.6272 26.9433 16.2477 27.1619C15.8682 27.3805 15.4379 27.4956 14.9999 27.4956C14.5619 27.4956 14.1316 27.3805 13.7521 27.1619C13.3726 26.9433 13.0572 26.6288 12.8374 26.25"
+              stroke="#6CBA7C"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg> */}
         </div>
+        {mobileMenu === true && (
+          <MobileDropdown
+            displayPage={displayPage}
+            setDisplayPage={setDisplayPage}
+            ref={menuRef}
+            scrollPosition={btnTopPosition}
+          />
+        )}
       </div>
     </>
   )
