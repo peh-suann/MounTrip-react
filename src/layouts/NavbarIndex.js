@@ -1,8 +1,16 @@
-import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
 import IndexNavstyles from './../styles/NavbarIndex.module.css'
+import AuthContext from '../contexts/AuthContexts'
 
 export default function IndexNavBar() {
+  const { myAuth, logout } = useContext(AuthContext)
+  const [showList, setShowList] = useState(false)
+  const handleClick = function(){
+    setShowList(!showList)
+  }
+
   return (
     <>
       <nav id={IndexNavstyles.IndexNav}>
@@ -179,8 +187,42 @@ export default function IndexNavBar() {
                   </svg>
                 </a>
               </li>
+              {myAuth.account ? (
+                <li>
+                  <a className={IndexNavstyles.link} href="#/" onClick={(e)=>{
+                    e.preventDefault()
+                    handleClick()
+                  }}>
+                    <svg
+                      width="28"
+                      height="28"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="14" cy="14" r="14" fill="#6CBA7C" />
+                    </svg>
+                  </a>
+                </li>
+              ) : (
+                ''
+              )}
             </ul>
           </div>
+          {/* <div className={IndexNavstyles.downloadList}>
+            <ul className={IndexNavstyles.nav_icons}>
+              <li>會員中心</li>
+              <li>我的優惠券</li>
+              <li>成就獎章</li>
+              <li>歷史訂單</li>
+              <li>過往評論</li>
+              <li>收藏路線</li>
+              <li onClick={()=>{
+                // e.preventDefault();
+                logout();
+              }}>登出</li>
+            </ul>
+          </div> */}
         </div>
       </nav>
     </>

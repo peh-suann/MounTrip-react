@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import React from 'react'
 import loginStyles from '../styles/kexinLogin.module.css'
@@ -11,6 +12,7 @@ function KexinLogin() {
     account: '',
     password: '',
   })
+  const navigate = useNavigate()
 
   return (
     <>
@@ -91,8 +93,19 @@ function KexinLogin() {
                 method="post"
                 onSubmit={(e) => {
                   e.preventDefault()
-                  axios.post(LOGIN, { ...myForm }).then((response) => {
+                  axios.post(LOGIN, myForm).then((response) => {
                     console.log(response.data)
+                    if (response.data.success) {
+                      const {account, accountId, token} = response.data;
+                      localStorage.setItem(
+                        "myAuth",
+                        JSON.stringify({account,accountId,token})
+                      )
+                      // setMyAuth({authorized: true,account,token,sid: accountId})
+                      navigate('/')
+                    } else {
+                      alert(response.data.error || "帳號或密碼錯誤")
+                    }
                   })
                 }}
               >
@@ -180,23 +193,23 @@ function KexinLogin() {
                           <path
                             d="M12 22.5C17.5228 22.5 22 18.0228 22 12.5C22 6.97715 17.5228 2.5 12 2.5C6.47715 2.5 2 6.97715 2 12.5C2 18.0228 6.47715 22.5 12 22.5Z"
                             stroke="#6CBA7C"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                           <path
                             d="M2 12.5H22"
                             stroke="#6CBA7C"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                           <path
                             d="M12 2.5C14.5013 5.23835 15.9228 8.79203 16 12.5C15.9228 16.208 14.5013 19.7616 12 22.5C9.49872 19.7616 8.07725 16.208 8 12.5C8.07725 8.79203 9.49872 5.23835 12 2.5Z"
                             stroke="#6CBA7C"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                         </svg>
                         <span className={loginStyles['ms-06']}>
