@@ -3,6 +3,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 // import DavisTrailsDetailTable from '../components/DavisTrailsDetailTable'
 // import DavisGpxTest from '../components/DavisGpxTest'
+import DavisTrailsBatch from '../components/DavisTrailsBatch'
 import { TRAILS_DATA } from '../connections/api-config'
 import { TRAILS_BATCH_DATA } from '../connections/api-config'
 import { useLocation } from 'react-router-dom'
@@ -27,7 +28,7 @@ export default function DavisTrailsDetail(rows) {
   const [count, setCount] = useState(0)
 
   const getListData = async (page = 1) => {
-    const response = await axios.get(TRAILS_BATCH_DATA, {
+    const response = await axios.get(TRAILS_DATA, {
       params: {
         page,
       },
@@ -43,7 +44,7 @@ export default function DavisTrailsDetail(rows) {
     }
   }, [])
 
-  // batch_fata
+  // batch_data
   // const [batch, setBatch] = useState({
   //   batch_rows: [],
   // })
@@ -123,24 +124,24 @@ export default function DavisTrailsDetail(rows) {
                   <div className="">
                     <img
                       className={`${styles.img_cover_one}`}
-                      src={`/imgs/Davis/${r.sid}-1.jpg`}
+                      src={`/imgs/Davis/${r.trail_sid}-1.jpg`}
                       alt=""
                     />
                   </div>
                   <div className={`d-flex flex-row ${styles.img_wrap_three}`}>
                     <img
                       className={`${styles.img_cover_three}`}
-                      src={`/imgs/Davis/${r.sid}-1.jpg`}
+                      src={`/imgs/Davis/${r.trail_sid}-1.jpg`}
                       alt=""
                     />
                     <img
                       className={`${styles.img_cover_three}`}
-                      src={`/imgs/Davis/${r.sid}-2.jpg`}
+                      src={`/imgs/Davis/${r.trail_sid}-2.jpg`}
                       alt=""
                     />
                     <img
                       className={`${styles.img_cover_three}`}
-                      src={`/imgs/Davis/${r.sid}-3.jpg`}
+                      src={`/imgs/Davis/${r.trail_sid}-3.jpg`}
                       alt=""
                     />
                   </div>
@@ -496,7 +497,7 @@ export default function DavisTrailsDetail(rows) {
                   {/* shop-button-group */}
 
                   <div className="d-none d-lg-flex flex-column ">
-                    {/* Count TODO:  */}
+                    {/* Count */}
                     <div className="col d-flex flex-row mb-2 justify-content-between">
                       <div
                         className={`col  d-flex flex-row align-items-center me-2 ${styles.shop_btn_one}`}
@@ -593,21 +594,14 @@ export default function DavisTrailsDetail(rows) {
                             {/* 2023/01/01 - 2023/01/03 */}
                             {/* TODO: */}
                             <select name="" id="">
-                              {/* {console.log('----', batch.batch_rows)} */}
-                              {/* {batch.batch_rows.map((r, i) => {
+                              <DavisTrailsBatch />
+                              {/* {data.rows.map((r, i) => {
                                 return (
                                   <option id={i} value="">
                                     {r.batch_start}-{r.batch_end}
                                   </option>
                                 )
                               })} */}
-                              {data.rows.map((r, i) => {
-                                return (
-                                  <option id={i} value="">
-                                    {r.batch_start}-{r.batch_end}
-                                  </option>
-                                )
-                              })}
 
                               {/* <option value="">2023/01/01 - 2023/01/03</option>
                               <option value="">2023/01/01 - 2023/01/03</option> */}
