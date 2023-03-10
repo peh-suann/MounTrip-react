@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.kexinSignin .mtgrey1 {
+  color: var(--mtgrey-1);
+}
+
+.kexinSignin .mtgrey2 {
+  color: var(--mtgrey-2);
+}
+
+.kexinSignin .mtgrey3 {
+  color: var(--mtgrey-3);
+}
+
+.kexinSignin .mtgreen1 {
+  color: var(--mtgreen-1);
+}
+
+.kexinSignin .mtgreen2 {
+  color: var(--mtgreen-2);
+}
+
+.kexinSignin .mtgreen4 {
+  color: var(--mtgreen-4);
+}
+
+.kexinSignin .mtyellow4 {
+  color: var(--mtyellow-4);
+}
+
+.kexinSignin .ms-06 {
+  margin-left: 6px;
+}
+
+.kexinSignin .mb-40 {
+  margin-bottom: 40px;
+}
+
+.bg-image {
+  background: url('../html/img/login-background.jpg') center center/cover;
+  height: 100vh;
+}
+
+.kexinSignin .web-none {
+  display: none;
+}
+
+.kexinSignin .loginForm-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 242, 0.7);
+  box-shadow: 0px 10px 16px rgba(1, 19, 6, 0.15);
+  backdrop-filter: blur(3px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 10px;
+  padding: 60px;
+}
+
+.kexinSignin .loginForm {
+  width: 100%;
+}
+
+.kexinSignin .loginForm input {
+  /* background-color: var(--mtyellow-4); */
+  background-color: rgba(206, 232, 203, 0.6);
+  border: 2px solid var(--mtgreen-3);
+  border-radius: 10px;
+}
+
+.kexinSignin #account {
+  width: 100%;
+}
+
+.kexinSignin #password {
+  width: 100%;
+}
+
+.kexinSignin .button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+}
+
+.kexinSignin .button div {
+  width: 100%;
+}
+
+.kexinSignin .button #login {
+  display: block;
+  width: 100%;
+  background-color: var(--mtgreen-1);
+  border-color: var(--mtgreen-1);
+  line-height: 27px;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
+}
+
+.kexinSignin .button #quick-login {
+  display: block;
+  width: 100%;
+  color: var(--mtgreen-1);
+  background-color: var(--mtyellow-4);
+  border-color: var(--mtgreen-1);
+  /* font-size: 20px; */
+  line-height: 27px;
+  letter-spacing: 0.1em;
+}
+
+.kexinSignin input.form-control {
+  /* background-color: rgba(var(--mtgreen-3), 0.6); */
+  background-color: rgba(206, 232, 203, 0.6);
+  border-color: var(--mtgreen-3);
+}
+
+.kexinSignin #rememberme {
+  /* background-color: rgba(var(--mtgreen-3), 0.6); */
+  width: 22px;
+  /* height: 22px; */
+  background: #fffff2;
+  /* primary/03 */
+  border: 2px solid var(--mtgreen-3);
+  border-radius: 7px;
+}
+
+.kexinSignin .loginForm-wrap .d-flex.justify-content-between a {
+  color: var(--mtgrey-1);
+}
+
+.kexinSignin .loginForm-wrap .d-flex.justify-content-center a {
+  color: var(--mtgreen-1);
+}
+
+.kexinSignin .mobile-none {
+  display: block;
+}
+
+@media screen and (max-width: 400px) {
+  .bg-image {
+    background: none;
+    background-color: var(--mtyellow-4);
+  }
+
+  .kexinSignin .web-none {
+    display: block;
+  }
+
+  .kexinSignin .mobile-x {
+    display: block;
+    margin-bottom: 60px;
+    /* padding-left: 15px; */
+    /* padding-top: 80px; */
+  }
+
+  .kexinSignin .mobile-welcome {
+    margin-bottom: 24px;
+  }
+
+  .kexinSignin .mobile-welcome h3 {
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 140%;
+    letter-spacing: 0.1em;
+  }
+
+  .kexinSignin .mobile-welcome p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  .kexinSignin .mobile-tag {
+    border-bottom: 2px solid var(--mtgrey-4);
+    margin-bottom: 24px;
+  }
+
+  .kexinSignin .mobile-tag p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    padding-bottom: 10px;
+  }
+
+  .kexinSignin .mobile-tag p.mtgreen1 {
+    border-bottom: 4px solid var(--mtgreen-1);
+  }
+
+  .kexinSignin .mobile-none {
+    display: none;
+  }
+
+  .kexinSignin .loginForm-wrap {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0px 15px;
+  }
+
+  .kexinSignin .button #login {
+    margin-bottom: 100px;
+  }
+}
