@@ -195,21 +195,21 @@ section{
 .badge-pic-1{
     width: 375px;
     height: 220px;
-    background: url('../../public/Mountrip_achievement_mei.png');
+    /* background: url('../../public/Mountrip_achievement_mei.png'); */
     background-position: center center;
     background-size: cover;
 }
 .badge-pic-2{
     width: 375px;
     height: 220px;
-    background: url('../../public/Mountrip_achievement_bamboo.png');
+    /* background: url('../../public/Mountrip_achievement_bamboo.png'); */
     background-position: center center;
     background-size: cover;
 }
 .badge-pic-3{
     width: 375px;
     height: 220px;
-    background: url('../../public/Mountrip_achievement_pine.png');
+    /* background: url('../../public/Mountrip_achievement_pine.png'); */
     background-position: center center;
     background-size: cover;
 }

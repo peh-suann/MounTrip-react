@@ -1,5 +1,5 @@
 // Packages
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 
 // Components
@@ -24,6 +24,14 @@ function YichunTest() {
     false,
   ])
   const [correct, setCorrect] = useState([false, false, false, false, false])
+
+  // mountain moving effect
+  const mountainG2Ref = useRef(null)
+  const mountainY2Ref = useRef(null)
+  const mountainG1Ref = useRef(null)
+  const mountainY1Ref = useRef(null)
+  let timeoutId
+  let mouseX, mouseY
 
   const getListData = async () => {
     try {
@@ -53,10 +61,50 @@ function YichunTest() {
       behavior: 'smooth',
     })
   }
+
   return (
     <>
       <StylesContext.Provider value={styles}>
-        <section className={styles['intro-page']}>
+        <section
+          className={styles['intro-page']}
+          onMouseMove={(e) => {
+            clearTimeout(timeoutId)
+            timeoutId = setTimeout(function () {
+              // code to be executed after 100ms delay
+              const windowHeight = window.innerHeight
+              const windowWidth = window.innerWidth
+              const halfHeight = windowHeight / 2
+              const halfWidth = windowWidth / 2
+
+              mouseX = e.clientX
+              mouseY = e.clientY
+
+              const moveX = (mouseX - halfWidth) / halfWidth
+              const moveY = (mouseY - halfHeight) / halfHeight
+
+              console.log('----------------------')
+              console.log('mouseX: ', mouseX)
+              console.log('mouseY: ', mouseY)
+              console.log('moveX: ', moveX)
+              console.log('moveY: ', moveY)
+
+              console.log('mountainY1Ref', mountainY1Ref)
+
+              mountainG2Ref.current.style.transform = `translate(${
+                moveX * 1
+              }%,${moveY * 4}%) scale(1.1)`
+              mountainY2Ref.current.style.transform = `translate(${
+                moveX * -1
+              }%,${moveY * 2}%) scale(1.105)`
+              mountainG1Ref.current.style.transform = `translate(${
+                moveX * 0.5
+              }%,${moveY * 2}%) scale(1.2)`
+              mountainY1Ref.current.style.transform = `translate(${
+                moveX * -0.5
+              }%,${moveY * -3}%) scale(1.11)`
+            })
+          }}
+        >
           <img
             className={styles['clouds-web']}
             src="images/yichun/test/clouds/pic20.png"
@@ -217,16 +265,19 @@ function YichunTest() {
             className={`${styles.mountains} ${styles.g2}`}
             src="images/yichun/test/mountain/g-2.svg"
             alt=""
+            ref={mountainG2Ref}
           />
           <img
             className={`${styles.mountains} ${styles.y2}`}
             src="images/yichun/test/mountain/y-2.svg"
             alt=""
+            ref={mountainY2Ref}
           />
           <img
             className={`${styles.mountains} ${styles.g1}`}
             src="images/yichun/test/mountain/g-1.svg"
             alt=""
+            ref={mountainG1Ref}
           />
 
           <button
@@ -244,6 +295,7 @@ function YichunTest() {
             className={`${styles.mountains} ${styles.y1}`}
             src="images/yichun/test/mountain/y-1.svg"
             alt=""
+            ref={mountainY1Ref}
           />
         </section>
         <section className={styles['intro-text']}>
@@ -289,8 +341,8 @@ function YichunTest() {
           className={`${styles.price} ${display[5] ? '' : styles.display}`}
         >
           <div className={styles['price-text']}>
-            {correct.filter(Boolean).length === 5 ? (
-              <h1 className={styles.congrats}>Congrats!!!</h1>
+            {correct.filter(Boolean).length >= 4 ? (
+              <h1 className={styles.congrats}>Congratulation!!!</h1>
             ) : correct.filter(Boolean).length > 2 ? (
               <h1 className={styles.congrats}>Keep Going!!</h1>
             ) : (
@@ -300,7 +352,7 @@ function YichunTest() {
               您在此測驗中一共答對 <span>{correct.filter(Boolean).length}</span>{' '}
               題，
               <br />
-              {correct.filter(Boolean).length === 5
+              {correct.filter(Boolean).length >= 4
                 ? '登山小達人就是你！'
                 : correct.filter(Boolean).length > 2
                 ? '繼續加油，學習更多安全知識吧！'
@@ -308,7 +360,7 @@ function YichunTest() {
             </h3>
             <p>
               恭喜獲得{' '}
-              {correct.filter(Boolean).length === 5
+              {correct.filter(Boolean).length >= 4
                 ? '75'
                 : correct.filter(Boolean).length > 2
                 ? '85'
