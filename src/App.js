@@ -22,7 +22,7 @@ function App() {
             <Route path="/" element={<Layout />}>
               {/* 其他頁面Navbar+Footer */}{' '}
               <Route path="/products" element={<YichunProducts />} />
-              {/* <Route path="/member" element={<Member />} /> */}
+              <Route path="/member" element={<Member />} />
               <Route path="/test" element={<YichunTest />} />
             </Route>
             <Route path="/">
