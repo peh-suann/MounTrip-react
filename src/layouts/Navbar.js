@@ -75,10 +75,10 @@ export default function NavBar() {
 
             <ul className={styles.nav_navigations}>
               <li>
-                <a className={styles.link} href="/">
+                <Link className={styles.link} to="/products">
                   {' '}
                   商品總覽{' '}
-                </a>
+                </Link>
               </li>
               <li>
                 <a className={styles.link} href="/">
@@ -93,10 +93,10 @@ export default function NavBar() {
                 </a>
               </li>
               <li>
-                <a className={styles.link} href="/">
+                <Link className={styles.link} to="/test">
                   {' '}
                   線上測驗{' '}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
