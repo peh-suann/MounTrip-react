@@ -4,6 +4,7 @@ import axios from 'axios'
 
 // Components
 import YichunQuestionSection from '../components/YichunQuestionSection'
+import Button from '../components/Button'
 
 // Connections
 import { TEST_QUES } from '../connections/api-config'
@@ -14,11 +15,20 @@ export const StylesContext = createContext(styles)
 
 function YichunTest() {
   const [ques, setQues] = useState([])
+  const [display, setDisplay] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ])
+
   const getListData = async () => {
     try {
       const response = await axios.get(TEST_QUES)
       setQues(response.data)
-      console.log(response.data)
+      //   console.log(response.data)
       return response.data
     } catch (err) {
       console.error(err)
@@ -28,8 +38,20 @@ function YichunTest() {
 
   useEffect(() => {
     getListData()
-    console.log('ques', ques)
   }, [])
+
+  const scrollTo = async (index) => {
+    console.log(index)
+    await setDisplay((prev) => {
+      const newDisplay = [...prev]
+      newDisplay[index] = true
+      return newDisplay
+    })
+    window.scrollTo({
+      top: 1018 + 1018 * index,
+      behavior: 'smooth',
+    })
+  }
   return (
     <>
       <StylesContext.Provider value={styles}>
@@ -206,7 +228,12 @@ function YichunTest() {
             alt=""
           />
 
-          <button className={styles.start_test}>
+          <button
+            className={styles.start_test}
+            onClick={() => {
+              scrollTo(0)
+            }}
+          >
             開始
             <br />
             作答
@@ -226,10 +253,36 @@ function YichunTest() {
           </p>
         </section>
         {ques.map((el, i) => {
-          return <YichunQuestionSection key={el.sid} />
+          if (i % 2 === 0) {
+            // even
+            return (
+              <YichunQuestionSection
+                key={el.sid}
+                index={i}
+                element={el}
+                odd={true}
+                display={display[i]}
+                scrollTo={scrollTo}
+              />
+            )
+          } else {
+            // odd
+            return (
+              <YichunQuestionSection
+                key={el.sid}
+                index={i}
+                element={el}
+                odd={false}
+                display={display[i]}
+                scrollTo={scrollTo}
+              />
+            )
+          }
         })}
 
-        <section className={styles.price}>
+        <section
+          className={`${styles.price} ${display[5] ? '' : styles.display}`}
+        >
           <div className={styles['price-text']}>
             <h1 className={styles.congrats}>Congrats!!!</h1>
             <h3 className={styles['num-of-Ques']}>
@@ -243,8 +296,8 @@ function YichunTest() {
               快去 <a href="/">我的優惠券</a> 查收吧！
             </p>
             <div className={styles.buttons}>
-              <button>來去逛逛</button>
-              <button>前往我的優惠券</button>
+              <Button text={'來去逛逛'} link={'products'} />
+              <Button text={'前往我的優惠券'} link={''} />
             </div>
           </div>
           <img
@@ -276,7 +329,7 @@ function YichunTest() {
           >
             <path
               id="curve"
-              d="M 35 1080 V 110 a50,50 0 0 1 50,-50 H 1865 a20,20 0 0 1 20,20 V 1080 H30"
+              d="M -80 1080 V 120 a50,50 0 0 1 50,-50 H 1980 a50,50 0 0 1 20,20 V 1080 H30"
               strokeLinejoin="round"
             />
             <text>

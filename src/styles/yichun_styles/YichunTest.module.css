@@ -27,6 +27,12 @@ html body {
   background-color: var(--mtyellow-4);
 
   /* overflow-y: hidden; */
+
+  /* overflow-y: hidden; */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* intro ----------------------- */
@@ -484,9 +490,22 @@ section.intro-text p {
 
 /* questions ----------------------- */
 section.questions {
+  /*
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  */
+
   position: relative;
   padding: 0;
   margin: 0;
+
+  transition-duration: 10s;
+}
+section.questions.display {
+  /* display: none; */
 }
 section.questions img:first-child {
   width: calc(100% - 200px);
@@ -518,7 +537,7 @@ section.questions .ques-box {
 
   width: 1000px;
   height: 200px;
-  top: 280px;
+  top: 250px;
   left: 50%;
   border-radius: 100px;
 
@@ -545,7 +564,7 @@ section.questions img:last-of-type {
 }
 section.questions .cards {
   position: absolute;
-  bottom: 100px;
+  top: 58%;
   width: 100%;
   height: fit-content;
 
@@ -565,8 +584,8 @@ section.questions .cards .ans:last-child {
 }
 section.questions .ans {
   /* position: absolute; */
-  width: 450px;
-  height: 270px;
+  width: 400px;
+  height: 250px;
   bottom: 0;
 
   display: flex;
@@ -579,30 +598,66 @@ section.questions .ans {
   box-shadow: 0px 4px 10px 1px rgba(1, 19, 6, 0.2);
   border-radius: 10px;
 
+  transform-style: preserve-3d;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+section.questions .ans.hover:first-child {
+  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
+}
+section.questions .ans.hover {
+  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
+}
+section.questions .ans.hover:last-child {
+  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
+}
+section.questions .ans .front_side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-weight: 900;
   font-size: 40px;
   line-height: 56px;
   letter-spacing: 0.1em;
-  color: var(--mtgrey-1);
+  color: var(--mtgrey-2);
 
-  transition-duration: 0.5s;
-  cursor: pointer;
+  backface-visibility: hidden;
 }
-section.questions .ans:first-child:hover {
-  transform: translateY(-5px) scale(1.03) rotate(-8deg);
-  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
+section.questions .ans .back_side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  cursor: auto;
 }
-section.questions .ans:hover {
-  transform: translateY(-5px) scale(1.04);
-  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
-}
-section.questions .ans:last-child:hover {
-  transform: translateY(-5px) scale(1.03) rotate(8deg);
-  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
-}
-section .ques-box {
+section.questions .ques-box {
   color: var(--mtgreen-1);
   background-color: var(--mtyellow-4);
+}
+section.questions button.next {
+  /* display: none; */
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* width: 80px; */
+
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 12px 40px;
+  border-radius: 50px;
+  border: none;
 }
 
 section.ques-odd {
@@ -615,6 +670,10 @@ section.ques-odd .num {
   color: var(--mtgreen-1);
   background-color: var(--mtyellow-4);
 }
+section.ques-odd button.next{
+  color: var(--mtyellow-4);
+  background-color: var(--mtgreen-1);
+}
 section.ques-even {
   width: 100%;
   height: 100vh;
@@ -625,19 +684,32 @@ section.ques-even .num {
   color: var(--mtyellow-4);
   background-color: var(--mtgreen-1);
 }
+section.ques-even button.next{
+  color: var(--mtgreen-1);
+  background-color: var(--mtyellow-4);
+}
 
 /* price ----------------------- */
 section.price img:first-of-type {
   /* display: none; */
 }
 section.price {
+  /*
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  */
   position: relative;
   width: 100%;
   height: 100vh;
 
   background-color: var(--mtyellow-4);
-
   overflow: hidden;
+}
+section.price.display {
+  display: none;
 }
 section.price .price-text {
   position: absolute;
@@ -762,15 +834,23 @@ section.price img:nth-child(5) {
   pointer-events: none;
 }
 section.price svg {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   z-index: 0;
   user-select: none;
+
+  pointer-events: none;
 }
 section.price svg path {
   position: absolute;
+
+  width: 100%;
+  height: 100%;
   fill: none;
+
+  left: 0;
+  right: 0;
 }
 section.price svg text {
   position: absolute;
@@ -791,9 +871,7 @@ footer {
   display: none;
 }
 
-
-
- /* 
+/* 
  📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱
  📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱
  📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱
