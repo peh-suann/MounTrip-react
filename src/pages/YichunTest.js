@@ -23,6 +23,7 @@ function YichunTest() {
     false,
     false,
   ])
+  const [correct, setCorrect] = useState([false, false, false, false, false])
 
   const getListData = async () => {
     try {
@@ -249,7 +250,7 @@ function YichunTest() {
           <div className={styles['intro-title']}>登山小測驗</div>
           <h3>在山上迷路了，你能平安下山？</h3>
           <p>
-            在山上迷路，一直以來是山難發生的最大主因。許多人遇到迷路時會嚇到，一下子陷入慌張，反而容易做錯決定，降低自己求救成功、平安下山的機會；假如你今天在山上迷路了你有辦法順利脫困嗎？接下來你將置身於8種迷路常見的情境中，嘗試做出讓自己能平安獲救的選擇吧～
+            在山上迷路，一直以來是山難發生的最大主因。許多人遇到迷路時會嚇到，一下子陷入慌張，反而容易做錯決定，降低自己求救成功、平安下山的機會；假如你今天在山上迷路了你有辦法順利脫困嗎？接下來你將置身於5種迷路常見的情境中，嘗試做出讓自己能平安獲救的選擇吧～
           </p>
         </section>
         {ques.map((el, i) => {
@@ -263,6 +264,8 @@ function YichunTest() {
                 odd={true}
                 display={display[i]}
                 scrollTo={scrollTo}
+                correct={correct}
+                setCorrect={setCorrect}
               />
             )
           } else {
@@ -275,6 +278,8 @@ function YichunTest() {
                 odd={false}
                 display={display[i]}
                 scrollTo={scrollTo}
+                correct={correct}
+                setCorrect={setCorrect}
               />
             )
           }
@@ -284,14 +289,31 @@ function YichunTest() {
           className={`${styles.price} ${display[5] ? '' : styles.display}`}
         >
           <div className={styles['price-text']}>
-            <h1 className={styles.congrats}>Congrats!!!</h1>
+            {correct.filter(Boolean).length === 5 ? (
+              <h1 className={styles.congrats}>Congrats!!!</h1>
+            ) : correct.filter(Boolean).length > 2 ? (
+              <h1 className={styles.congrats}>Keep Going!!</h1>
+            ) : (
+              <h1 className={styles.congrats}>Practice makes Perfect!</h1>
+            )}
             <h3 className={styles['num-of-Ques']}>
-              您在此測驗中一共答對 <span>5/5</span> 題，
+              您在此測驗中一共答對 <span>{correct.filter(Boolean).length}</span>{' '}
+              題，
               <br />
-              登山小達人就是你！
+              {correct.filter(Boolean).length === 5
+                ? '登山小達人就是你！'
+                : correct.filter(Boolean).length > 2
+                ? '繼續加油，學習更多安全知識吧！'
+                : '新手上路，多多練習吧！'}
             </h3>
             <p>
-              恭喜獲得 優惠券 乙張
+              恭喜獲得{' '}
+              {correct.filter(Boolean).length === 5
+                ? '75'
+                : correct.filter(Boolean).length > 2
+                ? '85'
+                : '95'}
+              折 優惠券 乙張
               <br />
               快去 <a href="/">我的優惠券</a> 查收吧！
             </p>
@@ -329,9 +351,14 @@ function YichunTest() {
           >
             <path
               id="curve"
-              d="M -80 1080 V 120 a50,50 0 0 1 50,-50 H 1980 a50,50 0 0 1 20,20 V 1080 H30"
+              d="M 5 1080 V 110 a50,50 0 0 1 50,-50 H 1900 a50,50 0 0 1 20,20 V 1080 H30"
               strokeLinejoin="round"
             />
+            {/* <path
+              id="curve"
+              d="M -80 1080 V 120 a50,50 0 0 1 50,-50 H 1980 a50,50 0 0 1 20,20 V 1080 H30"
+              strokeLinejoin="round"
+            /> */}
             <text>
               <textPath
                 alignmentBaseline="middle"

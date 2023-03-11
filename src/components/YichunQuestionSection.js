@@ -1,6 +1,15 @@
 // Packages
 import axios from 'axios'
 import React, { useContext, useEffect, useRef, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+// FontAwesome
+// import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import {
+  faCircleCheck,
+  faCircleMinus,
+  faCircleXmark,
+} from '@fortawesome/free-solid-svg-icons'
 
 // Connections
 import { TEST_ANS } from '../connections/api-config'
@@ -10,7 +19,7 @@ import { StylesContext } from './../pages/YichunTest'
 import Button from './Button'
 
 function YichunQuestionSection(props) {
-  const { index, odd, element, display } = props
+  const { index, odd, element, display, scrollTo, correct, setCorrect } = props
   const styles = useContext(StylesContext)
 
   const [ans, setAns] = useState([])
@@ -18,12 +27,13 @@ function YichunQuestionSection(props) {
   const [hover, setHover] = useState([false, false, false])
 
   const cardRefs = useRef([])
+  const buttonRef = useRef(null)
 
   // getting data
   const getListData = async () => {
     try {
       const response = await axios.get(TEST_ANS)
-      // console.log(response.data)
+      console.log(response.data)
       setAns(response.data)
       return response.data
     } catch (error) {
@@ -159,42 +169,82 @@ function YichunQuestionSection(props) {
                       switch (i) {
                         case 1:
                           e.currentTarget.style.transform = 'rotateY(180deg)'
+                          e.currentTarget.style.border = '8px solid #6cba7c'
                           break
                         case 2:
                           e.currentTarget.style.transform =
                             'rotateZ(8deg) rotateY(180deg)'
+                          e.currentTarget.style.border = '8px solid #6cba7c'
                           break
                         default:
                           e.currentTarget.style.transform =
                             'rotateZ(-8deg) rotateY(180deg)'
+                          e.currentTarget.style.border = '8px solid #6cba7c'
                       }
                       const newFlip = [...flip]
                       newFlip[i] = true
                       setFlip(newFlip)
 
+                      if (el.correct_sid === 2) {
+                        setCorrect((prev) => {
+                          const newCorrect = [...prev]
+                          newCorrect[el.question_sid - 1] = true
+                          return newCorrect
+                        })
+                        // console.log('correct')
+                      }
+
                       window.setTimeout(() => {
                         const newFlip = flip.fill(true)
                         setFlip(newFlip)
-                      }, 800)
+                        window.setTimeout(() => {
+                          buttonRef.current.style.opacity = 1
+                          buttonRef.current.style.visibility = 'visible'
+                          buttonRef.current.style.pointerEvents = 'auto'
+                        }, 1000)
+                      }, 600)
                     }
                   }
                 }}
               >
-                <div
-                  key={el.sid}
-                  className={styles.front_side}
-                  onClick={() => {
-                    // scrollTo(el.question_sid)
-                  }}
-                >
+                <div key={el.sid} className={styles.front_side}>
                   {el.answer}
                 </div>
-                <div className={styles.back_side}>hh</div>
+                <div className={styles.back_side}>
+                  <div className={styles.correct}>
+                    {el.correct_sid === 0 ? (
+                      <FontAwesomeIcon
+                        icon={faCircleXmark}
+                        style={{ color: '#e85f5c' }}
+                      />
+                    ) : el.correct_sid === 1 ? (
+                      <FontAwesomeIcon
+                        icon={faCircleMinus}
+                        style={{ color: '#f3c969' }}
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        icon={faCircleCheck}
+                        style={{ color: '#6cba7c' }}
+                      />
+                    )}
+                    <h5>{el.answer}</h5>
+                  </div>
+                  <p>{el.answer_describe}</p>
+                </div>
               </div>
             )
           })}
       </div>
-      <button className={styles.next}>下一題</button>
+      <button
+        className={styles.next}
+        ref={buttonRef}
+        onClick={() => {
+          scrollTo(index + 1)
+        }}
+      >
+        {index === 4 ? '測驗結果' : '下一題'}
+      </button>
     </section>
   )
 }

@@ -505,7 +505,7 @@ section.questions {
   transition-duration: 10s;
 }
 section.questions.display {
-  /* display: none; */
+  display: none;
 }
 section.questions img:first-child {
   width: calc(100% - 200px);
@@ -571,7 +571,7 @@ section.questions .cards {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 50px;
+  gap: 70px;
 }
 section.questions .cards .ans:first-child {
   transform: rotate(-8deg);
@@ -585,7 +585,7 @@ section.questions .cards .ans:last-child {
 section.questions .ans {
   /* position: absolute; */
   width: 400px;
-  height: 250px;
+  height: 260px;
   bottom: 0;
 
   display: flex;
@@ -597,6 +597,7 @@ section.questions .ans {
   background: var(--mtyellow-4);
   box-shadow: 0px 4px 10px 1px rgba(1, 19, 6, 0.2);
   border-radius: 10px;
+  border: 8px solid var(--mtyellow-4);
 
   transform-style: preserve-3d;
   transition-duration: 0.5s;
@@ -628,16 +629,41 @@ section.questions .ans .front_side {
   backface-visibility: hidden;
 }
 section.questions .ans .back_side {
+  padding: 30px 40px;
   position: absolute;
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  gap: 12px;
 
   backface-visibility: hidden;
   transform: rotateY(180deg);
   cursor: auto;
+}
+section.questions .ans .back_side .correct{
+  font-size: 40px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+section.questions .ans .back_side .correct h5{
+  font-size: 32px;
+  padding-top: 4px;
+
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--mtgrey-1);
+}
+section.questions .ans .back_side p{
+  text-align: center;
+  font-size: 16px;
+  color: var(--mtgrey-2);
+  letter-spacing: 0.1em;
 }
 section.questions .ques-box {
   color: var(--mtgreen-1);
@@ -650,14 +676,20 @@ section.questions button.next {
   left: 50%;
   transform: translateX(-50%);
 
+  visibility: hidden;
+  pointer-events: none;
+
   /* width: 80px; */
 
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.1em;
   padding: 12px 40px;
   border-radius: 50px;
   border: none;
+
+  transition-duration: 0.8s;
+  opacity: 0;
 }
 
 section.ques-odd {
@@ -749,14 +781,14 @@ section.price .price-text h3 {
   color: var(--mtyellow-4);
 }
 section.price .price-text h3 span {
-  font-weight: 700;
-  font-size: 56px;
+  font-weight: 900;
+  /* font-size: 56px; */
 }
 section.price .price-text p {
   margin-bottom: 64px;
 
-  font-weight: 300;
-  font-size: 24px;
+  font-weight: 400;
+  font-size: 22px;
   line-height: 35px;
   text-align: center;
   letter-spacing: 0.1em;
@@ -764,7 +796,7 @@ section.price .price-text p {
   color: var(--mtyellow-4);
 }
 section.price .price-text p a {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 35px;
   text-align: center;
   letter-spacing: 0.1em;

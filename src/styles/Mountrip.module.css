@@ -1,7 +1,7 @@
 /* Mountrip品牌色定義 */
 :root{
     /* primary/green */
-    --mtgreen-1:rgb(108, 186, 124);
+    --mtgreen-1:#6cba7c;
     --mtgreen-2:#8dc996;
     --mtgreen-3:#add9b1;
     --mtgreen-4:#cee8cb;
