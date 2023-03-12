@@ -6,6 +6,7 @@ import DavisTrailsImgGroup from '../components/DavisTrailsDetail/DavisTrailsImgG
 import DavisTrailsBatch from '../components/DavisTrailsDetail/DavisTrailsBatch'
 import DavisTrailsShopBtn from '../components/DavisTrailsDetail/DavisTrailsShopBtn'
 import DavisTrailsGpx from '../components/DavisTrailsDetail/DavisTrailsGpx'
+// import DavisGpxLeaflet from '../components/DavisTrailsDetail/DavisGpxLeaflet'
 import { TRAILS_DATA } from '../connections/api-config'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -24,9 +25,7 @@ export default function DavisTrailsDetail(rows) {
     totalRows: 0,
   })
 
-  const [count, setCount] = useState(0)
-
-  const getListData = async (page = 10) => {
+  const getListData = async (page = 1) => {
     const response = await axios.get(TRAILS_DATA, {
       params: {
         page,
@@ -42,6 +41,8 @@ export default function DavisTrailsDetail(rows) {
       console.log('unmount')
     }
   }, [])
+
+  const [count, setCount] = useState(0)
 
   return (
     <>

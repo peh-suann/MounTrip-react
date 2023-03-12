@@ -51,6 +51,7 @@ body {
   width: 100%;
   object-fit: cover;
   margin-bottom: 12px;
+  height: 400px;
 }
 
 .img_wrap_three {
@@ -354,14 +355,14 @@ body {
 /* #DavisTrailsGpx */
 .gpx_iframe {
   width: 640px;
-  height: 480px;
+  height: 500px;
   position: relative;
   top: -60px;
   border: none;
 }
 
 .gpx_wrap {
-  height: 500px;
+  height: 400px;
   border: 2px solid #eee;
   display: inline-block;
   overflow: hidden;
