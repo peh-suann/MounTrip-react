@@ -48,10 +48,17 @@ function YichunQuestionSection(props) {
   // re-render while value of flip is changed
   useEffect(() => {
     if (flip.filter(Boolean).length === 3) {
-      console.log('here------', cardRefs.current[0])
-      cardRefs.current[0].style.transform = 'rotateZ(-8deg) rotateY(180deg)'
-      cardRefs.current[1].style.transform = 'rotateY(180deg)'
-      cardRefs.current[2].style.transform = 'rotateZ(8deg) rotateY(180deg)'
+      if (window.innerWidth > 390) {
+        console.log('here------', cardRefs.current[0])
+        cardRefs.current[0].style.transform = 'rotateZ(-8deg) rotateY(180deg)'
+        cardRefs.current[1].style.transform = 'rotateY(180deg)'
+        cardRefs.current[2].style.transform = 'rotateZ(8deg) rotateY(180deg)'
+      } else {
+        console.log('hi')
+        cardRefs.current[0].style.transform = 'rotateY(180deg)'
+        cardRefs.current[1].style.transform = 'rotateY(180deg)'
+        cardRefs.current[2].style.transform = 'rotateY(180deg)'
+      }
     }
   }, flip)
 
@@ -77,9 +84,13 @@ function YichunQuestionSection(props) {
       </div>
       <img
         src={
-          odd
-            ? 'images/yichun/test/hill-yellow.svg'
-            : 'images/yichun/test/hill-green.svg'
+          window.innerWidth > 390
+            ? odd
+              ? 'images/yichun/test/hill-yellow.svg'
+              : 'images/yichun/test/hill-green.svg'
+            : odd
+            ? 'images/yichun/test/hill-y-mobile.svg'
+            : 'images/yichun/test/hill-g-mobile.svg'
         }
         alt=""
       />
@@ -98,23 +109,26 @@ function YichunQuestionSection(props) {
                   // 還沒翻面
                   !flip[i]
                     ? (e) => {
-                        // 把hover功能打開
-                        setHover((prev) => {
-                          const newHover = [...prev]
-                          newHover[i] = true
-                          return newHover
-                        })
-                        switch (i) {
-                          case 1:
-                            e.currentTarget.style.transform = 'translateY(-8px)'
-                            break
-                          case 2:
-                            e.currentTarget.style.transform =
-                              'translateY(-8px) rotateZ(8deg)'
-                            break
-                          default:
-                            e.currentTarget.style.transform =
-                              'translateY(-8px) rotateZ(-8deg)'
+                        if (window.innerWidth > 390) {
+                          // 把hover功能打開
+                          setHover((prev) => {
+                            const newHover = [...prev]
+                            newHover[i] = true
+                            return newHover
+                          })
+                          switch (i) {
+                            case 1:
+                              e.currentTarget.style.transform =
+                                'translateY(-8px)'
+                              break
+                            case 2:
+                              e.currentTarget.style.transform =
+                                'translateY(-8px) rotateZ(8deg)'
+                              break
+                            default:
+                              e.currentTarget.style.transform =
+                                'translateY(-8px) rotateZ(-8deg)'
+                          }
                         }
                       }
                     : // 已經翻面
@@ -131,27 +145,30 @@ function YichunQuestionSection(props) {
                   // 翻面後MouseEnter跟MouseLeave都不會有任何動作，所以只判斷還沒翻面時的狀態
                   !flip[i]
                     ? (e) => {
-                        // 把hover功能關掉
-                        setHover((prev) => {
-                          const newHover = [...prev]
-                          newHover[i] = false
-                          return newHover
-                        })
-                        switch (i) {
-                          case 1:
-                            e.currentTarget.style.transform = 'translateY(0px)'
-                            e.currentTarget.style.boxShadow =
-                              '0px 4px 10px 1px rgba(1, 19, 6, 0.2);'
-                            break
-                          case 2:
-                            e.currentTarget.style.transform =
-                              'translateY(0px) rotateZ(8deg)'
-                            e.currentTarget.style.boxShadow =
-                              '0px 4px 10px 1px rgba(1, 19, 6, 0.2);'
-                            break
-                          default:
-                            e.currentTarget.style.transform =
-                              'translateY(0px) rotateZ(-8deg)'
+                        if (window.innerWidth > 390) {
+                          // 把hover功能關掉
+                          setHover((prev) => {
+                            const newHover = [...prev]
+                            newHover[i] = false
+                            return newHover
+                          })
+                          switch (i) {
+                            case 1:
+                              e.currentTarget.style.transform =
+                                'translateY(0px)'
+                              e.currentTarget.style.boxShadow =
+                                '0px 4px 10px 1px rgba(1, 19, 6, 0.2);'
+                              break
+                            case 2:
+                              e.currentTarget.style.transform =
+                                'translateY(0px) rotateZ(8deg)'
+                              e.currentTarget.style.boxShadow =
+                                '0px 4px 10px 1px rgba(1, 19, 6, 0.2);'
+                              break
+                            default:
+                              e.currentTarget.style.transform =
+                                'translateY(0px) rotateZ(-8deg)'
+                          }
                         }
                       }
                     : null
@@ -166,20 +183,36 @@ function YichunQuestionSection(props) {
                         newHover[i] = false
                         return newHover
                       })
-                      switch (i) {
-                        case 1:
-                          e.currentTarget.style.transform = 'rotateY(180deg)'
-                          e.currentTarget.style.border = '8px solid #6cba7c'
-                          break
-                        case 2:
-                          e.currentTarget.style.transform =
-                            'rotateZ(8deg) rotateY(180deg)'
-                          e.currentTarget.style.border = '8px solid #6cba7c'
-                          break
-                        default:
-                          e.currentTarget.style.transform =
-                            'rotateZ(-8deg) rotateY(180deg)'
-                          e.currentTarget.style.border = '8px solid #6cba7c'
+                      if (window.innerWidth > 390) {
+                        switch (i) {
+                          case 1:
+                            e.currentTarget.style.transform = 'rotateY(180deg)'
+                            e.currentTarget.style.border = '8px solid #6cba7c'
+                            break
+                          case 2:
+                            e.currentTarget.style.transform =
+                              'rotateZ(8deg) rotateY(180deg)'
+                            e.currentTarget.style.border = '8px solid #6cba7c'
+                            break
+                          default:
+                            e.currentTarget.style.transform =
+                              'rotateZ(-8deg) rotateY(180deg)'
+                            e.currentTarget.style.border = '8px solid #6cba7c'
+                        }
+                      } else {
+                        switch (i) {
+                          case 1:
+                            e.currentTarget.style.transform = 'rotateY(180deg)'
+                            e.currentTarget.style.border = '8px solid #6cba7c'
+                            break
+                          case 2:
+                            e.currentTarget.style.transform = 'rotateY(180deg)'
+                            e.currentTarget.style.border = '8px solid #6cba7c'
+                            break
+                          default:
+                            e.currentTarget.style.transform = 'rotateY(180deg)'
+                            e.currentTarget.style.border = '8px solid #6cba7c'
+                        }
                       }
                       const newFlip = [...flip]
                       newFlip[i] = true

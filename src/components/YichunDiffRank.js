@@ -1,23 +1,40 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { StylesContext } from './../pages/YichunProducts'
 import Button from './Button'
 
 function YichunDiffRank() {
   const styles = useContext(StylesContext)
+  useEffect(() => {
+    console.log(document.documentElement.clientWidth)
+  }, [])
   return (
     <>
       <div className={styles.rank}>
-        <svg
-          width="180"
-          height="180"
-          viewBox="0 0 180 180"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="90" cy="90" r="90" fill="#CEE8CB" />
-        </svg>
+        {document.documentElement.clientWidth > 390 ? (
+          <svg
+            width="180"
+            height="180"
+            viewBox="0 0 180 180"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="90" cy="90" r="90" fill="#CEE8CB" />
+          </svg>
+        ) : (
+          <svg
+            width="80"
+            height="80"
+            viewBox="0 0 80 80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="40" cy="40" r="40" fill="#CEE8CB" />
+          </svg>
+        )}
         <div className={styles.diff_intro}>
-          <h4>初級 EASY</h4>
+          <h4>
+            初級 {document.documentElement.clientWidth > 390 ? '' : <br />} EASY
+          </h4>
           <p>
             初級山是大家的 <u>#好朋友</u>
           </p>

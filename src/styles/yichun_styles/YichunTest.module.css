@@ -360,11 +360,7 @@ section.intro-page .clouds-mobile {
 }
 
 /* mountains -------------------------------------------------------------------- */
-section.intro-page .mountains {
-  /* display: none; */
-}
-
-section.intro-page img:nth-child(32) {
+section.intro-page img.g2 {
   left: -1%;
   bottom: 6%;
   transform: scale(1.1);
@@ -373,7 +369,7 @@ section.intro-page img:nth-child(32) {
 
   pointer-events: none;
 }
-section.intro-page img:nth-child(33) {
+section.intro-page img.y2 {
   left: 1%;
   bottom: 7%;
   transform: scale(1.1);
@@ -382,7 +378,7 @@ section.intro-page img:nth-child(33) {
 
   pointer-events: none;
 }
-section.intro-page img:nth-child(34) {
+section.intro-page img.g1 {
   left: 0.0006%;
   bottom: 0.1%;
   transform: scale(1.1);
@@ -391,7 +387,7 @@ section.intro-page img:nth-child(34) {
 
   pointer-events: none;
 }
-section.intro-page img:nth-child(36) {
+section.intro-page img.y1 {
   left: 0%;
   bottom: -0.3%;
   transform: scale(1.1);
@@ -421,13 +417,22 @@ button.start_test {
   text-align: center;
   color: var(--mtgreen-1);
   letter-spacing: 0.1em;
-  animation: button-up 3s cubic-bezier(0.5, 0, 0.4, 1.3) 1s forwards;
+  animation: button-up 3s cubic-bezier(0.5, 0, 0.4, 1.3) 1s forwards,
+    button-float 3s ease-in-out infinite alternate;
   pointer-events: auto;
   cursor: pointer;
 }
 @keyframes button-up {
   from {
     top: 100%;
+  }
+  to {
+    top: 86%;
+  }
+}
+@keyframes button-float {
+  from {
+    top: 86%;
   }
   to {
     top: 84%;
@@ -639,7 +644,7 @@ section.questions .ans .back_side {
   transform: rotateY(180deg);
   cursor: auto;
 }
-section.questions .ans .back_side .correct{
+section.questions .ans .back_side .correct {
   font-size: 40px;
 
   display: flex;
@@ -647,7 +652,7 @@ section.questions .ans .back_side .correct{
   align-items: center;
   gap: 12px;
 }
-section.questions .ans .back_side .correct h5{
+section.questions .ans .back_side .correct h5 {
   font-size: 32px;
   padding-top: 4px;
 
@@ -655,7 +660,7 @@ section.questions .ans .back_side .correct h5{
   letter-spacing: 0.1em;
   color: var(--mtgrey-1);
 }
-section.questions .ans .back_side p{
+section.questions .ans .back_side p {
   text-align: center;
   font-size: 16px;
   color: var(--mtgrey-2);
@@ -698,7 +703,7 @@ section.ques-odd .num {
   color: var(--mtgreen-1);
   background-color: var(--mtyellow-4);
 }
-section.ques-odd button.next{
+section.ques-odd button.next {
   color: var(--mtyellow-4);
   background-color: var(--mtgreen-1);
 }
@@ -712,7 +717,7 @@ section.ques-even .num {
   color: var(--mtyellow-4);
   background-color: var(--mtgreen-1);
 }
-section.ques-even button.next{
+section.ques-even button.next {
   color: var(--mtgreen-1);
   background-color: var(--mtyellow-4);
 }
@@ -825,7 +830,7 @@ section.price img {
   position: absolute;
   z-index: 10;
 }
-section.price img:nth-child(2) {
+section.price img.g2 {
   left: -1%;
   bottom: 6%;
   transform: scale(1.1);
@@ -834,7 +839,7 @@ section.price img:nth-child(2) {
 
   pointer-events: none;
 }
-section.price img:nth-child(3) {
+section.price img.y2 {
   left: 1%;
   bottom: 7%;
   transform: scale(1.1);
@@ -843,7 +848,7 @@ section.price img:nth-child(3) {
 
   pointer-events: none;
 }
-section.price img:nth-child(4) {
+section.price img.g1 {
   left: 0.0006%;
   bottom: 0.1%;
   transform: scale(1.1);
@@ -852,7 +857,7 @@ section.price img:nth-child(4) {
 
   pointer-events: none;
 }
-section.price img:nth-child(5) {
+section.price img.y1 {
   left: 0%;
   bottom: -0.3%;
   transform: scale(1.1);
@@ -861,7 +866,7 @@ section.price img:nth-child(5) {
 
   pointer-events: none;
 }
-section.price svg {
+section.price svg.test_svg_web {
   position: relative;
   width: 100%;
   height: 100%;
@@ -870,7 +875,7 @@ section.price svg {
 
   pointer-events: none;
 }
-section.price svg path {
+section.price svg.test_svg_web path {
   position: absolute;
 
   width: 100%;
@@ -880,7 +885,7 @@ section.price svg path {
   left: 0;
   right: 0;
 }
-section.price svg text {
+section.price svg.test_svg_web text {
   position: absolute;
   top: 0;
   left: 0;
@@ -895,8 +900,8 @@ section.price svg text {
 
   user-select: none;
 }
-footer {
-  /* display: none; */
+section.price svg.test_svg_mobile {
+  display: none;
 }
 
 /* 
@@ -906,10 +911,10 @@ footer {
  📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱 
  */
 @media screen and (max-width: 390px) {
-  nav {
+  /* nav {
     z-index: -10;
     position: relative;
-  }
+  } */
   /* clouds */
   section.intro-page {
     width: 390px;
@@ -1092,41 +1097,38 @@ footer {
   /* mobile-clouds -------------------------------------------------------------------- */
 
   /* mountains -------------------------------- */
-  img.g2 {
-    left: 0%;
-    bottom: 5%;
+  section.intro-page img.g2 {
+    left: -160%;
+    bottom: -2%;
+    /* transform-origin: center; */
     transform: scale(0.5);
-    transform-origin: left bottom;
 
     transition-duration: 1.5s ease;
 
     pointer-events: none;
   }
-  img.y2 {
-    left: -40%;
-    bottom: 5%;
-    transform: scale(0.6, 0.8);
-    transform-origin: left bottom;
+  section.intro-page img.y2 {
+    left: -220%;
+    bottom: -2%;
+    transform: scaleX(0.5) scaleY(0.5);
 
     transition-duration: 1.5s ease;
 
     pointer-events: none;
   }
-  img.g1 {
-    left: -80%;
-    bottom: -1%;
-    transform: scale(0.6, 0.8);
-    transform-origin: left bottom;
+  section.intro-page img.g1 {
+    left: -255%;
+    bottom: -8%;
+    transform: scaleX(0.5) scaleY(0.5);
 
     transition-duration: 1.5s ease;
 
     pointer-events: none;
   }
-  img.y1 {
-    left: 0%;
-    bottom: -1%;
-    transform: scale(0.5, 0.4);
-    transform-origin: left bottom;
+  section.intro-page img.y1 {
+    left: -170%;
+    bottom: -9%;
+    transform: scaleX(0.5) scaleY(0.4);
 
     transition-duration: 1.5s ease;
 
@@ -1136,12 +1138,14 @@ footer {
   button.start_test {
     width: 100px;
     height: 100px;
-
+    top: 100%;
     font-size: 20px;
     line-height: 24px;
     border: none;
     box-shadow: 0px 0px 30px rgba(1, 19, 6, 0.15);
-    animation: button-up-mobile 3s cubic-bezier(0.5, 0, 0.4, 1.3) 1s forwards;
+    animation: 
+      button-up-mobile 3s cubic-bezier(0.5, 0, 0.4, 1.3) 1s forwards,
+      button-float-mobile 2s ease-in-out infinite alternate;
     pointer-events: auto;
     cursor: pointer;
   }
@@ -1150,10 +1154,17 @@ footer {
       top: 100%;
     }
     to {
-      top: 89%;
+      top: 93%;
     }
   }
-
+  @keyframes button-float-mobile {
+    from {
+      top: 93%;
+    }
+    to {
+      top: 91%;
+    }
+  }
   section.intro-text {
     padding-left: 40px;
     padding-right: 40px;
@@ -1196,12 +1207,13 @@ footer {
   }
   section.questions img:first-child {
     width: calc(100% - 48px);
-    height: 300px;
+    height: 150px;
     margin-top: 60px;
     margin-left: 24px;
     margin-right: 24px;
 
-    border-radius: 16px 16px 16px 16px;
+    border-radius: 16px 16px 0px 0px;
+    object-position: bottom;
   }
   section.questions .num {
     width: 60px;
@@ -1214,20 +1226,23 @@ footer {
     display: none;
   }
   section.questions .ques-box-mobile {
-    display: block;
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 16px 28px;
     width: 342px;
     height: 100px;
-    top: 260px;
+    top: 180px;
     border-radius: 16px;
 
-    font-size: 16px;
+    font-size: 18px;
     line-height: 23px;
     text-align: center;
     letter-spacing: 0.1em;
   }
   section.questions .cards {
-    bottom: 35px;
+    top: 300px;
 
     gap: 15px;
     flex-direction: column;
@@ -1244,11 +1259,56 @@ footer {
   }
   section.questions .ans {
     width: 344px;
-    height: 135px;
-
-    font-size: 32px;
+    height: 140px;
+    /* font-size: 32px; */
     line-height: 44px;
   }
+  section.questions .cards .ans .front_side {
+    font-size: 28px;
+  }
+  section.questions .cards .ans .back_side {
+    padding: 10px 16px;
+    gap: 4px;
+    justify-content: center;
+  }
+  section.questions .cards .ans .back_side .correct {
+    font-size: 24px;
+  }
+  section.questions .cards .ans .back_side .correct h5 {
+    font-size: 20px;
+  }
+  section.questions .cards .ans .back_side p {
+    font-size: 12px;
+    line-height: 140%;
+  }
+  section.questions button.next {
+    top: 91%;
+    /* bottom: 16px; */
+    padding: 8px 40px;
+
+    font-size: 20px;
+  }
+
+  /*
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  visibility: hidden;
+  pointer-events: none;
+
+
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 12px 40px;
+  border-radius: 50px;
+  border: none;
+
+  transition-duration: 0.8s;
+  opacity: 0;
+  */
 
   section.ques-odd {
     background-image: url(./../../images/test/bg-text/y-bgi.svg);
@@ -1265,10 +1325,45 @@ footer {
   section.price {
     height: 100vh;
   }
-  section.price img:first-of-type {
-    display: block;
-    top: 0;
-    left: 0;
+  section.price .mountains {
+    position: absolute;
+  }
+  section.price img.g2 {
+    left: -160%;
+    bottom: -2%;
+    /* transform-origin: center; */
+    transform: scale(0.5);
+
+    transition-duration: 1.5s ease;
+
+    pointer-events: none;
+  }
+  section.price img.y2 {
+    left: -220%;
+    bottom: -2%;
+    transform: scaleX(0.5) scaleY(0.5);
+
+    transition-duration: 1.5s ease;
+
+    pointer-events: none;
+  }
+  section.price img.g1 {
+    left: -255%;
+    bottom: -8%;
+    transform: scaleX(0.5) scaleY(0.5);
+
+    transition-duration: 1.5s ease;
+
+    pointer-events: none;
+  }
+  section.price img.y1 {
+    left: -170%;
+    bottom: -9%;
+    transform: scaleX(0.5) scaleY(0.4);
+
+    transition-duration: 1.5s ease;
+
+    pointer-events: none;
   }
   section.price .price-text {
     width: calc(100% - 30px);
@@ -1278,31 +1373,27 @@ footer {
     justify-content: space-between;
   }
   section.price .price-text h1 {
-    margin-top: 60px;
+    margin-top: 90px;
     margin-bottom: 0;
-    font-size: 48px;
+    font-size: 36px;
     line-height: 65px;
   }
   section.price .price-text h3 {
     margin-bottom: 0;
 
     font-size: 20px;
-    line-height: 29px;
+    line-height: 160%;
   }
   section.price .price-text h3 span {
-    font-size: 32px;
+    font-size: 20px;
+    line-height: 160%;
   }
   section.price .price-text p {
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 
     font-weight: 400;
-    font-size: 16px;
-    line-height: 23px;
-  }
-  section.price .price-text p a {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 23px;
+    font-size: 18px;
+    line-height: 140%;
   }
   section.price .price-text .buttons {
     flex-direction: column;
@@ -1315,11 +1406,38 @@ footer {
     line-height: 27px;
     letter-spacing: 0.1em;
     padding: 8px 24px;
+
+    width: 100%;
   }
-  section.price img:not(:nth-of-type(1)) {
+  section.price svg.test_svg_web {
     display: none;
   }
-  section.price svg {
-    display: none;
+  section.price svg.test_svg_mobile {
+    display: block;
+  }
+  section.price svg.test_svg_mobile path {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    fill: none;
+
+    left: 0;
+    right: 0;
+  }
+  section.price svg.test_svg_mobile text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: 100;
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    fill: none;
+    stroke: var(--mtgreen-1);
+    text-anchor: middle;
+
+    user-select: none;
   }
 }
