@@ -7,7 +7,7 @@ import AuthContext from '../contexts/AuthContexts'
 export default function IndexNavBar() {
   const { myAuth, logout } = useContext(AuthContext)
   const [showList, setShowList] = useState(false)
-  const handleClick = function(){
+  const handleClick = function () {
     setShowList(!showList)
   }
 
@@ -189,10 +189,15 @@ export default function IndexNavBar() {
               </li>
               {myAuth.account ? (
                 <li>
-                  <a className={IndexNavstyles.link} href="#/" onClick={(e)=>{
-                    e.preventDefault()
-                    handleClick()
-                  }}>
+                  <a
+                    className={IndexNavstyles.link}
+                    href="#/"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      handleClick()
+                      console.log(showList)
+                    }}
+                  >
                     <svg
                       width="28"
                       height="28"
@@ -208,21 +213,12 @@ export default function IndexNavBar() {
                 ''
               )}
             </ul>
+            {showList && (
+              <div>
+                <h2>Some content here</h2>
+              </div>
+            )}
           </div>
-          {/* <div className={IndexNavstyles.downloadList}>
-            <ul className={IndexNavstyles.nav_icons}>
-              <li>會員中心</li>
-              <li>我的優惠券</li>
-              <li>成就獎章</li>
-              <li>歷史訂單</li>
-              <li>過往評論</li>
-              <li>收藏路線</li>
-              <li onClick={()=>{
-                // e.preventDefault();
-                logout();
-              }}>登出</li>
-            </ul>
-          </div> */}
         </div>
       </nav>
     </>

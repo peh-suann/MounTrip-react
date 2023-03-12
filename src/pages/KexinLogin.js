@@ -102,7 +102,7 @@ function KexinLogin() {
                         JSON.stringify({account,accountId,token})
                       )
                       // setMyAuth({authorized: true,account,token,sid: accountId})
-                      navigate('/')
+                      navigate('/index')
                     } else {
                       alert(response.data.error || "帳號或密碼錯誤")
                     }
