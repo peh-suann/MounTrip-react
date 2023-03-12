@@ -10,6 +10,17 @@
     top: 20%;
 }
 
+.dropdown div {
+    display: block;
+}
+
+.dropdown svg {
+    display: block;
+}
+
+.dropdown p {
+    display: block;
+}
 
 .dropdown span {
     position: absolute;
@@ -59,4 +70,30 @@
 
 .dropdown .rect .logout {
     /* padding-top: 20px; */
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 390px) {
+
+    .dropdown {
+        display: none;
+    }
+
+    .dropdown div {
+        display: none;
+    }
+
+    .dropdown svg {
+        display: none;
+    }
+
+    .dropdown p {
+        display: none;
+    }
+
 }

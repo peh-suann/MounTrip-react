@@ -1,9 +1,12 @@
+import { useState, useContext  } from 'react'
 import { Link } from 'react-router-dom'
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import signinStyles from '../styles/kexinSignin.module.css'
 import LoginNavbar from '../layouts/NavbarLogin'
 
-function kexinSignin() {
+function KexinSignin() {
+
+  const navigate = useNavigate()
   return (
     <>
       <div className={`${signinStyles['bg-image']}`}>
@@ -15,6 +18,9 @@ function kexinSignin() {
           >
             <div
               className={`${signinStyles['mobile-x']}  ${signinStyles['web-none']}`}
+              onClick={()=>{
+                navigate('/index')
+              }}
             >
               <svg
                 width="32"
@@ -193,4 +199,4 @@ function kexinSignin() {
   )
 }
 
-export default kexinSignin
+export default KexinSignin

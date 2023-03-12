@@ -1,23 +1,40 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, redirect } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import IndexNavstyles from './../styles/NavbarIndex.module.css'
 import AuthContext from '../contexts/AuthContexts'
+import NavbarDropdown from '../components/NavbarDropdown'
+import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 
 export default function IndexNavBar() {
   const { myAuth, logout } = useContext(AuthContext)
+
   const [showList, setShowList] = useState(false)
   const handleClick = function () {
     setShowList(!showList)
   }
+
+  const [showListMobile, setShowListMobile] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <>
       <nav id={IndexNavstyles.IndexNav}>
         <div className={IndexNavstyles.navbar}>
           <div className={IndexNavstyles.left}>
-            <button className={IndexNavstyles.menu}>
+            <button
+              className={IndexNavstyles.menu}
+              onClick={(e) => {
+                e.preventDefault()
+                if (myAuth.account) {
+                  setShowListMobile(!showListMobile)
+                  console.log(showListMobile)
+                }
+              }}
+            >
               <svg
+                className="three-line"
                 width="25"
                 height="36"
                 viewBox="0 0 25 36"
@@ -187,37 +204,34 @@ export default function IndexNavBar() {
                   </svg>
                 </a>
               </li>
-              {myAuth.account ? (
-                <li>
-                  <a
-                    className={IndexNavstyles.link}
-                    href="#/"
-                    onClick={(e) => {
-                      e.preventDefault()
+              <li>
+                <Link
+                  className={IndexNavstyles.link}
+                  to="#/"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    if (myAuth.account) {
                       handleClick()
-                      console.log(showList)
-                    }}
+                    } else {
+                      navigate('/login')
+                    }
+                  }}
+                >
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 28 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 28 28"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle cx="14" cy="14" r="14" fill="#6CBA7C" />
-                    </svg>
-                  </a>
-                </li>
-              ) : (
-                ''
-              )}
+                    <circle cx="14" cy="14" r="14" fill="#6CBA7C" />
+                  </svg>
+                </Link>
+              </li>
             </ul>
-            {showList && (
-              <div>
-                <h2>Some content here</h2>
-              </div>
-            )}
+            {showList && <NavbarDropdown showList={showList} setShowList={setShowList} />}
+
+            {showListMobile && <NavbarDropdownMobile showListMobile={showListMobile} setShowListMobile={setShowListMobile} />}
           </div>
         </div>
       </nav>

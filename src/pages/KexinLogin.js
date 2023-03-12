@@ -1,17 +1,19 @@
-import { useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useState, useContext  } from 'react'
+import { useNavigate, redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import React from 'react'
 import loginStyles from '../styles/kexinLogin.module.css'
 import LoginNavbar from '../layouts/NavbarLogin'
 import { LOGIN } from './../components/api_config.js'
 import axios from 'axios'
+import AuthContext from "../contexts/AuthContexts"
 
 function KexinLogin() {
   const [myForm, setMyForm] = useState({
     account: '',
     password: '',
   })
+  const { setMyAuth } = useContext(AuthContext);
   const navigate = useNavigate()
 
   return (
@@ -25,6 +27,9 @@ function KexinLogin() {
           >
             <div
               className={`${loginStyles['mobile-x']}  ${loginStyles['web-none']}`}
+              onClick={()=>{
+                navigate('/index')
+              }}
             >
               <svg
                 width="32"
@@ -96,15 +101,20 @@ function KexinLogin() {
                   axios.post(LOGIN, myForm).then((response) => {
                     console.log(response.data)
                     if (response.data.success) {
-                      const {account, accountId, token} = response.data;
+                      const { account, accountId, token } = response.data
                       localStorage.setItem(
-                        "myAuth",
-                        JSON.stringify({account,accountId,token})
+                        'myAuth',
+                        JSON.stringify({ account, accountId, token })
                       )
-                      // setMyAuth({authorized: true,account,token,sid: accountId})
+                      setMyAuth({
+                        authorized: true,
+                        account,
+                        token,
+                        sid: accountId,
+                      })
                       navigate('/index')
                     } else {
-                      alert(response.data.error || "帳號或密碼錯誤")
+                      alert(response.data.error || '帳號或密碼錯誤')
                     }
                   })
                 }}
