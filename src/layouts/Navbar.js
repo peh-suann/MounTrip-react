@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './../styles/Navbar.module.css'
 import NavbarMobileMenu from './NavbarMobileMenu'
 
+// Components
+import NavbarShoppingCart from '../components/NavbarShoppingCart'
+
 export default function NavBar() {
+  const [open, setOpen] = useState(false)
   return (
     <>
       <nav>
@@ -175,7 +179,13 @@ export default function NavBar() {
                   </svg>
                 </a>
               </li>
-              <li>
+              <li
+                className={styles.shopping_cart}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setOpen((prev) => !prev)
+                }}
+              >
                 <a className={styles.link} href="/">
                   <svg
                     width="30"
@@ -222,6 +232,7 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
+      <NavbarShoppingCart open={open} setOpen={setOpen} />
       <NavbarMobileMenu />
     </>
   )

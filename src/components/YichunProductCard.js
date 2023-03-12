@@ -9,18 +9,18 @@ function YichunProductCard(props) {
     <>
       <div className={styles.product}>
         <div
+          className={styles.ranking}
+          style={ranking ? {} : { display: 'none' }}
+        >
+          {ranking}
+        </div>
+        <div
           className={`${styles.pic} ${shadow ? styles.pic_shadow : ''}`}
           style={{
-            backgroundImage: `linear-gradient(180deg,rgba(0, 0, 0, 0) 71.43%,rgba(0, 0, 0, 0.6) 96.19%),
+            backgroundImage: `linear-gradient(180deg,rgba(0, 0, 0, 0) 70%,rgba(0, 0, 0, 0.6) 100%),
             url(images/public_images/product_image/${el.trail_img})`,
           }}
         >
-          <div
-            className={styles.ranking}
-            style={ranking ? {} : { display: 'none' }}
-          >
-            {ranking}
-          </div>
           <div className={styles.rates}>
             <p>
               <svg

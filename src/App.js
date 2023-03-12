@@ -23,13 +23,13 @@ function App() {
               {/* 其他頁面Navbar+Footer */}{' '}
               <Route path="/products" element={<YichunProducts />} />
               <Route path="/member" element={<Member />} />
-              <Route path="/test" element={<YichunTest />} />
             </Route>
             <Route path="/">
               {/* 登入頁面Navbar+Footer */}
               <Route path="/Login" element={<Login />} />
               <Route path="/Signin" element={<Signin />} />
               <Route path="/Index" element={<Index />} />
+              <Route path="/test" element={<YichunTest />} />
             </Route>
           </Routes>
         </AuthContextProvider>
