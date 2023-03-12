@@ -11,6 +11,8 @@
 *.png
 *.svg
 
+*.gpx
+
 
 # dependencies
 /node_modules

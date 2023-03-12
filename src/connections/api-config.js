@@ -5,7 +5,7 @@ export const HOST = 'http://localhost:3001'
 
 export const LIST_DATA = `${HOST}/member`
 
-export const TRAILS_DATA = `${HOST}/trails`
+export const TRAILS_DATA = `${HOST}/trails?`
 
 export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 

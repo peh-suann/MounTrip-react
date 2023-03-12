@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/DavisTrailsDetail.module.css'
+import styles from '../../styles/DavisTrailsDetail.module.css'
 
 /* https://stackoverflow.com/questions/31927193/hide-top-bar-in-embedded-google-map */
 

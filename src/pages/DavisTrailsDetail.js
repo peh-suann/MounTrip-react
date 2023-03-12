@@ -2,11 +2,10 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
 // import DavisTrailsDetailTable from '../components/DavisTrailsDetailTable'
-// import DavisGpxTest from '../components/DavisGpxTest'
-import DavisTrailsImgGroup from '../components/DavisTrailsImgGroup'
-import DavisTrailsBatch from '../components/DavisTrailsBatch'
-import DavisTrailsShopBtn from '../components/DavisTrailsShopBtn'
-import DavisTrailsGpx from '../components/DavisTrailsGpx'
+import DavisTrailsImgGroup from '../components/DavisTrailsDetail/DavisTrailsImgGroup'
+import DavisTrailsBatch from '../components/DavisTrailsDetail/DavisTrailsBatch'
+import DavisTrailsShopBtn from '../components/DavisTrailsDetail/DavisTrailsShopBtn'
+import DavisTrailsGpx from '../components/DavisTrailsDetail/DavisTrailsGpx'
 import { TRAILS_DATA } from '../connections/api-config'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -18,16 +17,16 @@ export default function DavisTrailsDetail(rows) {
   const usp = new URLSearchParams(location.search)
   // trails_data
   const [data, setData] = useState({
-    // page: 0,
+    page: 0,
     rows: [],
-    // perPage: 0,
-    // totalPages: 0,
-    // totalRows: 0,
+    perPage: 0,
+    totalPages: 0,
+    totalRows: 0,
   })
 
   const [count, setCount] = useState(0)
 
-  const getListData = async (page = 1) => {
+  const getListData = async (page = 10) => {
     const response = await axios.get(TRAILS_DATA, {
       params: {
         page,
@@ -64,7 +63,11 @@ export default function DavisTrailsDetail(rows) {
           <div className="col p-0">
             {/* top-img */}
             <div className={`d-flex d-lg-none ${styles.top_img}`}>
-              <img className="w-100" src="./imgs/Davis/3-1.jpg" alt="" />
+              <img
+                className="w-100"
+                src="./imges/public_images/product_image/3-1.jpg"
+                alt=""
+              />
             </div>
             <nav className={`${styles.bread}`} aria-label="breadcrumb">
               <ol className="breadcrumb ">
@@ -95,7 +98,10 @@ export default function DavisTrailsDetail(rows) {
           <section>
             <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
               <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
-                <DavisTrailsImgGroup />
+                <DavisTrailsImgGroup
+                  data={data}
+                  // getListData={getListData}
+                />
                 {/* <div className="col flex-column me-5 d-none d-lg-flex">
                   <div className="">
                     <img
@@ -438,24 +444,24 @@ export default function DavisTrailsDetail(rows) {
                     <div className="mb-3">
                       <img
                         className={`${styles.img_cover_one}`}
-                        src={`/imgs/Davis/${r.trail_img}-1.jpg`}
+                        src={`/imges/public_images/product_image/${r.trail_img}-1.jpg`}
                         alt=""
                       />
                     </div>
                     <div className="d-flex flex-row justify-content-between">
                       <img
                         className={`${styles.img_cover_three}`}
-                        src={`/imgs/Davis/${r.trail_img}-1.jpg`}
+                        src={`/imges/public_images/product_image/${r.trail_img}-1.jpg`}
                         alt=""
                       />
                       <img
                         className={`${styles.img_cover_three}`}
-                        src={`/imgs/Davis/${r.trail_img}-2.jpg`}
+                        src={`/imges/public_images/product_image/${r.trail_img}-2.jpg`}
                         alt=""
                       />
                       <img
                         className={`${styles.img_cover_three}`}
-                        src={`/imgs/Davis/${r.trail_img}-3.jpg`}
+                        src={`/imges/public_images/product_image/${r.trail_img}-3.jpg`}
                         alt=""
                       />
                     </div>
@@ -561,7 +567,7 @@ export default function DavisTrailsDetail(rows) {
                         <div className="col d-flex justify-content-center">
                           <h5 className={`mb-0 ${styles.batch_font}`}>
                             <select name="" id="">
-                              <DavisTrailsBatch />
+                              <DavisTrailsBatch data={data} />
                               {/* {data.rows.map((r, i) => {
                                 return (
                                   <option id={i} value="">
