@@ -255,7 +255,7 @@ section.theme .theme_intro h2 {
   letter-spacing: 0.05em;
 }
 section.theme .theme_intro p {
-  font-weight: 300;
+  font-weight: 500;
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.1em;
@@ -427,9 +427,80 @@ section.test .test_info button {
     height: fit-content;
   }
   #product_top_bar {
-    height: 580px;
+    height: 450px;
+    background-position-y: 20%;
+    background-size: 150%;
+    background-repeat: no-repeat;
   }
   /* search bar  */
+  .search_bar {
+    z-index: 500;
+    width: 100%;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+    position: relative;
+  }
+  .search_bar .inputs_row{
+    display: flex;
+    justify-content: space-between;
+  }
+  .search_bar .mobile_input {
+    display: flex;
+    flex-direction: column;
+  }
+  .search_bar .mobile_input:first-child {
+    width: 60%;
+  }
+  .search_bar .mobile_input:last-child {
+    width: 36%;
+  }
+  .search_bar label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.05em;
+    color: var(--mtgrey-3);
+    margin-bottom: 2px;
+  }
+  .search_bar .input_icon {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .search_bar .inputs_row input {
+    width: 100%;
+    height: 40px;
+    background: rgba(206, 232, 203, 0.6);
+    border: 2px solid var(--mtgreen-2);
+    border-radius: 10px;
+    padding-left: 40px;
+  }
+  .search_bar .input_icon svg {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+  }
+  .search_bar .input_field{
+    width: 100%;
+  }
+  .search_bar .input_field .inputs{
+    width: 100%;
+  }
+  .search_bar .input_field .inputs .calendarWrap{
+    width: 100%;
+  }
+  .search_bar .input_field .inputs input {
+    width: 100%;
+  }
+  .search_bar > a > button{
+    width: 100%;
+    border-radius: 10px;
+  }
   /* products -------------------------------------------- */
   section.products {
     padding: 40px 15px;
@@ -574,5 +645,4 @@ section.test .test_info button {
     letter-spacing: 0.1em;
     padding: 4px 24px;
   }
-  
 }

@@ -26,7 +26,9 @@ section#nav_cart {
 }
 section#nav_cart .topbar {
   width: 100%;
+  height: var(--navbar-mobile-height);
   padding: 20px 40px;
+  color: var(--mtgreen-1);
 
   display: flex;
   justify-content: flex-start;
@@ -42,8 +44,6 @@ section#nav_cart .topbar h3 {
   line-height: 43px;
   letter-spacing: 0.1em;
   padding-top: 5px;
-
-  color: var(--mtgreen-1);
 }
 section#nav_cart .topbar button {
   width: 40px;
@@ -211,4 +211,80 @@ section#nav_cart .checkout .total_price .order_price {
   line-height: 30px;
 
   color: var(--mtgrey-1);
+}
+section#nav_cart .checkout button {
+  width: 100%;
+}
+
+@media screen and (max-width: 390px) {
+  section#nav_cart {
+    width: 300px;
+  }
+  section#nav_cart .topbar {
+    padding: 12px 20px;
+  }
+  section#nav_cart .topbar h3 {
+    font-size: 22px;
+  }
+  section#nav_cart .topbar button {
+    width: 32px;
+    height: 32px;
+
+    font-size: 24px;
+  }
+  section#nav_cart .shoppingcart_list {
+    padding: 0px 20px;
+    padding-top: 20px;
+    padding-bottom: 120px;
+  }
+  section#nav_cart .shoppingcart_item {
+    gap: 12px;
+  }
+  section#nav_cart .item_info {
+    gap: 12px;
+  }
+  section#nav_cart .item_info .detail {
+    justify-items: flex-start;
+    gap: 4px;
+  }
+  section#nav_cart .item_info .pic {
+    width: 60px;
+    height: 60px;
+  }
+  section#nav_cart .item_info h5 {
+    font-size: 16px;
+  }
+  section#nav_cart .item_info h6 {
+    font-size: 12px;
+  }
+  section#nav_cart .item_info p {
+    font-size: 12px;
+  }
+  section#nav_cart .price_num .price .single {
+    font-size: 12px;
+  }
+  section#nav_cart .price_num .price .total {
+    font-size: 16px;
+  }
+  section#nav_cart .price_num .num span {
+    font-size: 18px;
+  }
+  section#nav_cart .price_num .num button {
+    font-size: 16px;
+  }
+  section#nav_cart .checkout {
+    gap: 8px;
+    padding: 20px 20px;
+  }
+  section#nav_cart .checkout .total_price span {
+    font-size: 18px;
+  }
+  section#nav_cart .checkout .total_price .order_price {
+    font-size: 18px;
+  }
+  section#nav_cart .checkout button {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
