@@ -27,7 +27,8 @@
   .dropdown-mobile-wrap {
     position: absolute;
     width: 390px;
-    height: 844px;
+    /* height: 844px; */
+    height: calc(100% - 100px);
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.25);
@@ -36,12 +37,15 @@
 
   .dropdown-mobile {
     width: 200px;
-    height: 100vh;
+    height: 100%;
+    /* height: calc(100% - 100px); */
+    gap:100px;
     position: absolute;
     background: var(--mtyellow-4);
     left: 0;
     top: 0;
     transition-duration: 2s;
+    z-index: 1001;
   }
 
   .dropdown-mobile div {
@@ -54,6 +58,9 @@
 
   .dropdown-mobile p {
     display: block;
+  }
+  .dropdown-mobile a{
+    text-decoration: none;
   }
 
   .dropdown-mobile .top-chevronLeft {

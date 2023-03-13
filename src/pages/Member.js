@@ -1,5 +1,5 @@
 import styles from './../styles/Member.module.css'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useContext } from 'react'
 import MemberContent from '../components/LaiMemberContent'
 import CouponContent from '../components/LaiCouponContent'
 import AchievementContent from '../components/LaiAchievementContent'
@@ -8,13 +8,18 @@ import CommentContent from '../components/LaiCommentContent'
 import FavoriteContent from '../components/LaiFavoriteContent'
 import MobileDropdown from '../components/LaiMobileDropdown'
 import MemberProfile from '../components/LaiMemberProfile'
+import { MemberContext } from './../contexts/MemberContext.js'
+
 // import Gift from '../../src/icons/gift.svg'
 
 export default function Member() {
+  //useContext Navbar選擇分頁
+  const { memberPage, setMemberPage } = useContext(MemberContext)
+
   //電腦版的sidebar分頁選擇狀態
   const [displayPage, setDisplayPage] = useState('member')
   const handleDisplayPage = (page) => {
-    setDisplayPage(page)
+    setMemberPage(page)
   }
   //電腦版的sidebar-tag 在該頁面會有active的樣式 //直接寫在sidebar連結的onclick事件就好
 
@@ -59,44 +64,6 @@ export default function Member() {
     <>
       <div className={styles['grid-container']}>
         <div className={styles['sidebar']}>
-          {/* <div className={styles['member-profile']}>
-            <div className={styles['profile']}>
-              <div className={styles['pic-btn']}>
-                <svg
-                  className={styles['camera']}
-                  width="20"
-                  height="18"
-                  viewBox="0 0 20 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.1668 14.8337C19.1668 15.2757 18.9912 15.6996 18.6786 16.0122C18.3661 16.3248 17.9421 16.5004 17.5001 16.5004H2.49972C2.05768 16.5004 1.63374 16.3248 1.32118 16.0122C1.00861 15.6996 0.833008 15.2757 0.833008 14.8337V5.66677C0.833008 5.22473 1.00861 4.8008 1.32118 4.48823C1.63374 4.17566 2.05768 4.00006 2.49972 4.00006H5.83313L7.49984 1.5H12.5L14.1667 4.00006H17.5001C17.9421 4.00006 18.3661 4.17566 18.6786 4.48823C18.9912 4.8008 19.1668 5.22473 19.1668 5.66677V14.8337Z"
-                    fill="#FFFFF2"
-                    stroke="#FFFFF2"
-                    strokeWidth="1.66671"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M10.0004 13.1666C11.8414 13.1666 13.3338 11.6742 13.3338 9.83317C13.3338 7.99218 11.8414 6.49976 10.0004 6.49976C8.15941 6.49976 6.66699 7.99218 6.66699 9.83317C6.66699 11.6742 8.15941 13.1666 10.0004 13.1666Z"
-                    stroke="#ADD9B1"
-                    strokeWidth="1.66671"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <div className={styles['profile-wrap']}>
-                <div className={styles['profile-pic']}></div>
-              </div>
-            </div>
-            <div className={styles['member-name']}>
-              <p className={styles['first-name']}>趙</p>
-              <p className={styles['last-name']}>宜展</p>
-            </div>
-            <div className={styles['member-account']}>yichunccc0830</div>
-          </div> */}
           <MemberProfile
             img={''}
             name={'樂齊'}
@@ -114,7 +81,7 @@ export default function Member() {
           </button>
           <div className={styles['btn-border']}></div>
           <div className={styles['sidebar-menu']}>
-            <li className={displayPage === 'coupon' ? styles['active'] : null}>
+            <li className={memberPage === 'coupon' ? styles['active'] : null}>
               <button
                 onClick={() => {
                   handleDisplayPage('coupon')
@@ -169,7 +136,7 @@ export default function Member() {
             </li>
             <li
               className={
-                displayPage === 'achievement' ? styles['active'] : null
+                memberPage === 'achievement' ? styles['active'] : null
               }
             >
               <button
@@ -217,7 +184,7 @@ export default function Member() {
             </li>
             <li
               className={
-                displayPage === 'history-order' ? styles['active'] : null
+                memberPage === 'history-order' ? styles['active'] : null
               }
             >
               <button
@@ -251,7 +218,7 @@ export default function Member() {
                 <span>歷史訂單</span>
               </button>
             </li>
-            <li className={displayPage === 'comment' ? styles['active'] : null}>
+            <li className={memberPage === 'comment' ? styles['active'] : null}>
               <button
                 onClick={() => {
                   handleDisplayPage('comment')
@@ -277,7 +244,7 @@ export default function Member() {
               </button>
             </li>
             <li
-              className={displayPage === 'favorite' ? styles['active'] : null}
+              className={memberPage === 'favorite' ? styles['active'] : null}
             >
               <button
                 onClick={() => {
@@ -307,12 +274,12 @@ export default function Member() {
         </div>
         {/* <MemberContent /> */}
         {/* <CouponContent /> */}
-        {displayPage === 'member' && <MemberContent />}
-        {displayPage === 'coupon' && <CouponContent />}
-        {displayPage === 'achievement' && <AchievementContent />}
-        {displayPage === 'history-order' && <HistoryOrder />}
-        {displayPage === 'comment' && <CommentContent />}
-        {displayPage === 'favorite' && <FavoriteContent />}
+        {memberPage === 'member' && <MemberContent />}
+        {memberPage === 'coupon' && <CouponContent />}
+        {memberPage === 'achievement' && <AchievementContent />}
+        {memberPage === 'history-order' && <HistoryOrder />}
+        {memberPage === 'comment' && <CommentContent />}
+        {memberPage === 'favorite' && <FavoriteContent />}
       </div>
       <div className={styles['mobile-menu']}>
         <div
@@ -366,8 +333,8 @@ export default function Member() {
         </div>
         {mobileMenu === true && (
           <MobileDropdown
-            displayPage={displayPage}
-            setDisplayPage={setDisplayPage}
+            memberPage={memberPage}
+            setMemberPage={setMemberPage}
             ref={menuRef}
             scrollPosition={btnTopPosition}
           />

@@ -1,23 +1,27 @@
 // Hooks
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // Components
 import DropdownCss from '../styles/NavbarDropdown.module.css'
 import AuthContext from '../contexts/AuthContexts'
+import { MemberContext } from '../contexts/MemberContext'
 
 function NavbarDropdown(props) {
   const { showList, setShowList } = props
   const { myAuth, logout } = useContext(AuthContext)
   const navigate = useNavigate()
+  const { memberPage, setMemberPage } = useContext(MemberContext)
 
   return (
-    <div className={DropdownCss['dropdown-wrap']}
-    onClick={(e)=>{
-      if (e.target.className.includes('dropdown-wrap')) {
-        setShowList(!showList)
-      }
-    }}>
+    <div
+      className={DropdownCss['dropdown-wrap']}
+      onClick={(e) => {
+        if (e.target.className.includes('dropdown-wrap')) {
+          setShowList(!showList)
+        }
+      }}
+    >
       <div className={DropdownCss.dropdown}>
         <div
           className={`${DropdownCss['rect']} d-flex flex-column justify-content-between`}
@@ -48,7 +52,15 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownCss['dropdown-p']} mb-0`}>會員中心</p>
+            <a
+              className={`${DropdownCss['dropdown-p']} mb-0`}
+              href="/member"
+              onClick={() => {
+                setMemberPage('member')
+              }}
+            >
+              會員中心
+            </a>
           </div>
           <div className="d-flex align-items-center">
             <svg
@@ -94,7 +106,15 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownCss['dropdown-p']} mb-0`}>我的優惠券</p>
+            <a
+              className={`${DropdownCss['dropdown-p']} mb-0`}
+              onClick={() => {
+                setMemberPage('coupon')
+              }}
+              href="/member"
+            >
+              我的優惠券
+            </a>
           </div>
           <div className="d-flex align-items-center">
             <svg
@@ -131,7 +151,14 @@ function NavbarDropdown(props) {
                 </clipPath>
               </defs>
             </svg>
-            <p className={`${DropdownCss['dropdown-p']} mb-0`}>成就獎章</p>
+            <a
+              className={`${DropdownCss['dropdown-p']} mb-0`}
+              onClick={() => {
+                setMemberPage('achievement')
+              }}
+            >
+              成就獎章
+            </a>
           </div>
           <div className="d-flex align-items-center">
             <svg
@@ -176,7 +203,9 @@ function NavbarDropdown(props) {
             </svg>
             <p className={`${DropdownCss['dropdown-p']} mb-0`}>過往評論</p>
           </div>
-          <div className={`${DropdownCss['bottom-line']} d-flex align-items-center`}>
+          <div
+            className={`${DropdownCss['bottom-line']} d-flex align-items-center`}
+          >
             <svg
               width="24"
               height="25"
