@@ -238,7 +238,7 @@
      overflow: hidden;
 }
 .fav-img{
-    /* background: url('../../public/trail1.png'); */
+    background: url('../../public/images/public_images/product_image/10-1.jpg');
     /* width: 100%; */
     height: 100%;
     background-size: cover;
@@ -589,7 +589,7 @@
         font-weight: 900;
     }
     .fav-img{
-        /* background: url('../../public/trail1.png'); */
+        background: url('../../public/trail1.png');
         width: 100%;
         height: 100%;
     }
