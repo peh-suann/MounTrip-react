@@ -1,15 +1,43 @@
-import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import AuthContext from '../contexts/AuthContexts'
+
+// styles
 import styles from './../styles/Navbar.module.css'
+
+// components
 import NavbarMobileMenu from './NavbarMobileMenu'
+import NavbarDropdown from '../components/NavbarDropdown'
+import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 
 export default function NavBar() {
+  const { myAuth, logout } = useContext(AuthContext)
+
+  const [showList, setShowList] = useState(false)
+  const handleClick = function () {
+    setShowList(!showList)
+  }
+
+  const [showListMobile, setShowListMobile] = useState(false)
+  const navigate = useNavigate()
+
   return (
     <>
       <nav>
         <div className={styles.navbar}>
           <div className={styles.left}>
-            <button className={styles.menu}>
+            <button
+              className={styles.menu}
+              onClick={(e) => {
+                e.preventDefault()
+                if (myAuth.account) {
+                  setShowListMobile(!showListMobile)
+                  // console.log(showListMobile)
+                }
+              }}
+            >
               <svg
                 width="25"
                 height="36"
@@ -206,7 +234,18 @@ export default function NavBar() {
                 </a>
               </li>
               <li>
-                <a className={styles.link} href="/">
+                <Link
+                  className={styles.link}
+                  to="#/"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    if (myAuth.account) {
+                      handleClick()
+                    } else {
+                      navigate('/login')
+                    }
+                  }}
+                >
                   <svg
                     width="28"
                     height="28"
@@ -216,13 +255,20 @@ export default function NavBar() {
                   >
                     <circle cx="14" cy="14" r="14" fill="#6CBA7C" />
                   </svg>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <NavbarMobileMenu />
+      {showList && (
+        <NavbarDropdown showList={showList} setShowList={setShowList} />
+      )}
+
+      <NavbarDropdownMobile
+        showListMobile={showListMobile}
+        setShowListMobile={setShowListMobile}
+      />
     </>
   )
 }

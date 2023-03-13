@@ -4,7 +4,7 @@
 
 nav#IndexNav {
   position: fixed;
-  padding: 0px 30px;
+  padding: 0px 120px;
   top: 0;
   height: var(--navbar-height);
   width: 100%;

@@ -14,8 +14,14 @@ function NavbarDropdown(props) {
   return (
     <div
       className={DropdownMobileCss['dropdown-mobile-wrap']} 
-      onClick={() => {
-        setShowListMobile(!showListMobile)
+      style={showListMobile ? { backgroundColor: 'rgba(0,0,0,0.25)', pointerEvents: 'auto' }  : { backgroundColor: 'rgba(0,0,0,0)', pointerEvents: 'none' }}
+      onClick={(e) => {
+        // console.log(e.target.className)
+        // console.log(e.target.className.includes('dropdown-mobile-wrap'))
+        if (e.target.className.includes('dropdown-mobile-wrap')){
+          setShowListMobile(!showListMobile)
+        }
+        
       }}
     >
       <div className={`${DropdownMobileCss['dropdown-mobile']} d-flex flex-column justify-content-between`}

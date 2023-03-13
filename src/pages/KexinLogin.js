@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import React from 'react'
 import loginStyles from '../styles/kexinLogin.module.css'
 import LoginNavbar from '../layouts/NavbarLogin'
-import { LOGIN } from './../components/api_config.js'
+import { LOGIN } from '../connections/api-config'
 import axios from 'axios'
 import AuthContext from "../contexts/AuthContexts"
 

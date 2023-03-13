@@ -16,3 +16,4 @@ export const ALL_PRODUCTS = `${HOST}/products`
 export const POP_PRODUCTS = `${HOST}/popular_products`
 export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
+export const LOGIN = `${HOST}/login`

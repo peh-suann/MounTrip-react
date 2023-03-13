@@ -13,8 +13,10 @@ function NavbarDropdown(props) {
 
   return (
     <div className={DropdownCss['dropdown-wrap']}
-    onClick={()=>{
-      setShowList(!showList)
+    onClick={(e)=>{
+      if (e.target.className.includes('dropdown-wrap')) {
+        setShowList(!showList)
+      }
     }}>
       <div className={DropdownCss.dropdown}>
         <div
@@ -174,7 +176,7 @@ function NavbarDropdown(props) {
             </svg>
             <p className={`${DropdownCss['dropdown-p']} mb-0`}>過往評論</p>
           </div>
-          <div className="d-flex align-items-center bottom-line">
+          <div className={`${DropdownCss['bottom-line']} d-flex align-items-center`}>
             <svg
               width="24"
               height="25"

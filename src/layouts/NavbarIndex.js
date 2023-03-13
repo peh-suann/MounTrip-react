@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import IndexNavstyles from './../styles/NavbarIndex.module.css'
@@ -29,7 +29,7 @@ export default function IndexNavBar() {
                 e.preventDefault()
                 if (myAuth.account) {
                   setShowListMobile(!showListMobile)
-                  console.log(showListMobile)
+                  // console.log(showListMobile)
                 }
               }}
             >
@@ -231,7 +231,7 @@ export default function IndexNavBar() {
             </ul>
             {showList && <NavbarDropdown showList={showList} setShowList={setShowList} />}
 
-            {showListMobile && <NavbarDropdownMobile showListMobile={showListMobile} setShowListMobile={setShowListMobile} />}
+            <NavbarDropdownMobile showListMobile={showListMobile} setShowListMobile={setShowListMobile} />
           </div>
         </div>
       </nav>

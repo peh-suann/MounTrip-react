@@ -31,6 +31,7 @@
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.25);
+    transition-duration: 2s;
   }
 
   .dropdown-mobile {
@@ -40,6 +41,7 @@
     background: var(--mtyellow-4);
     left: 0;
     top: 0;
+    transition-duration: 2s;
   }
 
   .dropdown-mobile div {
