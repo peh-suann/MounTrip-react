@@ -35,7 +35,7 @@ function App() {
               <Route path="/Login" element={<Login />} />
               <Route path="/Signin" element={<Signin />} />
               <Route path="/Index" element={<Index />} />
-              <Route path="/test" element={<YichunTest />} />
+              {/* <Route path="/test" element={<YichunTest />} /> */}
             </Route>
           </Routes>
         </AuthContextProvider>
