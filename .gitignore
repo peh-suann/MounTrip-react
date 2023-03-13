@@ -5,8 +5,8 @@
 .TODO
 .FIXME
 
-*.jpeg
-*.png
+# *.jpeg
+# *.png
 
 # dependencies
 /node_modules
