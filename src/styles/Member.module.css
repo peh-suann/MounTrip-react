@@ -1,37 +1,4 @@
-/* 要先將 Mountrip.module.css 檔案內的 :root 設定都複製過來才能用 */
-:root{
-    /* primary/green */
-    --mtgreen-1:#6cba7c;
-    --mtgreen-2:#8dc996;
-    --mtgreen-3:#add9b1;
-    --mtgreen-4:#cee8cb;
-    --mtgreen-5:rgba(206, 232, 203, 0.4);
-    --mtgreen-6:rgba(206, 232, 203, 0.8);
-    --mtgreen-7:#bbdab8;
 
-
-    /* secondary/yellow */
-    --mtyellow-1: #F3c969;
-    --mtyellow-2: #f7db97;
-    --mtyellow-3: #FBEDC4;
-    --mtyellow-4: #FFFFF2;
-
-    /* neutral-color/ black/ grey */
-    --mtgrey-1: #011306;
-    --mtgrey-2: #4d5a51;
-    --mtgrey-3: #9aa09b;
-    --mtgrey-4: #e6E7E6;
-
-    /* danger-color /red */
-    --mtred-1:#E85F5c;
-    --mtred-2: #ED7F7D;
-    --mtred-3: #f6Bfbe;
-    --mtred-4: #fadfde;
-}
-section{
-    height: 100vh;
-    width: 100%;
-}
 .grid-container{
     display: grid;
     grid-template-columns: 248px 2fr ;
@@ -99,7 +66,18 @@ section{
     position: relative;
     text-align: center;
 }
-.member-name::after{
+.level-tag{
+    color:white;
+    font-size:14px;
+    background-color: var(--mtyellow-1);
+    border-radius: 18px;
+    padding: 4px 10px 4px 10px;
+    align-items: center;
+    position: absolute;
+    top:4px;
+    right: 0px;
+}
+/* .member-name::after{
     content:'超級嚮導';
     color:white;
     font-size:18px;
@@ -107,11 +85,10 @@ section{
     border-radius: 18px;
     padding: .5px 10px .5px 10px;
     align-content: center;
-    /* height: 100%; */
     position: absolute;
     top:4px;
     right:0px;
-}
+} */
 .member-name p{
     font-size: 24px;
     font-weight: 700;
@@ -431,7 +408,7 @@ section{
         grid-template-columns: 390px ;
         grid-template-rows: 113px 1fr ;
         gap:40px;
-        padding-top: 120px;
+        padding-top: 40px;
         padding-right: 15px;
         padding-left: 15px;
         background-color: var(--mtyellow-4);
@@ -500,7 +477,17 @@ section{
         text-align: center;
         grid-area: name;
     }
-    .member-name::after{
+    .level-tag{
+        color:white;
+        font-size:14px;
+        background-color: var(--mtyellow-1);
+        border-radius: 18px;
+        padding: 4px 10px 4px 10px;
+        align-items: center;
+        position: absolute;
+        top:-2px;
+    }
+    /* .member-name::after{
         content:'超級嚮導';
         color:white;
         font-size:14px;
@@ -508,11 +495,9 @@ section{
         border-radius: 18px;
         padding: 4px 10px 4px 10px;
         align-items: center;
-        /* height: 100%; */
         position: absolute;
         top:-2px;
-        /* right:0px; */
-    }
+    } */
     .member-name p{
         font-size: 20px;
         font-weight: 700;

@@ -1,25 +1,57 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './../styles/Achievement.module.css'
+import DescribLevel1 from './LaiAchievementDescribLevel1'
+import DescribLevel2 from './LaiAchievementDescribLevel2'
+import DescribLevel3 from './LaiAchievementDescribLevel3'
 
-export default function LaiAchievementDescrib() {
+const DescribLevels = [DescribLevel1, DescribLevel2, DescribLevel3]
+
+export default function LaiAchievementDescrib(props) {
+  const { setClickedLevel, clickedLevel } = props
+  // const [rules, setRules] = useState(1)
+  // 設定動態元件，裡面的東西一定要全部是元件才能用
+  const DescribLevel = DescribLevels[clickedLevel - 1]
+
+  // console.log({ DescribLevel, clickedLevel, props })
+
   return (
     <>
       <div className={styles['describ']}>
         <div className={styles['describ-tag-wrap']}>
-          <div className={`${styles['des-tag']} ${styles['low']}`}>
+          <div
+            className={`${styles['des-tag']} `}
+            onClick={() => {
+              setClickedLevel(1)
+            }}
+          >
             新手山友
           </div>
-          <div className={`${styles['des-tag']} ${styles['mid']}`}>
+          <div
+            className={`${styles['des-tag']} `}
+            onClick={() => {
+              setClickedLevel(2)
+            }}
+          >
             初級嚮導
           </div>
-          <div className={`${styles['des-tag']} ${styles['high']}`}>
+          <div
+            className={`${styles['des-tag']} `}
+            onClick={() => {
+              setClickedLevel(3)
+            }}
+          >
             超級嚮導
           </div>
         </div>
         <div className={styles['tag-border']}></div>
-        <div className={styles['describ-mid']}>
+        {/* 動態元件 */}
+        <DescribLevel />
+        {/* <div className={styles['describ-block']}>
           <h6>累計消費滿25,000元解鎖</h6>
-        </div>
+        </div> */}
+        {/* {rules === 1 ? <DescribLevel1 /> : null}
+        {rules === 2 ? <DescribLevel2 /> : null}
+        {rules === 3 ? <DescribLevel3 /> : null} */}
       </div>
     </>
   )

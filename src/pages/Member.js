@@ -10,6 +10,7 @@ import HistoryOrder from '../components/LaiHistoryOrder'
 import CommentContent from '../components/LaiCommentContent'
 import FavoriteContent from '../components/LaiFavoriteContent'
 import MobileDropdown from '../components/LaiMobileDropdown'
+import MemberProfile from '../components/LaiMemberProfile'
 // import Gift from '../../src/icons/gift.svg'
 
 export default function Member() {
@@ -61,7 +62,7 @@ export default function Member() {
     <>
       <div className={styles['grid-container']}>
         <div className={styles['sidebar']}>
-          <div className={styles['member-profile']}>
+          {/* <div className={styles['member-profile']}>
             <div className={styles['profile']}>
               <div className={styles['pic-btn']}>
                 <svg
@@ -98,7 +99,14 @@ export default function Member() {
               <p className={styles['last-name']}>宜展</p>
             </div>
             <div className={styles['member-account']}>yichunccc0830</div>
-          </div>
+          </div> */}
+          <MemberProfile
+            img={''}
+            name={'樂齊'}
+            familyname={'賴'}
+            level={2}
+            account={'LLAI87'}
+          />
           <button
             className={styles['edit-btn']}
             onClick={() => {
