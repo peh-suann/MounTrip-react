@@ -6,11 +6,6 @@
 .FIXME
 
 #picture
-*.jpg
-*.jpeg
-*.png
-*.svg
-
 *.gpx
 
 
@@ -18,6 +13,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/public
 
 # testing
 /coverage

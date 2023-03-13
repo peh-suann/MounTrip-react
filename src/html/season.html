@@ -24,56 +24,64 @@
   </head>
   <body>
     <!-- navbar/ start -->
-    <nav>
-      <div class="navbar">
-        <div class="left">
-          <button class="menu">
-            <img src="./../icons/menu.svg" alt="" />
-          </button>
-          <img id="logo" src="./../icons/logo.svg" alt="" />
-          <ul class="nav-navigations">
-            <li>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary d-none d-lg-flex">
+      <div class="left">
+        <img src="./../icons/logo.svg" alt="" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse navigations"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
               <a class="link" href="/"> 商品總覽 </a>
             </li>
-            <li>
-              <a class="link" href="/"> 難易分級 </a>
+            <li class="nav-item">
+              <a class="link" href="/member-list"> 難易分級 </a>
             </li>
-            <li>
+            <li class="nav-item">
               <a class="link" href="/"> 季節推薦 </a>
             </li>
-            <li>
+            <li class="nav-item">
               <a class="link" href="/"> 線上測驗 </a>
             </li>
           </ul>
         </div>
-        <div class="right">
-          <ul class="nav-icons">
-            <li>
-              <a class="link" href="/">
-                <img src="./../icons/search.svg" alt="" />
-              </a>
-              <div class="search-input-unfold">
-                <img src="./../icons/search-icon.svg" alt="" />
-                <span>輸入登山路線、季節熱門路線</span>
-              </div>
-            </li>
-            <li>
-              <a class="link" href="/">
-                <img src="./../icons/bell.svg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a class="link" href="/">
-                <img src="./../icons/shopping-cart.svg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a class="link" href="/">
-                <img src="./../icons/profile.svg" alt="" />
-              </a>
-            </li>
-          </ul>
-        </div>
+      </div>
+      <div class="right">
+        <ul class="navbar-nav me-auto mb-lg-0 ulRight">
+          <li class="nav-item liRight search">
+            <div class="search-input">
+              <img src="./../icons/search-icon.svg" alt="" />
+              <span>輸入登山路線、季節熱門路線</span>
+            </div>
+          </li>
+          <li class="nav-item liRight notification">
+            <a class="link" href="/">
+              <img src="./../icons/bell.svg" alt="" />
+            </a>
+          </li>
+          <li class="nav-item liRight cart">
+            <a class="link" href="/">
+              <img src="./../icons/shopping-cart.svg" alt="" />
+            </a>
+          </li>
+          <li class="nav-item liRight profile">
+            <a class="link" href="/">
+              <img src="./../icons/profile.svg" alt="" />
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
     <!-- navbar/ end -->

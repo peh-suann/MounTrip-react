@@ -9,6 +9,8 @@ export const RATING_DATA = `${HOST}/trails/rating`
 
 export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 
+// export const LIST_DATA = `${HOST}/member`
+
 //教室電腦的連線
 // export const HOST = '192.168.21.84:3000'
 
@@ -22,3 +24,9 @@ export const POP_PRODUCTS = `${HOST}/popular_products`
 export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
 export const LOGIN = `${HOST}/login`
+export const HOSTIan = 'http://localhost:3000/Ian'
+
+export const TRAILS_SEASON = `${HOSTIan}/Season`
+export const TRAILS_COMMENT = `${HOSTIan}/seasonComment`
+export const TRAILS_DIFF = `${HOSTIan}/difficulty`
+export const ShoppingCart = `${HOSTIan}/sc1`
