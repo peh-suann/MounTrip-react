@@ -132,9 +132,9 @@ export default function DavisTrailsDetail(rows) {
                 </div> */}
                 {/* right-card */}
                 <div className="col">
-                  <h4 className="fw-bold">{r.trail_name}</h4>
+                  <h4 className="fw-bold mb-3">{r.trail_name}</h4>
                   {/* location-group */}
-                  <div className="d-lg-flex flex-row align-items-center d-none ">
+                  <div className="d-lg-flex flex-row align-items-center d-none mb-3 ">
                     <div className="mb-2 me-2">
                       <svg
                         width="20"

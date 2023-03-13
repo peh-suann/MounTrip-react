@@ -53,6 +53,13 @@ body {
   object-fit: cover;
   margin-bottom: 12px;
   height: 400px;
+  /* transition-duration: 3s;
+  transition-property: opacity; */
+}
+
+
+.img_cover_one:not([src]) {
+  /* opacity: 0; */
 }
 
 .img_wrap_three {
@@ -92,10 +99,11 @@ body {
 }
 
 .paragraph_i {
-  /* text-indent: 2rem; */
+  text-indent: 2rem;
   font-size: 14px;
   text-align: justify;
   font-weight: 350;
+  padding-bottom: 35px;
 }
 
 .img_contain {
@@ -373,7 +381,7 @@ body {
 
 /* #DavisTrailsGpx */
 .gpx_iframe {
-  width: 640px;
+  width: 655px;
   height: 500px;
   position: relative;
   top: -60px;
