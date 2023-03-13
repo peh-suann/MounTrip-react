@@ -20,7 +20,7 @@ function DavisTrailsImgGroup(props) {
     <>
       {data.rows.map((r, i) => {
         return (
-          <div key={key} className="col flex-column me-5 d-none d-lg-flex">
+          <div key={r.sid} className="col flex-column me-5 d-none d-lg-flex">
             <div className="">
               <img
                 className={`${styles.img_cover_one}`}

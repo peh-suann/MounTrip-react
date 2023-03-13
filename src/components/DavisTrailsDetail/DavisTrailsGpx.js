@@ -8,6 +8,7 @@ import styles from '../../styles/DavisTrailsDetail.module.css'
 function DavisTrailsGpx() {
   return (
     <>
+      {/* FIXME:手機板大小 */}
       <div className={`col mb-2 mb-3 ${styles.gpx_wrap}`}>
         <iframe
           className={`col mb-2 ${styles.gpx_iframe}`}

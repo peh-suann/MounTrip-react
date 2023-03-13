@@ -101,7 +101,6 @@ export default function DavisTrailsDetail(rows) {
             <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
               <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
                 <DavisTrailsImgGroup
-                  key={r.sid}
                   data={data}
                   // getListData={getListData}
                 />
@@ -560,49 +559,9 @@ export default function DavisTrailsDetail(rows) {
                       </button>
                     </div>
                     {/* level2 */}
-                    <div className={`col mb-2 ${styles.shop_btn_two}`}>
-                      <div className=" d-flex flex-row align-items-center ">
-                        <div className={`col-2 col-lg-1 ${styles.batch}`}>
-                          <h5 className={`ps-3 mb-0 lh-lg ${styles.btn_font}`}>
-                            梯次
-                          </h5>
-                        </div>
-                        <div className="col d-flex justify-content-center">
-                          <h5 className={`mb-0 ${styles.batch_font}`}>
-                            <select name="" id="">
-                              <DavisTrailsBatch key={r.trail_sid} data={data} />
-                              {/* {data.rows.map((r, i) => {
-                                return (
-                                  <option id={i} value="">
-                                    {r.batch_start}-{r.batch_end}
-                                  </option>
-                                )
-                              })} */}
 
-                              {/* <option value="">2023/01/01 - 2023/01/03</option>
-                              <option value="">2023/01/01 - 2023/01/03</option> */}
-                            </select>
-                          </h5>
-                        </div>
-                        <button className={`${styles.btn_style}`}>
-                          <svg
-                            width="30"
-                            height="30"
-                            viewBox="0 0 30 30"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M11.25 25L21.25 15L11.25 5"
-                              stroke="#6CBA7C"
-                              strokeWidth="3.75"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
+                    <DavisTrailsBatch data={data} />
+
                     {/* level3 shop_btn FIXME: */}
                     <DavisTrailsShopBtn />
                     {/* <button
@@ -762,7 +721,7 @@ export default function DavisTrailsDetail(rows) {
                 <div className="col d-flex justify-content-center">
                   <h6 className="mb-0">2023/01/01 - 2023/01/03</h6>
                 </div>
-                <button className={`${styles.btn_style}`}>
+                <button onClick={() => {}} className={`${styles.btn_style}`}>
                   <svg
                     width="30"
                     height="30"

@@ -10,7 +10,7 @@ body {
 /* ALL */
 
 .container_all {
-  margin: 20px 85px;
+  margin: 120px 85px;
 }
 
 @media (max-width: 391px) {
@@ -33,6 +33,7 @@ body {
 /* Breadcrumb */
 .container_all .bread {
   background-color: transparent;
+  z-index: 0;
   -bsBreadcrumbDivider: 'url("data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="8" height="8"%3E%3Cpath d="M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z" fill="currentColor"/%3E%3C/svg%3E")';
   position: relative;
   padding: 0px;
@@ -139,6 +140,24 @@ body {
   font-size: 15px;
 }
 
+/* rotate active */
+.rotate_a {
+  transform: rotate(90deg);
+  transition: 0.3s;
+}
+
+.not_rotate {
+  transform: rotate(0deg);
+  transition: 0.3s;
+}
+
+.select_btn{
+  border: none;
+  background-color: transparent;
+  width: 550px;
+  text-align: center;
+}
+
 
 .shop_btn_sm {
   color: var(--mtgreen-1);
@@ -225,7 +244,7 @@ body {
 /* commont card: left-card  */
 
 .left_card {
-  height: 7%;
+  height: 65px;
 }
 
 .rate_point {

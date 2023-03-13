@@ -13,19 +13,24 @@ function NavbarDropdown(props) {
 
   return (
     <div
-      className={DropdownMobileCss['dropdown-mobile-wrap']} 
-      style={showListMobile ? { backgroundColor: 'rgba(0,0,0,0.25)', pointerEvents: 'auto' }  : { backgroundColor: 'rgba(0,0,0,0)', pointerEvents: 'none' }}
+      className={DropdownMobileCss['dropdown-mobile-wrap']}
+      style={
+        showListMobile
+          ? { backgroundColor: 'rgba(0,0,0,0.25)', pointerEvents: 'auto' }
+          : { backgroundColor: 'rgba(0,0,0,0)', pointerEvents: 'none' }
+      }
       onClick={(e) => {
         // console.log(e.target.className)
         // console.log(e.target.className.includes('dropdown-mobile-wrap'))
-        if (e.target.className.includes('dropdown-mobile-wrap')){
+        if (e.target.className.includes('dropdown-mobile-wrap')) {
           setShowListMobile(!showListMobile)
         }
-        
       }}
     >
-      <div className={`${DropdownMobileCss['dropdown-mobile']} d-flex flex-column justify-content-between`}
-      style={showListMobile ? {left:'0'}  : {left:'-200px'}}>
+      <div
+        className={`${DropdownMobileCss['dropdown-mobile']} d-flex flex-column justify-content-between`}
+        style={showListMobile ? { left: '0' } : { left: '-200px' }}
+      >
         <div>
           <div className={DropdownMobileCss['top-chevronLeft']}>
             <svg
@@ -38,9 +43,9 @@ function NavbarDropdown(props) {
               <path
                 d="M22 26L14 18L22 10"
                 stroke="#6CBA7C"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>
@@ -69,7 +74,9 @@ function NavbarDropdown(props) {
           </ul>
         </div>
         <div className={DropdownMobileCss['member-list']}>
-          <div className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}>
+          <div
+            className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
+          >
             <svg
               className="mobile-icon"
               width="24"
@@ -93,10 +100,13 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-            >會員中心</p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
+              會員中心
+            </p>
           </div>
-          <div className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}>
+          <div
+            className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
+          >
             <svg
               width="24"
               height="25"
@@ -140,9 +150,13 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>我的優惠券</p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
+              我的優惠券
+            </p>
           </div>
-          <div className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}>
+          <div
+            className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
+          >
             <svg
               width="24"
               height="25"
@@ -177,9 +191,13 @@ function NavbarDropdown(props) {
                 </clipPath>
               </defs>
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>成就獎章</p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
+              成就獎章
+            </p>
           </div>
-          <div className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}>
+          <div
+            className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
+          >
             <svg
               className="menu-icon"
               width="24"
@@ -203,9 +221,13 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>歷史訂單</p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
+              歷史訂單
+            </p>
           </div>
-          <div className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}>
+          <div
+            className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
+          >
             <svg
               className="menu-icon"
               width="24"
@@ -222,7 +244,9 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>過往評論</p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
+              過往評論
+            </p>
           </div>
           <div className="d-flex align-items-center">
             <svg
@@ -241,7 +265,9 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>收藏路線</p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
+              收藏路線
+            </p>
           </div>
 
           <div

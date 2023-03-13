@@ -26,11 +26,13 @@ function DavisTrailsRating() {
     setData(response.data)
   }
 
-  // const filterByKeyword = (data) => {
-  //   if (!Array.isArray(data.rows)) {
+  // let rows_data = data.rows
+
+  // const filterByKeyword = (rows_data) => {
+  //   if (!Array.isArray(rows_data)) {
   //     return []
   //   }
-  //   return data.rows.filter((v, i) => {
+  //   return rows_data.filter((v, i) => {
   //     return v.trails_sid === 1
   //   })
   // }
@@ -148,7 +150,7 @@ function DavisTrailsRating() {
             </div>
 
             <div className="col-8 d-flex flex-column ">
-              <div className="col p-2">
+              <div className="col d-flex flex-row p-2">
                 <svg
                   width="32"
                   height="29"
