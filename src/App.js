@@ -5,15 +5,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './styles/Mountrip.module.css'
 import IanDifficulty from './pages/IanDifficulty'
 import IanSeason from './pages/IanSeason'
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import Home from './components/Home'
 import IanShoppingCart1 from './pages/IanShoppingCart1'
 import IanShoppingCart2 from './pages/IanShoppingCart2'
 import IanShoppingCart3 from './pages/IanShoppingCart3'
 import IanShoppingCart4 from './pages/IanShoppingCart4'
-import NavBar from './components/NavBar'
-import Footer from './components/Footer'
-import Home from './components/Home'
-
-import Iantext from './components/Iantext'
 
 function App() {
   return (
@@ -30,7 +28,6 @@ function App() {
           <Route path="/SC2" element={<IanShoppingCart2 />} />
           <Route path="/SC3" element={<IanShoppingCart3 />} />
           <Route path="/SC4" element={<IanShoppingCart4 />} />
-          <Route path="/I" element={<Iantext />} />
         </Routes>
         {/* <Footer /> */}
       </Router>

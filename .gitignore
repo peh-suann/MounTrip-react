@@ -5,6 +5,7 @@
 .TODO
 .FIXME
 
+
 *.jpeg
 *.png
 
@@ -12,6 +13,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/public
 
 # testing
 /coverage

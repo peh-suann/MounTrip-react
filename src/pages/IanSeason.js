@@ -35,6 +35,7 @@ function IanSeason() {
   useEffect(() => {
     getCommentData()
   }, [])
+
   return (
     <>
       <section className={styles.season_top_bar}>
@@ -51,28 +52,40 @@ function IanSeason() {
         <div className={`${styles.row_of_products} d-flex flex-wrap`}>
           {data.rows.map((v, i) => {
             return (
-              <div key={v.sid} className={`${styles.product} col-lg-4`}>
-                <div className={styles.pic1}>
-                  <div className={styles.rates}>
-                    <p>
-                      <svg
-                        width="16"
-                        height="17"
-                        viewBox="0 0 16 17"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                          fill="#CEE8CB"
-                        />
-                      </svg>
-                      4.5
-                    </p>
-                    <p className={styles.difficulty}>
-                      難度{v.difficulty_list_sid}
-                    </p>
-                  </div>
+              <div key={v.sid} className={`${styles.product}  col-lg-4`}>
+                <div className={`overflow-hidden`}>
+                  <div
+                    className={styles.pic1}
+                    style={{
+                      backgroundImage: `linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 0) 71.43%,
+                    rgba(0, 0, 0, 0.74) 96.19%
+                    ),
+                  url(/imgs/Ian_img/${v.trail_img})`,
+                    }}
+                  ></div>
+                </div>
+
+                <div className={styles.rates}>
+                  <p>
+                    <svg
+                      width="16"
+                      height="17"
+                      viewBox="0 0 16 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                        fill="#CEE8CB"
+                      />
+                    </svg>
+                    4.5
+                  </p>
+                  <p className={styles.difficulty}>
+                    難度{v.difficulty_list_sid}
+                  </p>
                 </div>
                 <div className={styles.information}>
                   <div className={styles.info}>
@@ -188,7 +201,14 @@ function IanSeason() {
         <div className={`${styles.comment_carousel}`}>
           {comment.rows.map((v2, i2) => {
             return (
-              <div className={`${styles.comment}`} key={i2}>
+              <div
+                className={`${styles.comment}`}
+                style={{
+                  backgroundImage: `linear-gradient(180deg, rgba(1, 19, 6, 0) 66.99%, #011306 100%),
+                  url(/imgs/Ian_img/${v2.trail_img})`,
+                }}
+                key={i2}
+              >
                 <div>
                   <h5>
                     <span className={styles.account}>
