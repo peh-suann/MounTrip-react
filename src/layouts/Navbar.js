@@ -1,15 +1,42 @@
-import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import AuthContext from '../contexts/AuthContexts'
+
+// styles
 import styles from './../styles/Navbar.module.css'
-import NavbarMobileMenu from './NavbarMobileMenu'
+
+// components
+import NavbarShoppingCart from '../components/NavbarShoppingCart'
+import NavbarDropdown from '../components/NavbarDropdown'
+import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 
 export default function NavBar() {
+  const { myAuth, logout } = useContext(AuthContext)
+
+  const [showList, setShowList] = useState(false)
+  const handleClick = function () {
+    setShowList(!showList)
+  }
+
+  const [showListMobile, setShowListMobile] = useState(false)
+  const navigate = useNavigate()
+
   return (
     <>
       <nav>
         <div className={styles.navbar}>
           <div className={styles.left}>
-            <button className={styles.menu}>
+            <button
+              className={styles.menu}
+              onClick={(e) => {
+                e.preventDefault()
+                if (myAuth.account) {
+                  setShowListMobile(!showListMobile)
+                }
+              }}
+            >
               <svg
                 width="25"
                 height="36"
@@ -75,10 +102,10 @@ export default function NavBar() {
 
             <ul className={styles.nav_navigations}>
               <li>
-                <a className={styles.link} href="/">
+                <Link className={styles.link} to="/products">
                   {' '}
                   商品總覽{' '}
-                </a>
+                </Link>
               </li>
               <li>
                 <a className={styles.link} href="/">
@@ -93,10 +120,10 @@ export default function NavBar() {
                 </a>
               </li>
               <li>
-                <a className={styles.link} href="/">
+                <Link className={styles.link} to="/test">
                   {' '}
                   線上測驗{' '}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -175,7 +202,13 @@ export default function NavBar() {
                   </svg>
                 </a>
               </li>
-              <li>
+              <li
+                className={styles.shopping_cart}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setOpen((prev) => !prev)
+                }}
+              >
                 <a className={styles.link} href="/">
                   <svg
                     width="30"
@@ -206,7 +239,18 @@ export default function NavBar() {
                 </a>
               </li>
               <li>
-                <a className={styles.link} href="/">
+                <Link
+                  className={styles.link}
+                  to="#/"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    if (myAuth.account) {
+                      handleClick()
+                    } else {
+                      navigate('/login')
+                    }
+                  }}
+                >
                   <svg
                     width="28"
                     height="28"
@@ -216,13 +260,23 @@ export default function NavBar() {
                   >
                     <circle cx="14" cy="14" r="14" fill="#6CBA7C" />
                   </svg>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <NavbarMobileMenu />
+
+      <NavbarShoppingCart open={open} setOpen={setOpen} />
+
+      {showList && (
+        <NavbarDropdown showList={showList} setShowList={setShowList} />
+      )}
+
+      <NavbarDropdownMobile
+        showListMobile={showListMobile}
+        setShowListMobile={setShowListMobile}
+      />
     </>
   )
 }
