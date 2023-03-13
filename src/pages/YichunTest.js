@@ -1,9 +1,10 @@
 // Packages
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 
 // Components
 import YichunQuestionSection from '../components/YichunQuestionSection'
+import Button from '../components/Button'
 
 // Connections
 import { TEST_QUES } from '../connections/api-config'
@@ -14,11 +15,29 @@ export const StylesContext = createContext(styles)
 
 function YichunTest() {
   const [ques, setQues] = useState([])
+  const [display, setDisplay] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ])
+  const [correct, setCorrect] = useState([false, false, false, false, false])
+
+  // mountain moving effect
+  const mountainG2Ref = useRef(null)
+  const mountainY2Ref = useRef(null)
+  const mountainG1Ref = useRef(null)
+  const mountainY1Ref = useRef(null)
+  let timeoutId
+  let mouseX, mouseY
+
   const getListData = async () => {
     try {
       const response = await axios.get(TEST_QUES)
       setQues(response.data)
-      console.log(response.data)
+      //   console.log(response.data)
       return response.data
     } catch (err) {
       console.error(err)
@@ -28,12 +47,64 @@ function YichunTest() {
 
   useEffect(() => {
     getListData()
-    console.log('ques', ques)
   }, [])
+
+  const scrollTo = async (index) => {
+    console.log(index)
+    await setDisplay((prev) => {
+      const newDisplay = [...prev]
+      newDisplay[index] = true
+      return newDisplay
+    })
+    window.scrollTo({
+      top: 1018 + 1018 * index,
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <>
       <StylesContext.Provider value={styles}>
-        <section className={styles['intro-page']}>
+        <section
+          className={styles['intro-page']}
+          onMouseMove={(e) => {
+            clearTimeout(timeoutId)
+            timeoutId = setTimeout(function () {
+              // code to be executed after 100ms delay
+              const windowHeight = window.innerHeight
+              const windowWidth = window.innerWidth
+              const halfHeight = windowHeight / 2
+              const halfWidth = windowWidth / 2
+
+              mouseX = e.clientX
+              mouseY = e.clientY
+
+              const moveX = (mouseX - halfWidth) / halfWidth
+              const moveY = (mouseY - halfHeight) / halfHeight
+
+              console.log('----------------------')
+              console.log('mouseX: ', mouseX)
+              console.log('mouseY: ', mouseY)
+              console.log('moveX: ', moveX)
+              console.log('moveY: ', moveY)
+
+              console.log('mountainY1Ref', mountainY1Ref)
+
+              mountainG2Ref.current.style.transform = `translate(${
+                moveX * 1
+              }%,${moveY * 4}%) scale(1.1)`
+              mountainY2Ref.current.style.transform = `translate(${
+                moveX * -1
+              }%,${moveY * 2}%) scale(1.105)`
+              mountainG1Ref.current.style.transform = `translate(${
+                moveX * 0.5
+              }%,${moveY * 2}%) scale(1.2)`
+              mountainY1Ref.current.style.transform = `translate(${
+                moveX * -0.5
+              }%,${moveY * -3}%) scale(1.11)`
+            })
+          }}
+        >
           <img
             className={styles['clouds-web']}
             src="images/yichun/test/clouds/pic20.png"
@@ -194,19 +265,27 @@ function YichunTest() {
             className={`${styles.mountains} ${styles.g2}`}
             src="images/yichun/test/mountain/g-2.svg"
             alt=""
+            ref={mountainG2Ref}
           />
           <img
             className={`${styles.mountains} ${styles.y2}`}
             src="images/yichun/test/mountain/y-2.svg"
             alt=""
+            ref={mountainY2Ref}
           />
           <img
             className={`${styles.mountains} ${styles.g1}`}
             src="images/yichun/test/mountain/g-1.svg"
             alt=""
+            ref={mountainG1Ref}
           />
 
-          <button className={styles.start_test}>
+          <button
+            className={styles.start_test}
+            onClick={() => {
+              scrollTo(0)
+            }}
+          >
             開始
             <br />
             作答
@@ -216,35 +295,83 @@ function YichunTest() {
             className={`${styles.mountains} ${styles.y1}`}
             src="images/yichun/test/mountain/y-1.svg"
             alt=""
+            ref={mountainY1Ref}
           />
         </section>
         <section className={styles['intro-text']}>
           <div className={styles['intro-title']}>登山小測驗</div>
           <h3>在山上迷路了，你能平安下山？</h3>
           <p>
-            在山上迷路，一直以來是山難發生的最大主因。許多人遇到迷路時會嚇到，一下子陷入慌張，反而容易做錯決定，降低自己求救成功、平安下山的機會；假如你今天在山上迷路了你有辦法順利脫困嗎？接下來你將置身於8種迷路常見的情境中，嘗試做出讓自己能平安獲救的選擇吧～
+            在山上迷路，一直以來是山難發生的最大主因。許多人遇到迷路時會嚇到，一下子陷入慌張，反而容易做錯決定，降低自己求救成功、平安下山的機會；假如你今天在山上迷路了你有辦法順利脫困嗎？接下來你將置身於5種迷路常見的情境中，嘗試做出讓自己能平安獲救的選擇吧～
           </p>
         </section>
         {ques.map((el, i) => {
-          return <YichunQuestionSection key={el.sid} />
+          if (i % 2 === 0) {
+            // even
+            return (
+              <YichunQuestionSection
+                key={el.sid}
+                index={i}
+                element={el}
+                odd={true}
+                display={display[i]}
+                scrollTo={scrollTo}
+                correct={correct}
+                setCorrect={setCorrect}
+              />
+            )
+          } else {
+            // odd
+            return (
+              <YichunQuestionSection
+                key={el.sid}
+                index={i}
+                element={el}
+                odd={false}
+                display={display[i]}
+                scrollTo={scrollTo}
+                correct={correct}
+                setCorrect={setCorrect}
+              />
+            )
+          }
         })}
 
-        <section className={styles.price}>
+        <section
+          className={`${styles.price} ${display[5] ? '' : styles.display}`}
+        >
           <div className={styles['price-text']}>
-            <h1 className={styles.congrats}>Congrats!!!</h1>
+            {correct.filter(Boolean).length >= 4 ? (
+              <h1 className={styles.congrats}>Congratulation!!!</h1>
+            ) : correct.filter(Boolean).length > 2 ? (
+              <h1 className={styles.congrats}>Keep Going!!</h1>
+            ) : (
+              <h1 className={styles.congrats}>Practice makes Perfect!</h1>
+            )}
             <h3 className={styles['num-of-Ques']}>
-              您在此測驗中一共答對 <span>5/5</span> 題，
+              您在此測驗中一共答對 <span>{correct.filter(Boolean).length}</span>{' '}
+              題，
               <br />
-              登山小達人就是你！
+              {correct.filter(Boolean).length >= 4
+                ? '登山小達人就是你！'
+                : correct.filter(Boolean).length > 2
+                ? '繼續加油，學習更多安全知識吧！'
+                : '新手上路，多多練習吧！'}
             </h3>
             <p>
-              恭喜獲得 優惠券 乙張
+              恭喜獲得{' '}
+              {correct.filter(Boolean).length >= 4
+                ? '75'
+                : correct.filter(Boolean).length > 2
+                ? '85'
+                : '95'}
+              折 優惠券 乙張
               <br />
               快去 <a href="/">我的優惠券</a> 查收吧！
             </p>
             <div className={styles.buttons}>
-              <button>來去逛逛</button>
-              <button>前往我的優惠券</button>
+              <Button text={'來去逛逛'} link={'products'} />
+              <Button text={'前往我的優惠券'} link={''} />
             </div>
           </div>
           <img
@@ -276,9 +403,14 @@ function YichunTest() {
           >
             <path
               id="curve"
-              d="M 35 1080 V 110 a50,50 0 0 1 50,-50 H 1865 a20,20 0 0 1 20,20 V 1080 H30"
+              d="M 5 1080 V 110 a50,50 0 0 1 50,-50 H 1900 a50,50 0 0 1 20,20 V 1080 H30"
               strokeLinejoin="round"
             />
+            {/* <path
+              id="curve"
+              d="M -80 1080 V 120 a50,50 0 0 1 50,-50 H 1980 a50,50 0 0 1 20,20 V 1080 H30"
+              strokeLinejoin="round"
+            /> */}
             <text>
               <textPath
                 alignmentBaseline="middle"

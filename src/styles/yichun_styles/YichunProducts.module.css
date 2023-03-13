@@ -69,21 +69,23 @@ section.products .products_title h2 {
   gap: 8px;
 
   cursor: pointer;
+  position: relative;
 }
 .pic {
+  overflow: hidden;
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 300px;
   border-radius: 10px;
 
   background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0) 71.43%,
-      rgba(0, 0, 0, 0.74) 96.19%
+      rgba(0, 0, 0, 0) 70%,
+      rgba(0, 0, 0, 0.8) 100%
     ),
     url(./../../images/product-img/0-01.jpeg);
   background-size: cover;
-  background-position: center 80%;
+  background-position: center;
   background-repeat: no-repeat;
   background-origin: content-box;
   background-clip: content-box;
@@ -91,11 +93,31 @@ section.products .products_title h2 {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  transition-property: background-size;
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+}
+.pic::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  background-size: cover;
+  transform-origin: center;
+  transition: transform 0.4s ease-in-out;
+  overflow: hidden;
+}
+.pic:focus::before,
+.pic:hover::before {
+  transform: scale(1.05);
 }
 .pic_shadow {
   box-shadow: 0px -2px 12px rgba(27, 39, 39, 0.2);
 }
-.pic .ranking {
+.product .ranking {
+  z-index: 50;
+
   position: absolute;
   top: -20px;
   right: 10px;
@@ -127,6 +149,7 @@ section.products .products_title h2 {
   justify-content: space-between;
   align-items: flex-end;
   color: var(--mtyellow-4);
+  z-index: 10;
 }
 .rates p {
   padding: 0;
@@ -268,7 +291,7 @@ section.difficulty .diff_intro_list {
   width: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 80px;
 }
 section.difficulty .diff_intro_list .rank {
   display: flex;
@@ -317,7 +340,8 @@ section.difficulty .diff_intro_list .diff_intro button {
 section.difficulty .diff_recommend {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 40px;
   flex-grow: 1;
 }
 section.difficulty .diff_recommend .select_diff {
@@ -337,8 +361,8 @@ section.test {
   width: 100%;
   height: 670px;
   margin-bottom: 200px;
-  /* background-image: url(./../../images/product-page-img/test_bgi.png); */
-  background-image: url(./../../images/product-page-img/test_bgi.jpg);
+  background-image: url(./../../images/product-page-img/test_bgi.png);
+  /* background-image: url(./../../images/product-page-img/test_bgi.jpg); */
   background-size: cover;
   background-color: var(--mtyellow-4);
   position: relative;

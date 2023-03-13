@@ -4,10 +4,6 @@
 }
 
 /* navbar ----------------------- */
-nav {
-  /* background: rgba(255, 255, 242, 0.6); */
-  /* display: none; */
-}
 .search-input-unfold {
   display: none;
 }
@@ -27,6 +23,12 @@ html body {
   background-color: var(--mtyellow-4);
 
   /* overflow-y: hidden; */
+
+  /* overflow-y: hidden; */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* intro ----------------------- */
@@ -484,9 +486,22 @@ section.intro-text p {
 
 /* questions ----------------------- */
 section.questions {
+  /*
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  */
+
   position: relative;
   padding: 0;
   margin: 0;
+
+  transition-duration: 10s;
+}
+section.questions.display {
+  /* display: none; */
 }
 section.questions img:first-child {
   width: calc(100% - 200px);
@@ -518,7 +533,7 @@ section.questions .ques-box {
 
   width: 1000px;
   height: 200px;
-  top: 280px;
+  top: 250px;
   left: 50%;
   border-radius: 100px;
 
@@ -545,14 +560,14 @@ section.questions img:last-of-type {
 }
 section.questions .cards {
   position: absolute;
-  bottom: 100px;
+  top: 58%;
   width: 100%;
   height: fit-content;
 
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 50px;
+  gap: 70px;
 }
 section.questions .cards .ans:first-child {
   transform: rotate(-8deg);
@@ -565,8 +580,8 @@ section.questions .cards .ans:last-child {
 }
 section.questions .ans {
   /* position: absolute; */
-  width: 450px;
-  height: 270px;
+  width: 400px;
+  height: 260px;
   bottom: 0;
 
   display: flex;
@@ -578,31 +593,99 @@ section.questions .ans {
   background: var(--mtyellow-4);
   box-shadow: 0px 4px 10px 1px rgba(1, 19, 6, 0.2);
   border-radius: 10px;
+  border: 8px solid var(--mtyellow-4);
+
+  transform-style: preserve-3d;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+section.questions .ans.hover:first-child {
+  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
+}
+section.questions .ans.hover {
+  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
+}
+section.questions .ans.hover:last-child {
+  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
+}
+section.questions .ans .front_side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   font-weight: 900;
   font-size: 40px;
   line-height: 56px;
   letter-spacing: 0.1em;
-  color: var(--mtgrey-1);
+  color: var(--mtgrey-2);
 
-  transition-duration: 0.5s;
-  cursor: pointer;
+  backface-visibility: hidden;
 }
-section.questions .ans:first-child:hover {
-  transform: translateY(-5px) scale(1.03) rotate(-8deg);
-  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
+section.questions .ans .back_side {
+  padding: 30px 40px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  cursor: auto;
 }
-section.questions .ans:hover {
-  transform: translateY(-5px) scale(1.04);
-  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
+section.questions .ans .back_side .correct{
+  font-size: 40px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
 }
-section.questions .ans:last-child:hover {
-  transform: translateY(-5px) scale(1.03) rotate(8deg);
-  box-shadow: 0px 4px 40px 1px rgba(1, 19, 6, 0.2);
+section.questions .ans .back_side .correct h5{
+  font-size: 32px;
+  padding-top: 4px;
+
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--mtgrey-1);
 }
-section .ques-box {
+section.questions .ans .back_side p{
+  text-align: center;
+  font-size: 16px;
+  color: var(--mtgrey-2);
+  letter-spacing: 0.1em;
+}
+section.questions .ques-box {
   color: var(--mtgreen-1);
   background-color: var(--mtyellow-4);
+}
+section.questions button.next {
+  /* display: none; */
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  visibility: hidden;
+  pointer-events: none;
+
+  /* width: 80px; */
+
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 12px 40px;
+  border-radius: 50px;
+  border: none;
+
+  transition-duration: 0.8s;
+  opacity: 0;
 }
 
 section.ques-odd {
@@ -615,6 +698,10 @@ section.ques-odd .num {
   color: var(--mtgreen-1);
   background-color: var(--mtyellow-4);
 }
+section.ques-odd button.next{
+  color: var(--mtyellow-4);
+  background-color: var(--mtgreen-1);
+}
 section.ques-even {
   width: 100%;
   height: 100vh;
@@ -625,19 +712,32 @@ section.ques-even .num {
   color: var(--mtyellow-4);
   background-color: var(--mtgreen-1);
 }
+section.ques-even button.next{
+  color: var(--mtgreen-1);
+  background-color: var(--mtyellow-4);
+}
 
 /* price ----------------------- */
 section.price img:first-of-type {
   /* display: none; */
 }
 section.price {
+  /*
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+  */
   position: relative;
   width: 100%;
   height: 100vh;
 
   background-color: var(--mtyellow-4);
-
   overflow: hidden;
+}
+section.price.display {
+  /* display: none; */
 }
 section.price .price-text {
   position: absolute;
@@ -677,14 +777,14 @@ section.price .price-text h3 {
   color: var(--mtyellow-4);
 }
 section.price .price-text h3 span {
-  font-weight: 700;
-  font-size: 56px;
+  font-weight: 900;
+  /* font-size: 56px; */
 }
 section.price .price-text p {
   margin-bottom: 64px;
 
-  font-weight: 300;
-  font-size: 24px;
+  font-weight: 400;
+  font-size: 22px;
   line-height: 35px;
   text-align: center;
   letter-spacing: 0.1em;
@@ -692,7 +792,7 @@ section.price .price-text p {
   color: var(--mtyellow-4);
 }
 section.price .price-text p a {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 35px;
   text-align: center;
   letter-spacing: 0.1em;
@@ -762,15 +862,23 @@ section.price img:nth-child(5) {
   pointer-events: none;
 }
 section.price svg {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   z-index: 0;
   user-select: none;
+
+  pointer-events: none;
 }
 section.price svg path {
   position: absolute;
+
+  width: 100%;
+  height: 100%;
   fill: none;
+
+  left: 0;
+  right: 0;
 }
 section.price svg text {
   position: absolute;
@@ -791,9 +899,7 @@ footer {
   /* display: none; */
 }
 
-
-
- /* 
+/* 
  📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱
  📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱
  📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱📱

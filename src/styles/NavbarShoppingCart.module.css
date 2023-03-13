@@ -1,0 +1,214 @@
+.bgColor {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+
+  pointer-events: none;
+}
+section#nav_cart {
+  position: fixed;
+  width: 500px;
+  height: 100vh;
+  background-color: var(--mtyellow-4);
+  z-index: 1000;
+
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+.nav_bar_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+section#nav_cart .topbar {
+  width: 100%;
+  padding: 20px 40px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #9aa09b;
+}
+section#nav_cart .topbar h3 {
+  flex-grow: 1;
+
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 43px;
+  letter-spacing: 0.1em;
+  padding-top: 5px;
+
+  color: var(--mtgreen-1);
+}
+section#nav_cart .topbar button {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 32px;
+  color: var(--mtgreen-1);
+}
+
+section#nav_cart .shoppingcart_list {
+  padding: 0px 40px;
+  padding-top: 28px;
+  padding-bottom: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+}
+section#nav_cart .shoppingcart_list::-webkit-scrollbar {
+  display: none;
+}
+
+section#nav_cart .shoppingcart_item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+section#nav_cart .item_info {
+  display: flex;
+  gap: 16px;
+}
+section#nav_cart .item_info .pic {
+  width: 110px;
+  height: 110px;
+  background-image: url('./../../public/images/public_images/product_image/1-1.jpg');
+  background-size: cover;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+section#nav_cart .item_info .detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+section#nav_cart .item_info h5 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+
+  color: var(--mtgrey-1);
+
+  flex-shrink: 1;
+}
+section#nav_cart .item_info h6 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+
+  color: var(--mtgrey-2);
+}
+section#nav_cart .item_info p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+
+  color: var(--mtgrey-1);
+}
+section#nav_cart .price_num {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+section#nav_cart .price_num .price {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+section#nav_cart .price_num .price .single {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  color: var(--mtgrey-2);
+}
+section#nav_cart .price_num .price .total {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  color: var(--mtgrey-1);
+}
+section#nav_cart .price_num .num {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+section#nav_cart .price_num .num span {
+  width: 64px;
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: var(--mtgrey-1);
+}
+section#nav_cart .price_num .num button {
+  border: none;
+  background-color: transparent;
+
+  font-size: 20px;
+  color: var(--mtgreen-1);
+}
+section#nav_cart .price_num .num button.disable {
+  color: var(--mtgrey-3);
+}
+section#nav_cart .checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px 40px;
+  gap: 24px;
+
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+
+  background: var(--mtyellow-4);
+  box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.12);
+}
+section#nav_cart .checkout .total_price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section#nav_cart .checkout .total_price span {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 0.06em;
+
+  color: var(--mtgrey-2);
+}
+section#nav_cart .checkout .total_price .order_price {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+
+  color: var(--mtgrey-1);
+}
