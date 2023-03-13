@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
@@ -8,9 +8,21 @@ import AuthContext from '../contexts/AuthContexts'
 import styles from './../styles/Navbar.module.css'
 
 // components
-import NavbarMobileMenu from './NavbarMobileMenu'
+import NavbarShoppingCart from '../components/NavbarShoppingCart'
+import NavbarDropdown from '../components/NavbarDropdown'
+import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 
 export default function NavBar() {
+  const { myAuth, logout } = useContext(AuthContext)
+
+  const [showList, setShowList] = useState(false)
+  const handleClick = function () {
+    setShowList(!showList)
+  }
+
+  const [showListMobile, setShowListMobile] = useState(false)
+  const navigate = useNavigate()
+
   return (
     <>
       <nav>
@@ -22,7 +34,6 @@ export default function NavBar() {
                 e.preventDefault()
                 if (myAuth.account) {
                   setShowListMobile(!showListMobile)
-                  // console.log(showListMobile)
                 }
               }}
             >
@@ -255,7 +266,17 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
-      <NavbarMobileMenu />
+
+      <NavbarShoppingCart open={open} setOpen={setOpen} />
+
+      {showList && (
+        <NavbarDropdown showList={showList} setShowList={setShowList} />
+      )}
+
+      <NavbarDropdownMobile
+        showListMobile={showListMobile}
+        setShowListMobile={setShowListMobile}
+      />
     </>
   )
 }
