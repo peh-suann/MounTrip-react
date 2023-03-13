@@ -12,7 +12,7 @@ import YichunTest from './pages/YichunTest'
 import Signin from './pages/KexinSignin'
 import Index from './pages/KexinIndex'
 // import YichunProducts from './pages/YichunProducts'
-import TestMemberList from './pages/TestMemberList'
+// import TestMemberList from './pages/TestMemberList'
 import DavisTrailsDetail from './pages/DavisTrailsDetail'
 import DavisTrailsFilter from './pages/DavisTrailsFilter'
 
