@@ -1,5 +1,5 @@
-// import logo from "./logo.svg";
-import './App.css'
+// import logo from './logo.svg'
+// import './App.css'
 // import MounTripTest1 from './pages/MounTripTest1'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './styles/Mountrip.module.css'
@@ -12,6 +12,9 @@ import YichunTest from './pages/YichunTest'
 import Signin from './pages/KexinSignin'
 import Index from './pages/KexinIndex'
 // import YichunProducts from './pages/YichunProducts'
+import TestMemberList from './pages/TestMemberList'
+import DavisTrailsDetail from './pages/DavisTrailsDetail'
+import DavisTrailsFilter from './pages/DavisTrailsFilter'
 
 function App() {
   return (
@@ -24,7 +27,8 @@ function App() {
               <Route path="/products" element={<YichunProducts />} />
               {/* <Route path="/member" element={<Member />} /> */}
               <Route path="/test" element={<YichunTest />} />
-              <Route path="/member" element={<Member />} />
+              <Route path="/trails-detail" element={<DavisTrailsDetail />} />
+              <Route path="/trails-filter" element={<DavisTrailsFilter />} />
             </Route>
             <Route path="/">
               {/* 登入頁面Navbar+Footer */}

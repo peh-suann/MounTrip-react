@@ -5,6 +5,14 @@
 .TODO
 .FIXME
 
+#picture
+*.jpg
+*.jpeg
+*.png
+*.svg
+
+*.gpx
+
 
 # dependencies
 /node_modules
