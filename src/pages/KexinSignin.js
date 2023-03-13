@@ -1,10 +1,22 @@
-import { useState, useContext  } from 'react'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { useState, useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+
+// styles
 import signinStyles from '../styles/kexinSignin.module.css'
+
+// component
 import LoginNavbar from '../layouts/NavbarLogin'
 
+// BACKEND
+import { SIGNIN } from '../connections/api-config'
+import axios from 'axios'
+
 function KexinSignin() {
+  const [myForm, setMyForm] = useState({
+    account: '',
+    password: '',
+    password1: '',
+  })
 
   const navigate = useNavigate()
   return (
@@ -18,7 +30,7 @@ function KexinSignin() {
           >
             <div
               className={`${signinStyles['mobile-x']}  ${signinStyles['web-none']}`}
-              onClick={()=>{
+              onClick={() => {
                 navigate('/index')
               }}
             >
@@ -84,7 +96,34 @@ function KexinSignin() {
               </Link>
             </div>
             <div className={`${signinStyles['loginForm']}`}>
-              <form name="form1" method="post">
+              <form
+                name="form1"
+                method="post"
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  const form1 = document.forms['form1']
+                  console.log(form1.account.value)
+                  // axios.post(SIGNIN, myForm).then((response) => {
+                  //   console.log(response.data)
+                  //   // if (response.data.success) {
+                  //   //   const { account, accountId, token } = response.data
+                  //   //   localStorage.setItem(
+                  //   //     'myAuth',
+                  //   //     JSON.stringify({ account, accountId, token })
+                  //   //   )
+                  //   //   setMyAuth({
+                  //   //     authorized: true,
+                  //   //     account,
+                  //   //     token,
+                  //   //     sid: accountId,
+                  //   //   })
+                  //   //   navigate('/index')
+                  //   // } else {
+                  //   //   alert(response.data.error || '帳號或密碼錯誤')
+                  //   // }
+                  // })
+                }}
+              >
                 <div className="mb-3">
                   <label htmlFor="account" className="form-label">
                     帳號/Email
@@ -129,7 +168,7 @@ function KexinSignin() {
                     type="submit"
                     className="btn btn-primary"
                   >
-                    登入
+                    註冊
                   </button>
 
                   <div className="mb-0">

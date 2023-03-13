@@ -13,6 +13,9 @@ import NavbarDropdown from '../components/NavbarDropdown'
 import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 
 export default function NavBar() {
+
+  const [open, setOpen] = useState(false)
+
   const { myAuth, logout } = useContext(AuthContext)
 
   const [showList, setShowList] = useState(false)
