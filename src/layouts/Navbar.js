@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
@@ -9,20 +9,8 @@ import styles from './../styles/Navbar.module.css'
 
 // components
 import NavbarMobileMenu from './NavbarMobileMenu'
-import NavbarDropdown from '../components/NavbarDropdown'
-import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 
 export default function NavBar() {
-  const { myAuth, logout } = useContext(AuthContext)
-
-  const [showList, setShowList] = useState(false)
-  const handleClick = function () {
-    setShowList(!showList)
-  }
-
-  const [showListMobile, setShowListMobile] = useState(false)
-  const navigate = useNavigate()
-
   return (
     <>
       <nav>
@@ -203,7 +191,13 @@ export default function NavBar() {
                   </svg>
                 </a>
               </li>
-              <li>
+              <li
+                className={styles.shopping_cart}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setOpen((prev) => !prev)
+                }}
+              >
                 <a className={styles.link} href="/">
                   <svg
                     width="30"
@@ -261,14 +255,7 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
-      {showList && (
-        <NavbarDropdown showList={showList} setShowList={setShowList} />
-      )}
-
-      <NavbarDropdownMobile
-        showListMobile={showListMobile}
-        setShowListMobile={setShowListMobile}
-      />
+      <NavbarMobileMenu />
     </>
   )
 }

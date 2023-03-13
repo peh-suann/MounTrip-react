@@ -4,10 +4,6 @@
 }
 
 /* navbar ----------------------- */
-nav {
-  /* background: rgba(255, 255, 242, 0.6); */
-  display: none;
-}
 .search-input-unfold {
   display: none;
 }
@@ -505,7 +501,7 @@ section.questions {
   transition-duration: 10s;
 }
 section.questions.display {
-  display: none;
+  /* display: none; */
 }
 section.questions img:first-child {
   width: calc(100% - 200px);
@@ -741,7 +737,7 @@ section.price {
   overflow: hidden;
 }
 section.price.display {
-  display: none;
+  /* display: none; */
 }
 section.price .price-text {
   position: absolute;
@@ -900,7 +896,7 @@ section.price svg text {
   user-select: none;
 }
 footer {
-  display: none;
+  /* display: none; */
 }
 
 /* 

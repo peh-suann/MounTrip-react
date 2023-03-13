@@ -5,8 +5,8 @@ import styles from './../styles/Button.module.css'
 export default function Button(props) {
   const { text, iconFront, iconEnd, style, link } = props
   return (
-    <Link to={`/${link}`} style={{ style, textDecoration: 'none' }}>
-      <button className={styles.btn} style={style}>
+    <Link to={`/${link}`} style={{ ...style, textDecoration: 'none' }}>
+      <button className={styles.btn} style={{ ...style }}>
         {iconFront ? (
           <svg
             width="20"
