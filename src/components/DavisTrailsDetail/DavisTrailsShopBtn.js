@@ -22,9 +22,9 @@ function DavisTrailsShopBtn() {
             <path
               d="M9 18.5L15 12.5L9 6.5"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </span>

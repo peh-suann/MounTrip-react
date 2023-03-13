@@ -1,10 +1,10 @@
-import logo from './logo.svg'
-import './App.css'
+// import logo from './logo.svg'
+// import './App.css'
 // import MounTripTest1 from './pages/MounTripTest1'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './styles/Mountrip.module.css'
-import NavBar from './components/NavBar'
-import Home from './components/Home'
+// import NavBar from './components/NavBar'
+// import Home from './components/Home'
 import TestMemberList from './pages/TestMemberList'
 import DavisTrailsDetail from './pages/DavisTrailsDetail'
 import DavisTrailsFilter from './pages/DavisTrailsFilter'
@@ -13,12 +13,12 @@ function App() {
   return (
     <>
       <Router>
-        <NavBar />
+        {/* <NavBar /> */}
         <Routes>
           {/* <Home /> */}
           {/* <h1>hey</h1> */}
-          <Route path="/" element={<Home />} />
-          <Route path="/member-list" element={<TestMemberList />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          {/* <Route path="/member-list" element={<TestMemberList />} /> */}
           <Route path="/trails-detail" element={<DavisTrailsDetail />} />
           <Route path="/trails-filter" element={<DavisTrailsFilter />} />
           {/* <Route path="/" element={<Home />} /> */}

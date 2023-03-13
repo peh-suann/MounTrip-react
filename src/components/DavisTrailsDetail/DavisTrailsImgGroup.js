@@ -6,6 +6,7 @@ import styles from '../../styles/DavisTrailsDetail.module.css'
 function DavisTrailsImgGroup(props) {
   const {
     data,
+    key,
     // getListData
   } = props
 
@@ -19,7 +20,7 @@ function DavisTrailsImgGroup(props) {
     <>
       {data.rows.map((r, i) => {
         return (
-          <div className="col flex-column me-5 d-none d-lg-flex">
+          <div key={key} className="col flex-column me-5 d-none d-lg-flex">
             <div className="">
               <img
                 className={`${styles.img_cover_one}`}

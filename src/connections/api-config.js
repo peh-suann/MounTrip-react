@@ -7,6 +7,8 @@ export const LIST_DATA = `${HOST}/member`
 
 export const TRAILS_DATA = `${HOST}/trails?`
 
+export const RATING_DATA = `${HOST}/trails/rating`
+
 export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 
 //教室電腦的連線

@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 
 function DavisTrailsBatch(props) {
-  const { data } = props
+  const { data, key } = props
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
 
@@ -34,7 +34,7 @@ function DavisTrailsBatch(props) {
     <>
       {data.rows.map((r, i) => {
         return (
-          <option id={i} value="">
+          <option key={key} id={i} value="">
             {r.batch_start}-{r.batch_end}
           </option>
         )
