@@ -1,6 +1,10 @@
 import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+// components
 // import DavisTrailsDetailTable from '../components/DavisTrailsDetailTable'
 import DavisTrailsImgGroup from '../components/DavisTrailsDetail/DavisTrailsImgGroup'
 import DavisTrailsBatch from '../components/DavisTrailsDetail/DavisTrailsBatch'
@@ -8,11 +12,10 @@ import DavisTrailsShopBtn from '../components/DavisTrailsDetail/DavisTrailsShopB
 import DavisTrailsGpx from '../components/DavisTrailsDetail/DavisTrailsGpx'
 import DavisTrailsRating from '../components/DavisTrailsDetail/DavisTrailsRating'
 // import DavisGpxLeaflet from '../components/DavisTrailsDetail/DavisGpxLeaflet'
-import { TRAILS_DATA } from '../connections/api-config'
-import { useLocation } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-// import styles from '../styles/Mountrip.module.css'
 import styles from '../styles/DavisTrailsDetail.module.css'
+
+// api
+import { TRAILS_DATA } from '../connections/api-config'
 
 export default function DavisTrailsDetail(rows) {
   const location = useLocation()
