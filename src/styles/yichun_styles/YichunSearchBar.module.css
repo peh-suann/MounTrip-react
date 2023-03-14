@@ -128,4 +128,9 @@ button.num_of_ppl.disable{
   border-radius: 0px 10px 10px 0px;
 }
 /* search-bar -------------------------------------------- */
-
+@media screen and (max-width: 390px) {
+  #search_bar{
+    display: none;
+    /* position: relative; */
+  }
+}
