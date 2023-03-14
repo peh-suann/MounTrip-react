@@ -91,10 +91,10 @@ function YichunTest() {
                 const moveY = (mouseY - halfHeight) / halfHeight
 
                 console.log('----------------------')
-                console.log('mouseX: ', mouseX)
-                console.log('mouseY: ', mouseY)
-                console.log('moveX: ', moveX)
-                console.log('moveY: ', moveY)
+                // console.log('mouseX: ', mouseX)
+                // console.log('mouseY: ', mouseY)
+                // console.log('moveX: ', moveX)
+                // console.log('moveY: ', moveY)
 
                 console.log('mountainY1Ref', mountainY1Ref)
 

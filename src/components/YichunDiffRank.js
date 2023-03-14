@@ -2,7 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import { StylesContext } from './../pages/YichunProducts'
 import Button from './Button'
 
-function YichunDiffRank() {
+function YichunDiffRank(props) {
+  const { el } = props
   const styles = useContext(StylesContext)
   useEffect(() => {
     console.log(document.documentElement.clientWidth)
@@ -33,10 +34,10 @@ function YichunDiffRank() {
         )}
         <div className={styles.diff_intro}>
           <h4>
-            初級 {document.documentElement.clientWidth > 390 ? '' : <br />} EASY
+            {el.diffCn} {document.documentElement.clientWidth > 390 ? '' : <br />} {el.diffEng}
           </h4>
           <p>
-            初級山是大家的 <u>#好朋友</u>
+            初級山是大家的 <u>#{el.describe}</u>
           </p>
           <Button text={'查看更多'} iconFront={0} iconEnd={1} />
         </div>

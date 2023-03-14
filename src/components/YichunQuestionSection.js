@@ -16,10 +16,9 @@ import { TEST_ANS } from '../connections/api-config'
 
 // Styles
 import { StylesContext } from './../pages/YichunTest'
-import Button from './Button'
 
 function YichunQuestionSection(props) {
-  const { index, odd, element, display, scrollTo, correct, setCorrect } = props
+  const { index, odd, element, display, scrollTo, setCorrect } = props
   const styles = useContext(StylesContext)
 
   const [ans, setAns] = useState([])
@@ -234,7 +233,7 @@ function YichunQuestionSection(props) {
                           buttonRef.current.style.opacity = 1
                           buttonRef.current.style.visibility = 'visible'
                           buttonRef.current.style.pointerEvents = 'auto'
-                        }, 1000)
+                        }, 700)
                       }, 600)
                     }
                   }
@@ -263,7 +262,7 @@ function YichunQuestionSection(props) {
                     )}
                     <h5>{el.answer}</h5>
                   </div>
-                  <p>{el.answer_describe}</p>
+                  <p>{el.ans_describe}</p>
                 </div>
               </div>
             )
