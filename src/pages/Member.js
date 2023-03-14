@@ -1,5 +1,6 @@
 import styles from './../styles/Member.module.css'
 import { useState, useEffect, useRef, useContext } from 'react'
+import { useParams } from 'react-router-dom'
 import MemberContent from '../components/LaiMemberContent'
 import CouponContent from '../components/LaiCouponContent'
 import AchievementContent from '../components/LaiAchievementContent'
@@ -31,24 +32,30 @@ export default function Member() {
       console.log('user:', currentUserData)
       // return currentUserData
     } catch (error) {
-      console.log('u:',user)
+      console.log('u:', user)
       // console.log()
 
       return []
     }
   }
-  //用useEffect呼叫getUser()
+
+  //useContext Navbar選擇分頁，電腦版的分頁選擇也一起用這個state
+  const { memberPage, setMemberPage } = useContext(MemberContext)
+  const { page, setPage } = useState('member')
+
+  //用useEffect呼叫getUser()，並且把從mobile navbar得到的localstorage item設定為分頁的state
   useEffect(() => {
+    const pageState = localStorage.getItem('memberPage')
+    if (!pageState) {
+      setMemberPage('member')
+    } else {
+      setMemberPage(pageState)
+    }
     getUser()
     window.scrollTo(0, 0)
     // console.log('member.user:', user)
   }, [])
 
-  //useContext Navbar選擇分頁
-  const { memberPage, setMemberPage } = useContext(MemberContext)
-
-  //電腦版的sidebar分頁選擇狀態
-  const [displayPage, setDisplayPage] = useState('member')
   const handleDisplayPage = (page) => {
     setMemberPage(page)
   }
@@ -99,7 +106,7 @@ export default function Member() {
             img={''}
             name={user.firstname}
             familyname={user.lastname}
-            level={user.member_status}
+            level={user.level}
             account={myAuth.account}
           />
           <button
@@ -320,7 +327,7 @@ export default function Member() {
           <FavoriteContent user={user} setUser={setUser} />
         )}
       </div>
-      <div className={styles['mobile-menu']}>
+      {/* <div className={styles['mobile-menu']}>
         <div
           className={styles['mobile-dropdown-btn']}
           style={{ top: `${btnTopPosition}%` }}
@@ -337,7 +344,6 @@ export default function Member() {
             viewBox="0 0 50 50"
             fill="#6CBA7C"
           >
-            {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> */}
             <path
               stroke="#6CBA7C"
               strokeWidth="2"
@@ -346,31 +352,8 @@ export default function Member() {
               d="M168.2 384.9c-15-5.4-31.7-3.1-44.6 6.4c-8.2 6-22.3 14.8-39.4 22.7c5.6-14.7 9.9-31.3 11.3-49.4c1-12.9-3.3-25.7-11.8-35.5C60.4 302.8 48 272 48 240c0-79.5 83.3-160 208-160s208 80.5 208 160s-83.3 160-208 160c-31.6 0-61.3-5.5-87.8-15.1zM26.3 423.8c-1.6 2.7-3.3 5.4-5.1 8.1l-.3 .5c-1.6 2.3-3.2 4.6-4.8 6.9c-3.5 4.7-7.3 9.3-11.3 13.5c-4.6 4.6-5.9 11.4-3.4 17.4c2.5 6 8.3 9.9 14.8 9.9c5.1 0 10.2-.3 15.3-.8l.7-.1c4.4-.5 8.8-1.1 13.2-1.9c.8-.1 1.6-.3 2.4-.5c17.8-3.5 34.9-9.5 50.1-16.1c22.9-10 42.4-21.9 54.3-30.6c31.8 11.5 67 17.9 104.1 17.9c141.4 0 256-93.1 256-208S397.4 32 256 32S0 125.1 0 240c0 45.1 17.7 86.8 47.7 120.9c-1.9 24.5-11.4 46.3-21.4 62.9zM144 272a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm144-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm80 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
             />
           </svg>
-          {/* <svg
-            className={`${styles['dropdown-icon']}`}
-            width="25"
-            height="25"
-            viewBox="0 0 30 30"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M22.5 10C22.5 8.01088 21.7098 6.10322 20.3033 4.6967C18.8968 3.29018 16.9891 2.5 15 2.5C13.0109 2.5 11.1032 3.29018 9.6967 4.6967C8.29018 6.10322 7.5 8.01088 7.5 10C7.5 18.75 3.75 21.25 3.75 21.25H26.25C26.25 21.25 22.5 18.75 22.5 10Z"
-              stroke="#6CBA7C"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M17.1624 26.25C16.9426 26.6288 16.6272 26.9433 16.2477 27.1619C15.8682 27.3805 15.4379 27.4956 14.9999 27.4956C14.5619 27.4956 14.1316 27.3805 13.7521 27.1619C13.3726 26.9433 13.0572 26.6288 12.8374 26.25"
-              stroke="#6CBA7C"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg> */}
-        </div>
-        {/* {mobileMenu === true && (
+        </div> */}
+      {/* {mobileMenu === true && (
           <MobileDropdown
             memberPage={memberPage}
             setMemberPage={setMemberPage}
@@ -378,7 +361,7 @@ export default function Member() {
             scrollPosition={btnTopPosition}
           />
         )} */}
-      </div>
+      {/* </div> */}
     </>
   )
 }

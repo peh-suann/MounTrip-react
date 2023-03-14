@@ -4,8 +4,8 @@ import LevelTag from './LaiMemberProfileLevelTag'
 
 export default function LaiMemberProfile(props) {
   const { img, name, familyname, level, account } = props
+  // console.log(props)
 
-  
   return (
     <>
       <div className={styles['member-profile']}>
@@ -44,7 +44,7 @@ export default function LaiMemberProfile(props) {
           <p className={styles['first-name']}>{familyname}</p>
           <p className={styles['last-name']}>{name}</p>
           {/* <span className={styles['level-tag']}>超級嚮導</span> */}
-          <LevelTag level={level}/>
+          <LevelTag level={level} />
         </div>
         <div className={styles['member-account']}>{account}</div>
       </div>

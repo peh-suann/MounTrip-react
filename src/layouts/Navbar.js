@@ -29,13 +29,15 @@ export default function NavBar() {
   //轉換會員頁面用
   const [memberPage, setMemberPage] = useState('member')
 
-
   const [showList, setShowList] = useState(false)
   const handleClick = function () {
     setShowList(!showList)
   }
 
   const [showListMobile, setShowListMobile] = useState(false)
+  const handleClickMobile = function () {
+    setShowListMobile(!showListMobile)
+  }
   const navigate = useNavigate()
 
   return (
@@ -43,7 +45,17 @@ export default function NavBar() {
       <nav>
         <div className={styles.navbar}>
           <div className={styles.left}>
-            <button className={styles.menu}>
+            <button
+              className={styles.menu}
+              onClick={(e) => {
+                e.preventDefault()
+                if (myAuth.account) {
+                  handleClickMobile()
+                } else {
+                  navigate('/login')
+                }
+              }}
+            >
               <FontAwesomeIcon icon={faBars} />
             </button>
             <button className={styles.logo}>

@@ -109,6 +109,7 @@ function NavbarDropdown(props) {
               href="/member"
               onClick={() => {
                 setMemberPage('member')
+                localStorage.setItem('memberPage', 'member')
               }}
             >
               會員中心
@@ -162,9 +163,10 @@ function NavbarDropdown(props) {
             </svg>
             <a
               className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              // href="/member"
+              href="/member"
               onClick={() => {
                 setMemberPage('coupon')
+                localStorage.setItem('memberPage', 'coupon')
               }}
             >
               我的優惠券
@@ -209,9 +211,10 @@ function NavbarDropdown(props) {
             </svg>
             <a
               className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              // href="/member"
+              href="/member"
               onClick={() => {
                 setMemberPage('achievement')
+                localStorage.setItem('memberPage', 'achievement')
               }}
             >
               成就獎章
@@ -245,9 +248,10 @@ function NavbarDropdown(props) {
             </svg>
             <a
               className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              // href="/member"
+              href="/member"
               onClick={() => {
                 setMemberPage('history-order')
+                localStorage.setItem('memberPage', 'history-order')
               }}
             >
               歷史訂單
@@ -274,9 +278,10 @@ function NavbarDropdown(props) {
             </svg>
             <a
               className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              // href="/member"
+              href="/member"
               onClick={() => {
                 setMemberPage('comment')
+                localStorage.setItem('memberPage', 'comment')
               }}
             >
               過往評論
@@ -301,9 +306,10 @@ function NavbarDropdown(props) {
             </svg>
             <a
               className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              // href="/member"
+              href="/member"
               onClick={() => {
                 setMemberPage('favorite')
+                localStorage.setItem('memberPage', 'favorite')
               }}
             >
               收藏路線

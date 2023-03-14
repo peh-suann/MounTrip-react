@@ -29,10 +29,11 @@
     width: 390px;
     /* height: 844px; */
     height: calc(100% - 100px);
-    left: 0;
-    top: 0;
+    right: 0;
+    left:0;
+    /* top: 100px; */
     background: rgba(0, 0, 0, 0.25);
-    transition-duration: 2s;
+    transition-duration: .5s;
   }
 
   .dropdown-mobile {
@@ -44,7 +45,7 @@
     background: var(--mtyellow-4);
     left: 0;
     top: 0;
-    transition-duration: 2s;
+    transition-duration: .5s;
     z-index: 1001;
   }
 

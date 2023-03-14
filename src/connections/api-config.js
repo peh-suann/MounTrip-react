@@ -3,7 +3,10 @@
 
 // export const LIST_DATA = `${HOST}/member`
 // export const HOST = 'http://localhost:3001'
-export const HOST = 'http://192.168.71.105:3001'
+
+//Lai's connect
+// export const HOST = 'http://192.168.71.105:3001'
+export const HOST = 'http://127.0.0.1:3001'
 
 export const TRAILS_DATA = `${HOST}/trails?`
 

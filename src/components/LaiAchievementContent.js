@@ -6,7 +6,8 @@ import AchievementDescrib from './LaiAchievementDescrib'
 import AchievementTreeBlock from './LaiAchievementTreeBlock'
 import AchievementQuote from './LaiAchievementQuote'
 
-export default function LaiAchievementContent() {
+export default function LaiAchievementContent(props) {
+  const { user, setUser } = props
   const [clickedLevel, setClickedLevel] = useState(1)
 
   // console.log({ clickedLevel })
@@ -52,7 +53,7 @@ export default function LaiAchievementContent() {
           <h1>成就獎章</h1>
         </div>
         <div className={styles['container']}>
-          <AchievementBadge level={2} />
+          <AchievementBadge level={user.level} />
           {/* <div className={styles['badge']}>
             <div className={styles['badge-pic']}></div>
           </div> */}

@@ -408,7 +408,7 @@
         grid-template-columns: 390px ;
         grid-template-rows: 113px 1fr ;
         gap:40px;
-        padding-top: 40px;
+        padding-top: 80px;
         padding-right: 15px;
         padding-left: 15px;
         background-color: var(--mtyellow-4);

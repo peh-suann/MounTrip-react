@@ -57,6 +57,7 @@ function NavbarDropdown(props) {
               href="/member"
               onClick={() => {
                 setMemberPage('member')
+                localStorage.setItem('memberPage', 'member')
               }}
             >
               會員中心
@@ -108,10 +109,11 @@ function NavbarDropdown(props) {
             </svg>
             <a
               className={`${DropdownCss['dropdown-p']} mb-0`}
+              href="/member"
               onClick={() => {
                 setMemberPage('coupon')
+                localStorage.setItem('memberPage', 'coupon')
               }}
-              href="/member"
             >
               我的優惠券
             </a>
@@ -153,8 +155,10 @@ function NavbarDropdown(props) {
             </svg>
             <a
               className={`${DropdownCss['dropdown-p']} mb-0`}
+              href="/member"
               onClick={() => {
                 setMemberPage('achievement')
+                localStorage.setItem('memberPage', 'achievement')
               }}
             >
               成就獎章
@@ -183,7 +187,16 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownCss['dropdown-p']} mb-0`}>歷史訂單</p>
+            <a
+              className={`${DropdownCss['dropdown-p']} mb-0`}
+              href="/member"
+              onClick={() => {
+                setMemberPage('history-order')
+                localStorage.setItem('memberPage', 'history-order')
+              }}
+            >
+              歷史訂單
+            </a>
           </div>
           <div className="d-flex align-items-center">
             <svg
@@ -201,7 +214,16 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownCss['dropdown-p']} mb-0`}>過往評論</p>
+            <a
+              className={`${DropdownCss['dropdown-p']} mb-0`}
+              href="/member"
+              onClick={() => {
+                setMemberPage('comment')
+                localStorage.setItem('memberPage', 'comment')
+              }}
+            >
+              過往評論
+            </a>
           </div>
           <div
             className={`${DropdownCss['bottom-line']} d-flex align-items-center`}
@@ -221,7 +243,16 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownCss['dropdown-p']} mb-0`}>收藏路線</p>
+            <a
+              className={`${DropdownCss['dropdown-p']} mb-0`}
+              href="/member"
+              onClick={() => {
+                setMemberPage('favorite')
+                localStorage.setItem('memberPage', 'favorite')
+              }}
+            >
+              收藏路線
+            </a>
           </div>
 
           <div
