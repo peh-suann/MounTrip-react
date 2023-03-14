@@ -46,6 +46,21 @@ export default function DavisTrailsDetail(rows) {
     }
   }, [])
 
+  let rows_data = data.rows
+
+  console.log(rows_data)
+
+  const filterByKeyword = (rows_data) => {
+    if (!Array.isArray(rows_data)) {
+      return []
+    }
+    return rows_data.filter((v, i) => {
+      return v.sid === 348
+    })
+  }
+
+  console.log('filterByKeyword', filterByKeyword(rows_data))
+
   const [count, setCount] = useState(0)
 
   return (
@@ -58,7 +73,7 @@ export default function DavisTrailsDetail(rows) {
             <DavisTrailsDetailTable rows={data.rows} />
           </div> */}
       {/* {console.log('----', data.rows)} */}
-      {data.rows.map((r) => (
+      {filterByKeyword(rows_data).map((r) => (
         <div
           key={r.sid}
           className={`d-flex flex-column ${styles.container_all}`}
@@ -104,7 +119,8 @@ export default function DavisTrailsDetail(rows) {
             <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
               <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
                 <DavisTrailsImgGroup
-                  data={data}
+                  filterByKeyword={filterByKeyword}
+                  rows_data={rows_data}
                   // getListData={getListData}
                 />
                 {/* <div className="col flex-column me-5 d-none d-lg-flex">

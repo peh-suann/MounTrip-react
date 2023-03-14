@@ -4,11 +4,7 @@ import { useLocation } from 'react-router-dom'
 import styles from '../../styles/DavisTrailsDetail.module.css'
 
 function DavisTrailsImgGroup(props) {
-  const {
-    data,
-    key,
-    // getListData
-  } = props
+  const { rows_data, filterByKeyword } = props
 
   const [selectedImage, setSelectedImage] = useState(null)
 
@@ -16,9 +12,24 @@ function DavisTrailsImgGroup(props) {
     setSelectedImage(newImage)
   }
 
+  // let rows_data = data.rows
+
+  // console.log(rows_data)
+
+  // const filterByKeyword = (rows_data) => {
+  //   if (!Array.isArray(rows_data)) {
+  //     return []
+  //   }
+  //   return rows_data.filter((v, i) => {
+  //     return v.sid === 348
+  //   })
+  // }
+
+  // console.log('filterByKeyword', filterByKeyword(rows_data))
+
   return (
     <>
-      {data.rows.map((r, i) => {
+      {filterByKeyword(rows_data).map((r, i) => {
         return (
           <div key={r.sid} className="col flex-column me-5 d-none d-lg-flex">
             <div className="">

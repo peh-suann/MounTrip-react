@@ -2,6 +2,7 @@
 // export const HOST = 'http://localhost:3000'
 
 // export const LIST_DATA = `${HOST}/member`
+// 兩台電腦連線時，要用筆電wiki的ip，才能使用localstorage
 export const HOST = 'http://localhost:3001'
 export const TRAILS_DATA = `${HOST}/trails?`
 

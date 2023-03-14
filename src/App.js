@@ -1,5 +1,5 @@
 // import logo from './logo.svg'
-// import './App.css'
+import './App.css'
 // import MounTripTest1 from './pages/MounTripTest1'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './styles/Mountrip.module.css'
