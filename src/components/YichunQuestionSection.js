@@ -262,7 +262,7 @@ function YichunQuestionSection(props) {
                     )}
                     <h5>{el.answer}</h5>
                   </div>
-                  <p>{el.answer_describe}</p>
+                  <p>{el.ans_describe}</p>
                 </div>
               </div>
             )

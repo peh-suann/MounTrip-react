@@ -507,7 +507,7 @@ section.test .test_info button {
     gap: 16px;
   }
   section.products .products_title {
-    justify-content: center;
+    justify-content: space-between;
     padding-bottom: 16px;
   }
   section.products .products_title img {

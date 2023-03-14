@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
-import { CountContext, StylesContext } from './../pages/YichunProducts'
+import { StylesContext } from './../pages/YichunProducts'
 
 function YichunProductCard(props) {
   const { ranking, el, shadow } = props
-  const { count, setCount } = useContext(CountContext)
   const styles = useContext(StylesContext)
 
   return (
@@ -38,15 +37,7 @@ function YichunProductCard(props) {
               </svg>
               4.5
             </p>
-            <p
-              className={styles.difficulty}
-              onClick={() => {
-                setCount((prev) => prev + 1)
-              }}
-            >
-              難度 {el.difficulty_list_sid}
-              {count}
-            </p>
+            <p className={styles.difficulty}>難度 {el.difficulty_short}級</p>
           </div>
         </div>
         <div className={styles.information}>
