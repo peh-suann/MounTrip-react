@@ -317,10 +317,7 @@ function DavisTrailsRating() {
                   <div className="col d-flex flex-column flex-lg-row">
                     <div className="col col-lg-7 ">
                       {/* FIXME:若評論為中文字則左右對齊 */}
-                      <p className={`${styles.commont_p}`}>
-                        {r.comment}
-                        {/* 內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字。 */}
-                      </p>
+                      <p className={`${styles.commont_p}`}>{r.comment}</p>
                     </div>
                     {/* imges */}
                     <div className="col col-lg-5 d-flex flex-row">

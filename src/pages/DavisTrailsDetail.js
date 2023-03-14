@@ -7,8 +7,9 @@ import { Link } from 'react-router-dom'
 // components
 // import DavisTrailsDetailTable from '../components/DavisTrailsDetailTable'
 import DavisTrailsImgGroup from '../components/DavisTrailsDetail/DavisTrailsImgGroup'
-import DavisTrailsBatch from '../components/DavisTrailsDetail/DavisTrailsBatch'
-import DavisTrailsShopBtn from '../components/DavisTrailsDetail/DavisTrailsShopBtn'
+// import DavisTrailsBatch from '../components/DavisTrailsDetail/DavisTrailsBatch'
+// import DavisTrailsShopBtn from '../components/DavisTrailsDetail/DavisTrailsShopBtn'
+import DavisTrailsShopGroup from '../components/DavisTrailsDetail/DavisTrailsShopGroup'
 import DavisTrailsGpx from '../components/DavisTrailsDetail/DavisTrailsGpx'
 import DavisTrailsRating from '../components/DavisTrailsDetail/DavisTrailsRating'
 // import DavisGpxLeaflet from '../components/DavisTrailsDetail/DavisGpxLeaflet'
@@ -59,7 +60,7 @@ export default function DavisTrailsDetail(rows) {
 
   console.log('filterFromBatch', filterFromBatch(rows_data))
 
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
@@ -102,7 +103,7 @@ export default function DavisTrailsDetail(rows) {
               </ol>
             </nav>
           </div>
-          {console.log('Page:', data.page)}
+          {/* {console.log('Page:', data.page)} */}
           <section>
             <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
               <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
@@ -454,9 +455,13 @@ export default function DavisTrailsDetail(rows) {
                   <DavisTrailsGpx />
 
                   {/* shop-button-group TODO:拆元件 */}
-                  <div className="d-none d-lg-flex flex-column ">
-                    {/* Count */}
-                    <div className="col d-flex flex-row mb-2 justify-content-between">
+                  <DavisTrailsShopGroup
+                    data={data}
+                    filterFromBatch={filterFromBatch}
+                  />
+                  {/* <div className="d-none d-lg-flex flex-column "> */}
+                  {/* Count */}
+                  {/* <div className="col d-flex flex-row mb-2 justify-content-between">
                       <div
                         className={`col  d-flex flex-row align-items-center me-2 ${styles.shop_btn_one}`}
                       >
@@ -538,14 +543,13 @@ export default function DavisTrailsDetail(rows) {
                           />
                         </svg>
                       </button>
-                    </div>
-                    {/* level2 */}
+                    </div> */}
+                  {/* level2 */}
 
-                    <DavisTrailsBatch data={data} />
+                  {/* <DavisTrailsBatch data={data} /> */}
 
-                    {/* level3 shop_btn FIXME: */}
-                    <DavisTrailsShopBtn />
-                    {/* <button
+                  {/* level3 shop_btn  */}
+                  {/* <button
                       className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
                     >
                       <h5
@@ -572,7 +576,8 @@ export default function DavisTrailsDetail(rows) {
                         </svg>
                       </span>
                     </button> */}
-                  </div>
+                  {/* </div> */}
+                  {/*  */}
                 </div>
               </div>
             </div>
@@ -799,7 +804,6 @@ export default function DavisTrailsDetail(rows) {
           </div>
         </div>
       ))}
-      {/* ) })} */}
     </>
   )
 }

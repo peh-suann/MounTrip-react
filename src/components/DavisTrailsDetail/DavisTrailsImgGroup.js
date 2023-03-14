@@ -29,7 +29,7 @@ function DavisTrailsImgGroup(props) {
 
   return (
     <>
-      {filterFromBatch(rows_data).map((r, i) => {
+      {filterFromBatch(data.rows).map((r, i) => {
         return (
           <div key={r.sid} className="col flex-column me-5 d-none d-lg-flex">
             <div className="">
