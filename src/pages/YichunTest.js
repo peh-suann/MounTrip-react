@@ -30,6 +30,12 @@ function YichunTest() {
   const mountainY2Ref = useRef(null)
   const mountainG1Ref = useRef(null)
   const mountainY1Ref = useRef(null)
+
+  const prizemountainG2Ref = useRef(null)
+  const prizemountainY2Ref = useRef(null)
+  const prizemountainG1Ref = useRef(null)
+  const prizemountainY1Ref = useRef(null)
+
   let timeoutId
   let mouseX, mouseY
 
@@ -50,6 +56,7 @@ function YichunTest() {
   }, [])
 
   const scrollTo = async (index) => {
+    const windowHeight = window.innerHeight
     console.log(index)
     await setDisplay((prev) => {
       const newDisplay = [...prev]
@@ -57,7 +64,7 @@ function YichunTest() {
       return newDisplay
     })
     window.scrollTo({
-      top: 1018 + 1018 * index,
+      top: windowHeight + windowHeight * index,
       behavior: 'smooth',
     })
   }
@@ -68,41 +75,43 @@ function YichunTest() {
         <section
           className={styles['intro-page']}
           onMouseMove={(e) => {
-            clearTimeout(timeoutId)
-            timeoutId = setTimeout(function () {
-              // code to be executed after 100ms delay
-              const windowHeight = window.innerHeight
-              const windowWidth = window.innerWidth
-              const halfHeight = windowHeight / 2
-              const halfWidth = windowWidth / 2
+            if (window.innerWidth > 390) {
+              clearTimeout(timeoutId)
+              timeoutId = setTimeout(function () {
+                // code to be executed after 100ms delay
+                const windowHeight = window.innerHeight
+                const windowWidth = window.innerWidth
+                const halfHeight = windowHeight / 2
+                const halfWidth = windowWidth / 2
 
-              mouseX = e.clientX
-              mouseY = e.clientY
+                mouseX = e.clientX
+                mouseY = e.clientY
 
-              const moveX = (mouseX - halfWidth) / halfWidth
-              const moveY = (mouseY - halfHeight) / halfHeight
+                const moveX = (mouseX - halfWidth) / halfWidth
+                const moveY = (mouseY - halfHeight) / halfHeight
 
-              console.log('----------------------')
-              console.log('mouseX: ', mouseX)
-              console.log('mouseY: ', mouseY)
-              console.log('moveX: ', moveX)
-              console.log('moveY: ', moveY)
+                console.log('----------------------')
+                console.log('mouseX: ', mouseX)
+                console.log('mouseY: ', mouseY)
+                console.log('moveX: ', moveX)
+                console.log('moveY: ', moveY)
 
-              console.log('mountainY1Ref', mountainY1Ref)
+                console.log('mountainY1Ref', mountainY1Ref)
 
-              mountainG2Ref.current.style.transform = `translate(${
-                moveX * 1
-              }%,${moveY * 4}%) scale(1.1)`
-              mountainY2Ref.current.style.transform = `translate(${
-                moveX * -1
-              }%,${moveY * 2}%) scale(1.105)`
-              mountainG1Ref.current.style.transform = `translate(${
-                moveX * 0.5
-              }%,${moveY * 2}%) scale(1.2)`
-              mountainY1Ref.current.style.transform = `translate(${
-                moveX * -0.5
-              }%,${moveY * -3}%) scale(1.11)`
-            })
+                mountainG2Ref.current.style.transform = `translate(${
+                  moveX * 1
+                }%,${moveY * 4}%) scale(1.1)`
+                mountainY2Ref.current.style.transform = `translate(${
+                  moveX * -1
+                }%,${moveY * 2}%) scale(1.105)`
+                mountainG1Ref.current.style.transform = `translate(${
+                  moveX * 0.5
+                }%,${moveY * 2}%) scale(1.2)`
+                mountainY1Ref.current.style.transform = `translate(${
+                  moveX * -0.5
+                }%,${moveY * -3}%) scale(1.11)`
+              })
+            }
           }}
         >
           <img
@@ -339,6 +348,45 @@ function YichunTest() {
 
         <section
           className={`${styles.price} ${display[5] ? '' : styles.display}`}
+          onMouseMove={(e) => {
+            if (window.innerWidth > 390) {
+              clearTimeout(timeoutId)
+              timeoutId = setTimeout(function () {
+                // code to be executed after 100ms delay
+                const windowHeight = window.innerHeight
+                const windowWidth = window.innerWidth
+                const halfHeight = windowHeight / 2
+                const halfWidth = windowWidth / 2
+
+                mouseX = e.clientX
+                mouseY = e.clientY
+
+                const moveX = (mouseX - halfWidth) / halfWidth
+                const moveY = (mouseY - halfHeight) / halfHeight
+
+                console.log('----------------------')
+                console.log('mouseX: ', mouseX)
+                console.log('mouseY: ', mouseY)
+                console.log('moveX: ', moveX)
+                console.log('moveY: ', moveY)
+
+                console.log('mountainY1Ref', mountainY1Ref)
+
+                prizemountainG2Ref.current.style.transform = `translate(${
+                  moveX * 1
+                }%,${moveY * 4}%) scale(1.1)`
+                prizemountainY2Ref.current.style.transform = `translate(${
+                  moveX * -1
+                }%,${moveY * 2}%) scale(1.105)`
+                prizemountainG1Ref.current.style.transform = `translate(${
+                  moveX * 0.5
+                }%,${moveY * 2}%) scale(1.2)`
+                prizemountainY1Ref.current.style.transform = `translate(${
+                  moveX * -0.5
+                }%,${moveY * -3}%) scale(1.11)`
+              })
+            }
+          }}
         >
           <div className={styles['price-text']}>
             {correct.filter(Boolean).length >= 4 ? (
@@ -346,11 +394,11 @@ function YichunTest() {
             ) : correct.filter(Boolean).length > 2 ? (
               <h1 className={styles.congrats}>Keep Going!!</h1>
             ) : (
-              <h1 className={styles.congrats}>Practice makes Perfect!</h1>
+              <h1 className={styles.congrats}>Practice harder!</h1>
             )}
             <h3 className={styles['num-of-Ques']}>
               您在此測驗中一共答對 <span>{correct.filter(Boolean).length}</span>{' '}
-              題，
+              題
               <br />
               {correct.filter(Boolean).length >= 4
                 ? '登山小達人就是你！'
@@ -366,35 +414,46 @@ function YichunTest() {
                 ? '85'
                 : '95'}
               折 優惠券 乙張
-              <br />
-              快去 <a href="/">我的優惠券</a> 查收吧！
             </p>
             <div className={styles.buttons}>
-              <Button text={'來去逛逛'} link={'products'} />
-              <Button text={'前往我的優惠券'} link={''} />
+              <Button
+                text={'來去逛逛'}
+                link={'products'}
+                style={window.innerHeight > 390 ? '' : { width: '100%' }}
+              />
+              <Button
+                text={'前往我的優惠券'}
+                link={''}
+                style={window.innerHeight > 390 ? '' : { width: '100%' }}
+              />
             </div>
           </div>
           <img
             className={`${styles.mountains} ${styles.g2}`}
             src="images/yichun/test/mountain/g-2.svg"
             alt=""
+            ref={prizemountainG2Ref}
           />
           <img
             className={`${styles.mountains} ${styles.y2}`}
             src="images/yichun/test/mountain/y-2.svg"
             alt=""
+            ref={prizemountainY2Ref}
           />
           <img
             className={`${styles.mountains} ${styles.g1}`}
             src="images/yichun/test/mountain/g-1.svg"
             alt=""
+            ref={prizemountainG1Ref}
           />
           <img
             className={`${styles.mountains} ${styles.y1}`}
             src="images/yichun/test/mountain/y-1.svg"
             alt=""
+            ref={prizemountainY1Ref}
           />
           <svg
+            className={styles.test_svg_web}
             width="1920"
             height="1080"
             viewBox="0 0 1920 1080"
@@ -426,6 +485,77 @@ function YichunTest() {
                   repeatCount="indefinite"
                 ></animate>
                 SAFETYFIRST!!SAFETYFIRST!!SAFETYFIRST!!!SAFETYFIRST!!SAFETYFIRST!!SAFETYFIRST!!!SAFETYFIRST!!SAFETYFIRST!!SAFETYFIRST!!SAFETYFIRST!!SAFETYFIRST!!SAFETYFIRST!!!SAFETYFIRST!!SAFETYFIRST!!!
+              </textPath>
+            </text>
+          </svg>
+          <svg
+            className={styles.test_svg_mobile}
+            width="390"
+            height="844"
+            viewBox="0 0 390 844"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="curve_mobile_01"
+              d="M -50 30 H 440 V -50 H -50 V 30"
+              strokeLinejoin="round"
+            />
+            <path
+              id="curve_mobile_02"
+              d="M -50 80 H 440 V -50 H -50 V 80"
+              strokeLinejoin="round"
+            />
+            <path
+              id="curve_mobile_03"
+              d="M -50 130 H 440 V -50 H -50 V 130"
+              strokeLinejoin="round"
+            />
+            <text>
+              <textPath
+                alignmentBaseline="middle"
+                href="#curve_mobile_01"
+                startOffset="100%"
+              >
+                <animate
+                  attributeName="startOffset"
+                  from="100%"
+                  to="0%"
+                  begin="0s"
+                  dur="6s"
+                  repeatCount="indefinite"
+                ></animate>
+                SAFETYFIRST!!SAFETYFIRST!!SAFETYFIRST!!!SAFETYFIRST!!!SAFETYFIRST!!!
+              </textPath>
+              <textPath
+                alignmentBaseline="middle"
+                href="#curve_mobile_02"
+                startOffset="100%"
+              >
+                <animate
+                  attributeName="startOffset"
+                  from="0%"
+                  to="100%"
+                  begin="0s"
+                  dur="8s"
+                  repeatCount="indefinite"
+                ></animate>
+                SAFETYFIRST!!SAFETYFIRST!!SAFETYFIRST!!!SAFETYFIRST!!!SAFETYFIRST!!!SAFETYFIRST!!!SAFETYFIRST!!!
+              </textPath>
+              <textPath
+                alignmentBaseline="middle"
+                href="#curve_mobile_03"
+                startOffset="100%"
+              >
+                <animate
+                  attributeName="startOffset"
+                  from="100%"
+                  to="0%"
+                  begin="0s"
+                  dur="6.5s"
+                  repeatCount="indefinite"
+                ></animate>
+                SAFETYFIRST!!SAFETYFIRST!!!SAFETYFIRST!!!SAFETYFIRST!!SAFETYFIRST!!!SAFETYFIRST!!!!
               </textPath>
             </text>
           </svg>

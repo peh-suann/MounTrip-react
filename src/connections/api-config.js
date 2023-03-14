@@ -17,6 +17,7 @@ export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 // export const LIST_DATA = `${HOST}/member`
 // yichun's connect
 // export const HOST = 'http://192.168.71.118:3000'
+// export const HOST = 'http://192.168.100.140:3000'
 // export const HOST = 'http://127.0.0.1:3000'
 
 export const ALL_PRODUCTS = `${HOST}/products`

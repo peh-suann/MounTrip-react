@@ -11,6 +11,9 @@ body {
 * {
   /* border: 1px solid red; */
 }
+section {
+  height: fit-content;
+}
 /* top-bar -------------------------------------------- */
 #product_top_bar {
   width: 100%;
@@ -26,6 +29,7 @@ body {
 /* products -------------------------------------------- */
 section.products {
   width: 100%;
+  height: fit-content;
   padding: 40px 120px;
   padding-top: 120px;
 
@@ -219,6 +223,7 @@ section.theme {
   margin-bottom: 100px;
 
   width: 100%;
+  height: fit-content;
 
   /* display: none; */
 
@@ -415,4 +420,159 @@ section.test .test_info button {
   letter-spacing: 0.1em;
   color: var(--mtyellow-4);
   background-color: var(--mtgreen-1);
+}
+
+@media screen and (max-width: 390px) {
+  section {
+    height: fit-content;
+  }
+  #product_top_bar {
+    height: 580px;
+  }
+  /* search bar  */
+  /* products -------------------------------------------- */
+  section.products {
+    padding: 40px 15px;
+    gap: 16px;
+  }
+  section.products .products_title {
+    justify-content: center;
+    padding-bottom: 16px;
+  }
+  section.products .products_title img {
+    display: none;
+  }
+  section.products .products_title h2 {
+    font-weight: 700;
+    font-size: 22px;
+    /* line-height: 7px; */
+    letter-spacing: 0.1em;
+  }
+  .row-of-products {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .pic {
+    height: 200px;
+  }
+  .info h4 {
+    font-size: 16px;
+  }
+  .info p {
+    font-size: 12px;
+  }
+  .price p {
+    font-size: 12px;
+  }
+  .price h4 {
+    font-size: 18px;
+    font-weight: 900;
+  }
+  /* products theme -------------------------------------------- */
+  section.theme {
+    margin-top: 40px;
+  }
+  section.theme .theme_intro {
+    height: 500px;
+  }
+  section.theme .theme_intro h2 {
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+  }
+  section.theme .theme_intro p {
+    font-weight: 350;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+  }
+  section.theme .theme_intro button {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: 0.1em;
+  }
+  section.theme .row-of-products {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0px 15px;
+    margin-top: -20px;
+  }
+  /* difficulty -------------------------------------------- */
+  section.difficulty {
+    height: fit-content;
+    padding: 0px 15px;
+
+    width: 100%;
+    flex-direction: column;
+  }
+  section.difficulty .diff_intro_list {
+    flex-direction: row;
+    gap: 10px;
+  }
+  section.difficulty .diff_intro_list .rank {
+    flex-direction: column;
+    align-items: center;
+  }
+  section.difficulty .diff_intro_list .diff_intro {
+    width: 110px;
+  }
+  section.difficulty .diff_intro_list .diff_intro h4 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+  section.difficulty .diff_intro_list .diff_intro p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+  }
+  section.difficulty .diff_intro_list .diff_intro button {
+    display: none;
+  }
+  section.difficulty .diff_recommend .diff_products {
+    flex-direction: column;
+  }
+  /* test -------------------------------------------- */
+  section.test {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    height: 330px;
+    background-image: url(./../../../public/images/yichun/test_bgi.jpg);
+    padding: 36px;
+  }
+  section.test .test_info {
+    width: calc(100% - 72px);
+    height: calc(100% - 72px);
+    padding: 30px;
+    gap: 12px;
+  }
+  section.test .test_info h5 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: 0.1em;
+  }
+  section.test .test_info p {
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 350;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+  }
+  section.test .test_info button {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: 0.1em;
+    padding: 4px 24px;
+  }
+  
 }
