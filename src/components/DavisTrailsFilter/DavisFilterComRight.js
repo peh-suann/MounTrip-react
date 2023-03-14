@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom'
 import styles from '../../styles/DavisTrailsFilter.module.css'
 
 function DavisFilterComRight(props) {
-  const { data } = props
+  const { data, rows_data, filterByKeyword } = props
+
+  console.log('filterByKeyword', filterByKeyword(rows_data))
   return (
     <>
-      {data.rows.map((r) => (
+      {filterByKeyword(rows_data).map((r) => (
         <div key={r.sid} className={` d-flex flex-column ${styles.right_card}`}>
           <div className={`${styles.sub_title}`}>
             <div className="d-flex p-0">

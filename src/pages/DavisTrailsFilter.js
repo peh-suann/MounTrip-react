@@ -36,6 +36,20 @@ function DavisTrailsFilter() {
     setData(response.data)
   }
 
+  console.log(data.rows)
+
+  let rows_data = data.rows
+  const filterByKeyword = (rows_data) => {
+    if (!Array.isArray(rows_data)) {
+      return []
+    }
+    return rows_data.filter((v, i) => {
+      return v.sid === 348
+    })
+  }
+
+  console.log('filterByKeyword', filterByKeyword(rows_data))
+
   useEffect(() => {
     getListData(+usp.get('page'))
     return () => {
@@ -222,8 +236,12 @@ function DavisTrailsFilter() {
               搜尋
             </button>
           </div> */}
-          {/*computer size right_card  */}
-          <DavisFilterComRight data={data} />
+          {/*computer size right_card TODO: */}
+          <DavisFilterComRight
+            data={data}
+            rows_data={rows_data}
+            filterByKeyword={filterByKeyword}
+          />
           {/* <div className={` d-flex flex-column ${styles.right_card}`}>
             <div className={`${styles.sub_title}`}>
               <div className="d-flex p-0">
