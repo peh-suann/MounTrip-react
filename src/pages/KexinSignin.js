@@ -12,6 +12,8 @@ import { SIGNIN } from '../connections/api-config'
 import axios from 'axios'
 
 function KexinSignin() {
+  const [samePassword, setSamePassword] = useState(false);
+
   const [myForm, setMyForm] = useState({
     account: '',
     password: '',
@@ -102,26 +104,14 @@ function KexinSignin() {
                 onSubmit={(e) => {
                   e.preventDefault()
                   const form1 = document.forms['form1']
-                  console.log(form1.account.value)
-                  // axios.post(SIGNIN, myForm).then((response) => {
-                  //   console.log(response.data)
-                  //   // if (response.data.success) {
-                  //   //   const { account, accountId, token } = response.data
-                  //   //   localStorage.setItem(
-                  //   //     'myAuth',
-                  //   //     JSON.stringify({ account, accountId, token })
-                  //   //   )
-                  //   //   setMyAuth({
-                  //   //     authorized: true,
-                  //   //     account,
-                  //   //     token,
-                  //   //     sid: accountId,
-                  //   //   })
-                  //   //   navigate('/index')
-                  //   // } else {
-                  //   //   alert(response.data.error || '帳號或密碼錯誤')
-                  //   // }
-                  // })
+                  if (form1.password.value != form1.password1.value) {
+                    setSamePassword(true)
+                  } else {
+                    setSamePassword(false)
+                    axios.post(SIGNIN, myForm).then((response) => {
+                      // console.log(response.data)
+                    })
+                  }
                 }}
               >
                 <div className="mb-3">
@@ -134,6 +124,13 @@ function KexinSignin() {
                     id="account"
                     name="account"
                     required
+                    onChange={(e) => {
+                      console.log(e.target.value)
+                      setMyForm((prev) => ({
+                        ...myForm,
+                        account: e.target.value,
+                      }))
+                    }}
                   />
                   <div className="form-text"></div>
                 </div>
@@ -147,19 +144,33 @@ function KexinSignin() {
                     id="password"
                     name="password"
                     required
+                    onChange={(e) => {
+                      setMyForm((prev) => ({
+                        ...myForm,
+                        password: e.target.value,
+                      }))
+                    }}
                   />
+                  {samePassword ? <span className={signinStyles.textnotes}>輸入密碼不相同</span> : ''}
                   <div className="form-text"></div>
                 </div>
                 <div className="mb-4">
-                  <label for="password" className="form-label">
+                  <label for="password1" className="form-label">
                     密碼確認
                   </label>
                   <input
                     type="password"
                     className="form-control"
-                    id="password"
-                    name="password"
+                    id="password1"
+                    name="password1"
+                    onChange={(e) => {
+                      setMyForm((prev) => ({
+                        ...myForm,
+                        password1: e.target.value,
+                      }))
+                    }}
                   />
+                  {samePassword ? <span className={signinStyles.textnotes}>輸入密碼不相同</span> : ''}
                   <div className="form-text"></div>
                 </div>
                 <div className={`${signinStyles['button']}`}>

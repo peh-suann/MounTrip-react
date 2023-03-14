@@ -67,6 +67,14 @@
   border-radius: 10px;
 }
 
+.kexinSignin .loginForm .textnotes {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: 0.1em;
+  color: var(--mtgrey-3);
+}
+
 .kexinSignin #account {
   width: 100%;
 }
@@ -74,6 +82,8 @@
 .kexinSignin #password {
   width: 100%;
 }
+
+
 
 .kexinSignin .button {
   display: flex;
