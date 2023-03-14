@@ -118,13 +118,13 @@ main .right_card {
 
 .h5_sub_title_search {
   margin: 0px 35px;
-
   font-size: 20px;
+  /* line-height: 7px; */
   font-weight: 700;
   letter-spacing: 0.1em;
-  line-height: 7px;
   align-items: center;
   text-align: center;
+  /* white-space:pre-wrap */
 }
 
 
@@ -193,6 +193,7 @@ main .right_card {
 .details_pagination .pagination_nav {
   position: relative;
   padding: 0px;
+  z-index: 0;
 }
 
 .pagination_nav .li_margin {
@@ -210,6 +211,7 @@ main .right_card {
   .phone_container {
     display: flex;
     height: 165vh;
+    padding-top: 100px;
   }
 
   .input_with_icon {
