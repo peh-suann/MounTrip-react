@@ -24,7 +24,7 @@ export const POP_PRODUCTS = `${HOST}/popular_products`
 export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
 export const LOGIN = `${HOST}/login`
-export const HOSTIan = 'http://localhost:3000/Ian'
+export const HOSTIan = 'http://localhost:3000'
 
 export const TRAILS_SEASON = `${HOSTIan}/Season`
 export const TRAILS_COMMENT = `${HOSTIan}/seasonComment`

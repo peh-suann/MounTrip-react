@@ -1,8 +1,9 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
+div.IanShoppingCartAll{
+  margin: 0px 240px;
+  padding-top: 5%;
 }
+
 
 div.shoppingSvgs{
   padding-top: 3%;
@@ -39,9 +40,7 @@ div.shoppingbottom{
   position: absolute;
   top: 100px;
 }
-div.IanShoppingCartAll{
-  margin: 0px 240px;
-}
+
 
 
 
@@ -275,17 +274,10 @@ button.next {
 @media screen and (max-width: 400px) {
   div.IanShoppingCartAll{
     margin: 0px;
-    height: 150vh;
-  }
-  nav.navbar {
-    display: none;
+    height: 15vh;
+    padding-top:5% ;
   }
 
-  /* .bg-image {
-    height: 130vh;
-    background: none;
-    background-color: var(--mtyellow-4);
-  } */
 div.shoppingNavbar{
   margin: 0;
 }
@@ -320,20 +312,15 @@ div.shoppingNavbar{
   }
   div.shoppingbottom{
     position: absolute;
-    top: 60px;
-  }
-  div.IanShoppingCartAll{
-    margin:0px;
-    height: 15vh;
+    top: 108%;
   }
   .shopping-cart-process{
-    height: 15vh;
+    padding-top: 15%;
+    height: 20vh;
   }
 
   .shopping-cart-process.web-none > a > svg {
-    /* padding: 0px 47px; */
     height: 20vh;
-    /* margin-bottom: 12px; */
   }
 
 

@@ -244,6 +244,7 @@ function IanShoppingCart3() {
           </div>
         </section>
       </div>
+
       <div
         className={`${styles['wrap-container']} ${styles['shopping-cart-contain']} ${styles['mb-50']}`}
       >
@@ -284,7 +285,7 @@ function IanShoppingCart3() {
           <h3>付款方式</h3>
         </div>
         <div
-          className={`${styles['mb-50']} ${styles['credit-card-type']} d-flex align-items-center`}
+          className={`${styles['credit-card-type']} d-flex align-items-center`}
         >
           <svg
             className={`me-2`}

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 function IanOrderDetail(props) {
-  const { styles, items, setItems } = props
+  const { styles, items, setItems, handleFieldChange } = props
   const [open, setOpen] = useState(true)
   const [show, setShow] = useState(false)
-  const [check, setCheck] = useState(false)
+  // const [check, setCheck] = useState(false)
   const [details, setDetails] = useState([
     {
       id: '',
@@ -14,8 +14,23 @@ function IanOrderDetail(props) {
       email: '',
       idCard: '',
       birthday: '',
+      check: false,
     },
   ])
+
+  const newItems = items.map((v, i) => {
+    return { ...v, check: true }
+  })
+
+  const getDetail = (arr, checknow, arr2) => {
+    return arr.map((v, i) => {
+      if (v.check === checknow) {
+        return { ...v, check: !v.check }
+      } else {
+        return { ...v }
+      }
+    })
+  }
 
   return (
     <>
@@ -222,15 +237,9 @@ function IanOrderDetail(props) {
                   type="checkbox"
                   id="sameOrder"
                   name="sameOrder"
-                  checked={check}
+                  checked={v.check}
                   onClick={() => {
-                    setCheck(!check)
-                    // if (check === true) {
-                    //   return setDetails(items)
-                    // } else {
-                    //   return setDetails(details)
-                    // }
-                    setDetails(items)
+                    setDetails(getDetail(newItems, v.check, details))
                   }}
                 />
                 <label htmlFor="sameOrder" className={`${styles.dataSame}`}>
