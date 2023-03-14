@@ -50,35 +50,23 @@ export default function DavisTrailsDetail(rows) {
 
   console.log(rows_data)
 
-  const filterByKeyword = (rows_data) => {
+  const filterFromBatch = (rows_data) => {
     if (!Array.isArray(rows_data)) {
       return []
     }
-    return rows_data.filter((v, i) => {
-      return v.sid === 348
-    })
+    return rows_data.slice(0, 1)
   }
 
-  console.log('filterByKeyword', filterByKeyword(rows_data))
+  console.log('filterFromBatch', filterFromBatch(rows_data))
 
   const [count, setCount] = useState(0)
 
   return (
     <>
-      {/* 
-       mobile 購物車fix
-         */}
-      {/* <div className="container">
-            {console.log('----', data.rows)}
-            <DavisTrailsDetailTable rows={data.rows} />
-          </div> */}
-      {/* {console.log('----', data.rows)} */}
-      {filterByKeyword(rows_data).map((r) => (
+      {filterFromBatch(data.rows).map((r) => (
         <div
           key={r.sid}
           className={`d-flex flex-column ${styles.container_all}`}
-          // className={styles.container_all}
-          // className="container_all d-flex flex-column "
         >
           <div className="col p-0">
             {/* top-img */}
@@ -114,41 +102,15 @@ export default function DavisTrailsDetail(rows) {
               </ol>
             </nav>
           </div>
-
+          {console.log('Page:', data.page)}
           <section>
             <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
               <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
                 <DavisTrailsImgGroup
-                  filterByKeyword={filterByKeyword}
+                  filterFromBatch={filterFromBatch}
                   rows_data={rows_data}
-                  // getListData={getListData}
+                  data={data}
                 />
-                {/* <div className="col flex-column me-5 d-none d-lg-flex">
-                  <div className="">
-                    <img
-                      className={`${styles.img_cover_one}`}
-                      src={`/imgs/Davis/${r.trail_sid}-1.jpg`}
-                      alt=""
-                    />
-                  </div>
-                  <div className={`d-flex flex-row ${styles.img_wrap_three}`}>
-                    <img
-                      className={`${styles.img_cover_three}`}
-                      src={`/imgs/Davis/${r.trail_sid}-1.jpg`}
-                      alt=""
-                    />
-                    <img
-                      className={`${styles.img_cover_three}`}
-                      src={`/imgs/Davis/${r.trail_sid}-2.jpg`}
-                      alt=""
-                    />
-                    <img
-                      className={`${styles.img_cover_three}`}
-                      src={`/imgs/Davis/${r.trail_sid}-3.jpg`}
-                      alt=""
-                    />
-                  </div>
-                </div> */}
                 {/* right-card */}
                 <div className="col">
                   <h4 className="fw-bold mb-3">{r.trail_name}</h4>
@@ -837,6 +799,7 @@ export default function DavisTrailsDetail(rows) {
           </div>
         </div>
       ))}
+      {/* ) })} */}
     </>
   )
 }

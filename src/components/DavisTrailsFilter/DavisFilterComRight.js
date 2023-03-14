@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 import styles from '../../styles/DavisTrailsFilter.module.css'
 
 function DavisFilterComRight(props) {
-  const { data, rows_data, filterByKeyword } = props
+  const { data, rows_data, filterFromBatch } = props
 
-  console.log('filterByKeyword', filterByKeyword(rows_data))
+  console.log('filterFromBatch', filterFromBatch(rows_data))
   return (
     <>
-      {filterByKeyword(rows_data).map((r) => (
+      {filterFromBatch(rows_data).map((r) => (
         <div key={r.sid} className={` d-flex flex-column ${styles.right_card}`}>
           <div className={`${styles.sub_title}`}>
             <div className="d-flex p-0">
@@ -55,7 +55,7 @@ function DavisFilterComRight(props) {
             </div>
           </div>
           <div className="col">
-            {/* card*n TODO: */}
+            {/* card*n  */}
             <div className={`${styles.trails_card}`}>
               <div className="row g-0 d-flex flex-row ">
                 <div className={`col-4 ${styles.trails_img_wrap}`}>
@@ -67,7 +67,15 @@ function DavisFilterComRight(props) {
                 </div>
                 <div className="col ">
                   <div className={`card-body ${styles.card_padding}`}>
-                    <h5 className={`${styles.product_name}`}>{r.trail_name}</h5>
+                    {/* TODO: */}
+                    <h5 className={`${styles.product_name}`}>
+                      <Link
+                        className={`${styles.link_style}`}
+                        to={`/trails-detail?page=${r.trail_sid}`}
+                      >
+                        {r.trail_name}
+                      </Link>
+                    </h5>
                     <div className="mb-2">
                       <p
                         className={`mb-0 ${styles['overflow_p']} ${styles['p_line_clamp']} `}
@@ -267,37 +275,6 @@ function DavisFilterComRight(props) {
                     <span aria-hidden="true">&raquo;</span>
                   </Link>
                 </li>
-                {/* <li className="page-item li_margin">
-                        <a className="page-link a_decoration fw-bold" href="#">
-                          1
-                        </a>
-                      </li>
-                      <li className="page-item li_margin">
-                        <a className="page-link a_decoration fw-bold" href="#">
-                          2
-                        </a>
-                      </li>
-                      <li className="page-item li_margin">
-                        <span className="page-link a_decoration fw-bold">
-                          {' '}
-                          ...{' '}
-                        </span>
-                      </li>
-                      <li className="page-item li_margin">
-                        <a className="page-link a_decoration fw-bold" href="#">
-                          9
-                        </a>
-                      </li>
-                      <li className="page-item li_margin">
-                        <a className="page-link fw-bold" href="#">
-                          10
-                        </a>
-                      </li>
-                      <li className="page-item li_margin">
-                        <a className="page-link" href="#" aria-label="Next">
-                          <span aria-hidden="true">&raquo;</span>
-                        </a>
-                      </li> */}
               </ul>
             </nav>
           </div>

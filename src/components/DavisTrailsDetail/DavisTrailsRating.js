@@ -28,7 +28,7 @@ function DavisTrailsRating() {
 
   // let rows_data = data.rows
 
-  // const filterByKeyword = (rows_data) => {
+  // const filterFromBatch = (rows_data) => {
   //   if (!Array.isArray(rows_data)) {
   //     return []
   //   }
