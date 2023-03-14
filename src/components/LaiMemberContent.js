@@ -1,10 +1,71 @@
 import React, { useContext } from 'react'
 import styles from './../styles/Member.module.css'
-import {MemberContext} from './../contexts/MemberContext.js'
+import { MemberContext } from './../contexts/MemberContext.js'
+import AuthContext from './../contexts/AuthContexts'
 
-export default function MemberContent() {
- 
-  const page = useContext(MemberContext)
+export default function MemberContent(props) {
+  const { user, setUser } = props
+  // const { myAuth, setMyAuth, logout } = useContext(AuthContext)
+
+  //性別欄位用
+  // const genderSwitch = (params) => {
+  //   switch (params) {
+  //     case 'male':
+  //       return (
+  //         <>
+  //           <select
+  //             value="male"
+  //             onChange={(e) => {
+  //               setUser(e.target.value)
+  //             }}
+  //           >
+  //             <option value="male">男性</option>
+  //             <option value="female">女性</option>
+  //             <option value="none">不透露</option>
+  //           </select>
+  //         </>
+  //       )
+  //     case 'female':
+  //       return (
+  //         <>
+  //           <select
+  //             value="female"
+  //             onChange={(e) => {
+  //               setUser(e.target.value)
+  //             }}
+  //           >
+  //             <option value="male">男性</option>
+  //             <option value="female">女性</option>
+  //             <option value="none">不透露</option>
+  //           </select>
+  //         </>
+  //       )
+  //     case 'none':
+  //       return (
+  //         <>
+  //           <select
+  //             value="none"
+  //             onChange={(e) => {
+  //               setUser(e.target.value)
+  //             }}
+  //           >
+  //             <option value="male">男性</option>
+  //             <option value="female">女性</option>
+  //             <option value="none">不透露</option>
+  //           </select>
+  //         </>
+  //       )
+  //   }
+  // }
+  //生日日期格式轉換
+  const birthDate = new Date(user.birthday)
+  const year = birthDate.getFullYear()
+  const month = String(birthDate.getMonth() + 1).padStart(2, '0') //預設字串長度要兩個字，用0填充不夠的部分
+  const day = String(birthDate.getDate()).padStart(2, '0')
+  const dateFormat = `${year}-${month}-${day}`
+
+  // console.log('生日：', dateFormat)
+
   return (
     <>
       <div className={styles['member-data']}>
@@ -38,23 +99,52 @@ export default function MemberContent() {
             <label htmlFor="" className="">
               名字
             </label>
-            <input type="text" className="" id="" name="" required />
+            <input
+              type="text"
+              className=""
+              id=""
+              name=""
+              value={user.firstname}
+              onChange={(e) => {
+                setUser(e.target.value)
+              }}
+              required
+            />
           </div>
           <div className={`${styles['fname-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="" className={''}>
               姓氏
             </label>
-            <input type="text" className={''} id="" name="" required />
+            <input
+              type="text"
+              className={''}
+              id=""
+              name=""
+              value={user.lastname}
+              onChange={(e) => {
+                setUser(e.target.value.lastname)
+              }}
+              required
+            />
           </div>
           <div className={`${styles['gender-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="" className="">
               性別
             </label>
-            <select>
-              <option>男性</option>
-              <option>女性</option>
-              <option>不透露</option>
+            <select
+              value={user.gender}
+              onChange={(e) => {
+                setUser(e.target.value)
+              }}
+            >
+              <option value="male">男性</option>
+              <option value="female">女性</option>
+              <option value="none">不透露</option>
             </select>
+            {/* {genderSwitch(user.gender)} */}
+            {/* <option value="male">男性</option>
+              <option value="female">女性</option>
+              <option value="none">不透露</option> */}
           </div>
           <div
             className={`${styles['birth-wrap']} ${styles['input-blocks']}`}
@@ -63,19 +153,49 @@ export default function MemberContent() {
             <label htmlFor="" className="">
               出生年月日
             </label>
-            <input type="date" className="" id="" name="" required />
+            <input
+              type="date"
+              className=""
+              id=""
+              name=""
+              value={dateFormat}
+              onChange={(e) => {
+                setUser(e.target.value.birthday)
+              }}
+              required
+            />
           </div>
           <div className={`${styles['id-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="" className="">
               身分證字號
             </label>
-            <input type="text" className="" id="" name="" required />
+            <input
+              type="text"
+              className=""
+              id=""
+              name=""
+              value={user.personal_id}
+              onChange={(e) => {
+                setUser(e.target.value.personal_id)
+              }}
+              required
+            />
           </div>
           <div className={`${styles['phone-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="" className="">
               聯絡電話
             </label>
-            <input type="text" className="" id="" name="" required />
+            <input
+              type="text"
+              className=""
+              id=""
+              name=""
+              value={user.mobile}
+              onChange={(e) => {
+                setUser(e.target.value.mobile)
+              }}
+              required
+            />
           </div>
           <div
             className={`${styles['account-wrap']} ${styles['input-blocks']}`}
@@ -83,13 +203,33 @@ export default function MemberContent() {
             <label htmlFor="" className="">
               會員帳號
             </label>
-            <input type="text" className={''} id="" name="" required />
+            <input
+              type="text"
+              className={''}
+              id=""
+              name=""
+              value={user.account}
+              onChange={(e) => {
+                setUser(e.target.value)
+              }}
+              required
+            />
           </div>
           <div className={`${styles['email-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="" className="">
               電子信箱
             </label>
-            <input type="email" className="" id="" name="" required />
+            <input
+              type="email"
+              className=""
+              id=""
+              name=""
+              value={user.email}
+              onChange={(e) => {
+                setUser(e.target.value)
+              }}
+              required
+            />
           </div>
           <div className={`${styles['zip-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="" className="">
@@ -100,12 +240,26 @@ export default function MemberContent() {
           <div className={`${styles['city-wrap']} ${styles['input-blocks']}`}>
             <div className={styles['fake-label-city']}></div>
             <select>
-              <option>台北市</option>
+              <option>基隆市</option>
+              <option>臺北市</option>
               <option>新北市</option>
               <option>桃園市</option>
-              <option>台中市</option>
-              <option>台南市</option>
+              <option>新竹市</option>
+              <option>新竹縣</option>
+              <option>苗栗縣</option>
+              <option>臺中市</option>
+              <option>彰化縣</option>
+              <option>南投縣</option>
+              <option>嘉義市</option>
+              <option>嘉義縣</option>
+              <option>臺南市</option>
               <option>高雄市</option>
+              <option>屏東縣</option>
+              <option>宜蘭縣</option>
+              <option>台東縣</option>
+              <option>花蓮縣</option>
+              <option>澎湖縣</option>
+              <option>連江縣</option>
             </select>
           </div>
           <div

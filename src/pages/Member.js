@@ -9,10 +9,37 @@ import FavoriteContent from '../components/LaiFavoriteContent'
 import MobileDropdown from '../components/LaiMobileDropdown'
 import MemberProfile from '../components/LaiMemberProfile'
 import { MemberContext } from './../contexts/MemberContext.js'
-
+import AuthContext from './../contexts/AuthContexts.js'
+import { MEMBER_DATA, USER_DATA } from '../connections/api-config'
+import axios from 'axios'
 // import Gift from '../../src/icons/gift.svg'
 
 export default function Member() {
+  //顯示localstorage的登入者的資訊
+  const { myAuth, setMyAuth, logout } = useContext(AuthContext)
+  //先設定為空陣列，在把一個個user obj放進去
+  const [user, setUser] = useState([])
+  //抓資料的函式
+  const getUser = async () => {
+    try {
+      const res = await axios.get(MEMBER_DATA)
+      const currentUserId = myAuth.sid
+      const currentUserData = res.data.rows[currentUserId - 1]
+      setUser(currentUserData)
+      console.log('member-data-rows:', res.data.rows)
+      console.log('user:', currentUserData)
+      return currentUserData
+    } catch (error) {
+      console.log('error')
+      return []
+    }
+  }
+  //用useEffect呼叫getUser()
+  useEffect(() => {
+    getUser()
+    window.scrollTo(0, 0)
+  }, [])
+
   //useContext Navbar選擇分頁
   const { memberPage, setMemberPage } = useContext(MemberContext)
 
@@ -66,10 +93,10 @@ export default function Member() {
         <div className={styles['sidebar']}>
           <MemberProfile
             img={''}
-            name={'樂齊'}
-            familyname={'賴'}
-            level={2}
-            account={'LLAI87'}
+            name={user.firstname}
+            familyname={user.lastname}
+            level={user.member_status}
+            account={myAuth.account}
           />
           <button
             className={styles['edit-btn']}
@@ -135,9 +162,7 @@ export default function Member() {
               </button>
             </li>
             <li
-              className={
-                memberPage === 'achievement' ? styles['active'] : null
-              }
+              className={memberPage === 'achievement' ? styles['active'] : null}
             >
               <button
                 onClick={() => {
@@ -243,9 +268,7 @@ export default function Member() {
                 <span>過往評論</span>
               </button>
             </li>
-            <li
-              className={memberPage === 'favorite' ? styles['active'] : null}
-            >
+            <li className={memberPage === 'favorite' ? styles['active'] : null}>
               <button
                 onClick={() => {
                   handleDisplayPage('favorite')
@@ -274,12 +297,24 @@ export default function Member() {
         </div>
         {/* <MemberContent /> */}
         {/* <CouponContent /> */}
-        {memberPage === 'member' && <MemberContent />}
-        {memberPage === 'coupon' && <CouponContent />}
-        {memberPage === 'achievement' && <AchievementContent />}
-        {memberPage === 'history-order' && <HistoryOrder />}
-        {memberPage === 'comment' && <CommentContent />}
-        {memberPage === 'favorite' && <FavoriteContent />}
+        {memberPage === 'member' && (
+          <MemberContent user={user} setUser={setUser} />
+        )}
+        {memberPage === 'coupon' && (
+          <CouponContent user={user} setUser={setUser} />
+        )}
+        {memberPage === 'achievement' && (
+          <AchievementContent user={user} setUser={setUser} />
+        )}
+        {memberPage === 'history-order' && (
+          <HistoryOrder user={user} setUser={setUser} />
+        )}
+        {memberPage === 'comment' && (
+          <CommentContent user={user} setUser={setUser} />
+        )}
+        {memberPage === 'favorite' && (
+          <FavoriteContent user={user} setUser={setUser} />
+        )}
       </div>
       <div className={styles['mobile-menu']}>
         <div
@@ -331,14 +366,14 @@ export default function Member() {
             />
           </svg> */}
         </div>
-        {mobileMenu === true && (
+        {/* {mobileMenu === true && (
           <MobileDropdown
             memberPage={memberPage}
             setMemberPage={setMemberPage}
             ref={menuRef}
             scrollPosition={btnTopPosition}
           />
-        )}
+        )} */}
       </div>
     </>
   )
