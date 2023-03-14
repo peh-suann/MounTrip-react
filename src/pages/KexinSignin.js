@@ -12,7 +12,8 @@ import { SIGNIN } from '../connections/api-config'
 import axios from 'axios'
 
 function KexinSignin() {
-  const [samePassword, setSamePassword] = useState(false);
+  const [samePassword, setSamePassword] = useState(false)
+  const [signinSuccess, setSigninSuccess] = useState(false)
 
   const [myForm, setMyForm] = useState({
     account: '',
@@ -109,7 +110,9 @@ function KexinSignin() {
                   } else {
                     setSamePassword(false)
                     axios.post(SIGNIN, myForm).then((response) => {
-                      // console.log(response.data)
+                      if (response.data['success']) {
+                        setSigninSuccess(true)
+                      }
                     })
                   }
                 }}
@@ -151,7 +154,13 @@ function KexinSignin() {
                       }))
                     }}
                   />
-                  {samePassword ? <span className={signinStyles.textnotes}>輸入密碼不相同</span> : ''}
+                  {samePassword ? (
+                    <span className={signinStyles.textnotes}>
+                      輸入密碼不相同
+                    </span>
+                  ) : (
+                    ''
+                  )}
                   <div className="form-text"></div>
                 </div>
                 <div className="mb-4">
@@ -170,8 +179,19 @@ function KexinSignin() {
                       }))
                     }}
                   />
-                  {samePassword ? <span className={signinStyles.textnotes}>輸入密碼不相同</span> : ''}
+                  {samePassword ? (
+                    <span className={signinStyles.textnotes}>
+                      輸入密碼不相同
+                    </span>
+                  ) : (
+                    ''
+                  )}
                   <div className="form-text"></div>
+                  <span
+                    className={`mt-2 mb-3 text-center ${signinStyles['signinSuccess']}`}
+                  >
+                    {signinSuccess ? '您已註冊成功, 請登入會員 ! ' : ''}{' '}
+                  </span>
                 </div>
                 <div className={`${signinStyles['button']}`}>
                   <button

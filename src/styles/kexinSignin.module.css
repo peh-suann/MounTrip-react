@@ -72,7 +72,7 @@
   font-size: 15px;
   line-height: 140%;
   letter-spacing: 0.1em;
-  color: var(--mtgrey-3);
+  color: var(--mtred-1);
 }
 
 .kexinSignin #account {
@@ -82,8 +82,6 @@
 .kexinSignin #password {
   width: 100%;
 }
-
-
 
 .kexinSignin .button {
   display: flex;
@@ -122,6 +120,14 @@
   box-shadow: none;
 }
 
+.kexinSignin .signinSuccess {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  color: var(--mtgrey-1);
+}
+
 /* .kexinSignin .button button#login:active {
   border: 2px solid var(--mtgreen-3);
   box-shadow: none;
@@ -140,6 +146,11 @@
 
 .kexinSignin .button #quick-login:active {
   border-color: var(--mtgreen-3);
+  box-shadow: none;
+}
+
+.kexinSignin .button #quick-login:focus {
+  border: 3px solid var(--mtgreen-3);
   box-shadow: none;
 }
 
