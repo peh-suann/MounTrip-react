@@ -235,11 +235,26 @@ export default function MemberContent(props) {
             <label htmlFor="" className="">
               聯絡地址
             </label>
-            <input type="text" className="" id="" name="" required />
+            <input
+              type="text"
+              className=""
+              id=""
+              name=""
+              value={user.zip}
+              onChange={(e) => {
+                setUser(e.target.value)
+              }}
+              required
+            />
           </div>
           <div className={`${styles['city-wrap']} ${styles['input-blocks']}`}>
             <div className={styles['fake-label-city']}></div>
-            <select>
+            <select
+              value={user.city}
+              onChange={(e) => {
+                setUser(e.target.value)
+              }}
+            >
               <option>基隆市</option>
               <option>臺北市</option>
               <option>新北市</option>
@@ -266,7 +281,17 @@ export default function MemberContent(props) {
             className={`${styles['address-wrap']} ${styles['input-blocks']}`}
           >
             <div className={styles['fake-label-add']}></div>
-            <input type="text" className="" id="" name="" required />
+            <input
+              type="text"
+              className=""
+              id=""
+              name=""
+              value={user.address}
+              onChange={(e) => {
+                setUser(e.target.value)
+              }}
+              required
+            />
           </div>
           <button className={styles['save-btn']}>儲存變更</button>
         </div>
