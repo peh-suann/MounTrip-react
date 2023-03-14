@@ -37,7 +37,7 @@ function YichunProductCard(props) {
               </svg>
               4.5
             </p>
-            <p className={styles.difficulty}>難度 {el.difficulty_list_sid}</p>
+            <p className={styles.difficulty}>難度 {el.difficulty_short}級</p>
           </div>
         </div>
         <div className={styles.information}>

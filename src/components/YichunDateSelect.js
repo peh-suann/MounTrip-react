@@ -9,7 +9,6 @@ import format from 'date-fns/format'
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 
-import styles from './../styles/yichun_styles/YichunSearchBar.module.css'
 import './../styles/yichun_styles/YichunSearchBarCalendar.css'
 
 function YichunDateSelect(props) {
@@ -40,7 +39,13 @@ function YichunDateSelect(props) {
 
   return (
     <>
-      <div className="calendarWrap">
+      <div
+        className={
+          document.documentElement.clientWidth > 390
+            ? 'calendarWrap'
+            : 'calendarWrap_mobile'
+        }
+      >
         <input
           type="text"
           name=""
@@ -53,20 +58,34 @@ function YichunDateSelect(props) {
           onClick={() => setOpen((open) => !open)}
         />
         <div ref={refOne}>
-          {open && (
-            <DateRange
-              onChange={(item) => setDateRange([item.selection])}
-              editableDateInputs={true}
-              moveRangeOnFirstSelection={false}
-              ranges={dateRange}
-              months={1}
-              direction="horizontal"
-              className="calendarElement"
-              rangeColors={['#6CBA7C']}
-              dateDisplayFormat="yyyy-MM-dd"
-              color="#000000"
-            />
-          )}
+          {open &&
+            (document.documentElement.clientWidth > 390 ? (
+              <DateRange
+                onChange={(item) => setDateRange([item.selection])}
+                editableDateInputs={true}
+                moveRangeOnFirstSelection={false}
+                ranges={dateRange}
+                months={1}
+                direction="horizontal"
+                className="calendarElement"
+                rangeColors={['#6CBA7C']}
+                dateDisplayFormat="yyyy-MM-dd"
+                color="#000000"
+              />
+            ) : (
+              <DateRange
+                onChange={(item) => setDateRange([item.selection])}
+                editableDateInputs={true}
+                moveRangeOnFirstSelection={false}
+                ranges={dateRange}
+                months={1}
+                direction="vertical"
+                className="calendarElement_mobile"
+                rangeColors={['#6CBA7C']}
+                dateDisplayFormat="yyyy-MM-dd"
+                color="#000000"
+              />
+            ))}
         </div>
       </div>
     </>

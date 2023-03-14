@@ -45,6 +45,10 @@ h3 {
   border-bottom: 1px solid var(--mtgrey-3);
 }
 
+.credit-card-type{
+  
+}
+
 .credit-card-type > img {
   width: 30%;
 }
