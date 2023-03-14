@@ -1,62 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './../styles/Member.module.css'
 import { MemberContext } from './../contexts/MemberContext.js'
 import AuthContext from './../contexts/AuthContexts'
 
 export default function MemberContent(props) {
   const { user, setUser } = props
+  const [lastname, setLastname] = useState(user.lastname)
+  const [firstname, setFirstame] = useState(user.firstname)
+  const [gender, setGender] = useState(user.gender)
+  const [bday, setBday] = useState(user.birthday)
+  const [personalId, setPersonalId] = useState(user.personal_id)
+  const [mobile, setMobile] = useState(user.mobile)
+  const [account, setAccount] = useState(user.account)
+  const [email, setEmail] = useState(user.email)
+  const [zip, setZip] = useState(user.zip)
+  const [city, setCity] = useState(user.city)
+  const [address, setAddress] = useState(user.address)
   // const { myAuth, setMyAuth, logout } = useContext(AuthContext)
 
-  //性別欄位用
-  // const genderSwitch = (params) => {
-  //   switch (params) {
-  //     case 'male':
-  //       return (
-  //         <>
-  //           <select
-  //             value="male"
-  //             onChange={(e) => {
-  //               setUser(e.target.value)
-  //             }}
-  //           >
-  //             <option value="male">男性</option>
-  //             <option value="female">女性</option>
-  //             <option value="none">不透露</option>
-  //           </select>
-  //         </>
-  //       )
-  //     case 'female':
-  //       return (
-  //         <>
-  //           <select
-  //             value="female"
-  //             onChange={(e) => {
-  //               setUser(e.target.value)
-  //             }}
-  //           >
-  //             <option value="male">男性</option>
-  //             <option value="female">女性</option>
-  //             <option value="none">不透露</option>
-  //           </select>
-  //         </>
-  //       )
-  //     case 'none':
-  //       return (
-  //         <>
-  //           <select
-  //             value="none"
-  //             onChange={(e) => {
-  //               setUser(e.target.value)
-  //             }}
-  //           >
-  //             <option value="male">男性</option>
-  //             <option value="female">女性</option>
-  //             <option value="none">不透露</option>
-  //           </select>
-  //         </>
-  //       )
-  //   }
-  // }
   //生日日期格式轉換
   const birthDate = new Date(user.birthday)
   const year = birthDate.getFullYear()
@@ -94,7 +55,7 @@ export default function MemberContent(props) {
           </svg>
           <h1>會員中心</h1>
         </div>
-        <div className={styles['data-area']}>
+        <form className={styles['data-area']} action="">
           <div className={`${styles['name-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="" className="">
               名字
@@ -106,7 +67,7 @@ export default function MemberContent(props) {
               name=""
               value={user.firstname}
               onChange={(e) => {
-                setUser(e.target.value)
+                setLastname(e.target.value)
               }}
               required
             />
@@ -122,7 +83,7 @@ export default function MemberContent(props) {
               name=""
               value={user.lastname}
               onChange={(e) => {
-                setUser(e.target.value.lastname)
+                setFirstame(e.target.value.lastname)
               }}
               required
             />
@@ -134,7 +95,7 @@ export default function MemberContent(props) {
             <select
               value={user.gender}
               onChange={(e) => {
-                setUser(e.target.value)
+                setGender(e.target.value)
               }}
             >
               <option value="male">男性</option>
@@ -143,8 +104,8 @@ export default function MemberContent(props) {
             </select>
             {/* {genderSwitch(user.gender)} */}
             {/* <option value="male">男性</option>
-              <option value="female">女性</option>
-              <option value="none">不透露</option> */}
+                  <option value="female">女性</option>
+                  <option value="none">不透露</option> */}
           </div>
           <div
             className={`${styles['birth-wrap']} ${styles['input-blocks']}`}
@@ -160,7 +121,7 @@ export default function MemberContent(props) {
               name=""
               value={dateFormat}
               onChange={(e) => {
-                setUser(e.target.value.birthday)
+                setBday(e.target.value.birthday)
               }}
               required
             />
@@ -176,7 +137,7 @@ export default function MemberContent(props) {
               name=""
               value={user.personal_id}
               onChange={(e) => {
-                setUser(e.target.value.personal_id)
+                setPersonalId(e.target.value.personal_id)
               }}
               required
             />
@@ -192,7 +153,7 @@ export default function MemberContent(props) {
               name=""
               value={user.mobile}
               onChange={(e) => {
-                setUser(e.target.value.mobile)
+                setMobile(e.target.value.mobile)
               }}
               required
             />
@@ -210,7 +171,7 @@ export default function MemberContent(props) {
               name=""
               value={user.account}
               onChange={(e) => {
-                setUser(e.target.value)
+                setAccount(e.target.value)
               }}
               required
             />
@@ -226,7 +187,7 @@ export default function MemberContent(props) {
               name=""
               value={user.email}
               onChange={(e) => {
-                setUser(e.target.value)
+                setEmail(e.target.value)
               }}
               required
             />
@@ -242,7 +203,7 @@ export default function MemberContent(props) {
               name=""
               value={user.zip}
               onChange={(e) => {
-                setUser(e.target.value)
+                setZip(e.target.value)
               }}
               required
             />
@@ -252,7 +213,7 @@ export default function MemberContent(props) {
             <select
               value={user.city}
               onChange={(e) => {
-                setUser(e.target.value)
+                setCity(e.target.value)
               }}
             >
               <option>基隆市</option>
@@ -288,13 +249,13 @@ export default function MemberContent(props) {
               name=""
               value={user.address}
               onChange={(e) => {
-                setUser(e.target.value)
+                setAddress(e.target.value)
               }}
               required
             />
           </div>
           <button className={styles['save-btn']}>儲存變更</button>
-        </div>
+        </form>
       </div>
     </>
   )
