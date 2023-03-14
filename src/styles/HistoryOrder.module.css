@@ -541,6 +541,7 @@
 @media screen and (max-width:390px){
     .member-data{
         width: 360px;
+        padding-bottom: 200px;
     }  
 }
 

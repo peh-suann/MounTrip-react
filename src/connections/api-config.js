@@ -3,7 +3,7 @@
 
 // export const LIST_DATA = `${HOST}/member`
 // export const HOST = 'http://localhost:3001'
-export const HOST = 'http://192.168.71.118:3000'
+export const HOST = 'http://192.168.71.105:3001'
 
 export const TRAILS_DATA = `${HOST}/trails?`
 
@@ -19,8 +19,11 @@ export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 // export const LIST_DATA = `${HOST}/member`
 // yichun's connect
 // export const HOST = 'http://192.168.71.118:3000'
-// export const HOST = 'http://192.168.100.140:3000'
-// export const HOST = 'http://127.0.0.1:3000'
+// export const HOST = 'http://192.168.71.105:3001'
+
+//member
+export const MEMBER_DATA = `${HOST}/member/api`
+export const USER_DATA = `${HOST}/member/:mid`
 
 export const ALL_PRODUCTS = `${HOST}/products`
 export const POP_PRODUCTS = `${HOST}/products_popular`

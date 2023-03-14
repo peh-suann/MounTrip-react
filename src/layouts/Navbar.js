@@ -22,8 +22,13 @@ import NavbarDropdown from '../components/NavbarDropdown'
 import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 
 export default function NavBar() {
-  const [open, setOpen] = useState(false)
+  // const [open, setOpen] = useState(false)
   const { myAuth, logout } = useContext(AuthContext)
+  const [open, setOpen] = useState(false)
+
+  //轉換會員頁面用
+  const [memberPage, setMemberPage] = useState('member')
+
 
   const [showList, setShowList] = useState(false)
   const handleClick = function () {
@@ -160,6 +165,7 @@ export default function NavBar() {
       <NavbarDropdownMobile
         showListMobile={showListMobile}
         setShowListMobile={setShowListMobile}
+        // setMemberPage={setMemberPage}
       />
     </>
   )
