@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './../styles/Coupon.module.css'
-import CouponStateBtnOn from './LaiCouponStateBtnOn'
+import CouponStateBtnOn from './LaiCouponStateBtnOff.js'
 import CouponStateBtnOff from './LaiCouponStateBtnOff'
 import CouponStateBtnFuture from './LaiCouponStateBtnFuture'
 

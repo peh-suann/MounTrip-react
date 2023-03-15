@@ -5,11 +5,15 @@ import { useNavigate } from 'react-router-dom'
 // Components
 import DropdownMobileCss from '../styles/NavbarDropdownMobile.module.css'
 import AuthContext from '../contexts/AuthContexts'
+import { MemberContext } from '../contexts/MemberContext'
 
 function NavbarDropdown(props) {
   const { showListMobile, setShowListMobile } = props
   const { myAuth, logout } = useContext(AuthContext)
   const navigate = useNavigate()
+
+  //會員頁面換頁
+  const { memberPage, setMemberPage } = useContext(MemberContext)
 
   return (
     <div
@@ -27,10 +31,8 @@ function NavbarDropdown(props) {
         }
       }}
     >
-      <div
-        className={`${DropdownMobileCss['dropdown-mobile']} d-flex flex-column justify-content-between`}
-        style={showListMobile ? { left: '0' } : { left: '-200px' }}
-      >
+      <div className={`${DropdownMobileCss['dropdown-mobile']} d-flex flex-column justify-content-between`}
+      style={showListMobile ? {left:'0'}  : {left:'-200px'}}>
         <div>
           <div className={DropdownMobileCss['top-chevronLeft']}>
             <svg
@@ -100,9 +102,8 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
-              會員中心
-            </p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}
+            >會員中心</p>
           </div>
           <div
             className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
@@ -150,9 +151,7 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
-              我的優惠券
-            </p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>我的優惠券</p>
           </div>
           <div
             className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
@@ -191,9 +190,7 @@ function NavbarDropdown(props) {
                 </clipPath>
               </defs>
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
-              成就獎章
-            </p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>成就獎章</p>
           </div>
           <div
             className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
@@ -221,9 +218,7 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
-              歷史訂單
-            </p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>歷史訂單</p>
           </div>
           <div
             className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
@@ -244,9 +239,7 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
-              過往評論
-            </p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>過往評論</p>
           </div>
           <div className="d-flex align-items-center">
             <svg
@@ -265,9 +258,7 @@ function NavbarDropdown(props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
-              收藏路線
-            </p>
+            <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>收藏路線</p>
           </div>
 
           <div

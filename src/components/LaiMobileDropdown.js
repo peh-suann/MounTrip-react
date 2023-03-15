@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import styles from './../styles/Member.module.css'
 
 const LaiMobileDropdown = React.forwardRef((props, ref) => {
-  const { displayPage, setDisplayPage, scrollPosition } = props
+  const { memberPage, setMemberPage, scrollPosition } = props
 
   const handleDisplayPage = (page) => {
     // setMobileDisplay(page)
-    props.setDisplayPage(page)
+    props.setMemberPage(page)
   }
   return (
     <>
