@@ -21,8 +21,8 @@ export default function Member() {
   //先設定為空陣列，在把一個個user obj放進去
   const [user, setUser] = useState({})
 
-  //抓資料的函式
-  const getUser = async () => {
+  //抓資料的函式，全部人的資料都在這個api
+  const getUser = async (req, res) => {
     try {
       const res = await axios.get(MEMBER_DATA)
       const currentUserId = myAuth.sid
@@ -38,7 +38,32 @@ export default function Member() {
       return []
     }
   }
+  //抓資料的函式，只抓登入會員的資料
+  const getUser2 = async (req, res) => {
+    const userString = localStorage.getItem('myAuth')
+    const user = JSON.parse(userString)
+    // console.log('u.id:', user.accountId)
+    const token = user.token
+    const mid = user.accountId
 
+    try {
+      const res = await axios.get(USER_DATA(mid), {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      if (!res) return res.sendStatus(401)
+      // const currentUserId = myAuth.sid
+      const currentUserData = res.data
+      setUser(currentUserData)
+      console.log('member-data-rows:', res.data.rows)
+      console.log('user:', currentUserData)
+      // return currentUserData
+    } catch (error) {
+      console.log('uu:', user)
+      // console.log()
+
+      return []
+    }
+  }
   //useContext Navbar選擇分頁，電腦版的分頁選擇也一起用這個state
   const { memberPage, setMemberPage } = useContext(MemberContext)
   const { page, setPage } = useState('member')
@@ -51,7 +76,7 @@ export default function Member() {
     } else {
       setMemberPage(pageState)
     }
-    getUser()
+    getUser2()
     window.scrollTo(0, 0)
     // console.log('member.user:', user)
   }, [])
@@ -67,17 +92,17 @@ export default function Member() {
   //用useEffect讓手機menu點擊外面也可以關閉
   let menuRef = useRef()
 
-  useEffect(() => {
-    let handler = (e) => {
-      if (!menuRef.current?.contains(e.target)) {
-        setMobileMenu(false)
-      }
-    }
-    document.addEventListener('click', handler)
-    return () => {
-      document.removeEventListener('click', handler)
-    }
-  }, [])
+  // useEffect(() => {
+  //   let handler = (e) => {
+  //     if (!menuRef.current?.contains(e.target)) {
+  //       setMobileMenu(false)
+  //     }
+  //   }
+  //   document.addEventListener('click', handler)
+  //   return () => {
+  //     document.removeEventListener('click', handler)
+  //   }
+  // }, [])
 
   //scroll位置改變mobile menu的位置
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -107,7 +132,7 @@ export default function Member() {
             name={user.firstname}
             familyname={user.lastname}
             level={user.level}
-            account={myAuth.account}
+            account={user.account}
           />
           <button
             className={styles['edit-btn']}
