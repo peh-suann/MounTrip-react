@@ -91,11 +91,11 @@ function DavisTrailsShopGroup(props) {
             </svg>
           </button>
         </div>
-        {/* level2 */}
+        {/* level2 TODO:*/}
 
         <DavisTrailsBatch data={data} />
 
-        {/* level3 shop_btn  */}
+        {/* level3 shop_btn TODO:  */}
         {/* {filterFromBatch(data.rows).map((r) => (
           <div key={r.trail_name}>{r.trail_name}</div>
         ))} */}

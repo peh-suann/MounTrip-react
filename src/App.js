@@ -15,6 +15,7 @@ import Index from './pages/KexinIndex'
 // import TestMemberList from './pages/TestMemberList'
 import DavisTrailsDetail from './pages/DavisTrailsDetail'
 import DavisTrailsFilter from './pages/DavisTrailsFilter'
+import DavisGpxLeaflet from './components/DavisTrailsDetail/DavisGpxLeaflet'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/test" element={<YichunTest />} />
               <Route path="/trails-detail" element={<DavisTrailsDetail />} />
               <Route path="/trails-filter" element={<DavisTrailsFilter />} />
+              <Route path="/gpx" element={<DavisGpxLeaflet />} />
             </Route>
             <Route path="/">
               {/* 登入頁面Navbar+Footer */}
