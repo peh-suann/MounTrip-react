@@ -18,33 +18,26 @@
 @media screen and (max-width: 390px) {
 
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
   .dropdown-mobile-wrap {
     position: absolute;
     width: 390px;
-    /* height: 844px; */
-    height: calc(100% - 100px);
+    height: 844px;
+    /* height: calc(100% - 100px); */
     left: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.25);
-    transition-duration: 2s;
+    transition-duration: 0.5s;
+    z-index: 1001;
   }
 
   .dropdown-mobile {
     width: 200px;
     height: 100%;
-    /* height: calc(100% - 100px); */
-    gap:100px;
     position: absolute;
     background: var(--mtyellow-4);
     left: 0;
     top: 0;
-    transition-duration: 2s;
+    transition-duration: 0.5s;
     z-index: 1001;
   }
 
@@ -76,7 +69,7 @@
 
   .dropdown-mobile .link {
     display: block;
-    padding-bottom: 28px;
+    margin-bottom: 28px;
     color: var(--mtgreen-1);
     text-decoration: none;
     font-size: 18px;
@@ -106,6 +99,11 @@
     align-items: center;
     letter-spacing: 0.1em;
     color: var(--mtgrey-2);
+  }
+
+  .dropdown-mobile .member-list div {
+    color: var(--mtgrey-2);
+    font-size: 18px;
   }
 
   .dropdown-mobile .logout {
