@@ -1,28 +1,47 @@
 .calendarWrap {
-    position: relative;
-    width: 300px;
-  }
-.calendarWrap input{
-      width: 100%;
-  }
-.calendarElement {
-    position: absolute;
-    top: 50px;
-    left: -97px;
-  
-    /* background-color: #d9e8d7; */
-    background-color: var(--mtyellow-4);
-    font-size: 16px;
-    border-radius: 10px;
-  }
-.calendarWrap .calendarElement span{
-    /* color: var(--mtgrey-3); */
-    font-weight: 500;
-  }
-  .calendarWrap .calendarElement span:after{
-    background: var(--mtgreen-1);
-  }
+  position: relative;
+  width: 300px;
+}
+.calendarWrap_mobile {
+  width: 100%;
+}
 .calendarWrap input {
-    user-select: none;
-  }
-  
+  width: 100%;
+}
+.calendarWrap_mobile > input:first-child {
+  height: 40px;
+  background: rgba(206, 232, 203, 0.6);
+  border: 2px solid var(--mtgreen-2);
+  border-radius: 10px;
+  padding-left: 40px;
+}
+
+.calendarElement {
+  position: absolute;
+  top: 50px;
+  left: -97px;
+
+  /* background-color: #d9e8d7; */
+  background-color: var(--mtyellow-4);
+  font-size: 16px;
+  border-radius: 10px;
+}
+.calendarElement_mobile {
+  position: absolute;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+  /* background-color: var(--mtyellow-4); */
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+.calendarWrap .calendarElement span {
+  /* color: var(--mtgrey-3); */
+  font-weight: 500;
+  width: 100%;
+}
+.calendarWrap .calendarElement span:after {
+  background: var(--mtgreen-1);
+}
+.calendarWrap input {
+  user-select: none;
+}

@@ -34,7 +34,7 @@
     /* --mtfont-eng: 'Noto Sans', sans-serif; */
 
     --navbar-height: 80px;
-    --navbar-mobile-height: 80px;
+    --navbar-mobile-height: 60px;
 }
 
 /* Define the font family for English characters */
@@ -178,5 +178,4 @@
   height: 100vh;
   background-color: var(--mtyellow-1);
 }
-
 /* merging test */

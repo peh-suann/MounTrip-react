@@ -5,11 +5,15 @@
 .TODO
 .FIXME
 
+#picture
+*.gpx
+
 
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
+/public
 
 # testing
 /coverage
