@@ -54,13 +54,10 @@ export default function Member() {
       // const currentUserId = myAuth.sid
       const currentUserData = res.data
       setUser(currentUserData)
-      console.log('member-data-rows:', res.data.rows)
-      console.log('user:', currentUserData)
-      // return currentUserData
+      // console.log('member-data-rows:', res.data)
+      // console.log('user:', currentUserData)
     } catch (error) {
       console.log('uu:', user)
-      // console.log()
-
       return []
     }
   }

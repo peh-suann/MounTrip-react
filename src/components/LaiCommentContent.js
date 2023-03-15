@@ -1,9 +1,41 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './../styles/Comment.module.css'
 import CommentAmount from './LaiCommentAmount'
 import CommentCard from './LaiCommentCard'
+import axios from 'axios'
+import { USER_COMMENT } from '../connections/api-config'
 
 export default function LaiComment() {
+  const [userComment, setUserComment] = useState([])
+  let currentUserComment = []
+
+  const getComment = async (req, res) => {
+    const userString = localStorage.getItem('myAuth')
+    const user = JSON.parse(userString) //localstorage出來的東西都是字串，需要解析
+    const token = user.token
+    const mid = user.accountId
+
+    try {
+      const res = await axios.get(USER_COMMENT(mid), {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      if (!res) return res.sendStatus(401)
+      // const currentUserId = myAuth.sid
+
+      currentUserComment = res.data
+      setUserComment(currentUserComment)
+      // console.log('member-data-rows:', res.data)
+      console.log('currentUserComment:', currentUserComment)
+    } catch (error) {
+      console.log("there's an error in db connection")
+      return []
+    }
+  }
+  useEffect(() => {
+    getComment()
+    console.log('state:', userComment)
+    console.log('length:', userComment.length)
+  }, [userComment])
   return (
     <>
       <div className={styles['member-data']}>
@@ -31,7 +63,7 @@ export default function LaiComment() {
             <div className={styles['show-number']}>
               <p>共有</p>
               {/* TODO連結評論數量 */}
-              <CommentAmount amount={23} />
+              <CommentAmount amount={userComment.length} />
               {/* <p id={styles['comment-amount']}>4</p> */}
               <p>則評論</p>
             </div>
@@ -45,57 +77,19 @@ export default function LaiComment() {
             </div>
           </div>
           <div className={styles['comment-list']}>
-            {/* <div className={styles['comment-card']}>
-              <div className={styles['title-area']}>
-                <div className={styles['product-title']}>
-                  <h6>草嶺古道｜探索新北一日遊探索新北一日遊</h6>
-                  <p>2022/01/01 - 2022/01/03</p>
-                </div>
-                <div className={styles['order-id']}>
-                  <svg
-                    width="16"
-                    height="18"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16 4.5H18C18.5304 4.5 19.0391 4.71071 19.4142 5.08579C19.7893 5.46086 20 5.96957 20 6.5V20.5C20 21.0304 19.7893 21.5391 19.4142 21.9142C19.0391 22.2893 18.5304 22.5 18 22.5H6C5.46957 22.5 4.96086 22.2893 4.58579 21.9142C4.21071 21.5391 4 21.0304 4 20.5V6.5C4 5.96957 4.21071 5.46086 4.58579 5.08579C4.96086 4.71071 5.46957 4.5 6 4.5H8"
-                      stroke="#9AA09B"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M15 2.5H9C8.44772 2.5 8 2.94772 8 3.5V5.5C8 6.05228 8.44772 6.5 9 6.5H15C15.5523 6.5 16 6.05228 16 5.5V3.5C16 2.94772 15.5523 2.5 15 2.5Z"
-                      stroke="#9AA09B"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-
-                  <p>訂單編號：</p>
-                  <p>S12345678</p>
-                </div>
-              </div>
-              <div className={styles['comment-bar']}></div>
-              <div className={styles['comment-text']}>
-                <div className={styles['customer-comment']}>
-                  <h6>您的評論：</h6>
-                  <p>
-                    高鐵台北站不僅是台灣高速鐵路的車站之一，同時也是台灣鐵路縱貫線、台北捷運紅線、藍線、機場捷運的轉運車站，是大台北地區最大的交通轉運中心。
-                  </p>
-                </div>
-                <div className={styles['reply']}>
-                  <h6>業主回覆：</h6>
-                  <p>
-                    高鐵台北站整體建築地上六層、地下四層，［地上一樓］為大廳樓層，設有東、南、北、西每面各三個出口，［地上二樓］是由微風廣場接手的微風台北車站以精緻的美食料理為商場招牌，［地上三樓至六樓］則為台鐵和高鐵的行政中心
-                  </p>
-                </div>
-              </div>
-            </div> */}
-            <CommentCard
+            {userComment.map((v, i) => {
+              return (
+                <CommentCard
+                  title={'草嶺古道｜探索新北一日遊'}
+                  orderId={'S12345678'}
+                  dateStart={'2023/01/04'}
+                  dateEnd={'2023/01/07'}
+                  comment={v.comment}
+                  reply={v.reply}
+                />
+              )
+            })}
+            {/* <CommentCard
               title={'草嶺古道｜探索新北一日遊'}
               orderId={'S12345678'}
               dateStart={'2023/01/04'}
@@ -106,8 +100,8 @@ export default function LaiComment() {
               reply={
                 '高鐵台北站整體建築地上六層、地下四層，［地上一樓］為大廳樓層，設有東、南、北、西每面各三個出口，［地上二樓］是由微風廣場接手的微風台北車站以精緻的美食料理為商場招牌，［地上三樓至六樓］則為台鐵和高鐵的行政中心'
               }
-            />
-            <CommentCard
+            /> */}
+            {/* <CommentCard
               title={'楊金縱走｜探索大台北三日遊'}
               orderId={'S87654322'}
               dateStart={'2023/04/04'}
@@ -118,7 +112,7 @@ export default function LaiComment() {
               reply={
                 '［地上一樓］為大廳樓層，設有東、南、北、西每面各三個出口，［地上二樓］是由微風廣場接手的微風台北車站以精緻的美食料理為商場招牌，［地上三樓至六樓］則為台鐵和高鐵的行政中心'
               }
-            />
+            /> */}
             {/* <div className={styles['comment-card']}>
               <div className={styles['title-area']}>
                 <div className={styles['product-title']}>

@@ -27,6 +27,7 @@ export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 //member
 export const MEMBER_DATA = `${HOST}/member/api`
 export const USER_DATA = (mid) => `${HOST}/member/me/${mid}`
+export const USER_COMMENT = (mid) => `${HOST}/member/me/comment/${mid}`
 
 export const ALL_PRODUCTS = `${HOST}/products`
 export const POP_PRODUCTS = `${HOST}/products_popular`
