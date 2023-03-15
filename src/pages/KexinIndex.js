@@ -5,11 +5,8 @@ import IndexStyles from '../styles/kexinIndex.module.css'
 import useRWD from '../contexts/useRWD'
 
 function KexinIndex() {
-  // RWD
-  const device = useRWD()
 
   // map basic setting
-
   const ZOOM_THRESHOLD = [1, 5]
   const OVERLAY_MULTIPLIER = 10
   const OVERLAY_OFFSET = OVERLAY_MULTIPLIER / 2 - 0.5
@@ -24,9 +21,13 @@ function KexinIndex() {
   const mapRef = useRef(null)
   const [selectedFeature, setSelectedFeature] = useState(null)
 
+  // RWD
+  const device = useRWD()
   console.log(device)
 
   useEffect(() => {
+    
+    console.log(device);
     const WIDTH = window.innerWidth
     const HEIGHT = window.innerHeight
     console.log(window.innerWidth, window.innerHeight)
@@ -60,44 +61,66 @@ function KexinIndex() {
         .style('pointer-events', 'all')
 
       // Create a new projection
-      const projection = d3
-        .geoMercator()
-        .center([121, 23.58])
-        .scale(9000)
-        .translate([WIDTH / 2, HEIGHT / 2])
-      // if (device === 'mobile') {
-      //   const projection = d3
-      //     .geoMercator()
-      //     .center([121, 23.58])
-      //     .scale(9000)
-      //     .translate([WIDTH / 2, HEIGHT / 2])
-      // } else {
-      //   const projection = d3
-      //     .geoMercator()
-      //     .center([121, 23.58])
-      //     .scale(10000)
-      //     .translate([WIDTH / 2, HEIGHT / 2])
-      // }
+      // const projection = d3
+      //   .geoMercator()
+      //   .center([121, 23.58])
+      //   .scale(9000)
+      //   .translate([WIDTH / 2, HEIGHT / 2])
+      if (device === 'mobile') {
+        // Create a new projection
+        const projection = d3
+          .geoMercator()
+          .center([121, 23.7])
+          .scale(8500)
+          .translate([WIDTH / 2, HEIGHT / 2])
 
-      // Create a path generator
-      const path = d3.geoPath(projection)
+        // Create a path generator
+        const path = d3.geoPath(projection)
 
-      // Draw the map
-      g.selectAll('path')
-        .data(data.features)
-        .enter()
-        .append('path')
-        .attr('d', path)
-        .style('fill', 'rgba(10, 140, 45, 0.2)')
-        // .style('fill', function (d) {
-        //   return d.properties.fill // replace with your own data value accessor
-        // })
-        .style('stroke', '#FFFFF2')
-        .style('stroke-width', 0.5)
-        .style('cursor', 'pointer')
-        .on('mouseover', mouseOverHandler)
-        .on('mouseout', mouseOutHandler)
-        .on('click', clickHandler)
+        // Draw the map
+        g.selectAll('path')
+          .data(data.features)
+          .enter()
+          .append('path')
+          .attr('d', path)
+          .style('fill', 'rgba(10, 140, 45, 0.2)')
+          // .style('fill', function (d) {
+          //   return d.properties.fill // replace with your own data value accessor
+          // })
+          .style('stroke', '#FFFFF2')
+          .style('stroke-width', 0.5)
+          .style('cursor', 'pointer')
+          .on('mouseover', mouseOverHandler)
+          .on('mouseout', mouseOutHandler)
+          .on('click', clickHandler)
+      } else {
+        // Create a new projection
+        const projection = d3
+          .geoMercator()
+          .center([121, 23.58])
+          .scale(10000)
+          .translate([WIDTH / 2, HEIGHT / 2])
+
+        // Create a path generator
+        const path = d3.geoPath(projection)
+
+        // Draw the map
+        g.selectAll('path')
+          .data(data.features)
+          .enter()
+          .append('path')
+          .attr('d', path)
+          .style('fill', 'rgba(10, 140, 45, 0.2)')
+          // .style('fill', function (d) {
+          //   return d.properties.fill // replace with your own data value accessor
+          // })
+          .style('stroke', '#FFFFF2')
+          .style('stroke-width', 0.5)
+          .style('cursor', 'pointer')
+          .on('mouseover', mouseOverHandler)
+          .on('mouseout', mouseOutHandler)
+          .on('click', clickHandler)
+      }
     }
   }, [device])
 
