@@ -4,6 +4,9 @@ import styles from './../styles/IanSeason.module.css'
 import { TRAILS_SEASON } from '../connections/api-config'
 import { TRAILS_COMMENT } from '../connections/api-config'
 import dayjs from 'dayjs'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 function IanSeason() {
   const [data, setData] = useState({
@@ -35,6 +38,13 @@ function IanSeason() {
   useEffect(() => {
     getCommentData()
   }, [])
+
+  const settings = {
+    dots: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 4,
+  }
 
   return (
     <>
@@ -199,6 +209,7 @@ function IanSeason() {
         </div>
 
         <div className={`${styles.comment_carousel}`}>
+          {/* <Slider {...settings}> */}
           {comment.rows.map((v2, i2) => {
             return (
               <div
@@ -225,7 +236,9 @@ function IanSeason() {
               </div>
             )
           })}
+          {/* </Slider> */}
         </div>
+
         <div className={styles.commentSecond_svg}>
           <svg
             width="30"

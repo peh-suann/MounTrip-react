@@ -121,8 +121,8 @@ stroke: rgb(127, 222, 127);
     }
     .difficultyMedium_flag{
     position: absolute;
-    top: 68%;
-    /* top: 100%; */
+    /* top: 68%; */
+    top: 100%;
     left: 54.5%;
     z-index: 2;
     
@@ -144,7 +144,7 @@ stroke: rgb(127, 222, 127);
     .dMountain_easy{
     position: absolute;
     top: 86%;
-    left:72%;
+    left:71%;
     z-index: 3;
     }
     :hover.easy_svg > path{
@@ -154,9 +154,9 @@ stroke: rgb(127, 222, 127);
       }
     .difficultyEasy_flag{
       position: absolute;
-      top: 77%;
-      /* top: 100%; */
-      left: 89%;
+      /* top: 77%; */
+      top: 100%;
+      left: 88%;
     }
     .difficultyMountainEasy_focus{
       width: 180px;
@@ -204,8 +204,9 @@ stroke: rgb(127, 222, 127);
     }
     .tPSSCard_pic1{
     height: 250px;
-    background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-1.jpg") no-repeat;
+    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-1.jpg") no-repeat; */
     background-size: cover;
+    background-position: center center;
     flex-grow: 1;
     border-radius: 10px;
     
@@ -216,7 +217,7 @@ stroke: rgb(127, 222, 127);
     }
     .tPSSCard_pic2{
     height: 250px;
-    background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-2.jpg") no-repeat;
+    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-2.jpg") no-repeat; */
     background-size: cover;
     flex-grow: 1;
     border-radius: 10px;
@@ -227,7 +228,7 @@ stroke: rgb(127, 222, 127);
     }
     .tPSSCard_pic3{
     height: 250px;
-    background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-3.jpg") no-repeat;
+    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-3.jpg") no-repeat; */
     background-size: cover;
     flex-grow: 1;
     border-radius: 10px;
@@ -238,7 +239,7 @@ stroke: rgb(127, 222, 127);
     }
     .tPSSCard_pic4{
     height: 250px;
-    background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-1.jpg") no-repeat;
+    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-1.jpg") no-repeat; */
     background-size: cover;
     flex-grow: 1;
     border-radius: 10px;
@@ -250,7 +251,7 @@ stroke: rgb(127, 222, 127);
     }
     .tPSSCard_pic5{
     height: 250px;
-    background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-2.jpg") no-repeat;
+    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-2.jpg") no-repeat; */
     background-size: cover;
     flex-grow: 1;
     border-radius: 10px;
@@ -262,7 +263,7 @@ stroke: rgb(127, 222, 127);
     }
     .tPSSCard_pic6{
     height: 250px;
-    background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-3.jpg") no-repeat;
+    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-3.jpg") no-repeat; */
     background-size: cover;
     flex-grow: 1;
     border-radius: 10px;

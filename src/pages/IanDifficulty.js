@@ -68,7 +68,13 @@ function IanDifficulty() {
               return (
                 <div className={'col-12 p-3 col-lg-4 pe-lg-2'} key={i}>
                   <div className={styles.overflowpic1}>
-                    <div className={styles.tPSSCard_pic1}></div>
+                    <div
+                      className={styles.tPSSCard_pic1}
+                      style={{
+                        backgroundImage: `linear-gradient(180deg, rgba(1, 19, 6, 0) 66.99%, #011306 100%),
+                  url(/imgs/Ian_img/${v.trail_img})`,
+                      }}
+                    ></div>
                     <div
                       className={`${styles.tPSSCard_bottom} d-flex justify-content-between`}
                     >
