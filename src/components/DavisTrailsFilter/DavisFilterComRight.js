@@ -5,7 +5,7 @@ import styles from '../../styles/DavisTrailsFilter.module.css'
 import DavisComFilterCard from './DavisComFilterCard'
 
 function DavisFilterComRight(props) {
-  const { data } = props
+  const { data, filterpr, keyword } = props
 
   // console.log('filterFromBatch', filterFromBatch(rows_data))
   return (
@@ -30,7 +30,7 @@ function DavisFilterComRight(props) {
                 />
               </svg>
             </span>
-            {data.rows.map((r) => (
+            {data.rows.filterpr(keyword).map((r) => (
               <div className="">
                 <h5 className={`${styles.h5_sub_title_search}`}>
                   {/* 「{r.trail_name}」的搜尋結果 */}

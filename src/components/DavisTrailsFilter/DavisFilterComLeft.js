@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../../styles/DavisTrailsFilter.module.css'
 
-function DavisFilterComLeft() {
+function DavisFilterComLeft(props) {
+  const { data, setFilterpr, setKeyword } = props
+  const [inputText, setInputText] = useState('')
+
+  // 純函式-傳入資料陣列，以keyword進行過濾
+  // FIXME:data的值不是props的值
+
+  const filterByKeyword = (data, setKeyword) => {
+    return data.filter((v, i) => {
+      return v.trail_name.includes(setKeyword)
+    })
+  }
+  // FIXME:用useEffect
+  // setFilterpr = filterByKeyword()
+
   return (
     <>
       <div
@@ -34,8 +48,27 @@ function DavisFilterComLeft() {
                 />
               </svg>
             </span>
+            {/* TODO: */}
             <div className="col">
-              <input className={`${styles.input_style}`} type="text" />
+              <input
+                className={`${styles.input_style}`}
+                type="text"
+                placeholder="輸入姓名"
+                value={inputText}
+                onChange={(e) => {
+                  setInputText(e.target.value)
+
+                  // 如果使用者清除所有輸入時要回復為原本列表
+                  if (e.target.value === '') {
+                    setKeyword('')
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    setKeyword(inputText)
+                  }
+                }}
+              />
             </div>
           </div>
         </div>
@@ -171,7 +204,13 @@ function DavisFilterComLeft() {
             </div>
           </div>
         </div>
-        <button className={`${styles.btn_search}`} type="button">
+        <button
+          className={`${styles.btn_search}`}
+          type="button"
+          onClick={() => {
+            setKeyword(inputText)
+          }}
+        >
           搜尋
         </button>
       </div>
