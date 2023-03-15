@@ -27,10 +27,10 @@ export default function IndexNavBar() {
               className={IndexNavstyles.menu}
               onClick={(e) => {
                 e.preventDefault()
-                if (myAuth.account) {
-                  setShowListMobile(!showListMobile)
-                  // console.log(showListMobile)
-                }
+                console.log(myAuth.authorized)
+                // if (myAuth.account) {
+                setShowListMobile(!showListMobile)
+                // }
               }}
             >
               <svg
@@ -229,9 +229,14 @@ export default function IndexNavBar() {
                 </Link>
               </li>
             </ul>
-            {showList && <NavbarDropdown showList={showList} setShowList={setShowList} />}
+            {showList && (
+              <NavbarDropdown showList={showList} setShowList={setShowList} />
+            )}
 
-            <NavbarDropdownMobile showListMobile={showListMobile} setShowListMobile={setShowListMobile} />
+            <NavbarDropdownMobile
+              showListMobile={showListMobile}
+              setShowListMobile={setShowListMobile}
+            />
           </div>
         </div>
       </nav>
