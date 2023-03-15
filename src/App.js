@@ -7,7 +7,7 @@ import { AuthContextProvider } from './contexts/AuthContexts'
 import Layout from './layouts/Layout'
 import Login from './pages/KexinLogin'
 import YichunProducts from './pages/YichunProducts'
-// import Member from './pages/Member'
+import Member from './pages/Member'
 import YichunTest from './pages/YichunTest'
 import Signin from './pages/KexinSignin'
 import Index from './pages/KexinIndex'
@@ -26,7 +26,7 @@ function App() {
             <Route path="/" element={<Layout />}>
               {/* 其他頁面Navbar+Footer */}{' '}
               <Route path="/products" element={<YichunProducts />} />
-              {/* <Route path="/member" element={<Member />} /> */}
+              <Route path="/member" element={<Member />} />
               <Route path="/test" element={<YichunTest />} />
               <Route path="/trails-detail" element={<DavisTrailsDetail />} />
               <Route path="/trails-filter" element={<DavisTrailsFilter />} />

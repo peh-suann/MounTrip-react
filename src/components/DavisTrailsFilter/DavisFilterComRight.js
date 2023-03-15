@@ -5,7 +5,7 @@ import styles from '../../styles/DavisTrailsFilter.module.css'
 import DavisComFilterCard from './DavisComFilterCard'
 
 function DavisFilterComRight(props) {
-  const { data, filterpr, keyword } = props
+  const { data, filterByKeyword, keywordpr } = props
 
   // console.log('filterFromBatch', filterFromBatch(rows_data))
   return (
@@ -30,13 +30,13 @@ function DavisFilterComRight(props) {
                 />
               </svg>
             </span>
-            {data.rows.filterpr(keyword).map((r) => (
-              <div className="">
-                <h5 className={`${styles.h5_sub_title_search}`}>
-                  {/* 「{r.trail_name}」的搜尋結果 */}
-                </h5>
-              </div>
-            ))}
+            {/* FIXME: */}
+            <div className="">
+              <h5 className={`${styles.h5_sub_title_search}`}>
+                「{keywordpr}」的搜尋結果
+              </h5>
+            </div>
+
             <span className=" d-none d-lg-flex">
               <svg
                 className={`${styles.Vector_long}`}
@@ -57,7 +57,7 @@ function DavisFilterComRight(props) {
           </div>
         </div>
         {/* filter card */}
-        <DavisComFilterCard data={data} />
+        <DavisComFilterCard data={data} filterByKeyword={filterByKeyword} />
         {/* <div className="col">
             <div className={`${styles.trails_card}`}>
               <div className="row g-0 d-flex flex-row ">

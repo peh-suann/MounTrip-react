@@ -18,9 +18,7 @@ function DavisTrailsFilter() {
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
 
-  const [filterpr, setFilterpr] = useState()
-
-  const [keyword, setKeyword] = useState('')
+  const [keywordpr, setKeywordpr] = useState('')
 
   // trails_data
   const [data, setData] = useState({
@@ -30,6 +28,18 @@ function DavisTrailsFilter() {
     totalPages: 0,
     totalRows: 0,
   })
+
+  // FIXME:
+  let rows_data = data.rows
+
+  const filterByKeyword = (rows_data, keywordpr) => {
+    if (!Array.isArray(rows_data)) {
+      return []
+    }
+    return rows_data.filter((v, i) => {
+      return v.trail_name.includes(keywordpr)
+    })
+  }
 
   const getListData = async (page = 1) => {
     const response = await axios.get(TRAILS_FILTER_DATA, {
@@ -43,7 +53,6 @@ function DavisTrailsFilter() {
 
   // console.log(data.rows)
 
-  let rows_data = data.rows
   const filterFromBatch = (rows_data) => {
     if (!Array.isArray(rows_data)) {
       return []
@@ -67,19 +76,13 @@ function DavisTrailsFilter() {
         <div className={`d-none d-lg-flex flex-row ${styles.main_all}`}>
           {/*computer size left_card  */}
           {/* FIXME: 日期選單 */}
-          <DavisFilterComLeft
-            data={data}
-            setFilterpr={setFilterpr}
-            keyword={keyword}
-          />
+          <DavisFilterComLeft data={data} setKeywordpr={setKeywordpr} />
 
           {/*computer size right_card TODO: */}
           <DavisFilterComRight
             data={data}
-            rows_data={rows_data}
-            filterFromBatch={filterFromBatch}
-            filterpr={filterpr}
-            setKeyword={setKeyword}
+            keywordpr={keywordpr}
+            filterByKeyword={filterByKeyword}
           />
         </div>
 

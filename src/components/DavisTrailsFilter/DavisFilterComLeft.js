@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from '../../styles/DavisTrailsFilter.module.css'
 
 function DavisFilterComLeft(props) {
-  const { data, setFilterpr, setKeyword } = props
+  const { data, setKeywordpr } = props
+  const [keyword, setKeyword] = useState('')
   const [inputText, setInputText] = useState('')
 
-  // 純函式-傳入資料陣列，以keyword進行過濾
-  // FIXME:data的值不是props的值
+  useEffect(() => {
+    setKeyword(setKeywordpr)
+  }, [setKeywordpr])
 
-  const filterByKeyword = (data, setKeyword) => {
-    return data.filter((v, i) => {
-      return v.trail_name.includes(setKeyword)
-    })
-  }
-  // FIXME:用useEffect
-  // setFilterpr = filterByKeyword()
+  // const filterByKeyword = (data, setKeyword) => {
+  //   return data.filter((v, i) => {
+  //     return v.trail_name.includes(setKeyword)
+  //   })
+  // }
 
   return (
     <>
@@ -53,7 +53,7 @@ function DavisFilterComLeft(props) {
               <input
                 className={`${styles.input_style}`}
                 type="text"
-                placeholder="輸入姓名"
+                placeholder=" 輸入行程名稱"
                 value={inputText}
                 onChange={(e) => {
                   setInputText(e.target.value)
