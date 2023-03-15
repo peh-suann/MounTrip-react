@@ -305,6 +305,7 @@ stroke: rgb(127, 222, 127);
     font-weight: 700;
     }
     
+    
     /* button */
     .allSection_btn{
       margin:auto;
@@ -505,8 +506,5 @@ color: white;
 border:none;
   }
 
-/* footer */
-footer{
-  display: none;
-  }
+
 }

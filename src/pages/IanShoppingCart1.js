@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './../styles/IanShoppingCart1.module.css'
 import { Link } from 'react-router-dom'
+import IanShoppingCartProduct from '../components/IanShoppingCartProduct'
 
 // import IanShoppingCartTitle from '../components/IanShoppingCartTitle'
 // import './../html/css/shoppingCart1.css'
@@ -50,40 +51,18 @@ function IanShoppingCart1() {
   ])
   const [mypage, setPage] = useState('')
 
-  const plusIcon = (arr, id) => {
-    return arr.map((v, i) => {
-      if (v.sid === id) {
-        return { ...v, count: v.count + 1 }
-      } else {
-        return { ...v }
+  const minusItem = (pid) => {
+    const items = data.map((i) => {
+      const p = { ...i }
+      if (p.sid === pid) {
+        p.count = p.count - 1 || 1
       }
+
+      return p
     })
-  }
-  const minusIcon = (arr, id) => {
-    return arr.map((v, i) => {
-      if (v.sid === id && v.count > 1) {
-        return { ...v, count: v.count - 1 }
-      } else {
-        return { ...v }
-      }
-    })
+    setData(items)
   }
 
-  const wannaBuy = (arr, id) => {
-    return arr.map((v, i) => {
-      if (v.sid === id) {
-        return { ...v, buy: !v.buy }
-      } else {
-        return { ...v }
-      }
-    })
-  }
-
-  const deletepruduct = (arr, id) => {
-    return arr.filter((v, i) => {
-      return v.sid !== id
-    })
-  }
   const selectAll = (data, id) => {
     return data.map((v, i) => {
       return { ...v, buy: true }
@@ -91,10 +70,9 @@ function IanShoppingCart1() {
   }
 
   const calulateTotal = (data, id) => {
-    return data.map((v, i) => {
-      let newTotal = [...v]
+    const newData = [...data].map((v, i) => {
       if (v.sid === id) {
-        return (newTotal = v.price * v.count)
+        return { ...v, total: v.price * v.count }
       }
     })
   }
@@ -105,7 +83,7 @@ function IanShoppingCart1() {
         className={`${styles['shopping-cart-process']} ${styles['mobile-none']} row justify-content-center`}
       >
         <div className={`d-flex justify-content-center ${styles.shoppingSvgs}`}>
-          <Link to="/SC1">
+          <Link to="/SC1" className={`${styles.myLink}`}>
             <svg
               onClick={() => {
                 setPage('確認訂單')
@@ -124,7 +102,7 @@ function IanShoppingCart1() {
               />
             </svg>
           </Link>
-          <Link to="/SC2">
+          <Link to="/SC2" className={`${styles.Link}`}>
             <svg
               onClick={() => {
                 setPage('填寫資料')
@@ -143,7 +121,7 @@ function IanShoppingCart1() {
               />
             </svg>
           </Link>
-          <Link to="/SC3">
+          <Link to="/SC3" className={`${styles.Link}`}>
             <svg
               onClick={() => {
                 setPage('付款頁面')
@@ -162,7 +140,7 @@ function IanShoppingCart1() {
               />
             </svg>
           </Link>
-          <Link to="/SC4">
+          <Link to="/SC4" className={`${styles.Link}`}>
             <svg
               onClick={() => {
                 setPage('完成訂單')
@@ -370,245 +348,22 @@ function IanShoppingCart1() {
           </div>
           {data.map((v, i) => {
             return (
-              <div key={v.sid} className={`${styles['shoppingcart-product']}`}>
-                <div
-                  className={`${styles['product-col']} ${styles['mobile-none']} d-flex`}
-                >
-                  <div className={`${styles['mobile-none']} ${styles.w1} `}>
-                    <input
-                      type="checkbox"
-                      checked={v.buy}
-                      onChange={(e) => {
-                        setData(wannaBuy(data, v.sid))
-                      }}
-                    />
-                  </div>
-                  <div className={`${styles['mobile-none']} ${styles.w2} `}>
-                    <div className={`row w-100`}>
-                      <div className={`col-4`}>
-                        <div className={`${styles['product-img-wrap']}`}>
-                          <img src="/imgs/Ian_img/shopping-cart1.png" />
-                        </div>
-                      </div>
-                      <div className={`col-8 px-0`}>
-                        <p className={`${styles['product-title']}  mb-3`}>
-                          {v.name}
-                        </p>
-                        <p className={`${styles['product-subtitle']} mb-0`}>
-                          {v.name}單日行程
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={`${styles['mobile-none']} ${styles.w3} `}>
-                    <p className={`mb-lg-2`}>{v.startTime}</p>
-                    <p className={`mb-lg-2`}>&emsp;&emsp;|</p>
-                    <p className={`mb-0`}>{v.endTime}</p>
-                  </div>
-                  <div className={`${styles['mobile-none']} ${styles.w4} `}>
-                    NTD {v.price}
-                  </div>
-                  <div className={`${styles['mobile-none']} ${styles.w5} `}>
-                    <div className={`d-flex`}>
-                      <button className={`${styles['plus-button']}`}>
-                        <svg
-                          onClick={() => {
-                            setData(minusIcon(data, v.sid))
-                          }}
-                          className={`${styles['minus-icon']} me-3`}
-                          width="24"
-                          height="25"
-                          viewBox="0 0 24 25"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M5 12.5H19"
-                            stroke="#6CBA7C"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </button>
-                      <p className={`${styles['product-number']}  mb-0 me-3`}>
-                        {v.count}
-                      </p>
-                      <button className={`${styles['plus-button']}`}>
-                        <svg
-                          onClick={() => {
-                            setData(plusIcon(data, v.sid))
-                          }}
-                          className={`${styles['minus-icon']}`}
-                          width="24"
-                          height="25"
-                          viewBox="0 0 24 25"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 5.5V19.5"
-                            stroke="#6CBA7C"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M5 12.5H19"
-                            stroke="#6CBA7C"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div className={`${styles['mobile-none']} ${styles.w6} `}>
-                    NTD {v.total}
-                  </div>
-                  <div className={`${styles['mobile-none']} ${styles.w7} `}>
-                    <svg
-                      onClick={(e) => {
-                        setData(deletepruduct(data, v.sid))
-                      }}
-                      width="30"
-                      height="30"
-                      viewBox="0 0 30 30"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M3.75 7.5H6.25H26.25"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M23.75 7.5V25C23.75 25.663 23.4866 26.2989 23.0178 26.7678C22.5489 27.2366 21.913 27.5 21.25 27.5H8.75C8.08696 27.5 7.45107 27.2366 6.98223 26.7678C6.51339 26.2989 6.25 25.663 6.25 25V7.5M10 7.5V5C10 4.33696 10.2634 3.70107 10.7322 3.23223C11.2011 2.76339 11.837 2.5 12.5 2.5H17.5C18.163 2.5 18.7989 2.76339 19.2678 3.23223C19.7366 3.70107 20 4.33696 20 5V7.5"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12.5 13.75V21.25"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M17.5 13.75V21.25"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-
-                <div
-                  className={`${styles['product-col-mobile']} ${styles['web-none']} d-flex flex-column`}
-                >
-                  <div
-                    className={`${styles['mb-12']} ${styles['web-none']} w-100`}
-                  >
-                    <div className={`row w-100 justify-content-between mx-0`}>
-                      <div className={`${styles['product-mobile']} col-4 ps-0`}>
-                        <div className={`${styles['product-img-wrap']} `}>
-                          <img src="/imgs/Ian_img/shopping-cart1.png" />
-                        </div>
-                      </div>
-                      <div className={`col-8 px-0`}>
-                        <p
-                          className={`${styles['product-title']} ${styles.mtgrey1} mb-1`}
-                        >
-                          草嶺古道｜探索新北一日遊探索新北一日遊
-                        </p>
-                        <p
-                          className={`${styles['product-subtitle']} ${styles.mtgrey2}  mb-0`}
-                        >
-                          草嶺古道單日行程
-                        </p>
-                        <p
-                          className={`${styles['product-subtitle']} ${styles.mtgrey1}  mb-0`}
-                        >
-                          2023/01/01 - 2023/01/02
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className={`${styles['web-none']} w-100 d-flex justify-content-between align-items-end`}
-                  >
-                    <div className={`${styles['web-none']}`}>
-                      <p
-                        className={`${styles['single-price']} ${styles.mtgrey2}  mb-0`}
-                      >
-                        NTD 1,200
-                      </p>
-                      <p
-                        className={`${styles['total-price']} ${styles.mtgrey1} mb-0`}
-                      >
-                        NTD 1,200
-                      </p>
-                    </div>
-                    <div className={`${styles['web-none']}`}>
-                      <div className={`d-flex align-items-center`}>
-                        <button className={`${styles['plus-button']}`}>
-                          <svg
-                            className={`${styles['minus-icon']}`}
-                            width="24"
-                            height="25"
-                            viewBox="0 0 24 25"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M5 12.5H19"
-                              stroke="#6CBA7C"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </button>
-                        <p className={`${styles['product-number']} mb-0 mx-3`}>
-                          1
-                        </p>
-                        <button className={`${styles['plus-button']}`}>
-                          <svg
-                            className={`${styles['minus-icon']}`}
-                            width="24"
-                            height="25"
-                            viewBox="0 0 24 25"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M12 5.5V19.5"
-                              stroke="#6CBA7C"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M5 12.5H19"
-                              stroke="#6CBA7C"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <>
+                <IanShoppingCartProduct
+                  key={v.sid}
+                  pid={v.sid}
+                  name={v.name}
+                  startTime={v.startTime}
+                  endTime={v.endTime}
+                  price={v.price}
+                  count={v.count}
+                  total={v.total}
+                  buy={v.buy}
+                  setData={setData}
+                  minusItem={minusItem}
+                  data={data}
+                />
+              </>
             )
           })}
         </div>
