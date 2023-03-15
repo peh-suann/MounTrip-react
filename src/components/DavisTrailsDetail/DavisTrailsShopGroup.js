@@ -1,7 +1,12 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
-import DavisTrailsBatch from './DavisTrailsBatch'
+import { useEffect, useState, useContext } from 'react'
+
+//useContext
+import ShopContext from './ShopContext'
+
+// component
 import styles from '../../styles/DavisTrailsDetail.module.css'
+import DavisTrailsBatch from './DavisTrailsBatch'
 
 function DavisTrailsShopGroup(props) {
   const { data, filterFromBatch } = props

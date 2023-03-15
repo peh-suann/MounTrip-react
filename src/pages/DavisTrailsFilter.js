@@ -12,7 +12,7 @@ import DavisFilterMoTop from '../components/DavisTrailsFilter/DavisFilterMoTop'
 import DavisFilterMoBo from '../components/DavisTrailsFilter/DavisFilterMoBo'
 
 // api
-import { TRAILS_DATA } from '../connections/api-config'
+import { TRAILS_FILTER_DATA } from '../connections/api-config'
 
 function DavisTrailsFilter() {
   const location = useLocation()
@@ -27,7 +27,7 @@ function DavisTrailsFilter() {
   })
 
   const getListData = async (page = 1) => {
-    const response = await axios.get(TRAILS_DATA, {
+    const response = await axios.get(TRAILS_FILTER_DATA, {
       params: {
         page,
       },
@@ -36,7 +36,7 @@ function DavisTrailsFilter() {
     setData(response.data)
   }
 
-  console.log(data.rows)
+  // console.log(data.rows)
 
   let rows_data = data.rows
   const filterFromBatch = (rows_data) => {
@@ -46,7 +46,7 @@ function DavisTrailsFilter() {
     return rows_data.slice(0, 1)
   }
 
-  console.log('filterFromBatch', filterFromBatch(rows_data))
+  // console.log('filterFromBatch', filterFromBatch(rows_data))
 
   useEffect(() => {
     getListData(+usp.get('page'))

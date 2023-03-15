@@ -2,60 +2,63 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import styles from '../../styles/DavisTrailsFilter.module.css'
+import DavisComFilterCard from './DavisComFilterCard'
 
 function DavisFilterComRight(props) {
-  const { data, rows_data, filterFromBatch } = props
+  const { data } = props
 
-  console.log('filterFromBatch', filterFromBatch(rows_data))
+  // console.log('filterFromBatch', filterFromBatch(rows_data))
   return (
     <>
-      {filterFromBatch(rows_data).map((r) => (
-        <div key={r.sid} className={` d-flex flex-column ${styles.right_card}`}>
-          <div className={`${styles.sub_title}`}>
-            <div className="d-flex p-0">
-              <span className=" d-none d-lg-flex">
-                <svg
-                  className={`${styles.Vector_long}`}
-                  width="300px"
-                  height="20"
-                  viewBox="0 0 380 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 18.5L9.75694 14.8245H17.2373L24.0147 18.5L34.6363 14.8245L49.6135 11.149H55.9002L60.6834 14.8245L70.7781 11.149L81.849 3.65024L88.1346 1.5L99.8764 7.93268L109.574 12.5276L119.274 14.8245L129.394 10.0006L137.837 7.93268L151.987 12.0673L190.167 18.5L198.924 14.8245H206.404L213.181 18.5L223.803 14.8245L238.78 11.149H245.067L249.85 14.8245L259.945 11.149L271.016 3.65024L277.301 1.5L289.043 7.93268L298.741 12.5276L308.44 14.8245L318.561 10.0006L327.004 7.93268L341.154 12.0673L379.333 18.5"
-                    stroke="#6CBA7C"
-                    strokeMiterlimit="10"
-                    strokeDasharray="4 4"
-                  />
-                </svg>
-              </span>
+      <div className={` d-flex flex-column ${styles.right_card}`}>
+        <div className={`${styles.sub_title}`}>
+          <div className="d-flex p-0">
+            <span className=" d-none d-lg-flex">
+              <svg
+                className={`${styles.Vector_long}`}
+                width="300px"
+                height="20"
+                viewBox="0 0 380 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 18.5L9.75694 14.8245H17.2373L24.0147 18.5L34.6363 14.8245L49.6135 11.149H55.9002L60.6834 14.8245L70.7781 11.149L81.849 3.65024L88.1346 1.5L99.8764 7.93268L109.574 12.5276L119.274 14.8245L129.394 10.0006L137.837 7.93268L151.987 12.0673L190.167 18.5L198.924 14.8245H206.404L213.181 18.5L223.803 14.8245L238.78 11.149H245.067L249.85 14.8245L259.945 11.149L271.016 3.65024L277.301 1.5L289.043 7.93268L298.741 12.5276L308.44 14.8245L318.561 10.0006L327.004 7.93268L341.154 12.0673L379.333 18.5"
+                  stroke="#6CBA7C"
+                  strokeMiterlimit="10"
+                  strokeDasharray="4 4"
+                />
+              </svg>
+            </span>
+            {data.rows.map((r) => (
               <div className="">
                 <h5 className={`${styles.h5_sub_title_search}`}>
-                  「{r.trail_name}」的搜尋結果
+                  {/* 「{r.trail_name}」的搜尋結果 */}
                 </h5>
               </div>
-              <span className=" d-none d-lg-flex">
-                <svg
-                  className={`${styles.Vector_long}`}
-                  width="300px"
-                  height="20"
-                  viewBox="0 0 380 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 18.5L9.75694 14.8245H17.2373L24.0147 18.5L34.6363 14.8245L49.6135 11.149H55.9002L60.6834 14.8245L70.7781 11.149L81.849 3.65024L88.1346 1.5L99.8764 7.93268L109.574 12.5276L119.274 14.8245L129.394 10.0006L137.837 7.93268L151.987 12.0673L190.167 18.5L198.924 14.8245H206.404L213.181 18.5L223.803 14.8245L238.78 11.149H245.067L249.85 14.8245L259.945 11.149L271.016 3.65024L277.301 1.5L289.043 7.93268L298.741 12.5276L308.44 14.8245L318.561 10.0006L327.004 7.93268L341.154 12.0673L379.333 18.5"
-                    stroke="#6CBA7C"
-                    strokeMiterlimit="10"
-                    strokeDasharray="4 4"
-                  />
-                </svg>
-              </span>
-            </div>
+            ))}
+            <span className=" d-none d-lg-flex">
+              <svg
+                className={`${styles.Vector_long}`}
+                width="300px"
+                height="20"
+                viewBox="0 0 380 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 18.5L9.75694 14.8245H17.2373L24.0147 18.5L34.6363 14.8245L49.6135 11.149H55.9002L60.6834 14.8245L70.7781 11.149L81.849 3.65024L88.1346 1.5L99.8764 7.93268L109.574 12.5276L119.274 14.8245L129.394 10.0006L137.837 7.93268L151.987 12.0673L190.167 18.5L198.924 14.8245H206.404L213.181 18.5L223.803 14.8245L238.78 11.149H245.067L249.85 14.8245L259.945 11.149L271.016 3.65024L277.301 1.5L289.043 7.93268L298.741 12.5276L308.44 14.8245L318.561 10.0006L327.004 7.93268L341.154 12.0673L379.333 18.5"
+                  stroke="#6CBA7C"
+                  strokeMiterlimit="10"
+                  strokeDasharray="4 4"
+                />
+              </svg>
+            </span>
           </div>
-          <div className="col">
-            {/* card*n  */}
+        </div>
+        {/* filter card */}
+        <DavisComFilterCard data={data} />
+        {/* <div className="col">
             <div className={`${styles.trails_card}`}>
               <div className="row g-0 d-flex flex-row ">
                 <div className={`col-4 ${styles.trails_img_wrap}`}>
@@ -67,7 +70,6 @@ function DavisFilterComRight(props) {
                 </div>
                 <div className="col ">
                   <div className={`card-body ${styles.card_padding}`}>
-                    {/* TODO: */}
                     <h5 className={`${styles.product_name}`}>
                       <Link
                         className={`${styles.link_style}`}
@@ -203,83 +205,82 @@ function DavisFilterComRight(props) {
                 </div>
               </div>
             </div>
-          </div>
-          {/* pagination */}
-          <div
-            className={`page-bar col d-none d-lg-flex align-self-center ${styles.details_pagination}`}
+          </div> */}
+        {/* pagination */}
+        <div
+          className={`page-bar col d-none d-lg-flex align-self-center ${styles.details_pagination}`}
+        >
+          <nav
+            className={`${styles.pagination_nav}`}
+            aria-label=" Page navigation example"
           >
-            <nav
-              className={`${styles.pagination_nav}`}
-              aria-label=" Page navigation example"
-            >
-              <ul className="pagination ">
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link ${styles.a_decoration}`}
-                    aria-label="Previous"
-                    to="/"
-                  >
-                    {' '}
-                    <span aria-hidden="true">&laquo;</span>
-                  </Link>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link fw-bold ${styles.a_decoration}`}
-                    aria-label="Previous"
-                    to="/"
-                  >
-                    1
-                  </Link>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link fw-bold ${styles.a_decoration}`}
-                    aria-label="Previous"
-                    to="/"
-                  >
-                    2
-                  </Link>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <span className={`page-link fw-bold ${styles.a_decoration}`}>
-                    {' '}
-                    ...{' '}
-                  </span>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link fw-bold ${styles.a_decoration}`}
-                    aria-label="Previous"
-                    to="/"
-                  >
-                    9
-                  </Link>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link fw-bold ${styles.a_decoration}`}
-                    aria-label="Previous"
-                    to="/"
-                  >
-                    10
-                  </Link>
-                </li>
-                <li className={`page-item ${styles.li_margin}`}>
-                  <Link
-                    className={`page-link ${styles.a_decoration}`}
-                    aria-label="Next"
-                    to="/"
-                  >
-                    {' '}
-                    <span aria-hidden="true">&raquo;</span>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
+            <ul className="pagination ">
+              <li className={`page-item ${styles.li_margin}`}>
+                <Link
+                  className={`page-link ${styles.a_decoration}`}
+                  aria-label="Previous"
+                  to="/"
+                >
+                  {' '}
+                  <span aria-hidden="true">&laquo;</span>
+                </Link>
+              </li>
+              <li className={`page-item ${styles.li_margin}`}>
+                <Link
+                  className={`page-link fw-bold ${styles.a_decoration}`}
+                  aria-label="Previous"
+                  to="/"
+                >
+                  1
+                </Link>
+              </li>
+              <li className={`page-item ${styles.li_margin}`}>
+                <Link
+                  className={`page-link fw-bold ${styles.a_decoration}`}
+                  aria-label="Previous"
+                  to="/"
+                >
+                  2
+                </Link>
+              </li>
+              <li className={`page-item ${styles.li_margin}`}>
+                <span className={`page-link fw-bold ${styles.a_decoration}`}>
+                  {' '}
+                  ...{' '}
+                </span>
+              </li>
+              <li className={`page-item ${styles.li_margin}`}>
+                <Link
+                  className={`page-link fw-bold ${styles.a_decoration}`}
+                  aria-label="Previous"
+                  to="/"
+                >
+                  9
+                </Link>
+              </li>
+              <li className={`page-item ${styles.li_margin}`}>
+                <Link
+                  className={`page-link fw-bold ${styles.a_decoration}`}
+                  aria-label="Previous"
+                  to="/"
+                >
+                  10
+                </Link>
+              </li>
+              <li className={`page-item ${styles.li_margin}`}>
+                <Link
+                  className={`page-link ${styles.a_decoration}`}
+                  aria-label="Next"
+                  to="/"
+                >
+                  {' '}
+                  <span aria-hidden="true">&raquo;</span>
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </div>
-      ))}
+      </div>
     </>
   )
 }
