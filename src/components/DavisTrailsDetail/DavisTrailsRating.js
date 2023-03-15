@@ -26,11 +26,13 @@ function DavisTrailsRating() {
     setData(response.data)
   }
 
-  // const filterByKeyword = (data) => {
-  //   if (!Array.isArray(data.rows)) {
+  // let rows_data = data.rows
+
+  // const filterFromBatch = (rows_data) => {
+  //   if (!Array.isArray(rows_data)) {
   //     return []
   //   }
-  //   return data.rows.filter((v, i) => {
+  //   return rows_data.filter((v, i) => {
   //     return v.trails_sid === 1
   //   })
   // }
@@ -148,7 +150,7 @@ function DavisTrailsRating() {
             </div>
 
             <div className="col-8 d-flex flex-column ">
-              <div className="col p-2">
+              <div className="col d-flex flex-row p-2">
                 <svg
                   width="32"
                   height="29"
@@ -210,10 +212,10 @@ function DavisTrailsRating() {
                   />
                 </svg>
               </div>
-
-              <div className="col ps-2">
+              {/* TODO: */}
+              {/* <div className="col ps-2">
                 <p className="mb-0">1000個人已評論</p>
-              </div>
+              </div> */}
             </div>
             <div className="col"></div>
           </div>
@@ -232,7 +234,10 @@ function DavisTrailsRating() {
                 <div className="col d-flex flex-column ">
                   {/* level1 */}
                   <div className="col d-flex flex-row mb-3">
-                    <h5 className="mb-0 me-3">{r.member_sid}</h5>
+                    <h5 className="mb-0 me-3">
+                      {r.lastname}
+                      {r.firstname}
+                    </h5>
                     <div className="">
                       <p className={`mb-0 ${styles.member_ca}`}>超級嚮導</p>
                     </div>
@@ -304,7 +309,7 @@ function DavisTrailsRating() {
                       </svg>
                     </div>
                     <div className="col-2">
-                      <p className="mb-0">2022/01/01</p>
+                      <p className="mb-0">{r.rate_date}</p>
                     </div>
                     <div className="col"></div>
                   </div>
@@ -312,21 +317,18 @@ function DavisTrailsRating() {
                   <div className="col d-flex flex-column flex-lg-row">
                     <div className="col col-lg-7 ">
                       {/* FIXME:若評論為中文字則左右對齊 */}
-                      <p className={`${styles.commont_p}`}>
-                        {r.comment}
-                        {/* 內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字，內容文字。 */}
-                      </p>
+                      <p className={`${styles.commont_p}`}>{r.comment}</p>
                     </div>
                     {/* imges */}
                     <div className="col col-lg-5 d-flex flex-row">
                       <img
                         className={`me-1 ${styles.img_cover}`}
-                        src="./imgs/Davis/3-1.jpg"
+                        src={`/images/public_images/product_image/${r.trails_sid}-1.jpg`}
                         alt=""
                       />
                       <img
                         className={`me-1 ${styles.img_cover}`}
-                        src="./imgs/Davis/4-1.jpg"
+                        src={`/images/public_images/product_image/${r.trails_sid}-2.jpg`}
                         alt=""
                       />
                       {/* FIXME: background url 寫在css 要如何置換圖片 */}

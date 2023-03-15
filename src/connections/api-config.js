@@ -6,8 +6,9 @@ export const HOST = 'http://localhost:3002'
 // export const HOST = 'http://localhost:3001'
 // // export const HOST = 'http://192.168.71.105:3001'
 
+// 兩台電腦連線時，要用筆電wiki的ip，才能使用localstorage
 
-export const TRAILS_DATA = `${HOST}/trails?`
+export const TRAILS_DATA = `${HOST}/trails`
 
 export const RATING_DATA = `${HOST}/trails/rating`
 
@@ -35,7 +36,6 @@ export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
 export const LOGIN = `${HOST}/login`
 export const SIGNIN = `${HOST}/signin`
-
 
 export const TRAILS_SEASON = `${HOST}/Season`
 export const TRAILS_COMMENT = `${HOST}/seasonComment`

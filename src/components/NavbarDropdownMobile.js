@@ -19,7 +19,7 @@ import {
   faComment,
   faHeart,
   faArrowRightFromBracket,
-  faArrowRightToBracket
+  faArrowRightToBracket,
 } from '@fortawesome/free-solid-svg-icons'
 
 function NavbarDropdown(props) {
@@ -51,10 +51,11 @@ function NavbarDropdown(props) {
         style={showListMobile ? { left: '0' } : { left: '-200px' }}
       >
         <div>
-          <div className={DropdownMobileCss['top-chevronLeft']}
-          onClick={(e) => {
-            setShowListMobile(!showListMobile)
-          }}
+          <div
+            className={DropdownMobileCss['top-chevronLeft']}
+            onClick={(e) => {
+              setShowListMobile(!showListMobile)
+            }}
           >
             <svg
               width="36"
@@ -140,7 +141,7 @@ function NavbarDropdown(props) {
               </p>
             </div>
             <div className="d-flex align-items-center">
-            <FontAwesomeIcon icon={faHeart} />
+              <FontAwesomeIcon icon={faHeart} />
               <p className={`${DropdownMobileCss['dropdown-p']} mb-0`}>
                 收藏路線
               </p>
