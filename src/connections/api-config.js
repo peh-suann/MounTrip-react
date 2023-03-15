@@ -2,7 +2,7 @@
 // export const HOST = 'http://localhost:3000'
 
 // export const LIST_DATA = `${HOST}/member`
-export const HOST = 'http://localhost:3001'
+export const HOST = 'http://localhost:3002'
 export const TRAILS_DATA = `${HOST}/trails?`
 
 export const RATING_DATA = `${HOST}/trails/rating`
@@ -24,9 +24,9 @@ export const POP_PRODUCTS = `${HOST}/popular_products`
 export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
 export const LOGIN = `${HOST}/login`
-export const HOSTIan = 'http://localhost:3000'
+// export const HOST = 'http://localhost:3000'
 
-export const TRAILS_SEASON = `${HOSTIan}/Season`
-export const TRAILS_COMMENT = `${HOSTIan}/seasonComment`
-export const TRAILS_DIFF = `${HOSTIan}/difficulty`
-export const ShoppingCart = `${HOSTIan}/sc1`
+export const TRAILS_SEASON = `${HOST}/Season`
+export const TRAILS_COMMENT = `${HOST}/seasonComment`
+export const TRAILS_DIFF = `${HOST}/difficulty`
+export const ShoppingCart = `${HOST}/sc1`

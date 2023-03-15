@@ -274,7 +274,7 @@ button.next {
 @media screen and (max-width: 400px) {
   div.IanShoppingCartAll{
     margin: 0px;
-    height: 15vh;
+    height: 130vh;
     padding-top:5% ;
   }
 
@@ -312,7 +312,7 @@ div.shoppingNavbar{
   }
   div.shoppingbottom{
     position: absolute;
-    top: 108%;
+    top: 15%;
   }
   .shopping-cart-process{
     padding-top: 15%;

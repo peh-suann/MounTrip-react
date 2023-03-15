@@ -51,40 +51,18 @@ function IanShoppingCart1() {
   ])
   const [mypage, setPage] = useState('')
 
-  const plusIcon = (arr, id) => {
-    return arr.map((v, i) => {
-      if (v.sid === id) {
-        return { ...v, count: v.count + 1 }
-      } else {
-        return { ...v }
+  const minusItem = (pid) => {
+    const items = data.map((i) => {
+      const p = { ...i }
+      if (p.sid === pid) {
+        p.count = p.count - 1 || 1
       }
+
+      return p
     })
-  }
-  const minusIcon = (arr, id) => {
-    return arr.map((v, i) => {
-      if (v.sid === id && v.count > 1) {
-        return { ...v, count: v.count - 1 }
-      } else {
-        return { ...v }
-      }
-    })
+    setData(items)
   }
 
-  const wannaBuy = (arr, id) => {
-    return arr.map((v, i) => {
-      if (v.sid === id) {
-        return { ...v, buy: !v.buy }
-      } else {
-        return { ...v }
-      }
-    })
-  }
-
-  const deletepruduct = (arr, id) => {
-    return arr.filter((v, i) => {
-      return v.sid !== id
-    })
-  }
   const selectAll = (data, id) => {
     return data.map((v, i) => {
       return { ...v, buy: true }
@@ -105,7 +83,7 @@ function IanShoppingCart1() {
         className={`${styles['shopping-cart-process']} ${styles['mobile-none']} row justify-content-center`}
       >
         <div className={`d-flex justify-content-center ${styles.shoppingSvgs}`}>
-          <Link to="/SC1">
+          <Link to="/SC1" className={`${styles.myLink}`}>
             <svg
               onClick={() => {
                 setPage('確認訂單')
@@ -124,7 +102,7 @@ function IanShoppingCart1() {
               />
             </svg>
           </Link>
-          <Link to="/SC2">
+          <Link to="/SC2" className={`${styles.Link}`}>
             <svg
               onClick={() => {
                 setPage('填寫資料')
@@ -143,7 +121,7 @@ function IanShoppingCart1() {
               />
             </svg>
           </Link>
-          <Link to="/SC3">
+          <Link to="/SC3" className={`${styles.Link}`}>
             <svg
               onClick={() => {
                 setPage('付款頁面')
@@ -162,7 +140,7 @@ function IanShoppingCart1() {
               />
             </svg>
           </Link>
-          <Link to="/SC4">
+          <Link to="/SC4" className={`${styles.Link}`}>
             <svg
               onClick={() => {
                 setPage('完成訂單')
@@ -372,8 +350,8 @@ function IanShoppingCart1() {
             return (
               <>
                 <IanShoppingCartProduct
-                  styles={styles}
                   key={v.sid}
+                  pid={v.sid}
                   name={v.name}
                   startTime={v.startTime}
                   endTime={v.endTime}
@@ -381,6 +359,9 @@ function IanShoppingCart1() {
                   count={v.count}
                   total={v.total}
                   buy={v.buy}
+                  setData={setData}
+                  minusItem={minusItem}
+                  data={data}
                 />
               </>
             )
