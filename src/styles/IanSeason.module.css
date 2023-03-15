@@ -1,405 +1,401 @@
 html body {
-    background-color: var(--mtyellow-4);
-    width: 100%;
-  }
-  * {
-    /* border: 1px solid red; */
-    box-sizing: border-box;
-  }
-  /* top bar ------------------- */
-  .season_top_bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-  
-    height: calc(var(--navbar-height) + 650px);
-    background: linear-gradient(180deg, rgba(1, 19, 6, 0) 69.31%, #011306 100%),
-      url(./../../public/imgs/Ian_img/season_top_bar.jpg);
-    background-size: cover;
-    background-position: center 80%;
-    background-repeat: no-repeat;
-  }
-  .season_top_bar h1 {
-    text-align: center;
-  
-    font-weight: 900;
-    font-size: 42px;
-    line-height: 140%;
-    letter-spacing: 0.05em;
-  
-    color: #ffffff;
-  
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  }
-  .season_top_bar p {
-    text-align: center;
-    margin-bottom: 50px;
-  
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 0.1em;
-  
-    color: #ffffff;
-  
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  }
-  /* top bar ------------------- */
-  
-  /* products ------------------- */
-  section.products {
-    width: 100%;
-    padding: 40px 120px;
-    height: 125vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .row_of_products {
-    width: 100%;
-    display: flex;
-  }
-  section.products > div.row_of_products > div.product {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 10px;
-    cursor: pointer;
-    
-    position: relative;
-  }
-  .product img{
-    width: 100%;
-    height: 250px;
-    border-radius: 10px;
-  }
-  .pic1 {
-    width: 100%;
-    height: 250px;
-    border-radius: 10px;
-    /* background: linear-gradient(
+  background-color: var(--mtyellow-4);
+  width: 100%;
+}
+* {
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+}
+/* top bar ------------------- */
+.season_top_bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: calc(var(--navbar-height) + 650px);
+  background: linear-gradient(180deg, rgba(1, 19, 6, 0) 69.31%, #011306 100%);
+  /* background: linear-gradient(180deg, rgba(1, 19, 6, 0) 69.31%, #011306 100%),
+      url(./../../public/imgs/Ian_img/season_top_bar.jpg); */
+  background-size: cover;
+  background-position: center 80%;
+  background-repeat: no-repeat;
+}
+.season_top_bar h1 {
+  text-align: center;
+
+  font-weight: 900;
+  font-size: 42px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+
+  color: #ffffff;
+
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.season_top_bar p {
+  text-align: center;
+  margin-bottom: 50px;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.1em;
+
+  color: #ffffff;
+
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+/* top bar ------------------- */
+
+/* products ------------------- */
+section.products {
+  width: 100%;
+  padding: 40px 120px;
+  height: 125vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row_of_products {
+  width: 100%;
+  display: flex;
+}
+section.products > div.row_of_products > div.product {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 10px;
+  cursor: pointer;
+
+  position: relative;
+}
+.product img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+.pic1 {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  /* background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 71.43%,
         rgba(0, 0, 0, 0.74) 96.19%
       ),
     url(./../../public/imgs/Ian_img/101-1.jpg); */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-origin: content-box;
-    background-clip: content-box;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  .pic1:hover {
-    transition: 1s;
-    transform: scale(1.2,1.2);
-  }
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-clip: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.pic1:hover {
+  transition: 1s;
+  transform: scale(1.2, 1.2);
+}
 
+.rates {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: var(--mtgreen-4);
+  position: absolute;
+  bottom: 70px;
+  padding: 12px 15px;
+}
+.rates p {
+  padding: 0;
+  margin: 0;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+.information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.information h4,
+.information p {
+  margin: 0;
+  padding: 0;
+}
+.info h4 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+
+  color: var(--mtgrey-1);
+}
+.info p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+
+  color: var(--mtgrey-1);
+}
+.price {
+  text-align: end;
+}
+.price p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+
+  color: var(--mtgrey-1);
+}
+.price h4 {
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+
+  color: var(--mtgreen-1);
+}
+button.load_more_btn {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 90px;
+  margin-top: 24px;
+
+  background: var(--mtgreen-1);
+  border-radius: 5px;
+  border: none;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+/* products ------------------- */
+
+/* carousel ------------------- */
+section.comments {
+  width: 100%;
+  height: 80vh;
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+section.comments h4 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: var(--mtgreen-1);
+}
+section.comments .comment_carousel {
+  width: 100%;
+  padding: 0px 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+section.comments > div.commentFirst_svg {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+}
+
+section.comments > div.commentSecond_svg {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  display: flex;
+  justify-content: end;
+}
+
+section.comments .comment {
+  width: 405px;
+  height: 470px;
+  padding: 20px;
+  box-shadow: 0px 4px 20px 4px rgba(1, 19, 6, 0.12);
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2px;
+}
+
+section.comments .comment h5 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 35px;
+  letter-spacing: 0.03em;
+
+  color: var(--mtyellow-4);
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+section.comments .comment h5 span:first-child {
+  font-weight: 700;
+  font-size: 16px;
+}
+section.comments .comment p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1em;
+
+  color: var(--mtyellow-4);
+  text-shadow: 0px 0px 4px #000000;
+}
+/* carousel ------------------- */
+
+@media screen and (max-width: 391px) {
+  /* top bar ------------------- */
+  .season_top_bar {
+    height: calc(var(--navbar-mobile-height) + 500px);
+  }
+  .season_top_bar h1 {
+    font-size: 28px;
+  }
+  .season_top_bar p {
+    margin-bottom: 44px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  /* top bar ------------------- */
+
+  /* products ------------------- */
+  section.products {
+    width: 100%;
+    height: 355vh;
+    padding: 0px 15px;
+    margin-top: -20px;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 24px;
+  }
+  .row_of_products {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  section.products > .row_of_products > div.product {
+    padding: 0;
+    gap: 7px;
+  }
+  section.products .row-of-products:first-child .product:first-child .pic {
+    box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.2);
+  }
+  section.products .row-of-products:not(:first-child) {
+    display: none;
+  }
+  section.products .pic {
+    height: 200px;
+  }
   .rates {
     width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     color: var(--mtgreen-4);
     position: absolute;
-    bottom: 70px;
+    bottom: 60px;
     padding: 12px 15px;
   }
   .rates p {
-    padding: 0;
-    margin: 0;
-  
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 140%;
-    letter-spacing: 0.05em;
-  
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 4px;
-  }
-  .information {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .information h4,
-  .information p {
-    margin: 0;
-    padding: 0;
+    font-weight: 400;
+    font-size: 13px;
   }
   .info h4 {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 140%;
-    letter-spacing: 0.05em;
-  
-    color: var(--mtgrey-1);
+    font-size: 16px;
   }
   .info p {
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.1em;
-  
-    color: var(--mtgrey-1);
-  }
-  .price {
-    text-align: end;
+    font-size: 12px;
+    line-height: 17px;
   }
   .price p {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 140%;
-    letter-spacing: 0.05em;
-  
-    color: var(--mtgrey-1);
+    font-size: 12px;
+    line-height: 130%;
   }
   .price h4 {
-    font-weight: 900;
-    font-size: 22px;
-    line-height: 140%;
-    letter-spacing: 0.05em;
-  
-    color: var(--mtgreen-1);
+    font-size: 18px;
+    line-height: 130%;
   }
-  button.load_more_btn {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 90px;
-    margin-top: 24px;
-  
-    background: var(--mtgreen-1);
-    border-radius: 5px;
-    border: none;
-  
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 27px;
-    letter-spacing: 0.1em;
-    color: #ffffff;
+  button.load-more-btn {
+    margin-top: 8px;
+    font-size: 16px;
+    padding: 4px 36px;
   }
   /* products ------------------- */
-  
+
   /* carousel ------------------- */
   section.comments {
-    width: 100%;
-    height: 80vh;
-    margin-bottom: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+    height: 90vh;
+    margin-top: 64px;
+    margin-bottom: 0;
+    padding: 0px 15px;
+    overflow-x: hidden;
   }
   section.comments h4 {
-    margin: 0;
+    margin-bottom: 20px;
     font-weight: 700;
-    font-size: 32px;
-    text-align: center;
-    letter-spacing: 0.1em;
-    color: var(--mtgreen-1);
-  }
-  section.comments .comment_carousel {
-    width: 100%;
-    padding: 0px 120px;
-    display: flex;
+    font-size: 22px;
+    line-height: 26px;
+    padding: 0px 30px;
     justify-content: space-between;
   }
-
-  section.comments > div.commentFirst_svg{
+  /* section.comments h3 span:not(:nth-child(2)) {
+      gap: 2px;
+    } */
+  /* section.comments h3 span:not(:nth-child(2)) img {
+      width: 22px;
+      aspect-ratio: 1/1;
+    } */
+  section.comments .comment_carousel {
     width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 2%;
+    padding: 10px;
+    justify-content: flex-start;
   }
-
-section.comments > div.commentSecond_svg{
-width: 100%;
-position: absolute;
-top: 50%;
-right: 2%;
-display: flex;
-justify-content: end;
+  section > div.commentFirst_svg > svg,
+  div.commentSecond_svg > svg {
+    display: none;
   }
-
   section.comments .comment {
-    width: 405px;
-    height: 470px;
-    padding: 20px;
-    box-shadow: 0px 4px 20px 4px rgba(1, 19, 6, 0.12);
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 2px;
+    width: 300px;
+    height: 374px;
+    padding: 4%;
+    margin: 2%;
+    flex-shrink: 0;
   }
-
   section.comments .comment h5 {
-    margin: 0;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 35px;
-    letter-spacing: 0.03em;
-  
-    color: var(--mtyellow-4);
-    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
-  }
-  section.comments .comment h5 span:first-child {
     font-weight: 700;
     font-size: 16px;
   }
   section.comments .comment p {
-    margin: 0;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.1em;
-  
-    color: var(--mtyellow-4);
-    text-shadow: 0px 0px 4px #000000;
+    font-size: 13px;
   }
   /* carousel ------------------- */
-  
-
-
-
-
-
-
-  @media screen and (max-width: 391px) {
-    /* top bar ------------------- */
-    .season_top_bar {
-      height: calc(var(--navbar-mobile-height) + 500px);
-    }
-    .season_top_bar h1 {
-      font-size: 28px;
-    }
-    .season_top_bar p {
-      margin-bottom: 44px;
-      font-size: 12px;
-      line-height: 20px;
-    }
-    /* top bar ------------------- */
-  
-    /* products ------------------- */
-    section.products {
-      width: 100%;
-      height: 355vh;
-      padding: 0px 15px;
-      margin-top: -20px;
-  
-      display: flex;
-      flex-direction: column;
-      /* justify-content: center; */
-      align-items: center;
-      gap: 24px;
-    }
-    .row_of_products {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    section.products > .row_of_products > div.product{
-      padding: 0;
-      gap: 7px;
-    }
-    section.products .row-of-products:first-child .product:first-child .pic {
-      box-shadow: 0px -2px 12px rgba(0, 0, 0, 0.2);
-    }
-    section.products .row-of-products:not(:first-child) {
-      display: none;
-    }
-    section.products .pic {
-      height: 200px;
-    }
-    .rates {
-      width: 95%;
-      color: var(--mtgreen-4);
-      position: absolute;
-      bottom: 60px;
-      padding: 12px 15px;
-    }
-    .rates p {
-      font-weight: 400;
-      font-size: 13px;
-    }
-    .info h4 {
-      font-size: 16px;
-    }
-    .info p {
-      font-size: 12px;
-      line-height: 17px;
-    }
-    .price p {
-      font-size: 12px;
-      line-height: 130%;
-    }
-    .price h4 {
-      font-size: 18px;
-      line-height: 130%;
-    }
-    button.load-more-btn {
-      margin-top: 8px;
-      font-size: 16px;
-      padding: 4px 36px;
-    }
-    /* products ------------------- */
-  
-    /* carousel ------------------- */
-    section.comments {
-      height: 90vh;
-      margin-top: 64px;
-      margin-bottom: 0;
-      padding: 0px 15px;
-      overflow-x: hidden;
-    }
-    section.comments h4{
-      margin-bottom: 20px;
-      font-weight: 700;
-      font-size: 22px;
-      line-height: 26px;
-      padding: 0px 30px;
-      justify-content: space-between;
-    }
-    /* section.comments h3 span:not(:nth-child(2)) {
-      gap: 2px;
-    } */
-    /* section.comments h3 span:not(:nth-child(2)) img {
-      width: 22px;
-      aspect-ratio: 1/1;
-    } */
-    section.comments .comment_carousel {
-      width: 100%;
-      padding: 10px;
-      justify-content: flex-start;
-    }
-    section > div.commentFirst_svg > svg, div.commentSecond_svg > svg{
-      display: none;
-    }
-    section.comments .comment {
-      width: 300px;
-      height: 374px;
-      padding: 4%;
-      margin: 2%;
-      flex-shrink: 0;
-    }
-    section.comments .comment h5 {
-      font-weight: 700;
-      font-size: 16px;
-    }
-    section.comments .comment p {
-      font-size: 13px;
-    }
-    /* carousel ------------------- */
-  }
+}

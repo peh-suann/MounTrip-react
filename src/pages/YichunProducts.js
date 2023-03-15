@@ -19,6 +19,9 @@ import {
   ALL_PRODUCTS,
   POP_PRODUCTS,
   HOTSPRING_PRODUCTS,
+  SUNRISE_PRODUCTS,
+  HOLIDAY_PRODUCTS,
+  FLOWERS_PRODUCTS,
 } from '../connections/api-config'
 
 // Styles
@@ -30,8 +33,14 @@ function YichunProducts() {
   const [popProducts, setPopProducts] = useState([])
   const [hotSpringProducts, setHotSpringProducts] = useState([])
 
+  const filterTitle = ['所有熱門', '清明連假', '賞花春遊', '最美日出']
+  const [filter, setFilter] = useState('所有熱門')
+  const [filterData, setFilterData] = useState([])
+
+  const [filterIndex, setFilterIndex] = useState(0)
+
   const diffData = [
-    { diffCn: '初級', diffEng: 'EASY', describe: '好朋友'},
+    { diffCn: '初級', diffEng: 'EASY', describe: '好朋友' },
     { diffCn: '中級', diffEng: 'MEDIUM', describe: '好夥伴' },
     { diffCn: '高級', diffEng: 'HARD', describe: '好挑戰' },
   ]
@@ -60,6 +69,39 @@ function YichunProducts() {
       return []
     }
   }
+  // get products of holiday
+  const getHolidayProducts = async () => {
+    try {
+      const response = await axios.get(HOLIDAY_PRODUCTS)
+      console.log('getHolidayProducts', response.data)
+      return response.data
+    } catch (error) {
+      console.error(error)
+      return []
+    }
+  }
+  // get products of sunrise
+  const getSunriseProducts = async () => {
+    try {
+      const response = await axios.get(SUNRISE_PRODUCTS)
+      console.log('getSunriseProducts', response.data)
+      return response.data
+    } catch (error) {
+      console.error(error)
+      return []
+    }
+  }
+  // get products of flowers
+  const getFlowersProducts = async () => {
+    try {
+      const response = await axios.get(FLOWERS_PRODUCTS)
+      console.log('getFlowersProducts', response.data)
+      return response.data
+    } catch (error) {
+      console.error(error)
+      return []
+    }
+  }
   // get products of theme of hot spring
   const getHotSpringProducts = async () => {
     try {
@@ -73,21 +115,34 @@ function YichunProducts() {
   }
 
   useEffect(() => {
-    const PopularProductsData = async () => {
-      const data = await getPopularProductsData()
-      setPopProducts(data)
-    }
-    PopularProductsData()
+    const fetchData = async () => {
+      try {
+        const popProducts = await getPopularProductsData()
+        const sunriseProducts = await getSunriseProducts()
+        const holidayProducts = await getHolidayProducts()
+        const flowersProducts = await getFlowersProducts()
+        const hotSpringProducts = await getHotSpringProducts()
 
-    const HotSpringProducts = async () => {
-      const data = await getHotSpringProducts()
-      setHotSpringProducts(data)
+        await setFilterData([
+          popProducts,
+          holidayProducts,
+          flowersProducts,
+          sunriseProducts,
+        ])
+        setHotSpringProducts(hotSpringProducts)
+        setPopProducts(popProducts)
+      } catch (error) {
+        console.log(error)
+      }
     }
-    HotSpringProducts()
 
-    // window.scrollTo(0, 0)
+    fetchData()
     document.documentElement.scrollTop = 0
   }, [])
+
+  useEffect(() => {
+    console.log('filterData', filterData)
+  }, [filterData])
 
   const rank = [1, 2, 3, 4, 5, 6]
 
@@ -237,29 +292,59 @@ function YichunProducts() {
               </svg>
             )}
           </div>
-          <div className={styles['row-of-products']}>
-            {popProducts.slice(0, 3).map((el, i) => {
+          <div className={styles.filter_buttons}>
+            {filterTitle.map((el, i) => {
               return (
-                <YichunProductCard
-                  key={el.trails_sid}
-                  el={el}
-                  ranking={rank[i]}
-                  shadow={0}
-                />
+                <button
+                  key={i}
+                  className={filter === el ? '' : styles.disable}
+                  onClick={() => {
+                    setFilter(el)
+                    switch (el) {
+                      case '清明連假':
+                        setFilterIndex(1)
+                        break
+                      case '賞花春遊':
+                        setFilterIndex(2)
+                        break
+                      case '最美日出':
+                        setFilterIndex(3)
+                        break
+                      default:
+                        setFilterIndex(0)
+                    }
+                  }}
+                >
+                  {el}
+                </button>
               )
             })}
           </div>
           <div className={styles['row-of-products']}>
-            {popProducts.slice(3, 6).map((el, i) => {
-              return (
-                <YichunProductCard
-                  key={el.trails_sid}
-                  el={el}
-                  ranking={rank[i + 3]}
-                  shadow={0}
-                />
-              )
-            })}
+            {filterData[filterIndex] &&
+              filterData[filterIndex].slice(0, 3).map((el, i) => {
+                return (
+                  <YichunProductCard
+                    key={el.trails_sid}
+                    el={el}
+                    ranking={rank[i]}
+                    shadow={0}
+                  />
+                )
+              })}
+          </div>
+          <div className={styles['row-of-products']}>
+            {filterData[filterIndex] &&
+              filterData[filterIndex].slice(3, 6).map((el, i) => {
+                return (
+                  <YichunProductCard
+                    key={el.trails_sid}
+                    el={el}
+                    ranking={rank[i + 3]}
+                    shadow={0}
+                  />
+                )
+              })}
           </div>
         </section>
         <section className={styles.theme}>
