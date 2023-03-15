@@ -67,7 +67,7 @@ section.products .products_title h2 {
   width: 100%;
 }
 .filter_buttons button {
-  width: 9%;
+  width: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,16 +215,17 @@ section.products .products_title h2 {
   font-size: 18px;
   line-height: 140%;
   letter-spacing: 0.05em;
+  margin-bottom: 2px;
 
   color: var(--mtgrey-1);
 }
 .info p {
-  font-weight: 300;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.1em;
 
-  color: var(--mtgrey-1);
+  color: var(--mtgrey-2);
 }
 .price {
   text-align: end;

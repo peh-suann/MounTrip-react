@@ -8,9 +8,9 @@
 // export const HOST = '192.168.21.84:3000'
 
 // yichun's connect
-// export const HOST = 'http://192.168.71.118:3000'
+export const HOST = 'http://192.168.71.118:3000'
 // export const HOST = 'http://192.168.100.140:3000'
-export const HOST = 'http://127.0.0.1:3000'
+// export const HOST = 'http://127.0.0.1:3000'
 
 // paths ---------------------------------------------------------------------------
 // yichun's path
@@ -19,7 +19,7 @@ export const POP_PRODUCTS = `${HOST}/products_popular`
 export const SUNRISE_PRODUCTS = `${HOST}/products_sunrise`
 export const HOLIDAY_PRODUCTS = `${HOST}/products_holiday`
 export const FLOWERS_PRODUCTS = `${HOST}/products_flowers`
-export const HOTSPRING_PRODUCTS = `${HOST}/products_hotspring`
+// export const HOTSPRING_PRODUCTS = `${HOST}/products_hotspring`
 export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
 

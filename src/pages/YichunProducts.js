@@ -103,16 +103,16 @@ function YichunProducts() {
     }
   }
   // get products of theme of hot spring
-  const getHotSpringProducts = async () => {
-    try {
-      const response = await axios.get(HOTSPRING_PRODUCTS)
-      console.log('getHotSpringProducts', response.data)
-      return response.data
-    } catch (error) {
-      console.error(error)
-      return []
-    }
-  }
+  // const getHotSpringProducts = async () => {
+  //   try {
+  //     const response = await axios.get(HOTSPRING_PRODUCTS)
+  //     console.log('getHotSpringProducts', response.data)
+  //     return response.data
+  //   } catch (error) {
+  //     console.error(error)
+  //     return []
+  //   }
+  // }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -121,7 +121,7 @@ function YichunProducts() {
         const sunriseProducts = await getSunriseProducts()
         const holidayProducts = await getHolidayProducts()
         const flowersProducts = await getFlowersProducts()
-        const hotSpringProducts = await getHotSpringProducts()
+        // const hotSpringProducts = await getHotSpringProducts()
 
         await setFilterData([
           popProducts,
@@ -129,7 +129,7 @@ function YichunProducts() {
           flowersProducts,
           sunriseProducts,
         ])
-        setHotSpringProducts(hotSpringProducts)
+        // setHotSpringProducts(hotSpringProducts)
         setPopProducts(popProducts)
       } catch (error) {
         console.log(error)

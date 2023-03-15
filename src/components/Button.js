@@ -6,7 +6,7 @@ export default function Button(props) {
   const { text, iconFront, iconEnd, style, link } = props
   return (
     <Link to={`/${link}`} style={{ ...style, textDecoration: 'none' }}>
-      <button className={-1 > 0 ? styles.btn : styles.btn_disable}>
+      <button className={styles.btn}>
         {iconFront ? (
           <svg
             width="20"
