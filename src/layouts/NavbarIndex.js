@@ -21,14 +21,14 @@ import NavbarShoppingCart from '../components/NavbarShoppingCart'
 import NavbarDropdown from '../components/NavbarDropdown'
 import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 
-export default function NavBar() {
+export default function NavBar(props) {
+  const { mapInteraction, setMapInteraction } = props
   // const [open, setOpen] = useState(false)
   const { myAuth, logout } = useContext(AuthContext)
   const [open, setOpen] = useState(false)
 
   //轉換會員頁面用
   const [memberPage, setMemberPage] = useState('member')
-
 
   const [showList, setShowList] = useState(false)
   const handleClick = function () {
@@ -38,14 +38,30 @@ export default function NavBar() {
   const [showListMobile, setShowListMobile] = useState(false)
   const navigate = useNavigate()
 
+  // if (mapInteraction === 1) {
+  //   // document.querySelector('nav').style.padding='0px 623px 0px 120px '
+  //   document.querySelector('nav').setAttribute(
+  //     'class',
+  //     `${styles.mapstate1}`
+  //   )
+  // } else {
+  //   // document.querySelector('nav').setAttribute(
+  //   //   'class',
+  //   //   ''
+  //   // )
+  // }
+
   return (
     <>
-      <nav>
+      <nav className={mapInteraction === 1 ? styles.mapstate1 : ''}>
         <div className={styles.navbar}>
           <div className={styles.left}>
-            <button className={styles.menu} onClick={(e)=>{
-              setShowListMobile(!showListMobile)
-            }}>
+            <button
+              className={styles.menu}
+              onClick={(e) => {
+                setShowListMobile(!showListMobile)
+              }}
+            >
               <FontAwesomeIcon icon={faBars} />
             </button>
             <button className={styles.logo}>
@@ -114,7 +130,9 @@ export default function NavBar() {
           </div>
           <div className={styles.right}>
             <ul className={styles.nav_icons}>
-              <li>
+              <li className={styles.searchBar}
+                style={(mapInteraction===1) ? { display: 'none' } :  {} }
+              >
                 <FontAwesomeIcon icon={faSearch} />
                 {document.documentElement.clientWidth > 390 ? (
                   <input

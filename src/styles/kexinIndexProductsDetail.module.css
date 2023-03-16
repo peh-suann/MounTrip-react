@@ -1,0 +1,368 @@
+.mtgrey1 {
+  color: var(--mtgrey-1);
+}
+
+.mtgrey2 {
+  color: var(--mtgrey-2);
+}
+
+.mtgrey3 {
+  color: var(--mtgrey-3);
+}
+
+.mtgreen1 {
+  color: var(--mtgreen-1);
+}
+
+.mtgreen4 {
+  color: var(--mtgreen-4);
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-35 {
+  margin-bottom: 35px;
+}
+
+.mb-44 {
+  margin-bottom: 44px;
+}
+
+.px-30 {
+  padding: 0 30px;
+}
+
+.me-05 {
+  margin-right: 5px;
+}
+
+.me-8 {
+  margin-right: 8px;
+}
+
+.me-10 {
+  margin-right: 10px;
+}
+
+.me-13 {
+  margin-right: 13px;
+}
+
+.me-16 {
+  margin-right: 16px;
+}
+
+.me-18 {
+  margin-right: 18px;
+}
+
+.me-20 {
+  margin-right: 20px;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-85 {
+  width: 85%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.map-product-detail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 630px;
+  height: 100vh;
+  overflow: auto;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(1, 19, 6, 0.08);
+  padding: 0;
+  z-index: 1005;
+}
+
+.map-product-detail::-webkit-scrollbar {
+  display: none;
+}
+
+.map-product-detail .detail-img-wrap {
+  display: block;
+  height: 284px;
+  /* background-color: red; */
+  width: 100%;
+}
+
+.map-product-detail .detail-img-wrap > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-product-detail h3 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  color: var(--mtgrey-1);
+}
+
+.map-product-detail .tag {
+  align-items: center;
+  padding: 4px 12px;
+  gap: 8px;
+  background: rgba(206, 232, 203, 0.7);
+  border-radius: 5px;
+}
+
+.map-product-detail .tag p {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0.05em;
+  color: var(--mtgrey-1);
+}
+
+.map-product-detail .map-product-detail-list p {
+  /* width: 30%; */
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.06em;
+  color: var(--mtgrey-2);
+}
+
+.map-product-detail .description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: justify;
+  letter-spacing: 0.05em;
+  color: var(--mtgrey-1);
+}
+
+.map-product-detail .slope img {
+  display: block;
+  width: 570px;
+  height: 18px;
+}
+
+.map-product-detail .average-rate {
+  padding: 12px 20px;
+  gap: 10px;
+  width: 86.53px;
+  height: 70px;
+  background: var(--mtgreen-1);
+}
+
+.map-product-detail .average-rate p {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: 0.06em;
+  color: var(--mtyellow-4);
+}
+
+.map-product-detail .star-mark {
+  width: 30px;
+  height: 30px;
+}
+
+.map-product-detail .total-comment p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: var(--mtgrey-1);
+}
+
+.map-product-detail .headsticker {
+  width: 48px;
+  height: 48px;
+  background-color: var(--mtgreen-1);
+  /* background: url(); */
+  border-radius: 50%;
+}
+
+.map-product-detail .comment-name {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  color: var(--mtgreen-1);
+}
+
+.map-product-detail .gradehashtag {
+  padding: 2px 10px;
+  gap: 8px;
+  /* width: 87px; */
+  height: 26px;
+  background: var(--mtyellow-2);
+  border-radius: 18px;
+}
+
+.map-product-detail .gradehashtag p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  color: var(--mtyellow-4);
+}
+
+.map-product-detail .comment-date {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+  color: var(--mtgrey-3);
+}
+
+.map-product-detail .comment-photo-wrap {
+  /* width: 100%; */
+}
+
+.map-product-detail .comment-photo {
+  width: 33%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.map-product-detail .comment-photo > img {
+  width: 150%;
+  /* height: 150%; */
+  object-fit: cover;
+  position: 50% 50%;
+}
+
+/* .map-product-detail #map-shopping-choice {
+  padding: 24px 30px;
+  gap: 12px;
+  position: fixed;
+  width: 33%;
+  height: 256px;
+  bottom: 0px;
+  right: 0;
+  background: #ffffff;
+}
+
+button.btn.minus {
+  padding: 8px 12px;
+  gap: 2px;
+  border: 2px solid var(--mtgreen-1);
+  border-right: none;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.btn.number {
+  display: block;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0.05em;
+  color: var(--mtgreen-1);
+  padding: 8px 12px;
+  gap: 2px;
+  border: 2px solid var(--mtgreen-1);
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.btn.plus {
+  padding: 8px 12px;
+  gap: 2px;
+  border: 2px solid var(--mtgreen-1);
+  border-left: none;
+  border-radius: 0px 5px 5px 0px;
+  margin-right: 12px;
+}
+
+.btn.like {
+  padding: 8px 12px;
+  gap: 2px;
+  border: 2px solid var(--mtgreen-1);
+  border-radius: 5px;
+}
+
+.btn-white {
+  height: 45px;
+  gap: 2px;
+  border: 2px solid var(--mtgreen-1);
+  border-radius: 5px;
+  margin-right: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: var(--mtgreen-1);
+}
+
+#map-shopping-choice img.chevron-down-type {
+  height: 24px;
+  width: 24px;
+}
+
+.dropdown-title {
+  height: 45px;
+  padding: 8px 12px;
+  gap: 2px;
+  border: 2px solid var(--mtgreen-1);
+  border-right: none;
+  background-color: var(--mtgreen-1);
+  border-radius: 5px 0px 0px 5px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  color: var(--mtyellow-4);
+}
+
+.dropdown-wrap {
+  height: 45px;
+  gap: 2px;
+  border: 2px solid var(--mtgreen-1);
+  border-left: none;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.dropdown-wrap > button {
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+  color: var(--mtgrey-1);
+}
+
+.btn-green {
+  height: 45px;
+  gap: 2px;
+  border: 2px solid var(--mtgreen-1);
+  background-color: var(--mtgreen-1);
+  border-radius: 5px;
+  margin-right: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+} */

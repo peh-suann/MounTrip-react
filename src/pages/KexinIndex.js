@@ -3,6 +3,8 @@ import * as d3 from 'd3'
 import NavbarIndex from '../layouts/NavbarIndex'
 import IndexStyles from '../styles/kexinIndex.module.css'
 import useRWD from '../contexts/useRWD'
+import KexinIndexProducts from '../components/KexinIndexProducts'
+import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
 
 function KexinIndex() {
 
@@ -19,7 +21,7 @@ function KexinIndex() {
   var data = require('../mapdata/tw_new.json')
 
   const mapRef = useRef(null)
-  const [selectedFeature, setSelectedFeature] = useState(null)
+  const [mapInteraction, setMapInteraction] = useState(0)
 
   // RWD
   const device = useRWD()
@@ -60,12 +62,6 @@ function KexinIndex() {
         .style('fill', 'none')
         .style('pointer-events', 'all')
 
-      // Create a new projection
-      // const projection = d3
-      //   .geoMercator()
-      //   .center([121, 23.58])
-      //   .scale(9000)
-      //   .translate([WIDTH / 2, HEIGHT / 2])
       if (device === 'mobile') {
         // Create a new projection
         const projection = d3
@@ -140,12 +136,18 @@ function KexinIndex() {
     d3.select(mapRef.current)
       .selectAll('path')
       .style('fill', 'rgba(10, 140, 45, 0.2)')
-    // // console.log(d)
+    console.log(i.properties.COUNTYNAME)
     d3.select(this).style('fill', CLICK_COLOR)
-    // svg
-    //   .transition()
-    //   .duration(ZOOM_DURATION)
-    //   .call(zoom.transform, d3.zoomIdentity.scale(1).translate(-130, -190))
+
+    if (i.properties.COUNTYNAME === '新北市') {
+      console.log('yes')
+      const svg = document.querySelector('#mapZoom')
+      d3.select('#mapZoom')
+      .transition()
+      .duration(750)
+      .attr('transform','translate(-4529.3527528164805,-485.7012302230678) scale(5)')
+      setMapInteraction(1)
+    }
 
     console.log(d3.select(this).style('fill'))
 
@@ -166,18 +168,24 @@ function KexinIndex() {
 
       d3.select(mapRef.current)
         .selectAll('path')
+        .transition()
+        .duration(750)
         .style('fill', 'rgba(10, 140, 45, 0.2)')
+      
+      setMapInteraction(0)
     }
   }
 
   return (
     <>
-      <NavbarIndex />
+      <NavbarIndex mapInteraction={mapInteraction} setMapInteraction={setMapInteraction} />
       <div
         ref={mapRef}
         id={`${IndexStyles['info']}`}
         onClick={clickReset}
       ></div>
+      <KexinIndexProducts mapInteraction={mapInteraction} setMapInteraction={setMapInteraction} />
+      {/* <KexinIndexProductsDetail mapInteraction={mapInteraction} setMapInteraction={setMapInteraction} /> */}
     </>
   )
 }

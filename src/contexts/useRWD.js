@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const useRWD = () => {
-  const [device, setDevice] = useState('mobile')
+  const [device, setDevice] = useState('PC')
   
   const handleRWD = () => {
     if (window.innerWidth > 500) setDevice('PC')
