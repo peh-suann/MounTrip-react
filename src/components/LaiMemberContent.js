@@ -2,12 +2,14 @@ import React, { useContext, useState } from 'react'
 import styles from './../styles/Member.module.css'
 import { MemberContext } from './../contexts/MemberContext.js'
 import AuthContext from './../contexts/AuthContexts'
+import { motion } from 'framer-motion'
+import Backdrop from './LaiBackdrop/Backdrop'
 
 export default function MemberContent(props) {
   const { user, setUser } = props
   // console.log('user:',user)
   const [lastname, setLastname] = useState(user.lastname)
-  const [firstname, setFirstame] = useState(user.firstname)
+  const [firstname, setFirstname] = useState(user.firstname)
   const [gender, setGender] = useState(user.gender)
   const [bday, setBday] = useState(user.birthday)
   const [personalId, setPersonalId] = useState(user.personal_id)
@@ -30,6 +32,7 @@ export default function MemberContent(props) {
 
   return (
     <>
+      <Backdrop />
       <div className={styles['member-data']}>
         <div className={styles['title']}>
           <svg
@@ -65,10 +68,10 @@ export default function MemberContent(props) {
               type="text"
               className=""
               id=""
-              name="helloe"
+              name=""
               value={user.firstname}
               onChange={(e) => {
-                setLastname(e.target.value)
+                setFirstname(e.target.value)
               }}
               required
             />
@@ -84,7 +87,7 @@ export default function MemberContent(props) {
               name=""
               value={user.lastname}
               onChange={(e) => {
-                setFirstame(e.target.value.lastname)
+                setLastname(e.target.value.lastname)
               }}
               required
             />
@@ -255,7 +258,13 @@ export default function MemberContent(props) {
               required
             />
           </div>
-          <button className={styles['save-btn']}>儲存變更</button>
+          <motion.button
+            className={styles['save-btn']}
+            whileHover={{ scale: 1.1 }}
+            whileTop={{ scale: 0.9 }}
+          >
+            儲存變更
+          </motion.button>
         </form>
       </div>
     </>

@@ -13,38 +13,48 @@ import { MemberContext } from './../contexts/MemberContext.js'
 import AuthContext from './../contexts/AuthContexts.js'
 import { MEMBER_DATA, USER_DATA } from '../connections/api-config'
 import axios from 'axios'
+import { motion } from 'framer-motion'
+import Modal from '../components/LaiBackdrop/Modal'
 // import Gift from '../../src/icons/gift.svg'
 
 export default function Member() {
+  //modal彈出視窗的
+  const [modalOpen, setModalOpen] = useState(false)
+  const open = () => setModalOpen(true)
+  const close = () => setModalOpen(false)
+  const handleModalToggle = () => {
+    modalOpen ? close() : open()
+  }
+
   //顯示localstorage的登入者的資訊
   const { myAuth, setMyAuth, logout } = useContext(AuthContext)
   //先設定為空陣列，在把一個個user obj放進去
   const [user, setUser] = useState({})
 
   //抓資料的函式，全部人的資料都在這個api
-  const getUser = async (req, res) => {
-    try {
-      const res = await axios.get(MEMBER_DATA)
-      const currentUserId = myAuth.sid
-      const currentUserData = res.data.rows[currentUserId - 1]
-      setUser(currentUserData)
-      console.log('member-data-rows:', res.data.rows)
-      console.log('user:', currentUserData)
-      // return currentUserData
-    } catch (error) {
-      console.log('u:', user)
-      // console.log()
+  // const getUser = async (req, res) => {
+  //   try {
+  //     const res = await axios.get(MEMBER_DATA)
+  //     const currentUserId = myAuth.sid
+  //     const currentUserData = res.data.rows[currentUserId - 1]
+  //     setUser(currentUserData)
+  //     console.log('member-data-rows:', res.data.rows)
+  //     console.log('user:', currentUserData)
+  //     // return currentUserData
+  //   } catch (error) {
+  //     console.log('u:', user)
+  //     // console.log()
 
-      return []
-    }
-  }
+  //     return []
+  //   }
+  // }
   //抓資料的函式，只抓登入會員的資料
   const getUser2 = async (req, res) => {
     const userString = localStorage.getItem('myAuth')
-    const user = JSON.parse(userString)
+    const userData = JSON.parse(userString)
     // console.log('u.id:', user.accountId)
-    const token = user.token
-    const mid = user.accountId
+    const token = userData.token
+    const mid = userData.accountId
 
     try {
       const res = await axios.get(USER_DATA(mid), {
@@ -54,6 +64,9 @@ export default function Member() {
       // const currentUserId = myAuth.sid
       const currentUserData = res.data
       setUser(currentUserData)
+      // TODO 大頭貼檔名 = user.img
+      const avatarName = user.img
+      console.log('檔名', avatarName)
       // console.log('member-data-rows:', res.data)
       // console.log('user:', currentUserData)
     } catch (error) {
@@ -122,6 +135,9 @@ export default function Member() {
   )
   return (
     <>
+      {modalOpen && (
+        <Modal modalOpen={modalOpen} handleClose={close} text={'上傳大頭貼'} />
+      )}
       <div className={styles['grid-container']}>
         <div className={styles['sidebar']}>
           <MemberProfile
@@ -130,15 +146,21 @@ export default function Member() {
             familyname={user.lastname}
             level={user.level}
             account={user.account}
+            handleModalToggle={handleModalToggle}
+            modalOpen={modalOpen}
+            close={close}
+            open={open}
           />
-          <button
+          <motion.button
             className={styles['edit-btn']}
             onClick={() => {
               handleDisplayPage('member')
             }}
+            whileHover={{ scale: 1.1 }}
+            whileTop={{ scale: 0.9 }}
           >
             編輯個人資料
-          </button>
+          </motion.button>
           <div className={styles['btn-border']}></div>
           <div className={styles['sidebar-menu']}>
             <li className={memberPage === 'coupon' ? styles['active'] : null}>
@@ -330,6 +352,7 @@ export default function Member() {
         </div>
         {/* <MemberContent /> */}
         {/* <CouponContent /> */}
+
         {memberPage === 'member' && (
           <MemberContent user={user} setUser={setUser} />
         )}

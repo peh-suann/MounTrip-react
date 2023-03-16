@@ -1,16 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './../styles/Member.module.css'
 import LevelTag from './LaiMemberProfileLevelTag'
+import { AnimatePresence, motion } from 'framer-motion'
+import Modal from './LaiBackdrop/Modal'
+import Backdrop from './LaiBackdrop/Backdrop'
+import { USER_AVATAR } from '../connections/api-config'
+import axios from 'axios'
 
 export default function LaiMemberProfile(props) {
-  const { img, name, familyname, level, account } = props
+  const {
+    img,
+    name,
+    familyname,
+    level,
+    account,
+    handleModalToggle,
+    modalOpen,
+    close,
+    open,
+  } = props
+  const [avatar, setAvatar] = useState({ avatar: '' })
+  const getProfileImg = async () => {
+    const userString = localStorage.getItem('myAuth')
+    const user = JSON.parse(userString)
+    const sid = user.accountId
+    const token = user.token
+    const res = await axios.get(USER_AVATAR, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        sid: `${sid}`,
+      },
+    })
+    if (res) return console.log('res:', res, 'img:', img)
+  }
   // console.log(props)
 
   return (
     <>
       <div className={styles['member-profile']}>
         <div className={styles['profile']}>
-          <div className={styles['pic-btn']}>
+          <motion.button
+            className={styles['pic-btn']}
+            whileHover={{ scale: 1.1 }}
+            whileTop={{ scale: 0.9 }}
+            onClick={() => (modalOpen ? close() : open())}
+          >
             <svg
               className={styles['camera']}
               width="20"
@@ -35,8 +69,23 @@ export default function LaiMemberProfile(props) {
                 strokeLinejoin="round"
               />
             </svg>
-          </div>
+          </motion.button>
+          {/* <AnimatePresence
+            initial={false}
+            mode="wait"
+            onExitComplete={() => null}
+          > */}
+          {/* {modalOpen && (
+            <Modal
+              modalOpen={modalOpen}
+              handleClose={close}
+              text={'hello modal'}
+            />
+          )} */}
+          {/* </AnimatePresence> */}
+
           <div className={styles['profile-wrap']}>
+            {}
             <div className={styles['profile-pic']}></div>
           </div>
         </div>
