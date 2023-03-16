@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        /* border: 1px solid red; */
+      }
+      .circle {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: #aaf;
+      }
+      .image-wrapper {
+        width: 200px;
+        height: 200px;
+        padding-top: 100px;
+        border-radius: 0 0 100px 100px;
+        overflow: hidden;
+        /* border: 2px solid blue; */
+        position: relative;
+      }
+
+      .image-wrapper img {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        aspect-ratio: 1/1;
+        /* height: 100%; */
+        /* aspect-ratio: 1/1; */
+        /* height: 100%; */
+        object-fit: contain;
+        object-position: center 50%;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+      .image-wrapper:hover img {
+        scale: 1.2;
+      }
+
+      /* .image-wrapper:hover img {
+        transform: scale(1.2);
+      }
+
+      .image-wrapper:hover .container {
+        overflow: visible;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="image-wrapper">
+      <div class="circle"></div>
+      <img src="./../../public/images/yichun/1x/資產 1.png" alt="your-image" />
+    </div>
+  </body>
+</html>

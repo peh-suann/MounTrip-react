@@ -19,7 +19,7 @@ export const POP_PRODUCTS = `${HOST}/products_popular`
 export const SUNRISE_PRODUCTS = `${HOST}/products_sunrise`
 export const HOLIDAY_PRODUCTS = `${HOST}/products_holiday`
 export const FLOWERS_PRODUCTS = `${HOST}/products_flowers`
-// export const HOTSPRING_PRODUCTS = `${HOST}/products_hotspring`
+export const HOTSPRING_PRODUCTS = `${HOST}/products_hotspring`
 export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
 

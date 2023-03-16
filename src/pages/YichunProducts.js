@@ -1,5 +1,5 @@
 // Packages
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -26,6 +26,7 @@ import {
 
 // Styles
 import styles from './../styles/yichun_styles/YichunProducts.module.css'
+import { el } from 'date-fns/locale'
 export const StylesContext = createContext(styles)
 
 function YichunProducts() {
@@ -40,10 +41,14 @@ function YichunProducts() {
   const [filterIndex, setFilterIndex] = useState(0)
 
   const diffData = [
-    { diffCn: '初級', diffEng: 'EASY', describe: '好朋友' },
-    { diffCn: '中級', diffEng: 'MEDIUM', describe: '好夥伴' },
-    { diffCn: '高級', diffEng: 'HARD', describe: '好挑戰' },
+    { diffCn: '初', diffEng: 'EASY', describe: '好朋友' },
+    { diffCn: '中', diffEng: 'MEDIUM', describe: '好夥伴' },
+    { diffCn: '高', diffEng: 'HARD', describe: '好挑戰' },
   ]
+  const [diff, setDiff] = useState(-1)
+  const flag01 = useRef(null)
+  const flag02 = useRef(null)
+  const flag03 = useRef(null)
 
   // get all products
   const getListData = async () => {
@@ -103,16 +108,51 @@ function YichunProducts() {
     }
   }
   // get products of theme of hot spring
-  // const getHotSpringProducts = async () => {
-  //   try {
-  //     const response = await axios.get(HOTSPRING_PRODUCTS)
-  //     console.log('getHotSpringProducts', response.data)
-  //     return response.data
-  //   } catch (error) {
-  //     console.error(error)
-  //     return []
-  //   }
-  // }
+  const getHotSpringProducts = async () => {
+    try {
+      const response = await axios.get(HOTSPRING_PRODUCTS)
+      console.log('getHotSpringProducts', response.data)
+      return response.data
+    } catch (error) {
+      console.error(error)
+      return []
+    }
+  }
+
+  const toggleDiff = (el) => {
+    switch (el.diffEng) {
+      case 'MEDIUM':
+        setDiff(1)
+        break
+      case 'HARD':
+        setDiff(2)
+        break
+      default:
+        setDiff(0)
+    }
+  }
+  const toggleFlag = (el) => {
+    switch (el.diffEng) {
+      case 'MEDIUM':
+        flag01.current.style.transform = `translateY(0%)`
+        flag02.current.style.transform = `translateY(-100%)`
+        flag03.current.style.transform = `translateY(0%)`
+        break
+      case 'HARD':
+        flag01.current.style.transform = `translateY(0%)`
+        flag02.current.style.transform = `translateY(0%)`
+        flag03.current.style.transform = `translateY(-100%)`
+        break
+      default:
+        flag01.current.style.transform = `translateY(-100%)`
+        flag02.current.style.transform = `translateY(0%)`
+        flag03.current.style.transform = `translateY(0%)`
+    }
+  }
+
+  useEffect(() => {
+    console.log(diff)
+  }, [diff])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -121,7 +161,7 @@ function YichunProducts() {
         const sunriseProducts = await getSunriseProducts()
         const holidayProducts = await getHolidayProducts()
         const flowersProducts = await getFlowersProducts()
-        // const hotSpringProducts = await getHotSpringProducts()
+        const hotSpringProducts = await getHotSpringProducts()
 
         await setFilterData([
           popProducts,
@@ -129,7 +169,8 @@ function YichunProducts() {
           flowersProducts,
           sunriseProducts,
         ])
-        // setHotSpringProducts(hotSpringProducts)
+
+        setHotSpringProducts(hotSpringProducts)
         setPopProducts(popProducts)
       } catch (error) {
         console.log(error)
@@ -394,42 +435,86 @@ function YichunProducts() {
         <section className={styles.difficulty}>
           <div className={styles.diff_intro_list}>
             {diffData.map((el, i) => {
-              return <YichunDiffRank el={el} key={i} />
+              return (
+                <YichunDiffRank
+                  key={i}
+                  el={el}
+                  index={i}
+                  diff={diff}
+                  toggleDiff={toggleDiff}
+                  toggleFlag={toggleFlag}
+                />
+              )
             })}
           </div>
           <div className={styles.diff_recommend}>
             <div className={styles.select_diff}>
               {document.documentElement.clientWidth > 390 ? (
-                <svg
-                  width="1111"
-                  height="301"
-                  viewBox="0 0 1111 301"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M104.5 246L71 230V260L104.5 246Z" fill="#6CBA7C" />
-                  <path
-                    d="M71 290V260M71 260V230L104.5 246L71 260Z"
-                    stroke="#6CBA7C"
-                    strokeWidth="5"
+                <>
+                  <svg
+                    ref={flag01}
+                    className={`${styles.flag} ${styles.easy}`}
+                    width="43"
+                    height="64"
+                    viewBox="0 0 43 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M36.5 20L3 4V34L36.5 20Z" fill="#f3c969" />
+                    <path
+                      d="M3 64V34M3 34V4L36.5 20L3 34Z"
+                      stroke="#f3c969"
+                      stroke-width="5"
+                    />
+                  </svg>
+                  <svg
+                    ref={flag02}
+                    className={`${styles.flag} ${styles.medium}`}
+                    width="43"
+                    height="64"
+                    viewBox="0 0 43 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M36.5 20L3 4V34L36.5 20Z" fill="#f3c969" />
+                    <path
+                      d="M3 64V34M3 34V4L36.5 20L3 34Z"
+                      stroke="#f3c969"
+                      stroke-width="5"
+                    />
+                  </svg>
+                  <svg
+                    ref={flag03}
+                    className={`${styles.flag} ${styles.hard}`}
+                    width="43"
+                    height="64"
+                    viewBox="0 0 43 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M36.5 20L3 4V34L36.5 20Z" fill="#f3c969" />
+                    <path
+                      d="M3 64V34M3 34V4L36.5 20L3 34Z"
+                      stroke="#f3c969"
+                      stroke-width="5"
+                    />
+                  </svg>
+                  <img
+                    src="images/yichun/1x/2x/hard.png"
+                    alt="hard"
+                    className={`${styles.diff_mountain} ${styles.hard}`}
                   />
-                  <path
-                    d="M556 161V131M556 131V101L589.5 117L556 131Z"
-                    stroke="#6CBA7C"
-                    strokeWidth="5"
+                  <img
+                    src="images/yichun/1x/2x/medium.png"
+                    alt="medium"
+                    className={`${styles.diff_mountain} ${styles.medium}`}
                   />
-                  <path
-                    d="M1024 66V36M1024 36V6L1057.5 22L1024 36Z"
-                    stroke="#6CBA7C"
-                    strokeWidth="5"
+                  <img
+                    src="images/yichun/1x/2x/easy.png"
+                    alt="easy"
+                    className={`${styles.diff_mountain} ${styles.easy}`}
                   />
-                  <path
-                    d="M1 297.999L36.021 291.712H68.7077L130.162 280.182L189.989 272.843L283.888 279.13L347.434 266.552L425.478 238.249L461.134 228.815H488.636L557.5 160.419L721.343 195.272L806.49 169.065L848.506 151.244L881.193 125.04L963 93.4995L988.677 76.7264L1023.7 64.1484H1054.05L1082.07 74.1068L1110.09 84.0651"
-                    stroke="#6CBA7C"
-                    strokeWidth="5"
-                    strokeMiterlimit="10"
-                  />
-                </svg>
+                </>
               ) : (
                 <img src="images/yichun/ridge.png" alt="" />
               )}
