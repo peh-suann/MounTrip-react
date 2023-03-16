@@ -67,11 +67,15 @@ function DavisTrailsFilter() {
   // console.log('filterFromBatch', filterFromBatch(rows_data))
 
   useEffect(() => {
+    // 設定功能
+    console.log('useEffect--')
     getListData(+usp.get('page'))
+
     return () => {
-      console.log('unmount')
+      // 解除功能
+      console.log('unmount AbList--')
     }
-  }, [])
+  }, [location.search])
 
   return (
     <>
