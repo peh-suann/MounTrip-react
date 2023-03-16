@@ -157,8 +157,8 @@ function KexinLogin() {
                   />
                   <div className="form-text"></div>
                 </div>
-                <div className="mb-3 d-flex justify-content-between">
-                  <div>
+                <div className="mb-3 d-flex justify-content-between align-items-end">
+                  <div className="d-flex justify-content-between align-items-end"> 
                     <input
                       type="checkbox"
                       id={loginStyles.rememberme}

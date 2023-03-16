@@ -1,18 +1,22 @@
 import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+// components
 // import DavisTrailsDetailTable from '../components/DavisTrailsDetailTable'
 import DavisTrailsImgGroup from '../components/DavisTrailsDetail/DavisTrailsImgGroup'
-import DavisTrailsBatch from '../components/DavisTrailsDetail/DavisTrailsBatch'
-import DavisTrailsShopBtn from '../components/DavisTrailsDetail/DavisTrailsShopBtn'
+// import DavisTrailsBatch from '../components/DavisTrailsDetail/DavisTrailsBatch'
+// import DavisTrailsShopBtn from '../components/DavisTrailsDetail/DavisTrailsShopBtn'
+import DavisTrailsShopGroup from '../components/DavisTrailsDetail/DavisTrailsShopGroup'
 import DavisTrailsGpx from '../components/DavisTrailsDetail/DavisTrailsGpx'
 import DavisTrailsRating from '../components/DavisTrailsDetail/DavisTrailsRating'
 // import DavisGpxLeaflet from '../components/DavisTrailsDetail/DavisGpxLeaflet'
-import { TRAILS_DATA } from '../connections/api-config'
-import { useLocation } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-// import styles from '../styles/Mountrip.module.css'
 import styles from '../styles/DavisTrailsDetail.module.css'
+
+// api
+import { TRAILS_DATA } from '../connections/api-config'
 
 export default function DavisTrailsDetail(rows) {
   const location = useLocation()
@@ -43,24 +47,27 @@ export default function DavisTrailsDetail(rows) {
     }
   }, [])
 
-  const [count, setCount] = useState(0)
+  let rows_data = data.rows
+
+  console.log(rows_data)
+
+  const filterFromBatch = (rows_data) => {
+    if (!Array.isArray(rows_data)) {
+      return []
+    }
+    return rows_data.slice(0, 1)
+  }
+
+  console.log('filterFromBatch', filterFromBatch(rows_data))
+
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      {/* 
-       mobile 購物車fix
-         */}
-      {/* <div className="container">
-            {console.log('----', data.rows)}
-            <DavisTrailsDetailTable rows={data.rows} />
-          </div> */}
-      {/* {console.log('----', data.rows)} */}
-      {data.rows.map((r) => (
+      {filterFromBatch(data.rows).map((r) => (
         <div
           key={r.sid}
           className={`d-flex flex-column ${styles.container_all}`}
-          // className={styles.container_all}
-          // className="container_all d-flex flex-column "
         >
           <div className="col p-0">
             {/* top-img */}
@@ -96,46 +103,20 @@ export default function DavisTrailsDetail(rows) {
               </ol>
             </nav>
           </div>
-
+          {/* {console.log('Page:', data.page)} */}
           <section>
             <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
               <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
                 <DavisTrailsImgGroup
-                  key={r.sid}
+                  filterFromBatch={filterFromBatch}
+                  rows_data={rows_data}
                   data={data}
-                  // getListData={getListData}
                 />
-                {/* <div className="col flex-column me-5 d-none d-lg-flex">
-                  <div className="">
-                    <img
-                      className={`${styles.img_cover_one}`}
-                      src={`/imgs/Davis/${r.trail_sid}-1.jpg`}
-                      alt=""
-                    />
-                  </div>
-                  <div className={`d-flex flex-row ${styles.img_wrap_three}`}>
-                    <img
-                      className={`${styles.img_cover_three}`}
-                      src={`/imgs/Davis/${r.trail_sid}-1.jpg`}
-                      alt=""
-                    />
-                    <img
-                      className={`${styles.img_cover_three}`}
-                      src={`/imgs/Davis/${r.trail_sid}-2.jpg`}
-                      alt=""
-                    />
-                    <img
-                      className={`${styles.img_cover_three}`}
-                      src={`/imgs/Davis/${r.trail_sid}-3.jpg`}
-                      alt=""
-                    />
-                  </div>
-                </div> */}
                 {/* right-card */}
                 <div className="col">
-                  <h4 className="fw-bold">{r.trail_name}</h4>
+                  <h4 className="fw-bold mb-3">{r.trail_name}</h4>
                   {/* location-group */}
-                  <div className="d-lg-flex flex-row align-items-center d-none ">
+                  <div className="d-lg-flex flex-row align-items-center d-none mb-3 ">
                     <div className="mb-2 me-2">
                       <svg
                         width="20"
@@ -474,9 +455,13 @@ export default function DavisTrailsDetail(rows) {
                   <DavisTrailsGpx />
 
                   {/* shop-button-group TODO:拆元件 */}
-                  <div className="d-none d-lg-flex flex-column ">
-                    {/* Count */}
-                    <div className="col d-flex flex-row mb-2 justify-content-between">
+                  <DavisTrailsShopGroup
+                    data={data}
+                    filterFromBatch={filterFromBatch}
+                  />
+                  {/* <div className="d-none d-lg-flex flex-column "> */}
+                  {/* Count */}
+                  {/* <div className="col d-flex flex-row mb-2 justify-content-between">
                       <div
                         className={`col  d-flex flex-row align-items-center me-2 ${styles.shop_btn_one}`}
                       >
@@ -558,54 +543,13 @@ export default function DavisTrailsDetail(rows) {
                           />
                         </svg>
                       </button>
-                    </div>
-                    {/* level2 */}
-                    <div className={`col mb-2 ${styles.shop_btn_two}`}>
-                      <div className=" d-flex flex-row align-items-center ">
-                        <div className={`col-2 col-lg-1 ${styles.batch}`}>
-                          <h5 className={`ps-3 mb-0 lh-lg ${styles.btn_font}`}>
-                            梯次
-                          </h5>
-                        </div>
-                        <div className="col d-flex justify-content-center">
-                          <h5 className={`mb-0 ${styles.batch_font}`}>
-                            <select name="" id="">
-                              <DavisTrailsBatch key={r.trail_sid} data={data} />
-                              {/* {data.rows.map((r, i) => {
-                                return (
-                                  <option id={i} value="">
-                                    {r.batch_start}-{r.batch_end}
-                                  </option>
-                                )
-                              })} */}
+                    </div> */}
+                  {/* level2 */}
 
-                              {/* <option value="">2023/01/01 - 2023/01/03</option>
-                              <option value="">2023/01/01 - 2023/01/03</option> */}
-                            </select>
-                          </h5>
-                        </div>
-                        <button className={`${styles.btn_style}`}>
-                          <svg
-                            width="30"
-                            height="30"
-                            viewBox="0 0 30 30"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M11.25 25L21.25 15L11.25 5"
-                              stroke="#6CBA7C"
-                              strokeWidth="3.75"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    {/* level3 shop_btn FIXME: */}
-                    <DavisTrailsShopBtn />
-                    {/* <button
+                  {/* <DavisTrailsBatch data={data} /> */}
+
+                  {/* level3 shop_btn  */}
+                  {/* <button
                       className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
                     >
                       <h5
@@ -632,7 +576,8 @@ export default function DavisTrailsDetail(rows) {
                         </svg>
                       </span>
                     </button> */}
-                  </div>
+                  {/* </div> */}
+                  {/*  */}
                 </div>
               </div>
             </div>
@@ -762,7 +707,7 @@ export default function DavisTrailsDetail(rows) {
                 <div className="col d-flex justify-content-center">
                   <h6 className="mb-0">2023/01/01 - 2023/01/03</h6>
                 </div>
-                <button className={`${styles.btn_style}`}>
+                <button onClick={() => {}} className={`${styles.btn_style}`}>
                   <svg
                     width="30"
                     height="30"

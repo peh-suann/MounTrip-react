@@ -2,13 +2,11 @@ import { useEffect, useState, useRef } from 'react'
 import * as d3 from 'd3'
 import NavbarIndex from '../layouts/NavbarIndex'
 import IndexStyles from '../styles/kexinIndex.module.css'
+import useRWD from '../contexts/useRWD'
 
 function KexinIndex() {
-  // useEffect();
 
   // map basic setting
-  const WIDTH = window.innerWidth
-  const HEIGHT = window.innerHeight
   const ZOOM_THRESHOLD = [1, 5]
   const OVERLAY_MULTIPLIER = 10
   const OVERLAY_OFFSET = OVERLAY_MULTIPLIER / 2 - 0.5
@@ -23,7 +21,18 @@ function KexinIndex() {
   const mapRef = useRef(null)
   const [selectedFeature, setSelectedFeature] = useState(null)
 
+  // RWD
+  const device = useRWD()
+  console.log(device)
+
   useEffect(() => {
+    
+    console.log(device);
+    const WIDTH = window.innerWidth
+    const HEIGHT = window.innerHeight
+    console.log(window.innerWidth, window.innerHeight)
+    d3.select('#map').remove()
+    // console.log(device)
     if (data) {
       const zoom = d3.zoom().scaleExtent(ZOOM_THRESHOLD).on('zoom', zoomHandler)
 
@@ -52,35 +61,68 @@ function KexinIndex() {
         .style('pointer-events', 'all')
 
       // Create a new projection
-      const projection = d3
-        .geoMercator()
-        .center([121, 23.58])
-        .scale(10000)
-        .translate([WIDTH / 2, HEIGHT / 2])
+      // const projection = d3
+      //   .geoMercator()
+      //   .center([121, 23.58])
+      //   .scale(9000)
+      //   .translate([WIDTH / 2, HEIGHT / 2])
+      if (device === 'mobile') {
+        // Create a new projection
+        const projection = d3
+          .geoMercator()
+          .center([121, 23.7])
+          .scale(8500)
+          .translate([WIDTH / 2, HEIGHT / 2])
 
-      // Create a path generator
-      const path = d3.geoPath(projection)
+        // Create a path generator
+        const path = d3.geoPath(projection)
 
-      // Draw the map
-      g.selectAll('path')
-        .data(data.features)
-        .enter()
-        .append('path')
-        .attr('d', path)
-        .style('fill', 'rgba(10, 140, 45, 0.2)')
-        // .style('fill', function (d) {
-        //   return d.properties.fill // replace with your own data value accessor
-        // })
-        .style('stroke', '#FFFFF2')
-        .style('stroke-width', 0.5)
-        .style('cursor', 'pointer')
-        .on('mouseover', mouseOverHandler)
-        .on('mouseout', mouseOutHandler)
-        .on('click', clickHandler)
+        // Draw the map
+        g.selectAll('path')
+          .data(data.features)
+          .enter()
+          .append('path')
+          .attr('d', path)
+          .style('fill', 'rgba(10, 140, 45, 0.2)')
+          // .style('fill', function (d) {
+          //   return d.properties.fill // replace with your own data value accessor
+          // })
+          .style('stroke', '#FFFFF2')
+          .style('stroke-width', 0.5)
+          .style('cursor', 'pointer')
+          .on('mouseover', mouseOverHandler)
+          .on('mouseout', mouseOutHandler)
+          .on('click', clickHandler)
+      } else {
+        // Create a new projection
+        const projection = d3
+          .geoMercator()
+          .center([121, 23.58])
+          .scale(10000)
+          .translate([WIDTH / 2, HEIGHT / 2])
 
+        // Create a path generator
+        const path = d3.geoPath(projection)
+
+        // Draw the map
+        g.selectAll('path')
+          .data(data.features)
+          .enter()
+          .append('path')
+          .attr('d', path)
+          .style('fill', 'rgba(10, 140, 45, 0.2)')
+          // .style('fill', function (d) {
+          //   return d.properties.fill // replace with your own data value accessor
+          // })
+          .style('stroke', '#FFFFF2')
+          .style('stroke-width', 0.5)
+          .style('cursor', 'pointer')
+          .on('mouseover', mouseOverHandler)
+          .on('mouseout', mouseOutHandler)
+          .on('click', clickHandler)
+      }
     }
-
-  }, [])
+  }, [device])
 
   const mouseOverHandler = function (d, i) {
     if (d3.select(this).style('fill') != CLICK_COLOR) {
@@ -112,24 +154,30 @@ function KexinIndex() {
     // }
   }
 
-  const clickReset = function(e) {
+  const clickReset = function (e) {
     console.log(window.innerWidth, window.innerHeight)
-    if(e.target.style.fill=='none'){
-      console.log("hiclick")
+    if (e.target.style.fill == 'none') {
+      console.log('hiclick')
       console.log(d3.select('#mapZoom'))
       d3.select('#mapZoom')
         .transition()
         .duration(750)
-        .attr('transform','translate(0,0) scale(1)')
+        .attr('transform', 'translate(0,0) scale(1)')
 
-      d3.select(mapRef.current).selectAll("path").style("fill", "rgba(10, 140, 45, 0.2)");
+      d3.select(mapRef.current)
+        .selectAll('path')
+        .style('fill', 'rgba(10, 140, 45, 0.2)')
     }
   }
 
   return (
     <>
       <NavbarIndex />
-      <div ref={mapRef} id={`${IndexStyles['info']}`} onClick={clickReset}></div>
+      <div
+        ref={mapRef}
+        id={`${IndexStyles['info']}`}
+        onClick={clickReset}
+      ></div>
     </>
   )
 }

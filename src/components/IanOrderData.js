@@ -1,10 +1,28 @@
 import { useState } from 'react'
 
 function IanOrderData(props) {
+  const [user, setUser] = useState([
+    {
+      id: '',
+      firstname: '',
+      lastname: '',
+      phone: '',
+      email: '',
+      idCard: '',
+      birthday: '',
+    },
+  ])
+
+  // const handleFieldChange = (e) => {
+  //   const newUser = { ...user, [e.target.name]: e.target.value }
+  //   setUser(newUser)
+  // }
+
   const { styles, items, setItems } = props
 
   const [orderData, setOrderData] = useState(items)
   setItems(orderData)
+
   return (
     <>
       {orderData.map((v, i) => {
@@ -16,10 +34,13 @@ function IanOrderData(props) {
                 <input
                   type="text"
                   id="firstName"
+                  name="firstName"
                   value={v.firstname}
-                  onChange={(e) => {
+                  onChange={
+                    () => {}
+                    // handleFieldChange
                     // e.preventDefault()
-                  }}
+                  }
                 />
               </div>
               <div className={`${styles['form-group']} col-6`}>
@@ -27,6 +48,7 @@ function IanOrderData(props) {
                 <input
                   type="text"
                   id="lastName"
+                  name="lastName"
                   value={v.lastname}
                   onChange={(e) => {
                     // e.preventDefault()
@@ -41,6 +63,7 @@ function IanOrderData(props) {
               <input
                 type="tel"
                 id="phone"
+                name="phone"
                 value={v.phone}
                 onChange={(e) => {
                   // e.preventDefault()
@@ -54,6 +77,7 @@ function IanOrderData(props) {
               <input
                 type="email"
                 id="email"
+                name="email"
                 value={v.email}
                 onChange={(e) => {
                   // e.preventDefault()
@@ -70,8 +94,9 @@ function IanOrderData(props) {
                 </label>
                 <input
                   type="text"
-                  id="traveler1-id"
+                  id="idCard"
                   value={v.idCard}
+                  name="idCard"
                   onChange={(e) => {
                     // e.preventDefault()
                   }}
@@ -83,8 +108,9 @@ function IanOrderData(props) {
                 <label htmlFor="traveler1-birthday">出生年月日</label>
                 <input
                   type="date"
-                  id="traveler1-birthday"
+                  id="birthday"
                   value={v.birthday}
+                  name="birthday"
                   onChange={(e) => {
                     // e.preventDefault()
                   }}
