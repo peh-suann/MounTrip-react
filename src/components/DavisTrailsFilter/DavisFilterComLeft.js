@@ -7,8 +7,8 @@ function DavisFilterComLeft(props) {
   const [inputText, setInputText] = useState('')
 
   useEffect(() => {
-    setKeyword(setKeywordpr)
-  }, [setKeywordpr])
+    setKeywordpr(keyword)
+  }, [keyword])
 
   // const filterByKeyword = (data, setKeyword) => {
   //   return data.filter((v, i) => {

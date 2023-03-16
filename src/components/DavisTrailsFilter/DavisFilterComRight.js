@@ -8,8 +8,11 @@ function DavisFilterComRight(props) {
   const { data, filterByKeyword, keywordpr } = props
 
   // console.log('filterFromBatch', filterFromBatch(rows_data))
+
+  // console.log(keywordpr)
   return (
     <>
+      {console.log(keywordpr)}
       <div className={` d-flex flex-column ${styles.right_card}`}>
         <div className={`${styles.sub_title}`}>
           <div className="d-flex p-0">
@@ -57,7 +60,11 @@ function DavisFilterComRight(props) {
           </div>
         </div>
         {/* filter card */}
-        <DavisComFilterCard data={data} filterByKeyword={filterByKeyword} />
+        <DavisComFilterCard
+          data={data}
+          filterByKeyword={filterByKeyword}
+          keywordpr={keywordpr}
+        />
         {/* <div className="col">
             <div className={`${styles.trails_card}`}>
               <div className="row g-0 d-flex flex-row ">

@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom'
 import styles from '../../styles/DavisTrailsFilter.module.css'
 
 function DavisComFilterCard(props) {
-  const { data, filterByKeyword } = props
-  console.log('data', data)
+  const { data, filterByKeyword, keywordpr } = props
+  // console.log('data', data)
   return (
     <>
-      {/* {filterByKeyword(data.rows).map((r) => ( */}
-      {data.rows.map((r) => (
+      {console.log(data.rows)}
+      {/* {data.rows.map((r) => ( */}
+      {filterByKeyword(data.rows, keywordpr).map((r) => (
         <div className="col">
           {/* card*n  */}
           <div className={`${styles.trails_card}`}>

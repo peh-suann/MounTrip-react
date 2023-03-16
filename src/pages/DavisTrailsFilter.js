@@ -37,7 +37,11 @@ function DavisTrailsFilter() {
       return []
     }
     return rows_data.filter((v, i) => {
-      return v.trail_name.includes(keywordpr)
+      return (
+        v.trail_name.includes(keywordpr) ||
+        v.geo_location_sid.includes(keywordpr) ||
+        v.geo_location_town_sid.includes(keywordpr)
+      )
     })
   }
 
