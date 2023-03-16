@@ -136,8 +136,8 @@ stroke: rgb(127, 222, 127);
     top: 59%;
     left: 50.5%;
     z-index: 1;
-    /* opacity: 0; */
-    opacity: 1;
+    opacity: 0;
+    /* opacity: 1; */
     }
     
     
@@ -165,10 +165,10 @@ stroke: rgb(127, 222, 127);
       border-radius: 50%;
       position: absolute;
       top: 67%;
-      left: 85%;
+      left: 84%;
       z-index: 0;
-      /* opacity: 0; */
-    opacity: 1;
+      opacity: 0;
+    /* opacity: 1; */
       }
     
     
@@ -180,14 +180,62 @@ stroke: rgb(127, 222, 127);
     background-color: rgba(255, 255, 242, 0.9);
     height:120vh ;
     }
-    .tPSecondSectionH5_text{
+    .titleAll{
+      width: 200px;
+      position: relative;
+    }
+
+.tPSecondSectionH5_text{
     font-weight: 900;
     margin: 0;
     color: var(--mtgreen-1);
     font-weight: 700;
     line-height: 26px;
     letter-spacing: 0.1em;
-    }
+    position: absolute;
+}
+
+.tPSecondSectionH4_text{
+      font-weight: 900;
+      margin: 0;
+      color: var(--mtgreen-1);
+      font-weight: 700;
+      line-height: 26px;
+      letter-spacing: 0.1em;
+      position: absolute;
+      opacity: 0;
+  }
+.tPSecondSectionH3_text{
+        font-weight: 900;
+        margin: 0;
+        color: var(--mtgreen-1);
+        font-weight: 700;
+        line-height: 26px;
+        letter-spacing: 0.1em;
+        position: absolute;
+        opacity: 0;
+}
+
+.productAll{
+  height: 90vh;
+  position: relative;
+}
+.tPSSection_cards1{
+  position: absolute;
+  opacity: 1;
+}
+.tPSSection_cards2{
+  position: absolute;
+  opacity: 0;
+}
+.tPSSection_cards3{
+  position: absolute;
+  opacity: 0;
+}
+
+
+
+
     div.tPSSCard_num{
     width: 60px;
     position: absolute;

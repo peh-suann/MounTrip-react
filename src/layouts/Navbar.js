@@ -29,7 +29,6 @@ export default function NavBar() {
   //轉換會員頁面用
   const [memberPage, setMemberPage] = useState('member')
 
-
   const [showList, setShowList] = useState(false)
   const handleClick = function () {
     setShowList(!showList)
@@ -91,16 +90,16 @@ export default function NavBar() {
                 </Link>
               </li>
               <li>
-                <a className={styles.link} href="/">
+                <Link className={styles.link} to="/difficulty">
                   {' '}
                   難易分級{' '}
-                </a>
+                </Link>
               </li>
               <li>
-                <a className={styles.link} href="/">
+                <Link className={styles.link} to="/season">
                   {' '}
                   季節推薦{' '}
-                </a>
+                </Link>
               </li>
               <li>
                 <Link className={styles.link} to="/test">

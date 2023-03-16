@@ -26,7 +26,6 @@ import IanShoppingCart3 from './pages/IanShoppingCart3'
 import IanShoppingCart4 from './pages/IanShoppingCart4'
 import { CartContext } from './components/IanCartContext'
 import { CartContextProvider } from './components/IanCartContext'
-import IanSlider from './pages/IanSlider'
 
 function App() {
   return (
@@ -48,7 +47,6 @@ function App() {
               <Route path="/SC2" element={<IanShoppingCart2 />} />
               <Route path="/SC3" element={<IanShoppingCart3 />} />
               <Route path="/SC4" element={<IanShoppingCart4 />} />
-              <Route path="/slider" element={<IanSlider />} />
             </Route>
             <Route path="/">
               {/* 登入頁面Navbar+Footer */}

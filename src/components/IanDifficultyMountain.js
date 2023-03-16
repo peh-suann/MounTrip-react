@@ -1,7 +1,16 @@
 import React, { useRef, useState } from 'react'
 import styles from '../styles/IanDifficulty.module.css'
 
-function IanDifficultyMountain() {
+function IanDifficultyMountain(props) {
+  const {
+    setWhoId,
+    h2titleHard,
+    h2titleMedium,
+    h2titleEasy,
+    productHard,
+    productMedium,
+    productEasy,
+  } = props
   const easyflagmove = useRef(null)
   const mediumflagmove = useRef(null)
   const hardflagmove = useRef(null)
@@ -11,15 +20,25 @@ function IanDifficultyMountain() {
   const hardMountain = useRef(null)
   const mediumMountain = useRef(null)
   const easyMountain = useRef(null)
-
-  const [who, setWho] = useState('')
+  const hardFocus = useRef(null)
+  const mediumFocus = useRef(null)
+  const easyFocus = useRef(null)
 
   return (
     <>
       {/* focus */}
-      {/* <div className={styles.difficultyMountainHard_focus}></div>
-      <div className={styles.difficultyMountainMedium_focus}></div>
-      <div className={styles.difficultyMountainEasy_focus}></div> */}
+      <div
+        ref={hardFocus}
+        className={styles.difficultyMountainHard_focus}
+      ></div>
+      <div
+        ref={mediumFocus}
+        className={styles.difficultyMountainMedium_focus}
+      ></div>
+      <div
+        ref={easyFocus}
+        className={styles.difficultyMountainEasy_focus}
+      ></div>
       {/* text */}
       <div
         ref={hardTitleText}
@@ -123,13 +142,18 @@ function IanDifficultyMountain() {
         className={styles.dMountain_hard}
         id="hardMountain"
         onClick={(e) => {
-          console.log(e.currentTarget.id)
-          setWho(e.currentTarget.id)
+          setWhoId(e.currentTarget.id)
         }}
       >
         <svg
           className={styles.hard_svg}
           onClick={() => {
+            hardFocus.current.style.transition = '1s'
+            hardFocus.current.style.opacity = '1'
+            mediumFocus.current.style.transition = '1s'
+            mediumFocus.current.style.opacity = '0'
+            easyFocus.current.style.transition = '1s'
+            easyFocus.current.style.opacity = '0'
             easyTitleText.current.style.transition = '1.5s'
             easyTitleText.current.style.transform = 'translateY(520px)'
             hardflagmove.current.style.transition = '1s'
@@ -142,6 +166,18 @@ function IanDifficultyMountain() {
             mediumTitleText.current.style.transform = 'translateY(520px)'
             hardTitleText.current.style.transition = '1s'
             hardTitleText.current.style.transform = 'translateY(0px)'
+            h2titleHard.current.style.transition = '1s'
+            h2titleHard.current.style.opacity = '1'
+            h2titleMedium.current.style.transition = '1s'
+            h2titleMedium.current.style.opacity = '0'
+            h2titleEasy.current.style.transition = '1s'
+            h2titleEasy.current.style.opacity = '0'
+            productHard.current.style.transition = '1s'
+            productHard.current.style.opacity = '1'
+            productMedium.current.style.transition = '1s'
+            productMedium.current.style.opacity = '0'
+            productEasy.current.style.transition = '1s'
+            productEasy.current.style.opacity = '0'
           }}
           width="876"
           height="230"
@@ -354,14 +390,19 @@ function IanDifficultyMountain() {
         className={styles.dMountain_medium}
         id="mediumMountain"
         onClick={(e) => {
-          console.log(e.currentTarget.id)
-          setWho(e.currentTarget.id)
+          setWhoId(e.currentTarget.id)
         }}
       >
         <svg
           ref={mediumMountain}
           className={styles.medium_svg}
           onClick={() => {
+            mediumFocus.current.style.transition = '1s'
+            mediumFocus.current.style.opacity = '1'
+            hardFocus.current.style.transition = '1s'
+            hardFocus.current.style.opacity = '0'
+            easyFocus.current.style.transition = '1s'
+            easyFocus.current.style.opacity = '0'
             easyTitleText.current.style.transition = '1.5s'
             easyTitleText.current.style.transform = 'translateY(520px)'
             hardflagmove.current.style.transition = '1s'
@@ -375,6 +416,21 @@ function IanDifficultyMountain() {
             hardTitleText.current.style.transition = '1s'
             hardTitleText.current.style.transform = 'translateY(520px)'
             // hardMountain.current.path['fillOpasity'] = '0.5'
+
+            h2titleHard.current.style.transition = '1s'
+            h2titleHard.current.style.opacity = '0'
+            h2titleMedium.current.style.transition = '1s'
+
+            h2titleMedium.current.style.opacity = '1'
+            h2titleEasy.current.style.transition = '1s'
+            h2titleEasy.current.style.opacity = '0'
+
+            productHard.current.style.transition = '1s'
+            productHard.current.style.opacity = '0'
+            productMedium.current.style.transition = '1s'
+            productMedium.current.style.opacity = '1'
+            productEasy.current.style.transition = '1s'
+            productEasy.current.style.opacity = '0'
           }}
           width="748"
           height="152"
@@ -510,14 +566,19 @@ function IanDifficultyMountain() {
         className={styles.dMountain_easy}
         id="easyMountain"
         onClick={(e) => {
-          console.log(e.currentTarget.id)
-          setWho(e.currentTarget.id)
+          setWhoId(e.currentTarget.id)
         }}
       >
         <svg
           ref={easyMountain}
           className={styles.easy_svg}
           onClick={() => {
+            mediumFocus.current.style.transition = '1s'
+            mediumFocus.current.style.opacity = '0'
+            hardFocus.current.style.transition = '1s'
+            hardFocus.current.style.opacity = '0'
+            easyFocus.current.style.transition = '1s'
+            easyFocus.current.style.opacity = '1'
             hardTitleText.current.style.transition = '1s'
             hardTitleText.current.style.transform = 'translateY(500px)'
             hardflagmove.current.style.transition = '1s'
@@ -530,6 +591,19 @@ function IanDifficultyMountain() {
             easyTitleText.current.style.transform = 'translateY(-520px)'
             mediumTitleText.current.style.transition = '1.5s'
             mediumTitleText.current.style.transform = 'translateY(520px)'
+            h2titleHard.current.style.transition = '1s'
+            h2titleHard.current.style.opacity = '0'
+            h2titleMedium.current.style.transition = '1s'
+            h2titleMedium.current.style.opacity = '0'
+            h2titleEasy.current.style.transition = '1s'
+            h2titleEasy.current.style.opacity = '1'
+
+            productHard.current.style.transition = '1s'
+            productHard.current.style.opacity = '0'
+            productMedium.current.style.transition = '1s'
+            productMedium.current.style.opacity = '0'
+            productEasy.current.style.transition = '1s'
+            productEasy.current.style.opacity = '1'
           }}
           width="566"
           height="91"
