@@ -116,18 +116,18 @@ function DavisFilterComRight(props) {
                 <Link
                   className={`page-link fw-bold ${styles.a_decoration}`}
                   aria-label="Previous"
-                  to={`/trails-filter?page=${data.page + 8}`}
+                  to={`/trails-filter?page=${data.totalPages - 1}`}
                 >
-                  9
+                  {data.totalPages - 1}
                 </Link>
               </li>
               <li className={`page-item ${styles.li_margin}`}>
                 <Link
                   className={`page-link fw-bold ${styles.a_decoration}`}
                   aria-label="Previous"
-                  to={`/trails-filter?page=${data.page + 9}`}
+                  to={`/trails-filter?page=${data.totalPages}`}
                 >
-                  10
+                  {data.totalPages}
                 </Link>
               </li>
               <li className={`page-item ${styles.li_margin}`}>
