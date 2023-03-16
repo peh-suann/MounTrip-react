@@ -2,13 +2,16 @@
 // export const HOST = 'http://localhost:3000'
 
 // export const LIST_DATA = `${HOST}/member`
+// export const HOST = 'http://localhost:3002'
 // export const HOST = 'http://localhost:3001'
 
 //Lai's connect
-// export const HOST = 'http://192.168.71.105:3001'
+// // // export const HOST = 'http://192.168.71.105:3001'
 export const HOST = 'http://127.0.0.1:3001'
 
-export const TRAILS_DATA = `${HOST}/trails?`
+// 兩台電腦連線時，要用筆電wiki的ip，才能使用localstorage
+
+export const TRAILS_DATA = `${HOST}/trails`
 
 export const RATING_DATA = `${HOST}/trails/rating`
 
@@ -22,6 +25,7 @@ export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 // export const LIST_DATA = `${HOST}/member`
 // yichun's connect
 // export const HOST = 'http://192.168.71.118:3000'
+
 // export const HOST = 'http://192.168.71.105:3001'
 
 //member
@@ -35,10 +39,9 @@ export const HOTSPRING_PRODUCTS = `${HOST}/products_hotspring`
 export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
 export const LOGIN = `${HOST}/login`
+export const SIGNIN = `${HOST}/signin`
 
-export const HOSTIan = 'http://localhost:3000/Ian'
-
-export const TRAILS_SEASON = `${HOSTIan}/Season`
-export const TRAILS_COMMENT = `${HOSTIan}/seasonComment`
-export const TRAILS_DIFF = `${HOSTIan}/difficulty`
-export const ShoppingCart = `${HOSTIan}/sc1`
+export const TRAILS_SEASON = `${HOST}/Season`
+export const TRAILS_COMMENT = `${HOST}/seasonComment`
+export const TRAILS_DIFF = `${HOST}/difficulty`
+export const ShoppingCart = `${HOST}/sc1`

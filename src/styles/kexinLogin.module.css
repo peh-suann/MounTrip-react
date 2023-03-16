@@ -1,9 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .kexinLogin .mtgrey1 {
   color: var(--mtgrey-1);
 }
@@ -71,6 +65,51 @@
   background-color: rgba(206, 232, 203, 0.6);
   border: 2px solid var(--mtgreen-3);
   border-radius: 10px;
+  color: var(--mtgreen-1);
+}
+
+.kexinLogin .loginForm input:focus {
+  background: #fffff2;
+  border: 2px solid var(--mtgreen-1);
+  box-shadow: 0px 0px 0px 4px #cee8cb;
+}
+
+.kexinLogin .loginForm input[type='checkbox'] {
+  /*  // hide checkbox //  */
+  appearance: none;
+  background-color: var(--mtyellow-4);
+  margin: 0;
+  font: inherit;
+  color: var(--mtgreen-1);
+  width: 22px;
+  height: 22px;
+  background: #fffff2;
+  border: 2px solid var(--mtgreen-3);
+  border-radius: 7px;
+  /* transform: translateY(4px); */
+  margin-right: 8px;
+  display: grid;
+  place-content: center;
+}
+
+.kexinLogin .loginForm input[type='checkbox']:focus {
+  box-shadow: none;
+}
+
+.kexinLogin .loginForm input[type='checkbox']::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  transform: scale(0);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  background-color: var(--mtgreen-1);
+  border: none;
+}
+
+.kexinLogin .loginForm input[type='checkbox']:checked::before {
+  
+  /* color: var(--mtyellow-2); */
+  transform: scale(1);
 }
 
 .kexinLogin #account {
@@ -103,6 +142,11 @@
   margin-bottom: 30px;
 }
 
+.kexinLogin .button #login:active {
+  border-color: var(--mtgreen-3);
+  box-shadow: none;
+}
+
 .kexinLogin .button #quick-login {
   display: block;
   width: 100%;
@@ -112,6 +156,11 @@
   /* font-size: 20px; */
   line-height: 27px;
   letter-spacing: 0.1em;
+}
+
+.kexinLogin .button #quick-login:active {
+  border-color: var(--mtgreen-3);
+  box-shadow: none;
 }
 
 .kexinLogin input.form-control {
