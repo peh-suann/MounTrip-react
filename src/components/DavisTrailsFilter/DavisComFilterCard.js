@@ -8,7 +8,7 @@ function DavisComFilterCard(props) {
   // console.log('data', data)
   return (
     <>
-      {console.log(data.rows)}
+      {/* {console.log(data.rows)} */}
       {/* {data.rows.map((r) => ( */}
       {filterByKeyword(data.rows, keywordpr).map((r) => (
         <div className="col">

@@ -50,25 +50,27 @@ function DavisFilterComLeft(props) {
             </span>
             {/* TODO: */}
             <div className="col">
-              <input
-                className={`${styles.input_style}`}
-                type="text"
-                placeholder=" 輸入行程名稱"
-                value={inputText}
-                onChange={(e) => {
-                  setInputText(e.target.value)
+              <div className={`${styles.input_wrap}`}>
+                <input
+                  className={`${styles.input_style}`}
+                  type="text"
+                  placeholder=" 輸入行程名稱"
+                  value={inputText}
+                  onChange={(e) => {
+                    setInputText(e.target.value)
 
-                  // 如果使用者清除所有輸入時要回復為原本列表
-                  if (e.target.value === '') {
-                    setKeyword('')
-                  }
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    setKeyword(inputText)
-                  }
-                }}
-              />
+                    // 如果使用者清除所有輸入時要回復為原本列表
+                    if (e.target.value === '') {
+                      setKeyword('')
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      setKeyword(inputText)
+                    }
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -200,7 +202,9 @@ function DavisFilterComLeft(props) {
               </svg>
             </span>
             <div className="col">
-              <input className={`${styles.input_style}`} type="number" />
+              <div className={`${styles.input_wrap}`}>
+                <input className={`${styles.input_style}`} type="number" />
+              </div>
             </div>
           </div>
         </div>

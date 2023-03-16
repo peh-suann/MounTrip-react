@@ -112,7 +112,7 @@ nav {
   color: var(--mtgrey-3);
   user-select: none;
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 391px) {
   nav {
     position: fixed;
     padding: 0px 15px;
