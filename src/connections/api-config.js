@@ -6,7 +6,7 @@
 // export const HOST = 'http://localhost:3001'
 
 //Lai's connect
-// // // export const HOST = 'http://192.168.71.105:3001'
+// export const HOST = 'http://192.168.71.105:3001'
 export const HOST = 'http://127.0.0.1:3001'
 
 // 兩台電腦連線時，要用筆電wiki的ip，才能使用localstorage
@@ -30,7 +30,10 @@ export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 
 //member
 export const MEMBER_DATA = `${HOST}/member/api`
-export const USER_DATA = `${HOST}/member/:mid`
+export const USER_DATA = (mid) => `${HOST}/member/me/${mid}`
+export const USER_COMMENT = (mid) => `${HOST}/member/me/comment/${mid}`
+export const USER_UPLOAD = `${HOST}/member/me/upload`
+export const USER_AVATAR = `${HOST}/member/me/avatar`
 
 export const ALL_PRODUCTS = `${HOST}/products`
 export const POP_PRODUCTS = `${HOST}/products_popular`

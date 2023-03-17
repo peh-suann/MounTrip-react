@@ -38,6 +38,7 @@
     bottom:1px;
     right:15px;
     /* z-index: 2; */
+    /* position: relative; */
 }
 .pic-btn:hover{
     border: 4px solid var(--mtgreen-7);
@@ -48,14 +49,16 @@
 .profile-pic{
     width: 100%;
     height: 100%;
-    background:url('../../public/profile-picture.jpeg');
+    background:url('../../public/profile-pic-default.png');
     background-size:cover
     /* transform: scale(0.5); */
     
 }
 .camera{
     /* position: absolute; */
-    transform: translateX(50%) translateY(50%);
+    /* top:0px; */
+    /* right:4px; */
+    transform: translateX(20%) translateY(0%);
 }
 
 /* 會員姓名帳號 */
@@ -342,13 +345,34 @@
     /* margin-top: 52px; */
     padding-top: 8px;
     padding-bottom: 8px;
-    position: absolute;
+    /* position: absolute;
     right:0;
-    top:510px;
-
+    top:510px; */
 }
 .save-btn:hover{
     box-shadow: 0 0 0 4px var(--mtgreen-4);
+}
+.password_btn{
+    width: 134px;
+    height: 51px;
+    color:white;
+    background-color: var(--mtgreen-4);
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.btn_group{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right:0;
+    top:510px;
+    gap:25px;
+    justify-content: flex-end;
 }
 /* footer */
 .footer{
@@ -467,7 +491,7 @@
     }
     .camera{
         /* position: absolute; */
-        transform:  scale(0.7) translateX(14%) translateY(15%);
+        transform:  scale(0.7) translateX(-30%) translateY(0%);
     }
     .member-name{
         display: flex;

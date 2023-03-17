@@ -17,6 +17,7 @@
     "date-fns": "^2.29.3",
     "dayjs": "^1.11.7",
     "font-awesome": "^4.7.0",
+    "framer-motion": "^10.3.2",
     "leaflet": "^1.9.3",
     "leaflet-gpx": "^1.7.0",
     "react": "^18.2.0",
