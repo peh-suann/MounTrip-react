@@ -25,7 +25,7 @@ function DavisFilterComLeft(props) {
       >
         <h5 className={`${styles.h5_sub_title}`}>搜尋</h5>
         <div className={`d-flex flex-column ${styles.search}`}>
-          <p className={`mb-0 ${styles.p_content}`}>目的地</p>
+          <p className={`mb-0 ${styles.p_content}`}>關鍵字搜尋</p>
           <div className={`d-flex flex-row ${styles.input_with_icon}`}>
             <span className={`col ${styles.icon_span}`}>
               <svg
@@ -56,7 +56,7 @@ function DavisFilterComLeft(props) {
                 <input
                   className={`${styles.input_style}`}
                   type="text"
-                  placeholder=" 輸入行程名稱"
+                  placeholder=" 輸入行程"
                   value={inputText}
                   onChange={(e) => {
                     setInputText(e.target.value)

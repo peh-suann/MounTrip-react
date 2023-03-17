@@ -64,19 +64,19 @@ function DavisFilterComRight(props) {
           </div>
         </div>
         {/* filter card */}
-        <DavisComFilterCard
-          data={data}
-          filterByKeyword={filterByKeyword}
-          keywordpr={keywordpr}
-          datepickpr={datepickpr}
-        />
-
-        {/* <DavisComFilterCardFilter
+        {/* <DavisComFilterCard
           data={data}
           filterByKeyword={filterByKeyword}
           keywordpr={keywordpr}
           datepickpr={datepickpr}
         /> */}
+
+        <DavisComFilterCardFilter
+          data={data}
+          filterByKeyword={filterByKeyword}
+          keywordpr={keywordpr}
+          datepickpr={datepickpr}
+        />
 
         {/* pagination */}
         <div
