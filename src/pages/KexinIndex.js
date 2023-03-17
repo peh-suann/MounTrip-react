@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState, useRef } from 'react'
+import { useLocation } from "react-router-dom"
 import * as d3 from 'd3'
 import NavbarIndex from '../layouts/NavbarIndex'
 import IndexStyles from '../styles/kexinIndex.module.css'
@@ -25,6 +26,23 @@ function KexinIndex() {
   const mapRef = useRef(null)
   // const { mapInteraction, setMapInteraction } = useContext(KexinIndexStatus)
   const [mapInteraction, setMapInteraction] = useState(0)
+  const [selectCounty, setSelectCounty] = useState('')
+
+  // const location = useLocation()
+  // console.log("1--", location.search)
+  // const usp = new URLSearchParams(location.search)
+
+  // // search county method
+  // const getCountyData = async (county) => {
+  //   const response = await axios.get(SELECT_COUNTY, {
+  //     params: {
+  //       county,
+  //     },
+  //   });
+  //   // response.data 會依據回應的檔頭作解析, JSON
+  //   console.log('123',response.data)
+  //   // setData(response.data);
+  // }
 
   // RWD
   const device = useRWD()
@@ -140,8 +158,6 @@ function KexinIndex() {
     d3.select(this).style('fill', CLICK_COLOR)
 
     const county = i.properties.COUNTYNAME
-    console.log(county)
-    console.log(transformData[county].transform1)
 
     const svg = document.querySelector('#mapZoom')
     d3.select('#mapZoom')
@@ -150,24 +166,18 @@ function KexinIndex() {
       .attr('transform', transformData[county].transform1)
     setMapInteraction(1)
 
-    console.log(d3.select(this).style('fill'))
+    setSelectCounty(county)
+    // getCountyData(county)
 
-    console.log('onclick', mapInteraction)
-
-    fetch(`http://localhost:3000/index?id=${county}`).then((response) => {
-      if (response.ok) {
-        return response.json()
-      }
-      throw new Error('Network response was not ok.')
-    })
   }
 
-  console.log('outside', mapInteraction)
+  // console.log(selectCounty);
+  // console.log('outside', mapInteraction)
   if (mapInteraction === 2) {
     d3.select('#mapZoom')
       .transition()
       .duration(750)
-      .attr('transform', 'translate(-4821.239953685611,-473) scale(5)')
+      .attr('transform', transformData[selectCounty].transform2)
   }
 
   const clickReset = function (e) {
@@ -193,7 +203,7 @@ function KexinIndex() {
         .duration(750)
         .attr(
           'transform',
-          'translate(-4529.3527528164805,-485.7012302230678) scale(5)'
+          transformData[selectCounty].transform1
         )
       setMapInteraction(1)
     }
@@ -208,8 +218,8 @@ function KexinIndex() {
           id={`${IndexStyles['info']}`}
           onClick={clickReset}
         ></div>
-        <KexinIndexProducts />
-        <KexinIndexProductsDetail />
+        <KexinIndexProducts selectCounty={selectCounty} />
+        <KexinIndexProductsDetail selectCounty={selectCounty} />
       </StatusContext.Provider>
     </>
   )
