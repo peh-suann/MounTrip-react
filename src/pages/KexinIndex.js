@@ -160,7 +160,7 @@ function KexinIndex() {
     // }
   }
 
-  console.log('outside',mapInteraction)
+  console.log('outside', mapInteraction)
   if (mapInteraction === 2) {
     d3.select('#mapZoom')
       .transition()
@@ -173,7 +173,7 @@ function KexinIndex() {
 
   const clickReset = function (e) {
     console.log(window.innerWidth, window.innerHeight)
-    if (e.target.style.fill == 'none') {
+    if (e.target.style.fill === 'none' && mapInteraction === 1) {
       console.log('hiclick')
       console.log(d3.select('#mapZoom'))
       d3.select('#mapZoom')
@@ -188,6 +188,15 @@ function KexinIndex() {
         .style('fill', 'rgba(10, 140, 45, 0.2)')
 
       setMapInteraction(0)
+    } else if (e.target.style.fill === 'none' && mapInteraction === 2) {
+      d3.select('#mapZoom')
+        .transition()
+        .duration(750)
+        .attr(
+          'transform',
+          'translate(-4529.3527528164805,-485.7012302230678) scale(5)'
+        )
+      setMapInteraction(1)
     }
   }
 
