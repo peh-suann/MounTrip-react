@@ -1,10 +1,11 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { StylesContext } from './../pages/YichunProducts'
 import Button from './Button'
 
 function YichunDiffRank(props) {
-  const { el, index, diff, toggleDiff, toggleFlag } = props
+  const { el, index, diff, toggleDiff } = props
   const styles = useContext(StylesContext)
+
   useEffect(() => {
     console.log(document.documentElement.clientWidth)
   }, [])
@@ -17,7 +18,6 @@ function YichunDiffRank(props) {
               className={styles.img_wrapper}
               onClick={() => {
                 toggleDiff(el)
-                toggleFlag(el)
               }}
             >
               <div

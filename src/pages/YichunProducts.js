@@ -22,6 +22,7 @@ import {
   SUNRISE_PRODUCTS,
   HOLIDAY_PRODUCTS,
   FLOWERS_PRODUCTS,
+  LOCATION_PRODUCTS,
 } from '../connections/api-config'
 
 // Styles
@@ -33,6 +34,7 @@ function YichunProducts() {
   const [products, setProducts] = useState([])
   const [popProducts, setPopProducts] = useState([])
   const [hotSpringProducts, setHotSpringProducts] = useState([])
+  const [locationProducts, setLocationProducts] = useState({})
 
   const filterTitle = ['所有熱門', '清明連假', '賞花春遊', '最美日出']
   const [filter, setFilter] = useState('所有熱門')
@@ -45,7 +47,7 @@ function YichunProducts() {
     { diffCn: '中', diffEng: 'MEDIUM', describe: '好夥伴' },
     { diffCn: '高', diffEng: 'HARD', describe: '好挑戰' },
   ]
-  const [diff, setDiff] = useState(-1)
+  const [diff, setDiff] = useState(0)
   const flag01 = useRef(null)
   const flag02 = useRef(null)
   const flag03 = useRef(null)
@@ -118,6 +120,17 @@ function YichunProducts() {
       return []
     }
   }
+  // get products of theme of hot spring
+  const getLocationProducts = async () => {
+    try {
+      const response = await axios.get(LOCATION_PRODUCTS)
+      console.log('getLocationProducts', response.data)
+      return response.data
+    } catch (error) {
+      console.error(error)
+      return []
+    }
+  }
 
   const toggleDiff = (el) => {
     switch (el.diffEng) {
@@ -131,14 +144,14 @@ function YichunProducts() {
         setDiff(0)
     }
   }
-  const toggleFlag = (el) => {
-    switch (el.diffEng) {
-      case 'MEDIUM':
+  const toggleFlag = () => {
+    switch (diff) {
+      case 1:
         flag01.current.style.transform = `translateY(0%)`
         flag02.current.style.transform = `translateY(-100%)`
         flag03.current.style.transform = `translateY(0%)`
         break
-      case 'HARD':
+      case 2:
         flag01.current.style.transform = `translateY(0%)`
         flag02.current.style.transform = `translateY(0%)`
         flag03.current.style.transform = `translateY(-100%)`
@@ -151,10 +164,11 @@ function YichunProducts() {
   }
 
   useEffect(() => {
-    console.log(diff)
+    toggleFlag()
   }, [diff])
 
   useEffect(() => {
+    // toggleFlag()
     const fetchData = async () => {
       try {
         const popProducts = await getPopularProductsData()
@@ -162,6 +176,7 @@ function YichunProducts() {
         const holidayProducts = await getHolidayProducts()
         const flowersProducts = await getFlowersProducts()
         const hotSpringProducts = await getHotSpringProducts()
+        const locationProducts = await getLocationProducts()
 
         await setFilterData([
           popProducts,
@@ -169,7 +184,7 @@ function YichunProducts() {
           flowersProducts,
           sunriseProducts,
         ])
-
+        setLocationProducts(locationProducts)
         setHotSpringProducts(hotSpringProducts)
         setPopProducts(popProducts)
       } catch (error) {
@@ -180,10 +195,6 @@ function YichunProducts() {
     fetchData()
     document.documentElement.scrollTop = 0
   }, [])
-
-  useEffect(() => {
-    console.log('filterData', filterData)
-  }, [filterData])
 
   const rank = [1, 2, 3, 4, 5, 6]
 
@@ -442,7 +453,6 @@ function YichunProducts() {
                   index={i}
                   diff={diff}
                   toggleDiff={toggleDiff}
-                  toggleFlag={toggleFlag}
                 />
               )
             })}
@@ -521,7 +531,8 @@ function YichunProducts() {
             </div>
             <div className={styles.diff_products}>
               {document.documentElement.clientWidth > 390
-                ? popProducts.slice(0, 2).map((el, i) => {
+                ? locationProducts['Taipei_City'] &&
+                  locationProducts['Taipei_City']['1'].map((el, i) => {
                     // console.log(el.trail_name)
                     return (
                       <YichunProductCard
@@ -532,7 +543,8 @@ function YichunProducts() {
                       />
                     )
                   })
-                : popProducts.slice(0, 1).map((el, i) => {
+                : locationProducts['Taipei_City'] &&
+                  locationProducts['Taipei_City']['1'].map((el, i) => {
                     // console.log(el.trail_name)
                     return (
                       <YichunProductCard
