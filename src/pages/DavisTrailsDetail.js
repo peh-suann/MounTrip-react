@@ -70,11 +70,11 @@ export default function DavisTrailsDetail(rows) {
           className={`d-flex flex-column ${styles.container_all}`}
         >
           <div className="col p-0">
-            {/* top-img */}
+            {/* top-img FIXME: */}
             <div className={`d-flex d-lg-none ${styles.top_img}`}>
               <img
                 className="w-100"
-                src="./imges/public_images/product_image/3-1.jpg"
+                src="/images/public_images/product_image/3-1.jpg"
                 alt=""
               />
             </div>
@@ -105,7 +105,9 @@ export default function DavisTrailsDetail(rows) {
           </div>
           {/* {console.log('Page:', data.page)} */}
           <section>
-            <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
+            <div
+              className={`d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column `}
+            >
               <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
                 <DavisTrailsImgGroup
                   filterFromBatch={filterFromBatch}
@@ -422,30 +424,29 @@ export default function DavisTrailsDetail(rows) {
                     {r.trail_describ}
                   </p>
 
-                  {/* 手機板 */}
+                  {/* 手機板 puctures FIXME:*/}
                   <div className="col flex-column d-flex d-lg-none mb-3">
-                    {/* puctures */}
-                    <div className="mb-3">
+                    <div className="">
                       <img
                         className={`${styles.img_cover_one}`}
-                        src={`/imges/public_images/product_image/${r.trail_img}-1.jpg`}
+                        src={`/images/public_images/product_image/${r.trail_sid}-1.jpg`}
                         alt=""
                       />
                     </div>
                     <div className="d-flex flex-row justify-content-between">
                       <img
                         className={`${styles.img_cover_three}`}
-                        src={`/imges/public_images/product_image/${r.trail_img}-1.jpg`}
+                        src={`/images/public_images/product_image/${r.trail_sid}-1.jpg`}
                         alt=""
                       />
                       <img
                         className={`${styles.img_cover_three}`}
-                        src={`/imges/public_images/product_image/${r.trail_img}-2.jpg`}
+                        src={`/images/public_images/product_image/${r.trail_sid}-2.jpg`}
                         alt=""
                       />
                       <img
                         className={`${styles.img_cover_three}`}
-                        src={`/imges/public_images/product_image/${r.trail_img}-3.jpg`}
+                        src={`/images/public_images/product_image/${r.trail_sid}-3.jpg`}
                         alt=""
                       />
                     </div>
@@ -454,7 +455,7 @@ export default function DavisTrailsDetail(rows) {
                   {/* gpx */}
                   <DavisTrailsGpx />
 
-                  {/* shop-button-group TODO:拆元件 */}
+                  {/* shop-button-group TODO: */}
                   <DavisTrailsShopGroup
                     data={data}
                     filterFromBatch={filterFromBatch}
@@ -695,6 +696,7 @@ export default function DavisTrailsDetail(rows) {
           </div>
           {/* login commont FIXME:*/}
           <DavisTrailsRating />
+
           {/* phone_bottom */}
           <div className={`d-flex d-lg-none ${styles.phone_bottom}`}>
             <div className={`w-100 mb-2 ${styles.shop_btn_two}`}>
@@ -726,6 +728,7 @@ export default function DavisTrailsDetail(rows) {
                 </button>
               </div>
             </div>
+
             <div className="w-100 d-flex flex-row ">
               <div className={`col w-100 d-flex flex-row ${styles.btn_group}`}>
                 <div

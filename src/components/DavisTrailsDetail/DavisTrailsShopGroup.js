@@ -1,7 +1,12 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
-import DavisTrailsBatch from './DavisTrailsBatch'
+import { useEffect, useState, useContext } from 'react'
+
+//useContext
+import ShopContext from './ShopContext'
+
+// component
 import styles from '../../styles/DavisTrailsDetail.module.css'
+import DavisTrailsBatch from './DavisTrailsBatch'
 
 function DavisTrailsShopGroup(props) {
   const { data, filterFromBatch } = props
@@ -91,11 +96,11 @@ function DavisTrailsShopGroup(props) {
             </svg>
           </button>
         </div>
-        {/* level2 */}
+        {/* level2 TODO:*/}
 
         <DavisTrailsBatch data={data} />
 
-        {/* level3 shop_btn  */}
+        {/* level3 shop_btn TODO:  */}
         {/* {filterFromBatch(data.rows).map((r) => (
           <div key={r.trail_name}>{r.trail_name}</div>
         ))} */}

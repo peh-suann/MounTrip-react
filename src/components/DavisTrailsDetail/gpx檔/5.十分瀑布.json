@@ -1,0 +1,818 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "路線1"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.782767,
+            25.047368
+          ],
+          [
+            121.7826989,
+            25.0472672
+          ],
+          [
+            121.782656,
+            25.0471555
+          ],
+          [
+            121.783061,
+            25.0470413
+          ],
+          [
+            121.7836243,
+            25.0466865
+          ],
+          [
+            121.7840883,
+            25.0464459
+          ],
+          [
+            121.7844611,
+            25.0464435
+          ],
+          [
+            121.7849305,
+            25.0467011
+          ],
+          [
+            121.7851666,
+            25.0470097
+          ],
+          [
+            121.785298,
+            25.0472988
+          ],
+          [
+            121.7853329,
+            25.0476415
+          ],
+          [
+            121.7853811,
+            25.0478966
+          ],
+          [
+            121.7855421,
+            25.0481007
+          ],
+          [
+            121.785874,
+            25.048276
+          ],
+          [
+            121.786116,
+            25.048269
+          ],
+          [
+            121.786431,
+            25.048243
+          ],
+          [
+            121.7866659,
+            25.0482076
+          ],
+          [
+            121.787039,
+            25.048215
+          ],
+          [
+            121.7873177,
+            25.0482489
+          ],
+          [
+            121.787545,
+            25.048275
+          ],
+          [
+            121.787746,
+            25.048367
+          ],
+          [
+            121.7878541,
+            25.0484166
+          ],
+          [
+            121.78794,
+            25.0484361
+          ],
+          [
+            121.788066,
+            25.0484555
+          ],
+          [
+            121.788125,
+            25.0484968
+          ],
+          [
+            121.7882645,
+            25.0484774
+          ],
+          [
+            121.7883772,
+            25.0484871
+          ],
+          [
+            121.7885971,
+            25.0485357
+          ],
+          [
+            121.7886373,
+            25.0485746
+          ],
+          [
+            121.788652,
+            25.048738
+          ],
+          [
+            121.788653,
+            25.048784
+          ],
+          [
+            121.788765,
+            25.048818
+          ],
+          [
+            121.788825,
+            25.048779
+          ],
+          [
+            121.788891,
+            25.048728
+          ],
+          [
+            121.7889351,
+            25.048679
+          ],
+          [
+            121.789002,
+            25.048602
+          ],
+          [
+            121.78905,
+            25.048591
+          ],
+          [
+            121.789182,
+            25.04867
+          ],
+          [
+            121.7892033,
+            25.0487617
+          ],
+          [
+            121.7891496,
+            25.048871
+          ],
+          [
+            121.7890719,
+            25.0489075
+          ],
+          [
+            121.788968,
+            25.048915
+          ],
+          [
+            121.7889056,
+            25.0489463
+          ],
+          [
+            121.7888063,
+            25.0489415
+          ],
+          [
+            121.788672,
+            25.04892
+          ],
+          [
+            121.7885917,
+            25.0489123
+          ],
+          [
+            121.7885381,
+            25.0488686
+          ],
+          [
+            121.7885247,
+            25.0488273
+          ],
+          [
+            121.7884898,
+            25.0489148
+          ],
+          [
+            121.7884013,
+            25.0489949
+          ],
+          [
+            121.788347,
+            25.049031
+          ],
+          [
+            121.788284,
+            25.049022
+          ],
+          [
+            121.788226,
+            25.048994
+          ],
+          [
+            121.788193,
+            25.048996
+          ],
+          [
+            121.7882129,
+            25.0489662
+          ],
+          [
+            121.7882288,
+            25.0489269
+          ],
+          [
+            121.7882411,
+            25.0488571
+          ],
+          [
+            121.7882371,
+            25.0488035
+          ],
+          [
+            121.7881667,
+            25.0487259
+          ],
+          [
+            121.7880501,
+            25.0486861
+          ],
+          [
+            121.7879087,
+            25.0486845
+          ],
+          [
+            121.7877378,
+            25.0487193
+          ],
+          [
+            121.7875542,
+            25.0487943
+          ],
+          [
+            121.787446,
+            25.048784
+          ],
+          [
+            121.7874392,
+            25.0486505
+          ],
+          [
+            121.787363,
+            25.048559
+          ],
+          [
+            121.78742,
+            25.048527
+          ],
+          [
+            121.787536,
+            25.048636
+          ],
+          [
+            121.787581,
+            25.048554
+          ],
+          [
+            121.78769,
+            25.048545
+          ],
+          [
+            121.7882888,
+            25.0486966
+          ],
+          [
+            121.788533,
+            25.048852
+          ],
+          [
+            121.788685,
+            25.048937
+          ],
+          [
+            121.788886,
+            25.048904
+          ],
+          [
+            121.788754,
+            25.048878
+          ],
+          [
+            121.788653,
+            25.048784
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "路線2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.7826748,
+            25.0471943
+          ],
+          [
+            121.7827284,
+            25.047277
+          ],
+          [
+            121.7829511,
+            25.0472089
+          ],
+          [
+            121.7830369,
+            25.0472502
+          ],
+          [
+            121.7831308,
+            25.0473669
+          ],
+          [
+            121.7832837,
+            25.0474422
+          ],
+          [
+            121.7835358,
+            25.0475151
+          ],
+          [
+            121.7838684,
+            25.0476196
+          ],
+          [
+            121.7832246,
+            25.0474252
+          ],
+          [
+            121.7831898,
+            25.0474325
+          ],
+          [
+            121.7831281,
+            25.0475661
+          ],
+          [
+            121.7830449,
+            25.0476172
+          ],
+          [
+            121.7829511,
+            25.0476172
+          ],
+          [
+            121.7827606,
+            25.0476172
+          ],
+          [
+            121.7826426,
+            25.0475977
+          ],
+          [
+            121.7825836,
+            25.0475175
+          ],
+          [
+            121.7825568,
+            25.0474373
+          ],
+          [
+            121.7826533,
+            25.0473353
+          ],
+          [
+            121.782707,
+            25.0472843
+          ],
+          [
+            121.782656,
+            25.0471555
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "十分寮風景區站牌",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1423-trans-bus.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.780698,
+          25.0455347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "十分風景區",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7808241,
+          25.0457582
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "十分觀光大橋",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7819613,
+          25.0471628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "十分遊客中心站牌",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1423-trans-bus.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.782646,
+          25.0472357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "十分旅遊服務中心",
+        "desc": "<img src=\"https://lh3.googleusercontent.com/proxy/ihJUpQ-Y46sRqNR9y5myE4PtgJl_RYVCHxEqHIBAKybMBsP2GrH5pa9ki9-XB84IFztwfawot10hzp_INAv0kqOPv9JV0ajsg0gh\" height=\"200\" width=\"auto\" /><br><br>",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1203-fac-info.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7829054,
+          25.0473474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "古厝",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7859444,
+          25.0482417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "木棧道起點",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1371-rec-hiking.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.786116,
+          25.048269,
+          194.3
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "十分消遙叉路",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.786731,
+          25.048222,
+          188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "休憩區",
+        "desc": "2015-01-01 10:12:08AM",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1037-biz-house.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.787503,
+          25.048268,
+          183.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "十分瀑布公園入口管制門",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.78815,
+          25.048504,
+          183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "石階叉路",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.788653,
+          25.048784,
+          189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "涼亭",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1037-biz-house.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.789002,
+          25.048602,
+          201.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "導覽圖",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1203-fac-info.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.78897,
+          25.048948,
+          190.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "觀瀑台叉路",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.788533,
+          25.048852,
+          181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "觀瀑台Ⅰ",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1283-poi-lookout-point.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7881958,
+          25.049014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "觀瀑台Ⅱ",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1283-poi-lookout-point.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7881721,
+          25.0487334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "觀瀑台Ⅲ",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1283-poi-lookout-point.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.787569,
+          25.0488002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "十分瀑布",
+        "desc": "<img src=\"https://lh4.googleusercontent.com/proxy/296l9IlVvOyfs1yR4PcTp0cl3zCavdPiDFdSroW5SOm1RJUquOb8YXiBB4jyF9_b9-iGYSXVgSKdTGuZWiRB76-aoqRqtXj3FA3P\" height=\"200\" width=\"auto\" /><br><br>",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7875323,
+          25.0489293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "資訊站",
+        "desc": "2015-01-01 10:48:59AM",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1203-fac-info.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.787451,
+          25.048673,
+          190
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "四廣潭吊橋",
+        "desc": "<img src=\"https://lh4.googleusercontent.com/proxy/VauIMJA-7VkDkPG6bCI_I3mQhf21RRQS8s8xV-_bQ1XE4OfIa3tpn3fKFOUbeVizgI64PU_nhQYRNMI8vvYbb3uI7BT8B077G3v0\" height=\"200\" width=\"auto\" /><br><br>",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1233-poi-bridge.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7836056,
+          25.0475467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "十分老街",
+        "desc": "<img src=\"https://lh4.googleusercontent.com/proxy/q_g6xhFeOUOPfHHsylPFuYo5HShvkmJki1PkjxjNAs5tWeSpxOMxpz06WJMm0faSOXuYrHEL6BRSL2XMF6xksIJWKwWT2bcgXrVe\" height=\"200\" width=\"auto\" /><br><br>",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.77679,
+          25.0427839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "眼鏡洞瀑布",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7845929,
+          25.0490649
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "觀瀑吊橋",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7853194,
+          25.0487471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "大華壺穴",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.801935,
+          25.053445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "十分古道登山口",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1059-biz-outdoor.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7631912,
+          25.0666107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "台灣礦業文化博物館",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7732812,
+          25.0523489
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "五分山步道",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1059-biz-outdoor.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7733156,
+          25.0528662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "五分山",
+        "sym": "http://www.gstatic.com/mapspro/images/stock/1377-rec-mountain.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.780639,
+          25.070953
+        ]
+      }
+    }
+  ]
+}
