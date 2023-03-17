@@ -18,6 +18,12 @@ nav.mapstate1 {
   transition-duration: 0.9s;
 }
 
+nav.mapstate2 {
+  padding-left: 30px;
+  padding-right: 1010px;
+  transition-duration: 0.9s;
+}
+
 .navbar {
   width: 100%;
   display: flex;

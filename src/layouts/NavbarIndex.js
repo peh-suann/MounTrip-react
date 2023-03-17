@@ -41,7 +41,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className={mapInteraction === 1 ? styles.mapstate1 : ''}>
+      <nav className={(mapInteraction===2) ? styles.mapstate2 : mapInteraction === 1 ? styles.mapstate1 : ''}>
         <div className={styles.navbar}>
           <div className={styles.left}>
             <button
@@ -92,8 +92,8 @@ export default function NavBar() {
             <ul className={styles.nav_navigations}>
               <li>
                 <Link className={styles.link} to="/products">
-                  {' '}
-                  商品總覽{' '}
+
+                  商品總覽
                 </Link>
               </li>
               <li>
@@ -119,7 +119,7 @@ export default function NavBar() {
           <div className={styles.right}>
             <ul className={styles.nav_icons}>
               <li className={styles.searchBar}
-                style={(mapInteraction===1) ? { display: 'none' } :  {} }
+                style={(mapInteraction!==0) ? { display: 'none' } :  {} }
               >
                 <FontAwesomeIcon icon={faSearch} />
                 {document.documentElement.clientWidth > 390 ? (

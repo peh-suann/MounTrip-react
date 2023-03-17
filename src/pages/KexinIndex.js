@@ -11,16 +11,16 @@ export const StatusContext = createContext({})
 
 function KexinIndex() {
   // map basic setting
-  const ZOOM_THRESHOLD = [1, 5]
+  const ZOOM_THRESHOLD = [1, 7]
   const OVERLAY_MULTIPLIER = 10
   const OVERLAY_OFFSET = OVERLAY_MULTIPLIER / 2 - 0.5
-  const ZOOM_DURATION = 500
   const ZOOM_IN_STEP = 2
   const ZOOM_OUT_STEP = 1 / ZOOM_IN_STEP
   const HOVER_COLOR = 'rgba(10, 140, 45, 0.4)'
   const CLICK_COLOR = 'rgba(10, 140, 45, 0.6)'
 
   var data = require('../mapdata/tw_new.json')
+  var transformData = require('../mapdata/MapTransform.json')
 
   const mapRef = useRef(null)
   // const { mapInteraction, setMapInteraction } = useContext(KexinIndexStatus)
@@ -136,28 +136,30 @@ function KexinIndex() {
     d3.select(mapRef.current)
       .selectAll('path')
       .style('fill', 'rgba(10, 140, 45, 0.2)')
-    console.log(i.properties.COUNTYNAME)
+    // console.log(i.properties.COUNTYNAME)
     d3.select(this).style('fill', CLICK_COLOR)
 
-    if (i.properties.COUNTYNAME === '新北市') {
-      console.log('yes')
-      const svg = document.querySelector('#mapZoom')
-      d3.select('#mapZoom')
-        .transition()
-        .duration(750)
-        .attr(
-          'transform',
-          'translate(-4529.3527528164805,-485.7012302230678) scale(5)'
-        )
-      setMapInteraction(1)
-    }
+    const county = i.properties.COUNTYNAME
+    console.log(county)
+    console.log(transformData[county].transform1)
+
+    const svg = document.querySelector('#mapZoom')
+    d3.select('#mapZoom')
+      .transition()
+      .duration(750)
+      .attr('transform', transformData[county].transform1)
+    setMapInteraction(1)
 
     console.log(d3.select(this).style('fill'))
 
     console.log('onclick', mapInteraction)
-    // 新北 : transform="translate(-4941.333651731298,-489.15428701256656) scale(5)"
-    // if(d3.select(this).style.fill=='none'){
-    // }
+
+    fetch(`http://localhost:3000/index?id=${county}`).then((response) => {
+      if (response.ok) {
+        return response.json()
+      }
+      throw new Error('Network response was not ok.')
+    })
   }
 
   console.log('outside', mapInteraction)
@@ -165,10 +167,7 @@ function KexinIndex() {
     d3.select('#mapZoom')
       .transition()
       .duration(750)
-      .attr(
-        'transform',
-        'translate(-4941.333651731298,-489.15428701256656) scale(5)'
-      )
+      .attr('transform', 'translate(-4821.239953685611,-473) scale(5)')
   }
 
   const clickReset = function (e) {

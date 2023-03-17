@@ -38,10 +38,10 @@
   /* right: 33%; */
   /* width: 25%; */
   transition-duration: 1.0s;
-  width: 503px;
+  width: 450px;
   height: 100vh;
   overflow: auto;
-  background-color: var(--mtgreen-5);
+  background-color: #F0F8E6;
   box-shadow: 0px 0px 20px rgba(1, 19, 6, 0.12);
   z-index: 1005;
 }
@@ -86,12 +86,12 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  /* background: linear-gradient(
+  background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 71.43%,
       rgba(0, 0, 0, 0.74) 96.19%
     ),
-    url('../../public/images/kexin/index-product.jpg') center center/cover; */
+    url('../../public/images/kexin/index-product.jpg') center center/cover;
   height: 239px;
   border-radius: 10px;
   flex: none;
