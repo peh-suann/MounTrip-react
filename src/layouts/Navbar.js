@@ -103,16 +103,16 @@ export default function NavBar() {
                 </Link>
               </li>
               <li>
-                <a className={styles.link} href="/">
+                <Link className={styles.link} to="/difficulty">
                   {' '}
                   難易分級{' '}
-                </a>
+                </Link>
               </li>
               <li>
-                <a className={styles.link} href="/">
+                <Link className={styles.link} to="/season">
                   {' '}
                   季節推薦{' '}
-                </a>
+                </Link>
               </li>
               <li>
                 <Link className={styles.link} to="/test">

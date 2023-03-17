@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import styles from './../styles/IanSeason.module.css'
 // import './../html/css/season.css'
 import { TRAILS_SEASON } from '../connections/api-config'
@@ -35,6 +35,8 @@ function IanSeason() {
   useEffect(() => {
     getCommentData()
   }, [])
+
+  const myMove = useRef(null)
 
   return (
     <>
@@ -81,10 +83,10 @@ function IanSeason() {
                         fill="#CEE8CB"
                       />
                     </svg>
-                    4.5
+                    {v.score}.0
                   </p>
                   <p className={styles.difficulty}>
-                    難度{v.difficulty_list_sid}
+                    難度 {v.difficulty_short}級
                   </p>
                 </div>
                 <div className={styles.information}>
@@ -108,7 +110,7 @@ function IanSeason() {
       </section>
       <section className={styles.comments}>
         <div className={`d-flex align-items-center py-5`}>
-          <span>
+          <span className={`d-flex`}>
             <svg
               width="27"
               height="26"
@@ -144,7 +146,7 @@ function IanSeason() {
             </svg>
           </span>
           <h4 className={'m-0 px-lg-5'}>櫻花季 旅客評論</h4>
-          <span>
+          <span className={`d-flex`}>
             <svg
               width="27"
               height="26"
@@ -182,6 +184,11 @@ function IanSeason() {
         </div>
         <div className={styles.commentFirst_svg}>
           <svg
+            onClick={() => {
+              console.log('left click')
+              myMove.current.style.transition = '1s'
+              myMove.current.style.transform = 'translateX(0px)'
+            }}
             width="30"
             height="30"
             viewBox="0 0 30 30"
@@ -199,35 +206,46 @@ function IanSeason() {
         </div>
 
         <div className={`${styles.comment_carousel}`}>
-          {comment.rows.map((v2, i2) => {
-            return (
-              <div
-                className={`${styles.comment}`}
-                style={{
-                  backgroundImage: `linear-gradient(180deg, rgba(1, 19, 6, 0) 66.99%, #011306 100%),
-                  url(/imgs/Ian_img/${v2.trail_img})`,
-                }}
-                key={i2}
-              >
-                <div>
-                  <h5>
-                    <span className={styles.account}>
-                      @{v2.lastname}
-                      {v2.firstname}
-                    </span>
-                    <span>•</span>
-                    <span className={styles.date}>
-                      {dayjs(v2.rate_date).format('YYYY-MM-DD')}
-                    </span>
-                  </h5>
-                  <p>{v2.comment}</p>
+          {/* <Slider {...settings}> */}
+          <div className={`d-flex`} ref={myMove}>
+            {comment.rows.map((v2, i2) => {
+              return (
+                <div
+                  key={i2}
+                  className={`${styles.comment}`}
+                  style={{
+                    backgroundImage: `linear-gradient(180deg, rgba(1, 19, 6, 0) 66.99%, #011306 100%),
+                  url(/imgs/Ian_img/${v2.rating_img})`,
+                  }}
+                >
+                  <div>
+                    <h5>
+                      <span className={styles.account}>
+                        @{v2.lastname}
+                        {v2.firstname}
+                      </span>
+                      <span>•</span>
+                      <span className={styles.date}>
+                        {dayjs(v2.rate_date).format('YYYY-MM-DD')}
+                      </span>
+                    </h5>
+                    <p>{v2.comment}</p>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
+
+          {/* </Slider> */}
         </div>
+
         <div className={styles.commentSecond_svg}>
           <svg
+            onClick={() => {
+              console.log('right click')
+              myMove.current.style.transition = '1s'
+              myMove.current.style.transform = 'translateX(-1660px)'
+            }}
             width="30"
             height="30"
             viewBox="0 0 30 30"

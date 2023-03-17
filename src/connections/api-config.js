@@ -39,8 +39,11 @@ export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
 export const LOGIN = `${HOST}/login`
 export const SIGNIN = `${HOST}/signin`
+// export const HOST = 'http://localhost:3000'
 
 export const TRAILS_SEASON = `${HOST}/Season`
 export const TRAILS_COMMENT = `${HOST}/seasonComment`
-export const TRAILS_DIFF = `${HOST}/difficulty`
+export const TRAILS_DIFFHARD = `${HOST}/difficultyHard`
+export const TRAILS_DIFFMEDIUM = `${HOST}/difficultyMedium`
+export const TRAILS_DIFFEASY = `${HOST}/difficultyEasy`
 export const ShoppingCart = `${HOST}/sc1`

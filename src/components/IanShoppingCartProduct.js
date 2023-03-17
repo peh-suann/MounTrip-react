@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './../styles/IanShoppingCart1.module.css'
 
 function IanShoppingCartProduct({
@@ -10,44 +10,13 @@ function IanShoppingCartProduct({
   price,
   count,
   total,
-  buy,
-  data,
   setData,
   minusItem,
+  plusIcon,
+  deletepruduct,
+  wannaBuy,
 }) {
-  const wannaBuy = (arr, id) => {
-    return arr.map((v, i) => {
-      if (v.sid === id) {
-        return { ...v, buy: !v.buy }
-      } else {
-        return { ...v }
-      }
-    })
-  }
-  const plusIcon = (arr, id) => {
-    return arr.map((v, i) => {
-      if (v.sid === id) {
-        return { ...v, count: v.count + 1 }
-      } else {
-        return { ...v }
-      }
-    })
-  }
-  const minusIcon = (arr, id) => {
-    return arr.map((v, i) => {
-      if (v.sid === id && v.count > 1) {
-        return { ...v, count: v.count - 1 }
-      } else {
-        return { ...v }
-      }
-    })
-  }
-  const deletepruduct = (arr, id) => {
-    return arr.filter((v, i) => {
-      return v.sid !== id
-    })
-  }
-  console.log(data)
+  const [mycheck, setMyCheck] = useState(false)
 
   return (
     <div key={key} className={`${styles['shoppingcart-product']}`}>
@@ -57,9 +26,9 @@ function IanShoppingCartProduct({
         <div className={`${styles['mobile-none']} ${styles.w1} `}>
           <input
             type="checkbox"
-            checked={buy}
-            onChange={(e) => {
-              setData(wannaBuy(data, key))
+            checked={mycheck}
+            onChange={() => {
+              setMyCheck(wannaBuy(pid))
             }}
           />
         </div>
@@ -91,7 +60,6 @@ function IanShoppingCartProduct({
             <button className={`${styles['plus-button']}`}>
               <svg
                 onClick={() => {
-                  // setData(minusIcon(data, key))
                   minusItem(pid)
                 }}
                 className={`${styles['minus-icon']} me-3`}
@@ -114,7 +82,7 @@ function IanShoppingCartProduct({
             <button className={`${styles['plus-button']}`}>
               <svg
                 onClick={() => {
-                  setData(plusIcon(data, key))
+                  setData(plusIcon(pid))
                 }}
                 className={`${styles['minus-icon']}`}
                 width="24"
@@ -147,7 +115,7 @@ function IanShoppingCartProduct({
         <div className={`${styles['mobile-none']} ${styles.w7} `}>
           <svg
             onClick={(e) => {
-              setData(deletepruduct(data, key))
+              setData(deletepruduct(pid))
             }}
             width="30"
             height="30"
