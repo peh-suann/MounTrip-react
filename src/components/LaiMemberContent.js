@@ -6,9 +6,19 @@ import { motion } from 'framer-motion'
 import Backdrop from './LaiBackdrop/Backdrop'
 
 export default function MemberContent(props) {
-  const { user, setUser, modalOpen, close, open } = props
+  const {
+    user,
+    setUser,
+    modalOpen,
+    pwdModalOpen,
+    handlePwdModalOpen,
+    pwdClose,
+    pwdOpen,
+    close,
+    open,
+  } = props
   // console.log('user:',user)
-  const [lastname, setLastname] = useState(user.lastname)
+  const [lastname, setLastname] = useState('user.lastname1223')
   const [firstname, setFirstname] = useState(user.firstname)
   const [gender, setGender] = useState(user.gender)
   const [bday, setBday] = useState(user.birthday)
@@ -20,13 +30,18 @@ export default function MemberContent(props) {
   const [city, setCity] = useState(user.city)
   const [address, setAddress] = useState(user.address)
   // const { myAuth, setMyAuth, logout } = useContext(AuthContext)
-
+  // function setUserData() {
+  //   setLastname(user.lastname)
+  // }
+  // setGender(user.gender)
+  console.log('user', user.email)
+  console.log(user.gender, 'genderstate:', gender)
   //彈出重設密碼表單
   function modalControl() {
-    if (modalOpen) {
-      close()
+    if (pwdModalOpen) {
+      pwdClose()
     } else {
-      open()
+      pwdOpen()
     }
   }
 

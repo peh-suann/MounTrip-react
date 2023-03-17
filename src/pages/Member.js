@@ -145,10 +145,10 @@ export default function Member() {
       {modalOpen && (
         <Modal modalOpen={modalOpen} handleClose={close} text={'上傳大頭貼'} />
       )}
-      {modalOpen && (
+      {pwdModalOpen && (
         <PasswordModal
           pwdModalOpen={pwdModalOpen}
-          handleClose={close}
+          handleClose={pwdClose}
           text={'重設密碼'}
         />
       )}
@@ -374,6 +374,9 @@ export default function Member() {
             modalOpen={modalOpen}
             close={close}
             open={open}
+            handlePwdModalOpen={handlePwdModalOpen}
+            pwdClose={pwdClose}
+            pwdOpen={pwdOpen}
           />
         )}
         {memberPage === 'coupon' && (
