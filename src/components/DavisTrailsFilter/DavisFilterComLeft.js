@@ -54,9 +54,9 @@ function DavisFilterComLeft(props) {
             <div className="col">
               <div className={`${styles.input_wrap}`}>
                 <input
-                  className={`${styles.input_style}`}
+                  className={`${styles.input_style_first}`}
                   type="text"
-                  placeholder=" 輸入行程"
+                  // placeholder=" 輸入行程"
                   value={inputText}
                   onChange={(e) => {
                     setInputText(e.target.value)
