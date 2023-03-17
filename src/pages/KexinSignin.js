@@ -1,9 +1,6 @@
 import { useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-// styles
-import signinStyles from '../styles/kexinSignin.module.css'
-
 // component
 import LoginNavbar from '../layouts/NavbarLogin'
 
@@ -11,9 +8,18 @@ import LoginNavbar from '../layouts/NavbarLogin'
 import { SIGNIN } from '../connections/api-config'
 import axios from 'axios'
 
+// styles
+import signinStyles from '../styles/kexinSignin.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+// FontAwesome
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+
 function KexinSignin() {
   const [samePassword, setSamePassword] = useState(false)
   const [signinSuccess, setSigninSuccess] = useState(false)
+  const [passwordVisible, setPasswordVisible] = useState(false)
+  const [passwordVisible1, setPasswordVisible1] = useState(false)
 
   const [myForm, setMyForm] = useState({
     account: '',
@@ -107,11 +113,39 @@ function KexinSignin() {
                   const form1 = document.forms['form1']
                   if (form1.password.value != form1.password1.value) {
                     setSamePassword(true)
+                    {
+                      document
+                        .querySelector('#password')
+                        .setAttribute(
+                          'class',
+                          `form-control ${signinStyles.danger}`
+                        )
+                    }
+                    {
+                      document
+                        .querySelector('#password1')
+                        .setAttribute(
+                          'class',
+                          `form-control ${signinStyles.danger}`
+                        )
+                    }
                   } else {
                     setSamePassword(false)
+                    {
+                      document
+                        .querySelector('#password')
+                        .setAttribute('class', `form-control`)
+                    }
+                    {
+                      document
+                        .querySelector('#password1')
+                        .setAttribute('class', `form-control`)
+                    }
                     axios.post(SIGNIN, myForm).then((response) => {
                       if (response.data['success']) {
                         setSigninSuccess(true)
+                      } else {
+                        console.log('註冊失敗')
                       }
                     })
                   }
@@ -137,12 +171,12 @@ function KexinSignin() {
                   />
                   <div className="form-text"></div>
                 </div>
-                <div className="mb-3">
+                <div className={`${signinStyles['password-wrap']} mb-3`}>
                   <label htmlFor="password" className="form-label">
                     密碼
                   </label>
                   <input
-                    type="password"
+                    type={passwordVisible ? 'text' : 'password'}
                     className="form-control"
                     id="password"
                     name="password"
@@ -154,6 +188,20 @@ function KexinSignin() {
                       }))
                     }}
                   />
+                  <button
+                    className={`${signinStyles['password-visible']}`}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setPasswordVisible(!passwordVisible)
+                      console.log(e.currentTarget)
+                    }}
+                  >
+                    {passwordVisible ? (
+                      <FontAwesomeIcon icon={faEye} />
+                    ) : (
+                      <FontAwesomeIcon icon={faEyeSlash} />
+                    )}
+                  </button>
                   {samePassword ? (
                     <span className={signinStyles.textnotes}>
                       輸入密碼不相同
@@ -163,12 +211,12 @@ function KexinSignin() {
                   )}
                   <div className="form-text"></div>
                 </div>
-                <div className="mb-4">
+                <div className={`${signinStyles['password-wrap']} mb-4`}>
                   <label for="password1" className="form-label">
                     密碼確認
                   </label>
                   <input
-                    type="password"
+                    type={passwordVisible1 ? 'text' : 'password'}
                     className="form-control"
                     id="password1"
                     name="password1"
@@ -179,6 +227,20 @@ function KexinSignin() {
                       }))
                     }}
                   />
+                  <button
+                    className={`${signinStyles['password-visible']}`}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setPasswordVisible1(!passwordVisible1)
+                      console.log(e.currentTarget)
+                    }}
+                  >
+                    {passwordVisible1 ? (
+                      <FontAwesomeIcon icon={faEye} />
+                    ) : (
+                      <FontAwesomeIcon icon={faEyeSlash} />
+                    )}
+                  </button>
                   {samePassword ? (
                     <span className={signinStyles.textnotes}>
                       輸入密碼不相同
@@ -187,11 +249,9 @@ function KexinSignin() {
                     ''
                   )}
                   <div className="form-text"></div>
-                  <span
-                    className={`mt-2 mb-3 text-center ${signinStyles['signinSuccess']}`}
-                  >
+                  <p className={`mt-2 mb-3  ${signinStyles['signinSuccess']}`}>
                     {signinSuccess ? '您已註冊成功, 請登入會員 ! ' : ''}{' '}
-                  </span>
+                  </p>
                 </div>
                 <div className={`${signinStyles['button']}`}>
                   <button
@@ -203,7 +263,7 @@ function KexinSignin() {
                   </button>
 
                   <div className="mb-0">
-                    <button
+                    {/* <button
                       id={signinStyles['quick-login']}
                       type="submit"
                       className="btn btn-primary mb-2"
@@ -242,7 +302,7 @@ function KexinSignin() {
                           使用Google帳號快速註冊
                         </span>
                       </div>
-                    </button>
+                    </button> */}
 
                     <div
                       className={`${signinStyles['mobile-none']} d-flex justify-content-center`}

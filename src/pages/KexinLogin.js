@@ -1,20 +1,28 @@
-import { useState, useContext  } from 'react'
-import { useNavigate, redirect } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import React from 'react'
-import loginStyles from '../styles/kexinLogin.module.css'
-import LoginNavbar from '../layouts/NavbarLogin'
-import { LOGIN } from '../connections/api-config'
+import { useState, useContext } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
-import AuthContext from "../contexts/AuthContexts"
+
+// components
+import LoginNavbar from '../layouts/NavbarLogin'
+import AuthContext from '../contexts/AuthContexts'
+import { LOGIN } from '../connections/api-config'
+
+// styles
+import loginStyles from '../styles/kexinLogin.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+// FontAwesome
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 function KexinLogin() {
   const [myForm, setMyForm] = useState({
     account: '',
     password: '',
   })
-  const { setMyAuth } = useContext(AuthContext);
+  const { setMyAuth } = useContext(AuthContext)
   const navigate = useNavigate()
+  const [passwordVisible, setPasswordVisible] = useState(false)
+  const [loginSuccess, setLoginSuccess] = useState(false)
 
   return (
     <>
@@ -27,7 +35,7 @@ function KexinLogin() {
           >
             <div
               className={`${loginStyles['mobile-x']}  ${loginStyles['web-none']}`}
-              onClick={()=>{
+              onClick={() => {
                 navigate('/index')
               }}
             >
@@ -101,6 +109,22 @@ function KexinLogin() {
                   axios.post(LOGIN, myForm).then((response) => {
                     console.log(response.data)
                     if (response.data.success) {
+                      {
+                        document
+                          .querySelector('#account')
+                          .setAttribute(
+                            'class',
+                            `form-control`
+                          )
+                      }
+                      {
+                        document
+                          .querySelector('#password')
+                          .setAttribute(
+                            'class',
+                            `form-control`
+                          )
+                      }
                       const { account, accountId, token } = response.data
                       localStorage.setItem(
                         'myAuth',
@@ -114,7 +138,24 @@ function KexinLogin() {
                       })
                       navigate('/index')
                     } else {
-                      alert(response.data.error || '帳號或密碼錯誤')
+                      setLoginSuccess(true)
+                      {
+                        document
+                          .querySelector('#account')
+                          .setAttribute(
+                            'class',
+                            `form-control ${loginStyles.danger}`
+                          )
+                      }
+                      {
+                        document
+                          .querySelector('#password')
+                          .setAttribute(
+                            'class',
+                            `form-control ${loginStyles.danger}`
+                          )
+                      }
+                      // alert(response.data.error || '帳號或密碼錯誤')
                     }
                   })
                 }}
@@ -138,12 +179,12 @@ function KexinLogin() {
                   />
                   <div className="form-text"></div>
                 </div>
-                <div className="mb-3">
+                <div className={`${loginStyles['password-wrap']} mb-3`}>
                   <label htmlFor="password" className="form-label">
                     密碼
                   </label>
                   <input
-                    type="password"
+                    type={passwordVisible ? 'text' : 'password'}
                     className="form-control"
                     id="password"
                     name="password"
@@ -155,10 +196,25 @@ function KexinLogin() {
                       }))
                     }}
                   />
+                  <button
+                    className={`${loginStyles['password-visible']}`}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setPasswordVisible(!passwordVisible)
+                      console.log(e.currentTarget)
+                    }}
+                  >
+                    {passwordVisible ? (
+                      <FontAwesomeIcon icon={faEye} />
+                    ) : (
+                      <FontAwesomeIcon icon={faEyeSlash} />
+                    )}
+                  </button>
+
                   <div className="form-text"></div>
                 </div>
                 <div className="mb-3 d-flex justify-content-between align-items-end">
-                  <div className="d-flex justify-content-between align-items-end"> 
+                  <div className="d-flex justify-content-between align-items-end">
                     <input
                       type="checkbox"
                       id={loginStyles.rememberme}
@@ -177,6 +233,9 @@ function KexinLogin() {
                     </a>
                   </div>
                 </div>
+                <p className={`mt-2   ${loginStyles['loginSuccess']}`}>
+                  {loginSuccess ? '帳號或密碼錯誤 ! ' : ''}
+                </p>
                 <div className={`${loginStyles['button']}`}>
                   <button
                     id={loginStyles['login']}
@@ -187,7 +246,7 @@ function KexinLogin() {
                   </button>
 
                   <div className="mb-0">
-                    <button
+                    {/* <button
                       id={loginStyles['quick-login']}
                       type="submit"
                       className="btn btn-primary mb-2"
@@ -226,7 +285,7 @@ function KexinLogin() {
                           使用Google帳號快速登入
                         </span>
                       </div>
-                    </button>
+                    </button> */}
 
                     <div
                       className={`${loginStyles['mobile-none']} d-flex justify-content-center`}

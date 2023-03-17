@@ -1,6 +1,7 @@
 nav {
   position: fixed;
   padding: 0px 120px;
+  /* padding-right: 623px; */
   top: 0;
   height: var(--navbar-height);
   width: 100%;
@@ -9,8 +10,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: var(--mtyellow-4);
-
+  transition-duration: 0.9s;
 }
+
+nav.mapstate1 {
+  padding-right: 550px;
+  transition-duration: 0.9s;
+}
+
 .navbar {
   width: 100%;
   display: flex;
@@ -85,7 +92,7 @@ nav {
   color: var(--mtgreen-1);
   font-size: 28px;
 }
-.right .nav_icons li:first-of-type {
+.right .nav_icons .searchBar {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -103,7 +110,7 @@ nav {
   transition-timing-function: ease-in-out;
   overflow: hidden;
 }
-.right .nav_icons li:first-of-type input{
+.right .nav_icons li.searchBar input{
   width: 300px;
   height: 32px;
 
@@ -124,15 +131,15 @@ nav {
   display: flex;
   justify-content: center;
 }
-.right .nav_icons li:first-of-type input::placeholder{
+.right .nav_icons .searchBar input::placeholder{
   font-weight: 300;
   font-size: 22px;
   color: var(--mtgrey-3);
 }
-.right .nav_icons li:first-of-type input:hover{
+.right .nav_icons .searchBar input:hover{
   outline: none;
 }
-.right .nav_icons li:first-of-type span {
+.right .nav_icons .searchBar span {
   font-weight: 300;
   font-size: 18px;
   line-height: 26px;
