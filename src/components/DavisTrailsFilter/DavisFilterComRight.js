@@ -7,7 +7,7 @@ import DavisComFilterCardFilter from './DavisComFilterCardFilter'
 import { useNavigate } from 'react-router-dom'
 
 function DavisFilterComRight(props) {
-  const { data, filterByKeyword, keywordpr } = props
+  const { data, filterByKeyword, keywordpr, datepickpr } = props
 
   // console.log('filterFromBatch', filterFromBatch(rows_data))
 
@@ -16,7 +16,7 @@ function DavisFilterComRight(props) {
   const navigate = useNavigate()
   return (
     <>
-      {console.log(keywordpr)}
+      {/* {console.log(keywordpr)} */}
       <div className={` d-flex flex-column ${styles.right_card}`}>
         <div className={`${styles.sub_title}`}>
           <div className="d-flex p-0">
@@ -68,12 +68,14 @@ function DavisFilterComRight(props) {
           data={data}
           filterByKeyword={filterByKeyword}
           keywordpr={keywordpr}
+          datepickpr={datepickpr}
         /> */}
 
         <DavisComFilterCardFilter
           data={data}
           filterByKeyword={filterByKeyword}
           keywordpr={keywordpr}
+          datepickpr={datepickpr}
         />
 
         {/* pagination */}

@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react'
 import styles from '../../styles/DavisTrailsFilter.module.css'
 
 function DavisFilterComLeft(props) {
-  const { data, setKeywordpr } = props
+  const { data, setKeywordpr, setDatepickpr } = props
   const [keyword, setKeyword] = useState('')
+  const [datepick, setDatepick] = useState()
   const [inputText, setInputText] = useState('')
 
   useEffect(() => {
     setKeywordpr(keyword)
-  }, [keyword])
+    setDatepickpr(datepick)
+  }, [keyword, datepick])
 
   // const filterByKeyword = (data, setKeyword) => {
   //   return data.filter((v, i) => {
@@ -115,11 +117,15 @@ function DavisFilterComLeft(props) {
             </span>
             <div className={`${styles.input_wrap}`}>
               <input
+                onChange={() => {
+                  setDatepick(datepick)
+                }}
                 className={`${styles.input_style}`}
                 type="date"
                 id="picker"
                 pseudo="-webkit-calendar-picker-indicator"
               />
+              {console.log(datepick)}
             </div>
           </div>
         </div>
@@ -164,6 +170,9 @@ function DavisFilterComLeft(props) {
             </span>
             <div className={`${styles.input_wrap}`}>
               <input
+                onChange={() => {
+                  // setDatepick()
+                }}
                 className={`${styles.input_style}`}
                 type="date"
                 id="picker"

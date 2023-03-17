@@ -20,6 +20,8 @@ function DavisTrailsFilter() {
 
   const [keywordpr, setKeywordpr] = useState('')
 
+  const [datepickpr, setDatepickpr] = useState('')
+
   // trails_data
   const [data, setData] = useState({
     page: 0,
@@ -32,7 +34,7 @@ function DavisTrailsFilter() {
   // FIXME:
   let rows_data = data.rows
 
-  const filterByKeyword = (rows_data, keywordpr) => {
+  const filterByKeyword = (rows_data, keywordpr, datepickpr) => {
     if (!Array.isArray(rows_data)) {
       return []
     }
@@ -40,7 +42,9 @@ function DavisTrailsFilter() {
       return (
         v.trail_name.includes(keywordpr) ||
         v.geo_location_sid.includes(keywordpr) ||
-        v.geo_location_town_sid.includes(keywordpr)
+        v.geo_location_town_sid.includes(keywordpr) ||
+        v.batch_start > datepickpr
+        // v.batch_end < datepickpr
       )
     })
   }
@@ -84,12 +88,17 @@ function DavisTrailsFilter() {
         <div className={`d-none d-lg-flex flex-row ${styles.main_all}`}>
           {/*computer size left_card  */}
           {/* FIXME: 日期選單 */}
-          <DavisFilterComLeft data={data} setKeywordpr={setKeywordpr} />
+          <DavisFilterComLeft
+            data={data}
+            setKeywordpr={setKeywordpr}
+            setDatepickpr={setDatepickpr}
+          />
 
           {/*computer size right_card TODO: */}
           <DavisFilterComRight
             data={data}
             keywordpr={keywordpr}
+            datepickpr={datepickpr}
             filterByKeyword={filterByKeyword}
           />
         </div>
