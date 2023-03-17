@@ -42,40 +42,46 @@ function DavisTrailsImgGroup(props) {
                 alt=""
               />
             </div>
-            <div className={`d-flex flex-row ${styles.img_wrap_three}`}>
-              <img
-                onClick={() =>
-                  changePicture(
-                    `/images/public_images/product_image/${r.trail_sid}-1.jpg`
-                  )
-                }
-                id="select_img1"
-                className={`${styles.img_cover_three}`}
-                src={`/images/public_images/product_image/${r.trail_sid}-1.jpg`}
-                alt=""
-              />
-              <img
-                onClick={() =>
-                  changePicture(
-                    `/images/public_images/product_image/${r.trail_sid}-2.jpg`
-                  )
-                }
-                id="select_img2"
-                className={`${styles.img_cover_three}`}
-                src={`/images/public_images/product_image/${r.trail_sid}-2.jpg`}
-                alt=""
-              />
-              <img
-                onClick={() =>
-                  changePicture(
-                    `/images/public_images/product_image/${r.trail_sid}-3.jpg`
-                  )
-                }
-                id="select_img3"
-                className={`${styles.img_cover_three}`}
-                src={`/images/public_images/product_image/${r.trail_sid}-3.jpg`}
-                alt=""
-              />
+            <div className={`d-flex flex-row  ${styles.img_wrap_three}`}>
+              <div className={`${styles.img_wrap_small}`}>
+                <img
+                  onClick={() =>
+                    changePicture(
+                      `/images/public_images/product_image/${r.trail_sid}-1.jpg`
+                    )
+                  }
+                  id="select_img1"
+                  className={`${styles.img_cover_three}`}
+                  src={`/images/public_images/product_image/${r.trail_sid}-1.jpg`}
+                  alt=""
+                />
+              </div>
+              <div className={`${styles.img_wrap_small}`}>
+                <img
+                  onClick={() =>
+                    changePicture(
+                      `/images/public_images/product_image/${r.trail_sid}-2.jpg`
+                    )
+                  }
+                  id="select_img2"
+                  className={`${styles.img_cover_three}`}
+                  src={`/images/public_images/product_image/${r.trail_sid}-2.jpg`}
+                  alt=""
+                />
+              </div>
+              <div className={`${styles.img_wrap_small}`}>
+                <img
+                  onClick={() =>
+                    changePicture(
+                      `/images/public_images/product_image/${r.trail_sid}-3.jpg`
+                    )
+                  }
+                  id="select_img3"
+                  className={`${styles.img_cover_three}`}
+                  src={`/images/public_images/product_image/${r.trail_sid}-3.jpg`}
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         )

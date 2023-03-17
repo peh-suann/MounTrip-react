@@ -35,16 +35,16 @@ function DavisTrailsBatch(props) {
 
   return (
     <>
-      <div className={`col mb-2 ${styles.shop_btn_two}`}>
+      <div className={`col ${styles.shop_btn_two}`}>
         <div className=" d-flex flex-row align-items-center ">
           <div className={`col-2 col-lg-1 ${styles.batch}`}>
             <h5 className={`ps-3 mb-0 lh-lg ${styles.btn_font}`}>梯次</h5>
           </div>
           <div className="col d-flex justify-content-center">
-            <h5 className={`mb-0 ${styles.batch_font}`}>
+            <h5 className={`d-flex flex-grow-3 mb-0 ${styles.batch_font}`}>
               <select
                 // FIXME: 出現下拉選單時旋轉SVG，收合時回復
-                className={`d-flex ${styles.select_btn}`}
+                className={`d-flex flex-grow-3 ${styles.select_btn}`}
                 onClick={() => {
                   setRotate(!rotate)
                 }}

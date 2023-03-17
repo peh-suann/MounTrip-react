@@ -138,7 +138,7 @@ export default function DavisTrailsDetail(rows) {
                       </svg>
                     </div>
                     <span className="pe-3 ">
-                      <h6>
+                      <h6 className={`${styles.geo_font_size}`}>
                         {r.geo_location_sid}
                         {r.geo_location_town_sid}
                       </h6>
@@ -251,10 +251,12 @@ export default function DavisTrailsDetail(rows) {
                   </div>
 
                   {/* category content group for 電腦版 FIXME: 修改樣式，字塞不下*/}
-                  <div className={`d-lg-flex mb-5 d-none ${styles.ca_content}`}>
+                  <div
+                    className={`d-lg-flex mb-5 d-none justify-content-around ${styles.ca_content}`}
+                  >
                     <div className={`d-flex flex-row  ${styles.ca_border}`}>
                       <div
-                        className={`d-flex flex-row m-3 me-4 p-1 ${styles.ca_content_a}`}
+                        className={`d-flex flex-row m-3 me-5 p-1 ${styles.ca_content_a}`}
                       >
                         <div className="me-3">
                           <svg
@@ -277,13 +279,14 @@ export default function DavisTrailsDetail(rows) {
                         <h6
                           className={`mb-0 align-self-center ${styles.ca_h6}`}
                         >
-                          路線總長{r.trail_length}
+                          路線總長&nbsp;&nbsp;&nbsp;{r.trail_length}
                         </h6>
                       </div>
                     </div>
+
                     <div className={`d-flex flex-row ${styles.ca_border}`}>
                       <div
-                        className={`d-flex flex-row m-3 me-4 p-1 ${styles.ca_content_a}`}
+                        className={`d-flex flex-row m-3 me-5 p-1 ${styles.ca_content_a}`}
                       >
                         <div className="me-3">
                           <svg
@@ -306,10 +309,11 @@ export default function DavisTrailsDetail(rows) {
                         <h6
                           className={`mb-0 align-self-center ${styles.ca_h6}`}
                         >
-                          所需時間{r.trail_time}hr
+                          所需時間&nbsp;&nbsp;&nbsp;{r.trail_time}hr
                         </h6>
                       </div>
                     </div>
+
                     <div className=" d-flex flex-row  ">
                       <div
                         className={` d-flex flex-row m-3 p-1 ${styles.ca_content_a}`}
@@ -334,7 +338,7 @@ export default function DavisTrailsDetail(rows) {
                         <h6
                           className={`mb-0 align-self-center ${styles.ca_h6}`}
                         >
-                          海拔高度{r.trail_height}
+                          海拔高度&nbsp;&nbsp;&nbsp;{r.trail_height}
                         </h6>
                       </div>
                     </div>
@@ -413,7 +417,7 @@ export default function DavisTrailsDetail(rows) {
                           </svg>
                         </div>
                         <h6 className="mb-0 align-self-center">
-                          爬升高度{r.trail_height}
+                          海拔高度{r.trail_height}
                         </h6>
                       </div>
                     </div>

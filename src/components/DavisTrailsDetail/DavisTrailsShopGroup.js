@@ -15,7 +15,9 @@ function DavisTrailsShopGroup(props) {
     <>
       <div className="d-none d-lg-flex flex-column ">
         {/* Count */}
-        <div className="col d-flex flex-row mb-2 justify-content-between">
+        <div
+          className={`col d-flex flex-row justify-content-between ${styles.btn_one_margin}`}
+        >
           <div
             className={`col  d-flex flex-row align-items-center me-2 ${styles.shop_btn_one}`}
           >
@@ -75,8 +77,8 @@ function DavisTrailsShopGroup(props) {
           </div>
           <button className={`${styles.btn_style}`}>
             <svg
-              width="35"
-              height="35"
+              width="43"
+              height="43"
               viewBox="0 0 43 43"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -105,11 +107,9 @@ function DavisTrailsShopGroup(props) {
           <div key={r.trail_name}>{r.trail_name}</div>
         ))} */}
         <button
-          className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
+          className={`col d-flex flex-row justify-content-center ${styles.shop_btn_three}`}
         >
-          <h5 className={`mb-0 align-self-center ${styles.btn_font}`}>
-            加入購物車
-          </h5>
+          <h5 className={`mb-0 ${styles.btn_font}`}>加入購物車</h5>
           <span className="align-self-center">
             <svg
               className=""
