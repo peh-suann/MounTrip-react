@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import AuthContext from '../contexts/AuthContexts'
+import { StatusContext } from '../pages/KexinIndex'
 
 // styles
 import styles from './../styles/NavbarIndex.module.css'
-// import NavbarMobileMenu from './NavbarMobileMenu'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // FontAwesome
@@ -21,9 +21,8 @@ import NavbarShoppingCart from '../components/NavbarShoppingCart'
 import NavbarDropdown from '../components/NavbarDropdown'
 import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 
-export default function NavBar(props) {
-  const { mapInteraction, setMapInteraction } = props
-  // const [open, setOpen] = useState(false)
+export default function NavBar() {
+  const { mapInteraction } = useContext(StatusContext)
   const { myAuth, logout } = useContext(AuthContext)
   const [open, setOpen] = useState(false)
 
@@ -38,18 +37,7 @@ export default function NavBar(props) {
   const [showListMobile, setShowListMobile] = useState(false)
   const navigate = useNavigate()
 
-  // if (mapInteraction === 1) {
-  //   // document.querySelector('nav').style.padding='0px 623px 0px 120px '
-  //   document.querySelector('nav').setAttribute(
-  //     'class',
-  //     `${styles.mapstate1}`
-  //   )
-  // } else {
-  //   // document.querySelector('nav').setAttribute(
-  //   //   'class',
-  //   //   ''
-  //   // )
-  // }
+  console.log(mapInteraction)
 
   return (
     <>

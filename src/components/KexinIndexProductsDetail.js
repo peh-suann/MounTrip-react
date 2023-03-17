@@ -1,4 +1,4 @@
-import React from 'react'
+import { useContext } from 'react'
 // component
 import YichunProductCard from './YichunProductCard'
 
@@ -8,11 +8,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // FontAwesome
 import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons'
 
-function KexinIndexProductsDetail(props) {
-  const { mapInteraction, setMapInteraction } = props
+import { StatusContext } from '../pages/KexinIndex'
+
+function KexinIndexProductsDetail() {
+  const { mapInteraction, setMapInteraction } = useContext(StatusContext)
   return (
     <>
-      <div class={`${styles['map-product-detail']} d-flex flex-column col`}>
+      <div class={`${styles['map-product-detail']} d-flex flex-column col`}
+           style={(mapInteraction===2) ? { right:'0' } : { right:'-630px' } }
+      >
         <div class={`${styles['detail-img-wrap']} ${styles['mb-16']}`}>
           <img src="../public/images/kexin/index-product.jpg" alt="" />
         </div>

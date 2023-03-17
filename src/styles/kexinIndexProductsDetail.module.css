@@ -102,6 +102,7 @@
   box-shadow: 0px 0px 20px rgba(1, 19, 6, 0.08);
   padding: 0;
   z-index: 1005;
+  transition-duration: 1.0s;
 }
 
 .map-product-detail::-webkit-scrollbar {

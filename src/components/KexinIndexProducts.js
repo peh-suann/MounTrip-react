@@ -1,9 +1,10 @@
-import React from 'react'
+import { useContext } from 'react'
 // component
 import YichunProductCard from './YichunProductCard'
 
 import styles from '../styles/kexinIndexProducts.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { StatusContext } from '../pages/KexinIndex'
 
 
 // FontAwesome
@@ -12,13 +13,13 @@ import {
   faStar
 } from '@fortawesome/free-solid-svg-icons'
 
-function KexinIndexProducts(props) {
-  const {mapInteraction, setMapInteraction} =props
+function KexinIndexProducts() {
+  const { mapInteraction, setMapInteraction } = useContext(StatusContext)
   return (
     <>
       <div
         class={`${styles['map-product']} d-flex flex-column align-items-center justify-content-between px-0`}
-        style={(mapInteraction===1) ? { right: '0' } : { right: '-503px' }}
+        style={(mapInteraction===2) ? { right:'630px' } : (mapInteraction===1) ? { right: '0' } : {right: '-503px'}}
       >
         <div
           class={`${styles['search-input2']} align-items-center ${styles['mb-28']} ${styles['mt-19']}`}
@@ -33,6 +34,10 @@ function KexinIndexProducts(props) {
         {/* <YichunProductCard /> */}
         <div
           class={`${styles['card']} d-flex flex-column px-0 ${styles['mb-20']}`}
+          onClick={()=>{
+            setMapInteraction(2)
+            console.log('click card')
+          }}
         >
           <div class={styles['img-wrap']}>
             {/* <!-- <img src="./img/index-product.jpg" alt="" /> --> */}
