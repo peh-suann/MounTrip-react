@@ -19,26 +19,29 @@
 
 
   .dropdown-mobile-wrap {
-    position: absolute;
+    position: fixed;
+    /* position: absolute; */
     width: 390px;
     /* height: 844px; */
-    height: calc(100% - 100px);
+    /* height: calc(100% - 100px); */
+    height: 100vh;
     right: 0;
-    left:0;
-    /* top: 100px; */
+    top:0;
     background: rgba(0, 0, 0, 0.25);
     transition-duration: .5s;
+    z-index: 2000;
   }
 
   .dropdown-mobile {
+    position: fixed;
     width: 200px;
     height: 100%;
-    position: absolute;
+    /* position: absolute; */
     background: var(--mtyellow-4);
     left: 0;
     top: 0;
     transition-duration: .5s;
-    z-index: 1001;
+    z-index: 2000;
   }
 
   .dropdown-mobile div {

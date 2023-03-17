@@ -95,7 +95,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 630px;
+  /* width: 630px; */
+  width: 530px;
   height: 100vh;
   overflow: auto;
   background-color: #fff;

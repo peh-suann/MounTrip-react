@@ -6,7 +6,7 @@ import styles from '../styles/kexinIndexProducts.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { StatusContext } from '../pages/KexinIndex'
 
-
+  
 // FontAwesome
 import {
   faSearch,
@@ -19,7 +19,7 @@ function KexinIndexProducts() {
     <>
       <div
         class={`${styles['map-product']} d-flex flex-column align-items-center justify-content-between px-0`}
-        style={(mapInteraction===2) ? { right:'630px' } : (mapInteraction===1) ? { right: '0' } : {right: '-503px'}}
+        style={(mapInteraction===2) ? { right:'530px' } : (mapInteraction===1) ? { right: '0' } : {right: '-450px'}}
       >
         <div
           class={`${styles['search-input2']} align-items-center ${styles['mb-28']} ${styles['mt-19']}`}
