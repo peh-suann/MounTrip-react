@@ -15,6 +15,7 @@ import { MEMBER_DATA, USER_DATA } from '../connections/api-config'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import Modal from '../components/LaiBackdrop/Modal'
+import PasswordModal from '../components/LaiBackdrop/PasswordModal'
 // import Gift from '../../src/icons/gift.svg'
 
 export default function Member() {
@@ -25,7 +26,13 @@ export default function Member() {
   const handleModalToggle = () => {
     modalOpen ? close() : open()
   }
-
+  //密碼modal
+  const [pwdModalOpen, setPwdModalOpen] = useState(false)
+  const pwdOpen = () => setPwdModalOpen(true)
+  const pwdClose = () => setPwdModalOpen(false)
+  const handlePwdModalOpen = () => {
+    pwdModalOpen ? close() : open()
+  }
   //顯示localstorage的登入者的資訊
   const { myAuth, setMyAuth, logout } = useContext(AuthContext)
   //先設定為空陣列，在把一個個user obj放進去
@@ -137,6 +144,13 @@ export default function Member() {
     <>
       {modalOpen && (
         <Modal modalOpen={modalOpen} handleClose={close} text={'上傳大頭貼'} />
+      )}
+      {modalOpen && (
+        <PasswordModal
+          pwdModalOpen={pwdModalOpen}
+          handleClose={close}
+          text={'重設密碼'}
+        />
       )}
       <div className={styles['grid-container']}>
         <div className={styles['sidebar']}>
@@ -354,7 +368,13 @@ export default function Member() {
         {/* <CouponContent /> */}
 
         {memberPage === 'member' && (
-          <MemberContent user={user} setUser={setUser} />
+          <MemberContent
+            user={user}
+            setUser={setUser}
+            modalOpen={modalOpen}
+            close={close}
+            open={open}
+          />
         )}
         {memberPage === 'coupon' && (
           <CouponContent user={user} setUser={setUser} />
