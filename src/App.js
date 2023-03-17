@@ -27,6 +27,7 @@ import IanShoppingCart4 from './pages/IanShoppingCart4'
 
 import { CartContextProvider } from './components/IanUseCart'
 import ProductList from './pages/TextIanShoppingCart'
+import DavisGpxLeaflet from './components/DavisTrailsDetail/DavisGpxLeaflet'
 
 function App() {
   return (

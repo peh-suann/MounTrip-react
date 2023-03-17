@@ -17,7 +17,9 @@ export const RATING_DATA = `${HOST}/trails/rating`
 
 export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 
-// export const LIST_DATA = `${HOST}/member`
+export const TRAILS_FILTER_DATA = `${HOST}/trails-filter`
+
+export const FILTER_ALL_DATA = `${HOST}/trails-filter/all`
 
 //教室電腦的連線
 // export const HOST = '192.168.21.84:3000'
