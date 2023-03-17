@@ -51,10 +51,10 @@ function IanShoppingCart1() {
   ])
   const [mypage, setPage] = useState('')
 
-  const minusItem = (pid) => {
-    const items = data.map((i) => {
-      const p = { ...i }
-      if (p.sid === pid) {
+  const minusItem = (minusid) => {
+    const items = data.map((v) => {
+      const p = { ...v }
+      if (p.sid === minusid) {
         p.count = p.count - 1 || 1
       }
 
@@ -63,7 +63,32 @@ function IanShoppingCart1() {
     setData(items)
   }
 
-  const selectAll = (data, id) => {
+  const plusIcon = (plusid) => {
+    return data.map((v, i) => {
+      if (v.sid === plusid) {
+        return { ...v, count: v.count + 1 }
+      } else {
+        return { ...v }
+      }
+    })
+  }
+
+  const deletepruduct = (id) => {
+    return data.filter((v, i) => {
+      return v.sid !== id
+    })
+  }
+  const wannaBuy = (id) => {
+    return data.map((v, i) => {
+      if (v.sid === id) {
+        return { ...v, buy: !v.buy }
+      } else {
+        return { ...v }
+      }
+    })
+  }
+
+  const selectAll = (id) => {
     return data.map((v, i) => {
       return { ...v, buy: true }
     })
@@ -331,7 +356,7 @@ function IanShoppingCart1() {
                 type="checkbox"
                 checked={data.buy}
                 onChange={() => {
-                  setData(selectAll(data))
+                  setData(selectAll(data.sid))
                 }}
               />
             </div>
@@ -362,6 +387,10 @@ function IanShoppingCart1() {
                   setData={setData}
                   minusItem={minusItem}
                   data={data}
+                  plusIcon={plusIcon}
+                  deletepruduct={deletepruduct}
+                  wannaBuy={wannaBuy}
+                  selectAll={selectAll}
                 />
               </>
             )
