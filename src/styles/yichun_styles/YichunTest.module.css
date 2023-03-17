@@ -502,6 +502,7 @@ section.questions {
   position: relative;
   padding: 0;
   margin: 0;
+  overflow: hidden;
 
   transition-duration: 10s;
 }

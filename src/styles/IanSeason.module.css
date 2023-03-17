@@ -80,19 +80,19 @@ html body {
         rgba(0, 0, 0, 0.74) 96.19%
       ),
     url(./../../public/imgs/Ian_img/101-1.jpg); */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-origin: content-box;
-    background-clip: content-box;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  .pic1:hover {
-    transition: 1s;
-    transform: scale(1.2,1.2);
-  }
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-clip: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.pic1:hover {
+  transition: 1s;
+  transform: scale(1.2, 1.2);
+}
 
   .rates {
     width: 95%;
@@ -247,37 +247,31 @@ justify-content: end;
 
   }
 
-  section.comments .comment h5 {
-    margin: 0;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 35px;
-    letter-spacing: 0.03em;
-  
-    color: var(--mtyellow-4);
-    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
-  }
-  section.comments .comment h5 span:first-child {
-    font-weight: 700;
-    font-size: 16px;
-  }
-  section.comments .comment p {
-    margin: 0;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.1em;
-  
-    color: var(--mtyellow-4);
-    text-shadow: 0px 0px 4px #000000;
-  }
-  /* carousel ------------------- */
-  
+section.comments .comment h5 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 35px;
+  letter-spacing: 0.03em;
 
+  color: var(--mtyellow-4);
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+section.comments .comment h5 span:first-child {
+  font-weight: 700;
+  font-size: 16px;
+}
+section.comments .comment p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1em;
 
-
-
-
+  color: var(--mtyellow-4);
+  text-shadow: 0px 0px 4px #000000;
+}
+/* carousel ------------------- */
 
   @media screen and (max-width: 391px) {
     /* top bar ------------------- */
@@ -378,7 +372,7 @@ justify-content: end;
     /* section.comments h3 span:not(:nth-child(2)) {
       gap: 2px;
     } */
-    /* section.comments h3 span:not(:nth-child(2)) img {
+  /* section.comments h3 span:not(:nth-child(2)) img {
       width: 22px;
       aspect-ratio: 1/1;
     } */

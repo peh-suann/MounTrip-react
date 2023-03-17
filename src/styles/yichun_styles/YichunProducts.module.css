@@ -21,7 +21,7 @@ section {
 
   /* background-image: url(./../../images/products_top_bar.jpg); */
   /* background-image: url(../../../public/images/yichun/); */
-  /* background-image: url(./../../../public/images/yichun/products_top_bar.jpg); */
+  background-image: url(./../../../public/images/yichun/products_top_bar.jpg);
   background-size: cover;
   background-position-x: center;
   background-position-y: 45%;
@@ -60,6 +60,37 @@ section.products .products_title h2 {
 
   color: var(--mtgrey-1);
   flex-shrink: 0;
+}
+.filter_buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+.filter_buttons button {
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 2px;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.1em;
+  /* text-decoration: none; */
+
+  color: var(--mtyellow-4);
+  background: var(--mtgreen-1);
+  border-radius: 5px;
+  border: none;
+}
+.filter_buttons button.disable {
+  color: var(--mtgreen-1);
+  background: var(--mtyellow-4);
+  border: 2px solid var(--mtgreen-1);
 }
 .row-of-products {
   width: 100%;
@@ -186,16 +217,17 @@ section.products .products_title h2 {
   font-size: 18px;
   line-height: 140%;
   letter-spacing: 0.05em;
+  margin-bottom: 2px;
 
   color: var(--mtgrey-1);
 }
 .info p {
-  font-weight: 300;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.1em;
 
-  color: var(--mtgrey-1);
+  color: var(--mtgrey-2);
 }
 .price {
   text-align: end;
@@ -288,22 +320,85 @@ section.theme .row-of-products button:last-child {
 
 /* difficulty -------------------------------------------- */
 section.difficulty {
-  padding: 120px 120px;
+  padding: 70px 120px 120px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   gap: 20px;
 }
 section.difficulty .diff_intro_list {
-  width: fit-content;
+  width: 33%;
   display: flex;
   flex-direction: column;
-  gap: 80px;
 }
 section.difficulty .diff_intro_list .rank {
   display: flex;
   gap: 8px;
 }
+section.difficulty .diff_intro_list .rank .img_wrapper {
+  width: 230px;
+  height: 260px;
+  /* border: 1px solid red; */
+  border-radius: 0 0 125px 125px;
+  margin-bottom: 30px;
+  position: relative;
+
+  overflow: hidden;
+  cursor: pointer;
+}
+section.difficulty .diff_intro_list .rank .img_wrapper .circle {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--mtgreen-5);
+  z-index: 0;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+section.difficulty .diff_intro_list .rank .img_wrapper:hover .circle {
+  background-color: var(--mtgreen-4);
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+section.difficulty .diff_intro_list .rank .img_wrapper .circle.on {
+  background-color: var(--mtgreen-4);
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+section.difficulty .diff_intro_list .rank .img_wrapper img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  /* width: 90%; */
+  object-fit: contain;
+  object-position: center 80px;
+
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transform-origin: center bottom;
+}
+section.difficulty .diff_intro_list .rank:last-of-type .img_wrapper img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  /* width: 90%; */
+  object-fit: contain;
+  object-position: -15px 80px;
+
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+  transform-origin: center bottom;
+}
+section.difficulty .diff_intro_list .rank .img_wrapper img.on {
+  transform: scale(1.35);
+}
+
+
+
 section.difficulty .diff_intro_list .diff_intro {
   width: 354px;
   display: flex;
@@ -345,18 +440,53 @@ section.difficulty .diff_intro_list .diff_intro button {
   background-color: var(--mtgreen-1);
 }
 section.difficulty .diff_recommend {
+  width: 66%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  margin-bottom: 30px;
   gap: 40px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 section.difficulty .diff_recommend .select_diff {
-  flex-shrink: 1;
+  /* flex-shrink: 1; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+section.difficulty .diff_recommend .select_diff svg {
+  position: absolute;
+  transition-duration: 1s;
+}
+section.difficulty .diff_recommend .select_diff svg.easy {
+  bottom: 4%;
+  left: 14%;
+}
+section.difficulty .diff_recommend .select_diff svg.medium {
+  bottom: 26%;
+  left: 43%;
+}
+section.difficulty .diff_recommend .select_diff svg.hard {
+  bottom: 38%;
+  right: 21%;
+}
+section.difficulty .diff_recommend .select_diff img {
+  position: absolute;
+  bottom: -20px;
+}
+section.difficulty .diff_recommend .select_diff img.easy {
+  left: -8%;
+}
+section.difficulty .diff_recommend .select_diff img.medium {
+  left: 13%;
+}
+section.difficulty .diff_recommend .select_diff img.hard {
+  right: 0%;
 }
 section.difficulty .diff_recommend .diff_products {
   display: flex;
-  gap: 22px;
+  gap: 20px;
 }
 section.difficulty .diff_recommend .diff_products .product {
   flex-grow: 1;
@@ -445,7 +575,7 @@ section.test .test_info button {
     gap: 6px;
     position: relative;
   }
-  .search_bar .inputs_row{
+  .search_bar .inputs_row {
     display: flex;
     justify-content: space-between;
   }
@@ -487,19 +617,19 @@ section.test .test_info button {
     left: 12px;
     transform: translateY(-50%);
   }
-  .search_bar .input_field{
+  .search_bar .input_field {
     width: 100%;
   }
-  .search_bar .input_field .inputs{
+  .search_bar .input_field .inputs {
     width: 100%;
   }
-  .search_bar .input_field .inputs .calendarWrap{
+  .search_bar .input_field .inputs .calendarWrap {
     width: 100%;
   }
   .search_bar .input_field .inputs input {
     width: 100%;
   }
-  .search_bar > a > button{
+  .search_bar > a > button {
     width: 100%;
     border-radius: 10px;
   }
