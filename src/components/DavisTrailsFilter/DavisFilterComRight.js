@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import styles from '../../styles/DavisTrailsFilter.module.css'
 import DavisComFilterCard from './DavisComFilterCard'
+import DavisComFilterCardFilter from './DavisComFilterCardFilter'
 import { useNavigate } from 'react-router-dom'
 
 function DavisFilterComRight(props) {
@@ -63,7 +64,13 @@ function DavisFilterComRight(props) {
           </div>
         </div>
         {/* filter card */}
-        <DavisComFilterCard
+        {/* <DavisComFilterCard
+          data={data}
+          filterByKeyword={filterByKeyword}
+          keywordpr={keywordpr}
+        /> */}
+
+        <DavisComFilterCardFilter
           data={data}
           filterByKeyword={filterByKeyword}
           keywordpr={keywordpr}
@@ -104,6 +111,21 @@ function DavisFilterComRight(props) {
                   to={`/trails-filter?page=${data.page + 1}`}
                 >
                   2
+                </Link>
+              </li>
+              <li className={`page-item ${styles.li_margin}`}>
+                <span className={`page-link fw-bold ${styles.a_decoration}`}>
+                  {' '}
+                  ...{' '}
+                </span>
+              </li>
+              <li className={`page-item ${styles.li_margin}`}>
+                <Link
+                  className={`page-link fw-bold ${styles.a_decoration}`}
+                  aria-label="Previous"
+                  to={`/trails-filter?page=${data.totalPages / 2}`}
+                >
+                  {data.totalPages / 2}
                 </Link>
               </li>
               <li className={`page-item ${styles.li_margin}`}>
