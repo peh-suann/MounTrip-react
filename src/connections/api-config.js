@@ -2,7 +2,7 @@
 // 上面寫HOST，下面寫路徑
 
 // hosts ---------------------------------------------------------------------------
-// export const HOST = 'http://localhost:3000'
+export const HOST = 'http://localhost:3001'
 // export const HOST = 'http://localhost:3002'
 // export const HOST = 'http://localhost:3001'
 
@@ -12,7 +12,8 @@
 
 // 兩台電腦連線時，要用筆電wiki的ip，才能使用localstorage
 
-export const HOST = 'http://192.168.71.118:3000'
+// export const HOST = 'http://192.168.71.118:3000'
+// export const HOST = '192.168.21.84:3000'
 
 export const TRAILS_DATA = `${HOST}/trails`
 
@@ -25,7 +26,6 @@ export const TRAILS_FILTER_DATA = `${HOST}/trails-filter`
 export const FILTER_ALL_DATA = `${HOST}/trails-filter/all`
 
 //教室電腦的連線
-// export const HOST = '192.168.21.84:3000'
 
 // yichun's connect
 // export const HOST = 'http://192.168.71.118:3000'
