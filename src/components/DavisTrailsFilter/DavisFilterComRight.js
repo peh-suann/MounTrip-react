@@ -7,11 +7,18 @@ import DavisComFilterCardFilter from './DavisComFilterCardFilter'
 import { useNavigate } from 'react-router-dom'
 
 function DavisFilterComRight(props) {
-  const { data, filterByKeyword, keywordpr, startdatepr, enddatepr } = props
+  const {
+    data,
+    filterByKeyword,
+    keywordpr,
+    startdatepr,
+    enddatepr,
+    maxpeplepr,
+  } = props
 
   // console.log('filterFromBatch', filterFromBatch(rows_data))
 
-  // console.log(keywordpr)
+  // console.log(maxpeplepr)
 
   const navigate = useNavigate()
   return (
@@ -77,6 +84,7 @@ function DavisFilterComRight(props) {
           keywordpr={keywordpr}
           startdatepr={startdatepr}
           enddatepr={enddatepr}
+          maxpeplepr={maxpeplepr}
         />
 
         {/* pagination */}

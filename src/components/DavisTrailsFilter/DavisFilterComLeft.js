@@ -4,23 +4,27 @@ import { addDays } from 'date-fns'
 import { format } from 'date-fns'
 
 function DavisFilterComLeft(props) {
-  const { data, setKeywordpr, setStartdatepr, setEnddatepr } = props
+  const { data, setKeywordpr, setStartdatepr, setEnddatepr, setMaxpeplepr } =
+    props
   const [keyword, setKeyword] = useState('')
   const [startdate, setStartdate] = useState(format(new Date(1), 'yyyy-MM-dd'))
-  const [enddate, setEnddate] = useState(format(new Date(1), 'yyyy-MM-dd'))
+  const [enddate, setEnddate] = useState(format(new Date(), 'yyyy-MM-dd')) //如何改變enddate初始值為__?
   const [inputText, setInputText] = useState('')
   const [newstartdate, setNewstartdate] = useState(
     format(new Date(1), 'yyyy-MM-dd')
   )
-  const [newenddate, setNewenddate] = useState(
-    format(new Date(1), 'yyyy-MM-dd')
-  )
+  const [newenddate, setNewenddate] = useState(format(new Date(), 'yyyy-MM-dd'))
+
+  const [peoplecount, setPeoplecount] = useState()
+
+  const [newpeoplecount, setNewpeoplecount] = useState()
 
   useEffect(() => {
     setKeywordpr(keyword)
     setStartdatepr(startdate)
     setEnddatepr(enddate)
-  }, [keyword, startdate, enddate])
+    setMaxpeplepr(peoplecount)
+  }, [keyword, startdate, enddate, peoplecount])
 
   // const filterByKeyword = (data, setKeyword) => {
   //   return data.filter((v, i) => {
@@ -221,7 +225,14 @@ function DavisFilterComLeft(props) {
             </span>
             <div className="col">
               <div className={`${styles.input_wrap}`}>
-                <input className={`${styles.input_style}`} type="number" />
+                <input
+                  onChange={(event) => {
+                    const nerCount = event.target.value
+                    setNewpeoplecount(nerCount)
+                  }}
+                  className={`${styles.input_style}`}
+                  type="number"
+                />
               </div>
             </div>
           </div>
@@ -233,6 +244,7 @@ function DavisFilterComLeft(props) {
             setKeyword(inputText)
             setStartdate(newstartdate)
             setEnddate(newenddate)
+            setPeoplecount(newpeoplecount)
           }}
         >
           搜尋

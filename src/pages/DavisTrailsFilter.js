@@ -26,9 +26,11 @@ function DavisTrailsFilter() {
     format(new Date(1), 'yyyy-MM-dd')
   )
 
-  const [enddatepr, setEnddatepr] = useState(format(new Date(1), 'yyyy-MM-dd'))
+  const [enddatepr, setEnddatepr] = useState(format(new Date(), 'yyyy-MM-dd'))
 
-  console.log(Date.parse(startdatepr))
+  const [maxpeplepr, setMaxpeplepr] = useState()
+
+  // console.log(Date.parse(startdatepr))
   // console.log(Date.parse(enddatepr))
   // trails_data
   const [data, setData] = useState({
@@ -66,8 +68,9 @@ function DavisTrailsFilter() {
         Date.parse(v.batch_end) < Date.parse(enddatepr)
       // console.log(dateRangeMatch)
       // console.log(Date.parse(v.batch_start))
+      const peopleCount = v.batch_max >= maxpeplepr && v.batch_min <= maxpeplepr
 
-      return keywordMatch && dateRangeMatch
+      return keywordMatch && dateRangeMatch && peopleCount
     })
   }
 
@@ -115,6 +118,7 @@ function DavisTrailsFilter() {
             setKeywordpr={setKeywordpr}
             setStartdatepr={setStartdatepr}
             setEnddatepr={setEnddatepr}
+            setMaxpeplepr={setMaxpeplepr}
           />
 
           {/*computer size right_card TODO: */}
@@ -123,6 +127,7 @@ function DavisTrailsFilter() {
             keywordpr={keywordpr}
             startdatepr={startdatepr}
             enddatepr={enddatepr}
+            maxpeplepr={maxpeplepr}
             filterByKeyword={filterByKeyword}
           />
         </div>

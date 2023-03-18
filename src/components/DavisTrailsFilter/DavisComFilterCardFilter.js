@@ -11,7 +11,14 @@ import { FILTER_ALL_DATA } from '../../connections/api-config'
 // TODO:如何從後端進行關鍵字篩選?
 
 function DavisComFilterCardFilter(props) {
-  const { data, filterByKeyword, keywordpr, startdatepr, enddatepr } = props
+  const {
+    data,
+    filterByKeyword,
+    keywordpr,
+    startdatepr,
+    enddatepr,
+    maxpeplepr,
+  } = props
   // console.log('data', data)
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
@@ -55,10 +62,16 @@ function DavisComFilterCardFilter(props) {
 
   return (
     <>
-      {/* {console.log(startdatepr)} */}
+      {console.log(startdatepr)}
       {/* {data.rows.map((r) => ( */}
       {oddRows(
-        filterByKeyword(alldata.rows, keywordpr, startdatepr, enddatepr)
+        filterByKeyword(
+          alldata.rows,
+          keywordpr,
+          startdatepr,
+          enddatepr,
+          maxpeplepr
+        )
       ).map((r) => (
         <div className="col">
           {/* card*n  */}
