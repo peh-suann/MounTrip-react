@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState, useRef } from 'react'
-import { useLocation } from "react-router-dom"
+import { useLocation } from 'react-router-dom'
 import * as d3 from 'd3'
 import NavbarIndex from '../layouts/NavbarIndex'
 import IndexStyles from '../styles/kexinIndex.module.css'
@@ -114,9 +114,14 @@ function KexinIndex() {
           .center([121, 23.58])
           .scale(10000)
           .translate([WIDTH / 2, HEIGHT / 2])
+        // var projection = d3.geoMercator().center([123, 24]).scale(5500);
+
 
         // Create a path generator
         const path = d3.geoPath(projection)
+
+        console.log('projection',projection([121, 23.5]));
+        // console.log('projection',projection([121, 23.5])[1]);
 
         // Draw the map
         g.selectAll('path')
@@ -134,6 +139,12 @@ function KexinIndex() {
           .on('mouseover', mouseOverHandler)
           .on('mouseout', mouseOutHandler)
           .on('click', clickHandler)
+
+        // g.append('circle')
+        //     .attr('cx', projection([121, 25.0])[0])
+        //     .attr('cy', projection([121, 25.0])[1])
+        //     .attr('r', 10)
+        //     .attr('fill', 'red')
       }
     }
   }, [device])
@@ -151,9 +162,22 @@ function KexinIndex() {
   }
 
   const clickHandler = function (d, i, e) {
+    
+    // console.log(projection);
+
+    // const [x, y] = [121.6, 25.2]
+
+    // console.log(x,y)
+
     d3.select(mapRef.current)
       .selectAll('path')
       .style('fill', 'rgba(10, 140, 45, 0.2)')
+    // .append('circle')
+    // .attr('cx', x)
+    // .attr('cx', y)
+    // .attr('r', 10)
+    // .attr('stroke', 'none')
+    // .attr('fill', 'red')
     // console.log(i.properties.COUNTYNAME)
     d3.select(this).style('fill', CLICK_COLOR)
 
@@ -169,15 +193,36 @@ function KexinIndex() {
     setSelectCounty(county)
     // getCountyData(county)
 
+    
+
+
   }
 
   // console.log(selectCounty);
   // console.log('outside', mapInteraction)
   if (mapInteraction === 2) {
+    const WIDTH = window.innerWidth
+    const HEIGHT = window.innerHeight
+
+    const projection = d3.geoMercator()
+    .center([121, 23.58])
+    .scale(10000)
+    .translate([WIDTH / 2, HEIGHT / 2])
+
+
     d3.select('#mapZoom')
       .transition()
       .duration(750)
       .attr('transform', transformData[selectCounty].transform2)
+
+
+    d3.select('#mapZoom')
+      .append('circle')
+      .attr('cx', projection([121.3, 25.0])[0])
+      .attr('cy', projection([121.3, 25.0])[1])
+      .attr('r', 5)
+      .attr('fill', 'red')
+    
   }
 
   const clickReset = function (e) {
@@ -201,10 +246,7 @@ function KexinIndex() {
       d3.select('#mapZoom')
         .transition()
         .duration(750)
-        .attr(
-          'transform',
-          transformData[selectCounty].transform1
-        )
+        .attr('transform', transformData[selectCounty].transform1)
       setMapInteraction(1)
     }
   }

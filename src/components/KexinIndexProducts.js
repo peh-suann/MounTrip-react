@@ -69,7 +69,10 @@ function KexinIndexProducts(props) {
             console.log('click card')
           }}
         >
-          {data.map((v, i) => {
+        // TODO: 沒要到資料也不要跳錯誤
+        // TODO: component樣式修改
+        // TODO: 點擊有地理位置
+          {/* {data.map((v, i) => {
             console.log(v)
             return (
               <YichunProductCard
@@ -82,7 +85,7 @@ function KexinIndexProducts(props) {
                 }}
               />
             )
-          })}
+          })} */}
           <div class={styles['img-wrap']}>
             {/* <!-- <img src="./img/index-product.jpg" alt="" /> --> */}
             <div
