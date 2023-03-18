@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import styles from '../../styles/DavisTrailsFilter.module.css'
+import { addDays } from 'date-fns'
+import { format } from 'date-fns'
 
 function DavisFilterComLeft(props) {
-  const { data, setKeywordpr, setDatepickpr } = props
+  const { data, setKeywordpr, setStartdatepr, setEnddatepr } = props
   const [keyword, setKeyword] = useState('')
-  const [datepick, setDatepick] = useState()
+  const [startdate, setStartdate] = useState(format(new Date(1), 'yyyy-MM-dd'))
+  const [enddate, setEnddate] = useState(format(new Date(1), 'yyyy-MM-dd'))
   const [inputText, setInputText] = useState('')
 
   useEffect(() => {
     setKeywordpr(keyword)
-    setDatepickpr(datepick)
-  }, [keyword, datepick])
+    setStartdatepr(startdate)
+    setEnddatepr(enddate)
+  }, [keyword, startdate, enddate])
 
   // const filterByKeyword = (data, setKeyword) => {
   //   return data.filter((v, i) => {
@@ -20,9 +24,7 @@ function DavisFilterComLeft(props) {
 
   return (
     <>
-      <div
-        className={`card-body d-flex flex-column ${styles['card_padding']} ${styles['left_card']} `}
-      >
+      <div className={`card-body d-flex flex-column ${styles['left_card']} `}>
         <h5 className={`${styles.h5_sub_title}`}>搜尋</h5>
         <div className={`d-flex flex-column ${styles.search}`}>
           <p className={`mb-0 ${styles.p_content}`}>關鍵字搜尋</p>
@@ -117,15 +119,16 @@ function DavisFilterComLeft(props) {
             </span>
             <div className={`${styles.input_wrap}`}>
               <input
-                onChange={() => {
-                  setDatepick(datepick)
+                onChange={(event) => {
+                  const newDate = event.target.value
+                  setStartdate(newDate)
                 }}
                 className={`${styles.input_style}`}
                 type="date"
                 id="picker"
                 pseudo="-webkit-calendar-picker-indicator"
               />
-              {console.log(datepick)}
+              {/* {console.log(startdate)} */}
             </div>
           </div>
         </div>
@@ -170,8 +173,9 @@ function DavisFilterComLeft(props) {
             </span>
             <div className={`${styles.input_wrap}`}>
               <input
-                onChange={() => {
-                  // setDatepick()
+                onChange={(event) => {
+                  const newDate = event.target.value
+                  setEnddate(newDate)
                 }}
                 className={`${styles.input_style}`}
                 type="date"

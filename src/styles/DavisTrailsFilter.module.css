@@ -1,7 +1,7 @@
 /* main */
 
 .main_all {
-  /* border: 1px solid black; */
+
   margin: 9% 6.25%;
 }
 
@@ -11,10 +11,11 @@
 
 /* main left_card */
 .left_card {
-  /* border: 1px solid black; */
-  width: 23%;
+
+  width: 373px;
   height: 16.5%;
-  margin-right: 45px;
+  padding: 36px;
+  margin-right: 52px;
   background: var(--mtyellow-4);
   box-shadow: 0px 2px 25px 4px rgba(1, 19, 6, 0.1);
   border-radius: 10px;
@@ -22,26 +23,28 @@
 
 /* FIXME: */
 .main_all .card_padding {
-  /* padding-left: 30px; */
-  padding: 25px 28px;
+
 }
 
 main .right_card {
-  /* border: 1px solid black; */
-  /* width: 76%; */
+
+  width: 1255px;
   margin: 0;
 }
 
 .left_card .search {
+  width: 300px;
   padding-bottom: 12px;
 }
 
 .search_count {
+  width: 300px;
   padding-bottom: 36px;
 }
 
 
 .h5_sub_title {
+  width: 300px;
   color: var(--mtgreen-1);
   font-weight: 700;
 }
@@ -49,6 +52,7 @@ main .right_card {
 /* input_with_icon */
 
 .left_card .input_with_icon {
+  width: 300px;
   border: 2px solid var(--mtgreen-3);
   border-radius: 10px;
   background: rgba(206, 232, 203, 0.6);
@@ -80,12 +84,12 @@ main .right_card {
 .input_wrap .input_style {
   display: flex;
   text-align: center;
-  width: 175px;
+  width: 263px;
   border: none;
   background: transparent;
   height: 33px;
   outline: none;
-  user-select:initial;
+  user-select: initial;
 }
 
 .input_wrap .input_style_first {
@@ -96,7 +100,7 @@ main .right_card {
   background: transparent;
   height: 33px;
   outline: none;
-  user-select:initial;
+  user-select: initial;
 }
 
 .input-i {
@@ -108,6 +112,7 @@ main .right_card {
 }
 
 .btn_search {
+  width: 300px;
   color: var(--mtgrey-4);
   background-color: var(--mtgreen-1);
   border-radius: 5px;
@@ -126,7 +131,7 @@ main .right_card {
 
 
 .right_card .sub_title {
-  /* border: 1px solid black; */
+
   margin-bottom: 3%;
 }
 
