@@ -9,6 +9,12 @@ function DavisFilterComLeft(props) {
   const [startdate, setStartdate] = useState(format(new Date(1), 'yyyy-MM-dd'))
   const [enddate, setEnddate] = useState(format(new Date(1), 'yyyy-MM-dd'))
   const [inputText, setInputText] = useState('')
+  const [newstartdate, setNewstartdate] = useState(
+    format(new Date(1), 'yyyy-MM-dd')
+  )
+  const [newenddate, setNewenddate] = useState(
+    format(new Date(1), 'yyyy-MM-dd')
+  )
 
   useEffect(() => {
     setKeywordpr(keyword)
@@ -121,7 +127,7 @@ function DavisFilterComLeft(props) {
               <input
                 onChange={(event) => {
                   const newDate = event.target.value
-                  setStartdate(newDate)
+                  setNewstartdate(newDate)
                 }}
                 className={`${styles.input_style}`}
                 type="date"
@@ -175,7 +181,7 @@ function DavisFilterComLeft(props) {
               <input
                 onChange={(event) => {
                   const newDate = event.target.value
-                  setEnddate(newDate)
+                  setNewenddate(newDate)
                 }}
                 className={`${styles.input_style}`}
                 type="date"
@@ -226,6 +232,8 @@ function DavisFilterComLeft(props) {
           type="button"
           onClick={() => {
             setKeyword(inputText)
+            setStartdate(newstartdate)
+            setEnddate(newenddate)
           }}
         >
           搜尋
