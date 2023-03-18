@@ -8,11 +8,11 @@
 
 //Lai's connect
 // export const HOST = 'http://192.168.71.105:3001'
-// export const HOST = 'http://127.0.0.1:3002'
+export const HOST = 'http://127.0.0.1:3002'
 
 // 兩台電腦連線時，要用筆電wiki的ip，才能使用localstorage
 
-export const HOST = 'http://192.168.71.118:3000'
+// export const HOST = 'http://192.168.71.118:3000'
 
 export const TRAILS_DATA = `${HOST}/trails`
 
@@ -37,7 +37,8 @@ export const MEMBER_DATA = `${HOST}/member/api`
 export const USER_DATA = (mid) => `${HOST}/member/me/${mid}`
 export const USER_COMMENT = (mid) => `${HOST}/member/me/comment/${mid}`
 export const USER_UPLOAD = `${HOST}/member/me/upload`
-export const USER_AVATAR = `${HOST}/member/me/avatar`
+export const USER_AVATAR = `${HOST}/uploads/`
+export const USER_COUPON = `${HOST}/member/me/coupon`
 
 // paths ---------------------------------------------------------------------------
 // yichun's path

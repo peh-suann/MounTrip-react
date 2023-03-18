@@ -8,7 +8,7 @@ import axios from 'axios'
 const dropIn = {
   hidden: { y: '-100%', x: '', opacity: 0 },
   visible: {
-    y: '80%',
+    y: '60%',
     x: '',
     opacity: 1,
     transition: { type: 'spring', damping: 15, stiffness: 200 },

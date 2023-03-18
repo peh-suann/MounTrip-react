@@ -10,6 +10,7 @@ import axios from 'axios'
 export default function LaiMemberProfile(props) {
   const {
     img,
+    avatar,
     name,
     familyname,
     level,
@@ -19,21 +20,8 @@ export default function LaiMemberProfile(props) {
     close,
     open,
   } = props
-  const [avatar, setAvatar] = useState({ avatar: '' })
-  const getProfileImg = async () => {
-    const userString = localStorage.getItem('myAuth')
-    const user = JSON.parse(userString)
-    const sid = user.accountId
-    const token = user.token
-    const res = await axios.get(USER_AVATAR, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        sid: `${sid}`,
-      },
-    })
-    if (res) return console.log('res:', res, 'img:', img)
-  }
-  // console.log(props)
+  const avatarUrl = USER_AVATAR + avatar
+  // console.log('avatar:', avatar)
 
   return (
     <>
@@ -70,23 +58,23 @@ export default function LaiMemberProfile(props) {
               />
             </svg>
           </motion.button>
-          {/* <AnimatePresence
-            initial={false}
-            mode="wait"
-            onExitComplete={() => null}
-          > */}
-          {/* {modalOpen && (
-            <Modal
-              modalOpen={modalOpen}
-              handleClose={close}
-              text={'hello modal'}
-            />
-          )} */}
-          {/* </AnimatePresence> */}
 
           <div className={styles['profile-wrap']}>
-            {}
-            <div className={styles['profile-pic']}></div>
+            {avatar ? (
+              <div
+                className={styles.avatar_pic}
+                style={{
+                  background: `url('${avatarUrl}')`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
+            ) : (
+              <div className={styles['profile-pic']}></div>
+            )}
+            {/* <div
+              className={styles['profile-pic']}
+              style={{ background: `url('${avatarUrl}')`, height: `100%` }}
+            ></div> */}
           </div>
         </div>
         <div className={styles['member-name']}>

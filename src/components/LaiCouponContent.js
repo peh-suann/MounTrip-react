@@ -1,13 +1,101 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './../styles/Coupon.module.css'
 import CouponCard from './../components/LaiCouponCard'
 import CouponAmount from './LaiCouponAmount'
+import axios from 'axios'
+import { USER_COUPON } from '../connections/api-config'
 
 export default function LaiCouponContent({ children }) {
-  // const countCard = React.Children.toArray(children).filter(
-  //   (child) => child.type === '<CouponCard />'
-  // ).length
-  // console.log(countCard)
+  const [userCoupon, setUserCoupon] = useState([])
+  const [couponStartDate, setCouponStartDate] = useState([])
+  const [couponEndDate, setCouponEndDate] = useState([])
+
+  const getUserCoupon = async (req, res) => {
+    const userString = localStorage.getItem('myAuth')
+    const userData = JSON.parse(userString)
+    const token = userData.token
+    const mid = userData.accountId
+
+    try {
+      const res = await axios.get(USER_COUPON, {
+        headers: { Authorization: `Bearer ${token}`, sid: mid },
+      })
+      if (!res.data) return res.sendStatus(401)
+      let startDate = []
+      let endDate = []
+      let StartEnd = []
+      // res.data.map((v, i) => {
+      //   const startDate = new Date(v.start_date_coup)
+      //   const endDate = new Date(v.end_date_coup)
+      //   const Syear = startDate.getFullYear()
+      //   const Eyear = endDate.getFullYear()
+      //   const Smonth = String(startDate.getMonth() + 1).padStart(2, '0')
+      //   const Emonth = String(endDate.getMonth() + 1).padStart(2, '0')
+      //   const Sday = String(startDate.getDate()).padStart(2, '0')
+      //   const Eday = String(endDate.getDate()).padStart(2, '0')
+      //   const startDateFormat = `${Syear}-${Smonth}-${Sday}`
+      //   const endDateFormat = `${Eyear}-${Emonth}-${Eday}`
+      //   const datePair = { start: startDateFormat, end: endDateFormat }
+      //   StartEnd = StartEnd.push(datePair)
+      // })
+      // res.data.forEach((v, i) => {
+      //   const startDate = new Date(v.start_date_coup)
+      //   const endDate = new Date(v.end_date_coup)
+      //   const Syear = startDate.getFullYear()
+      //   const Eyear = endDate.getFullYear()
+      //   const Smonth = String(startDate.getMonth() + 1).padStart(2, '0')
+      //   const Emonth = String(endDate.getMonth() + 1).padStart(2, '0')
+      //   const Sday = String(startDate.getDate()).padStart(2, '0')
+      //   const Eday = String(endDate.getDate()).padStart(2, '0')
+      //   const startDateFormat = `${Syear}-${Smonth}-${Sday}`
+      //   const endDateFormat = `${Eyear}-${Emonth}-${Eday}`
+      //   startDate = startDate.push(startDateFormat)
+      //   endDate = endDate.push(endDateFormat)
+      // })
+      // res.data.map((v, i) => {
+      //   const startDate = new Date(v.start_date_coup)
+      //   const endDate = new Date(v.end_date_coup)
+      //   const Syear = startDate.getFullYear()
+      //   const Eyear = endDate.getFullYear()
+      //   const Smonth = String(startDate.getMonth() + 1).padStart(2, '0')
+      //   const Emonth = String(endDate.getMonth() + 1).padStart(2, '0')
+      //   const Sday = String(startDate.getDate()).padStart(2, '0')
+      //   const Eday = String(endDate.getDate()).padStart(2, '0')
+      //   const startDateFormat = `${Syear}-${Smonth}-${Sday}`
+      //   const endDateFormat = `${Eyear}-${Emonth}-${Eday}`
+      // date = date.push({ start: startDateFormat, end: endDateFormat })
+      // setCouponDate({ start: startDateFormat, end: endDateFormat })
+      // })
+      // setCouponDate(date)
+      setUserCoupon(res.data)
+      const output = res.data.length
+      console.log(StartEnd)
+      console.log(res.data) //res.data是裡面包著n比obj資料的arr
+      return output
+    } catch (error) {
+      console.log('coupon axios err')
+      return []
+    }
+  }
+  const stateConvert = (state) => {
+    switch (state) {
+      case 1:
+        return 'on'
+      case 2:
+        return 'off'
+      case 3:
+        return 'future'
+    }
+  }
+  // const dateConvert = (data) => {
+  //   data.map((v, i) => {
+  //     const
+  //   })
+  // }
+  useEffect(() => {
+    getUserCoupon()
+    // console.log(userCoupon)
+  }, [])
   return (
     <>
       <div className={styles['member-data']}>
@@ -62,7 +150,7 @@ export default function LaiCouponContent({ children }) {
             <div className={styles['show-number']}>
               <p>共有</p>
               {/* TODO連結評論數量 */}
-              <CouponAmount amount={5} />
+              <CouponAmount amount={userCoupon.length} />
               <p>張優惠券</p>
             </div>
             <div className={styles['filter-btn']}>
@@ -76,30 +164,19 @@ export default function LaiCouponContent({ children }) {
             </div>
           </div>
           <div className={styles['coupon-list']}>
-            <CouponCard
-              tag={''}
-              couponCode={'HAPPY123'}
-              couponDescrib={'消費滿 200 折！， 150 再享 30 次免外送費'}
-              dateStart={'2023/01/01'}
-              dateEnd={'2023/02/28'}
-              state={'on'}
-            />
-            <CouponCard
-              tag={'限量!'}
-              couponCode={'XMAS90'}
-              couponDescrib={'避難器具緩降機使用方法折90啦'}
-              dateStart={'2023/03/01'}
-              dateEnd={'2023/04/30'}
-              state={'off'}
-            />
-            <CouponCard
-              tag={'限量!'}
-              couponCode={'MOUNTRIP99'}
-              couponDescrib={'MOUNTRIP周年慶、歡慶地球日'}
-              dateStart={'2023/05/01'}
-              dateEnd={'2023/06/30'}
-              state={'future'}
-            />
+            {userCoupon.map((v, i) => {
+              return (
+                <CouponCard
+                  key={i}
+                  tag={''}
+                  couponCode={v.coupon_code}
+                  couponDescrib={v.coupon_name}
+                  dateStart={v.startDate}
+                  dateEnd={v.endDate}
+                  state={v.coupon_status}
+                />
+              )
+            })}
           </div>
         </div>
       </div>
