@@ -35,7 +35,7 @@ function DavisFilterComLeft(props) {
         <div className={`d-flex flex-column ${styles.search}`}>
           <p className={`mb-0 ${styles.p_content}`}>關鍵字搜尋</p>
           <div className={`d-flex flex-row ${styles.input_with_icon}`}>
-            <span className={`col ${styles.icon_span}`}>
+            <span className={` ${styles.icon_span_one}`}>
               <svg
                 className={`${styles.icon_size}`}
                 width="21"
@@ -132,7 +132,6 @@ function DavisFilterComLeft(props) {
                 className={`${styles.input_style}`}
                 type="date"
                 id="picker"
-                pseudo="-webkit-calendar-picker-indicator"
               />
               {/* {console.log(startdate)} */}
             </div>

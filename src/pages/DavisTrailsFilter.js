@@ -61,7 +61,7 @@ function DavisTrailsFilter() {
         v.trail_name.includes(keywordpr) ||
         v.geo_location_sid.includes(keywordpr) ||
         v.geo_location_town_sid.includes(keywordpr)
-      let dateRangeMatch =
+      const dateRangeMatch =
         Date.parse(v.batch_start) > Date.parse(startdatepr) &&
         Date.parse(v.batch_end) < Date.parse(enddatepr)
       // console.log(dateRangeMatch)

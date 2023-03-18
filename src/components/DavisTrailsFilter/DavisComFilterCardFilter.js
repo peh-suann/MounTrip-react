@@ -110,7 +110,7 @@ function DavisComFilterCardFilter(props) {
                       </svg>
                     </div>
                     <span className="pe-3 ">
-                      <p className="mb-0">
+                      <p className={`mb-0 ${styles.geo_font}`}>
                         {r.geo_location_sid}
                         {r.geo_location_town_sid}
                       </p>

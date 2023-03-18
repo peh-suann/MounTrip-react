@@ -23,7 +23,7 @@ function DavisFilterComRight(props) {
             <span className=" d-none d-lg-flex">
               <svg
                 className={`${styles.Vector_long}`}
-                width="300px"
+                width="378px"
                 height="20"
                 viewBox="0 0 380 20"
                 fill="none"
@@ -47,7 +47,7 @@ function DavisFilterComRight(props) {
             <span className=" d-none d-lg-flex">
               <svg
                 className={`${styles.Vector_long}`}
-                width="300px"
+                width="378px"
                 height="20"
                 viewBox="0 0 380 20"
                 fill="none"
