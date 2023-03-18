@@ -15,7 +15,7 @@ function DavisFilterComLeft(props) {
   )
   const [newenddate, setNewenddate] = useState(format(new Date(), 'yyyy-MM-dd'))
 
-  const [peoplecount, setPeoplecount] = useState()
+  const [peoplecount, setPeoplecount] = useState(2)
 
   const [newpeoplecount, setNewpeoplecount] = useState()
 

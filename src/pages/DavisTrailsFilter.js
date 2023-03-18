@@ -41,21 +41,6 @@ function DavisTrailsFilter() {
     totalRows: 0,
   })
 
-  // (v.batch_start > startdatepr && v.batch_end < enddatepr)
-
-  // return rows_data.filter((v, i) => {
-  //   if (v.batch_start > startdatepr && v.batch_end < enddatepr) {
-  //     return (
-  //       v.trail_name.includes(keywordpr) ||
-  //       v.geo_location_sid.includes(keywordpr) ||
-  //       v.geo_location_town_sid.includes(keywordpr)
-  //     )
-  //   }
-  // })
-
-  // FIXME:
-  // let rows_data = data.rows
-
   const filterByKeyword = (rows_data, keywordpr, startdatepr, enddatepr) => {
     // console.log(startdatepr)
     return rows_data.filter((v, i) => {
@@ -66,7 +51,7 @@ function DavisTrailsFilter() {
       const dateRangeMatch =
         Date.parse(v.batch_start) > Date.parse(startdatepr) &&
         Date.parse(v.batch_end) < Date.parse(enddatepr)
-      // console.log(dateRangeMatch)
+      console.log(maxpeplepr)
       // console.log(Date.parse(v.batch_start))
       const peopleCount = v.batch_max >= maxpeplepr && v.batch_min <= maxpeplepr
 
@@ -83,17 +68,6 @@ function DavisTrailsFilter() {
     // console.log(response.data)
     setData(response.data)
   }
-
-  // console.log(data.rows)
-
-  // const filterFromBatch = (rows_data) => {
-  //   if (!Array.isArray(rows_data)) {
-  //     return []
-  //   }
-  //   return rows_data.slice(0, 1)
-  // }
-
-  // console.log('filterFromBatch', filterFromBatch(rows_data))
 
   useEffect(() => {
     // 設定功能
