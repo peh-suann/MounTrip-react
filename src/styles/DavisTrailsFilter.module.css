@@ -203,6 +203,14 @@ main .right_card {
   background-color: transparent;
 }
 
+.collect_heart{
+  background-color: rgb(255, 142, 13);
+}
+
+.not_collect{
+  color:rgba(206, 232, 203, 0.6)
+}
+
 /* 隱藏三行以上段落文字 */
 .overflow_p {
   display: -webkit-box;

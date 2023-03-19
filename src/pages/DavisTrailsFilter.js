@@ -52,7 +52,7 @@ function DavisTrailsFilter() {
         Date.parse(v.batch_end) < Date.parse(enddatepr)
       // console.log(maxpeplepr)
       // console.log(Date.parse(v.batch_start))
-      const peopleCount = v.batch_max >= maxpeplepr && v.batch_min <= maxpeplepr
+      const peopleCount = v.batch_max >= maxpeplepr
 
       return keywordMatch && dateRangeMatch && peopleCount
     })

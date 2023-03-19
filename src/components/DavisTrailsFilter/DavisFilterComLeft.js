@@ -8,7 +8,7 @@ function DavisFilterComLeft(props) {
     props
   const [keyword, setKeyword] = useState('')
   const [startdate, setStartdate] = useState(format(new Date(1), 'yyyy-MM-dd'))
-  const [enddate, setEnddate] = useState(format(new Date(), 'yyyy-MM-dd')) //如何改變enddate初始值為__?
+  const [enddate, setEnddate] = useState(new Date(2024, 12, 31))
   const [inputText, setInputText] = useState('')
   const [newstartdate, setNewstartdate] = useState(
     format(new Date(1), 'yyyy-MM-dd')

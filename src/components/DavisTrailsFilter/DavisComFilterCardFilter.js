@@ -9,19 +9,14 @@ import styles from '../../styles/DavisTrailsFilter.module.css'
 import { FILTER_ALL_DATA } from '../../connections/api-config'
 
 function DavisComFilterCardFilter(props) {
-  const {
-    data,
-    filterByKeyword,
-    keywordpr,
-    startdatepr,
-    enddatepr,
-    maxpeplepr,
-  } = props
-  // console.log('data', data)
+  const { filterByKeyword, keywordpr, startdatepr, enddatepr, maxpeplepr } =
+    props
 
   const [alldata, setAlldata] = useState({
     rows: [],
   })
+
+  let rows_data = alldata.rows
 
   const getListData = async (page = 1) => {
     const response = await axios.get(FILTER_ALL_DATA, {
@@ -33,24 +28,41 @@ function DavisComFilterCardFilter(props) {
     setAlldata(response.data)
   }
 
-  const [pagedata, setpagedata] = useState({ rows: [] })
+  // const [pagedata, setpagedata] = useState({ rows: [] })
 
   // 分頁
-  const [currentPage, setCurrentPage] = useState(1)
-  const perPage = 10
-  const startIndex = (currentPage - 1) * perPage
-  const endIndex = startIndex + perPage
+  // const [currentPage, setCurrentPage] = useState(1)
+  // const perPage = 10
+  // const startIndex = (currentPage - 1) * perPage
+  // const endIndex = startIndex + perPage
 
-  const dataSubset = (rows_data) => {
-    if (!Array.isArray(rows_data)) {
-      return []
-    }
-    return rows_data.slice(startIndex, endIndex)
+  // TODO:收藏按鈕
+  const initState = rows_data.map((v, i) => {
+    return { ...v, collect: false }
+  })
+
+  const [collect, setCollect] = useState(initState)
+
+  console.log(initState)
+
+  const toggleCollect = (arr, id) => {
+    return arr.map((v, i) => {
+      if (v.trails_sid === id) return { ...v, collect: !v.collect }
+      else return { ...v }
+    })
   }
 
-  function nextPage() {
-    setCurrentPage(currentPage + 1)
-  }
+  // 分頁dataSubset
+  // const dataSubset = (rows_data) => {
+  //   if (!Array.isArray(rows_data)) {
+  //     return []
+  //   }
+  //   return rows_data.slice(startIndex, endIndex)
+  // }
+
+  // function nextPage() {
+  //   setCurrentPage(currentPage + 1)
+  // }
 
   // 分割同樣trails_sid的資料
   const oddRows = (rows_data) => {
@@ -61,16 +73,21 @@ function DavisComFilterCardFilter(props) {
   }
 
   useEffect(() => {
-    // 設定功能
     console.log('useEffect--')
     getListData()
-    setAlldata(alldata)
-    setCurrentPage(currentPage)
     return () => {
-      // 解除功能
       console.log('unmount AbList--')
     }
-  }, [setAlldata, setCurrentPage])
+  }, [])
+
+  // useEffect(() => {
+  //   console.log('useEffect--')
+  //   setAlldata(alldata)
+  //   setCurrentPage(currentPage)
+  //   return () => {
+  //     console.log('unmount AbList--')
+  //   }
+  // }, [setAlldata, setCurrentPage])
 
   return (
     <>
@@ -85,7 +102,7 @@ function DavisComFilterCardFilter(props) {
           maxpeplepr
         )
       ).map((r) => (
-        <div className="col">
+        <div className="col" key={r.trail_sid}>
           {/* {console.log(dataSubset(alldata.rows))} */}
           {/* card*n  */}
           <div className={`${styles.trails_card}`}>
@@ -215,9 +232,20 @@ function DavisComFilterCardFilter(props) {
                   </div>
                 </div>
               </div>
+              {/* 收藏button TODO: */}
               <div className="col-1  d-flex justify-content-end align-items-start">
-                <button className={`${styles.heart_btn}`}>
+                <button
+                  onClick={() => {
+                    setCollect(toggleCollect(collect, r.trail_sid))
+                  }}
+                  className={`${styles.heart_btn}`}
+                >
                   <svg
+                    className={
+                      `${r.collect}`
+                        ? `${styles.collect_heart}`
+                        : `${styles.not_collect}`
+                    }
                     width="50"
                     height="75"
                     viewBox="0 0 50 75"
