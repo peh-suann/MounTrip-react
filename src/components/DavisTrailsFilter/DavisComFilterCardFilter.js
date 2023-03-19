@@ -240,6 +240,7 @@ function DavisComFilterCardFilter(props) {
                   }}
                   className={`${styles.heart_btn}`}
                 >
+                  {/* normal heart */}
                   <svg
                     className={
                       `${r.collect}`
@@ -258,6 +259,23 @@ function DavisComFilterCardFilter(props) {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
+                    />
+                  </svg>
+                  {/* red heart */}
+                  <svg
+                    width="23"
+                    height="21"
+                    viewBox="0 0 23 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20.3882 2.61183C19.8775 2.10083 19.271 1.69547 18.6036 1.41891C17.9361 1.14235 17.2207 1 16.4982 1C15.7757 1 15.0603 1.14235 14.3929 1.41891C13.7254 1.69547 13.119 2.10083 12.6082 2.61183L11.5482 3.67183L10.4882 2.61183C9.45652 1.58013 8.05725 1.00053 6.59821 1.00053C5.13918 1.00053 3.73991 1.58013 2.70821 2.61183C1.67652 3.64352 1.09692 5.04279 1.09692 6.50183C1.09692 7.96086 1.67652 9.36013 2.70821 10.3918L3.76821 11.4518L11.5482 19.2318L19.3282 11.4518L20.3882 10.3918C20.8992 9.88107 21.3046 9.27464 21.5811 8.60718C21.8577 7.93972 22 7.22431 22 6.50183C22 5.77934 21.8577 5.06393 21.5811 4.39647C21.3046 3.72901 20.8992 3.12258 20.3882 2.61183Z"
+                      fill="#FF0000"
+                      stroke="#6CBA7C"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     />
                   </svg>
                 </button>
