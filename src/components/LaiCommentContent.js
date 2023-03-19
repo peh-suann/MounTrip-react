@@ -78,11 +78,12 @@ export default function LaiComment() {
           </div>
           <div className={styles['comment-list']}>
             {userComment.map((v, i) => {
+              const orderId = `MT2300${String(v.sid)}`
               return (
                 <CommentCard
                   key={i}
                   title={v.trail_name}
-                  orderId={v.sid}
+                  orderId={orderId}
                   dateStart={v.startDate}
                   dateEnd={v.endDate}
                   comment={v.comment}

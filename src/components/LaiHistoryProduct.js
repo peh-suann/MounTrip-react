@@ -1,9 +1,24 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import styles from './../styles/HistoryOrder.module.css'
+import axios from 'axios'
+import { USER_ORDER_DETAIL } from '../connections/api-config'
 
 export default function LaiHistoryProduct(props) {
-  const { img, productTitle, productSubTi, dateStart, dateEnd, price, amount } =
-    props
+  const {
+   
+    orderId,
+    userOrder,
+    setUserOrder,
+    productTitle,
+    productSubTi,
+    dateStart,
+    dateEnd,
+    price,
+    amount,
+  } = props
+  let currentOrderProduct = []
+
+    //把orderId 訂單的編號當作參數從header傳給node.js 進行sql搜尋
   const countTolPrice = (p, amount) => {
     let priceNum = parseInt(p.replace(',', ''))
     let tolPrice = priceNum * amount
@@ -12,6 +27,34 @@ export default function LaiHistoryProduct(props) {
   }
   const TolPrice = countTolPrice(price, amount)
 
+  const getOrderProductDetail = async (req, res) => {
+    const userString = localStorage.getItem('myAuth')
+    const user = JSON.parse(userString) //localstorage出來的東西都是字串，需要解析
+    const token = user.token
+    const mid = user.accountId
+
+    try {
+      const res = await axios.get(USER_ORDER_DETAIL, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          sid: mid,
+          orderId: orderId,
+        },
+      })
+      if (!res) return res.sendStatus(401)
+
+      currentOrderProduct = res
+      setUserOrder(currentOrderProduct)
+      console.log('currentUO:', res)
+    } catch (error) {
+      console.log("there's an error in db connection")
+      return []
+    }
+  }
+
+  useEffect(() => {
+    getOrderProductDetail()
+  }, [])
   return (
     <>
       <div className={styles['dropdown-bar']}></div>

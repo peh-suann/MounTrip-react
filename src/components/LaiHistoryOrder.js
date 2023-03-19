@@ -1,22 +1,56 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './../styles/HistoryOrder.module.css'
 import OrderCard from './../components/LaiHistoryOrderCard'
+import axios from 'axios'
+import { USER_ORDER } from '../connections/api-config'
+import HistoryProduct from './LaiHistoryProduct'
 // import HistoryProduct from './../components/LaiHistoryProduct'
 
 export default function LaiHistoryOrder() {
-  //展開選單
-  //   const dropdownBtn = document.querySelectorAll('.arrow-btn')
-  //   const dropdownPart = document.querySelector('.dropdown')
+  const [userOrder, setUserOrder] = useState([])
+  const [orderList, setOrderList] = useState([])
+  let currentUserOrder = []
+  let currentOrderList = []
 
-  //   dropdownBtn.forEach((b) => {
-  //     b.addEventListener('click', (e) => {
-  //       e.stopPropagation()
-  //       e.currentTarget.classList.toggle('show')
-  //       e.currentTarget.parentElement.nextElementSibling.lastElementChild.classList.toggle(
-  //         'show'
-  //       )
-  //     })
-  //   })
+  //order_status_sid轉換
+  const convertStatus = (s) => {
+    switch (s) {
+      case 1:
+        return '未付款'
+      case 2:
+        return '已付款'
+      case 3:
+        return '付款失敗'
+    }
+  }
+
+  const getHistoryOrder = async (req, res) => {
+    const userString = localStorage.getItem('myAuth')
+    const user = JSON.parse(userString) //localstorage出來的東西都是字串，需要解析
+    const token = user.token
+    const mid = user.accountId
+
+    try {
+      const res = await axios.get(USER_ORDER, {
+        headers: { Authorization: `Bearer ${token}`, sid: mid },
+      })
+      if (!res) return res.sendStatus(401)
+      // const currentUserId = myAuth.sid
+      currentOrderList = res.data.orderSidData
+      currentUserOrder = res.data.data
+
+      setUserOrder(currentUserOrder)
+      setOrderList(currentOrderList)
+      // console.log('new sql', res.data.data)
+      console.log('currentUO:', res)
+    } catch (error) {
+      console.log("there's an error in db connection")
+      return []
+    }
+  }
+  useEffect(() => {
+    getHistoryOrder()
+  }, [])
 
   return (
     <>
@@ -47,25 +81,52 @@ export default function LaiHistoryOrder() {
 
           <h1>歷史訂單</h1>
         </div>
-        <OrderCard
+        {/* <OrderCard
           orderId={'S34567897'}
           orderState={'訂單已成立'}
           tolPrice={'7,200'}
           orderDate={'2022/12/13'}
           orderPayment={'信用卡一次付清'}
         >
-          {/* <HistoryProduct /> */}
-        </OrderCard>
-        <OrderCard
+        </OrderCard> */}
+        {orderList.map((v, i) => {
+          const orderId = `MT2300${v.sid}`
+          const statusString = convertStatus(v.order_status_sid)
+
+          return (
+            <OrderCard
+              key={i}
+              orderId={orderId}
+              orderState={statusString}
+              tolPrice={v.total}
+              orderDate={v.orderDateFormat}
+              orderPayment={'信用卡一次付清'}
+            />
+          )
+        })}
+        {/* {userOrder.map((v, i) => {
+          const orderId = `MT2300${v.orderSID}`
+          
+          return (
+            <OrderCard
+              key={i}
+              orderId={orderId}
+              orderState={v.status}
+              tolPrice={v.total}
+              orderDate={v.orderDate}
+              orderPayment={'信用卡一次付清'}
+            >
+              <HistoryProduct />
+            </OrderCard>
+          )
+        })} */}
+        {/* <OrderCard
           orderId={'S96998752'}
           orderState={'訂單處理中'}
           tolPrice={'4,800'}
           orderDate={'2023/2/19'}
           orderPayment={'信用卡一次付清'}
-        >
-          {/* <HistoryProduct /> */}
-          {/* <HistoryProduct /> */}
-        </OrderCard>
+        ></OrderCard> */}
         {/* <OrderCard>
           <HistoryProduct />
           <HistoryProduct />

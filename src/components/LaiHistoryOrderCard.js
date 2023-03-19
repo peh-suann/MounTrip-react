@@ -1,20 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './../styles/HistoryOrder.module.css'
 import HistoryProduct from './../components/LaiHistoryProduct'
+import { USER_ORDER_DETAIL } from '../connections/api-config'
+import axios from 'axios'
 
 export default function LaiHistoryOrderCard(props) {
   const { orderId, orderState, tolPrice, orderDate, orderPayment } = props
+  //把orderId 訂單的編號當作參數從header傳給node.js 進行sql搜尋
+  //訂單細節資料
+  const [userOrder, setUserOrder] = useState([])
+  let currentOrderProduct = []
+
+  
+
   const [open, setOpen] = useState(false)
   const tagColor = (orderState) => {
     switch (orderState) {
-      case '訂單處理中':
+      case '已付款':
+        return { backgroundColor: '#6cba7c' }
+        break
+      case '未付款':
         return { backgroundColor: '#F3C969' }
         break
-      case '訂單已成立':
-        return { backgroundColor: '#6cba7c' }
+      case '付款失敗':
+        return { backgroundColor: '#4d5a51' }
         break
     }
   }
+
+
   return (
     <>
       <div className={styles['order-card']}>
@@ -89,23 +103,46 @@ export default function LaiHistoryOrderCard(props) {
               <p>{orderDate}</p>
             </div>
             <div className={styles['bill-wrap']}>
-              <p>付款方式：</p>
-              <p>{orderPayment}</p>
+              {orderState === '已付款' && (
+                <>
+                  <p>付款方式：</p>
+                  <p>{orderPayment}</p>
+                </>
+              )}
+              {orderState === '未付款' && (
+                <>
+                  <p>未付款</p>
+                </>
+              )}
+              {orderState === '付款失敗' && (
+                <>
+                  <p>付款失敗</p>
+                </>
+              )}
+              {/* <p>付款方式：</p>
+              <p>{orderPayment}</p> */}
             </div>
           </div>
           <div className={styles['dropdown']} id="dropdown1">
             {/* {open && props.children} */}
-            {open ? (
-              <HistoryProduct
-                img={''}
-                productTitle={'草嶺古道｜探索新北一日遊'}
-                productSubTi={'古代淡蘭古道北路一部分'}
-                dateStart={'2023/01/01'}
-                dateEnd={'2023/01/02'}
-                price={'1,200'}
-                amount={3}
-              />
-            ) : null}
+            {/* {open
+              ? userOrder.map((v, i) => {
+                  return (
+                    <HistoryProduct
+                      img={v.trail_img}
+                      productTitle={v.trail_name}
+                      productSubTi={''}
+                      dateStart={'2023/01/01'}
+                      dateEnd={'2023/01/02'}
+                      price={'1,200'}
+                      amount={3}
+                      orderId={orderId}
+                      userOrder={userOrder}
+                      setUserOrder={setUserOrder}
+                    />
+                  )
+                })
+              : null} */}
             {open ? (
               <HistoryProduct
                 img={''}

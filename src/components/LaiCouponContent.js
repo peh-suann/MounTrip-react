@@ -21,55 +21,12 @@ export default function LaiCouponContent({ children }) {
         headers: { Authorization: `Bearer ${token}`, sid: mid },
       })
       if (!res.data) return res.sendStatus(401)
-      let startDate = []
-      let endDate = []
-      let StartEnd = []
-      // res.data.map((v, i) => {
-      //   const startDate = new Date(v.start_date_coup)
-      //   const endDate = new Date(v.end_date_coup)
-      //   const Syear = startDate.getFullYear()
-      //   const Eyear = endDate.getFullYear()
-      //   const Smonth = String(startDate.getMonth() + 1).padStart(2, '0')
-      //   const Emonth = String(endDate.getMonth() + 1).padStart(2, '0')
-      //   const Sday = String(startDate.getDate()).padStart(2, '0')
-      //   const Eday = String(endDate.getDate()).padStart(2, '0')
-      //   const startDateFormat = `${Syear}-${Smonth}-${Sday}`
-      //   const endDateFormat = `${Eyear}-${Emonth}-${Eday}`
-      //   const datePair = { start: startDateFormat, end: endDateFormat }
-      //   StartEnd = StartEnd.push(datePair)
-      // })
-      // res.data.forEach((v, i) => {
-      //   const startDate = new Date(v.start_date_coup)
-      //   const endDate = new Date(v.end_date_coup)
-      //   const Syear = startDate.getFullYear()
-      //   const Eyear = endDate.getFullYear()
-      //   const Smonth = String(startDate.getMonth() + 1).padStart(2, '0')
-      //   const Emonth = String(endDate.getMonth() + 1).padStart(2, '0')
-      //   const Sday = String(startDate.getDate()).padStart(2, '0')
-      //   const Eday = String(endDate.getDate()).padStart(2, '0')
-      //   const startDateFormat = `${Syear}-${Smonth}-${Sday}`
-      //   const endDateFormat = `${Eyear}-${Emonth}-${Eday}`
-      //   startDate = startDate.push(startDateFormat)
-      //   endDate = endDate.push(endDateFormat)
-      // })
-      // res.data.map((v, i) => {
-      //   const startDate = new Date(v.start_date_coup)
-      //   const endDate = new Date(v.end_date_coup)
-      //   const Syear = startDate.getFullYear()
-      //   const Eyear = endDate.getFullYear()
-      //   const Smonth = String(startDate.getMonth() + 1).padStart(2, '0')
-      //   const Emonth = String(endDate.getMonth() + 1).padStart(2, '0')
-      //   const Sday = String(startDate.getDate()).padStart(2, '0')
-      //   const Eday = String(endDate.getDate()).padStart(2, '0')
-      //   const startDateFormat = `${Syear}-${Smonth}-${Sday}`
-      //   const endDateFormat = `${Eyear}-${Emonth}-${Eday}`
-      // date = date.push({ start: startDateFormat, end: endDateFormat })
-      // setCouponDate({ start: startDateFormat, end: endDateFormat })
-      // })
-      // setCouponDate(date)
+      // let startDate = []
+      // let endDate = []
+      // let StartEnd = []
+ 
       setUserCoupon(res.data)
       const output = res.data.length
-      console.log(StartEnd)
       console.log(res.data) //res.data是裡面包著n比obj資料的arr
       return output
     } catch (error) {
@@ -168,7 +125,7 @@ export default function LaiCouponContent({ children }) {
               return (
                 <CouponCard
                   key={i}
-                  tag={''}
+                  tag={v.promo_name}
                   couponCode={v.coupon_code}
                   couponDescrib={v.coupon_name}
                   dateStart={v.startDate}
