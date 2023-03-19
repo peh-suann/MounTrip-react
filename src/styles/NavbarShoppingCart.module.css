@@ -38,7 +38,6 @@ section#nav_cart .topbar {
 }
 section#nav_cart .topbar h3 {
   flex-grow: 1;
-
   font-weight: 700;
   font-size: 30px;
   line-height: 43px;
@@ -48,14 +47,11 @@ section#nav_cart .topbar h3 {
 section#nav_cart .topbar button {
   width: 40px;
   height: 40px;
-
   border: none;
   background-color: transparent;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-size: 32px;
   color: var(--mtgreen-1);
 }
@@ -84,11 +80,31 @@ section#nav_cart .shoppingcart_item {
 section#nav_cart .item_info {
   display: flex;
   gap: 16px;
+  position: relative;
 }
+
+
+/* Ian add start */
+section#nav_cart .item_info .cancel {
+  position: absolute;
+  left: 94%;
+}
+section#nav_cart .item_info .detail button {
+  border: none;
+  background-color: transparent;
+  padding:0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: var(--mtgreen-1);
+}
+/* Ian add end */
+
+
 section#nav_cart .item_info .pic {
   width: 110px;
   height: 110px;
-  background-image: url('./../../public/images/public_images/product_image/1-1.jpg');
   background-size: cover;
   border-radius: 5px;
   flex-shrink: 0;
@@ -99,6 +115,7 @@ section#nav_cart .item_info .detail {
   justify-content: space-between;
   align-items: flex-start;
 }
+
 section#nav_cart .item_info h5 {
   margin: 0;
   font-weight: 700;

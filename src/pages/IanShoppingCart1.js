@@ -1,106 +1,100 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import styles from './../styles/IanShoppingCart1.module.css'
 import { Link } from 'react-router-dom'
 import IanShoppingCartProduct from '../components/IanShoppingCartProduct'
+import { useCart } from '../components/IanUseCart'
 
 // import IanShoppingCartTitle from '../components/IanShoppingCartTitle'
 // import './../html/css/shoppingCart1.css'
 
 function IanShoppingCart1() {
-  const [data, setData] = useState([
-    {
-      sid: 1,
-      name: '草嶺古道',
-      startTime: '2023/03/15',
-      endTime: '2023/03/17',
-      price: 1200,
-      count: 1,
-      total: 1200,
-      buy: false,
-    },
-    {
-      sid: 2,
-      name: '玉山步道',
-      startTime: '2023/02/20',
-      endTime: '2023/02/22',
-      price: 850,
-      count: 2,
-      total: 1700,
-      buy: false,
-    },
-    {
-      sid: 3,
-      name: '鳶嘴山',
-      startTime: '2023/03/01',
-      endTime: '2023/03/03',
-      price: 900,
-      count: 3,
-      total: 2700,
-      buy: false,
-    },
-    {
-      sid: 4,
-      name: '雪山來回',
-      startTime: '2023/2/15',
-      endTime: '2023/02/18',
-      price: 2000,
-      count: 2,
-      total: 4000,
-      buy: false,
-    },
-  ])
+  const { cart, items, plusOne, minusOne, removeItem } = useCart()
+  // const [data, setData] = useState([
+  //   {
+  //     sid: 1,
+  //     name: '草嶺古道',
+  //     startTime: '2023/03/15',
+  //     endTime: '2023/03/17',
+  //     price: 1200,
+  //     count: 1,
+  //     total: 1200,
+  //     buy: false,
+  //   },
+  //   {
+  //     sid: 2,
+  //     name: '玉山步道',
+  //     startTime: '2023/02/20',
+  //     endTime: '2023/02/22',
+  //     price: 850,
+  //     count: 2,
+  //     total: 1700,
+  //     buy: false,
+  //   },
+  //   {
+  //     sid: 3,
+  //     name: '鳶嘴山',
+  //     startTime: '2023/03/01',
+  //     endTime: '2023/03/03',
+  //     price: 900,
+  //     count: 3,
+  //     total: 2700,
+  //     buy: false,
+  //   },
+  //   {
+  //     sid: 4,
+  //     name: '雪山來回',
+  //     startTime: '2023/2/15',
+  //     endTime: '2023/02/18',
+  //     price: 2000,
+  //     count: 2,
+  //     total: 4000,
+  //     buy: false,
+  //   },
+  // ])
   const [mypage, setPage] = useState('')
 
-  const minusItem = (minusid) => {
-    const items = data.map((v) => {
-      const p = { ...v }
-      if (p.sid === minusid) {
-        p.count = p.count - 1 || 1
-      }
+  // const minusItem = (minusid) => {
+  //   const items = data.map((v) => {
+  //     const p = { ...v }
+  //     if (p.sid === minusid) {
+  //       p.count = p.count - 1 || 1
+  //     }
 
-      return p
-    })
-    setData(items)
-  }
+  //     return p
+  //   })
+  //   setData(items)
+  // }
 
-  const plusIcon = (plusid) => {
-    return data.map((v, i) => {
-      if (v.sid === plusid) {
-        return { ...v, count: v.count + 1 }
-      } else {
-        return { ...v }
-      }
-    })
-  }
+  // const plusIcon = (plusid) => {
+  //   return data.map((v, i) => {
+  //     if (v.sid === plusid) {
+  //       return { ...v, count: v.count + 1 }
+  //     } else {
+  //       return { ...v }
+  //     }
+  //   })
+  // }
 
-  const deletepruduct = (id) => {
-    return data.filter((v, i) => {
-      return v.sid !== id
-    })
-  }
-  const wannaBuy = (id) => {
-    return data.map((v, i) => {
-      if (v.sid === id) {
-        return { ...v, buy: !v.buy }
-      } else {
-        return { ...v }
-      }
-    })
-  }
+  // const deletepruduct = (id) => {
+  //   return data.filter((v, i) => {
+  //     return v.sid !== id
+  //   })
+  // }
+  // const wannaBuy = (id) => {
+  //   return data.map((v, i) => {
+  //     if (v.sid === id) {
+  //       return { ...v, buy: !v.buy }
+  //     } else {
+  //       return { ...v }
+  //     }
+  //   })
+  // }
 
-  const selectAll = (id) => {
-    return data.map((v, i) => {
-      return { ...v, buy: true }
-    })
-  }
-
-  const calulateTotal = (data, id) => {
-    const newData = [...data].map((v, i) => {
-      if (v.sid === id) {
-        return { ...v, total: v.price * v.count }
-      }
-    })
-  }
+  // const selectAll = (id) => {
+  //   return data.map((v, i) => {
+  //     return { ...v, buy: true }
+  //   })
+  // }
 
   return (
     <div className={`${styles.IanShoppingCartAll}`}>
@@ -354,10 +348,10 @@ function IanShoppingCart1() {
             <div className={`${styles['mobile-none']} ${styles.w1} `}>
               <input
                 type="checkbox"
-                checked={data.buy}
-                onChange={() => {
-                  setData(selectAll(data.sid))
-                }}
+                // checked={data.buy}
+                // onChange={() => {
+                //   setData(selectAll(data.sid))
+                // }}
               />
             </div>
             <div className={`${styles['mobile-none']} ${styles.w2} `}>
@@ -371,28 +365,156 @@ function IanShoppingCart1() {
             <div className={`${styles['mobile-none']} ${styles.w6} `}>小計</div>
             <div className={`${styles['mobile-none']} ${styles.w7} `}></div>
           </div>
-          {data.map((v, i) => {
+          {items.map((v, i) => {
             return (
-              <>
-                <IanShoppingCartProduct
-                  key={v.sid}
-                  pid={v.sid}
-                  name={v.name}
-                  startTime={v.startTime}
-                  endTime={v.endTime}
-                  price={v.price}
-                  count={v.count}
-                  total={v.total}
-                  buy={v.buy}
-                  setData={setData}
-                  minusItem={minusItem}
-                  data={data}
-                  plusIcon={plusIcon}
-                  deletepruduct={deletepruduct}
-                  wannaBuy={wannaBuy}
-                  selectAll={selectAll}
-                />
-              </>
+              <div key={i} className={`${styles['shoppingcart-product']}`}>
+                <div
+                  className={`${styles['product-col']} ${styles['mobile-none']} d-flex`}
+                >
+                  <div className={`${styles['mobile-none']} ${styles.w1} `}>
+                    <input
+                      type="checkbox"
+                      // checked={mycheck}
+                      // onChange={() => {
+                      //   setMyCheck(wannaBuy(pid))
+                      // }}
+                    />
+                  </div>
+                  <div className={`${styles['mobile-none']} ${styles.w2} `}>
+                    <div className={`row w-100`}>
+                      <div className={`col-4`}>
+                        <div className={`${styles['product-img-wrap']}`}>
+                          <div
+                            className={`${styles.pic}`}
+                            style={{
+                              backgroundImage: `url('./imgs/Ian_img/${v.trail_img}')`,
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+                      <div className={`col-8 px-0`}>
+                        <p className={`${styles['product-title']}  mb-3`}>
+                          {v.trail_name}
+                        </p>
+                        <p className={`${styles['product-subtitle']} mb-0`}>
+                          {v.trail_name}單日行程
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={`${styles['mobile-none']} ${styles.w3} `}>
+                    <p className={`mb-lg-2`}>{v.batch_start}</p>
+                    <p className={`mb-lg-2`}>&emsp;&emsp;|</p>
+                    <p className={`mb-0`}>{v.batch_end}</p>
+                  </div>
+                  <div className={`${styles['mobile-none']} ${styles.w4} `}>
+                    NTD {v.price}
+                  </div>
+                  <div className={`${styles['mobile-none']} ${styles.w5} `}>
+                    <div className={`d-flex`}>
+                      <button className={`${styles['plus-button']}`}>
+                        <svg
+                          onClick={() => {
+                            console.log('plusclick:', v.sid)
+                            minusOne(v.sid)
+                          }}
+                          className={`${styles['minus-icon']} me-3`}
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5 12.5H19"
+                            stroke="#6CBA7C"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      <p className={`${styles['product-number']}  mb-0 me-3`}>
+                        {v.quantity}
+                      </p>
+                      <button className={`${styles['plus-button']}`}>
+                        <svg
+                          onClick={() => {
+                            console.log('plusclick:', v.sid)
+                            plusOne(v.sid)
+                          }}
+                          className={`${styles['minus-icon']}`}
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 5.5V19.5"
+                            stroke="#6CBA7C"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M5 12.5H19"
+                            stroke="#6CBA7C"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div className={`${styles['mobile-none']} ${styles.w6} `}>
+                    NTD {v.itemTotal}
+                  </div>
+                  <div className={`${styles['mobile-none']} ${styles.w7} `}>
+                    <svg
+                      onClick={() => {
+                        console.log('click')
+                        removeItem(v.sid)
+                      }}
+                      width="30"
+                      height="30"
+                      viewBox="0 0 30 30"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 7.5H6.25H26.25"
+                        stroke="#6CBA7C"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M23.75 7.5V25C23.75 25.663 23.4866 26.2989 23.0178 26.7678C22.5489 27.2366 21.913 27.5 21.25 27.5H8.75C8.08696 27.5 7.45107 27.2366 6.98223 26.7678C6.51339 26.2989 6.25 25.663 6.25 25V7.5M10 7.5V5C10 4.33696 10.2634 3.70107 10.7322 3.23223C11.2011 2.76339 11.837 2.5 12.5 2.5H17.5C18.163 2.5 18.7989 2.76339 19.2678 3.23223C19.7366 3.70107 20 4.33696 20 5V7.5"
+                        stroke="#6CBA7C"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12.5 13.75V21.25"
+                        stroke="#6CBA7C"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M17.5 13.75V21.25"
+                        stroke="#6CBA7C"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             )
           })}
         </div>
@@ -441,7 +563,7 @@ function IanShoppingCart1() {
             className={`${styles['padding-30']} d-flex justify-content-between`}
           >
             <p className={`${styles.p} mb-0`}>小計</p>
-            <p className={`${styles['p-bold']} mb-0`}>NTD 7,200</p>
+            <p className={`${styles['p-bold']} mb-0`}>NTD {cart.cartTotal}</p>
           </div>
           <div
             className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex justify-content-between`}

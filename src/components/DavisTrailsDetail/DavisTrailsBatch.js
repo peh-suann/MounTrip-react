@@ -32,6 +32,7 @@ function DavisTrailsBatch(props) {
   // }, [])
 
   const [rotate, setRotate] = useState()
+  const rows_data = data.rows
 
   return (
     <>
@@ -51,7 +52,7 @@ function DavisTrailsBatch(props) {
                 name=""
                 id=""
               >
-                {data.rows.map((r, i) => {
+                {rows_data.map((r, i) => {
                   return (
                     <option key={r.sid} id={i} value="">
                       {r.batch_start}-{r.batch_end}

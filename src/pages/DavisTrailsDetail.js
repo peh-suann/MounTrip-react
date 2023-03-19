@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -17,6 +17,9 @@ import styles from '../styles/DavisTrailsDetail.module.css'
 
 // api
 import { TRAILS_DATA } from '../connections/api-config'
+
+//useReducer
+// import { useCart } from '../components/IanUseCart'
 
 export default function DavisTrailsDetail(rows) {
   const location = useLocation()
@@ -43,13 +46,13 @@ export default function DavisTrailsDetail(rows) {
   useEffect(() => {
     getListData(+usp.get('page'))
     return () => {
-      console.log('unmount')
+      // console.log('unmount')
     }
   }, [])
 
-  let rows_data = data.rows
+  // let rows_data = data.rows
 
-  console.log(rows_data)
+  // console.log(rows_data)
 
   const filterFromBatch = (rows_data) => {
     if (!Array.isArray(rows_data)) {
@@ -57,10 +60,7 @@ export default function DavisTrailsDetail(rows) {
     }
     return rows_data.slice(0, 1)
   }
-
-  console.log('filterFromBatch', filterFromBatch(rows_data))
-
-  // const [count, setCount] = useState(0)
+  // console.log('filterFromBatch', filterFromBatch(rows_data))
 
   return (
     <>
@@ -109,8 +109,8 @@ export default function DavisTrailsDetail(rows) {
               <div className=" d-lg-flex flex-lg-row col mb-5  d-sm-flex flex-sm-column">
                 <DavisTrailsImgGroup
                   filterFromBatch={filterFromBatch}
-                  rows_data={rows_data}
                   data={data}
+                  setData={setData}
                 />
                 {/* right-card */}
                 <div className="col">

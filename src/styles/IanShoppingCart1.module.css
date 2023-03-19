@@ -141,12 +141,18 @@ section.shopping-cart-contain > div > div.shopping-cart-title > svg {
 
 .product-img-wrap {
   width: 100%;
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 1/1; */
   border-radius: 10px;
   /* border: 1px solid black; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
-
+.product-img-wrap .pic {
+  width: 110px;
+  height: 110px;
+  background-size: cover;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
 .product-title {
   font-weight: 700;
   /* font-size: 20px; */

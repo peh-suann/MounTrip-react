@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useEffect, useState } from 'react'
 import DavisTrailsBatch from './DavisTrailsBatch'
 import styles from '../../styles/DavisTrailsDetail.module.css'
+import { useCart } from '../IanUseCart'
+import { fi } from 'date-fns/locale'
 
 function DavisTrailsShopGroup(props) {
-  const { data, filterFromBatch } = props
+  const { data, filterFromBatch, plusOne, setData } = props
   const [count, setCount] = useState(0)
+  const { addItem } = useCart()
+
+  const rows_data = data.rows
+
+  const Rows = { ...data }
+  console.log('Rows:', Rows)
+  const batch = Rows.rows[0].batch_start
+  console.log(batch)
+
   return (
     <>
       <div className="d-none d-lg-flex flex-column ">
@@ -101,6 +112,18 @@ function DavisTrailsShopGroup(props) {
         ))} */}
         <button
           className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
+          onClick={() => {
+            // if (batch === Rows.rows[0].batch_start) {
+            //   const item = { ...Rows.rows[0], quantity: 1 }
+            //   addItem(item)
+            // } else {
+            //   const item2 = { ...Rows.rows[1], quantity: 1 }
+            //   addItem(item2)
+            // }
+            const item = { ...Rows.rows[0], quantity: 1 }
+            addItem(item)
+            // console.log('onClick item:', item)
+          }}
         >
           <h5 className={`mb-0 align-self-center ${styles.btn_font}`}>
             加入購物車
