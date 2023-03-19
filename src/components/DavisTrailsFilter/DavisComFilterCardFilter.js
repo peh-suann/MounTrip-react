@@ -78,7 +78,6 @@ function DavisComFilterCardFilter(props) {
   useEffect(() => {
     const modifiedData = alldata.rows.map((v) => ({ ...v, collect: false }))
     setCollect(modifiedData)
-    console.log(modifiedData)
   }, [alldata])
 
   // useEffect(() => {
