@@ -42,7 +42,6 @@ function DavisTrailsFilter() {
   })
 
   const filterByKeyword = (rows_data, keywordpr, startdatepr, enddatepr) => {
-    // console.log(startdatepr)
     return rows_data.filter((v, i) => {
       const keywordMatch =
         v.trail_name.includes(keywordpr) ||
@@ -51,7 +50,7 @@ function DavisTrailsFilter() {
       const dateRangeMatch =
         Date.parse(v.batch_start) > Date.parse(startdatepr) &&
         Date.parse(v.batch_end) < Date.parse(enddatepr)
-      console.log(maxpeplepr)
+      // console.log(maxpeplepr)
       // console.log(Date.parse(v.batch_start))
       const peopleCount = v.batch_max >= maxpeplepr && v.batch_min <= maxpeplepr
 

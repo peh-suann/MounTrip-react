@@ -22,6 +22,7 @@ export default function DavisTrailsDetail(rows) {
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
   // trails_data
+
   const [data, setData] = useState({
     page: 0,
     rows: [],
@@ -30,7 +31,7 @@ export default function DavisTrailsDetail(rows) {
     totalRows: 0,
   })
 
-  const getListData = async (page = 1) => {
+  const getListData = async (page) => {
     const response = await axios.get(TRAILS_DATA, {
       params: {
         page,

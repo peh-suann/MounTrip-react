@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
+// import { useLocation } from 'react-router-dom'
 
 import styles from '../../styles/DavisTrailsFilter.module.css'
 
 // API
 import { FILTER_ALL_DATA } from '../../connections/api-config'
-
-// TODO:如何從後端進行關鍵字篩選?
 
 function DavisComFilterCardFilter(props) {
   const {
@@ -20,16 +18,11 @@ function DavisComFilterCardFilter(props) {
     maxpeplepr,
   } = props
   // console.log('data', data)
-  const location = useLocation()
-  const usp = new URLSearchParams(location.search)
 
   const [alldata, setAlldata] = useState({
-    page: 0,
     rows: [],
-    perPage: 0,
-    totalPages: 0,
-    totalRows: 0,
   })
+
   const getListData = async (page = 1) => {
     const response = await axios.get(FILTER_ALL_DATA, {
       params: {
@@ -40,8 +33,26 @@ function DavisComFilterCardFilter(props) {
     setAlldata(response.data)
   }
 
-  // const oddRows = data.filter((_, index) => index % 2 === 0);
+  const [pagedata, setpagedata] = useState({ rows: [] })
 
+  // 分頁
+  const [currentPage, setCurrentPage] = useState(1)
+  const perPage = 10
+  const startIndex = (currentPage - 1) * perPage
+  const endIndex = startIndex + perPage
+
+  const dataSubset = (rows_data) => {
+    if (!Array.isArray(rows_data)) {
+      return []
+    }
+    return rows_data.slice(startIndex, endIndex)
+  }
+
+  function nextPage() {
+    setCurrentPage(currentPage + 1)
+  }
+
+  // 分割同樣trails_sid的資料
   const oddRows = (rows_data) => {
     if (!Array.isArray(rows_data)) {
       return []
@@ -52,17 +63,18 @@ function DavisComFilterCardFilter(props) {
   useEffect(() => {
     // 設定功能
     console.log('useEffect--')
-    getListData(+usp.get('page'))
-
+    getListData()
+    setAlldata(alldata)
+    setCurrentPage(currentPage)
     return () => {
       // 解除功能
       console.log('unmount AbList--')
     }
-  }, [location.search])
+  }, [setAlldata, setCurrentPage])
 
   return (
     <>
-      {console.log(startdatepr)}
+      {/* {console.log(startdatepr)} */}
       {/* {data.rows.map((r) => ( */}
       {oddRows(
         filterByKeyword(
@@ -74,6 +86,7 @@ function DavisComFilterCardFilter(props) {
         )
       ).map((r) => (
         <div className="col">
+          {/* {console.log(dataSubset(alldata.rows))} */}
           {/* card*n  */}
           <div className={`${styles.trails_card}`}>
             <div className="row g-0 d-flex flex-row ">
