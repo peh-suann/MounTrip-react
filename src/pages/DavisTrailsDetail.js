@@ -50,7 +50,7 @@ export default function DavisTrailsDetail(rows) {
 
   let rows_data = data.rows
 
-  console.log(rows_data)
+  // console.log(rows_data)
 
   const filterFromBatch = (rows_data) => {
     if (!Array.isArray(rows_data)) {
@@ -59,7 +59,7 @@ export default function DavisTrailsDetail(rows) {
     return rows_data.slice(0, 1)
   }
 
-  console.log('filterFromBatch', filterFromBatch(rows_data))
+  // console.log('filterFromBatch', filterFromBatch(rows_data))
 
   // const [count, setCount] = useState(0)
 
@@ -700,7 +700,7 @@ export default function DavisTrailsDetail(rows) {
             </svg>
           </div>
           {/* login commont FIXME:*/}
-          <DavisTrailsRating />
+          <DavisTrailsRating data={data} />
 
           {/* phone_bottom */}
           <div className={`d-flex d-lg-none ${styles.phone_bottom}`}>
