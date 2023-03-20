@@ -40,7 +40,7 @@ export default function NavBar() {
               <FontAwesomeIcon icon={faBars} />
             </button>
             <button className={LoginStyles.logo}>
-              <Link to="/products">
+              <Link to="/index">
                 <svg
                   width="75"
                   height="24"
@@ -118,7 +118,8 @@ export default function NavBar() {
                 }}
               >
                 <a className={LoginStyles.link} href="/">
-                  <FontAwesomeIcon icon={faShoppingCart} />
+                  {/*TODO: 請先登入會員 */}
+                  {/* <FontAwesomeIcon icon={faShoppingCart} /> */}
                 </a>
               </li>
             </ul>

@@ -112,6 +112,10 @@
   transition-duration: 1.0s;
 }
 
+.map-product-detail button:focus {
+  box-shadow: none;
+}
+
 .map-product-detail::-webkit-scrollbar {
   display: none;
 }

@@ -5,6 +5,8 @@ import { StatusContext, ProductContext } from '../pages/KexinIndex'
 function KexinFixedBox() {
   const { mapInteraction, setMapInteraction } = useContext(StatusContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
+  const [productNum, setProductNum] = useState(1)
+  const [liked, setLiked] = useState(false)
 
   return (
     <>
@@ -17,18 +19,40 @@ function KexinFixedBox() {
           <div
             className={`${styles['w-90']} d-flex align-items-center justify-content-between`}
           >
-            <button className={`${styles['minus']} btn`}>
+            <button
+              className={`${styles['minus']} btn`}
+              onClick={() => {
+                productNum > 1
+                  ? setProductNum(productNum - 1)
+                  : setProductNum(1)
+              }}
+            >
               <img src="images/kexin/svg/minus.svg" alt="" />
             </button>
             <button className={`${styles['w-80']} btn ${styles['number']}`}>
-              1
+              {productNum}
             </button>
-            <button className={`${styles['plus']} btn`}>
+            <button
+              className={`${styles['plus']} btn`}
+              onClick={() => {
+                setProductNum(productNum + 1)
+              }}
+            >
               <img src="images/kexin/svg/plus.svg" alt="" />
             </button>
           </div>
-          <button className={`${styles['like']} btn`}>
-            <img src="images/kexin/svg/heart.svg" alt="" />
+          <button
+            className={`${styles['like']} btn`}
+            onClick={() => {
+              setLiked(!liked)
+              console.log(liked)
+            }}
+          >
+            {liked ? (
+              <img src="images/kexin/svg/heart-red.svg" alt="" />
+            ) : (
+              <img src="images/kexin/svg/heart.svg" alt="" />
+            )}
           </button>
         </div>
         <div className="d-flex align-items-center">

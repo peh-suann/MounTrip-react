@@ -10,6 +10,7 @@ import { SELECT_COUNTY } from '../connections/api-config'
 
 // FontAwesome
 import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons'
+import Button from './Button'
 
 function KexinIndexProducts(props) {
   const { selectCounty } = props
@@ -23,13 +24,15 @@ function KexinIndexProducts(props) {
   // if (selectCounty) {
   // search data from selectcounty
   const getCountyData = async (county, keyword) => {
-    const response = await axios.get(SELECT_COUNTY, {
-      params: {
-        county,
-        keyword,
-      },
-    })
-    setData(response.data)
+    try {
+      const response = await axios.get(SELECT_COUNTY, {
+        params: {
+          county,
+          keyword,
+        },
+      })
+      setData(response.data)
+    } catch (err) {}
   }
 
   useEffect(() => {
@@ -90,45 +93,7 @@ function KexinIndexProducts(props) {
               })
             : ''}
 
-          {/* <div class={styles['img-wrap']}>
-            !-- <img src="./img/index-product.jpg" alt="" /> -->
-            <div
-              class={`${styles['rates-wrap']} d-flex justify-content-between`}
-            >
-              <div class="d-flex align-items-center rate">
-                <FontAwesomeIcon icon={faStar} />
-                <p class={`${styles['mtgreen4']} ${styles['rates']}`}>4.5</p>
-              </div>
-              <div class="d-flex align-items-center">
-                <p class={`${styles['mtgreen4']} ${styles['rates']}`}>難度</p>
-                <p class={`${styles['mtgreen4']} ${styles['rates']}`}>EASY</p>
-              </div>
-            </div>
-          </div> */}
-          {/* <div class="d-flex justify-content-between">
-            <div class="d-flex flex-column justify-content-start">
-              <p class={`${styles['information-title']} ${styles['mtgrey1']}`}>
-                草嶺古道｜探索新北一日遊
-              </p>
-              <p
-                class={`${styles['information-title']} mb-0 ${styles['mtgrey2']}`}
-              >
-                新北市雙溪區
-              </p>
-            </div>
-            <div class="d-flex flex-column">
-              <p
-                class={`${styles['information-mark']} mb-0 ${styles['mtgrey3']}`}
-              >
-                NTD
-              </p>
-              <p
-                class={`${styles['information-price']} mb-0 ${styles['mtgreen1']}`}
-              >
-                1,200
-              </p>
-            </div>
-          </div> */}
+          <Button text={'探索更多'} iconFront={0} iconEnd={1} />
         </div>
       </div>
     </>
