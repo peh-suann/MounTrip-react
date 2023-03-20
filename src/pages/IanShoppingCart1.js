@@ -53,49 +53,6 @@ function IanShoppingCart1() {
   // ])
   const [mypage, setPage] = useState('')
 
-  // const minusItem = (minusid) => {
-  //   const items = data.map((v) => {
-  //     const p = { ...v }
-  //     if (p.sid === minusid) {
-  //       p.count = p.count - 1 || 1
-  //     }
-
-  //     return p
-  //   })
-  //   setData(items)
-  // }
-
-  // const plusIcon = (plusid) => {
-  //   return data.map((v, i) => {
-  //     if (v.sid === plusid) {
-  //       return { ...v, count: v.count + 1 }
-  //     } else {
-  //       return { ...v }
-  //     }
-  //   })
-  // }
-
-  // const deletepruduct = (id) => {
-  //   return data.filter((v, i) => {
-  //     return v.sid !== id
-  //   })
-  // }
-  // const wannaBuy = (id) => {
-  //   return data.map((v, i) => {
-  //     if (v.sid === id) {
-  //       return { ...v, buy: !v.buy }
-  //     } else {
-  //       return { ...v }
-  //     }
-  //   })
-  // }
-
-  // const selectAll = (id) => {
-  //   return data.map((v, i) => {
-  //     return { ...v, buy: true }
-  //   })
-  // }
-
   return (
     <div className={`${styles.IanShoppingCartAll}`}>
       <section
@@ -549,15 +506,19 @@ function IanShoppingCart1() {
             <h3>訂單明細</h3>
           </div>
           <div className={`${styles['input-group']} ${styles['padding-30']}`}>
-            <div className={`${styles['form-outline']}`}>
-              <input type="text" placeholder="輸入優惠代碼" />
+            <div className={`${styles.orderCoupin} d-flex`}>
+              <input
+                className={`col-9 ${styles.orderInput}`}
+                type="text"
+                placeholder="輸入優惠代碼"
+              />
+              <button
+                type="button"
+                className={`col-3 ${styles.orderButton} btn btn-unstyle`}
+              >
+                套用
+              </button>
             </div>
-            <button
-              type="button"
-              className={`${styles.inputbtn} btn btn-unstyle`}
-            >
-              套用
-            </button>
           </div>
           <div
             className={`${styles['padding-30']} d-flex justify-content-between`}
@@ -577,7 +538,9 @@ function IanShoppingCart1() {
             <p className={`${styles['p-bold']} mb-0`}>合計</p>
             <p className={`${styles['p-bold']} mb-0`}>NTD $2,330</p>
           </div>
-          <button className={`${styles.next} w-100 btn`}>下一步</button>
+          <Link to="/SC2" className={`w-100 btn`}>
+            <button className={`${styles.next} w-100 btn`}>下一步</button>
+          </Link>
         </div>
       </section>
     </div>

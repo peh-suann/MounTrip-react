@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './../styles/IanShoppingCart2.module.css'
 
 function IanOrderData(props) {
   const [user, setUser] = useState([
@@ -18,16 +19,16 @@ function IanOrderData(props) {
   //   setUser(newUser)
   // }
 
-  const { styles, items, setItems } = props
+  const { memberitems, setMemberItems } = props
 
-  const [orderData, setOrderData] = useState(items)
-  setItems(orderData)
+  const [orderData, setOrderData] = useState(memberitems)
+  setMemberItems(orderData)
 
   return (
     <>
       {orderData.map((v, i) => {
         return (
-          <form key={v.id} className={`${styles['form-inline']}`} action=" ">
+          <form key={i} className={`${styles['form-inline']}`} action=" ">
             <div className={`${styles['mb-20']} row justify-content-between `}>
               <div className={`${styles['form-group']} col-6`}>
                 <label htmlFor="firstName">名字</label>

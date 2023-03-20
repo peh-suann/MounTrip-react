@@ -14,6 +14,7 @@ import styles from './../styles/NavbarShoppingCart.module.css'
 
 //useCart
 import { useCart } from './IanUseCart'
+import { Link, useNavigate } from 'react-router-dom'
 
 export const StylesContext = createContext(styles)
 
@@ -21,6 +22,7 @@ function NavbarShoppingCart(props) {
   const { cart, items, plusOne, minusOne, removeItem } = useCart()
   const { open, setOpen } = props
   const shoppingCart = useRef(null)
+  const navigate = useNavigate()
 
   return (
     <StylesContext.Provider value={styles}>
@@ -136,7 +138,15 @@ function NavbarShoppingCart(props) {
               <span>合計</span>
               <div className={styles.order_price}>NTD {cart.cartTotal}</div>
             </div>
-            <Button text={'前往結賬'} style={{ width: '100%' }} />
+            {/* <Link to="/SC1" style={{ width: '100%' }}> */}
+            <Button
+              text={'前往結賬'}
+              style={{ width: '100%' }}
+              onClick={() => {
+                navigate('/SC1', { replace: true })
+              }}
+            />
+            {/* </Link> */}
           </div>
         </div>
       </section>

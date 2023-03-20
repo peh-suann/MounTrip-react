@@ -189,7 +189,7 @@ function IanDifficulty() {
                               fill="#CEE8CB"
                             />
                           </svg>
-                          <p className={'ms-1'}>4.5</p>
+                          <p className={'ms-1'}>{v.score}.0</p>
                         </div>
                         <div className={'d-flex'}>
                           <p>難度</p>
