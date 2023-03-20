@@ -26,31 +26,41 @@ function DavisTrailsRating(props) {
     setRating(response.data)
   }
 
-  let row_data = data.rows
-
-  console.log(row_data)
-
-  const [commont, setCommont] = useState([])
-
-  let batch_sid
-  const filterCommomt = (commont, batch_sid) => {
-    return commont.filter((v, i) => {
-      if (v.batch_sid === batch_sid) {
-        return [setCommont(batch_sid)]
-      } else return { ...v }
-    })
+  const filterFromBatch = (rows_data) => {
+    if (!Array.isArray(rows_data)) {
+      return []
+    }
+    return rows_data.slice(0, 1)
   }
+
+  // 抓到這一頁的sid
+  // console.log(filterFromBatch(data.rows)[0].trail_sid)
+
+  let page_sid = filterFromBatch(data.rows)[0].trail_sid
+
+  console.log(page_sid)
+
+  // const [commont, setCommont] = useState([])
+
+  // let batch_sid
+  // const filterCommomt = (commont, batch_sid) => {
+  //   return commont.filter((v, i) => {
+  //     if (v.batch_sid === batch_sid) {
+  //       return [setCommont(batch_sid)]
+  //     } else return { ...v }
+  //   })
+  // }
 
   // let rows_data = data.rows
 
-  // const filterFromBatch = (rows_data) => {
-  //   if (!Array.isArray(rows_data)) {
-  //     return []
-  //   }
-  //   return rows_data.filter((v, i) => {
-  //     return v.trails_sid === 1
-  //   })
-  // }
+  const filterFromRating = (data) => {
+    if (!Array.isArray(data)) {
+      return []
+    }
+    return data.filter((v, i) => {
+      return v.trails_sid === page_sid
+    })
+  }
 
   useEffect(() => {
     getListData(+usp.get('page'))
@@ -238,130 +248,126 @@ function DavisTrailsRating(props) {
           <div className="col d-flex flex-column">
             {/* right-card * n */}
             {/* FIXME: */}
-            {row_data.map((v) => {
-              filterCommomt(commont, batch_sid).map((r) => (
-                <div
-                  key={r.batch_sid}
-                  className={`col d-flex flex-row pb-3 mb-5 ${styles.card_b_b}`}
-                >
-                  {/* {console.log(commont)} */}
-                  {/* head picture (left col-1) */}
-                  <div className={`col-1 ${styles.rounded_circle}`}></div>
+            {filterFromRating(rating.rows).map((r) => (
+              <div
+                className={`col d-flex flex-row pb-3 mb-5 ${styles.card_b_b}`}
+              >
+                {/* head picture (left col-1) */}
+                <div className={`col-1 ${styles.rounded_circle}`}></div>
 
-                  <div className="col d-flex flex-column ">
-                    {/* level1 */}
-                    <div className="col d-flex flex-row mb-3">
-                      <h5 className="mb-0 me-3">
-                        {r.lastname}
-                        {r.firstname}
-                      </h5>
-                      <div className="">
-                        <p className={`mb-0 ${styles.member_ca}`}>超級嚮導</p>
-                      </div>
+                <div className="col d-flex flex-column ">
+                  {/* level1 */}
+                  <div className="col d-flex flex-row mb-3">
+                    <h5 className="mb-0 me-3">
+                      {r.lastname}
+                      {r.firstname}
+                    </h5>
+                    <div className="">
+                      <p className={`mb-0 ${styles.member_ca}`}>超級嚮導</p>
                     </div>
-                    {/* level2 */}
-                    <div className="col d-flex flex-row mb-3">
-                      <div
-                        className={`col-5 col-lg-2 d-flex flex-row ${styles.star}`}
+                  </div>
+                  {/* level2 */}
+                  <div className="col d-flex flex-row mb-3">
+                    <div
+                      className={`col-5 col-lg-2 d-flex flex-row ${styles.star}`}
+                    >
+                      <svg
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          width="16"
-                          height="17"
-                          viewBox="0 0 16 17"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                            fill="#CEE8CB"
-                          />
-                        </svg>
-                        <svg
-                          width="16"
-                          height="17"
-                          viewBox="0 0 16 17"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                            fill="#CEE8CB"
-                          />
-                        </svg>
-                        <svg
-                          width="16"
-                          height="17"
-                          viewBox="0 0 16 17"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                            fill="#CEE8CB"
-                          />
-                        </svg>
-                        <svg
-                          width="16"
-                          height="17"
-                          viewBox="0 0 16 17"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                            fill="#CEE8CB"
-                          />
-                        </svg>
-                        <svg
-                          width="16"
-                          height="17"
-                          viewBox="0 0 16 17"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                            fill="#CEE8CB"
-                          />
-                        </svg>
-                      </div>
-                      <div className="col-2">
-                        <p className="mb-0">{r.rate_date}</p>
-                      </div>
-                      <div className="col"></div>
+                        <path
+                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                          fill="#CEE8CB"
+                        />
+                      </svg>
+                      <svg
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                          fill="#CEE8CB"
+                        />
+                      </svg>
+                      <svg
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                          fill="#CEE8CB"
+                        />
+                      </svg>
+                      <svg
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                          fill="#CEE8CB"
+                        />
+                      </svg>
+                      <svg
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                          fill="#CEE8CB"
+                        />
+                      </svg>
                     </div>
-                    {/* level3 內文與圖片 */}
-                    <div className="col d-flex flex-column flex-lg-row">
-                      <div className="col col-lg-7 ">
-                        <p className={`${styles.commont_p}`}>{r.comment}</p>
-                      </div>
-                      {/* imges */}
-                      <div className="col col-lg-5 d-flex flex-row">
-                        <img
-                          className={`me-1 ${styles.img_cover}`}
-                          src={`/images/public_images/product_image/${r.trails_sid}-1.jpg`}
-                          alt=""
-                        />
-                        <img
-                          className={`me-1 ${styles.img_cover}`}
-                          src={`/images/public_images/product_image/${r.trails_sid}-2.jpg`}
-                          alt=""
-                        />
-                        {/* FIXME: background url 寫在css 要如何置換圖片 */}
-                        {/* <img className="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> */}
-                        <div
-                          className={`d-flex justify-content-around ${styles.img_wrap}`}
-                        >
-                          <h4 className="mb-0 lh-lg fw-bold align-self-center ">
-                            +2張
-                          </h4>
-                        </div>
+                    <div className="col-2">
+                      <p className="mb-0">{r.rate_date}</p>
+                    </div>
+                    <div className="col"></div>
+                  </div>
+                  {/* level3 內文與圖片 */}
+                  <div className="col d-flex flex-column flex-lg-row">
+                    <div className="col col-lg-7 ">
+                      <p className={`${styles.commont_p}`}>{r.comment}</p>
+                    </div>
+                    {/* imges */}
+                    <div className="col col-lg-5 d-flex flex-row">
+                      <img
+                        className={`me-1 ${styles.img_cover}`}
+                        src={`/images/public_images/product_image/${r.trails_sid}-1.jpg`}
+                        alt=""
+                      />
+                      <img
+                        className={`me-1 ${styles.img_cover}`}
+                        src={`/images/public_images/product_image/${r.trails_sid}-2.jpg`}
+                        alt=""
+                      />
+                      {/* FIXME: background url 寫在css 要如何置換圖片 */}
+                      {/* <img className="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> */}
+                      <div
+                        className={`d-flex justify-content-around ${styles.img_wrap}`}
+                      >
+                        <h4 className="mb-0 lh-lg fw-bold align-self-center ">
+                          +2張
+                        </h4>
                       </div>
                     </div>
                   </div>
                 </div>
-              ))
-            })}
+              </div>
+            ))}
             {/* pagination */}
             <div
               className={`page-bar col d-none d-lg-flex align-self-center ${styles.details_pagination}`}

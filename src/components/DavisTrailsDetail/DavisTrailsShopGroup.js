@@ -14,9 +14,9 @@ function DavisTrailsShopGroup(props) {
   const rows_data = data.rows
 
   const Rows = { ...data }
-  console.log('Rows:', Rows)
+  // console.log('Rows:', Rows)
   const batch = Rows.rows[0].batch_start
-  console.log(batch)
+  // console.log(batch)
 
   return (
     <>

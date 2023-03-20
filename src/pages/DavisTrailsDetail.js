@@ -51,10 +51,6 @@ export default function DavisTrailsDetail(rows) {
     }
   }, [])
 
-  // let rows_data = data.rows
-
-  // console.log(rows_data)
-
   const filterFromBatch = (rows_data) => {
     if (!Array.isArray(rows_data)) {
       return []
