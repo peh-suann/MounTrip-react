@@ -88,7 +88,7 @@ function DavisFilterComRight(props) {
         />
 
         {/* pagination */}
-        <div
+        {/* <div
           className={`page-bar col d-none d-lg-flex align-self-center ${styles.details_pagination}`}
         >
           <nav
@@ -175,7 +175,7 @@ function DavisFilterComRight(props) {
               </li>
             </ul>
           </nav>
-        </div>
+        </div> */}
         {/* pagination */}
         {/* {[...Array(34)].map((v, i) => {
           const p = data.page - 5 + i

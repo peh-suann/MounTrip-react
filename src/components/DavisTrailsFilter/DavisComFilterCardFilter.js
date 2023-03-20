@@ -26,45 +26,47 @@ function DavisComFilterCardFilter(props) {
     setAlldata(response.data)
   }
 
-  let rows_data = alldata.rows
-
-  // const [pagedata, setpagedata] = useState({ rows: [] })
-
-  // 分頁
-  // const [currentPage, setCurrentPage] = useState(1)
-  // const perPage = 10
-  // const startIndex = (currentPage - 1) * perPage
-  // const endIndex = startIndex + perPage
-
   // TODO:收藏按鈕
 
   const [collect, setCollect] = useState([])
 
-  const toggleCollect = (rows_data, trails_sid) => {
-    return rows_data.map((v, i) => {
-      if (v.trails_sid === trails_sid) return { ...v, collect: !v.collect }
+  const toggleCollect = (collect, trails_sid) => {
+    return collect.map((v, i) => {
+      if (v.sid === trails_sid) return { ...v, collect: !v.collect }
       else return { ...v }
     })
   }
 
+  // const [pagedata, setpagedata] = useState({ rows: [] })
+
+  // 分頁
+  const [currentPage, setCurrentPage] = useState(1)
+  const perPage = 10
+  const startIndex = (currentPage - 1) * perPage
+  const endIndex = startIndex + perPage
+
   // 分頁dataSubset
-  // const dataSubset = (rows_data) => {
-  //   if (!Array.isArray(rows_data)) {
-  //     return []
-  //   }
-  //   return rows_data.slice(startIndex, endIndex)
-  // }
-
-  // function nextPage() {
-  //   setCurrentPage(currentPage + 1)
-  // }
-
-  // 分割同樣trails_sid的資料
-  const oddRows = (rows_data) => {
-    if (!Array.isArray(rows_data)) {
+  const dataSubset = (collect) => {
+    if (!Array.isArray(collect)) {
       return []
     }
-    return rows_data.filter((_, index) => index % 2 === 0)
+    return collect.slice(startIndex, endIndex)
+  }
+
+  function nextPage() {
+    setCurrentPage(currentPage + 1)
+  }
+
+  function prePage() {
+    setCurrentPage(currentPage - 1)
+  }
+
+  // 分割同樣trails_sid的資料
+  const oddRows = (data) => {
+    if (!Array.isArray(data)) {
+      return []
+    }
+    return data.filter((_, index) => index % 2 === 0)
   }
 
   useEffect(() => {
@@ -80,36 +82,37 @@ function DavisComFilterCardFilter(props) {
     setCollect(modifiedData)
   }, [alldata])
 
-  // useEffect(() => {
-  //   console.log('useEffect--')
-  //   setAlldata(alldata)
-  //   setCurrentPage(currentPage)
-  //   return () => {
-  //     console.log('unmount AbList--')
-  //   }
-  // }, [setAlldata, setCurrentPage])
+  useEffect(() => {
+    console.log('useEffect--')
+    setCurrentPage(currentPage)
+    return () => {
+      console.log('unmount AbList--')
+    }
+  }, [setCurrentPage])
 
   return (
     <>
       {/* {console.log(startdatepr)} */}
       {/* {data.rows.map((r) => ( */}
-      {oddRows(
-        filterByKeyword(
-          rows_data,
-          keywordpr,
-          startdatepr,
-          enddatepr,
-          maxpeplepr
+      {dataSubset(
+        oddRows(
+          filterByKeyword(
+            collect,
+            keywordpr,
+            startdatepr,
+            enddatepr,
+            maxpeplepr
+          )
         )
       ).map((r) => (
-        <div className="col" key={r.trail_sid}>
+        <div className="col" key={r.sid}>
           {/* {console.log(dataSubset(alldata.rows))} */}
           {/* card*n  */}
           <div className={`${styles.trails_card}`}>
             <div className="row g-0 d-flex flex-row ">
               <div className={`col-4 ${styles.trails_img_wrap}`}>
                 <img
-                  src={`/images/public_images/product_image/${r.sid}-2.jpg`}
+                  src={`/images/public_images/product_image/${r.trail_sid}-2.jpg`}
                   className={`rounded-start ${styles.trails_img}`}
                   alt="..."
                 />
@@ -121,7 +124,7 @@ function DavisComFilterCardFilter(props) {
                     <Link
                       className={`${styles.link_style}`}
                       //後端要有 ${trails.sid} or ${batch.trail_sid}
-                      to={`/trails-detail?page=${r.sid}`}
+                      to={`/trails-detail?page=${r.trail_sid}`}
                     >
                       {r.trail_name}
                     </Link>
@@ -236,28 +239,13 @@ function DavisComFilterCardFilter(props) {
               <div className="col-1  d-flex justify-content-end align-items-start">
                 <button
                   onClick={() => {
-                    setCollect(toggleCollect(rows_data, r.trails_sid))
-                    console.log(rows_data, r.trails_sid)
+                    setCollect(toggleCollect(collect, r.sid))
+                    // 回傳batch的sid
+                    console.log(r.sid)
                   }}
                   className={`${styles.heart_btn}`}
                 >
                   {r.collect ? (
-                    <svg
-                      width="50"
-                      height="75"
-                      viewBox="0 0 50 75"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20.3882 29.6118C19.8775 29.1008 19.271 28.6955 18.6036 28.4189C17.9361 28.1423 17.2207 28 16.4982 28C15.7757 28 15.0603 28.1423 14.3929 28.4189C13.7254 28.6955 13.119 29.1008 12.6082 29.6118L11.5482 30.6718L10.4882 29.6118C9.45652 28.5801 8.05725 28.0005 6.59821 28.0005C5.13918 28.0005 3.73991 28.5801 2.70821 29.6118C1.67652 30.6435 1.09692 32.0428 1.09692 33.5018C1.09692 34.9609 1.67652 36.3601 2.70821 37.3918L3.76821 38.4518L11.5482 46.2318L19.3282 38.4518L20.3882 37.3918C20.8992 36.8811 21.3046 36.2746 21.5811 35.6072C21.8577 34.9397 22 34.2243 22 33.5018C22 32.7793 21.8577 32.0639 21.5811 31.3965C21.3046 30.729 20.8992 30.1226 20.3882 29.6118Z"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ) : (
                     <svg
                       width="50"
                       height="75"
@@ -274,6 +262,22 @@ function DavisComFilterCardFilter(props) {
                         strokeLinejoin="round"
                       />
                     </svg>
+                  ) : (
+                    <svg
+                      width="50"
+                      height="75"
+                      viewBox="0 0 50 75"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.3882 29.6118C19.8775 29.1008 19.271 28.6955 18.6036 28.4189C17.9361 28.1423 17.2207 28 16.4982 28C15.7757 28 15.0603 28.1423 14.3929 28.4189C13.7254 28.6955 13.119 29.1008 12.6082 29.6118L11.5482 30.6718L10.4882 29.6118C9.45652 28.5801 8.05725 28.0005 6.59821 28.0005C5.13918 28.0005 3.73991 28.5801 2.70821 29.6118C1.67652 30.6435 1.09692 32.0428 1.09692 33.5018C1.09692 34.9609 1.67652 36.3601 2.70821 37.3918L3.76821 38.4518L11.5482 46.2318L19.3282 38.4518L20.3882 37.3918C20.8992 36.8811 21.3046 36.2746 21.5811 35.6072C21.8577 34.9397 22 34.2243 22 33.5018C22 32.7793 21.8577 32.0639 21.5811 31.3965C21.3046 30.729 20.8992 30.1226 20.3882 29.6118Z"
+                        stroke="#6CBA7C"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   )}
                 </button>
               </div>
@@ -281,6 +285,96 @@ function DavisComFilterCardFilter(props) {
           </div>
         </div>
       ))}
+      {/* pagination */}
+      <div
+        className={`page-bar col d-none d-lg-flex align-self-center ${styles.details_pagination}`}
+      >
+        <nav
+          className={`${styles.pagination_nav}`}
+          aria-label=" Page navigation example"
+        >
+          <ul className="pagination ">
+            <li className={`page-item ${styles.li_margin}`}>
+              <Link
+                onClick={() => {
+                  prePage(startIndex)
+                }}
+                className={`page-link ${styles.a_decoration}`}
+                aria-label="Previous"
+              >
+                {' '}
+                <span aria-hidden="true">&laquo;</span>
+              </Link>
+            </li>
+            <li className={`page-item ${styles.li_margin}`}>
+              <Link
+                onClick={() => {
+                  setCurrentPage(1)
+                }}
+                className={`page-link fw-bold ${styles.a_decoration}`}
+                aria-label="Previous"
+              >
+                1
+              </Link>
+            </li>
+            <li className={`page-item ${styles.li_margin}`}>
+              <Link
+                onClick={() => {
+                  setCurrentPage(2)
+                }}
+                className={`page-link fw-bold ${styles.a_decoration}`}
+                aria-label="Previous"
+                // to={`/trails-filter?page=${data.page + 1}`}
+              >
+                2
+              </Link>
+            </li>
+            <li className={`page-item ${styles.li_margin}`}>
+              <span className={`page-link fw-bold ${styles.a_decoration}`}>
+                {' '}
+                ...{' '}
+              </span>
+            </li>
+
+            <li className={`page-item ${styles.li_margin}`}>
+              <Link
+                onClick={() => {
+                  setCurrentPage(9)
+                }}
+                className={`page-link fw-bold ${styles.a_decoration}`}
+                aria-label="Previous"
+                // to={`/trails-filter?page=${data.totalPages - 1}`}
+              >
+                9
+              </Link>
+            </li>
+            <li className={`page-item ${styles.li_margin}`}>
+              <Link
+                onClick={() => {
+                  setCurrentPage(10)
+                }}
+                className={`page-link fw-bold ${styles.a_decoration}`}
+                aria-label="Previous"
+                // to={`/trails-filter?page=${data.totalPages}`}
+              >
+                10
+              </Link>
+            </li>
+            <li className={`page-item ${styles.li_margin}`}>
+              <Link
+                onClick={() => {
+                  nextPage(startIndex)
+                }}
+                className={`page-link ${styles.a_decoration}`}
+                aria-label="Next"
+              >
+                {' '}
+                <span aria-hidden="true">&raquo;</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </>
   )
 }
