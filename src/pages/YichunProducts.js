@@ -531,8 +531,8 @@ function YichunProducts() {
             </div>
             <div className={styles.diff_products}>
               {document.documentElement.clientWidth > 390
-                ? locationProducts['Taipei_City'] &&
-                  locationProducts['Taipei_City']['1'].map((el, i) => {
+                ? locationProducts['Taichung_City'] &&
+                  locationProducts['Taichung_City'][diff + 1].map((el, i) => {
                     // console.log(el.trail_name)
                     return (
                       <YichunProductCard
@@ -543,8 +543,8 @@ function YichunProducts() {
                       />
                     )
                   })
-                : locationProducts['Taipei_City'] &&
-                  locationProducts['Taipei_City']['1'].map((el, i) => {
+                : locationProducts['Taichung_City'] &&
+                  locationProducts['Taichung_City'][diff + 1].map((el, i) => {
                     // console.log(el.trail_name)
                     return (
                       <YichunProductCard
