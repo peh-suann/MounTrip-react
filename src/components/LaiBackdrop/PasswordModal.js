@@ -63,7 +63,12 @@ export default function PasswordModal({ pwdModalOpen, handleClose, text }) {
           exit="exit"
         >
           <h4 className={styles.title}>{text}</h4>
-          <form className={styles.pwd_form} onSubmit={() => {}}>
+          <form
+            className={styles.pwd_form}
+            onSubmit={(e) => {
+              e.preventDefault()
+            }}
+          >
             <label htmlFor="oldPwd" className="form-label">
               舊密碼
             </label>

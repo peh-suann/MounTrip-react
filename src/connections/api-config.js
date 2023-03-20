@@ -2,13 +2,13 @@
 // 上面寫HOST，下面寫路徑
 
 // hosts ---------------------------------------------------------------------------
-export const HOST = 'http://localhost:3001'
-// export const HOST = 'http://localhost:3002'
+// export const HOST = 'http://localhost:3001'
+export const HOST = 'http://localhost:3002'
 // export const HOST = 'http://localhost:3001'
 
 //Lai's connect
 // export const HOST = 'http://192.168.71.105:3001'
-export const HOST = 'http://127.0.0.1:3002'
+// export const HOST = 'http://127.0.0.1:3001'
 
 // 兩台電腦連線時，要用筆電wiki的ip，才能使用localstorage
 
@@ -35,6 +35,7 @@ export const FILTER_ALL_DATA = `${HOST}/trails-filter/all`
 //member
 export const MEMBER_DATA = `${HOST}/member/api`
 export const USER_DATA = (mid) => `${HOST}/member/me/${mid}`
+export const USER_DATA_UPDATE = (mid) => `${HOST}/member/me/${mid}/update`
 export const USER_COMMENT = (mid) => `${HOST}/member/me/comment/${mid}`
 export const USER_UPLOAD = `${HOST}/member/me/upload`
 export const USER_AVATAR = `${HOST}/uploads/`
