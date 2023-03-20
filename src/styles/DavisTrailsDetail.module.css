@@ -306,13 +306,13 @@ body {
 }
 
 .star {
-  margin-left: -4px;
+  /* margin-left: -4px; */
 }
 
 /* commont card: right-card > level3 > imges */
 .commont_p {
   text-align: justify;
-  font-size: 13px;
+  font-size: 16px;
   padding-right: 15px;
   text-indent: 27px;
 }

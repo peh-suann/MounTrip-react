@@ -247,7 +247,6 @@ function DavisTrailsRating(props) {
           {/* right-card */}
           <div className="col d-flex flex-column">
             {/* right-card * n */}
-            {/* FIXME: */}
             {filterFromRating(rating.rows).map((r) => (
               <div
                 className={`col d-flex flex-row pb-3 mb-5 ${styles.card_b_b}`}
@@ -269,7 +268,7 @@ function DavisTrailsRating(props) {
                   {/* level2 */}
                   <div className="col d-flex flex-row mb-3">
                     <div
-                      className={`col-5 col-lg-2 d-flex flex-row ${styles.star}`}
+                      className={`col-5 col-lg-1 d-flex flex-row ${styles.star}`}
                     >
                       <svg
                         width="16"
@@ -333,7 +332,7 @@ function DavisTrailsRating(props) {
                       </svg>
                     </div>
                     <div className="col-2">
-                      <p className="mb-0">{r.rate_date}</p>
+                      <p className="mb-0 pb-1">{r.rate_date}</p>
                     </div>
                     <div className="col"></div>
                   </div>
