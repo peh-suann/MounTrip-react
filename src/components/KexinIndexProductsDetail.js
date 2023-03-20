@@ -1,15 +1,11 @@
 import { useContext, useState, useEffect } from 'react'
 
 // component
-
 import styles from '../styles/kexinIndexProductsDetail.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-// FontAwesome
-import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons'
-
 import { StatusContext, ProductContext } from '../pages/KexinIndex'
-import { SELECT_PRODUCT } from '../connections/api-config'
+import KexinComment from './KexinComment'
+import KexinFixedBox from './KexinFixedBox'
+
 
 function KexinIndexProductsDetail() {
   const { mapInteraction, setMapInteraction } = useContext(StatusContext)
@@ -71,8 +67,8 @@ function KexinIndexProductsDetail() {
               src="images/kexin/svg/time.svg"
               alt=""
             />
-            <p className={`mb-0 ${styles['"me-10']}`}>所需時間</p>
-            <p className="mb-0">{myProduct.trail_time}</p>
+            <p className={`mb-0 ${styles['me-10']}`}>所需時間</p>
+            <p className="mb-0">{myProduct.trail_time}小時</p>
           </div>
           <div
             className={`${styles['map-product-detail-list']} d-flex align-items-center ${styles['mb-16']}`}
@@ -82,7 +78,7 @@ function KexinIndexProductsDetail() {
               src="images/kexin/svg/height.svg"
               alt=""
             />
-            <p className={`mb-0 ${styles['"me-10']}`}>爬升高度</p>
+            <p className={`mb-0 ${styles['me-10']}`}>爬升高度</p>
             <p className="mb-0">{myProduct.trail_height}</p>
           </div>
           <p className={`${styles['description']} ${styles['mb-35']}`}>
@@ -135,6 +131,8 @@ function KexinIndexProductsDetail() {
               </div>
             </div>
           </div>
+          <KexinComment />
+          <KexinFixedBox />
           {/* <div
             className={`d-flex ${styles['comment-detail']} ${styles['mb-35']}`}
           >

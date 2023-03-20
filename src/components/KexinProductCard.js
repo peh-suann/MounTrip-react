@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import axios from 'axios'
+import * as d3 from 'd3'
 import { StylesContext } from './../pages/YichunProducts'
 import { StatusContext, ProductContext } from '../pages/KexinIndex'
 // import { SELECT_PRODUCT } from '../connections/api-config'
@@ -10,25 +10,6 @@ function KexinProductCard(props) {
   const { mapInteraction, setMapInteraction } = useContext(StatusContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
 
-  // const [data, setData] = useState({
-  //   rows: [],
-  // })
-
-  // const getProductData = async (sid) => {
-  //   const response = await axios.get(SELECT_PRODUCT, {
-  //     params: {
-  //       sid,
-  //     },
-  //   })
-  //   setData(response.data)
-  //   console.log('response',response.data)
-  // }
-
-  // // useEffect(() => {
-  // //   getProductData(myProduct.sid)
-  // // }, myProduct.sid)
-
-
   return (
     <>
       <div
@@ -37,9 +18,52 @@ function KexinProductCard(props) {
           // TODO: if抓不到資料該怎麼顯示
           console.log(el.sid)
           setMapInteraction(2)
-          // getProductData(el.sid)
-          
           setMyProduct(el)
+
+          d3.select('#landmark').remove()
+          d3.select('#landmark1').remove()
+
+          const WIDTH = window.innerWidth
+          const HEIGHT = window.innerHeight
+
+          console.log(WIDTH, HEIGHT)
+
+          const projection = d3
+            .geoMercator()
+            .center([121, 23.58])
+            .scale(10000)
+            .translate([WIDTH / 2, HEIGHT / 2])
+
+
+          d3.select('#mapZoom')
+            .append('svg')
+            .attr('id', 'landmark')
+            .attr('width', '10')
+            .attr('height', '10')
+            .attr('viewBox', '0 0 38 38')
+            .attr('x', projection([el.lon, el.lat])[0]-5)
+            .attr('y', projection([el.lon, el.lat])[1]-5)
+            .append('path')
+            .attr(
+              'd',
+              'M33.25 15.834C33.25 26.9173 19 36.4173 19 36.4173C19 36.4173 4.75 26.9173 4.75 15.834C4.75 12.0546 6.25133 8.43011 8.92373 5.75771C11.5961 3.08532 15.2207 1.58398 19 1.58398C22.7793 1.58398 26.4039 3.08532 29.0763 5.75771C31.7487 8.43011 33.25 12.0546 33.25 15.834Z'
+            )
+            .style('fill', '#F3C969')
+
+          d3.select('#mapZoom')
+            .append('svg')
+            .attr('id', 'landmark1')
+            .attr('width', '10')
+            .attr('height', '10')
+            .attr('viewBox', '0 0 38 38')
+            .attr('x', projection([el.lon, el.lat])[0]-5)
+            .attr('y', projection([el.lon, el.lat])[1]-5)
+            .append('path')
+            .attr(
+              'd',
+              'M19 20.584C21.6234 20.584 23.75 18.4573 23.75 15.834C23.75 13.2106 21.6234 11.084 19 11.084C16.3766 11.084 14.25 13.2106 14.25 15.834C14.25 18.4573 16.3766 20.584 19 20.584Z'
+            )
+            .style('fill', 'white')
         }}
       >
         <div

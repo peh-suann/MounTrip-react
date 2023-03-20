@@ -18,26 +18,26 @@ function KexinIndexProducts(props) {
   const [data, setData] = useState({
     rows: [],
   })
+  const [keyword, setKeyword] = useState('')
 
   // if (selectCounty) {
   // search data from selectcounty
-  const getCountyData = async (county) => {
+  const getCountyData = async (county, keyword) => {
     const response = await axios.get(SELECT_COUNTY, {
       params: {
         county,
+        keyword,
       },
     })
     setData(response.data)
   }
 
   useEffect(() => {
-    getCountyData(selectCounty)
-  }, [selectCounty])
+    getCountyData(selectCounty, keyword)
+  }, [selectCounty, keyword])
   // getCountyData(selectCounty)
   // console.log('hi', selectCounty)
   // console.log(data.length)
-
-  //
 
   return (
     <>
@@ -59,19 +59,22 @@ function KexinIndexProducts(props) {
             className={styles.link}
             href="/"
             placeholder={`#${selectCounty}最熱門行程`}
+            onChange={(e) => {
+              setKeyword(e.target.value)
+              console.log(e.target.value)
+            }}
           />
         </div>
 
-        {/* <YichunProductCard /> */}
-        <div
-          className={`${styles['card']} d-flex flex-column px-0`}
-        >
+        <div className={`${styles['card']} d-flex flex-column px-0`}>
           {/* // TODO: 沒要到資料也不要跳錯誤
         // TODO: component樣式修改
         // TODO: 點擊有地理位置 */}
           {data.length
             ? data.map((v, i) => {
-                {/* console.log(v) */}
+                {
+                  /* console.log(v) */
+                }
                 return (
                   <>
                     <div className={styles['mb-20']}>
@@ -86,7 +89,7 @@ function KexinIndexProducts(props) {
                 )
               })
             : ''}
-        
+
           {/* <div class={styles['img-wrap']}>
             !-- <img src="./img/index-product.jpg" alt="" /> -->
             <div

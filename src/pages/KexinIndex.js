@@ -24,7 +24,6 @@ function KexinIndex() {
   var transformData = require('../mapdata/MapTransform.json')
 
   const mapRef = useRef(null)
-  // const { mapInteraction, setMapInteraction } = useContext(KexinIndexStatus)
   const [mapInteraction, setMapInteraction] = useState(0)
   const [selectCounty, setSelectCounty] = useState('')
   const [myProduct, setMyProduct] = useState({})
@@ -122,6 +121,8 @@ function KexinIndex() {
           .on('mouseover', mouseOverHandler)
           .on('mouseout', mouseOutHandler)
           .on('click', clickHandler)
+
+
       }
     }
   }, [device])
@@ -148,13 +149,7 @@ function KexinIndex() {
     d3.select(mapRef.current)
       .selectAll('path')
       .style('fill', 'rgba(10, 140, 45, 0.2)')
-    // .append('circle')
-    // .attr('cx', x)
-    // .attr('cx', y)
-    // .attr('r', 10)
-    // .attr('stroke', 'none')
-    // .attr('fill', 'red')
-    // console.log(i.properties.COUNTYNAME)
+
     d3.select(this).style('fill', CLICK_COLOR)
 
     const county = i.properties.COUNTYNAME
@@ -168,6 +163,7 @@ function KexinIndex() {
 
     setSelectCounty(county)
   }
+
 
   // console.log(selectCounty);
   // console.log('outside', mapInteraction)
@@ -186,12 +182,9 @@ function KexinIndex() {
       .duration(750)
       .attr('transform', transformData[selectCounty].transform2)
 
-    d3.select('#mapZoom')
-      .append('circle')
-      .attr('cx', projection([121.3, 25.0])[0])
-      .attr('cy', projection([121.3, 25.0])[1])
-      .attr('r', 5)
-      .attr('fill', 'red')
+    // d3.select('#landmark').remove()
+    // d3.select('#landmark1').remove()
+    console.log(projection([121.3, 25.0]))
   }
 
   const clickReset = function (e) {
@@ -216,6 +209,11 @@ function KexinIndex() {
         .transition()
         .duration(750)
         .attr('transform', transformData[selectCounty].transform1)
+
+      // 刪掉地標
+      d3.select('#landmark').remove()
+      d3.select('#landmark1').remove()
+      
       setMapInteraction(1)
     }
   }
@@ -231,11 +229,7 @@ function KexinIndex() {
             onClick={clickReset}
           ></div>
           <KexinIndexProducts selectCounty={selectCounty} />
-          {mapInteraction === 2 ? (
-            <KexinIndexProductsDetail selectCounty={selectCounty} />
-          ) : (
-            ''
-          )}
+          <KexinIndexProductsDetail selectCounty={selectCounty} />
         </ProductContext.Provider>
       </StatusContext.Provider>
     </>
