@@ -34,8 +34,8 @@ export default function MemberContent(props) {
   //   setLastname(user.lastname)
   // }
   // setGender(user.gender)
-  console.log('user', user.email)
-  console.log(user.gender, 'genderstate:', gender)
+  // console.log('user', user.email)
+  // console.log(user.gender, 'genderstate:', gender)
   //彈出重設密碼表單
   function modalControl() {
     if (pwdModalOpen) {

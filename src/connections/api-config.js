@@ -37,7 +37,10 @@ export const MEMBER_DATA = `${HOST}/member/api`
 export const USER_DATA = (mid) => `${HOST}/member/me/${mid}`
 export const USER_COMMENT = (mid) => `${HOST}/member/me/comment/${mid}`
 export const USER_UPLOAD = `${HOST}/member/me/upload`
-export const USER_AVATAR = `${HOST}/member/me/avatar`
+export const USER_AVATAR = `${HOST}/uploads/`
+export const USER_COUPON = `${HOST}/member/me/coupon`
+export const USER_ORDER = `${HOST}/member/me/order`
+export const USER_ORDER_DETAIL = `${HOST}/member/me/order/product-detail`
 
 // paths ---------------------------------------------------------------------------
 // yichun's path
