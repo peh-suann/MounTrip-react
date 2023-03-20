@@ -42,6 +42,7 @@ export const CartContextProvider = ({
   }, [state])
 
   const addItem = (item) => {
+    console.log(item)
     dispatch({
       type: 'ADD_ITEM',
       payload: item,
@@ -75,6 +76,7 @@ export const CartContextProvider = ({
   }
 
   const plusOne = (id) => {
+    console.log('dispatch', id)
     return dispatch({
       type: 'PLUS_ONE',
       payload: {
