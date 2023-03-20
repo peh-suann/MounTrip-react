@@ -1,11 +1,11 @@
 import { useContext, useState, useEffect } from 'react'
 import axios from 'axios'
 // component
-import YichunProductCard from './YichunProductCard'
+import KexinProductCard from './KexinProductCard'
 
 import styles from '../styles/kexinIndexProducts.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { StatusContext } from '../pages/KexinIndex'
+import { StatusContext, ProductContext } from '../pages/KexinIndex'
 import { SELECT_COUNTY } from '../connections/api-config'
 
 // FontAwesome
@@ -14,6 +14,7 @@ import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons'
 function KexinIndexProducts(props) {
   const { selectCounty } = props
   const { mapInteraction, setMapInteraction } = useContext(StatusContext)
+  const { myProduct, setMyProduct } = useContext(ProductContext)
   const [data, setData] = useState({
     rows: [],
   })
@@ -33,15 +34,15 @@ function KexinIndexProducts(props) {
     getCountyData(selectCounty)
   }, [selectCounty])
   // getCountyData(selectCounty)
-  console.log('hi', selectCounty)
-  console.log(data)
+  // console.log('hi', selectCounty)
+  // console.log(data.length)
 
   //
 
   return (
     <>
       <div
-        class={`${styles['map-product']} d-flex flex-column align-items-center justify-content-between px-0`}
+        className={`${styles['map-product']} d-flex flex-column align-items-center justify-content-between px-0`}
         style={
           mapInteraction === 2
             ? { right: '530px' }
@@ -51,7 +52,7 @@ function KexinIndexProducts(props) {
         }
       >
         <div
-          class={`${styles['search-input2']} align-items-center ${styles['mb-28']} ${styles['mt-19']}`}
+          className={`${styles['search-input2']} align-items-center ${styles['mb-28']} ${styles['mt-19']}`}
         >
           <FontAwesomeIcon icon={faSearch} />
           <input
@@ -63,31 +64,31 @@ function KexinIndexProducts(props) {
 
         {/* <YichunProductCard /> */}
         <div
-          class={`${styles['card']} d-flex flex-column px-0 ${styles['mb-20']}`}
-          onClick={() => {
-            setMapInteraction(2)
-            console.log('click card')
-          }}
+          className={`${styles['card']} d-flex flex-column px-0`}
         >
-        // TODO: 沒要到資料也不要跳錯誤
+          {/* // TODO: 沒要到資料也不要跳錯誤
         // TODO: component樣式修改
-        // TODO: 點擊有地理位置
-          {/* {data.map((v, i) => {
-            console.log(v)
-            return (
-              <YichunProductCard
-                key={i}
-                el={v}
-                ranking={0}
-                shadow={0}
-                onClick={() => {
-                  console.log('123')
-                }}
-              />
-            )
-          })} */}
-          <div class={styles['img-wrap']}>
-            {/* <!-- <img src="./img/index-product.jpg" alt="" /> --> */}
+        // TODO: 點擊有地理位置 */}
+          {data.length
+            ? data.map((v, i) => {
+                {/* console.log(v) */}
+                return (
+                  <>
+                    <div className={styles['mb-20']}>
+                      <KexinProductCard
+                        key={v.trails_sid}
+                        el={v}
+                        ranking={0}
+                        shadow={0}
+                      />
+                    </div>
+                  </>
+                )
+              })
+            : ''}
+        
+          {/* <div class={styles['img-wrap']}>
+            !-- <img src="./img/index-product.jpg" alt="" /> -->
             <div
               class={`${styles['rates-wrap']} d-flex justify-content-between`}
             >
@@ -100,8 +101,8 @@ function KexinIndexProducts(props) {
                 <p class={`${styles['mtgreen4']} ${styles['rates']}`}>EASY</p>
               </div>
             </div>
-          </div>
-          <div class="d-flex justify-content-between">
+          </div> */}
+          {/* <div class="d-flex justify-content-between">
             <div class="d-flex flex-column justify-content-start">
               <p class={`${styles['information-title']} ${styles['mtgrey1']}`}>
                 草嶺古道｜探索新北一日遊
@@ -124,7 +125,7 @@ function KexinIndexProducts(props) {
                 1,200
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

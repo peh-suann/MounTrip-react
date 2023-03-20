@@ -56,6 +56,7 @@ export const TEST_ANS = `${HOST}/answer`
 export const LOGIN = `${HOST}/login`
 export const SIGNIN = `${HOST}/signin`
 export const SELECT_COUNTY = `${HOST}/select_products`
+export const SELECT_PRODUCT = `${HOST}/select_product_detail`
 
 // // LAI's path
 // export const LIST_DATA = `${HOST}/member`

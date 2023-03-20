@@ -104,6 +104,7 @@
   padding: 0;
   z-index: 1005;
   transition-duration: 1.0s;
+
 }
 
 .map-product-detail::-webkit-scrollbar {
@@ -117,7 +118,7 @@
   width: 100%;
 }
 
-.map-product-detail .detail-img-wrap > img {
+.map-product-detail .detail-img-wrap>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -169,7 +170,7 @@
 
 .map-product-detail .slope img {
   display: block;
-  width: 570px;
+  width: 480px;
   height: 18px;
 }
 
@@ -253,7 +254,7 @@
   overflow: hidden;
 }
 
-.map-product-detail .comment-photo > img {
+.map-product-detail .comment-photo>img {
   width: 150%;
   /* height: 150%; */
   object-fit: cover;

@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState, useRef } from 'react'
-import { useLocation } from 'react-router-dom'
 import * as d3 from 'd3'
 import NavbarIndex from '../layouts/NavbarIndex'
 import IndexStyles from '../styles/kexinIndex.module.css'
@@ -9,6 +8,7 @@ import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
 
 // context
 export const StatusContext = createContext({})
+export const ProductContext = createContext({})
 
 function KexinIndex() {
   // map basic setting
@@ -27,22 +27,7 @@ function KexinIndex() {
   // const { mapInteraction, setMapInteraction } = useContext(KexinIndexStatus)
   const [mapInteraction, setMapInteraction] = useState(0)
   const [selectCounty, setSelectCounty] = useState('')
-
-  // const location = useLocation()
-  // console.log("1--", location.search)
-  // const usp = new URLSearchParams(location.search)
-
-  // // search county method
-  // const getCountyData = async (county) => {
-  //   const response = await axios.get(SELECT_COUNTY, {
-  //     params: {
-  //       county,
-  //     },
-  //   });
-  //   // response.data 會依據回應的檔頭作解析, JSON
-  //   console.log('123',response.data)
-  //   // setData(response.data);
-  // }
+  const [myProduct, setMyProduct] = useState({})
 
   // RWD
   const device = useRWD()
@@ -116,12 +101,10 @@ function KexinIndex() {
           .translate([WIDTH / 2, HEIGHT / 2])
         // var projection = d3.geoMercator().center([123, 24]).scale(5500);
 
-
         // Create a path generator
         const path = d3.geoPath(projection)
 
-        console.log('projection',projection([121, 23.5]));
-        // console.log('projection',projection([121, 23.5])[1]);
+        console.log('projection', projection([121, 23.5]))
 
         // Draw the map
         g.selectAll('path')
@@ -139,12 +122,6 @@ function KexinIndex() {
           .on('mouseover', mouseOverHandler)
           .on('mouseout', mouseOutHandler)
           .on('click', clickHandler)
-
-        // g.append('circle')
-        //     .attr('cx', projection([121, 25.0])[0])
-        //     .attr('cy', projection([121, 25.0])[1])
-        //     .attr('r', 10)
-        //     .attr('fill', 'red')
       }
     }
   }, [device])
@@ -162,7 +139,6 @@ function KexinIndex() {
   }
 
   const clickHandler = function (d, i, e) {
-    
     // console.log(projection);
 
     // const [x, y] = [121.6, 25.2]
@@ -191,11 +167,6 @@ function KexinIndex() {
     setMapInteraction(1)
 
     setSelectCounty(county)
-    // getCountyData(county)
-
-    
-
-
   }
 
   // console.log(selectCounty);
@@ -204,17 +175,16 @@ function KexinIndex() {
     const WIDTH = window.innerWidth
     const HEIGHT = window.innerHeight
 
-    const projection = d3.geoMercator()
-    .center([121, 23.58])
-    .scale(10000)
-    .translate([WIDTH / 2, HEIGHT / 2])
-
+    const projection = d3
+      .geoMercator()
+      .center([121, 23.58])
+      .scale(10000)
+      .translate([WIDTH / 2, HEIGHT / 2])
 
     d3.select('#mapZoom')
       .transition()
       .duration(750)
       .attr('transform', transformData[selectCounty].transform2)
-
 
     d3.select('#mapZoom')
       .append('circle')
@@ -222,7 +192,6 @@ function KexinIndex() {
       .attr('cy', projection([121.3, 25.0])[1])
       .attr('r', 5)
       .attr('fill', 'red')
-    
   }
 
   const clickReset = function (e) {
@@ -254,14 +223,20 @@ function KexinIndex() {
   return (
     <>
       <StatusContext.Provider value={{ mapInteraction, setMapInteraction }}>
-        <NavbarIndex />
-        <div
-          ref={mapRef}
-          id={`${IndexStyles['info']}`}
-          onClick={clickReset}
-        ></div>
-        <KexinIndexProducts selectCounty={selectCounty} />
-        <KexinIndexProductsDetail selectCounty={selectCounty} />
+        <ProductContext.Provider value={{ myProduct, setMyProduct }}>
+          <NavbarIndex />
+          <div
+            ref={mapRef}
+            id={`${IndexStyles['info']}`}
+            onClick={clickReset}
+          ></div>
+          <KexinIndexProducts selectCounty={selectCounty} />
+          {mapInteraction === 2 ? (
+            <KexinIndexProductsDetail selectCounty={selectCounty} />
+          ) : (
+            ''
+          )}
+        </ProductContext.Provider>
       </StatusContext.Provider>
     </>
   )
