@@ -42,7 +42,7 @@ export default function LaiHistoryOrder() {
       setUserOrder(currentUserOrder)
       setOrderList(currentOrderList)
       // console.log('new sql', res.data.data)
-      console.log('currentUO:', res)
+      // console.log('currentUO:', res)
     } catch (error) {
       console.log("there's an error in db connection")
       return []
@@ -92,6 +92,7 @@ export default function LaiHistoryOrder() {
         {orderList.map((v, i) => {
           const orderId = `MT2300${v.sid}`
           const statusString = convertStatus(v.order_status_sid)
+          const originOrderSid = v.sid
 
           return (
             <OrderCard
@@ -101,6 +102,7 @@ export default function LaiHistoryOrder() {
               tolPrice={v.total}
               orderDate={v.orderDateFormat}
               orderPayment={'信用卡一次付清'}
+              originOrderSid={originOrderSid}
             />
           )
         })}

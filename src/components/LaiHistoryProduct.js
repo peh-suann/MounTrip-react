@@ -1,12 +1,12 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import styles from './../styles/HistoryOrder.module.css'
 import axios from 'axios'
 import { USER_ORDER_DETAIL } from '../connections/api-config'
 
 export default function LaiHistoryProduct(props) {
   const {
-   
-    orderId,
+    originOrderSid, //沒編輯過的訂單編號order_sid 陣列
+    orderId, //這是有編輯過的訂單編號 MT2300XXX
     userOrder,
     setUserOrder,
     productTitle,
@@ -15,57 +15,46 @@ export default function LaiHistoryProduct(props) {
     dateEnd,
     price,
     amount,
+    open,
+    img,
   } = props
   let currentOrderProduct = []
 
-    //把orderId 訂單的編號當作參數從header傳給node.js 進行sql搜尋
   const countTolPrice = (p, amount) => {
     let priceNum = parseInt(p.replace(',', ''))
     let tolPrice = priceNum * amount
 
     return tolPrice.toLocaleString()
   }
-  const TolPrice = countTolPrice(price, amount)
+  // const TolPrice = countTolPrice(price, amount)
 
-  const getOrderProductDetail = async (req, res) => {
-    const userString = localStorage.getItem('myAuth')
-    const user = JSON.parse(userString) //localstorage出來的東西都是字串，需要解析
-    const token = user.token
-    const mid = user.accountId
+  //總價的字串
+  const TolPrice = (price * amount).toLocaleString()
+  const priceString = price.toLocaleString()
 
-    try {
-      const res = await axios.get(USER_ORDER_DETAIL, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          sid: mid,
-          orderId: orderId,
-        },
-      })
-      if (!res) return res.sendStatus(401)
-
-      currentOrderProduct = res
-      setUserOrder(currentOrderProduct)
-      console.log('currentUO:', res)
-    } catch (error) {
-      console.log("there's an error in db connection")
-      return []
-    }
-  }
-
-  useEffect(() => {
-    getOrderProductDetail()
-  }, [])
+  //圖片網址
+  const productImgUrl =
+    '../../../public/images/public_images/product_image/' + img
+  const PUBLIC = process.env.PUBLIC_URL
+  const Url = PUBLIC + '/images/public_images/product_image/' + img
+  // public/images/public_images/product_image/9-1.jpg
   return (
     <>
       <div className={styles['dropdown-bar']}></div>
       <div className={`${styles['product-wrap']}`}>
         <div className={styles['img-title-wrap']}>
           <div className={styles['img-wrap']}>
-            <div className={styles['img-wrap-img']}></div>
+            <div
+              className={styles['img-wrap-img']}
+              style={{
+                background: `url('${Url}')`,
+                backgroundSize: 'cover',
+              }}
+            ></div>
           </div>
           <div className={styles['title-wrap']}>
             <h6>{productTitle}</h6>
-            <p>{productSubTi}</p>
+            <p className={styles.product_subtitle}>{productSubTi}</p>
           </div>
           <div className={styles['date-wrap']}>
             <p>{dateStart}</p>
@@ -75,7 +64,7 @@ export default function LaiHistoryProduct(props) {
         </div>
         <div className={styles['single-price-wrap']}>
           <p>NTD</p>
-          <p>{price}</p>
+          <p>{priceString}</p>
         </div>
         <div className={styles['amount-wrap']}>
           <svg
