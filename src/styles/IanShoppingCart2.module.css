@@ -194,7 +194,7 @@ line-height: 140%;
     color: var(--mtgrey-2);
   }
 
-  div.pd-40 > button.paybtn {
+button.paybtn {
     /* border-color: var(--mtgreen-1); */
     background-color: var(--mtgreen-1);
     color: white;

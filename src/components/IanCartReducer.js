@@ -6,46 +6,63 @@ export const initialState = {
 }
 
 const addItem = (state, action) => {
-  const existingItemIndex = state.items.findIndex(
-    (item) => item.id === action.payload.id
+  console.log('addItem state:', state)
+  console.log('addItem action:', action)
+  const ItemIndex = state.items.findIndex(
+    (item) => item.sid === action.payload.sid
   )
+  console.log(ItemIndex)
+  // state.items.map((item, i) => {
+  //   if (item.sid === action.payload.sid) {
+  // console.log([...state.items, action.payload])
+  // return [...state.items, action.payload]
+  //   } else {
+  //     return state
+  //   }
+  // })
 
   const payloadQuantity = action.payload.quantity
 
-  // if exist item, add one
-  if (existingItemIndex > -1) {
-    const item = state.items[existingItemIndex] //為什麼?
-    const id = item.id
+  if (ItemIndex > -1) {
+    const item = state.items[ItemIndex]
+    const id = item.sid
+    console.log(item.quantity)
 
-    const quantity = payloadQuantity //加入購物車不是一定+1嗎
+    const quantity = payloadQuantity
       ? item.quantity + payloadQuantity
       : item.quantity + 1
-
+    console.log(quantity)
     const action = {
       type: 'UPDATE_ITEM',
       payload: { id, quantity },
     }
-
-    return updateItem(state, action) //????
+    return updateItem(state, action)
   }
+  console.log('沒找到')
+  console.log([...state.items, action.payload])
   return [...state.items, action.payload]
 }
 
 const removeItem = (state, action) => {
-  return state.items.filter((item) => item.id !== action.payload.id)
+  return state.items.filter((item) => item.sid !== action.payload.id)
 }
 
 const updateItem = (state, action) => {
-  const existingItemIndex = state.items.findIndex(
-    (item) => item.id === action.payload.id
-  )
+  console.log('updatestate:', state)
+  console.log('updateaction:', action)
 
-  if (existingItemIndex > -1) {
+  const ItemIndex = state.items.findIndex(
+    (item) => item.sid === action.payload.id
+  )
+  console.log('updateItemIndex:', ItemIndex)
+
+  if (ItemIndex > -1) {
     const newState = [...state.items]
-    newState[existingItemIndex] = {
-      ...newState[existingItemIndex],
+    newState[ItemIndex] = {
+      ...newState[ItemIndex],
       ...action.payload,
     }
+    // console.log(newState)
     return newState
   }
 
@@ -53,13 +70,12 @@ const updateItem = (state, action) => {
 }
 
 const plusItemQuantityOnce = (state, action) => {
-  const existingItemIndex = state.items.findIndex(
-    (item) => item.id === action.payload.id
+  const ItemIndex = state.items.findIndex(
+    (item) => item.sid === action.payload.id
   )
-
-  if (existingItemIndex > -1) {
-    //const newState = [...state.items]
-    const item = state.items[existingItemIndex]
+  // console.log(ItemIndex)
+  if (ItemIndex > -1) {
+    const item = state.items[ItemIndex]
     const id = item.id
     const quantity = item.quantity + 1
 
@@ -67,28 +83,33 @@ const plusItemQuantityOnce = (state, action) => {
       type: 'UPDATE_ITEM',
       payload: { id, quantity },
     }
-
     return updateItem(state, action)
   }
-
   return [...state.items]
 }
+// const plusIcon = (state, plusid) => {
+//   return state.map((v, i) => {
+//     if (v.sid === plusid) {
+//       return { ...v, count: v.count + 1 }
+//     } else {
+//       return { ...v }
+//     }
+//   })
+// }
 
 const minusItemQuantityOnce = (state, action) => {
-  const existingItemIndex = state.items.findIndex(
-    (item) => item.id === action.payload.id
+  const ItemIndex = state.items.findIndex(
+    (item) => item.sid === action.payload.id
   )
 
-  if (existingItemIndex > -1) {
-    const item = state.items[existingItemIndex]
+  if (ItemIndex > -1) {
+    const item = state.items[ItemIndex]
     const id = item.id
     const quantity = item.quantity > 1 ? item.quantity - 1 : 1
-
     const action = {
       type: 'UPDATE_ITEM',
       payload: { id, quantity },
     }
-
     return updateItem(state, action)
   }
 
@@ -108,6 +129,8 @@ const calculateTotalItems = (items) =>
   items.reduce((sum, item) => sum + item.quantity, 0)
 
 const generateCartState = (state, items) => {
+  console.log(state)
+  console.log(items)
   const isEmpty = items.length === 0
 
   return {
@@ -120,12 +143,15 @@ const generateCartState = (state, items) => {
   }
 }
 
-
 export const init = (items) => {
+  console.log('init:', items)
   return generateCartState({}, items)
 }
 
 export const reducer = (state, action) => {
+  console.log('reducer')
+  console.log('state:', state)
+  console.log('action:', action)
   switch (action.type) {
     case 'ADD_ITEM':
       return generateCartState(state, addItem(state, action))

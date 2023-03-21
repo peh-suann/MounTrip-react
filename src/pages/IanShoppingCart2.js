@@ -6,7 +6,7 @@ import IanOrderDetail from '../components/IanOrderDetail'
 
 function IanShoppingCart2() {
   const [mypage, setPage] = useState('')
-  const [items, setItems] = useState([
+  const [memberitems, setMemberItems] = useState([
     {
       id: 1,
       firstname: 'Ian',
@@ -306,7 +306,10 @@ function IanShoppingCart2() {
             <input type="email" id="email" />
           </div>
         </form> */}
-          <IanOrderData styles={styles} items={items} setItems={setItems} />
+          <IanOrderData
+            memberitems={memberitems}
+            setMemberItems={setMemberItems}
+          />
 
           <div
             className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center `}
@@ -337,7 +340,7 @@ function IanShoppingCart2() {
 
             <h3>旅客資料</h3>
           </div>
-          <IanOrderDetail styles={styles} items={items} setItems={setItems} />
+          <IanOrderDetail setMemberItems={setMemberItems} />
           {/* 商品跟form表單 */}
           {/* <div
           className={`${styles.productDetail} col-12 d-flex flex-row align-items-start p-0 mb-3`}
@@ -563,9 +566,14 @@ function IanShoppingCart2() {
         </div>
 
         <div className={`${styles['pd-40']} d-flex justify-content-center`}>
-          <button type="button" className={`${styles.paybtn} btn btn-unstyle`}>
-            前往付款
-          </button>
+          <Link to="/SC3" className={`${styles.paybtn} btn btn-unstyle`}>
+            <button
+              type="button"
+              className={`${styles.paybtn} btn btn-unstyle`}
+            >
+              前往付款
+            </button>
+          </Link>
         </div>
       </div>
     </>

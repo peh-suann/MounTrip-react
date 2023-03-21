@@ -227,7 +227,7 @@ position: absolute;
 top: 50%;
 right: 2%;
 display: flex;
-justify-content: end;
+justify-content:end;
   }
 
   section.comments .comment {

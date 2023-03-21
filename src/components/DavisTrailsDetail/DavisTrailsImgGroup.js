@@ -4,7 +4,9 @@ import { useLocation } from 'react-router-dom'
 import styles from '../../styles/DavisTrailsDetail.module.css'
 
 function DavisTrailsImgGroup(props) {
-  const { data, rows_data, filterFromBatch } = props
+  const { data, filterFromBatch } = props
+
+  const rows_data = data.rows
 
   const [selectedImage, setSelectedImage] = useState(null)
 
@@ -29,7 +31,7 @@ function DavisTrailsImgGroup(props) {
 
   return (
     <>
-      {filterFromBatch(data.rows).map((r, i) => {
+      {filterFromBatch(rows_data).map((r, i) => {
         return (
           <div key={r.sid} className="col flex-column me-5 d-none d-lg-flex">
             <div className="">
@@ -42,40 +44,46 @@ function DavisTrailsImgGroup(props) {
                 alt=""
               />
             </div>
-            <div className={`d-flex flex-row ${styles.img_wrap_three}`}>
-              <img
-                onClick={() =>
-                  changePicture(
-                    `/images/public_images/product_image/${r.trail_sid}-1.jpg`
-                  )
-                }
-                id="select_img1"
-                className={`${styles.img_cover_three}`}
-                src={`/images/public_images/product_image/${r.trail_sid}-1.jpg`}
-                alt=""
-              />
-              <img
-                onClick={() =>
-                  changePicture(
-                    `/images/public_images/product_image/${r.trail_sid}-2.jpg`
-                  )
-                }
-                id="select_img2"
-                className={`${styles.img_cover_three}`}
-                src={`/images/public_images/product_image/${r.trail_sid}-2.jpg`}
-                alt=""
-              />
-              <img
-                onClick={() =>
-                  changePicture(
-                    `/images/public_images/product_image/${r.trail_sid}-3.jpg`
-                  )
-                }
-                id="select_img3"
-                className={`${styles.img_cover_three}`}
-                src={`/images/public_images/product_image/${r.trail_sid}-3.jpg`}
-                alt=""
-              />
+            <div className={`d-flex flex-row  ${styles.img_wrap_three}`}>
+              <div className={`${styles.img_wrap_small}`}>
+                <img
+                  onClick={() =>
+                    changePicture(
+                      `/images/public_images/product_image/${r.trail_sid}-1.jpg`
+                    )
+                  }
+                  id="select_img1"
+                  className={`${styles.img_cover_three}`}
+                  src={`/images/public_images/product_image/${r.trail_sid}-1.jpg`}
+                  alt=""
+                />
+              </div>
+              <div className={`${styles.img_wrap_small}`}>
+                <img
+                  onClick={() =>
+                    changePicture(
+                      `/images/public_images/product_image/${r.trail_sid}-2.jpg`
+                    )
+                  }
+                  id="select_img2"
+                  className={`${styles.img_cover_three}`}
+                  src={`/images/public_images/product_image/${r.trail_sid}-2.jpg`}
+                  alt=""
+                />
+              </div>
+              <div className={`${styles.img_wrap_small}`}>
+                <img
+                  onClick={() =>
+                    changePicture(
+                      `/images/public_images/product_image/${r.trail_sid}-3.jpg`
+                    )
+                  }
+                  id="select_img3"
+                  className={`${styles.img_cover_three}`}
+                  src={`/images/public_images/product_image/${r.trail_sid}-3.jpg`}
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         )

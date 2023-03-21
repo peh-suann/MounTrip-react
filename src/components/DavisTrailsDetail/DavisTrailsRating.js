@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom'
 import { RATING_DATA } from '../../connections/api-config'
 import axios from 'axios'
 
-function DavisTrailsRating() {
+function DavisTrailsRating(props) {
+  const { data } = props
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
-  const [data, setData] = useState({
+  const [rating, setRating] = useState({
     // page: 0,
     rows: [],
     // perPage: 0,
@@ -22,20 +23,44 @@ function DavisTrailsRating() {
         page,
       },
     })
-    // console.log(response.data)
-    setData(response.data)
+    setRating(response.data)
   }
+
+  const filterFromBatch = (rows_data) => {
+    if (!Array.isArray(rows_data)) {
+      return []
+    }
+    return rows_data.slice(0, 1)
+  }
+
+  // 抓到這一頁的sid
+  // console.log(filterFromBatch(data.rows)[0].trail_sid)
+
+  let page_sid = filterFromBatch(data.rows)[0].trail_sid
+
+  console.log(page_sid)
+
+  // const [commont, setCommont] = useState([])
+
+  // let batch_sid
+  // const filterCommomt = (commont, batch_sid) => {
+  //   return commont.filter((v, i) => {
+  //     if (v.batch_sid === batch_sid) {
+  //       return [setCommont(batch_sid)]
+  //     } else return { ...v }
+  //   })
+  // }
 
   // let rows_data = data.rows
 
-  // const filterFromBatch = (rows_data) => {
-  //   if (!Array.isArray(rows_data)) {
-  //     return []
-  //   }
-  //   return rows_data.filter((v, i) => {
-  //     return v.trails_sid === 1
-  //   })
-  // }
+  const filterFromRating = (data) => {
+    if (!Array.isArray(data)) {
+      return []
+    }
+    return data.filter((v, i) => {
+      return v.trails_sid === page_sid
+    })
+  }
 
   useEffect(() => {
     getListData(+usp.get('page'))
@@ -212,7 +237,6 @@ function DavisTrailsRating() {
                   />
                 </svg>
               </div>
-              {/* TODO: */}
               {/* <div className="col ps-2">
                 <p className="mb-0">1000個人已評論</p>
               </div> */}
@@ -223,14 +247,13 @@ function DavisTrailsRating() {
           {/* right-card */}
           <div className="col d-flex flex-column">
             {/* right-card * n */}
-            {data.rows.map((r) => (
+            {filterFromRating(rating.rows).map((r) => (
               <div
-                key={r.rating_sid}
                 className={`col d-flex flex-row pb-3 mb-5 ${styles.card_b_b}`}
               >
                 {/* head picture (left col-1) */}
                 <div className={`col-1 ${styles.rounded_circle}`}></div>
-                {/* --commont content (right col) */}
+
                 <div className="col d-flex flex-column ">
                   {/* level1 */}
                   <div className="col d-flex flex-row mb-3">
@@ -245,7 +268,7 @@ function DavisTrailsRating() {
                   {/* level2 */}
                   <div className="col d-flex flex-row mb-3">
                     <div
-                      className={`col-5 col-lg-2 d-flex flex-row ${styles.star}`}
+                      className={`col-5 col-lg-1 d-flex flex-row ${styles.star}`}
                     >
                       <svg
                         width="16"
@@ -309,14 +332,13 @@ function DavisTrailsRating() {
                       </svg>
                     </div>
                     <div className="col-2">
-                      <p className="mb-0">{r.rate_date}</p>
+                      <p className="mb-0 pb-1">{r.rate_date}</p>
                     </div>
                     <div className="col"></div>
                   </div>
                   {/* level3 內文與圖片 */}
                   <div className="col d-flex flex-column flex-lg-row">
                     <div className="col col-lg-7 ">
-                      {/* FIXME:若評論為中文字則左右對齊 */}
                       <p className={`${styles.commont_p}`}>{r.comment}</p>
                     </div>
                     {/* imges */}

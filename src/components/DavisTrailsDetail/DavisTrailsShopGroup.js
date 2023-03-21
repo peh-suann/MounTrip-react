@@ -1,21 +1,30 @@
-import React from 'react'
-import { useEffect, useState, useContext } from 'react'
-
-//useContext
-import ShopContext from './ShopContext'
-
 // component
-import styles from '../../styles/DavisTrailsDetail.module.css'
+import React, { useReducer } from 'react'
+import { useEffect, useState } from 'react'
 import DavisTrailsBatch from './DavisTrailsBatch'
+import styles from '../../styles/DavisTrailsDetail.module.css'
+import { useCart } from '../IanUseCart'
+import { fi } from 'date-fns/locale'
 
 function DavisTrailsShopGroup(props) {
-  const { data, filterFromBatch } = props
+  const { data, filterFromBatch, plusOne, setData } = props
   const [count, setCount] = useState(0)
+  const { addItem } = useCart()
+
+  const rows_data = data.rows
+
+  const Rows = { ...data }
+  // console.log('Rows:', Rows)
+  const batch = Rows.rows[0].batch_start
+  // console.log(batch)
+
   return (
     <>
       <div className="d-none d-lg-flex flex-column ">
         {/* Count */}
-        <div className="col d-flex flex-row mb-2 justify-content-between">
+        <div
+          className={`col d-flex flex-row justify-content-between ${styles.btn_one_margin}`}
+        >
           <div
             className={`col  d-flex flex-row align-items-center me-2 ${styles.shop_btn_one}`}
           >
@@ -75,8 +84,8 @@ function DavisTrailsShopGroup(props) {
           </div>
           <button className={`${styles.btn_style}`}>
             <svg
-              width="35"
-              height="35"
+              width="43"
+              height="43"
               viewBox="0 0 43 43"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -106,10 +115,20 @@ function DavisTrailsShopGroup(props) {
         ))} */}
         <button
           className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
+          onClick={() => {
+            // if (batch === Rows.rows[0].batch_start) {
+            //   const item = { ...Rows.rows[0], quantity: 1 }
+            //   addItem(item)
+            // } else {
+            //   const item2 = { ...Rows.rows[1], quantity: 1 }
+            //   addItem(item2)
+            // }
+            const item = { ...Rows.rows[0], quantity: 1 }
+            addItem(item)
+            // console.log('onClick item:', item)
+          }}
         >
-          <h5 className={`mb-0 align-self-center ${styles.btn_font}`}>
-            加入購物車
-          </h5>
+          <h5 className={`mb-0 ${styles.btn_font}`}>加入購物車</h5>
           <span className="align-self-center">
             <svg
               className=""

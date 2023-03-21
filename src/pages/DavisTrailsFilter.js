@@ -3,6 +3,8 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { addDays } from 'date-fns'
+import { format } from 'date-fns'
 
 // components
 import styles from '../styles/DavisTrailsFilter.module.css'
@@ -20,8 +22,16 @@ function DavisTrailsFilter() {
 
   const [keywordpr, setKeywordpr] = useState('')
 
-  const [datepickpr, setDatepickpr] = useState('')
+  const [startdatepr, setStartdatepr] = useState(
+    format(new Date(1), 'yyyy-MM-dd')
+  )
 
+  const [enddatepr, setEnddatepr] = useState(format(new Date(), 'yyyy-MM-dd'))
+
+  const [maxpeplepr, setMaxpeplepr] = useState()
+
+  // console.log(Date.parse(startdatepr))
+  // console.log(Date.parse(enddatepr))
   // trails_data
   const [data, setData] = useState({
     page: 0,
@@ -31,21 +41,20 @@ function DavisTrailsFilter() {
     totalRows: 0,
   })
 
-  // FIXME:
-  let rows_data = data.rows
-
-  const filterByKeyword = (rows_data, keywordpr, datepickpr) => {
-    if (!Array.isArray(rows_data)) {
-      return []
-    }
+  const filterByKeyword = (rows_data, keywordpr, startdatepr, enddatepr) => {
     return rows_data.filter((v, i) => {
-      return (
+      const keywordMatch =
         v.trail_name.includes(keywordpr) ||
         v.geo_location_sid.includes(keywordpr) ||
-        v.geo_location_town_sid.includes(keywordpr) ||
-        v.batch_start > datepickpr
-        // v.batch_end < datepickpr
-      )
+        v.geo_location_town_sid.includes(keywordpr)
+      const dateRangeMatch =
+        Date.parse(v.batch_start) > Date.parse(startdatepr) &&
+        Date.parse(v.batch_end) < Date.parse(enddatepr)
+      // console.log(maxpeplepr)
+      // console.log(Date.parse(v.batch_start))
+      const peopleCount = v.batch_max >= maxpeplepr
+
+      return keywordMatch && dateRangeMatch && peopleCount
     })
   }
 
@@ -58,17 +67,6 @@ function DavisTrailsFilter() {
     // console.log(response.data)
     setData(response.data)
   }
-
-  // console.log(data.rows)
-
-  const filterFromBatch = (rows_data) => {
-    if (!Array.isArray(rows_data)) {
-      return []
-    }
-    return rows_data.slice(0, 1)
-  }
-
-  // console.log('filterFromBatch', filterFromBatch(rows_data))
 
   useEffect(() => {
     // 設定功能
@@ -91,14 +89,18 @@ function DavisTrailsFilter() {
           <DavisFilterComLeft
             data={data}
             setKeywordpr={setKeywordpr}
-            setDatepickpr={setDatepickpr}
+            setStartdatepr={setStartdatepr}
+            setEnddatepr={setEnddatepr}
+            setMaxpeplepr={setMaxpeplepr}
           />
 
           {/*computer size right_card TODO: */}
           <DavisFilterComRight
             data={data}
             keywordpr={keywordpr}
-            datepickpr={datepickpr}
+            startdatepr={startdatepr}
+            enddatepr={enddatepr}
+            maxpeplepr={maxpeplepr}
             filterByKeyword={filterByKeyword}
           />
         </div>

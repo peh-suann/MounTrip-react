@@ -7,23 +7,30 @@ import DavisComFilterCardFilter from './DavisComFilterCardFilter'
 import { useNavigate } from 'react-router-dom'
 
 function DavisFilterComRight(props) {
-  const { data, filterByKeyword, keywordpr, datepickpr } = props
+  const {
+    data,
+    filterByKeyword,
+    keywordpr,
+    startdatepr,
+    enddatepr,
+    maxpeplepr,
+  } = props
 
   // console.log('filterFromBatch', filterFromBatch(rows_data))
 
-  // console.log(keywordpr)
+  // console.log(maxpeplepr)
 
   const navigate = useNavigate()
   return (
     <>
-      {console.log(keywordpr)}
+      {/* {console.log(keywordpr)} */}
       <div className={` d-flex flex-column ${styles.right_card}`}>
         <div className={`${styles.sub_title}`}>
           <div className="d-flex p-0">
             <span className=" d-none d-lg-flex">
               <svg
                 className={`${styles.Vector_long}`}
-                width="300px"
+                width="378px"
                 height="20"
                 viewBox="0 0 380 20"
                 fill="none"
@@ -47,7 +54,7 @@ function DavisFilterComRight(props) {
             <span className=" d-none d-lg-flex">
               <svg
                 className={`${styles.Vector_long}`}
-                width="300px"
+                width="378px"
                 height="20"
                 viewBox="0 0 380 20"
                 fill="none"
@@ -64,22 +71,24 @@ function DavisFilterComRight(props) {
           </div>
         </div>
         {/* filter card */}
-        <DavisComFilterCard
-          data={data}
-          filterByKeyword={filterByKeyword}
-          keywordpr={keywordpr}
-          datepickpr={datepickpr}
-        />
-
-        {/* <DavisComFilterCardFilter
+        {/* <DavisComFilterCard
           data={data}
           filterByKeyword={filterByKeyword}
           keywordpr={keywordpr}
           datepickpr={datepickpr}
         /> */}
 
+        <DavisComFilterCardFilter
+          data={data}
+          filterByKeyword={filterByKeyword}
+          keywordpr={keywordpr}
+          startdatepr={startdatepr}
+          enddatepr={enddatepr}
+          maxpeplepr={maxpeplepr}
+        />
+
         {/* pagination */}
-        <div
+        {/* <div
           className={`page-bar col d-none d-lg-flex align-self-center ${styles.details_pagination}`}
         >
           <nav
@@ -166,7 +175,7 @@ function DavisFilterComRight(props) {
               </li>
             </ul>
           </nav>
-        </div>
+        </div> */}
         {/* pagination */}
         {/* {[...Array(34)].map((v, i) => {
           const p = data.page - 5 + i
