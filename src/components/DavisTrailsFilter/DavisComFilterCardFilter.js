@@ -36,8 +36,35 @@ function DavisComFilterCardFilter(props) {
       else return { ...v }
     })
   }
+  //設定是否被收藏的初始值
+  useEffect(() => {
+    const modifiedData = alldata.rows.map((v) => ({ ...v, becollect: false }))
+    setCollect(modifiedData)
+    console.log('modifiedData set effect')
+  }, [alldata])
 
-  // const [pagedata, setpagedata] = useState({ rows: [] })
+  const modifiedData = alldata.rows.map((v) => ({ ...v, becollect: false }))
+  // FIXME:加上收藏商品的id
+  const [collectid, setcCollectid] = useState({ modifiedData })
+
+  console.log(modifiedData)
+
+  const handleAddToLocalStorage = () => {
+    localStorage.setItem('myKey', { collectid })
+  }
+
+  // const handleRemoveToLocalStorage = () => {
+  //   localStorage.removeItem('myKey', [collectid])
+  // }
+
+  // let r
+  // function storage() {
+  //   if (r.becollect === true) {
+  //     handleAddToLocalStorage()
+  //   } else {
+  //     handleRemoveToLocalStorage()
+  //   }
+  // }
 
   // 分頁
   const [currentPage, setCurrentPage] = useState(1)
@@ -69,20 +96,9 @@ function DavisComFilterCardFilter(props) {
     return data.filter((_, index) => index % 2 === 0)
   }
 
-  // FIXME:加上收藏商品的id
-  const [collectid, setcCollectid] = useState([''])
-
-  const handleAddToLocalStorage = () => {
-    localStorage.setItem('myKey', [collectid])
-  }
-  //設定是否被收藏的初始值
+  // getListData()
   useEffect(() => {
-    const modifiedData = alldata.rows.map((v) => ({ ...v, becollect: false }))
-    setCollect(modifiedData)
-  }, [alldata])
-
-  useEffect(() => {
-    console.log('useEffect--')
+    console.log('getListData useEffect--')
     getListData()
     return () => {
       console.log('unmount AbList--')
@@ -90,7 +106,7 @@ function DavisComFilterCardFilter(props) {
   }, [])
 
   useEffect(() => {
-    console.log('useEffect--')
+    console.log(' setCurrentPage useEffect--')
     setCurrentPage(currentPage)
     return () => {
       console.log('unmount AbList--')
@@ -126,7 +142,6 @@ function DavisComFilterCardFilter(props) {
               </div>
               <div className="col ">
                 <div className={`card-body ${styles.card_padding}`}>
-                  {/* TODO: */}
                   <h5 className={`${styles.product_name}`}>
                     <Link
                       className={`${styles.link_style}`}
@@ -247,17 +262,33 @@ function DavisComFilterCardFilter(props) {
                 <button
                   onClick={(e) => {
                     setCollect(toggleCollect(collect, r.sid))
+                    // storage()
                     // 回傳batch的sid
                     // console.log(alldata.rows[`${r.trail_sid}`])
-                    console.log(
-                      oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                    )
-                    // console.log(oddRows(collect)[`${r.trail_sid}`])
-                    // handleAddToLocalStorage(
-                    //   setcCollectid(
-                    //     oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                    //   )
+                    // console.log(
+                    //   oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
                     // )
+                    // console.log(oddRows(collect)[`${r.trail_sid}`])
+
+                    handleAddToLocalStorage(
+                      setcCollectid(
+                        oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
+                      )
+                    )
+
+                    // r.becollect
+                    //   ? handleAddToLocalStorage(
+                    //       setcCollectid(
+                    //         oddRows(alldata.rows)[`${r.trail_sid - 1}`]
+                    //           .trail_sid
+                    //       )
+                    //     )
+                    //   : handleRemoveToLocalStorage(
+                    //       setcCollectid(
+                    //         oddRows(alldata.rows)[`${r.trail_sid - 1}`]
+                    //           .trail_sid
+                    //       )
+                    //     )
                   }}
                   className={`${styles.heart_btn}`}
                 >

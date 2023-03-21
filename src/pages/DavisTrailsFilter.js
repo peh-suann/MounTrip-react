@@ -70,12 +70,12 @@ function DavisTrailsFilter() {
 
   useEffect(() => {
     // 設定功能
-    console.log('useEffect--')
+    // console.log('useEffect--')
     getListData(+usp.get('page'))
 
     return () => {
       // 解除功能
-      console.log('unmount AbList--')
+      // console.log('unmount AbList--')
     }
   }, [location.search])
 
