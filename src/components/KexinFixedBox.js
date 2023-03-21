@@ -2,11 +2,18 @@ import { useContext, useState, useEffect } from 'react'
 import styles from '../styles/kexinIndexProductsDetail.module.css'
 import { StatusContext, ProductContext } from '../pages/KexinIndex'
 
-function KexinFixedBox() {
+function KexinFixedBox(props) {
+  const { el } = props
   const { mapInteraction, setMapInteraction } = useContext(StatusContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
   const [productNum, setProductNum] = useState(1)
   const [liked, setLiked] = useState(false)
+  const [chooseBatch, setChooseBatch] = useState(0)
+
+  console.log(el)
+  // const handleChange(event) {
+  //   setChooseBatch(event);
+  // }
 
   return (
     <>
@@ -70,12 +77,28 @@ function KexinFixedBox() {
               aria-expanded="false"
             >
               <div className="d-flex justify-content-between align-items-center">
-                <span className="px-3">2023/01/01 - 2023/01/03</span>
+                <select
+                  onChange={() => {
+                    setChooseBatch(this.value)
+                  }}
+                >
+                  {el.length
+                    ? el.map((v, i) => (
+                        <option key={i} value={v.batch_sid}>
+                          {v.trail_time > 24 ?  `${v.batch_start.slice(0, 10)} - ${v.batch_end.slice(
+                            0,
+                            10
+                          )}` : `${v.batch_start.slice(0, 10)}`}
+                        </option>
+                      ))
+                    : ''}
+                </select>
+                {/* <span className="px-3">2023/01/01 - 2023/01/03</span>
                 <img
                   className={styles['chevron-down-type']}
                   src="images/kexin/svg/chevron-down.svg"
                   alt=""
-                />
+                /> */}
               </div>
             </button>
           </div>

@@ -55,8 +55,10 @@ export const TEST_ANS = `${HOST}/answer`
 // kexin's path
 export const LOGIN = `${HOST}/login`
 export const SIGNIN = `${HOST}/signin`
+export const PASSWORD = `${HOST}/resetPassword`
 export const SELECT_COUNTY = `${HOST}/select_products`
-export const SELECT_PRODUCT = `${HOST}/select_product_detail`
+export const SELECT_COMMENT = `${HOST}/select_comment`
+export const SELECT_BATCH = `${HOST}/select_batch`
 
 // // LAI's path
 // export const LIST_DATA = `${HOST}/member`

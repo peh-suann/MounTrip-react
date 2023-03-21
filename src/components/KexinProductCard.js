@@ -73,7 +73,7 @@ function KexinProductCard(props) {
           {ranking}
         </div>
         <div
-          className={`${styles.pic} ${shadow ? styles.pic_shadow : ''}`}
+          className={`${styles.pic} ${styles.pic_kexin} ${shadow ? styles.pic_shadow : ''}`}
           style={{
             backgroundImage: `linear-gradient(180deg,rgba(0, 0, 0, 0) 70%,rgba(0, 0, 0, 0.6) 100%),
             url(images/public_images/product_image/${el.trail_img})`,
@@ -93,7 +93,7 @@ function KexinProductCard(props) {
                   fill="#fffff2"
                 />
               </svg>
-              4.5
+              {el.avg_score ? el.avg_score.slice(0,3) : ''}
             </p>
             <p className={styles.difficulty}>難度 {el.difficulty_short}級</p>
           </div>

@@ -161,6 +161,9 @@ function KexinIndex() {
       .attr('transform', transformData[county].transform1)
     setMapInteraction(1)
 
+    d3.select('#landmark').remove()
+    d3.select('#landmark1').remove()
+
     setSelectCounty(county)
   }
 

@@ -55,7 +55,7 @@ function KexinIndexProducts(props) {
         }
       >
         <div
-          className={`${styles['search-input2']} align-items-center ${styles['mb-28']} ${styles['mt-19']}`}
+          className={`${styles['search-input2']} align-items-center ${styles['mb-20']} ${styles['mt-19']}`}
         >
           <FontAwesomeIcon icon={faSearch} />
           <input
@@ -80,7 +80,7 @@ function KexinIndexProducts(props) {
                 }
                 return (
                   <>
-                    <div className={styles['mb-20']}>
+                    <div className={styles['mb-16']}>
                       <KexinProductCard
                         key={v.trails_sid}
                         el={v}
@@ -93,7 +93,7 @@ function KexinIndexProducts(props) {
               })
             : ''}
 
-          <Button text={'探索更多'} iconFront={0} iconEnd={1} />
+          <Button text={'探索更多'} iconFront={0} iconEnd={1}/>
         </div>
       </div>
     </>
