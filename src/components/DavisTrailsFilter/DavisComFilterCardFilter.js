@@ -61,12 +61,19 @@ function DavisComFilterCardFilter(props) {
     setCurrentPage(currentPage - 1)
   }
 
-  // 分割同樣trails_sid的資料
+  // 分頁，分割同樣trails_sid的資料
   const oddRows = (data) => {
     if (!Array.isArray(data)) {
       return []
     }
     return data.filter((_, index) => index % 2 === 0)
+  }
+
+  // FIXME:加上收藏商品的id
+  const [collectid, setcCollectid] = useState([''])
+
+  const handleAddToLocalStorage = () => {
+    localStorage.setItem('myKey', [collectid])
   }
 
   useEffect(() => {
@@ -235,13 +242,22 @@ function DavisComFilterCardFilter(props) {
                   </div>
                 </div>
               </div>
-              {/* 收藏button TODO: */}
+              {/* 收藏button FIXME: */}
               <div className="col-1  d-flex justify-content-end align-items-start">
                 <button
-                  onClick={() => {
+                  onClick={(e) => {
                     setCollect(toggleCollect(collect, r.sid))
                     // 回傳batch的sid
-                    console.log(r.sid)
+                    // console.log(alldata.rows[`${r.trail_sid}`])
+                    console.log(
+                      oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
+                    )
+                    // console.log(oddRows(collect)[`${r.trail_sid}`])
+                    handleAddToLocalStorage(
+                      setcCollectid(
+                        oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
+                      )
+                    )
                   }}
                   className={`${styles.heart_btn}`}
                 >
