@@ -8,7 +8,12 @@ function KexinComment(props) {
   return (
     <>
       <div className={`d-flex ${styles['comment-detail']} ${styles['mb-35']}`}>
-        <div className={`${styles['headsticker']} ${styles['me-16']}`}></div>
+        <div className={`${styles['headsticker']} ${styles['me-16']}`}>
+        {
+          el.img ? <img src={`images/public_images/member/${el.img}`} alt="" /> : ''
+        }
+          
+        </div>
         <div className={`${styles['w-80']}`}>
           <div className="d-flex align-items-center">
             <h3 className={`${styles['comment-name']} mb-0 ${styles['me-18']}`}>
@@ -53,7 +58,20 @@ function KexinComment(props) {
             {el.comment}{' '}
           </p>
           <div className={`${styles['comment-photo-wrap']} d-flex`}>
-            <div className={`${styles['comment-photo']} ${styles['me-05']}`}>
+            {/* {el.rating_img
+              ? el.rating_img.map((v,i) => {
+                  <div
+                    className={`${styles['comment-photo']} ${styles['me-05']}`}
+                  >
+                    <img
+                      className=""
+                      src={`../public/public_images/rating/${v}`}
+                      alt=""
+                    />
+                  </div>
+                })
+              : ''} */}
+            {/* <div className={`${styles['comment-photo']} ${styles['me-05']}`}>
               <img
                 className=""
                 src="../public/images/kexin/photo-comment1.avif"
@@ -73,7 +91,7 @@ function KexinComment(props) {
                 src="../public/images/kexin/photo-comment3.avif"
                 alt=""
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
