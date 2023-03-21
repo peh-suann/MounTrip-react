@@ -30,9 +30,9 @@ function DavisComFilterCardFilter(props) {
 
   const [collect, setCollect] = useState([])
 
-  const toggleCollect = (collect, trails_sid) => {
-    return collect.map((v, i) => {
-      if (v.sid === trails_sid) return { ...v, collect: !v.collect }
+  const toggleCollect = (data, trails_sid) => {
+    return data.map((v, i) => {
+      if (v.sid === trails_sid) return { ...v, becollect: !v.becollect }
       else return { ...v }
     })
   }
@@ -75,6 +75,11 @@ function DavisComFilterCardFilter(props) {
   const handleAddToLocalStorage = () => {
     localStorage.setItem('myKey', [collectid])
   }
+  //設定是否被收藏的初始值
+  useEffect(() => {
+    const modifiedData = alldata.rows.map((v) => ({ ...v, becollect: false }))
+    setCollect(modifiedData)
+  }, [alldata])
 
   useEffect(() => {
     console.log('useEffect--')
@@ -83,11 +88,6 @@ function DavisComFilterCardFilter(props) {
       console.log('unmount AbList--')
     }
   }, [])
-
-  useEffect(() => {
-    const modifiedData = alldata.rows.map((v) => ({ ...v, collect: false }))
-    setCollect(modifiedData)
-  }, [alldata])
 
   useEffect(() => {
     console.log('useEffect--')
@@ -253,15 +253,15 @@ function DavisComFilterCardFilter(props) {
                       oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
                     )
                     // console.log(oddRows(collect)[`${r.trail_sid}`])
-                    handleAddToLocalStorage(
-                      setcCollectid(
-                        oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                      )
-                    )
+                    // handleAddToLocalStorage(
+                    //   setcCollectid(
+                    //     oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
+                    //   )
+                    // )
                   }}
                   className={`${styles.heart_btn}`}
                 >
-                  {r.collect ? (
+                  {r.becollect ? (
                     <svg
                       width="50"
                       height="75"
