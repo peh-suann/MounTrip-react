@@ -1,0 +1,24 @@
+.calendarWrap{
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+.calendarWrap_mobile{
+    width: 100%;
+}
+.calendarWrap div{
+    width: 100%;
+}
+.calendarWrap .rdrCalendarWrapper{
+    position: absolute;
+    top:58px;
+}
+.calendarInput::placeholder{
+    color:var(--mtgreen-1)
+}
+.calendarElement{
+
+}
+.calendarElementMobile{
+    
+}

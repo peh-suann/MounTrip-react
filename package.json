@@ -22,6 +22,7 @@
     "leaflet-gpx": "^1.7.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
+    "react-date-picker": "^9.2.0",
     "react-date-range": "^1.4.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",

@@ -6,6 +6,9 @@ import { motion } from 'framer-motion'
 import Backdrop from './LaiBackdrop/Backdrop'
 import axios from 'axios'
 import { USER_DATA_UPDATE } from '../connections/api-config'
+import { Calendar } from 'react-date-range'
+import LaiDatePicker from './LaiDatePicker'
+// import { setDate } from 'date-fns/esm'
 
 export default function MemberContent(props) {
   const {
@@ -19,6 +22,7 @@ export default function MemberContent(props) {
     close,
     open,
   } = props
+
   // console.log('user:',user)
   const ACTIONS = {
     INITIAL: 'initial', //載入資料庫
@@ -64,13 +68,13 @@ export default function MemberContent(props) {
   }
   //用useReducer改寫，參數放reducer func 和 initialState
   const [userInfo, dispatch] = useReducer(userReducer, initialState)
-
   //state = 現在的state action就是要pass進dispatch的func
   //reducer會在我們呼叫dispatch的時候回傳新的state
 
-  function handleUpdateLastname(e) {
-    // e.preventDefault()
-    dispatch({ type: ACTIONS.UPDATE, payload: {} }) //payload是常用名稱，內容就是要給dispatch的參數
+  //daypicker子元件
+  const [date, setDate] = useState('')
+  function handleChildDateChenge(newDate) {
+    setDate(newDate)
   }
   function handleUpdate(e) {
     // e.preventDefault()
@@ -94,7 +98,7 @@ export default function MemberContent(props) {
     formData.append('firstname', userInfo.userData.firstname)
     formData.append('lastname', userInfo.userData.lastname)
     formData.append('gender', userInfo.userData.gender)
-    formData.append('birthday', birthdayFormat)
+    formData.append('birthday', date)
     formData.append('personalId', userInfo.userData.personal_id)
     formData.append('mobile', userInfo.userData.mobile)
     formData.append('account', userInfo.userData.account)
@@ -127,7 +131,7 @@ export default function MemberContent(props) {
       // payload: { name: e.target.name, value: e.target.value },
     })
   }
-  //現在的state
+  // //現在的state
   console.log('userInfo', userInfo)
   //資料庫的資料
   // console.log('user:', user)
@@ -138,24 +142,7 @@ export default function MemberContent(props) {
       payload: user,
     })
   }, [user])
-  // const [lastname, setLastname] = useState('')
-  // const [firstname, setFirstname] = useState(user.firstname)
-  // const [gender, setGender] = useState(user.gender)
-  // const [bday, setBday] = useState(user.birthday)
-  // const [personalId, setPersonalId] = useState(user.personal_id)
-  // const [mobile, setMobile] = useState(user.mobile)
-  // const [account, setAccount] = useState(user.account)
-  // const [email, setEmail] = useState(user.email)
-  // const [zip, setZip] = useState(user.zip)
-  // const [city, setCity] = useState(user.city)
-  // const [address, setAddress] = useState(user.address)
-  // const { myAuth, setMyAuth, logout } = useContext(AuthContext)
-  // function setUserData() {
-  //   setLastname(user.lastname)
-  // }
-  // setGender(user.gender)
-  // console.log('user', user.email)
-  // console.log(user.gender, 'genderstate:', gender)
+
   //彈出重設密碼表單
   function modalControl() {
     if (pwdModalOpen) {
@@ -273,17 +260,9 @@ export default function MemberContent(props) {
             <label htmlFor="birthday" className="">
               出生年月日
             </label>
-            <input
-              type="date"
-              className=""
-              id="birthday"
-              name="birthday"
-              value={userInfo.userData.bdFormat}
-              onChange={(e) => {
-                handleUpdate(e)
-                // setBday(e.target.value.birthday)
-              }}
-              required
+            <LaiDatePicker
+              userInfo={userInfo}
+              onDateChange={handleChildDateChenge}
             />
           </div>
           <div className={`${styles['id-wrap']} ${styles['input-blocks']}`}>
@@ -422,6 +401,7 @@ export default function MemberContent(props) {
             />
           </div>
           <div className={styles.btn_group}>
+            {/* FIXME 按下enter視窗會自動 */}
             <motion.button
               className={styles.password_btn}
               whileHover={{ scale: 1.1 }}
