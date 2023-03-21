@@ -2,7 +2,7 @@
 // 上面寫HOST，下面寫路徑
 
 // hosts ---------------------------------------------------------------------------
-export const HOST = 'http://localhost:3001'
+// export const HOST = 'http://localhost:3001'
 // export const HOST = 'http://localhost:3002'
 // export const HOST = 'http://localhost:3001'
 
