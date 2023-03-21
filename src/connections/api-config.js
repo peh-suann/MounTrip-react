@@ -2,7 +2,7 @@
 // 上面寫HOST，下面寫路徑
 
 // hosts ---------------------------------------------------------------------------
-// export const HOST = 'http://localhost:3001'
+export const HOST = 'http://localhost:3001'
 // export const HOST = 'http://localhost:3002'
 
 //Lai's connect
@@ -17,7 +17,7 @@
 // export const HOST = '192.168.21.84:3002'
 
 // yichun's connect
-export const HOST = 'http://192.168.71.118:3001'
+// export const HOST = 'http://192.168.71.118:3001'
 
 // export const HOST = 'http://192.168.71.105:3001'
 

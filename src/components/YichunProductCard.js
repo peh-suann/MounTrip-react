@@ -5,6 +5,8 @@ import { StylesContext } from './../pages/YichunProducts'
 function YichunProductCard(props) {
   const { ranking, el, shadow } = props
   const styles = useContext(StylesContext)
+  const average = Math.round(+el.avg_score * 2) / 2
+  const formatted = average.toFixed(1)
 
   return (
     <>
@@ -40,7 +42,7 @@ function YichunProductCard(props) {
                     fill="#fffff2"
                   />
                 </svg>
-                4.5
+                {formatted}
               </p>
               <p className={styles.difficulty}>難度 {el.difficulty_short}級</p>
             </div>
