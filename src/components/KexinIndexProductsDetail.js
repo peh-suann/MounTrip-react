@@ -33,6 +33,8 @@ function KexinIndexProductsDetail() {
     getCommentData(myProduct.sid)
   }, [myProduct.sid])
 
+  // console.log('data',data.length)
+
   // 抓batch資料
   const [batch, setBatch] = useState({
     rows: [],
@@ -86,7 +88,9 @@ function KexinIndexProductsDetail() {
               className={`${styles['tag']} d-flex align-items-center ${styles['me-16']}`}
             >
               <img src="images/kexin/svg/star-yellow.svg" alt="" />
-              <p className="mb-0">4.5</p>
+              <p className="mb-0">
+                {myProduct.avg_score ? myProduct.avg_score.slice(0, 3) : ''}
+              </p>
             </div>
           </div>
           <div
@@ -136,7 +140,9 @@ function KexinIndexProductsDetail() {
             <div
               className={`d-flex justify-content-center align-items-center ${styles['average-rate']} ${styles['me-20']}`}
             >
-              <p className="mb-0">4.5</p>
+              <p className="mb-0">
+                {myProduct.avg_score ? myProduct.avg_score.slice(0, 3) : ''}
+              </p>
             </div>
             <div className="">
               <div className={`${styles['mb-8']}`}>
@@ -167,7 +173,9 @@ function KexinIndexProductsDetail() {
                 />
               </div>
               <div className={`d-flex ${styles['total-comment']}`}>
-                <p className={`mb-0 ${styles['me-8']}`}>1037</p>
+                <p className={`mb-0 ${styles['me-8']}`}>
+                  {data.length ? data.length : ''}
+                </p>
                 <p className="mb-0">個人已評論</p>
               </div>
             </div>
@@ -184,7 +192,7 @@ function KexinIndexProductsDetail() {
               })
             : ''}
 
-          <KexinFixedBox el={batch}/>
+          <KexinFixedBox el={batch} />
         </div>
       </div>
     </>

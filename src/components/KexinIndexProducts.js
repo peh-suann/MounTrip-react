@@ -75,9 +75,6 @@ function KexinIndexProducts(props) {
         // TODO: 點擊有地理位置 */}
           {data.length
             ? data.map((v, i) => {
-                {
-                  /* console.log(v) */
-                }
                 return (
                   <>
                     <div className={styles['mb-16']}>
