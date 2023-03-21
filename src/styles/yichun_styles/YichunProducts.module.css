@@ -98,6 +98,16 @@ section.products .products_title h2 {
   display: flex;
   gap: 20px;
 }
+.row-of-products a {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+
+  cursor: pointer;
+  position: relative;
+}
 .product {
   width: 100%;
   display: flex;
@@ -265,7 +275,7 @@ section.theme {
 }
 section.theme .theme_intro {
   width: 100%;
-  height: 650px;
+  height: 800px;
   padding-bottom: 72px;
 
   display: flex;
@@ -397,8 +407,6 @@ section.difficulty .diff_intro_list .rank .img_wrapper img.on {
   transform: scale(1.35);
 }
 
-
-
 section.difficulty .diff_intro_list .diff_intro {
   width: 354px;
   display: flex;
@@ -488,10 +496,114 @@ section.difficulty .diff_recommend .diff_products {
   display: flex;
   gap: 20px;
 }
-section.difficulty .diff_recommend .diff_products .product {
+section.difficulty .diff_recommend .diff_products a {
+  width: 100%;
   flex-grow: 1;
 }
 /* difficulty -------------------------------------------- */
+
+/* weather -------------------------------------------- */
+section.weather {
+  width: 100%;
+  padding:70px 120px;
+}
+.weather_box {
+  margin-bottom: 60px;
+  width: 100%;
+  height: 130px;
+  display: flex;
+  background-color: var(--mtyellow-4);
+  filter: drop-shadow(0px 7px 20px rgba(28, 28, 30, 0.12));
+  border-radius: 10px;
+  overflow: hidden;
+}
+.weather_box .weather_search {
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mtgreen-1);
+}
+.weather_box .weather_search label {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  color: var(--mtyellow-4);
+}
+.weather_box .weather_search select {
+  width: 240px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  color: var(--mtyellow-4);
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.weather_box .weather_search select option{
+  font-size: 18px;
+  color: var(--mtgrey-2);
+}
+.weather_box .current_weather {
+  padding: 30px 60px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(206, 232, 203, 0.7);
+}
+.weather_box .current_weather h3 {
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  color: var(--mtgrey-1);
+}
+.weather_box .current_weather .weather_describe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 4px;
+}
+.weather_box .current_weather .weather_describe h6 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 140%;
+  letter-spacing: 0.08em;
+  color: var(--mtgrey-2);
+}
+.weather_box .current_weather .weather_describe p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--mtgrey-2);
+}
+.weather_box .daily_weather {
+  padding: 30px 60px;
+  display: flex;
+  background-color: var(--mtgrey-2);
+  gap: 80px;
+}
+.weather_box .daily_weather .daily {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.weather_box .daily_weather h6 {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--mtyellow-4);
+}
+.weather_box .daily_weather svg {
+  font-size: 28px;
+  color: var(--mtyellow-4);
+}
+/* weather -------------------------------------------- */
 
 /* test -------------------------------------------- */
 section.test {

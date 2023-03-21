@@ -4,7 +4,6 @@
 // hosts ---------------------------------------------------------------------------
 // export const HOST = 'http://localhost:3001'
 // export const HOST = 'http://localhost:3002'
-// export const HOST = 'http://localhost:3001'
 
 //Lai's connect
 // export const HOST = 'http://192.168.71.105:3001'
@@ -34,6 +33,7 @@ export const USER_ORDER_DETAIL = `${HOST}/member/me/order/product-detail`
 
 // paths ---------------------------------------------------------------------------
 // yichun's path
+export const SEARCH_PRODUCTS = `${HOST}/search`
 export const ALL_PRODUCTS = `${HOST}/products`
 export const POP_PRODUCTS = `${HOST}/products_popular`
 export const SUNRISE_PRODUCTS = `${HOST}/products_sunrise`
@@ -41,6 +41,7 @@ export const HOLIDAY_PRODUCTS = `${HOST}/products_holiday`
 export const FLOWERS_PRODUCTS = `${HOST}/products_flowers`
 export const HOTSPRING_PRODUCTS = `${HOST}/products_hotspring`
 export const LOCATION_PRODUCTS = `${HOST}/products_location`
+export const WEATHER_LOCATION = `${HOST}/weather_location`
 export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
 
