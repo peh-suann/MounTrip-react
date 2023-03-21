@@ -17,8 +17,8 @@ const dropIn = {
 }
 
 export default function PasswordModal({ pwdModalOpen, handleClose, text }) {
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
     // const userString = localStorage.getItem('myAuth')
     // const user = JSON.parse(userString)
     // const sid = user.accountId
@@ -37,7 +37,7 @@ export default function PasswordModal({ pwdModalOpen, handleClose, text }) {
     // if (res) return setStatus('上傳成功')
     // setStatus('上傳成功')
     // alert(res.status)
-  }
+  // }
   // const handleFiles = (e) => {
   //   const img = {
   //     preview: URL.createObjectURL(e.target.files[0]),
@@ -63,7 +63,12 @@ export default function PasswordModal({ pwdModalOpen, handleClose, text }) {
           exit="exit"
         >
           <h4 className={styles.title}>{text}</h4>
-          <form className={styles.pwd_form} onSubmit={() => {}}>
+          <form
+            className={styles.pwd_form}
+            onSubmit={(e) => {
+              e.preventDefault()
+            }}
+          >
             <label htmlFor="oldPwd" className="form-label">
               舊密碼
             </label>

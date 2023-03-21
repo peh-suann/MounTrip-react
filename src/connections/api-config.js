@@ -24,6 +24,7 @@ export const HOST = 'http://localhost:3001'
 //member
 export const MEMBER_DATA = `${HOST}/member/api`
 export const USER_DATA = (mid) => `${HOST}/member/me/${mid}`
+export const USER_DATA_UPDATE = (mid) => `${HOST}/member/me/${mid}/update`
 export const USER_COMMENT = (mid) => `${HOST}/member/me/comment/${mid}`
 export const USER_UPLOAD = `${HOST}/member/me/upload`
 export const USER_AVATAR = `${HOST}/uploads/`

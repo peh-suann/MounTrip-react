@@ -8,7 +8,7 @@ import axios from 'axios'
 const dropIn = {
   hidden: { y: '-100%', x: '', opacity: 0 },
   visible: {
-    y: '60%',
+    y: 200,
     x: '',
     opacity: 1,
     transition: { type: 'spring', damping: 15, stiffness: 200 },
@@ -30,7 +30,7 @@ export default function Modal({ modalOpen, handleClose, text }) {
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${token}`,
-        sid: `${sid}`
+        sid: `${sid}`,
       },
     })
     // TODO  照片上傳錯誤的判斷
