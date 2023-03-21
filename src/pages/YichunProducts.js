@@ -13,6 +13,7 @@ import YichunProductCard from '../components/YichunProductCard'
 import YichunDiffRank from '../components/YichunDiffRank'
 import Button from '../components/Button'
 import YichunSearchBarMobile from '../components/YichunSearchBarMobile'
+import YichunWeather from '../components/YichunWeather'
 
 // Connections
 import {
@@ -23,24 +24,25 @@ import {
   HOLIDAY_PRODUCTS,
   FLOWERS_PRODUCTS,
   LOCATION_PRODUCTS,
+  WEATHER_LOCATION,
 } from '../connections/api-config'
 
 // Styles
 import styles from './../styles/yichun_styles/YichunProducts.module.css'
-import { el } from 'date-fns/locale'
 export const StylesContext = createContext(styles)
 
 function YichunProducts() {
-  const [products, setProducts] = useState([])
   const [popProducts, setPopProducts] = useState([])
   const [hotSpringProducts, setHotSpringProducts] = useState([])
   const [locationProducts, setLocationProducts] = useState({})
+  const [weatherLocation, setWeatherLocation] = useState({})
 
   const filterTitle = ['所有熱門', '清明連假', '賞花春遊', '最美日出']
   const [filter, setFilter] = useState('所有熱門')
   const [filterData, setFilterData] = useState([])
 
   const [filterIndex, setFilterIndex] = useState(0)
+  const [location, setLocation] = useState('臺北市')
 
   const diffData = [
     { diffCn: '初', diffEng: 'EASY', describe: '好朋友' },
@@ -52,24 +54,11 @@ function YichunProducts() {
   const flag02 = useRef(null)
   const flag03 = useRef(null)
 
-  // get all products
-  const getListData = async () => {
-    try {
-      const response = await axios.get(ALL_PRODUCTS)
-      console.log('getAllProducts', response.data)
-      setProducts(response.data)
-      return response.data
-    } catch (error) {
-      console.error(error)
-      return []
-    }
-  }
-
   // get popular products
   const getPopularProductsData = async () => {
     try {
       const response = await axios.get(POP_PRODUCTS)
-      console.log('getPopularProductsData:', response.data)
+      // console.log('getPopularProductsData:', response.data)
       return response.data
     } catch (error) {
       console.error(error)
@@ -80,7 +69,7 @@ function YichunProducts() {
   const getHolidayProducts = async () => {
     try {
       const response = await axios.get(HOLIDAY_PRODUCTS)
-      console.log('getHolidayProducts', response.data)
+      // console.log('getHolidayProducts', response.data)
       return response.data
     } catch (error) {
       console.error(error)
@@ -91,7 +80,7 @@ function YichunProducts() {
   const getSunriseProducts = async () => {
     try {
       const response = await axios.get(SUNRISE_PRODUCTS)
-      console.log('getSunriseProducts', response.data)
+      // console.log('getSunriseProducts', response.data)
       return response.data
     } catch (error) {
       console.error(error)
@@ -102,7 +91,7 @@ function YichunProducts() {
   const getFlowersProducts = async () => {
     try {
       const response = await axios.get(FLOWERS_PRODUCTS)
-      console.log('getFlowersProducts', response.data)
+      // console.log('getFlowersProducts', response.data)
       return response.data
     } catch (error) {
       console.error(error)
@@ -113,7 +102,7 @@ function YichunProducts() {
   const getHotSpringProducts = async () => {
     try {
       const response = await axios.get(HOTSPRING_PRODUCTS)
-      console.log('getHotSpringProducts', response.data)
+      // console.log('getHotSpringProducts', response.data)
       return response.data
     } catch (error) {
       console.error(error)
@@ -124,7 +113,19 @@ function YichunProducts() {
   const getLocationProducts = async () => {
     try {
       const response = await axios.get(LOCATION_PRODUCTS)
-      console.log('getLocationProducts', response.data)
+      // console.log('getLocationProducts', response.data)
+      return response.data
+    } catch (error) {
+      console.error(error)
+      return []
+    }
+  }
+
+  // get weather location products
+  const getWeatherLocationProducts = async () => {
+    try {
+      const response = await axios.get(WEATHER_LOCATION)
+      // console.log('getLocationProducts', response.data)
       return response.data
     } catch (error) {
       console.error(error)
@@ -164,11 +165,16 @@ function YichunProducts() {
   }
 
   useEffect(() => {
+    console.log('weatherLocationProducts', weatherLocation)
+  }, [weatherLocation])
+
+  // flag move
+  useEffect(() => {
     toggleFlag()
   }, [diff])
 
   useEffect(() => {
-    // toggleFlag()
+    toggleFlag()
     const fetchData = async () => {
       try {
         const popProducts = await getPopularProductsData()
@@ -177,8 +183,9 @@ function YichunProducts() {
         const flowersProducts = await getFlowersProducts()
         const hotSpringProducts = await getHotSpringProducts()
         const locationProducts = await getLocationProducts()
+        const weatherLocationProducts = await getWeatherLocationProducts()
 
-        await setFilterData([
+        setFilterData([
           popProducts,
           holidayProducts,
           flowersProducts,
@@ -187,6 +194,7 @@ function YichunProducts() {
         setLocationProducts(locationProducts)
         setHotSpringProducts(hotSpringProducts)
         setPopProducts(popProducts)
+        setWeatherLocation(weatherLocationProducts)
       } catch (error) {
         console.log(error)
       }
@@ -203,11 +211,7 @@ function YichunProducts() {
       <StylesContext.Provider value={styles}>
         <section id={styles.product_top_bar}></section>
         {document.documentElement.clientWidth > 390 ? (
-          <YichunSearchBar
-            getListData={getListData}
-            products={products}
-            setProducts={setProducts}
-          />
+          <YichunSearchBar />
         ) : (
           <YichunSearchBarMobile />
         )}
@@ -377,7 +381,7 @@ function YichunProducts() {
               filterData[filterIndex].slice(0, 3).map((el, i) => {
                 return (
                   <YichunProductCard
-                    key={el.trails_sid}
+                    key={el.sid}
                     el={el}
                     ranking={rank[i]}
                     shadow={0}
@@ -390,7 +394,7 @@ function YichunProducts() {
               filterData[filterIndex].slice(3, 6).map((el, i) => {
                 return (
                   <YichunProductCard
-                    key={el.trails_sid}
+                    key={el.sid}
                     el={el}
                     ranking={rank[i + 3]}
                     shadow={0}
@@ -420,7 +424,7 @@ function YichunProducts() {
                   // console.log(el.trail_name)
                   return (
                     <YichunProductCard
-                      key={el.trails_sid}
+                      key={el.sid}
                       el={el}
                       ranking={0}
                       shadow={1}
@@ -431,7 +435,7 @@ function YichunProducts() {
                   // console.log(el.trail_name)
                   return (
                     <YichunProductCard
-                      key={el.trails_sid}
+                      key={el.sid}
                       el={el}
                       ranking={0}
                       shadow={1}
@@ -441,6 +445,22 @@ function YichunProducts() {
             <button>
               <img src="./../icons/chevron-right.svg" alt="" />
             </button>
+          </div>
+        </section>
+        <section className={styles.weather}>
+          <YichunWeather location={location} setLocation={setLocation} />
+          <div className={styles['row-of-products']}>
+            {weatherLocation &&
+              weatherLocation[location]?.map((el, i) => {
+                return (
+                  <YichunProductCard
+                    key={el.sid}
+                    el={el}
+                    ranking={0}
+                    shadow={0}
+                  />
+                )
+              })}
           </div>
         </section>
         <section className={styles.difficulty}>
@@ -474,7 +494,7 @@ function YichunProducts() {
                     <path
                       d="M3 64V34M3 34V4L36.5 20L3 34Z"
                       stroke="#f3c969"
-                      stroke-width="5"
+                      strokeWidth="5"
                     />
                   </svg>
                   <svg
@@ -490,7 +510,7 @@ function YichunProducts() {
                     <path
                       d="M3 64V34M3 34V4L36.5 20L3 34Z"
                       stroke="#f3c969"
-                      stroke-width="5"
+                      strokeWidth="5"
                     />
                   </svg>
                   <svg
@@ -506,7 +526,7 @@ function YichunProducts() {
                     <path
                       d="M3 64V34M3 34V4L36.5 20L3 34Z"
                       stroke="#f3c969"
-                      stroke-width="5"
+                      strokeWidth="5"
                     />
                   </svg>
                   <img
@@ -536,7 +556,7 @@ function YichunProducts() {
                     // console.log(el.trail_name)
                     return (
                       <YichunProductCard
-                        key={el.trails_sid}
+                        key={el.sid}
                         el={el}
                         ranking={0}
                         shadow={0}
@@ -548,7 +568,7 @@ function YichunProducts() {
                     // console.log(el.trail_name)
                     return (
                       <YichunProductCard
-                        key={el.trails_sid}
+                        key={el.sid}
                         el={el}
                         ranking={0}
                         shadow={0}
