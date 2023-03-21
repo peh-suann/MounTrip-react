@@ -3,7 +3,8 @@
 
 // hosts ---------------------------------------------------------------------------
 // export const HOST = 'http://localhost:3001'
-// export const HOST = 'http://localhost:3002'
+export const HOST = 'http://localhost:3002'
+// export const HOST = 'http://localhost:3001'
 
 //Lai's connect
 // export const HOST = 'http://192.168.71.105:3001'
@@ -17,13 +18,14 @@
 // export const HOST = '192.168.21.84:3002'
 
 // yichun's connect
-export const HOST = 'http://192.168.71.118:3001'
+// export const HOST = 'http://192.168.71.118:3001'
 
 // export const HOST = 'http://192.168.71.105:3001'
 
 //member
 export const MEMBER_DATA = `${HOST}/member/api`
 export const USER_DATA = (mid) => `${HOST}/member/me/${mid}`
+export const USER_DATA_UPDATE = (mid) => `${HOST}/member/me/${mid}/update`
 export const USER_COMMENT = (mid) => `${HOST}/member/me/comment/${mid}`
 export const USER_UPLOAD = `${HOST}/member/me/upload`
 export const USER_AVATAR = `${HOST}/uploads/`
