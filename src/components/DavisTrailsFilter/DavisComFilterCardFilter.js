@@ -38,33 +38,19 @@ function DavisComFilterCardFilter(props) {
   }
   //設定是否被收藏的初始值
   useEffect(() => {
-    const modifiedData = alldata.rows.map((v) => ({ ...v, becollect: false }))
+    const modifiedData = alldata.rows.map((v) => ({ ...v, becollect: true }))
     setCollect(modifiedData)
     console.log('modifiedData set effect')
   }, [alldata])
 
-  const modifiedData = alldata.rows.map((v) => ({ ...v, becollect: false }))
-  // FIXME:加上收藏商品的id
-  const [collectid, setcCollectid] = useState({ modifiedData })
-
-  console.log(modifiedData)
-
-  const handleAddToLocalStorage = () => {
-    localStorage.setItem('myKey', { collectid })
+  const collectList = JSON.parse(localStorage.getItem('collectList')) || []
+  if (collectList.length === 0) {
+    localStorage.setItem('collectList', JSON.stringify(collectList))
   }
 
-  // const handleRemoveToLocalStorage = () => {
-  //   localStorage.removeItem('myKey', [collectid])
-  // }
-
-  // let r
-  // function storage() {
-  //   if (r.becollect === true) {
-  //     handleAddToLocalStorage()
-  //   } else {
-  //     handleRemoveToLocalStorage()
-  //   }
-  // }
+  function updateLocalStorage() {
+    localStorage.setItem('collectList', JSON.stringify(collectList))
+  }
 
   // 分頁
   const [currentPage, setCurrentPage] = useState(1)
@@ -260,35 +246,24 @@ function DavisComFilterCardFilter(props) {
               {/* 收藏button FIXME: */}
               <div className="col-1  d-flex justify-content-end align-items-start">
                 <button
-                  onClick={(e) => {
+                  onClick={() => {
                     setCollect(toggleCollect(collect, r.sid))
                     // storage()
                     // 回傳batch的sid
                     // console.log(alldata.rows[`${r.trail_sid}`])
-                    // console.log(
-                    //   oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                    // )
-                    // console.log(oddRows(collect)[`${r.trail_sid}`])
-
-                    handleAddToLocalStorage(
-                      setcCollectid(
-                        oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                      )
+                    console.log(
+                      oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
                     )
+                    // oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
 
-                    // r.becollect
-                    //   ? handleAddToLocalStorage(
-                    //       setcCollectid(
-                    //         oddRows(alldata.rows)[`${r.trail_sid - 1}`]
-                    //           .trail_sid
-                    //       )
-                    //     )
-                    //   : handleRemoveToLocalStorage(
-                    //       setcCollectid(
-                    //         oddRows(alldata.rows)[`${r.trail_sid - 1}`]
-                    //           .trail_sid
-                    //       )
-                    //     )
+                    r.becollect
+                      ? collectList.push(
+                          oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
+                        )
+                      : collectList.pop(
+                          oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
+                        )
+                    updateLocalStorage(collectList)
                   }}
                   className={`${styles.heart_btn}`}
                 >
@@ -302,7 +277,6 @@ function DavisComFilterCardFilter(props) {
                     >
                       <path
                         d="M20.3882 29.6118C19.8775 29.1008 19.271 28.6955 18.6036 28.4189C17.9361 28.1423 17.2207 28 16.4982 28C15.7757 28 15.0603 28.1423 14.3929 28.4189C13.7254 28.6955 13.119 29.1008 12.6082 29.6118L11.5482 30.6718L10.4882 29.6118C9.45652 28.5801 8.05725 28.0005 6.59821 28.0005C5.13918 28.0005 3.73991 28.5801 2.70821 29.6118C1.67652 30.6435 1.09692 32.0428 1.09692 33.5018C1.09692 34.9609 1.67652 36.3601 2.70821 37.3918L3.76821 38.4518L11.5482 46.2318L19.3282 38.4518L20.3882 37.3918C20.8992 36.8811 21.3046 36.2746 21.5811 35.6072C21.8577 34.9397 22 34.2243 22 33.5018C22 32.7793 21.8577 32.0639 21.5811 31.3965C21.3046 30.729 20.8992 30.1226 20.3882 29.6118Z"
-                        fill="#FF0000"
                         stroke="#6CBA7C"
                         strokeWidth="2"
                         strokeLinecap="round"
@@ -319,6 +293,7 @@ function DavisComFilterCardFilter(props) {
                     >
                       <path
                         d="M20.3882 29.6118C19.8775 29.1008 19.271 28.6955 18.6036 28.4189C17.9361 28.1423 17.2207 28 16.4982 28C15.7757 28 15.0603 28.1423 14.3929 28.4189C13.7254 28.6955 13.119 29.1008 12.6082 29.6118L11.5482 30.6718L10.4882 29.6118C9.45652 28.5801 8.05725 28.0005 6.59821 28.0005C5.13918 28.0005 3.73991 28.5801 2.70821 29.6118C1.67652 30.6435 1.09692 32.0428 1.09692 33.5018C1.09692 34.9609 1.67652 36.3601 2.70821 37.3918L3.76821 38.4518L11.5482 46.2318L19.3282 38.4518L20.3882 37.3918C20.8992 36.8811 21.3046 36.2746 21.5811 35.6072C21.8577 34.9397 22 34.2243 22 33.5018C22 32.7793 21.8577 32.0639 21.5811 31.3965C21.3046 30.729 20.8992 30.1226 20.3882 29.6118Z"
+                        fill="#FF0000"
                         stroke="#6CBA7C"
                         strokeWidth="2"
                         strokeLinecap="round"
