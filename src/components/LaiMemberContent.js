@@ -194,6 +194,7 @@ export default function MemberContent(props) {
           className={styles['data-area']}
           action=""
           onSubmit={(e) => {
+            e.preventDefault()
             handleSubmit(e)
           }}
         >
