@@ -3,6 +3,7 @@ import styles from './../styles/Achievement.module.css'
 import BadgeLevel1 from './LaiAchievementBadgeLevel1'
 import BadgeLevel2 from './LaiAchievementBadgeLevel2'
 import BadgeLevel3 from './LaiAchievementBadgeLevel3'
+import Tilt from 'react-parallax-tilt'
 
 export default function LaiAchievementBadge(props) {
   const { level } = props

@@ -1,17 +1,79 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useReducer } from 'react'
 import styles from './../styles/Achievement.module.css'
 import AchievementBadge from './LaiAchievementBadge'
 import ProgressBar from './LaiAchievementProgressBar'
 import AchievementDescrib from './LaiAchievementDescrib'
 import AchievementTreeBlock from './LaiAchievementTreeBlock'
 import AchievementQuote from './LaiAchievementQuote'
+import axios from 'axios'
+import { USER_ORDER } from '../connections/api-config'
 
 export default function LaiAchievementContent(props) {
   const { user, setUser } = props
   const [clickedLevel, setClickedLevel] = useState(1)
+  // const [userOrder, setUserOrder] = useState([])
+  // let currentUserOrder = []
 
-  // console.log({ clickedLevel })
+  //fetch會員過去消費資料的
+  const totalReducer = (state, action) => {
+    switch (action.type) {
+      case 'initial':
+        return {
+          total: action.payload.reduce((acc, curr) => acc + curr.total, 0),
+        }
+      default:
+        return state
+    }
+  }
+  const [orderList, dispatch] = useReducer(totalReducer, { total: 0 })
+  // const [orderList, setOrderList] = useState([])
+  let currentOrderList = []
+  // const [current, ]
 
+  const getHistoryOrder = async (req, res) => {
+    const userString = localStorage.getItem('myAuth')
+    const user = JSON.parse(userString) //localstorage出來的東西都是字串，需要解析
+    const token = user.token
+    const mid = user.accountId
+
+    try {
+      const res = await axios.get(USER_ORDER, {
+        headers: { Authorization: `Bearer ${token}`, sid: mid },
+      })
+      if (!res) return res.sendStatus(401)
+      // const currentUserId = myAuth.sid
+      currentOrderList = res.data.orderSidData
+      // currentUserOrder = res.data.data
+      dispatch({
+        type: 'initial',
+        payload: currentOrderList,
+      })
+      // setUserOrder(currentUserOrder)
+      // setOrderList(currentOrderList)
+      // console.log('new sql', res.data.data)
+      // console.log('currentUO:', res)
+    } catch (error) {
+      console.log("there's an error in db connection")
+      return []
+    }
+  }
+
+  //加總過去會員的訂單金額
+  const calcOrderTotal = () => {
+    const total = orderList.reduce((acc, curr) => acc + curr[total], 0)
+    //轉型為字串
+    // const totalFormat = total.toLocaleString()
+    // console.log('T', total)
+    return total
+  }
+  useEffect(() => {
+    getHistoryOrder()
+  }, [])
+
+  // console.log(calcOrderTotal())
+  const progressFormat = orderList.total.toLocaleString()
+  console.log('converted',progressFormat)
+  console.log('RDOC', orderList) //現在這是個useReducer了
   return (
     <>
       <div className={styles['member-data']}>
@@ -57,7 +119,16 @@ export default function LaiAchievementContent(props) {
           {/* <div className={styles['badge']}>
             <div className={styles['badge-pic']}></div>
           </div> */}
-          <ProgressBar current={'19,800'} target={'25,000'} />
+          {user.level === 1 ? (
+            <ProgressBar current={progressFormat} target={'25,000'} />
+          ) : null}
+          {user.level === 2 ? (
+            <ProgressBar current={progressFormat} target={'50,000'} />
+          ) : null}
+          {user.level === 3 ? (
+            <ProgressBar current={'50,000'} target={'50,000'} />
+          ) : null}
+          {/* <ProgressBar current={'19,800'} target={'25,000'} /> */}
           {/* <div className={styles['progress-bars']}>
             <div className={styles['bar-wrap']}>
               <div className={styles['bar-base']}></div>
