@@ -48,6 +48,7 @@ export default function LaiHistoryOrder() {
       return []
     }
   }
+  console.log('orderList:', orderList)
   useEffect(() => {
     getHistoryOrder()
   }, [])

@@ -85,6 +85,11 @@ section.shopping-cart-process > svg{
   letter-spacing: 0.1em;
   color: var(--mtgrey-1);
 }
+.total{
+font-weight: 700;
+font-size: 22px;
+line-height: 30px;
+}
 
 h3 {
   font-weight: 700;

@@ -86,8 +86,14 @@
     width: 100%;
     margin-bottom:48px ;
   }
-  .credit-card-type > svg {
+  .credit-card-type > div.svgPosition > svg {
     width: 100%;
+  }
+  .svgPosition{
+    position: relative;
+  }
+  .default{
+    position: absolute;
   }
   
   form.form-inline > div.mb-20  > input {

@@ -329,16 +329,8 @@ function IanShoppingCart4() {
           <div className={`col-7`}></div>
           <div className={`col-5`}>
             <div className={`d-flex justify-content-between`}>
-              <p className={`${styles.mtgrey2}`}>小計</p>
-              <p className={`${styles.mtgrey1}`}>NTD $2,330</p>
-            </div>
-            <div className={`d-flex justify-content-between`}>
-              <p className={`${styles.mtgrey2}`}>優惠券</p>
-              <p className={`${styles.mtgrey1}`}>-NTD $100</p>
-            </div>
-            <div className={`d-flex justify-content-between`}>
-              <p className={`${styles['fw-600']} ${styles.mtgrey2}`}>合計</p>
-              <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>
+              <p className={`${styles['total']} ${styles.mtgrey2}`}>合計</p>
+              <p className={`${styles['total']} ${styles.mtgrey1}`}>
                 NTD $2,230
               </p>
             </div>

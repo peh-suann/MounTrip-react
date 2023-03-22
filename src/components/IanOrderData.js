@@ -2,31 +2,19 @@ import { useState } from 'react'
 import styles from './../styles/IanShoppingCart2.module.css'
 
 function IanOrderData(props) {
-  const [user, setUser] = useState([
-    {
-      id: '',
-      firstname: '',
-      lastname: '',
-      phone: '',
-      email: '',
-      idCard: '',
-      birthday: '',
-    },
-  ])
-
   // const handleFieldChange = (e) => {
   //   const newUser = { ...user, [e.target.name]: e.target.value }
   //   setUser(newUser)
   // }
 
-  const { memberitems, setMemberItems } = props
+  const { user } = props
 
-  const [orderData, setOrderData] = useState(memberitems)
-  setMemberItems(orderData)
+  // const [orderData, setOrderData] = useState(user)
+  // setMemberItems(orderData)
 
   return (
     <>
-      {orderData.map((v, i) => {
+      {user.map((v, i) => {
         return (
           <div key={i} className={`${styles['form-inline']}`} action=" ">
             <div className={`${styles['mb-20']} row justify-content-between `}>
