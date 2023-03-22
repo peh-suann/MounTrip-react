@@ -7,46 +7,9 @@ body {
 /* ALL */
 
 .container_all {
-  margin: 120px 85px;
+  margin: 85px 120px;
 }
 
-@media (max-width: 391px) {
-  .container_all {
-    width: 100%;
-    margin: 5px;
-  }
-
-  .container_all .top_img {
-    width: 100%;
-    /* margin: 0px -20px; */
-    margin-top: 100px;
-    margin-bottom: 16px;
-  }
-
-  .img_cover_one {
-    width: 100%;
-    object-fit: cover;
-    margin-bottom: 5px;
-    height: 400px;
-    /* transition-duration: 3s;
-    transition-property: opacity; */
-  }
-
-  .gpx_wrap{
-    width:100%;
-    height: 300px;
-    position: relative;
-    border: none;
-  }
-
-  .gpx_iframe{
-    width:100%;
-    height: 300px;
-    border: 2px solid #eee;
-    display: inline-block;
-    overflow: hidden;
-  }
-}
 
 .btn_style {
   border: none;
@@ -75,8 +38,8 @@ body {
 .img_cover_one {
   width: 100%;
   object-fit: cover;
-  margin-bottom: 12px;
-  height: 400px;
+  margin-bottom: 20px;
+  height: 500px;
   /* transition-duration: 3s;
   transition-property: opacity; */
 }
@@ -87,14 +50,25 @@ body {
 }
 
 .img_wrap_three {
-  gap: 12px;
+  gap: 20px;
 }
 
 .img_cover_three {
-  width: 32%;
-  object-fit: fill;
+  width: 263px;
+  height: 155px;
+
 }
 
+/* .img_wrap_small {
+  width: 100%;
+  object-fit: contain;
+} */
+
+/* detail right card */
+
+.geo_font_size {
+  font-size: 18px;
+}
 
 /* category button group */
 .ca_btn {
@@ -116,18 +90,24 @@ body {
   border-right: 2px solid var(--mtgreen-3)
 }
 
+.ca_content_a {
+  /* width: 260px; */
+}
+
 /* FIXME: */
 
 .ca_h6 {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .paragraph_i {
   text-indent: 2rem;
-  font-size: 14px;
-  text-align: justify;
+  font-style: normal;
   font-weight: 350;
-  padding-bottom: 35px;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: justify;
+  padding-bottom: 40px;
 }
 
 .img_contain {
@@ -139,7 +119,11 @@ body {
 .shop_btn_one {
   border: solid 2px var(--mtgreen-1);
   border-radius: 5px;
-  height: 35px;
+  height: 43px;
+}
+
+.btn_one_margin {
+  margin-bottom: 12px;
 }
 
 .btn_one_mobile {
@@ -156,16 +140,15 @@ body {
 .shop_btn_two {
   border: solid 2px var(--mtgreen-1);
   border-radius: 5px;
+  margin-bottom: 12px;
 }
-
-
 
 .batch {
   color: var(--mtgrey-4);
   background-color: var(--mtgreen-1);
   border-radius: 3px 0px 0px 3px;
   width: 70px;
-  height: 35px;
+  height: 43px;
 }
 
 .batch_font {
@@ -175,19 +158,29 @@ body {
 /* rotate active */
 .rotate_a {
   transform: rotate(90deg);
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .not_rotate {
   transform: rotate(0deg);
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
-.select_btn{
+.select_btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.05em;
   border: none;
   background-color: transparent;
-  width: 550px;
+  width: 700px;
+  height: 35px;
   text-align: center;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
 }
 
 
@@ -202,7 +195,8 @@ body {
   border-radius: 5px;
   color: white;
   background-color: var(--mtgreen-1);
-  height: 30px;
+  height: 43px;
+  padding: 6px 24px;
 }
 
 .shop_btn_mobile {
@@ -215,10 +209,11 @@ body {
 .btn_font {
   color: white;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 20px;
   letter-spacing: 0.1em;
   line-height: 27px;
-  height: 30px;
+  height: 27px;
+  letter-spacing: 0.1em;
 }
 
 .icon_color {
@@ -311,13 +306,13 @@ body {
 }
 
 .star {
-  margin-left: -4px;
+  /* margin-left: -4px; */
 }
 
 /* commont card: right-card > level3 > imges */
 .commont_p {
   text-align: justify;
-  font-size: 13px;
+  font-size: 16px;
   padding-right: 15px;
   text-indent: 27px;
 }
@@ -405,16 +400,54 @@ body {
 
 /* #DavisTrailsGpx */
 .gpx_iframe {
-  width: 655px;
-  height: 500px;
+  width: 797px;
+  height: 560px;
   position: relative;
   top: -60px;
   border: none;
 }
 
 .gpx_wrap {
-  height: 440px;
+  height: 500px;
   border: 2px solid #eee;
   display: inline-block;
   overflow: hidden;
+}
+
+@media (max-width: 391px) {
+  .container_all {
+    width: 100%;
+    margin: 5px;
+  }
+
+  .container_all .top_img {
+    width: 100%;
+    /* margin: 0px -20px; */
+    margin-top: 100px;
+    margin-bottom: 16px;
+  }
+
+  .img_cover_one {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 5px;
+    height: 400px;
+    /* transition-duration: 3s;
+    transition-property: opacity; */
+  }
+
+  .gpx_wrap {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    border: none;
+  }
+
+  .gpx_iframe {
+    width: 100%;
+    height: 300px;
+    border: 2px solid #eee;
+    display: inline-block;
+    overflow: hidden;
+  }
 }

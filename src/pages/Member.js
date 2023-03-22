@@ -37,6 +37,7 @@ export default function Member() {
   const { myAuth, setMyAuth, logout } = useContext(AuthContext)
   //先設定為空陣列，在把一個個user obj放進去
   const [user, setUser] = useState({})
+  const [avatar, setAvatar] = useState('')
 
   //抓資料的函式，全部人的資料都在這個api
   // const getUser = async (req, res) => {
@@ -72,8 +73,9 @@ export default function Member() {
       const currentUserData = res.data
       setUser(currentUserData)
       // TODO 大頭貼檔名 = user.img
-      const avatarName = user.img
-      console.log('檔名', avatarName)
+      const avatarName = res.data.img
+      setAvatar(avatarName)
+      // console.log('檔名', avatar)
       // console.log('member-data-rows:', res.data)
       // console.log('user:', currentUserData)
     } catch (error) {
@@ -155,7 +157,8 @@ export default function Member() {
       <div className={styles['grid-container']}>
         <div className={styles['sidebar']}>
           <MemberProfile
-            img={''}
+            img={avatar}
+            avatar={avatar}
             name={user.firstname}
             familyname={user.lastname}
             level={user.level}

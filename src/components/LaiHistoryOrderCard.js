@@ -1,20 +1,70 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './../styles/HistoryOrder.module.css'
 import HistoryProduct from './../components/LaiHistoryProduct'
+import { USER_ORDER_DETAIL } from '../connections/api-config'
+import axios from 'axios'
 
 export default function LaiHistoryOrderCard(props) {
-  const { orderId, orderState, tolPrice, orderDate, orderPayment } = props
+  const {
+    originOrderSid,
+    orderId,
+    orderState,
+    tolPrice,
+    orderDate,
+    orderPayment,
+  } = props
+
+  //把orderId 訂單的編號當作參數從header傳給node.js 進行sql搜尋
+  //訂單細節資料
+  const [userOrder, setUserOrder] = useState([])
+  let currentOrderProduct = []
+
   const [open, setOpen] = useState(false)
   const tagColor = (orderState) => {
     switch (orderState) {
-      case '訂單處理中':
+      case '已付款':
+        return { backgroundColor: '#6cba7c' }
+        break
+      case '未付款':
         return { backgroundColor: '#F3C969' }
         break
-      case '訂單已成立':
-        return { backgroundColor: '#6cba7c' }
+      case '付款失敗':
+        return { backgroundColor: '#4d5a51' }
         break
     }
   }
+
+  const getOrderProductDetail = async (req, res) => {
+    const userString = localStorage.getItem('myAuth')
+    const user = JSON.parse(userString) //localstorage出來的東西都是字串，需要解析
+    const token = user.token
+    const mid = user.accountId
+
+    try {
+      const res = await axios.get(USER_ORDER_DETAIL, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          ID: originOrderSid,
+          sid: mid,
+          // orderId: orderId,
+        },
+      })
+      if (!res) return res.sendStatus(401)
+
+      currentOrderProduct = res.data.data
+      setUserOrder(currentOrderProduct)
+      console.log('res:', res.data.data)
+    } catch (error) {
+      console.log("there's an error in db connection")
+      return []
+    }
+  }
+
+  useEffect(() => {
+    getOrderProductDetail()
+    console.log('order:', originOrderSid)
+  }, [])
+
   return (
     <>
       <div className={styles['order-card']}>
@@ -89,24 +139,49 @@ export default function LaiHistoryOrderCard(props) {
               <p>{orderDate}</p>
             </div>
             <div className={styles['bill-wrap']}>
-              <p>付款方式：</p>
-              <p>{orderPayment}</p>
+              {orderState === '已付款' && (
+                <>
+                  <p>付款方式：</p>
+                  <p>{orderPayment}</p>
+                </>
+              )}
+              {orderState === '未付款' && (
+                <>
+                  <p>未付款</p>
+                </>
+              )}
+              {orderState === '付款失敗' && (
+                <>
+                  <p>付款失敗</p>
+                </>
+              )}
+              {/* <p>付款方式：</p>
+              <p>{orderPayment}</p> */}
             </div>
           </div>
           <div className={styles['dropdown']} id="dropdown1">
             {/* {open && props.children} */}
-            {open ? (
-              <HistoryProduct
-                img={''}
-                productTitle={'草嶺古道｜探索新北一日遊'}
-                productSubTi={'古代淡蘭古道北路一部分'}
-                dateStart={'2023/01/01'}
-                dateEnd={'2023/01/02'}
-                price={'1,200'}
-                amount={3}
-              />
-            ) : null}
-            {open ? (
+            {open
+              ? userOrder.map((v, i) => {
+                  return (
+                    <HistoryProduct
+                      key={i}
+                      img={v.trail_img}
+                      productTitle={v.trail_name}
+                      productSubTi={v.trail_short_describ}
+                      dateStart={v.startDate}
+                      dateEnd={v.endDate}
+                      price={v.price}
+                      amount={v.amount}
+                      userOrder={userOrder}
+                      setUserOrder={setUserOrder}
+                      originOrderSid={originOrderSid}
+                      open={open}
+                    />
+                  )
+                })
+              : null}
+            {/* {open ? (
               <HistoryProduct
                 img={''}
                 productTitle={'草嶺古道｜探索新北一日遊'}
@@ -116,7 +191,7 @@ export default function LaiHistoryOrderCard(props) {
                 price={'1,600'}
                 amount={2}
               />
-            ) : null}
+            ) : null} */}
           </div>
         </div>
       </div>
