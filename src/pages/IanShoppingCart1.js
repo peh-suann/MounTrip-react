@@ -46,7 +46,7 @@ function IanShoppingCart1() {
     const c = await r.json()
     const d = c.rows
     console.log('d:', d)
-    setOrder(d)
+    setUseCoupon(d)
   }
 
   console.log('useCoupon:', useCoupon)
