@@ -45,7 +45,8 @@ function DavisTrailsFilter() {
   })
 
   // search context
-  const { search, setSearch } = useContext(SearchContext)
+  const { search } = useContext(SearchContext)
+  console.log('search:', search)
 
   const filterByKeyword = (rows_data, keywordpr, startdatepr, enddatepr) => {
     return rows_data.filter((v, i) => {
@@ -76,14 +77,14 @@ function DavisTrailsFilter() {
 
   useEffect(() => {
     // 設定功能
-    // console.log('useEffect--')
+    console.log('useEffect--')
     getListData(+usp.get('page'))
 
     return () => {
       // 解除功能
       // console.log('unmount AbList--')
     }
-  }, [location.search])
+  }, [location.search, search])
 
   return (
     <>
