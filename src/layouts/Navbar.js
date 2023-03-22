@@ -60,7 +60,7 @@ export default function NavBar() {
               <FontAwesomeIcon icon={faBars} />
             </button>
             <button className={styles.logo}>
-              <Link to="/products">
+              <Link to="/index">
                 <svg
                   width="75"
                   height="24"
