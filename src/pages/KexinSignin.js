@@ -20,6 +20,8 @@ function KexinSignin() {
   const [signinSuccess, setSigninSuccess] = useState(false)
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [passwordVisible1, setPasswordVisible1] = useState(false)
+  const [focus, setFocus] = useState(false)
+  const [focus1, setFocus1] = useState(false)
 
   const [myForm, setMyForm] = useState({
     account: '',
@@ -168,8 +170,13 @@ function KexinSignin() {
                         account: e.target.value,
                       }))
                     }}
+                    onFocus={(e) => {
+                      setFocus(true)
+                    }}
                   />
-                  <div className="form-text"></div>
+                  <div className="form-text">
+                    {focus ? '帳號需包含英文及數字, 超過5個字元' : ''}
+                  </div>
                 </div>
                 <div className={`${signinStyles['password-wrap']} mb-3`}>
                   <label htmlFor="password" className="form-label">
@@ -180,12 +187,16 @@ function KexinSignin() {
                     className="form-control"
                     id="password"
                     name="password"
+                    // placeholder="密碼需包含英文及數字"
                     required
                     onChange={(e) => {
                       setMyForm((prev) => ({
                         ...myForm,
                         password: e.target.value,
                       }))
+                    }}
+                    onFocus={(e) => {
+                      setFocus(true)
                     }}
                   />
                   <button
@@ -206,10 +217,11 @@ function KexinSignin() {
                     <span className={signinStyles.textnotes}>
                       輸入密碼不相同
                     </span>
+                  ) : focus ? (
+                    <div className="form-text">密碼需包含英文及數字</div>
                   ) : (
                     ''
                   )}
-                  <div className="form-text"></div>
                 </div>
                 <div className={`${signinStyles['password-wrap']} mb-4`}>
                   <label for="password1" className="form-label">
@@ -220,6 +232,7 @@ function KexinSignin() {
                     className="form-control"
                     id="password1"
                     name="password1"
+                    // placeholder="密碼需包含英文及數字"
                     onChange={(e) => {
                       setMyForm((prev) => ({
                         ...myForm,
@@ -245,6 +258,8 @@ function KexinSignin() {
                     <span className={signinStyles.textnotes}>
                       輸入密碼不相同
                     </span>
+                  ) : focus ? (
+                    <div className="form-text">密碼需包含英文及數字</div>
                   ) : (
                     ''
                   )}

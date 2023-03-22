@@ -1,19 +1,60 @@
 import { useContext, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import styles from '../styles/kexinIndexProductsDetail.module.css'
 import { StatusContext, ProductContext } from '../pages/KexinIndex'
+import { useCart } from './IanUseCart'
+import { LoginContext } from '../App'
+import AuthContext from '../contexts/AuthContexts'
 
 function KexinFixedBox(props) {
   const { el } = props
-  const { mapInteraction, setMapInteraction } = useContext(StatusContext)
+  const { mapInteraction, setMapInteraction, cart, setCart } =
+    useContext(StatusContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
-  const [productNum, setProductNum] = useState(1)
   const [liked, setLiked] = useState(false)
   const [chooseBatch, setChooseBatch] = useState(0)
+  const { myAuth, logout } = useContext(AuthContext)
+  const { showBox, setShowbox } = useContext(LoginContext)
 
-  console.log(el)
-  // const handleChange(event) {
-  //   setChooseBatch(event);
-  // }
+  // 購物車
+  const { addItem } = useCart()
+  const [count, setCount] = useState(1)
+  const [detailCount, setDetailCount] = useState(0)
+
+  console.log('el', el)
+  console.log('myProduct', myProduct)
+
+  const Rows = {
+    batch_end: '2023-03-29',
+    batch_max: 10,
+    batch_min: 2,
+    batch_sold: 0,
+    batch_start: '2023-03-29',
+    batch_switch: 1,
+    coupon_status: 1,
+    difficulty_describ: '初階行程',
+    difficulty_list_sid: 1,
+    difficulty_short: myProduct.difficulty_short,
+    geo_location_sid: myProduct.geo_location_sid,
+    geo_location_town_sid: myProduct.geo_location_town_sid,
+    price: myProduct.price,
+    season_coupon: 1,
+    sid: 1, // batch sid
+    trail_describ: myProduct.trail_describ,
+    trail_gpx: myProduct.trail_gpx,
+    trail_height: myProduct.trail_height,
+    trail_img: myProduct.trail_img,
+    trail_length: myProduct.trail_length,
+    trail_name: myProduct.trail_name,
+    trail_sid: myProduct.sid,
+    trail_time: myProduct.trail_time,
+    trails_display: 0,
+  }
+  // // console.log('Rows:', Rows)
+  // const batch = Rows.rows[0].batch_start
+  // // const handleChange(event) {
+  // //   setChooseBatch(event);
+  // // }
 
   return (
     <>
@@ -29,20 +70,18 @@ function KexinFixedBox(props) {
             <button
               className={`${styles['minus']} btn`}
               onClick={() => {
-                productNum > 1
-                  ? setProductNum(productNum - 1)
-                  : setProductNum(1)
+                setCount(count - 1 || 1)
               }}
             >
               <img src="images/kexin/svg/minus.svg" alt="" />
             </button>
             <button className={`${styles['w-80']} btn ${styles['number']}`}>
-              {productNum}
+              {count}
             </button>
             <button
               className={`${styles['plus']} btn`}
               onClick={() => {
-                setProductNum(productNum + 1)
+                setCount(count + 1)
               }}
             >
               <img src="images/kexin/svg/plus.svg" alt="" />
@@ -78,17 +117,22 @@ function KexinFixedBox(props) {
             >
               <div className="d-flex justify-content-between align-items-center">
                 <select
-                  onChange={() => {
-                    setChooseBatch(this.value)
+                  onChange={(e) => {
+                    setDetailCount(e.target.value)
+                    Rows.batch_start = el[detailCount].batch_start
+                    Rows.end = el[detailCount].end
+                    Rows.sid = el[detailCount].batch_sid
                   }}
                 >
                   {el.length
                     ? el.map((v, i) => (
-                        <option key={i} value={v.batch_sid}>
-                          {v.trail_time > 24 ?  `${v.batch_start.slice(0, 10)} - ${v.batch_end.slice(
-                            0,
-                            10
-                          )}` : `${v.batch_start.slice(0, 10)}`}
+                        <option key={i} value={i}>
+                          {v.trail_time > 24
+                            ? `${v.batch_start.slice(
+                                0,
+                                10
+                              )} - ${v.batch_end.slice(0, 10)}`
+                            : `${v.batch_start.slice(0, 10)}`}
                         </option>
                       ))
                     : ''}
@@ -103,18 +147,40 @@ function KexinFixedBox(props) {
             </button>
           </div>
         </div>
-        <button className={`${styles['btn-white']} w-100 btn `}>
-          <div className="d-flex justify-content-center align-items-center">
-            <span className="mb-0">查看更多</span>
-            <img
-              id={styles['chevron-down-type']}
-              className={styles['chevron-down-type']}
-              src="images/kexin/svg/chevron-down-right.svg"
-              alt=""
-            />
-          </div>
-        </button>
-        <button className={`${styles['btn-green']} w-100 btn `}>
+        {el.length ? (
+          <Link to={`/trails-detail?page=${el[0].sid}`}>
+            <button className={`${styles['btn-white']} w-100 btn `}>
+              <div className="d-flex justify-content-center align-items-center">
+                <span className="mb-0">查看更多</span>
+                <img
+                  id={styles['chevron-down-type']}
+                  className={styles['chevron-down-type']}
+                  src="images/kexin/svg/chevron-down-right.svg"
+                  alt=""
+                />
+              </div>
+            </button>
+          </Link>
+        ) : (
+          ''
+        )}
+
+        <button
+          // className={`${styles['btn-green']} w-100 btn `}
+          onClick={() => {
+            if (myAuth.account) {
+              setCart(1)
+
+              const item = { ...Rows, quantity: count }
+              addItem(item)
+              console.log(detailCount)
+            } else {
+              setShowbox(3)
+            }
+          }}
+          type="button"
+          className={`${styles['btn-green']} w-100 btn col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
+        >
           <div className="d-flex justify-content-center align-items-center">
             <span className={`${styles['mtyellow4']} mb-0 `}>加入購物車</span>
             <img

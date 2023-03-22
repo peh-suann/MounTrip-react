@@ -192,7 +192,7 @@ function KexinIndexProductsDetail() {
               })
             : ''}
 
-          <KexinFixedBox el={batch} />
+          <KexinFixedBox el={batch}/>
         </div>
       </div>
     </>

@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { MemberContext } from '../contexts/MemberContext'
 
 import Footer from './Footer'
-import Navbar from './Navbar'
+import NavbarIndex from './NavbarIndex'
 
 function Layout() {
   // const []=useState()
@@ -15,7 +15,7 @@ function Layout() {
         value={{ memberPage: memberPage, setMemberPage: setMemberPage }}
       >
         {/* 導覽列 */}
-        <Navbar />
+        <NavbarIndex />
 
         {/* Outlet相當於props.children，呈現區域頁面的內容 */}
         {/* 代表子頁區域內容 */}

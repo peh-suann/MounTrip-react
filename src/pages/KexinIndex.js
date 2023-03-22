@@ -5,6 +5,7 @@ import IndexStyles from '../styles/kexinIndex.module.css'
 import useRWD from '../contexts/useRWD'
 import KexinIndexProducts from '../components/KexinIndexProducts'
 import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
+import { useNavigate } from 'react-router-dom'
 
 // context
 export const StatusContext = createContext({})
@@ -23,10 +24,12 @@ function KexinIndex() {
   var data = require('../mapdata/tw_new.json')
   var transformData = require('../mapdata/MapTransform.json')
 
+  const navigate = useNavigate()
   const mapRef = useRef(null)
   const [mapInteraction, setMapInteraction] = useState(0)
   const [selectCounty, setSelectCounty] = useState('')
   const [myProduct, setMyProduct] = useState({})
+  const [cart, setCart] = useState(0)
 
   // RWD
   const device = useRWD()
@@ -121,8 +124,6 @@ function KexinIndex() {
           .on('mouseover', mouseOverHandler)
           .on('mouseout', mouseOutHandler)
           .on('click', clickHandler)
-
-
       }
     }
   }, [device])
@@ -166,7 +167,6 @@ function KexinIndex() {
 
     setSelectCounty(county)
   }
-
 
   // console.log(selectCounty);
   // console.log('outside', mapInteraction)
@@ -216,14 +216,18 @@ function KexinIndex() {
       // 刪掉地標
       d3.select('#landmark').remove()
       d3.select('#landmark1').remove()
-      
+
       setMapInteraction(1)
     }
   }
 
+  console.log(myProduct)
+
   return (
     <>
-      <StatusContext.Provider value={{ mapInteraction, setMapInteraction }}>
+      <StatusContext.Provider
+        value={{ mapInteraction, setMapInteraction, cart, setCart }}
+      >
         <ProductContext.Provider value={{ myProduct, setMyProduct }}>
           <NavbarIndex />
           <div
@@ -233,6 +237,56 @@ function KexinIndex() {
           ></div>
           <KexinIndexProducts selectCounty={selectCounty} />
           <KexinIndexProductsDetail selectCounty={selectCounty} />
+          {cart === 1 ? (
+            <>
+              <div className={` ${IndexStyles['modal-backdrop']}`}></div>
+              <div id="exampleModal" className={`${IndexStyles['mymodal']}`}>
+                <div className={`modal-dialog`}>
+                  <div className={`modal-content`}>
+                    <div className={`modal-header`}>
+                      <h1 className={`modal-title fs-5`} id="exampleModalLabel">
+                        已加入購物車
+                      </h1>
+                      <button
+                        type="button"
+                        className={`btn-close`}
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        onClick={() => {
+                          setCart(0)
+                        }}
+                      ></button>
+                    </div>
+                    <div className={`modal-body`}>{`產品：' ${myProduct.trail_name} '已成功加入購物車`}</div>
+                    <div className={`modal-footer`}>
+                      <button
+                        type="button"
+                        className={`${IndexStyles['buttonstyle']}`}
+                        data-bs-dismiss="modal"
+                        onClick={() => {
+                          setCart(0)
+                        }}
+                      >
+                        <span className={`${IndexStyles['buttontext']}`}>繼續購物</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          navigate('/SC1')
+                        }}
+                        type="button"
+                        className={`${IndexStyles['buttonstyle']}`}
+                        data-bs-dismiss="modal"
+                      >
+                        <span className={`${IndexStyles['buttontext']}`}>查看購物車</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            ' '
+          )}
         </ProductContext.Provider>
       </StatusContext.Provider>
     </>

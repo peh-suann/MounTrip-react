@@ -1,4 +1,3 @@
-
 .dropdown-wrap {
   width: 100%;
   height: 1000px;
@@ -27,7 +26,7 @@
 .dropdown p {
   display: block;
 }
-.dropdown a{
+.dropdown a {
   text-decoration: none;
 }
 
@@ -80,16 +79,26 @@
   font-size: 18px;
 }
 
+.dropdown .logout {
+  border: none;
+  background: none;
+}
 
+.dropdown .logout-pointer {
+  /* cursor: 'pointer'; */
+}
 
-
-
-
-
+.showBox {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 16px;
+  transition-duration: 1.0s;
+  /* color: ; */
+}
 
 
 @media screen and (max-width: 390px) {
-
   .dropdown {
     display: none;
   }
@@ -105,5 +114,4 @@
   .dropdown p {
     display: none;
   }
-
 }

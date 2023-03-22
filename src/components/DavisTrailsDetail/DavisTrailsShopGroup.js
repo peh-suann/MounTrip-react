@@ -13,7 +13,7 @@ function DavisTrailsShopGroup(props) {
   const [detailCount, setDetailCount] = useState(0)
 
   const Rows = { ...data }
-  // console.log('Rows:', Rows)
+  console.log('Rows:', Rows)
   const batch = Rows.rows[0].batch_start
   // console.log(batch)
 
@@ -162,7 +162,9 @@ function DavisTrailsShopGroup(props) {
             //   const item2 = { ...Rows.rows[1], quantity: 1 }
             //   addItem(item2)
             // }
+            console.log('123', Rows.rows[detailCount])
             const item = { ...Rows.rows[detailCount], quantity: count }
+            console.log('124', item)
             addItem(item)
             console.log('detailCount:', Rows.rows[detailCount])
             showModal(Rows.rows[detailCount].trail_name)

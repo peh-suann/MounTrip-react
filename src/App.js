@@ -32,9 +32,13 @@ import { SearchContext } from './contexts/SearchContext'
 
 import ProductList from './pages/TextIanShoppingCart'
 import DavisGpxLeaflet from './components/DavisTrailsDetail/DavisGpxLeaflet'
-import { useEffect, useState } from 'react'
+import {createContext, useEffect, useState } from 'react'
+
+export const LoginContext = createContext({})
 
 function App() {
+
+  const [showBox, setShowbox] = useState(0)
   // only for searching
   const [search, setSearch] = useState({
     location: '',
@@ -52,36 +56,38 @@ function App() {
         <SearchContext.Provider value={{ search, setSearch }}>
           <AuthContextProvider>
             <CartContextProvider>
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  {/* 其他頁面Navbar+Footer */}{' '}
-                  <Route path="/products" element={<YichunProducts />} />
-                  <Route path="/member" element={<Member />} />
-                  <Route
-                    path="/trails-detail"
-                    element={<DavisTrailsDetail />}
-                  />
-                  <Route
-                    path="/trails-filter"
-                    element={<DavisTrailsFilter />}
-                  />
-                  <Route path="/difficulty" element={<IanDifficulty />} />
-                  <Route path="/season" element={<IanSeason />} />
-                  <Route path="/SC1" element={<IanShoppingCart1 />} />
-                  <Route path="/SC2" element={<IanShoppingCart2 />} />
-                  <Route path="/SC3" element={<IanShoppingCart3 />} />
-                  <Route path="/SC4" element={<IanShoppingCart4 />} />
-                  <Route path="textsc" element={<ProductList />} />
-                </Route>
-                <Route path="/">
-                  {/* 登入頁面Navbar+Footer */}
-                  <Route path="/Login" element={<Login />} />
-                  <Route path="/Signin" element={<Signin />} />
-                  <Route path="/password" element={<ResetPassword />} />
-                  <Route path="/Index" element={<Index />} />
-                  <Route path="/test" element={<YichunTest />} />
-                </Route>
-              </Routes>
+              <LoginContext.Provider value={{ showBox, setShowbox }}>
+                <Routes>
+                  <Route path="/" element={<Layout />}>
+                    {/* 其他頁面Navbar+Footer */}{' '}
+                    <Route path="/products" element={<YichunProducts />} />
+                    <Route path="/member" element={<Member />} />
+                    <Route
+                      path="/trails-detail"
+                      element={<DavisTrailsDetail />}
+                    />
+                    <Route
+                      path="/trails-filter"
+                      element={<DavisTrailsFilter />}
+                    />
+                    <Route path="/difficulty" element={<IanDifficulty />} />
+                    <Route path="/season" element={<IanSeason />} />
+                    <Route path="/SC1" element={<IanShoppingCart1 />} />
+                    <Route path="/SC2" element={<IanShoppingCart2 />} />
+                    <Route path="/SC3" element={<IanShoppingCart3 />} />
+                    <Route path="/SC4" element={<IanShoppingCart4 />} />
+                    <Route path="textsc" element={<ProductList />} />
+                  </Route>
+                  <Route path="/">
+                    {/* 登入頁面Navbar+Footer */}
+                    <Route path="/Login" element={<Login />} />
+                    <Route path="/Signin" element={<Signin />} />
+                    <Route path="/Index" element={<Index />} />
+                    <Route path="/password" element={<ResetPassword />} />
+                    <Route path="/test" element={<YichunTest />} />
+                  </Route>
+                </Routes>
+              </LoginContext.Provider>
             </CartContextProvider>
           </AuthContextProvider>
         </SearchContext.Provider>
