@@ -121,8 +121,8 @@ const calculateTotalItems = (items) =>
   items.reduce((sum, item) => sum + item.quantity, 0)
 
 const generateCartState = (state, items) => {
-  console.log(state)
-  console.log(items)
+  // console.log(state)
+  // console.log(items)
   const isEmpty = items.length === 0
 
   return {
@@ -136,7 +136,7 @@ const generateCartState = (state, items) => {
 }
 
 export const init = (items) => {
-  console.log('init:', items)
+  // console.log('init:', items)
   return generateCartState({}, items)
 }
 

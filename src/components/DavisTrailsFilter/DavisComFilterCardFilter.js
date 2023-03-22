@@ -40,7 +40,7 @@ function DavisComFilterCardFilter(props) {
   useEffect(() => {
     const modifiedData = alldata.rows.map((v) => ({ ...v, becollect: true }))
     setCollect(modifiedData)
-    console.log('modifiedData set effect')
+    // console.log('modifiedData set effect')
   }, [alldata])
 
   const collectList = JSON.parse(localStorage.getItem('collectList')) || []
@@ -84,18 +84,18 @@ function DavisComFilterCardFilter(props) {
 
   // getListData()
   useEffect(() => {
-    console.log('getListData useEffect--')
+    // console.log('getListData useEffect--')
     getListData()
     return () => {
-      console.log('unmount AbList--')
+      // console.log('unmount AbList--')
     }
   }, [])
 
   useEffect(() => {
-    console.log(' setCurrentPage useEffect--')
+    // console.log(' setCurrentPage useEffect--')
     setCurrentPage(currentPage)
     return () => {
-      console.log('unmount AbList--')
+      // console.log('unmount AbList--')
     }
   }, [setCurrentPage])
 
@@ -251,9 +251,9 @@ function DavisComFilterCardFilter(props) {
                     // storage()
                     // 回傳batch的sid
                     // console.log(alldata.rows[`${r.trail_sid}`])
-                    console.log(
-                      oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                    )
+                    // console.log(
+                    //   oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
+                    // )
                     // oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
 
                     r.becollect

@@ -44,9 +44,17 @@ function DavisTrailsFilter() {
     totalRows: 0,
   })
 
-  // search context
   const { search } = useContext(SearchContext)
-  console.log('search:', search)
+
+  useEffect(() => {
+    console.log('initSearch render')
+    // if (search.initSearch) {
+    console.log('search:', search.initSearch.location)
+    setKeywordpr(search.initSearch.location)
+    setStartdatepr(search.initSearch.startDate)
+    setEnddatepr(search.initSearch.endDate)
+    // }
+  }, [search])
 
   const filterByKeyword = (rows_data, keywordpr, startdatepr, enddatepr) => {
     return rows_data.filter((v, i) => {
@@ -71,20 +79,19 @@ function DavisTrailsFilter() {
         page,
       },
     })
-    // console.log(response.data)
     setData(response.data)
   }
 
   useEffect(() => {
-    // 設定功能
-    console.log('useEffect--')
+    // console.log('useEffect--')
     getListData(+usp.get('page'))
 
     return () => {
-      // 解除功能
       // console.log('unmount AbList--')
     }
-  }, [location.search, search])
+  }, [location.search])
+
+  // FIXME:
 
   return (
     <>
