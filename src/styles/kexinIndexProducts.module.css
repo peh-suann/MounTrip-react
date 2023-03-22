@@ -22,6 +22,10 @@
   margin-top: 19px;
 }
 
+.mb-16 {
+  margin-bottom: 16px;
+}
+
 .mb-20 {
   margin-bottom: 20px;
 }
@@ -150,4 +154,9 @@
   line-height: 140%;
   text-align: right;
   letter-spacing: 0.05em;
+}
+
+.map-product button {
+  width: 100%;
+  margin-bottom: 20px;
 }

@@ -199,6 +199,23 @@ body {
   padding: 6px 24px;
 }
 
+.shopModal_footer{
+  height: 70px;
+}
+.shopModal_btn_forth{
+width:110px;
+height: 100%;
+margin: 10px;
+border: solid 2px var(--mtgreen-1);
+border-radius: 5px;
+color: white;
+background-color: var(--mtgreen-1);
+height: 30px;
+}
+.shopModal_continue{
+  font-size: 17px;
+}
+
 .shop_btn_mobile {
   border: solid 2px var(--mtgreen-1);
   border-radius: 5px;

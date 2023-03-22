@@ -28,7 +28,7 @@ function IanOrderData(props) {
     <>
       {orderData.map((v, i) => {
         return (
-          <form key={i} className={`${styles['form-inline']}`} action=" ">
+          <div key={i} className={`${styles['form-inline']}`} action=" ">
             <div className={`${styles['mb-20']} row justify-content-between `}>
               <div className={`${styles['form-group']} col-6`}>
                 <label htmlFor="firstName">名字</label>
@@ -42,6 +42,7 @@ function IanOrderData(props) {
                     // handleFieldChange
                     // e.preventDefault()
                   }
+                  required
                 />
               </div>
               <div className={`${styles['form-group']} col-6`}>
@@ -54,6 +55,7 @@ function IanOrderData(props) {
                   onChange={(e) => {
                     // e.preventDefault()
                   }}
+                  required
                 />
               </div>
             </div>
@@ -69,6 +71,7 @@ function IanOrderData(props) {
                 onChange={(e) => {
                   // e.preventDefault()
                 }}
+                required
               />
             </div>
             <div
@@ -83,6 +86,7 @@ function IanOrderData(props) {
                 onChange={(e) => {
                   // e.preventDefault()
                 }}
+                required
               />
             </div>
             <div className={`${styles['mb-20']} row justify-content-between`}>
@@ -101,6 +105,7 @@ function IanOrderData(props) {
                   onChange={(e) => {
                     // e.preventDefault()
                   }}
+                  required
                 />
               </div>
               <div
@@ -115,10 +120,11 @@ function IanOrderData(props) {
                   onChange={(e) => {
                     // e.preventDefault()
                   }}
+                  required
                 />
               </div>
             </div>
-          </form>
+          </div>
         )
       })}
     </>

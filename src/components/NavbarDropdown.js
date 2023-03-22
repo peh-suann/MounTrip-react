@@ -5,6 +5,7 @@ import { useNavigate, Link } from 'react-router-dom'
 // Components
 import AuthContext from '../contexts/AuthContexts'
 import { MemberContext } from '../contexts/MemberContext'
+import { StatusContext } from '../pages/KexinIndex'
 
 //styles
 import DropdownCss from '../styles/NavbarDropdown.module.css'
@@ -23,6 +24,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 function NavbarDropdown(props) {
+  const { mapInteraction } = useContext(StatusContext)
   const { showList, setShowList } = props
   const { myAuth, logout } = useContext(AuthContext)
   const navigate = useNavigate()
@@ -36,8 +38,20 @@ function NavbarDropdown(props) {
           setShowList(!showList)
         }
       }}
+      onWheel={()=>{
+        setShowList(false)
+      }}
     >
-      <div className={DropdownCss.dropdown}>
+      <div
+        className={DropdownCss.dropdown}
+        style={
+          mapInteraction === 2
+            ? { right: '990px' }
+            : mapInteraction === 1
+            ? { right: '530px' }
+            : { right: '100px' }
+        }
+      >
         <div
           className={`${DropdownCss['rect']} d-flex flex-column justify-content-between`}
         >

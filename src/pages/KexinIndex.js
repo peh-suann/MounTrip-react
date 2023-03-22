@@ -8,6 +8,7 @@ import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
 
 // context
 export const StatusContext = createContext({})
+export const ProductContext = createContext({})
 
 function KexinIndex() {
   // map basic setting
@@ -23,8 +24,9 @@ function KexinIndex() {
   var transformData = require('../mapdata/MapTransform.json')
 
   const mapRef = useRef(null)
-  // const { mapInteraction, setMapInteraction } = useContext(KexinIndexStatus)
   const [mapInteraction, setMapInteraction] = useState(0)
+  const [selectCounty, setSelectCounty] = useState('')
+  const [myProduct, setMyProduct] = useState({})
 
   // RWD
   const device = useRWD()
@@ -96,9 +98,12 @@ function KexinIndex() {
           .center([121, 23.58])
           .scale(10000)
           .translate([WIDTH / 2, HEIGHT / 2])
+        // var projection = d3.geoMercator().center([123, 24]).scale(5500);
 
         // Create a path generator
         const path = d3.geoPath(projection)
+
+        console.log('projection', projection([121, 23.5]))
 
         // Draw the map
         g.selectAll('path')
@@ -116,6 +121,8 @@ function KexinIndex() {
           .on('mouseover', mouseOverHandler)
           .on('mouseout', mouseOutHandler)
           .on('click', clickHandler)
+
+
       }
     }
   }, [device])
@@ -133,15 +140,19 @@ function KexinIndex() {
   }
 
   const clickHandler = function (d, i, e) {
+    // console.log(projection);
+
+    // const [x, y] = [121.6, 25.2]
+
+    // console.log(x,y)
+
     d3.select(mapRef.current)
       .selectAll('path')
       .style('fill', 'rgba(10, 140, 45, 0.2)')
-    // console.log(i.properties.COUNTYNAME)
+
     d3.select(this).style('fill', CLICK_COLOR)
 
     const county = i.properties.COUNTYNAME
-    console.log(county)
-    console.log(transformData[county].transform1)
 
     const svg = document.querySelector('#mapZoom')
     d3.select('#mapZoom')
@@ -150,17 +161,33 @@ function KexinIndex() {
       .attr('transform', transformData[county].transform1)
     setMapInteraction(1)
 
-    console.log(d3.select(this).style('fill'))
+    d3.select('#landmark').remove()
+    d3.select('#landmark1').remove()
 
-    console.log('onclick', mapInteraction)
+    setSelectCounty(county)
   }
 
-  console.log('outside', mapInteraction)
+
+  // console.log(selectCounty);
+  // console.log('outside', mapInteraction)
   if (mapInteraction === 2) {
+    const WIDTH = window.innerWidth
+    const HEIGHT = window.innerHeight
+
+    const projection = d3
+      .geoMercator()
+      .center([121, 23.58])
+      .scale(10000)
+      .translate([WIDTH / 2, HEIGHT / 2])
+
     d3.select('#mapZoom')
       .transition()
       .duration(750)
-      .attr('transform', 'translate(-4821.239953685611,-473) scale(5)')
+      .attr('transform', transformData[selectCounty].transform2)
+
+    // d3.select('#landmark').remove()
+    // d3.select('#landmark1').remove()
+    console.log(projection([121.3, 25.0]))
   }
 
   const clickReset = function (e) {
@@ -184,10 +211,12 @@ function KexinIndex() {
       d3.select('#mapZoom')
         .transition()
         .duration(750)
-        .attr(
-          'transform',
-          'translate(-4529.3527528164805,-485.7012302230678) scale(5)'
-        )
+        .attr('transform', transformData[selectCounty].transform1)
+
+      // 刪掉地標
+      d3.select('#landmark').remove()
+      d3.select('#landmark1').remove()
+      
       setMapInteraction(1)
     }
   }
@@ -195,14 +224,16 @@ function KexinIndex() {
   return (
     <>
       <StatusContext.Provider value={{ mapInteraction, setMapInteraction }}>
-        <NavbarIndex />
-        <div
-          ref={mapRef}
-          id={`${IndexStyles['info']}`}
-          onClick={clickReset}
-        ></div>
-        <KexinIndexProducts />
-        <KexinIndexProductsDetail />
+        <ProductContext.Provider value={{ myProduct, setMyProduct }}>
+          <NavbarIndex />
+          <div
+            ref={mapRef}
+            id={`${IndexStyles['info']}`}
+            onClick={clickReset}
+          ></div>
+          <KexinIndexProducts selectCounty={selectCounty} />
+          <KexinIndexProductsDetail selectCounty={selectCounty} />
+        </ProductContext.Provider>
       </StatusContext.Provider>
     </>
   )

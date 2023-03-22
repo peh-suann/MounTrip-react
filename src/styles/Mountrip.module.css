@@ -20,13 +20,14 @@
   --mtgrey-2: #4d5a51;
   --mtgrey-3: #99a19a;
   --mtgrey-4: #e6e7e6;
-  --mtgrey-5: rgba(230, 231, 230,0.7);
+  --mtgrey-5: rgba(230, 231, 230, 0.7);
 
   /* danger-color /red */
   --mtred-1: #e85f5c;
   --mtred-2: #ed7f7d;
   --mtred-3: #f6bfbe;
   --mtred-4: #fadfde;
+  --mtred-5: #fadfde;
 
   /* 中文字型 */
   /* --mtfont-ch: 'Noto Sans TC', sans-serif; */
@@ -167,7 +168,7 @@
 
 * {
   /* font-family: 'Noto Sans', 'Noto Sans TC', sans-serif; */
-  font-family: 'Noto Sans TC', 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', 'Noto Sans TC', sans-serif;
 }
 
 /* global通用css屬性 */
