@@ -84,6 +84,7 @@ function App() {
                     <Route path="/Signin" element={<Signin />} />
                     <Route path="/Index" element={<Index />} />
                     <Route path="/password" element={<ResetPassword />} />
+                    {/* <Route path="/reset" element={<Reset />} /> */}
                     <Route path="/test" element={<YichunTest />} />
                   </Route>
                 </Routes>
