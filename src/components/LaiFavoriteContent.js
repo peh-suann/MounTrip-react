@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './../styles/Favorite.module.css'
 import FavoriteAmount from './LaiFavoriteAmount'
 import FavoriteCard from './LaiFavoriteCard'
+import TreeAnimation2 from './LaiAchievementTreeAnimation2'
 
 export default function LaiFavoriteContent() {
   return (
@@ -56,8 +57,9 @@ export default function LaiFavoriteContent() {
               starAmount={''}
               price={'2,400'}
             />
-            
           </div>
+          <TreeAnimation2 />
+          
         </div>
       </div>
     </>

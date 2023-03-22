@@ -25,7 +25,7 @@ export default function LaiComment() {
       currentUserComment = res.data.data
       setUserComment(currentUserComment)
       // console.log('new sql', res.data.data)
-      console.log('userComment:', userComment)
+      // console.log('userComment:', userComment)
     } catch (error) {
       console.log("there's an error in db connection")
       return []
@@ -33,7 +33,7 @@ export default function LaiComment() {
   }
   useEffect(() => {
     getComment()
-    // console.log('state:', userComment)
+    // console.log('state:', currentUserComment)
     // console.log('length:', userComment.length)
   }, [])
   return (

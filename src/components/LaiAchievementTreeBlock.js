@@ -3,8 +3,23 @@ import styles from './../styles/Achievement.module.css'
 import TreeCount from './LaiAchievementCountTree'
 import TreeCountPersonal from './LaiAchievementCountTreePersonal'
 import TreeCanvas from './LaiAchievementCanvas'
+import TreeAnimation from './LaiAchievementTreeAnimation'
+import TreeAnimation2 from './LaiAchievementTreeAnimation2'
 
-export default function LaiAchievementTreeBlock() {
+import { motion } from 'framer-motion'
+import Button from './Button'
+
+export default function LaiAchievementTreeBlock(props) {
+  const { total } = props
+  function convertTree(t) {
+    if (t < 5000) return 0
+    if (5001 < t && t < 10000) return 1
+    if (10001 < t && t < 15000) return 2
+    if (15001 < t && t < 20000) return 3
+    if (20001 < t && t < 25000) return 4
+    if (25001 < t && t < 30000) return 5
+    if (30001 < t && t < 35000) return 6
+  }
   return (
     <>
       <div className={styles['tree-block']}>
@@ -29,20 +44,35 @@ export default function LaiAchievementTreeBlock() {
           </p>
         </div>
         <div className={styles['rules-border']}></div>
-        <div className={styles['achievement-state']}>
+        <TreeCanvas total={total} />
+        <motion.div
+          className={styles['achievement-state']}
+          initial={{ scale: 0, opacity: 0, translateY: '100%' }}
+          animate={{ scale: '100%', opacity: 1, translateY: 0 }}
+          transition={{ delay: 3, duration: 1.5 }}
+        >
           <p>
             透過參加MounTrip的行程，
             {/* <div className={styles['achievement-num']}> */}
             您已經為台灣種下了
-            <TreeCountPersonal count={7} />
+            <TreeCountPersonal count={convertTree(total)} />
             {/* <span className={styles['tree-num']}>6</span> */}
             顆樹，恭喜你！
           </p>
           {/* </div> */}
-        </div>
-        <TreeCanvas />
+        </motion.div>
+        {/* <TreeAnimation /> */}
+        <TreeAnimation2 />
         {/* <canvas className={styles.tree_animation}>Hello Canvas</canvas> */}
       </div>
+      {/* <div className={styles.animate_btn_wrap}>
+        <Button
+          text={'再看一次'}
+          onClick={() => {
+            // startAnimation()
+          }}
+        />
+      </div> */}
     </>
   )
 }
