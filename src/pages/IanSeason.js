@@ -4,8 +4,25 @@ import styles from './../styles/IanSeason.module.css'
 import { TRAILS_SEASON } from '../connections/api-config'
 import { TRAILS_COMMENT } from '../connections/api-config'
 import dayjs from 'dayjs'
+// import { ORDER_COUPON } from '../connections/api-config'
+
+// import { useCart } from '../components/IanUseCart'
 
 function IanSeason() {
+  // const { addCoupon } = useCart
+  // const [useCoupon, setUseCoupon] = useState({
+  //   rows: [],
+  // })
+
+  // const getOrderCoupon = async () => {
+  //   const r = await fetch(ORDER_COUPON)
+  //   const c = await r.json()
+  //   console.log('c:', c.rows)
+  //   setUseCoupon(c.rows)
+  //   const cdata = c.rows
+  //   addCoupon(cdata)
+  // }
+
   const [data, setData] = useState({
     rows: [],
   })
@@ -32,6 +49,10 @@ function IanSeason() {
     getSeasonData()
   }, [])
 
+  // useEffect(() => {
+  //   getOrderCoupon()
+  // }, [])
+
   useEffect(() => {
     getCommentData()
   }, [])
@@ -54,7 +75,7 @@ function IanSeason() {
         <div className={`${styles.row_of_products} d-flex flex-wrap`}>
           {data.rows.map((v, i) => {
             return (
-              <div key={v.sid} className={`${styles.product}  col-lg-4`}>
+              <div key={i} className={`${styles.product}  col-lg-4`}>
                 <div className={`overflow-hidden`}>
                   <div
                     className={styles.pic1}

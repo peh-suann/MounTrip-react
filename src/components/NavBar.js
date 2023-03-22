@@ -8,7 +8,7 @@ export default function NavBar() {
     <div className="container d-none d-lg-flex ">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <Link className={styles.brandlogo} to="/">
+          <Link className={styles.brandlogo} to="/index">
             MounTrip
           </Link>
           <button

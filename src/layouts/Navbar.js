@@ -20,9 +20,10 @@ import {
 import NavbarShoppingCart from '../components/NavbarShoppingCart'
 import NavbarDropdown from '../components/NavbarDropdown'
 import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
+import { useCart } from '../components/IanUseCart'
 
 export default function NavBar() {
-  // const [open, setOpen] = useState(false)
+  const { cart } = useCart()
   const { myAuth, logout } = useContext(AuthContext)
   const [open, setOpen] = useState(false)
 
@@ -59,7 +60,7 @@ export default function NavBar() {
               <FontAwesomeIcon icon={faBars} />
             </button>
             <button className={styles.logo}>
-              <Link to="/products">
+              <Link to="/index">
                 <svg
                   width="75"
                   height="24"
@@ -146,6 +147,13 @@ export default function NavBar() {
                 <a className={styles.link} href="/">
                   <FontAwesomeIcon icon={faShoppingCart} />
                 </a>
+                {cart.isEmpty || (
+                  <span
+                    className={`${styles.shoppingCount} d-flex justify-content-center align-items-center`}
+                  >
+                    {cart.totalItems}
+                  </span>
+                )}
               </li>
               <li>
                 <Link

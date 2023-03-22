@@ -102,7 +102,7 @@ height: 20vh;
     border-bottom: 1px solid var(--mtgrey-3);
   }
   
-  form.form-inline > div.mb-20 > div > input {
+  div.form-inline > div.mb-20 > div > input {
     background: rgba(206, 232, 203, 0.6);
     border: 2px solid var(--mtgreen-3);
     border-radius: 10px;
@@ -111,14 +111,14 @@ height: 20vh;
     padding: 20px;
   }
 
-  form.form-inline > div.mb-20 > input{
+  div.form-inline > div.mb-20 > input{
     padding: 20px;
   }
-  form.form-inline > div.mb-88 > input{
+  div.form-inline > div.mb-88 > input{
     padding: 20px;
   }
 
-  form.form-inline > div.mb-20 > input{
+  div.form-inline > div.mb-20 > input{
     background: rgba(206, 232, 203, 0.6);
     border: 2px solid var(--mtgreen-3);
     border-radius: 10px;
@@ -126,21 +126,21 @@ height: 20vh;
     width: 100%;
   }
 
-form.form-inline > div.mb-20 > div.form-group > label{
+  div.form-inline > div.mb-20 > div.form-group > label{
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
     color: var(--mtgrey-1);
 }
   
-  form.form-inline > div.mb-20 >  label {
+div.form-inline > div.mb-20 >  label {
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
     color: var(--mtgrey-1);
   }
 
-  form.form-inline > div.mb-88 > input{
+  div.form-inline > div.mb-88 > input{
     background: rgba(206, 232, 203, 0.6);
     border: 2px solid var(--mtgreen-3);
     border-radius: 10px;
@@ -148,20 +148,20 @@ form.form-inline > div.mb-20 > div.form-group > label{
     width: 100%;
   }
 
-  form.form-inline > div.mb-88 > label{
+  div.form-inline > div.mb-88 > label{
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
     color: var(--mtgrey-1);
   }
-form.form-inline > div.mb-48 > label.dataSame{
+  div.form-inline > div.mb-48 > label.dataSame{
 font-weight: 350;
 font-size: 22px;
 line-height: 140%;
 letter-spacing: 0.1em;
 }
   
-  .order-title {
+  p.order-title {
     font-weight: 700;
     font-size: 20px;
     line-height: 150%;
@@ -170,7 +170,7 @@ letter-spacing: 0.1em;
     margin-bottom: 15px;
   }
   
-  .order-title-detail {
+  div.order-title-detail {
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
@@ -178,7 +178,7 @@ letter-spacing: 0.1em;
   }
   
 
-div.order-title-detail > p > span {
+div.order-title-detail > p.order-title-detail-number > span {
 /* margin-right: 40px; */
 color: var(--mtgrey-2);
 font-weight: 400;
@@ -186,7 +186,7 @@ font-size: 22px;
 line-height: 140%;
   }
   
-  .order-title-detail > p > svg {
+  .order-title-detail > p.order-title-detail-number > svg {
     margin-right: 20px;
   }
   
@@ -281,13 +281,13 @@ div.shoppingbottom{
   margin: 0;
 }
 
-form.form-inline > div.mb-20 > div > input{
+div.form-inline > div.mb-20 > div > input{
   padding: 10px;
 }
-form.form-inline > div.mb-20 > input{
+div.form-inline > div.mb-20 > input{
   padding: 10px;
 }
-form.form-inline > div.mb-88 > input{
+div.form-inline > div.mb-88 > input{
   padding: 10px;
 }
 
@@ -331,7 +331,7 @@ div.mb-88{
   margin-bottom: 40px;
 }
 
-form.form-inline > div.mb-20 > div > label {
+div.form-inline > div.mb-20 > div > label {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;

@@ -151,6 +151,12 @@ export default function MemberContent(props) {
       pwdOpen()
     }
   }
+  //預防按下enter彈出表單
+  function preventModalShow(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+    }
+  }
 
   //生日日期格式轉換
   const birthDate = new Date(user.birthday)
@@ -210,9 +216,8 @@ export default function MemberContent(props) {
               value={userInfo.userData.firstname}
               onChange={(e) => {
                 handleUpdate(e)
-                // setFirstname(e.target.value.firstname)
-                // handleUpdateLastname(e.target.value)
               }}
+              onKeyDown={(e) => preventModalShow(e)}
               required
             />
           </div>
@@ -228,8 +233,8 @@ export default function MemberContent(props) {
               value={userInfo.userData.lastname}
               onChange={(e) => {
                 handleUpdate(e)
-                // setLastname(e.target.value.lastname)
               }}
+              onKeyDown={(e) => preventModalShow(e)}
               required
             />
           </div>
@@ -242,8 +247,8 @@ export default function MemberContent(props) {
               value={userInfo.userData.gender}
               onChange={(e) => {
                 handleUpdate(e)
-                // setGender(e.target.value)
               }}
+              onKeyDown={(e) => preventModalShow(e)}
             >
               <option value="male">男性</option>
               <option value="female">女性</option>
@@ -278,8 +283,8 @@ export default function MemberContent(props) {
               value={userInfo.userData.personal_id}
               onChange={(e) => {
                 handleUpdate(e)
-                // setPersonalId(e.target.value.personal_id)
               }}
+              onKeyDown={(e) => preventModalShow(e)}
               required
             />
           </div>
@@ -295,8 +300,8 @@ export default function MemberContent(props) {
               value={userInfo.userData.mobile}
               onChange={(e) => {
                 handleUpdate(e)
-                // setMobile(e.target.value.mobile)
               }}
+              onKeyDown={(e) => preventModalShow(e)}
               required
             />
           </div>
@@ -314,8 +319,8 @@ export default function MemberContent(props) {
               value={userInfo.userData.account}
               onChange={(e) => {
                 handleUpdate(e)
-                // setAccount(e.target.value)
               }}
+              onKeyDown={(e) => preventModalShow(e)}
               required
             />
           </div>
@@ -331,8 +336,8 @@ export default function MemberContent(props) {
               value={userInfo.userData.email}
               onChange={(e) => {
                 handleUpdate(e)
-                // setEmail(e.target.value)
               }}
+              onKeyDown={(e) => preventModalShow(e)}
               required
             />
           </div>
@@ -348,8 +353,8 @@ export default function MemberContent(props) {
               value={userInfo.userData.zip}
               onChange={(e) => {
                 handleUpdate(e)
-                // setZip(e.target.value)
               }}
+              onKeyDown={(e) => preventModalShow(e)}
               required
             />
           </div>
@@ -397,8 +402,8 @@ export default function MemberContent(props) {
               value={userInfo.userData.address}
               onChange={(e) => {
                 handleUpdate(e)
-                // setAddress(e.target.value)
               }}
+              onKeyDown={(e) => preventModalShow(e)}
             />
           </div>
           <div className={styles.btn_group}>

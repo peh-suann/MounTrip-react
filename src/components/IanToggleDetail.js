@@ -1,29 +1,18 @@
-import { useState } from 'react'
-import IanShowDetail from './IanShowDetail'
-import IanToggleDetail from './IanToggleDetail'
-import { useCart } from '../components/IanUseCart'
+import React from 'react'
 import IanToggle from './IanToggle'
 import styles from './../styles/IanShoppingCart2.module.css'
+import { useCart } from '../components/IanUseCart'
+import IanShowDetail from './IanShowDetail'
 
-function IanOrderDetail(props) {
+function IanToggleDetail(props) {
   const { items } = useCart()
-  const { memberitems } = props
-  const [open, setOpen] = useState(false)
-
+  const { setOpen } = props
+  console.log(items)
   return (
     <>
       {items.map((v, i) => {
         return (
-          <IanToggleDetail
-            key={i}
-            setOpen={setOpen}
-            open={open}
-            memberitems={memberitems}
-          />
-        )
-      })}
-
-      {/* <div
+          <div
             key={v.sid}
             className={`${styles.productDetail} col-12 d-flex flex-row align-items-start p-0 mb-3`}
           >
@@ -118,11 +107,11 @@ function IanOrderDetail(props) {
                 </p>
               </div>
             </div>
-          </div> */}
-
-      <IanShowDetail open={open} memberitems={memberitems} />
+          </div>
+        )
+      })}
     </>
   )
 }
 
-export default IanOrderDetail
+export default IanToggleDetail

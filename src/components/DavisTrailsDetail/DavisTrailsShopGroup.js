@@ -4,19 +4,24 @@ import { useEffect, useState } from 'react'
 import DavisTrailsBatch from './DavisTrailsBatch'
 import styles from '../../styles/DavisTrailsDetail.module.css'
 import { useCart } from '../IanUseCart'
-import { fi } from 'date-fns/locale'
+import { useNavigate } from 'react-router-dom'
 
 function DavisTrailsShopGroup(props) {
   const { data, filterFromBatch, plusOne, setData } = props
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(1)
   const { addItem } = useCart()
-
-  const rows_data = data.rows
+  const [detailCount, setDetailCount] = useState(0)
 
   const Rows = { ...data }
   // console.log('Rows:', Rows)
   const batch = Rows.rows[0].batch_start
   // console.log(batch)
+
+  const [productName, setProductName] = useState('')
+  const showModal = (name) => {
+    setProductName('產品：' + name + '已成功加入購物車')
+  }
+  const navigate = useNavigate()
 
   return (
     <>
@@ -30,7 +35,7 @@ function DavisTrailsShopGroup(props) {
           >
             <button
               onClick={() => {
-                setCount(count - 1)
+                setCount(count - 1 || 1)
               }}
               className={`${styles.btn_style}`}
             >
@@ -107,25 +112,24 @@ function DavisTrailsShopGroup(props) {
         </div>
         {/* level2 TODO:*/}
 
-        <DavisTrailsBatch data={data} />
+        <DavisTrailsBatch data={data} setDetailCount={setDetailCount} />
 
         {/* level3 shop_btn TODO:  */}
         {/* {filterFromBatch(data.rows).map((r) => (
           <div key={r.trail_name}>{r.trail_name}</div>
         ))} */}
-        <button
+        {/* <button
           className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
           onClick={() => {
-            // if (batch === Rows.rows[0].batch_start) {
-            //   const item = { ...Rows.rows[0], quantity: 1 }
-            //   addItem(item)
-            // } else {
-            //   const item2 = { ...Rows.rows[1], quantity: 1 }
-            //   addItem(item2)
-            // }
+            if (batch === Rows.rows[0].batch_start) {
+              const item = { ...Rows.rows[0], quantity: 1 }
+              addItem(item)
+            } else {
+              const item2 = { ...Rows.rows[1], quantity: 1 }
+              addItem(item2)
+            }
             const item = { ...Rows.rows[0], quantity: 1 }
             addItem(item)
-            // console.log('onClick item:', item)
           }}
         >
           <h5 className={`mb-0 ${styles.btn_font}`}>加入購物車</h5>
@@ -147,7 +151,79 @@ function DavisTrailsShopGroup(props) {
               />
             </svg>
           </span>
+        </button> */}
+
+        <button
+          onClick={() => {
+            // if (batch === Rows.rows[0].batch_start) {
+            //   const item = { ...Rows.rows[0], quantity: 1 }
+            //   addItem(item)
+            // } else {
+            //   const item2 = { ...Rows.rows[1], quantity: 1 }
+            //   addItem(item2)
+            // }
+            const item = { ...Rows.rows[detailCount], quantity: count }
+            addItem(item)
+            console.log('detailCount:', Rows.rows[detailCount])
+            showModal(Rows.rows[detailCount].trail_name)
+          }}
+          type="button"
+          className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <h5 className={`mb-0 align-self-center ${styles.btn_font}`}>
+            加入購物車
+          </h5>
         </button>
+
+        <div
+          className={`modal fade`}
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className={`modal-dialog`}>
+            <div className={`modal-content`}>
+              <div className={`modal-header`}>
+                <h1 className={`modal-title fs-5`} id="exampleModalLabel">
+                  已加入購物車
+                </h1>
+                <button
+                  type="button"
+                  className={`btn-close`}
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className={`modal-body`}>{productName}</div>
+              <div className={`modal-footer ${styles.shopModal_footer}`}>
+                <button
+                  type="button"
+                  className={`${styles.shopModal_btn_forth}`}
+                  data-bs-dismiss="modal"
+                >
+                  <span className={`${styles.shopModal_continue}`}>
+                    繼續購物
+                  </span>
+                </button>
+                <button
+                  onClick={() => {
+                    navigate('/SC1')
+                  }}
+                  type="button"
+                  className={`${styles.shopModal_btn_forth}`}
+                  data-bs-dismiss="modal"
+                >
+                  <span className={`${styles.shopModal_continue}`}>
+                    查看購物車
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )

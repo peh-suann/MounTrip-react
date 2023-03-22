@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './../styles/IanShoppingCart2.module.css'
 import IanOrderData from '../components/IanOrderData'
 import IanOrderDetail from '../components/IanOrderDetail'
@@ -17,6 +17,7 @@ function IanShoppingCart2() {
       birthday: '1987-01-20',
     },
   ])
+  const navigate = useNavigate()
 
   return (
     <>
@@ -255,38 +256,39 @@ function IanShoppingCart2() {
           </section>
         </div>
 
-        <div
-          className={`${styles['wrap-container']} ${styles['shopping-cart-contain']} ${styles['mb-88']} `}
-        >
+        <form action="" method="get">
           <div
-            className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center`}
+            className={`${styles['wrap-container']} ${styles['shopping-cart-contain']} ${styles['mb-88']} `}
           >
-            <svg
-              className={`${styles['me-12']}`}
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center`}
             >
-              <path
-                d="M28.4446 30.0001V26.889C28.4446 25.2387 27.789 23.6561 26.6221 22.4892C25.4552 21.3223 23.8726 20.6667 22.2223 20.6667H9.77789C8.12765 20.6667 6.545 21.3223 5.37811 22.4892C4.21122 23.6561 3.55566 25.2387 3.55566 26.889V30.0001"
-                stroke="#6CBA7C"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M16.0005 14.4444C19.437 14.4444 22.2228 11.6587 22.2228 8.22222C22.2228 4.78578 19.437 2 16.0005 2C12.5641 2 9.77832 4.78578 9.77832 8.22222C9.77832 11.6587 12.5641 14.4444 16.0005 14.4444Z"
-                stroke="#6CBA7C"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <h3>訂購人資料</h3>
-          </div>
-          {/* <form className={`${styles['form-inline']}`} action=" ">
+              <svg
+                className={`${styles['me-12']}`}
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28.4446 30.0001V26.889C28.4446 25.2387 27.789 23.6561 26.6221 22.4892C25.4552 21.3223 23.8726 20.6667 22.2223 20.6667H9.77789C8.12765 20.6667 6.545 21.3223 5.37811 22.4892C4.21122 23.6561 3.55566 25.2387 3.55566 26.889V30.0001"
+                  stroke="#6CBA7C"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M16.0005 14.4444C19.437 14.4444 22.2228 11.6587 22.2228 8.22222C22.2228 4.78578 19.437 2 16.0005 2C12.5641 2 9.77832 4.78578 9.77832 8.22222C9.77832 11.6587 12.5641 14.4444 16.0005 14.4444Z"
+                  stroke="#6CBA7C"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <h3>訂購人資料</h3>
+            </div>
+            {/* <form className={`${styles['form-inline']}`} action=" ">
           <div className={`${styles['mb-20']} row justify-content-between `}>
             <div className={`${styles['form-group']} col-6`}>
               <label htmlFor="firstName">名字</label>
@@ -306,43 +308,46 @@ function IanShoppingCart2() {
             <input type="email" id="email" />
           </div>
         </form> */}
-          <IanOrderData
-            memberitems={memberitems}
-            setMemberItems={setMemberItems}
-          />
+            <IanOrderData
+              memberitems={memberitems}
+              setMemberItems={setMemberItems}
+            />
 
-          <div
-            className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center `}
-          >
-            <svg
-              className={`${styles['me-12']} `}
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center `}
             >
-              <path
-                d="M29 30.5V27.5C29 25.9087 28.3152 24.3826 27.0962 23.2574C25.8772 22.1321 24.2239 21.5 22.5 21.5H9.5C7.77609 21.5 6.12279 22.1321 4.90381 23.2574C3.68482 24.3826 3 25.9087 3 27.5V30.5"
-                stroke="#6CBA7C"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M16 15.5C19.866 15.5 23 12.366 23 8.5C23 4.63401 19.866 1.5 16 1.5C12.134 1.5 9 4.63401 9 8.5C9 12.366 12.134 15.5 16 15.5Z"
-                stroke="#6CBA7C"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+              <svg
+                className={`${styles['me-12']} `}
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M29 30.5V27.5C29 25.9087 28.3152 24.3826 27.0962 23.2574C25.8772 22.1321 24.2239 21.5 22.5 21.5H9.5C7.77609 21.5 6.12279 22.1321 4.90381 23.2574C3.68482 24.3826 3 25.9087 3 27.5V30.5"
+                  stroke="#6CBA7C"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M16 15.5C19.866 15.5 23 12.366 23 8.5C23 4.63401 19.866 1.5 16 1.5C12.134 1.5 9 4.63401 9 8.5C9 12.366 12.134 15.5 16 15.5Z"
+                  stroke="#6CBA7C"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
 
-            <h3>旅客資料</h3>
-          </div>
-          <IanOrderDetail setMemberItems={setMemberItems} />
-          {/* 商品跟form表單 */}
-          {/* <div
+              <h3>旅客資料</h3>
+            </div>
+            <IanOrderDetail
+              memberitems={memberitems}
+              setMemberItems={setMemberItems}
+            />
+            {/* 商品跟form表單 */}
+            {/* <div
           className={`${styles.productDetail} col-12 d-flex flex-row align-items-start p-0 mb-3`}
         >
           <svg
@@ -563,18 +568,21 @@ function IanShoppingCart2() {
             </div>
           </form>
         )} */}
-        </div>
+          </div>
 
-        <div className={`${styles['pd-40']} d-flex justify-content-center`}>
-          <Link to="/SC3" className={`${styles.paybtn} btn btn-unstyle`}>
+          <div className={`${styles['pd-40']} d-flex justify-content-center`}>
             <button
-              type="button"
+              onClick={(e) => {
+                e.preventDefault()
+                // navigate('/SC3')
+              }}
+              type="submit"
               className={`${styles.paybtn} btn btn-unstyle`}
             >
               前往付款
             </button>
-          </Link>
-        </div>
+          </div>
+        </form>
       </div>
     </>
   )

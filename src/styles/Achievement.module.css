@@ -161,6 +161,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
+    position: relative;
 }
 .badge-pic-1{
     width: 375px;
@@ -175,6 +176,7 @@
     background: url('../../public/Mountrip_achievement_bamboo.png');
     background-position: center center;
     background-size: cover;
+    z-index: 30;
 }
 .badge-pic-3{
     width: 375px;
@@ -182,6 +184,19 @@
     background: url('../../public/Mountrip_achievement_pine.png');
     background-position: center center;
     background-size: cover;
+}
+.levelText{
+    /* display: none; */
+    font-size: 200px;
+    font-weight: 900;
+    color: var(--mtgreen-5);
+    z-index: 5;
+    position: absolute;
+    top:-60px;
+    left:50%;
+    /* right:0; */
+
+
 }
 .progress-bars{
     width: 100%;
