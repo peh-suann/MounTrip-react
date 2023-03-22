@@ -9,6 +9,9 @@ export const HOST = 'http://localhost:3002'
 //Lai's connect
 // export const HOST = 'http://192.168.71.105:3001'
 // export const HOST = 'http://127.0.0.1:3002'
+// // // export const HOST = 'http://192.168.71.105:3001'
+
+// export const HOST = 'localhost:3002'
 
 // 兩台電腦連線時，要用筆電wiki的ip，才能使用localstorage
 
@@ -76,4 +79,5 @@ export const TRAILS_COMMENT = `${HOST}/seasonComment`
 export const TRAILS_DIFFHARD = `${HOST}/difficultyHard`
 export const TRAILS_DIFFMEDIUM = `${HOST}/difficultyMedium`
 export const TRAILS_DIFFEASY = `${HOST}/difficultyEasy`
-export const ShoppingCart = `${HOST}/sc1`
+export const ORDER_COUPON = `${HOST}/SC1`
+// export const ShoppingCart = `${HOST}/sc1`

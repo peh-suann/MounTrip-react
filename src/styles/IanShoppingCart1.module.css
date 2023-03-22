@@ -99,28 +99,37 @@ section.shopping-cart-contain > div > div.shopping-cart-title > svg {
   border-bottom: 1px solid var(--mtgrey-3);
 }
 
-.w1 {
+/* .w1 {
   width: 5%;
-}
+} */
 
 .w2 {
-  width: 40%;
+  width: 35%;
+  margin-right: 2%;
 }
 
 .w3 {
-  width: calc(50% / 4);
+  /* width: calc(50% / 4); */
+  width: 10%;
+  margin-right: 4%;
 }
 
 .w4 {
-  width: calc(50% / 4);
+  /* width: calc(50% / 4); */
+  width: 10%;
+  margin-right: 4%;
 }
 
 .w5 {
-  width: calc(50% / 4);
+  /* width: calc(50% / 4); */
+  width: 10%;
+  margin-right: 4%;
 }
 
 .w6 {
-  width: calc(50% / 4);
+  /* width: calc(50% / 4); */
+  width: 10%;
+  margin-right: 4%;
 }
 
 .w7 {
@@ -211,7 +220,8 @@ section.shopping-cart-contain > div > div.shopping-cart-title > svg {
   height: 50px;
 }
 
-.orderCoupin > input.orderInput{
+.orderCoupin > select.orderSelect{
+width: 90%;
 background-color: var(--mtyellow-4);
 border: 2px solid var(--mtgreen-1);
 color: var(--mtgrey-3);

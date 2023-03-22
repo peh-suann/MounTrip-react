@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './../styles/IanShoppingCart2.module.css'
 import { useCart } from '../components/IanUseCart'
 
@@ -9,7 +9,7 @@ function IanShowDetail(props) {
   const quantity = items.map((v, i) => {
     return v.quantity
   })
-  console.log(quantity)
+  // console.log(quantity)
   return (
     <>
       {open &&
@@ -17,7 +17,7 @@ function IanShowDetail(props) {
           .fill(1)
           .map((v2, i2) => {
             return (
-              <form
+              <div
                 key={i2}
                 className={`${styles['form-inline']} ${styles['mb-50']} `}
                 action=" "
@@ -113,7 +113,7 @@ function IanShowDetail(props) {
                     同訂購人資料
                   </label>
                 </div>
-              </form>
+              </div>
             )
           })}
     </>
