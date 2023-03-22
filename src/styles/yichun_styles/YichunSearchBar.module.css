@@ -81,6 +81,9 @@ input[type='date'] {
 input[type='number'] {
   width: 60px;
 }
+.date .input_field .inputs div > input{
+  width: 320px;
+}
 .input_field .inputs {
   font-weight: 500;
   font-size: 22px;
