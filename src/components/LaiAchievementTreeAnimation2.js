@@ -25,11 +25,8 @@ export default function LaiAchievementTreeAnimation() {
             />
           </g>
           <motion.g
-            animate={{
-              x: [0, 20, -1, -2, -1, 0],
-              y: [0, 10, 3, 2, -1, 0],
-            }}
-            transition={{ duration: 5.6, type: 'spring' }}
+            animate={{ x: [0, 3, 0, -3, -1, 3, 0] }}
+            transition={{ repeat: Infinity, duration: 5 }}
           >
             <ellipse
               cx="98.26"
@@ -39,8 +36,10 @@ export default function LaiAchievementTreeAnimation() {
               style={{ fill: '#2b4d30' }}
             />
             <motion.path
-              animate={{ rotate: [0, 100, 0, 3, 0] }}
-              transition={{ duration: 2, type: 'spring' }}
+              // animate={{ rotate: [0, 100, 0, 3, 0] }}
+              // transition={{ duration: 2, repeat: 2, type: 'spring' }}
+              animate={{ x: [0, 3, 0, -3], rotate: [0, 5, 0, -5, 0] }}
+              transition={{ repeat: Infinity, duration: 5 }}
               d="m98.26,143.46c-37.18,0-67.31-30.37-67.31-67.83S61.08,7.79,98.26,7.79v135.66Z"
               style={{ fill: '#67a061' }}
             />
@@ -69,7 +68,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [1, 1.05, 1.07, 1, 0.9, 0.85, 1],
               }}
-              transition={{ duration: 6, type: `spring` }}
+              transition={{ duration: 6, repeat: Infinity }}
               cx="143.87"
               cy="67.49"
               r="35.66"
@@ -79,7 +78,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [1, 1.05, 1.08, 1, 0.9, 0.85, 1],
               }}
-              transition={{ duration: 6, type: 'spring' }}
+              transition={{ duration: 6, repeat: Infinity }}
               cx="98.53"
               cy="33.67"
               r="32.38"
@@ -89,7 +88,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [1, 1.05, 1.07, 1, 0.9, 0.85, 1],
               }}
-              transition={{ duration: 6, type: 'spring' }}
+              transition={{ duration: 6, repeat: Infinity }}
               cx="55.72"
               cy="73"
               r="32.38"
@@ -99,7 +98,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [1.05, 1.11, 1, 0.9, 0.85, 1.05],
               }}
-              transition={{ duration: 6, type: 'spring' }}
+              transition={{ duration: 6, repeat: Infinity }}
               cx="132.91"
               cy="110.36"
               r="27.38"
@@ -109,7 +108,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [1.05, 1.09, 1, 0.9, 0.85, 1.05],
               }}
-              transition={{ duration: 6, type: 'spring' }}
+              transition={{ duration: 6, repeat: Infinity }}
               cx="45"
               cy="103.15"
               r="24.53"
@@ -125,7 +124,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [0.85, 1.05, 1.1, 1, 0.9, 0.85],
               }}
-              transition={{ duration: 6, type: 'spring' }}
+              transition={{ duration: 6, repeat: Infinity }}
               cx="107.4"
               cy="102.88"
               r="25.01"
@@ -135,7 +134,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [0.85, 1.06, 1.09, 1, 0.9, 0.85],
               }}
-              transition={{ duration: 6, type: 'spring' }}
+              transition={{ duration: 6, repeat: Infinity }}
               cx="42.3"
               cy="105.07"
               r="21.83"
@@ -145,7 +144,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [0.9, 1.05, 1.1, 1, 0.9],
               }}
-              transition={{ duration: 5.5, type: 'spring' }}
+              transition={{ duration: 5.5, repeat: Infinity }}
               cx="73.17"
               cy="78.4"
               r="28.84"
@@ -181,13 +180,13 @@ export default function LaiAchievementTreeAnimation() {
               x: [0, 2, -1, -2, -1, 0],
               y: [1, 1, 3, 2, -1, 1],
             }}
-            transition={{ duration: 5.5, type: 'spring' }}
+            transition={{ duration: 5.5, repeat: Infinity }}
           >
-            <motion.circle
+            <circle
               animate={{
                 scale: [1, 1.1, 1, 0.95, 1],
               }}
-              transition={{ duration: 5.5, type: 'spring' }}
+              transition={{ duration: 5.5, repeat: Infinity }}
               cx="143.87"
               cy="67.49"
               r="35.66"
@@ -197,7 +196,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [1, 1.1, 1, 0.95, 1],
               }}
-              transition={{ duration: 5.5, type: 'spring' }}
+              transition={{ duration: 5.5, repeat: Infinity }}
               cx="98.53"
               cy="33.67"
               r="32.38"
@@ -207,7 +206,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [0.95, 1.05, 1.1, 1, 0.95],
               }}
-              transition={{ duration: 5.5, type: 'spring' }}
+              transition={{ duration: 5.5, repeat: Infinity }}
               cx="55.72"
               cy="73"
               r="32.38"
@@ -217,7 +216,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [1, 1.1, 1, 0.95, 1],
               }}
-              transition={{ duration: 5.5, type: 'spring' }}
+              transition={{ duration: 5.5, repeat: Infinity }}
               cx="132.91"
               cy="110.36"
               r="27.38"
@@ -227,7 +226,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [0.95, 1.05, 1.1, 1, 0.95],
               }}
-              transition={{ duration: 5.5, type: 'spring' }}
+              transition={{ duration: 5.5, repeat: Infinity }}
               cx="45"
               cy="103.15"
               r="24.53"
@@ -243,13 +242,13 @@ export default function LaiAchievementTreeAnimation() {
               x: [0, 2, -1, -2, -1, 0],
               y: [1, 1, 3, 2, -1, 1],
             }}
-            transition={{ duration: 5.5, type: 'spring' }}
+            transition={{ duration: 5.5, repeat: Infinity }}
           >
             <motion.circle
               animate={{
                 scale: [0.9, 1.05, 1.15, 1, 0.9],
               }}
-              transition={{ duration: 6.5, type: 'spring' }}
+              transition={{ duration: 6.5, repeat: Infinity }}
               cx="107.4"
               cy="102.88"
               r="25.01"
@@ -259,7 +258,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [0.95, 1.05, 1.1, 1, 0.95],
               }}
-              transition={{ duration: 5.5, type: 'spring' }}
+              transition={{ duration: 5.5, repeat: Infinity }}
               cx="42.3"
               cy="105.07"
               r="21.83"
@@ -269,7 +268,7 @@ export default function LaiAchievementTreeAnimation() {
               animate={{
                 scale: [0.9, 1.05, 1.15, 1, 0.9],
               }}
-              transition={{ duration: 5.5, type: 'spring' }}
+              transition={{ duration: 5.5, repeat: Infinity }}
               cx="73.17"
               cy="78.4"
               r="28.84"
@@ -298,7 +297,7 @@ export default function LaiAchievementTreeAnimation() {
               x: [0, 2, -1, -2, -1, 0],
               y: [1, 1, 3, 2, -1, 1],
             }}
-            transition={{ duration: 5.5, type: 'spring' }}
+            transition={{ duration: 5.5, repeat: Infinity }}
           >
             <circle cx="95.76" cy="53.22" r="50" style={{ fill: '#2b4d30' }} />
             <ellipse
@@ -321,23 +320,23 @@ export default function LaiAchievementTreeAnimation() {
               x: [0, 2, -1, -2, -1, 0],
               y: [1, 1, 3, 2, -1, 1],
             }}
-            transition={{ duration: 6, type: 'spring' }}
+            transition={{ duration: 6, repeat: Infinity }}
           >
             <motion.path
               animate={{ rotate: [0, -1, 0, 3, 0] }}
-              transition={{ duration: 2, type: 'spring' }}
+              transition={{ duration: 2, repeat: Infinity }}
               d="m95.76,103.22c-27.61,0-50-22.39-50-50S68.15,3.22,95.76,3.22v100"
               style={{ fill: '#67a061' }}
             />
             <motion.path
               animate={{ rotate: [0, -1, 0, 3, 0] }}
-              transition={{ duration: 2, type: 'spring' }}
+              transition={{ duration: 2, repeat: Infinity }}
               d="m62.61,86.85c-20.65,0-37.39,14.29-37.39,31.93s16.74,31.93,37.39,31.93v-63.85Z"
               style={{ fill: '#67a061' }}
             />
             <motion.path
               animate={{ rotate: [0, -1, 0, 3, 0] }}
-              transition={{ duration: 2, type: 'spring' }}
+              transition={{ duration: 2, repeat: Infinity }}
               d="m127.05,111.38c-12.69,0-22.97-8.78-22.97-19.61s10.28-19.61,22.97-19.61v39.22Z"
               style={{ fill: '#67a061' }}
             />
@@ -360,7 +359,7 @@ export default function LaiAchievementTreeAnimation() {
               x: [0, 2, -1, -2, -1, 0],
               y: [1, 1, 3, 2, -1, 1],
             }}
-            transition={{ duration: 5, type: 'spring' }}
+            transition={{ duration: 5, repeat: Infinity }}
           >
             <circle cx="95.76" cy="53.22" r="50" style={{ fill: '#2b4d30' }} />
             <ellipse
@@ -383,7 +382,7 @@ export default function LaiAchievementTreeAnimation() {
               x: [0, 2, -1, -2, -1, 0],
               y: [1, 1, 3, 2, -1, 1],
             }}
-            transition={{ duration: 5, type: 'spring' }}
+            transition={{ duration: 5, repeat: Infinity }}
           >
             <path
               d="m95.76,103.22c-27.61,0-50-22.39-50-50S68.15,3.22,95.76,3.22v100"
@@ -412,12 +411,12 @@ export default function LaiAchievementTreeAnimation() {
             style={{ fill: '#7f5440' }}
           />
 
-          <g
+          <motion.g
             animate={{
               scale: [1, 0.9, 1.2, 1, 1.1, 1],
               rotate: [0, 1, 0, -1, 0],
             }}
-            transition={{ duration: 2, type: 'spring' }}
+            transition={{ duration: 2, repeat: Infinity }}
           >
             <path
               d="m100,185.56s6.88-26.03,3.22-47.3c-1.1-5.13-2.98-9.9,1.08-15.03,4.06-5.13,4.06-4.77,10.66-4.4-5.13-2.2-12.66-4.77-14.95,9.53-7.42-9.53-11.82-11.14-15.12-11.25s5.98-.18,10.74,10.45c3.07,7.27,4.37,14.04,4.37,16.2,0,16.89-1.92,27.36-6.68,41.8,6.68,4.8,6.68,0,6.68,0Z"
@@ -431,7 +430,7 @@ export default function LaiAchievementTreeAnimation() {
               d="m82.61,110.91c-1.24-.73-15.12-8.73-23.7,1.09-8.58,9.82-9.98,15.28-10.14,15.9s-2.49,3.27,2.96,2.49c5.46-.78,6.55.14,6.55.14,0,0,14.97,1.42,21.36-2.95,6.39-4.37,11.09-7.56,13.12-7s-7.11-7.87-10.16-9.69Z"
               style={{ fill: '#67a061' }}
             />
-          </g>
+          </motion.g>
         </motion.svg>
         <motion.svg
           className={styles.tree4_1}
@@ -474,7 +473,7 @@ export default function LaiAchievementTreeAnimation() {
             animate={{
               x: [0, 1.4, 0.6, 3.6, 0.2, -0.55, 0],
             }}
-            transition={{ duration: 7, type: 'spring' }}
+            transition={{ duration: 7, repeat: Infinity }}
           >
             <path
               d="m25.39,140.34s21.74,9.41,42.42,1.02c9.49-2.83,17.12,3.48,17.12,3.48,0,0,21.37-1.5,25.44-8.34s-13.23-11.93-20.61-12.19c2.54-9.92-12.72-19.59-26.71-16.03-13.99,3.56-13.74,10.43-13.74,10.43,0,0-7.63-3.82-15.01,6.36-7.89.76-20.61,7.38-8.9,15.27Z"
@@ -497,7 +496,7 @@ export default function LaiAchievementTreeAnimation() {
             animate={{
               x: [0, 1.2, 0.4, 3.3, 0, -0.75, 0],
             }}
-            transition={{ duration: 7, type: 'spring' }}
+            transition={{ duration: 7, repeat: Infinity, type: 'spring' }}
           >
             <path
               d="m26.27,140.3c1.64-.24,9.95-1.7,26.51-8.22,3.23-1.27,6.66-2.02,10.12-2.12,9.53-.29,21.47,1.99,22.68,2.22.07.01.12.03.19.07,1.49.77,21.25,10.84,25.17,4.25,3.92-6.58-11.94-11.54-19.72-12.14-.44-.03-.78-.44-.71-.88,1.53-9.62-13.28-18.67-26.89-15.2-10.95,2.79-13.18,7.6-13.63,9.56-.1.43-.55.68-.97.55-2.17-.64-8.12-1.43-13.95,6.41-.12.17-.31.28-.52.3-7.84.9-19.95,7.35-8.84,15.05.16.11.37.16.57.14Z"
@@ -558,7 +557,7 @@ export default function LaiAchievementTreeAnimation() {
             animate={{
               x: [0, 1.5, 0.6, 3, 0.2, -0.85, 0],
             }}
-            transition={{ duration: 7, type: 'spring' }}
+            transition={{ duration: 7, repeat: Infinity }}
           >
             <path
               d="m25.39,140.34s21.74,9.41,42.42,1.02c9.49-2.83,17.12,3.48,17.12,3.48,0,0,21.37-1.5,25.44-8.34s-13.23-11.93-20.61-12.19c2.54-9.92-12.72-19.59-26.71-16.03-13.99,3.56-13.74,10.43-13.74,10.43,0,0-7.63-3.82-15.01,6.36-7.89.76-20.61,7.38-8.9,15.27Z"
@@ -581,7 +580,7 @@ export default function LaiAchievementTreeAnimation() {
             animate={{
               x: [0, 1.2, 0.4, 3.3, 0, -0.75, 0],
             }}
-            transition={{ duration: 7, type: 'spring' }}
+            transition={{ duration: 7, repeat: Infinity }}
           >
             <path
               d="m26.27,140.3c1.64-.24,9.95-1.7,26.51-8.22,3.23-1.27,6.66-2.02,10.12-2.12,9.53-.29,21.47,1.99,22.68,2.22.07.01.12.03.19.07,1.49.77,21.25,10.84,25.17,4.25,3.92-6.58-11.94-11.54-19.72-12.14-.44-.03-.78-.44-.71-.88,1.53-9.62-13.28-18.67-26.89-15.2-10.95,2.79-13.18,7.6-13.63,9.56-.1.43-.55.68-.97.55-2.17-.64-8.12-1.43-13.95,6.41-.12.17-.31.28-.52.3-7.84.9-19.95,7.35-8.84,15.05.16.11.37.16.57.14Z"
@@ -629,7 +628,7 @@ export default function LaiAchievementTreeAnimation() {
           <g>
             <motion.circle
               animate={{ x: [0, 3, -1, -3, 1, 0] }}
-              transition={{ duration: 6.5, type: 'spring' }}
+              transition={{ duration: 6.5, repeat: Infinity }}
               cx="123.16"
               cy="86.6"
               r="40.03"
@@ -637,7 +636,7 @@ export default function LaiAchievementTreeAnimation() {
             />
             <motion.circle
               animate={{ x: [0, 2, 0, -3, -1, 0] }}
-              transition={{ duration: 6.8, type: 'spring' }}
+              transition={{ duration: 6.8, repeat: Infinity }}
               cx="140.49"
               cy="91.97"
               r="11.7"
@@ -647,7 +646,7 @@ export default function LaiAchievementTreeAnimation() {
           <g>
             <motion.circle
               animate={{ x: [0, 3, 2, -2, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 5, type: 'spring' }}
+              transition={{ duration: 5, repeat: Infinity }}
               cx="60.09"
               cy="118.94"
               r="19.25"
@@ -655,7 +654,7 @@ export default function LaiAchievementTreeAnimation() {
             />
             <motion.circle
               animate={{ x: [0, 3, 1, -3, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 4.5, type: 'spring' }}
+              transition={{ duration: 4.5, repeat: Infinity }}
               cx="52.59"
               cy="123.39"
               r="5.63"
@@ -665,7 +664,7 @@ export default function LaiAchievementTreeAnimation() {
           <g>
             <motion.circle
               animate={{ x: [0, 3, 1, -3, 0] }}
-              transition={{ duration: 6, type: 'spring' }}
+              transition={{ duration: 6, repeat: Infinity }}
               cx="101.66"
               cy="42.89"
               r="40.91"
@@ -673,7 +672,7 @@ export default function LaiAchievementTreeAnimation() {
             />
             <motion.circle
               animate={{ x: [0, 4, 0, -3, 0] }}
-              transition={{ duration: 5.5, type: 'spring' }}
+              transition={{ duration: 5.5, repeat: Infinity }}
               cx="81.81"
               cy="30.36"
               r="12.53"
@@ -683,7 +682,7 @@ export default function LaiAchievementTreeAnimation() {
           <g>
             <motion.circle
               animate={{ x: [0, 2, -3, -5, -1, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 5, type: 'spring' }}
+              transition={{ duration: 5, repeat: Infinity }}
               cx="57.95"
               cy="73.95"
               r="27.38"
@@ -691,7 +690,7 @@ export default function LaiAchievementTreeAnimation() {
             />
             <motion.circle
               animate={{ x: [0, 2, -3, -5, -1, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 5.5, type: 'spring' }}
+              transition={{ duration: 5.5, repeat: Infinity }}
               cx="49.77"
               cy="65.03"
               r="8.92"
@@ -726,8 +725,8 @@ export default function LaiAchievementTreeAnimation() {
           </g>
           <g>
             <motion.circle
-              animate={{ x: [0, 1.5, -1, -2, 1, 0], scale: [1, 5, 1] }}
-              transition={{ duration: 4.5, type: 'spring', repeat: 3 }}
+              animate={{ x: [0, 1.5, -1, -2, 1, 0], scale: [1, 1.1, 1] }}
+              transition={{ duration: 4.5, repeat: Infinity }}
               cx="123.16"
               cy="86.6"
               r="40.03"
@@ -735,7 +734,7 @@ export default function LaiAchievementTreeAnimation() {
             />
             <motion.circle
               animate={{ x: [0, 1.5, -1, -2, 1, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 5, type: 'spring' }}
+              transition={{ duration: 5, repeat: Infinity }}
               cx="140.49"
               cy="91.97"
               r="11.7"
@@ -745,7 +744,7 @@ export default function LaiAchievementTreeAnimation() {
           <g>
             <motion.circle
               animate={{ x: [0, 1.5, -1, -2, 1, 0] }}
-              transition={{ duration: 5, type: 'spring' }}
+              transition={{ duration: 5, repeat: Infinity }}
               cx="60.09"
               cy="118.94"
               r="19.25"
@@ -753,7 +752,7 @@ export default function LaiAchievementTreeAnimation() {
             />
             <motion.circle
               animate={{ x: [0, 1, -0.5, -3, -1, 0] }}
-              transition={{ duration: 5, type: 'spring' }}
+              transition={{ duration: 5, repeat: Infinity }}
               cx="52.59"
               cy="123.39"
               r="5.63"
@@ -763,7 +762,7 @@ export default function LaiAchievementTreeAnimation() {
           <g>
             <motion.circle
               animate={{ x: [0, 1.5, -0.5, -2, -1, 0], scale: [1, 1.05, 1] }}
-              transition={{ duration: 3, type: 'spring' }}
+              transition={{ duration: 3, repeat: Infinity }}
               cx="101.66"
               cy="42.89"
               r="40.91"
@@ -771,7 +770,7 @@ export default function LaiAchievementTreeAnimation() {
             />
             <motion.circle
               animate={{ x: [0, 1.5, -0.5, -2, -1, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 3.5, type: 'spring' }}
+              transition={{ duration: 3.5, repeat: Infinity }}
               cx="81.81"
               cy="30.36"
               r="12.53"
@@ -780,16 +779,16 @@ export default function LaiAchievementTreeAnimation() {
           </g>
           <g>
             <motion.circle
-              animate={{ x: [0, 2.5, -0.5, -2, -1, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 4, type: 'spring' }}
+              animate={{ x: [0, 1.5, -0.5, -2, -1, 0], scale: [1, 1.1, 1] }}
+              transition={{ duration: 4, repeat: Infinity }}
               cx="57.95"
               cy="73.95"
               r="27.38"
               style={{ fill: '#2b4d30' }}
             />
             <motion.circle
-              animate={{ x: [0, 20, -2.5, -4, -20, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 4, type: 'spring', repeat: Infinity }}
+              animate={{ x: [0, 1, -2.5, -4, -1, 0], scale: [1, 1.1, 1] }}
+              transition={{ duration: 4, repeat: Infinity }}
               cx="49.77"
               cy="65.03"
               r="8.92"

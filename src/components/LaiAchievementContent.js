@@ -73,8 +73,8 @@ export default function LaiAchievementContent(props) {
 
   // console.log(calcOrderTotal())
   const progressFormat = orderList.total.toLocaleString()
-  console.log('converted', progressFormat)
-  console.log('RDOC', orderList) //現在這是個useReducer了
+  // console.log('converted', progressFormat)
+  // console.log('RDOC', orderList) //現在這是個useReducer了
   return (
     <>
       <div className={styles['member-data']}>
@@ -136,7 +136,7 @@ export default function LaiAchievementContent(props) {
           />
           {/* FIXME */}
           <AchievementQuote level={clickedLevel} />
-          <AchievementTreeBlock />
+          <AchievementTreeBlock total={orderList.total}/>
           {/* <div className={styles['tree-block']}>
             <div className={styles['describ-rules']}>
               <p>

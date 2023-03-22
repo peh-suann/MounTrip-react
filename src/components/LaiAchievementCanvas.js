@@ -1,57 +1,189 @@
-import React from 'react'
+import React, { useState, useRef, useEffect, Suspense } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { OrbitControls, useGLTF } from '@react-three/drei'
 import styles from './../styles/Achievement.module.css'
+// import {} from './../../public/3D/MounTripElement_8'
+import ONE from './../3D/MounTripElement'
+import {} from './../'
 
-export default function LaiAchievementCanvas() {
+function Model8(props) {
+  const { nodes, materials } = useGLTF('./../3D/MounTripElement_8.glb')
+  const group = useRef()
+  const [clicked, click] = useState(false)
+  // useFrame((clock) => {
+  //   group.current.rotation.x = clock.getElapsedTime()
+  // })
+  return (
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+        <mesh
+          ref={group}
+          geometry={nodes['3D_8_-_8'].geometry}
+          material={materials.Wood}
+          position={[-15.27, 7.5, -15]}
+          material-color={'#6cba7c'}
+          onClick={(e) => click(!clicked)}
+        />
+      </group>
+    </group>
+  )
+}
+export function Model7(props) {
+  const { nodes, materials } = useGLTF('./../3D/MounTripElement_7.glb')
+  return (
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+        <mesh
+          geometry={nodes['3D_7_-_7'].geometry}
+          material={materials['Wood 1']}
+          position={[-15.3, 7.5, -15]}
+          material-color={'#6cba7c'}
+        />
+      </group>
+    </group>
+  )
+}
+
+export function Model6(props) {
+  const { nodes, materials } = useGLTF('./../3D/MounTripElement_6.glb')
+  return (
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+        <mesh
+          geometry={nodes['3D_6_-_6'].geometry}
+          material={materials['Wood 1']}
+          position={[-15.38, 7.5, -15]}
+          material-color={'#6cba7c'}
+        />
+      </group>
+    </group>
+  )
+}
+export function Model5(props) {
+  const { nodes, materials } = useGLTF('./../3D/MounTripElement_5.glb')
+  return (
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+        <mesh
+          geometry={nodes['3D_5_-_5'].geometry}
+          material={materials['Wood 1']}
+          position={[-15.38, 7.5, -15]}
+          material-color={'#6cba7c'}
+        />
+      </group>
+    </group>
+  )
+}
+
+export function Model4(props) {
+  const { nodes, materials } = useGLTF('./../3D/MounTripElement_4.glb')
+  return (
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0.01]} scale={1}>
+        <mesh
+          geometry={nodes['3D_4_-_4'].geometry}
+          material={materials['Wood 1']}
+          position={[-15.65, 7.5, -15]}
+          material-color={'#6cba7c'}
+        />
+      </group>
+    </group>
+  )
+}
+export function Model3(props) {
+  const { nodes, materials } = useGLTF('./../3D/MounTripElement_3.glb')
+  return (
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+        <mesh
+          geometry={nodes['3D_3_-_3'].geometry}
+          material={materials['Wood 1']}
+          position={[-15.65, 7.5, -15]}
+          material-color={'#6cba7c'}
+        />
+      </group>
+    </group>
+  )
+}
+export function Model2(props) {
+  const { nodes, materials } = useGLTF('./../3D/MounTripElement_2.glb')
+  return (
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+        <mesh
+          geometry={nodes['3D_2_-_2'].geometry}
+          material={materials['Wood 1']}
+          position={[-15.65, 7.5, -15]}
+          material-color={'#6cba7c'}
+        />
+      </group>
+    </group>
+  )
+}
+export function Model1(props) {
+  const { nodes, materials } = useGLTF('./../3D/MounTripElement.glb')
+  return (
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+        <mesh
+          geometry={nodes['3D_1_-_1'].geometry}
+          material={materials['Wood 1']}
+          position={[-15.65, 7.5, -15]}
+          material-color={'#6cba7c'}
+        />
+      </group>
+    </group>
+  )
+}
+export function Model0(props) {
+  const { nodes, materials } = useGLTF('./../3D/MounTripElement_0.glb')
+  return (
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+        <mesh
+          geometry={nodes['3D_0_-_0'].geometry}
+          material={materials['Wood 1']}
+          position={[-15.65, 7.5, -15]}
+          material-color={'#6cba7c'}
+        />
+      </group>
+    </group>
+  )
+}
+
+export default function LaiAchievementCanvas(props) {
+  const { total } = props
+  // const total = getHistoryOrder()
+  console.log('canvas:', total)
   return (
     <>
-      <canvas className={styles.tree_animation}>
-        <svg
-          id="tree2"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 200 200"
-        >
-          <g id="brown">
-            <path
-              class="cls-1"
-              fill="#7f5440"
-              d="m102.01,200.64v-95.97s-7.32-3.4-12.29,0v40.55l-26.81-26.81-3.01,4.58,29.11,29.11v48.55h13.01Z"
+      {/* <canvas className={styles.tree_animation}> */}
+      <div className={styles.tree_animation}>
+        {/* fov:field of view, my view port */}
+        <Canvas camera={{ fov: 90, position: [15, 0, 45] }}>
+          {/* suspense catch error用 */}
+          <Suspense fallback={null}>
+            <ambientLight />
+            <directionalLight intensity={0.8} position={[-10, 10, 45]} />
+            {total < 5000 ? <Model0 /> : null}
+            {5001 < total && total < 10000 ? <Model1 /> : null}
+            {10001 < total && total < 15000 ? <Model2 /> : null}
+            {15001 < total && total < 20000 ? <Model3 /> : null}
+            {20001 < total && total < 25000 ? <Model4 /> : null}
+            {25001 < total && total < 30000 ? <Model5 /> : null}
+            {30001 < total && total < 35000 ? <Model6 /> : null}
+            {/* <Model8 /> */}
+            {/* <Model7 /> */}
+
+            <OrbitControls
+              enablePan={true}
+              enableZoom={true}
+              enableRotate={true}
             />
-            <path
-              class="cls-3"
-              fill="#9a815f"
-              d="m95.89,200.64v-97.46s-2.56-1.27-6.18,1.49v43.96l-28.24-28.05-1.58,2.4,29.11,29.11v48.55h6.9Z"
-            />
-          </g>
-          <g id="green_top">
-            <circle
-              class="cls-2"
-              fill="#7cb074"
-              cx="107.4"
-              cy="102.88"
-              r="25.01"
-            />
-            <circle
-              class="cls-2"
-              fill="#7cb074"
-              cx="42.3"
-              cy="105.07"
-              r="21.83"
-            />
-            <circle
-              class="cls-2"
-              fill="#7cb074"
-              cx="73.17"
-              cy="78.4"
-              r="28.84"
-            />
-            <path
-              class="cls-2"
-              fill="#7cb074"
-              d="m59.89,127.9h47.51s7.09-37.2-18.29-48.15-48.53,13.69-48.28,16.18c0,0-30.59,31.97,19.07,31.97Z"
-            />
-          </g>
-        </svg>
-      </canvas>
+          </Suspense>
+        </Canvas>
+      </div>
+      {/* </canvas> */}
     </>
   )
 }

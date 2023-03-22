@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './../styles/Achievement.module.css'
-import { motion, spring } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export default function LaiAchievementProgressBar(props) {
   const { current, target } = props
@@ -15,7 +15,12 @@ export default function LaiAchievementProgressBar(props) {
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ type: 'spring', duration: 1, delay: 1 }}
+            transition={{
+              type: 'spring',
+
+              duration: 1,
+              delay: 1,
+            }}
             className={styles['bar-top']}
             style={{ width: `${barLength}%`, transformOrigin: 'left' }}
           ></motion.div>
