@@ -162,7 +162,7 @@ function KexinLogin() {
               >
                 <div className="mb-3">
                   <label htmlFor="account" className="form-label">
-                    帳號/Email
+                    帳號
                   </label>
                   <input
                     type="text"

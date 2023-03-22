@@ -144,6 +144,9 @@ section.products .products_title h2 {
   transition-duration: 3s;
   transition-timing-function: ease-in-out;
 }
+.pic_kexin{
+  height: 220px;
+}
 .pic::before {
   content: '';
   position: absolute;

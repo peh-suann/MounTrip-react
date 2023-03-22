@@ -11,6 +11,7 @@ import Member from './pages/Member'
 import YichunTest from './pages/YichunTest'
 import Signin from './pages/KexinSignin'
 import Index from './pages/KexinIndex'
+import ResetPassword from './pages/KexinResetPassword'
 // import YichunProducts from './pages/YichunProducts'
 // import TestMemberList from './pages/TestMemberList'
 import DavisTrailsDetail from './pages/DavisTrailsDetail'
@@ -55,6 +56,7 @@ function App() {
                 {/* 登入頁面Navbar+Footer */}
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Signin" element={<Signin />} />
+                <Route path="/password" element={<ResetPassword />} />
                 <Route path="/Index" element={<Index />} />
                 <Route path="/test" element={<YichunTest />} />
               </Route>

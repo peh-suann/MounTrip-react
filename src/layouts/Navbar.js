@@ -59,7 +59,7 @@ export default function NavBar() {
               <FontAwesomeIcon icon={faBars} />
             </button>
             <button className={styles.logo}>
-              <Link to="/products">
+              <Link to="/index">
                 <svg
                   width="75"
                   height="24"
@@ -140,7 +140,12 @@ export default function NavBar() {
                 className={styles.shopping_cart}
                 onClick={(e) => {
                   e.preventDefault()
-                  setOpen((prev) => !prev)
+                  if (myAuth.account) {
+                      setOpen((prev) => !prev)
+                    } else {
+                      // TODO:請先登入會員
+                      navigate('/login')
+                    }
                 }}
               >
                 <a className={styles.link} href="/">
