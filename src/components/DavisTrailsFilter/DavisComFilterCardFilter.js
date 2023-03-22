@@ -263,6 +263,13 @@ function DavisComFilterCardFilter(props) {
                       : collectList.pop(
                           oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
                         )
+                    // : collectList.filter((v) => {
+                    //   return (
+                    //     v !==
+                    //     oddRows(alldata.rows)[`${r.trail_sid - 1}`]
+                    //       .trail_sid
+                    //   )
+                    // })
                     updateLocalStorage(collectList)
                   }}
                   className={`${styles.heart_btn}`}
