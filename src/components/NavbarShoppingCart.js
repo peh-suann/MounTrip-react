@@ -151,8 +151,9 @@ function NavbarShoppingCart(props) {
             <Button
               text={'前往結賬'}
               style={{ width: '100%' }}
+              link={'SC1'}
               onClick={() => {
-                navigate('/SC1', { replace: true })
+                navigate('SC1', { replace: true })
               }}
             />
             {/* </Link> */}
