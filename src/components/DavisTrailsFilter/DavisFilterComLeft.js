@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from '../../styles/DavisTrailsFilter.module.css'
 
-function DavisFilterComLeft() {
+function DavisFilterComLeft(props) {
+  const { data, setKeywordpr, setDatepickpr } = props
+  const [keyword, setKeyword] = useState('')
+  const [datepick, setDatepick] = useState()
+  const [inputText, setInputText] = useState('')
+
+  useEffect(() => {
+    setKeywordpr(keyword)
+    setDatepickpr(datepick)
+  }, [keyword, datepick])
+
+  // const filterByKeyword = (data, setKeyword) => {
+  //   return data.filter((v, i) => {
+  //     return v.trail_name.includes(setKeyword)
+  //   })
+  // }
+
   return (
     <>
       <div
@@ -34,8 +50,29 @@ function DavisFilterComLeft() {
                 />
               </svg>
             </span>
+            {/* TODO: */}
             <div className="col">
-              <input className={`${styles.input_style}`} type="text" />
+              <div className={`${styles.input_wrap}`}>
+                <input
+                  className={`${styles.input_style}`}
+                  type="text"
+                  placeholder=" 輸入行程名稱"
+                  value={inputText}
+                  onChange={(e) => {
+                    setInputText(e.target.value)
+
+                    // 如果使用者清除所有輸入時要回復為原本列表
+                    if (e.target.value === '') {
+                      setKeyword('')
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      setKeyword(inputText)
+                    }
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -80,11 +117,15 @@ function DavisFilterComLeft() {
             </span>
             <div className={`${styles.input_wrap}`}>
               <input
+                onChange={() => {
+                  setDatepick(datepick)
+                }}
                 className={`${styles.input_style}`}
                 type="date"
                 id="picker"
                 pseudo="-webkit-calendar-picker-indicator"
               />
+              {console.log(datepick)}
             </div>
           </div>
         </div>
@@ -129,6 +170,9 @@ function DavisFilterComLeft() {
             </span>
             <div className={`${styles.input_wrap}`}>
               <input
+                onChange={() => {
+                  // setDatepick()
+                }}
                 className={`${styles.input_style}`}
                 type="date"
                 id="picker"
@@ -167,11 +211,19 @@ function DavisFilterComLeft() {
               </svg>
             </span>
             <div className="col">
-              <input className={`${styles.input_style}`} type="number" />
+              <div className={`${styles.input_wrap}`}>
+                <input className={`${styles.input_style}`} type="number" />
+              </div>
             </div>
           </div>
         </div>
-        <button className={`${styles.btn_search}`} type="button">
+        <button
+          className={`${styles.btn_search}`}
+          type="button"
+          onClick={() => {
+            setKeyword(inputText)
+          }}
+        >
           搜尋
         </button>
       </div>

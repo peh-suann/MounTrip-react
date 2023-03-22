@@ -1,57 +1,60 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './../styles/IanShoppingCart1.module.css'
 import { Link } from 'react-router-dom'
-import IanShoppingCartProduct from '../components/IanShoppingCartProduct'
 import { useCart } from '../components/IanUseCart'
+import { ORDER_COUPON } from '../connections/api-config'
+import axios from 'axios'
 
 // import IanShoppingCartTitle from '../components/IanShoppingCartTitle'
 // import './../html/css/shoppingCart1.css'
 
 function IanShoppingCart1() {
   const { cart, items, plusOne, minusOne, removeItem } = useCart()
-  // const [data, setData] = useState([
-  //   {
-  //     sid: 1,
-  //     name: '草嶺古道',
-  //     startTime: '2023/03/15',
-  //     endTime: '2023/03/17',
-  //     price: 1200,
-  //     count: 1,
-  //     total: 1200,
-  //     buy: false,
-  //   },
-  //   {
-  //     sid: 2,
-  //     name: '玉山步道',
-  //     startTime: '2023/02/20',
-  //     endTime: '2023/02/22',
-  //     price: 850,
-  //     count: 2,
-  //     total: 1700,
-  //     buy: false,
-  //   },
-  //   {
-  //     sid: 3,
-  //     name: '鳶嘴山',
-  //     startTime: '2023/03/01',
-  //     endTime: '2023/03/03',
-  //     price: 900,
-  //     count: 3,
-  //     total: 2700,
-  //     buy: false,
-  //   },
-  //   {
-  //     sid: 4,
-  //     name: '雪山來回',
-  //     startTime: '2023/2/15',
-  //     endTime: '2023/02/18',
-  //     price: 2000,
-  //     count: 2,
-  //     total: 4000,
-  //     buy: false,
-  //   },
-  // ])
+
   const [mypage, setPage] = useState('')
+
+  const [useCoupon, setUseCoupon] = useState([])
+
+  const [order, setOrder] = useState({
+    rows: [],
+    item: cart.cartTotal,
+    finallyTotal: 0,
+  })
+
+  const [changeV, setChangeV] = useState('')
+
+  const getOrderCoupon = async (req, res) => {
+    // const userString = localStorage.getItem('myAuth')
+    // const userData = JSON.parse(userString)
+    // const token = userData.token
+    // const mid = userData.accountId
+
+    // try {
+    //   const res = await axios.get(ORDER_COUPON, {
+    //     headers: { Authorization: `Bearer ${token}`, sid: mid },
+    //   })
+    //   if (!res.data) return res.sendStatus(401)
+
+    //   setUseCoupon(res.data)
+    //   // console.log(res.data)
+    // } catch (error) {
+    //   console.log('coupon axios err')
+    //   return []
+    // }
+
+    const r = await fetch(ORDER_COUPON)
+    const c = await r.json()
+    const d = c.rows
+    console.log('d:', d)
+    setOrder(d)
+  }
+
+  console.log('useCoupon:', useCoupon)
+  console.log('order:', order)
+  useEffect(() => {
+    console.log('Effect')
+    getOrderCoupon()
+  }, [])
 
   return (
     <div className={`${styles.IanShoppingCartAll}`}>
@@ -300,27 +303,45 @@ function IanShoppingCart1() {
             <h3>購物車</h3>
           </div>
           <div
-            className={`${styles['product-col-title']} ${styles['mobile-none']} d-flex`}
+            className={`${styles['product-col-title']} ${styles['mobile-none']} d-flex `}
           >
-            <div className={`${styles['mobile-none']} ${styles.w1} `}>
-              <input
+            {/* <div className={`${styles['mobile-none']} ${styles.w1} `}> */}
+            {/* <input
                 type="checkbox"
-                // checked={data.buy}
-                // onChange={() => {
-                //   setData(selectAll(data.sid))
-                // }}
-              />
-            </div>
-            <div className={`${styles['mobile-none']} ${styles.w2} `}>
+                checked={data.buy}
+                onChange={() => {
+                  setData(selectAll(data.sid))
+                }}
+              /> */}
+            {/* </div> */}
+            <div
+              className={`${styles['mobile-none']} ${styles.w2} text-center`}
+            >
               商品資料
             </div>
-            <div className={`${styles['mobile-none']} ${styles.w3} `}>日期</div>
-            <div className={`${styles['mobile-none']} ${styles.w4} `}>
+            <div
+              className={`${styles['mobile-none']} ${styles.w3} text-center`}
+            >
+              日期
+            </div>
+            <div
+              className={`${styles['mobile-none']} ${styles.w4} text-center`}
+            >
               單件價格
             </div>
-            <div className={`${styles['mobile-none']} ${styles.w5} `}>數量</div>
-            <div className={`${styles['mobile-none']} ${styles.w6} `}>小計</div>
-            <div className={`${styles['mobile-none']} ${styles.w7} `}></div>
+            <div
+              className={`${styles['mobile-none']} ${styles.w5} text-center`}
+            >
+              數量
+            </div>
+            <div
+              className={`${styles['mobile-none']} ${styles.w6} text-center`}
+            >
+              小計
+            </div>
+            <div
+              className={`${styles['mobile-none']} ${styles.w7} text-center`}
+            ></div>
           </div>
           {items.map((v, i) => {
             return (
@@ -328,16 +349,16 @@ function IanShoppingCart1() {
                 <div
                   className={`${styles['product-col']} ${styles['mobile-none']} d-flex`}
                 >
-                  <div className={`${styles['mobile-none']} ${styles.w1} `}>
-                    <input
+                  {/* <div className={`${styles['mobile-none']} ${styles.w1} `}> */}
+                  {/* <input
                       type="checkbox"
-                      // checked={mycheck}
-                      // onChange={() => {
-                      //   setMyCheck(wannaBuy(pid))
-                      // }}
-                    />
-                  </div>
-                  <div className={`${styles['mobile-none']} ${styles.w2} `}>
+                      checked={mycheck}
+                      onChange={() => {
+                        setMyCheck(wannaBuy(pid))
+                      }}
+                    /> */}
+                  {/* </div> */}
+                  <div className={`${styles['mobile-none']} ${styles.w2}`}>
                     <div className={`row w-100`}>
                       <div className={`col-4`}>
                         <div className={`${styles['product-img-wrap']}`}>
@@ -350,24 +371,34 @@ function IanShoppingCart1() {
                         </div>
                       </div>
                       <div className={`col-8 px-0`}>
-                        <p className={`${styles['product-title']}  mb-3`}>
+                        <p
+                          className={`${styles['product-title']}  mb-3 ps-lg-3`}
+                        >
                           {v.trail_name}
                         </p>
-                        <p className={`${styles['product-subtitle']} mb-0`}>
+                        <p
+                          className={`${styles['product-subtitle']} mb-0 ps-lg-3`}
+                        >
                           {v.trail_name}單日行程
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className={`${styles['mobile-none']} ${styles.w3} `}>
+                  <div
+                    className={`${styles['mobile-none']} ${styles.w3} text-center`}
+                  >
                     <p className={`mb-lg-2`}>{v.batch_start}</p>
-                    <p className={`mb-lg-2`}>&emsp;&emsp;|</p>
+                    <p className={`mb-lg-2`}>|</p>
                     <p className={`mb-0`}>{v.batch_end}</p>
                   </div>
-                  <div className={`${styles['mobile-none']} ${styles.w4} `}>
+                  <div
+                    className={`${styles['mobile-none']} ${styles.w4} text-center`}
+                  >
                     NTD {v.price}
                   </div>
-                  <div className={`${styles['mobile-none']} ${styles.w5} `}>
+                  <div
+                    className={`${styles['mobile-none']} ${styles.w5}  text-center`}
+                  >
                     <div className={`d-flex`}>
                       <button className={`${styles['plus-button']}`}>
                         <svg
@@ -425,7 +456,9 @@ function IanShoppingCart1() {
                       </button>
                     </div>
                   </div>
-                  <div className={`${styles['mobile-none']} ${styles.w6} `}>
+                  <div
+                    className={`${styles['mobile-none']} ${styles.w6}   text-center`}
+                  >
                     NTD {v.itemTotal}
                   </div>
                   <div className={`${styles['mobile-none']} ${styles.w7} `}>
@@ -505,39 +538,63 @@ function IanShoppingCart1() {
 
             <h3>訂單明細</h3>
           </div>
-          <div className={`${styles['input-group']} ${styles['padding-30']}`}>
-            <div className={`${styles.orderCoupin} d-flex`}>
-              <input
-                className={`col-9 ${styles.orderInput}`}
-                type="text"
-                placeholder="輸入優惠代碼"
-              />
-              <button
-                type="button"
-                className={`col-3 ${styles.orderButton} btn btn-unstyle`}
-              >
-                套用
-              </button>
-            </div>
-          </div>
-          <div
-            className={`${styles['padding-30']} d-flex justify-content-between`}
-          >
-            <p className={`${styles.p} mb-0`}>小計</p>
-            <p className={`${styles['p-bold']} mb-0`}>NTD {cart.cartTotal}</p>
-          </div>
-          <div
-            className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex justify-content-between`}
-          >
-            <p className={`${styles.p} mb-0`}>優惠碼 HAPPY10</p>
-            <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>-NTD 100</p>
-          </div>
-          <div
-            className={`${styles['padding-30']} d-flex justify-content-between`}
-          >
-            <p className={`${styles['p-bold']} mb-0`}>合計</p>
-            <p className={`${styles['p-bold']} mb-0`}>NTD $2,330</p>
-          </div>
+
+          {useCoupon.map((v, i) => {
+            return (
+              <>
+                <div
+                  className={`${styles['input-group']} ${styles['padding-30']}`}
+                >
+                  <div className={`${styles.orderCoupin} d-flex`}>
+                    <select name="" id="" className={`${styles.orderSelect}`}>
+                      <option
+                        value={v.coupon_code}
+                        onChange={(e) => {
+                          setUseCoupon(e.target.value)
+                        }}
+                      >
+                        {v.coupon_code}
+                      </option>
+                    </select>
+                    <button
+                      onClick={() => {
+                        getOrderCoupon()
+                      }}
+                      type="button"
+                      className={`col-3 ${styles.orderButton} btn btn-unstyle`}
+                    >
+                      套用
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className={`${styles['padding-30']} d-flex justify-content-between`}
+                  >
+                    <p className={`${styles.p} mb-0`}>小計</p>
+                    <p className={`${styles['p-bold']} mb-0`}>
+                      NTD {cart.cartTotal}
+                    </p>
+                  </div>
+                  <div
+                    className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex justify-content-between mb-lg-3`}
+                  >
+                    <p className={`${styles.p} mb-0`}>優惠碼 {v.coupon_code}</p>
+                    <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
+                      -NTD {v.min_purchase}
+                    </p>
+                  </div>
+                  <div
+                    className={`${styles['padding-30']} d-flex justify-content-between`}
+                  >
+                    <p className={`${styles['p-bold']} mb-0`}>合計</p>
+                    <p className={`${styles['p-bold']} mb-0`}>NTD $2,330</p>
+                  </div>
+                </div>
+              </>
+            )
+          })}
+
           <Link to="/SC2" className={`w-100 btn`}>
             <button className={`${styles.next} w-100 btn`}>下一步</button>
           </Link>

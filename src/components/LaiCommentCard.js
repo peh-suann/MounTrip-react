@@ -3,6 +3,7 @@ import styles from './../styles/Comment.module.css'
 
 export default function LaiCommentCard(props) {
   const { title, orderId, dateStart, dateEnd, comment, reply } = props
+  // console.log('dateStart:', dateStart)
   return (
     <>
       <div className={styles['comment-card']}>

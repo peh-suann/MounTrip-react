@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './../styles/Coupon.module.css'
-import CouponStateBtnOn from './LaiCouponStateBtnOff.js'
+import CouponStateBtnOn from './LaiCouponStateBtnOn.js'
 import CouponStateBtnOff from './LaiCouponStateBtnOff'
 import CouponStateBtnFuture from './LaiCouponStateBtnFuture'
 
@@ -9,11 +9,11 @@ export default function LaiCouponCard(props) {
   //   const [ state ,setState] = useState()
   const btnStyle = (state) => {
     switch (state) {
-      case 'on':
+      case 1:
         return 'on'
-      case 'off':
+      case 2:
         return 'off'
-      case 'future':
+      case 3:
         return 'future'
     }
   }

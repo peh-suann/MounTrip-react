@@ -1,16 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './../styles/Member.module.css'
 import LevelTag from './LaiMemberProfileLevelTag'
+import { AnimatePresence, motion } from 'framer-motion'
+import Modal from './LaiBackdrop/Modal'
+import Backdrop from './LaiBackdrop/Backdrop'
+import { USER_AVATAR } from '../connections/api-config'
+import axios from 'axios'
 
 export default function LaiMemberProfile(props) {
-  const { img, name, familyname, level, account } = props
-  // console.log(props)
+  const {
+    img,
+    avatar,
+    name,
+    familyname,
+    level,
+    account,
+    handleModalToggle,
+    modalOpen,
+    close,
+    open,
+  } = props
+  const avatarUrl = USER_AVATAR + avatar
+  // console.log('avatar:', avatar)
 
   return (
     <>
       <div className={styles['member-profile']}>
         <div className={styles['profile']}>
-          <div className={styles['pic-btn']}>
+          <motion.button
+            className={styles['pic-btn']}
+            whileHover={{ scale: 1.1 }}
+            whileTop={{ scale: 0.9 }}
+            onClick={() => (modalOpen ? close() : open())}
+          >
             <svg
               className={styles['camera']}
               width="20"
@@ -35,9 +57,24 @@ export default function LaiMemberProfile(props) {
                 strokeLinejoin="round"
               />
             </svg>
-          </div>
+          </motion.button>
+
           <div className={styles['profile-wrap']}>
-            <div className={styles['profile-pic']}></div>
+            {avatar ? (
+              <div
+                className={styles.avatar_pic}
+                style={{
+                  background: `url('${avatarUrl}')`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
+            ) : (
+              <div className={styles['profile-pic']}></div>
+            )}
+            {/* <div
+              className={styles['profile-pic']}
+              style={{ background: `url('${avatarUrl}')`, height: `100%` }}
+            ></div> */}
           </div>
         </div>
         <div className={styles['member-name']}>

@@ -1,0 +1,153 @@
+.mtgrey1 {
+  color: var(--mtgrey-1);
+}
+
+.mtgrey2 {
+  color: var(--mtgrey-2);
+}
+
+.mtgrey3 {
+  color: var(--mtgrey-3);
+}
+
+.mtgreen1 {
+  color: var(--mtgreen-1);
+}
+
+.mtgreen4 {
+  color: var(--mtgreen-4);
+}
+
+.mt-19 {
+  margin-top: 19px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-28 {
+  margin-bottom: 28px;
+}
+
+.map-product {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* right: 630px; */
+  /* right: 33%; */
+  /* width: 25%; */
+  transition-duration: 1.0s;
+  width: 503px;
+  height: 100vh;
+  overflow: auto;
+  background-color: var(--mtgreen-5);
+  box-shadow: 0px 0px 20px rgba(1, 19, 6, 0.12);
+  z-index: 1005;
+}
+
+.map-product::-webkit-scrollbar {
+  display: none;
+}
+
+.map-product .search-input2 {
+  display: flex;
+  flex-direction: row;
+  padding: 4px 12px;
+  gap: 5px;
+  height: 42px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  color: var(--mtgreen-1);
+  font-size: 22px;
+}
+
+.map-product .search-input2 input.link {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: var(--mtgrey-1);
+  letter-spacing: 0.1em;
+}
+
+.map-product .search-input2 input.link:focus {
+  outline: none;
+}
+
+.map-product .card {
+  width: 90%;
+  background-color: transparent;
+  border: none;
+}
+
+.map-product .img-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 71.43%,
+      rgba(0, 0, 0, 0.74) 96.19%
+    ),
+    url('../../public/images/kexin/index-product.jpg') center center/cover; */
+  height: 239px;
+  border-radius: 10px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+  /* z-index: 10; */
+  margin-bottom: 8px;
+}
+
+.map-product .rates-wrap {
+  position: absolute;
+  margin: 0 auto;
+  width: 90%;
+  left: 15px;
+  right: 15px;
+  bottom: 12px;
+  color: var(--mtgreen-4);
+}
+
+.map-product .rates {
+  padding-left: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+}
+
+.map-product .information-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+
+.map-product .information-site {
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+}
+
+.map-product .information-mark {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+
+.map-product .information-price {
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: right;
+  letter-spacing: 0.05em;
+}

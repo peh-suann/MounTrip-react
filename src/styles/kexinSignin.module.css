@@ -83,6 +83,20 @@
   width: 100%;
 }
 
+.kexinSignin .password-wrap {
+  position: relative;
+}
+
+.kexinSignin .password-visible {
+  display: block;
+  position: absolute;
+  right: 8px;
+  top: 37px;
+  background-color: transparent;
+  border: none;
+  color: var(--mtgrey-3);
+}
+
 .kexinSignin .button {
   display: flex;
   flex-direction: column;
@@ -162,10 +176,23 @@
   color: var(--mtgreen-1);
 }
 
+.kexinSignin input.danger {
+  background: #fffff2;
+  border: 2px solid var(--mtred-1);
+  border-radius: 10px;
+  color: var(--mtred-2);
+}
+
 .kexinSignin .loginForm input:focus {
   background: #fffff2;
   border: 2px solid var(--mtgreen-1);
   box-shadow: 0px 0px 0px 4px #cee8cb;
+}
+
+.kexinSignin input.danger:focus {
+  background: #fffff2;
+  border: 2px solid var(--mtred-1);
+  box-shadow: 0px 0px 0px 4px #F6BFBE;
 }
 
 .kexinSignin .loginForm-wrap .d-flex.justify-content-between a {

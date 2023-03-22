@@ -5,9 +5,10 @@ import axios from 'axios'
 import styles from '../../styles/DavisTrailsDetail.module.css'
 
 function DavisTrailsBatch(props) {
-  const { data } = props
+  const { data, setDetailCount } = props
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
+  const [myCount, setMyCount] = useState(0)
 
   // const [data, setData] = useState({
   //   rows: [],
@@ -51,10 +52,16 @@ function DavisTrailsBatch(props) {
                 }}
                 name=""
                 id=""
+                value={myCount}
+                onChange={(e) => {
+                  // console.log('trailsBatch:', e.target.value)
+                  setMyCount(e.target.value)
+                  setDetailCount(e.target.value)
+                }}
               >
                 {rows_data.map((r, i) => {
                   return (
-                    <option key={r.sid} id={i} value="">
+                    <option key={r.sid} id={i} value={i}>
                       {r.batch_start}-{r.batch_end}
                     </option>
                   )

@@ -13,32 +13,76 @@ import { MemberContext } from './../contexts/MemberContext.js'
 import AuthContext from './../contexts/AuthContexts.js'
 import { MEMBER_DATA, USER_DATA } from '../connections/api-config'
 import axios from 'axios'
+import { motion } from 'framer-motion'
+import Modal from '../components/LaiBackdrop/Modal'
+import PasswordModal from '../components/LaiBackdrop/PasswordModal'
 // import Gift from '../../src/icons/gift.svg'
 
 export default function Member() {
+  //modal彈出視窗的
+  const [modalOpen, setModalOpen] = useState(false)
+  const open = () => setModalOpen(true)
+  const close = () => setModalOpen(false)
+  const handleModalToggle = () => {
+    modalOpen ? close() : open()
+  }
+  //密碼modal
+  const [pwdModalOpen, setPwdModalOpen] = useState(false)
+  const pwdOpen = () => setPwdModalOpen(true)
+  const pwdClose = () => setPwdModalOpen(false)
+  const handlePwdModalOpen = () => {
+    pwdModalOpen ? close() : open()
+  }
   //顯示localstorage的登入者的資訊
   const { myAuth, setMyAuth, logout } = useContext(AuthContext)
   //先設定為空陣列，在把一個個user obj放進去
   const [user, setUser] = useState({})
+  const [avatar, setAvatar] = useState('')
 
-  //抓資料的函式
-  const getUser = async () => {
+  //抓資料的函式，全部人的資料都在這個api
+  // const getUser = async (req, res) => {
+  //   try {
+  //     const res = await axios.get(MEMBER_DATA)
+  //     const currentUserId = myAuth.sid
+  //     const currentUserData = res.data.rows[currentUserId - 1]
+  //     setUser(currentUserData)
+  //     console.log('member-data-rows:', res.data.rows)
+  //     console.log('user:', currentUserData)
+  //     // return currentUserData
+  //   } catch (error) {
+  //     console.log('u:', user)
+  //     // console.log()
+
+  //     return []
+  //   }
+  // }
+  //抓資料的函式，只抓登入會員的資料
+  const getUser2 = async (req, res) => {
+    const userString = localStorage.getItem('myAuth')
+    const userData = JSON.parse(userString)
+    // console.log('u.id:', user.accountId)
+    const token = userData.token
+    const mid = userData.accountId
+
     try {
-      const res = await axios.get(MEMBER_DATA)
-      const currentUserId = myAuth.sid
-      const currentUserData = res.data.rows[currentUserId - 1]
+      const res = await axios.get(USER_DATA(mid), {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      if (!res) return res.sendStatus(401)
+      // const currentUserId = myAuth.sid
+      const currentUserData = res.data
       setUser(currentUserData)
-      console.log('member-data-rows:', res.data.rows)
-      console.log('user:', currentUserData)
-      // return currentUserData
+      // TODO 大頭貼檔名 = user.img
+      const avatarName = res.data.img
+      setAvatar(avatarName)
+      // console.log('檔名', avatar)
+      // console.log('member-data-rows:', res.data)
+      // console.log('user:', currentUserData)
     } catch (error) {
-      console.log('u:', user)
-      // console.log()
-
+      console.log('uu:', user)
       return []
     }
   }
-
   //useContext Navbar選擇分頁，電腦版的分頁選擇也一起用這個state
   const { memberPage, setMemberPage } = useContext(MemberContext)
   const { page, setPage } = useState('member')
@@ -51,7 +95,7 @@ export default function Member() {
     } else {
       setMemberPage(pageState)
     }
-    getUser()
+    getUser2()
     window.scrollTo(0, 0)
     // console.log('member.user:', user)
   }, [])
@@ -67,17 +111,17 @@ export default function Member() {
   //用useEffect讓手機menu點擊外面也可以關閉
   let menuRef = useRef()
 
-  useEffect(() => {
-    let handler = (e) => {
-      if (!menuRef.current?.contains(e.target)) {
-        setMobileMenu(false)
-      }
-    }
-    document.addEventListener('click', handler)
-    return () => {
-      document.removeEventListener('click', handler)
-    }
-  }, [])
+  // useEffect(() => {
+  //   let handler = (e) => {
+  //     if (!menuRef.current?.contains(e.target)) {
+  //       setMobileMenu(false)
+  //     }
+  //   }
+  //   document.addEventListener('click', handler)
+  //   return () => {
+  //     document.removeEventListener('click', handler)
+  //   }
+  // }, [])
 
   //scroll位置改變mobile menu的位置
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -100,23 +144,40 @@ export default function Member() {
   )
   return (
     <>
+      {modalOpen && (
+        <Modal modalOpen={modalOpen} handleClose={close} text={'上傳大頭貼'} />
+      )}
+      {pwdModalOpen && (
+        <PasswordModal
+          pwdModalOpen={pwdModalOpen}
+          handleClose={pwdClose}
+          text={'重設密碼'}
+        />
+      )}
       <div className={styles['grid-container']}>
         <div className={styles['sidebar']}>
           <MemberProfile
-            img={''}
+            img={avatar}
+            avatar={avatar}
             name={user.firstname}
             familyname={user.lastname}
             level={user.level}
-            account={myAuth.account}
+            account={user.account}
+            handleModalToggle={handleModalToggle}
+            modalOpen={modalOpen}
+            close={close}
+            open={open}
           />
-          <button
+          <motion.button
             className={styles['edit-btn']}
             onClick={() => {
               handleDisplayPage('member')
             }}
+            whileHover={{ scale: 1.1 }}
+            whileTop={{ scale: 0.9 }}
           >
             編輯個人資料
-          </button>
+          </motion.button>
           <div className={styles['btn-border']}></div>
           <div className={styles['sidebar-menu']}>
             <li className={memberPage === 'coupon' ? styles['active'] : null}>
@@ -308,8 +369,18 @@ export default function Member() {
         </div>
         {/* <MemberContent /> */}
         {/* <CouponContent /> */}
+
         {memberPage === 'member' && (
-          <MemberContent user={user} setUser={setUser} />
+          <MemberContent
+            user={user}
+            setUser={setUser}
+            modalOpen={modalOpen}
+            close={close}
+            open={open}
+            handlePwdModalOpen={handlePwdModalOpen}
+            pwdClose={pwdClose}
+            pwdOpen={pwdOpen}
+          />
         )}
         {memberPage === 'coupon' && (
           <CouponContent user={user} setUser={setUser} />

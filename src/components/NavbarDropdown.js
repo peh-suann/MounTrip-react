@@ -57,11 +57,12 @@ function NavbarDropdown(props) {
               會員中心
             </Link>
           </div>
-          <div className={`d-flex align-items-center ${DropdownCss['member-list']}`}>
+          <div
+            className={`d-flex align-items-center ${DropdownCss['member-list']}`}
+          >
             <FontAwesomeIcon icon={faGift} />
             <Link
               className={`${DropdownCss['dropdown-p']} mb-0`}
-              href="/member"
               onClick={() => {
                 setMemberPage('coupon')
                 localStorage.setItem('memberPage', 'coupon')
@@ -71,7 +72,9 @@ function NavbarDropdown(props) {
               我的優惠券
             </Link>
           </div>
-          <div className={`d-flex align-items-center ${DropdownCss['member-list']}`}>
+          <div
+            className={`d-flex align-items-center ${DropdownCss['member-list']}`}
+          >
             <FontAwesomeIcon icon={faAward} />
             <a
               className={`${DropdownCss['dropdown-p']} mb-0`}
@@ -84,7 +87,9 @@ function NavbarDropdown(props) {
               成就獎章
             </a>
           </div>
-          <div className={`d-flex align-items-center ${DropdownCss['member-list']}`}>
+          <div
+            className={`d-flex align-items-center ${DropdownCss['member-list']}`}
+          >
             <FontAwesomeIcon icon={faClock} />
             <a
               className={`${DropdownCss['dropdown-p']} mb-0`}

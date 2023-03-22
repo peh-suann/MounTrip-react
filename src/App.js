@@ -28,6 +28,7 @@ import IanShoppingCart4 from './pages/IanShoppingCart4'
 import { CartContextProvider } from './components/IanUseCart'
 
 import ProductList from './pages/TextIanShoppingCart'
+import DavisGpxLeaflet from './components/DavisTrailsDetail/DavisGpxLeaflet'
 
 function App() {
   return (
@@ -40,7 +41,6 @@ function App() {
                 {/* 其他頁面Navbar+Footer */}{' '}
                 <Route path="/products" element={<YichunProducts />} />
                 <Route path="/member" element={<Member />} />
-                <Route path="/test" element={<YichunTest />} />
                 <Route path="/trails-detail" element={<DavisTrailsDetail />} />
                 <Route path="/trails-filter" element={<DavisTrailsFilter />} />
                 <Route path="/difficulty" element={<IanDifficulty />} />

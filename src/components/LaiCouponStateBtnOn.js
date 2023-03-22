@@ -3,17 +3,7 @@ import styles from './../styles/Coupon.module.css'
 
 export default function LaiCouponStateBtn(props) {
   const { state } = props
-  const btnStatus = (state) => {
-    switch (state) {
-      case 'on':
-        return 'coupon_status_on'
-        break
-      case 'off':
-        return 'coupon_status_off'
-      case 'future':
-        return 'coupon_status_future'
-    }
-  }
+
   const showBtnText = (state) => {
     switch (state) {
       case 'on':

@@ -2,12 +2,24 @@ import React, { useContext, useState } from 'react'
 import styles from './../styles/Member.module.css'
 import { MemberContext } from './../contexts/MemberContext.js'
 import AuthContext from './../contexts/AuthContexts'
+import { motion } from 'framer-motion'
+import Backdrop from './LaiBackdrop/Backdrop'
 
 export default function MemberContent(props) {
-  const { user, setUser } = props
+  const {
+    user,
+    setUser,
+    modalOpen,
+    pwdModalOpen,
+    handlePwdModalOpen,
+    pwdClose,
+    pwdOpen,
+    close,
+    open,
+  } = props
   // console.log('user:',user)
-  const [lastname, setLastname] = useState(user.lastname)
-  const [firstname, setFirstame] = useState(user.firstname)
+  const [lastname, setLastname] = useState('user.lastname1223')
+  const [firstname, setFirstname] = useState(user.firstname)
   const [gender, setGender] = useState(user.gender)
   const [bday, setBday] = useState(user.birthday)
   const [personalId, setPersonalId] = useState(user.personal_id)
@@ -18,6 +30,20 @@ export default function MemberContent(props) {
   const [city, setCity] = useState(user.city)
   const [address, setAddress] = useState(user.address)
   // const { myAuth, setMyAuth, logout } = useContext(AuthContext)
+  // function setUserData() {
+  //   setLastname(user.lastname)
+  // }
+  // setGender(user.gender)
+  // console.log('user', user.email)
+  // console.log(user.gender, 'genderstate:', gender)
+  //彈出重設密碼表單
+  function modalControl() {
+    if (pwdModalOpen) {
+      pwdClose()
+    } else {
+      pwdOpen()
+    }
+  }
 
   //生日日期格式轉換
   const birthDate = new Date(user.birthday)
@@ -30,6 +56,7 @@ export default function MemberContent(props) {
 
   return (
     <>
+      <Backdrop />
       <div className={styles['member-data']}>
         <div className={styles['title']}>
           <svg
@@ -58,33 +85,33 @@ export default function MemberContent(props) {
         </div>
         <form className={styles['data-area']} action="">
           <div className={`${styles['name-wrap']} ${styles['input-blocks']}`}>
-            <label htmlFor="" className="">
+            <label htmlFor="firstname" className="">
               名字
             </label>
             <input
               type="text"
               className=""
-              id=""
-              name="helloe"
+              id="firstname"
+              name="firstname"
               value={user.firstname}
               onChange={(e) => {
-                setLastname(e.target.value)
+                setFirstname(e.target.value)
               }}
               required
             />
           </div>
           <div className={`${styles['fname-wrap']} ${styles['input-blocks']}`}>
-            <label htmlFor="" className={''}>
+            <label htmlFor="lastname" className={''}>
               姓氏
             </label>
             <input
               type="text"
               className={''}
-              id=""
-              name=""
+              id="lastname"
+              name="lastname"
               value={user.lastname}
               onChange={(e) => {
-                setFirstame(e.target.value.lastname)
+                setLastname(e.target.value.lastname)
               }}
               required
             />
@@ -112,14 +139,14 @@ export default function MemberContent(props) {
             className={`${styles['birth-wrap']} ${styles['input-blocks']}`}
             //   className={styles['birth-wrap']}
           >
-            <label htmlFor="" className="">
+            <label htmlFor="birthday" className="">
               出生年月日
             </label>
             <input
               type="date"
               className=""
-              id=""
-              name=""
+              id="birthday"
+              name="birthday"
               value={dateFormat}
               onChange={(e) => {
                 setBday(e.target.value.birthday)
@@ -128,14 +155,14 @@ export default function MemberContent(props) {
             />
           </div>
           <div className={`${styles['id-wrap']} ${styles['input-blocks']}`}>
-            <label htmlFor="" className="">
+            <label htmlFor="personal_id" className="">
               身分證字號
             </label>
             <input
               type="text"
               className=""
-              id=""
-              name=""
+              id="personal_id"
+              name="personal_id"
               value={user.personal_id}
               onChange={(e) => {
                 setPersonalId(e.target.value.personal_id)
@@ -144,14 +171,14 @@ export default function MemberContent(props) {
             />
           </div>
           <div className={`${styles['phone-wrap']} ${styles['input-blocks']}`}>
-            <label htmlFor="" className="">
+            <label htmlFor="mobile" className="">
               聯絡電話
             </label>
             <input
               type="text"
               className=""
-              id=""
-              name=""
+              id="mobile"
+              name="mobile"
               value={user.mobile}
               onChange={(e) => {
                 setMobile(e.target.value.mobile)
@@ -162,14 +189,14 @@ export default function MemberContent(props) {
           <div
             className={`${styles['account-wrap']} ${styles['input-blocks']}`}
           >
-            <label htmlFor="" className="">
+            <label htmlFor="account" className="">
               會員帳號
             </label>
             <input
               type="text"
               className={''}
-              id=""
-              name=""
+              id="account"
+              name="account"
               value={user.account}
               onChange={(e) => {
                 setAccount(e.target.value)
@@ -178,14 +205,14 @@ export default function MemberContent(props) {
             />
           </div>
           <div className={`${styles['email-wrap']} ${styles['input-blocks']}`}>
-            <label htmlFor="" className="">
+            <label htmlFor="email" className="">
               電子信箱
             </label>
             <input
               type="email"
               className=""
-              id=""
-              name=""
+              id="email"
+              name="email"
               value={user.email}
               onChange={(e) => {
                 setEmail(e.target.value)
@@ -194,14 +221,14 @@ export default function MemberContent(props) {
             />
           </div>
           <div className={`${styles['zip-wrap']} ${styles['input-blocks']}`}>
-            <label htmlFor="" className="">
+            <label htmlFor="zip" className="">
               聯絡地址
             </label>
             <input
               type="text"
               className=""
-              id=""
-              name=""
+              id="zip"
+              name="zip"
               value={user.zip}
               onChange={(e) => {
                 setZip(e.target.value)
@@ -246,16 +273,35 @@ export default function MemberContent(props) {
             <input
               type="text"
               className=""
-              id=""
-              name=""
+              id="address"
+              name="address"
               value={user.address}
               onChange={(e) => {
                 setAddress(e.target.value)
               }}
-              required
             />
           </div>
-          <button className={styles['save-btn']}>儲存變更</button>
+          <div className={styles.btn_group}>
+            <motion.button
+              className={styles.password_btn}
+              whileHover={{ scale: 1.1 }}
+              whileTop={{ scale: 0.9 }}
+              onClick={(e) => {
+                e.preventDefault()
+                modalControl()
+              }}
+            >
+              更改密碼
+            </motion.button>
+            <motion.button
+              className={styles['save-btn']}
+              whileHover={{ scale: 1.1 }}
+              whileTop={{ scale: 0.9 }}
+              onClick={(e) => e.preventDefault()}
+            >
+              儲存變更
+            </motion.button>
+          </div>
         </form>
       </div>
     </>

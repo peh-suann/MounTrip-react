@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import AuthContext from '../contexts/AuthContexts'
+import { StatusContext } from '../pages/KexinIndex'
 
 // styles
 import styles from './../styles/NavbarIndex.module.css'
-// import NavbarMobileMenu from './NavbarMobileMenu'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // FontAwesome
@@ -22,13 +22,12 @@ import NavbarDropdown from '../components/NavbarDropdown'
 import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 
 export default function NavBar() {
-  // const [open, setOpen] = useState(false)
+  const { mapInteraction } = useContext(StatusContext)
   const { myAuth, logout } = useContext(AuthContext)
   const [open, setOpen] = useState(false)
 
   //轉換會員頁面用
   const [memberPage, setMemberPage] = useState('member')
-
 
   const [showList, setShowList] = useState(false)
   const handleClick = function () {
@@ -38,14 +37,19 @@ export default function NavBar() {
   const [showListMobile, setShowListMobile] = useState(false)
   const navigate = useNavigate()
 
+  console.log(mapInteraction)
+
   return (
     <>
-      <nav>
+      <nav className={mapInteraction === 1 ? styles.mapstate1 : ''}>
         <div className={styles.navbar}>
           <div className={styles.left}>
-            <button className={styles.menu} onClick={(e)=>{
-              setShowListMobile(!showListMobile)
-            }}>
+            <button
+              className={styles.menu}
+              onClick={(e) => {
+                setShowListMobile(!showListMobile)
+              }}
+            >
               <FontAwesomeIcon icon={faBars} />
             </button>
             <button className={styles.logo}>
@@ -114,7 +118,9 @@ export default function NavBar() {
           </div>
           <div className={styles.right}>
             <ul className={styles.nav_icons}>
-              <li>
+              <li className={styles.searchBar}
+                style={(mapInteraction===1) ? { display: 'none' } :  {} }
+              >
                 <FontAwesomeIcon icon={faSearch} />
                 {document.documentElement.clientWidth > 390 ? (
                   <input

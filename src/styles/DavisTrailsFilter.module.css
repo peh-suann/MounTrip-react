@@ -70,11 +70,22 @@ main .right_card {
   width: 16px;
 }
 
-.input_style {
+/* .input_style {
   border: none;
   background: transparent;
   height: 33px;
   outline: none;
+} */
+
+.input_wrap .input_style {
+  display: flex;
+  text-align: center;
+  width: 175px;
+  border: none;
+  background: transparent;
+  height: 33px;
+  outline: none;
+  user-select:initial;
 }
 
 .input-i {
@@ -210,7 +221,7 @@ main .right_card {
 @media (max-width: 391px) {
   .phone_container {
     display: flex;
-    height: 165vh;
+    height: 130vh;
     padding-top: 100px;
   }
 
