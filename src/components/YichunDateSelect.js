@@ -9,7 +9,7 @@ import format from 'date-fns/format'
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 
-import './../styles/yichun_styles/YichunSearchBarCalendar.css'
+import styles from './../styles/yichun_styles/YichunSearchBarCalendar.module.css'
 
 function YichunDateSelect(props) {
   const { dateRange, setDateRange } = props
@@ -42,8 +42,8 @@ function YichunDateSelect(props) {
       <div
         className={
           document.documentElement.clientWidth > 390
-            ? 'calendarWrap'
-            : 'calendarWrap_mobile'
+            ? styles.calendarWrap
+            : styles.calendarWrap_mobile
         }
       >
         <input
@@ -57,7 +57,7 @@ function YichunDateSelect(props) {
           readOnly
           onClick={() => setOpen((open) => !open)}
         />
-        <div ref={refOne}>
+        <div ref={refOne} className={styles.calenderWrapCalender}>
           {open &&
             (document.documentElement.clientWidth > 390 ? (
               <DateRange
@@ -67,7 +67,7 @@ function YichunDateSelect(props) {
                 ranges={dateRange}
                 months={1}
                 direction="horizontal"
-                className="calendarElement"
+                className={styles.calendarElement}
                 rangeColors={['#6CBA7C']}
                 dateDisplayFormat="yyyy-MM-dd"
                 color="#000000"
