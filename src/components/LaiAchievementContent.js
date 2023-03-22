@@ -157,7 +157,7 @@ export default function LaiAchievementContent(props) {
             </div>
           </div> */}
           <AchievementDescrib
-            level={3}
+            level={user.level}
             setClickedLevel={setClickedLevel}
             clickedLevel={clickedLevel}
           />

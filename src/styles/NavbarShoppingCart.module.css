@@ -96,7 +96,7 @@ section#nav_cart .item_info .cancel {
   position: absolute;
   left: 94%;
 }
-section#nav_cart .item_info .detail button {
+section#nav_cart .item_info  button {
   border: none;
   background-color: transparent;
   padding:0px;

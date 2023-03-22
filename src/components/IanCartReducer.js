@@ -12,14 +12,6 @@ const addItem = (state, action) => {
     (item) => item.sid === action.payload.sid
   )
   console.log(ItemIndex)
-  // state.items.map((item, i) => {
-  //   if (item.sid === action.payload.sid) {
-  // console.log([...state.items, action.payload])
-  // return [...state.items, action.payload]
-  //   } else {
-  //     return state
-  //   }
-  // })
 
   const payloadQuantity = action.payload.quantity
 
@@ -42,6 +34,15 @@ const addItem = (state, action) => {
   console.log([...state.items, action.payload])
   return [...state.items, action.payload]
 }
+
+// const addCoupon = (state, action) => {
+//   console.log('addCoupon state:', state)
+//   console.log('addCoupon action:', action)
+//   const newCoupon = [...state.coupon, action.payload]
+//   console.log('newCoupon:', newCoupon)
+//   console.log([...state.coupon, newCoupon])
+//   return [...state, newCoupon]
+// }
 
 const removeItem = (state, action) => {
   return state.items.filter((item) => item.sid !== action.payload.id)
@@ -73,10 +74,10 @@ const plusItemQuantityOnce = (state, action) => {
   const ItemIndex = state.items.findIndex(
     (item) => item.sid === action.payload.id
   )
-  // console.log(ItemIndex)
+  console.log(ItemIndex)
   if (ItemIndex > -1) {
     const item = state.items[ItemIndex]
-    const id = item.id
+    const id = item.sid
     const quantity = item.quantity + 1
 
     const action = {
@@ -87,15 +88,6 @@ const plusItemQuantityOnce = (state, action) => {
   }
   return [...state.items]
 }
-// const plusIcon = (state, plusid) => {
-//   return state.map((v, i) => {
-//     if (v.sid === plusid) {
-//       return { ...v, count: v.count + 1 }
-//     } else {
-//       return { ...v }
-//     }
-//   })
-// }
 
 const minusItemQuantityOnce = (state, action) => {
   const ItemIndex = state.items.findIndex(

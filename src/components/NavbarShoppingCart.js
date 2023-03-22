@@ -85,7 +85,7 @@ function NavbarShoppingCart(props) {
                     ></div>
                     <div className={styles.detail}>
                       <h5 className={styles.item_name}>{v.trail_name}</h5>
-                      <button
+                      {/* <button
                         onClick={() => {
                           console.log('click')
                           removeItem(v.sid)
@@ -93,7 +93,7 @@ function NavbarShoppingCart(props) {
                         className={`${styles.cancel} btn btn-unstyle`}
                       >
                         <FontAwesomeIcon icon={faXmark} />
-                      </button>
+                      </button> */}
                       <h6 className={styles.item_describe}>
                         {v.trail_name}單日行程
                       </h6>
@@ -101,6 +101,15 @@ function NavbarShoppingCart(props) {
                         {v.batch_start} - {v.batch_end}
                       </p>
                     </div>
+                    <button
+                      onClick={() => {
+                        console.log('click')
+                        removeItem(v.sid)
+                      }}
+                      className={`${styles.cancel} btn btn-unstyle`}
+                    >
+                      <FontAwesomeIcon icon={faXmark} />
+                    </button>
                   </div>
                   <div className={styles.price_num}>
                     <div className={styles.price}>

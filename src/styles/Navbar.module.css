@@ -150,6 +150,21 @@ nav {
   border-radius: 50%;
   background-color: var(--mtgreen-1);
 }
+.shopping_cart{
+  position: relative;
+  
+}
+.shoppingCount{
+  color: white;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  top: -7px;
+  left:20px;
+  background-color: rgb(255, 77, 77);
+}
+
 
 @media screen and (max-width: 391px) {
   body {
