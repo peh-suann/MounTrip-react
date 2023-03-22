@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -12,6 +12,9 @@ import DavisFilterComLeft from '../components/DavisTrailsFilter/DavisFilterComLe
 import DavisFilterComRight from '../components/DavisTrailsFilter/DavisFilterComRight'
 import DavisFilterMoTop from '../components/DavisTrailsFilter/DavisFilterMoTop'
 import DavisFilterMoBo from '../components/DavisTrailsFilter/DavisFilterMoBo'
+
+// search context
+import { SearchContext } from '../contexts/SearchContext'
 
 // api
 import { TRAILS_FILTER_DATA } from '../connections/api-config'
@@ -40,6 +43,9 @@ function DavisTrailsFilter() {
     totalPages: 0,
     totalRows: 0,
   })
+
+  // search context
+  const { search, setSearch } = useContext(SearchContext)
 
   const filterByKeyword = (rows_data, keywordpr, startdatepr, enddatepr) => {
     return rows_data.filter((v, i) => {

@@ -17,6 +17,9 @@ import YichunDateSelect from './YichunDateSelect'
 // Connections
 import { SEARCH_PRODUCTS } from '../connections/api-config'
 
+// Search Context
+import { SearchContext } from '../contexts/SearchContext'
+
 // Styles
 import styles from './../styles/yichun_styles/YichunSearchBar.module.css'
 
@@ -31,16 +34,8 @@ function YichunSearchBar() {
   ])
   const [numOfPpl, setNumOfPpl] = useState(1)
 
-  const navigate = useNavigate()
-  // const [searchPeople, setSearchPeople] = useState()
-
-  // const getSearchData = async () => {
-  //   const response = await axios(ALL_PRODUCTS, {
-  //     params: {
-  //       location: location,
-  //     },
-  //   })
-  // }
+  // search context
+  const { search, setSearch } = useContext(SearchContext)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -135,6 +130,12 @@ function YichunSearchBar() {
                 endDate: format(dateRange[0].endDate, 'yyyy-MM-dd'),
                 numOfPpl: numOfPpl,
               })
+              const searchData = {
+                location: location,
+                startDate: format(dateRange[0].startDate, 'yyyy-MM-dd'),
+                endDate: format(dateRange[0].endDate, 'yyyy-MM-dd'),
+              }
+              setSearch(searchData)
             }}
           >
             搜尋

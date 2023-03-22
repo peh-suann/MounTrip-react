@@ -1,5 +1,5 @@
 // Packages
-import React, { createContext, useState, useEffect, useRef } from 'react'
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -27,6 +27,10 @@ import {
   WEATHER_LOCATION,
 } from '../connections/api-config'
 
+// Search Context
+import { SearchContext } from '../contexts/SearchContext'
+
+
 // Styles
 import styles from './../styles/yichun_styles/YichunProducts.module.css'
 export const StylesContext = createContext(styles)
@@ -36,6 +40,9 @@ function YichunProducts() {
   const [hotSpringProducts, setHotSpringProducts] = useState([])
   const [locationProducts, setLocationProducts] = useState({})
   const [weatherLocation, setWeatherLocation] = useState({})
+
+  // search context
+  const {search, setSearch} = useContext(SearchContext)
 
   const filterTitle = ['所有熱門', '清明連假', '賞花春遊', '最美日出']
   const [filter, setFilter] = useState('所有熱門')
