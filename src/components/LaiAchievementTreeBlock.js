@@ -3,8 +3,19 @@ import styles from './../styles/Achievement.module.css'
 import TreeCount from './LaiAchievementCountTree'
 import TreeCountPersonal from './LaiAchievementCountTreePersonal'
 import TreeCanvas from './LaiAchievementCanvas'
+import TreeAnimation from './LaiAchievementTreeAnimation'
+
+import { motion } from 'framer-motion'
+import Button from './Button'
 
 export default function LaiAchievementTreeBlock() {
+  // const [isAnimating, setIsAnimating] = useState(false)
+  // const startAnimation = () => {
+  //   setIsAnimating(true)
+  // }
+
+  // const onAnimationComplete = () => {
+  //   setIsAnimating(fa
   return (
     <>
       <div className={styles['tree-block']}>
@@ -29,7 +40,13 @@ export default function LaiAchievementTreeBlock() {
           </p>
         </div>
         <div className={styles['rules-border']}></div>
-        <div className={styles['achievement-state']}>
+        <TreeCanvas />
+        <motion.div
+          className={styles['achievement-state']}
+          initial={{ scale: 0, opacity: 0, translateY: '100%' }}
+          animate={{ scale: '100%', opacity: 1, translateY: 0 }}
+          transition={{ delay: 3, duration: 1.5 }}
+        >
           <p>
             透過參加MounTrip的行程，
             {/* <div className={styles['achievement-num']}> */}
@@ -39,10 +56,18 @@ export default function LaiAchievementTreeBlock() {
             顆樹，恭喜你！
           </p>
           {/* </div> */}
-        </div>
-        <TreeCanvas />
+        </motion.div>
+        <TreeAnimation />
         {/* <canvas className={styles.tree_animation}>Hello Canvas</canvas> */}
       </div>
+      {/* <div className={styles.animate_btn_wrap}>
+        <Button
+          text={'再看一次'}
+          onClick={() => {
+            // startAnimation()
+          }}
+        />
+      </div> */}
     </>
   )
 }
