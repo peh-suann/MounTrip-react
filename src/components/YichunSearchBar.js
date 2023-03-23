@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import format from 'date-fns/format'
 import { addDays } from 'date-fns'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 // FontAwesome
 import { faMinus, faAdd, faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -24,7 +25,7 @@ import { SearchContext } from '../contexts/SearchContext'
 import styles from './../styles/yichun_styles/YichunSearchBar.module.css'
 
 function YichunSearchBar() {
-  const [location, setLocation] = useState('想去的地方...')
+  const [location, setLocation] = useState('')
   const [dateRange, setDateRange] = useState([
     {
       startDate: new Date(),
@@ -47,7 +48,7 @@ function YichunSearchBar() {
           endDate: format(dateRange[0].endDate, 'yyyy-MM-dd'),
         },
       })
-      console.log(response.data)
+      // console.log(response.data)
 
       // navigate('/trails-filter')
     } catch (err) {
@@ -68,7 +69,7 @@ function YichunSearchBar() {
               <input
                 type="text"
                 id="location"
-                placeholder={location}
+                placeholder="想去的地方..."
                 onChange={(e) => {
                   setLocation(e.target.value)
                 }}
@@ -122,23 +123,30 @@ function YichunSearchBar() {
           </div> */}
           <button
             id={styles.search_btn}
-            type="submit"
+            type="button"
             onClick={() => {
-              console.log({
-                location: location,
-                startDate: format(dateRange[0].startDate, 'yyyy-MM-dd'),
-                endDate: format(dateRange[0].endDate, 'yyyy-MM-dd'),
-                numOfPpl: numOfPpl,
-              })
+              // console.log({
+              //   location: location,
+              //   startDate: format(dateRange[0].startDate, 'yyyy-MM-dd'),
+              //   endDate: format(dateRange[0].endDate, 'yyyy-MM-dd'),
+              //   numOfPpl: numOfPpl,
+              // })
               const searchData = {
                 location: location,
                 startDate: format(dateRange[0].startDate, 'yyyy-MM-dd'),
                 endDate: format(dateRange[0].endDate, 'yyyy-MM-dd'),
               }
               setSearch(searchData)
+
+              localStorage.setItem('mySearch', JSON.stringify(searchData))
             }}
           >
-            搜尋
+            <Link
+              className="text-decoration-none text-white"
+              to="/trails-filter"
+            >
+              搜尋
+            </Link>
           </button>
         </section>
       </form>

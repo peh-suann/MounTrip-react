@@ -29,6 +29,7 @@ import IanShoppingCart4 from './pages/IanShoppingCart4'
 import { CartContextProvider } from './components/IanUseCart'
 
 import { SearchContext } from './contexts/SearchContext'
+import { SearchContextProvider } from './contexts/SearchContext'
 
 import ProductList from './pages/TextIanShoppingCart'
 import DavisGpxLeaflet from './components/DavisTrailsDetail/DavisGpxLeaflet'
@@ -36,20 +37,21 @@ import { useEffect, useState } from 'react'
 
 function App() {
   // only for searching
-  const [search, setSearch] = useState({
-    location: '',
-    startDate: '',
-    endDate: '',
-  })
+  // const { search } = useContext(SearchContext)
+  // const [search, setSearch] = useState({
+  //   location: '',
+  //   startDate: '',
+  //   endDate: '',
+  // })
 
-  useEffect(() => {
-    console.log('App:', search)
-  }, [search])
+  // useEffect(() => {
+  //   console.log('App:', search)
+  // }, [search])
 
   return (
     <>
       <Router>
-        <SearchContext.Provider value={{ search, setSearch }}>
+        <SearchContextProvider>
           <AuthContextProvider>
             <CartContextProvider>
               <Routes>
@@ -84,7 +86,7 @@ function App() {
               </Routes>
             </CartContextProvider>
           </AuthContextProvider>
-        </SearchContext.Provider>
+        </SearchContextProvider>
       </Router>
     </>
   )

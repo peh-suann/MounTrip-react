@@ -12,6 +12,12 @@ import { SELECT_COUNTY } from '../connections/api-config'
 import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons'
 import Button from './Button'
 
+// Search Context
+import { SearchContext } from '../contexts/SearchContext'
+import { format } from 'date-fns'
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
 function KexinIndexProducts(props) {
   const { selectCounty } = props
   const { mapInteraction, setMapInteraction } = useContext(StatusContext)
@@ -41,6 +47,24 @@ function KexinIndexProducts(props) {
   // getCountyData(selectCounty)
   // console.log('hi', selectCounty)
   // console.log(data.length)
+
+  // search context
+  const { search, setSearch } = useContext(SearchContext)
+
+  const [indexgeo, setIndexgeo] = useState()
+
+  let startdate = new Date(2023, 1, 1)
+  let enddate = new Date(2024, 12, 31)
+  const formattedDate = format(startdate, 'yyyy-MM-dd')
+  const formattedDateEnd = format(enddate, 'yyyy-MM-dd')
+  const [newstartdate, setNewstartdate] = useState(formattedDate)
+  const [newenddate, setNewenddate] = useState(formattedDateEnd)
+
+  useEffect(() => {
+    // setIndexgeo(selectCounty)
+    // console.log(indexgeo)
+    console.log(selectCounty)
+  }, [selectCounty])
 
   return (
     <>
@@ -89,8 +113,25 @@ function KexinIndexProducts(props) {
                 )
               })
             : ''}
+          <span
+            onClick={() => {
+              const searchData = {
+                location: selectCounty,
+                startDate: newstartdate,
+                endDate: newenddate,
+              }
+              setSearch(searchData)
 
-          <Button text={'探索更多'} iconFront={0} iconEnd={1}/>
+              localStorage.setItem('mySearch', JSON.stringify(searchData))
+            }}
+          >
+            <Button
+              text={'探索更多'}
+              iconFront={0}
+              iconEnd={1}
+              link={'trails-filter'}
+            />
+          </span>
         </div>
       </div>
     </>
