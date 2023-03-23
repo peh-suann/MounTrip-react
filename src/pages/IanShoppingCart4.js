@@ -1,16 +1,29 @@
+import axios from 'axios'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 // import './../html/css/shoppingCart4.css'
 import styles from './../styles/IanShoppingCart4.module.css'
 import './../styles/Mountrip.module.css'
-// shoppingcart - product,
-// product - subtitle,
-//   product - number,
-//   product - mobile,
-//   product - subtitle
+import { ORDER_HISTORY } from '../connections/api-config'
 
 function IanShoppingCart4() {
   const [mypage, setPage] = useState('')
+  const cartItem = JSON.parse(localStorage.getItem('cart'))
+  const member = JSON.parse(localStorage.getItem('member'))
+  console.log(member)
+  const order = JSON.parse(localStorage.getItem('order'))
+  console.log(order)
+  const payTotal = JSON.parse(localStorage.getItem('order'))[2].finallyTotal
+  console.log(payTotal)
+
+  const totalData = { member: member, order: order, payTotal: payTotal }
+  console.log(totalData)
+
+  const userString = localStorage.getItem('myAuth')
+  const userData = JSON.parse(userString)
+  const token = userData.token
+  const mid = userData.accountId
+
   return (
     <>
       {/* <div className={`${styles['bg-image']}`}> */}
@@ -315,7 +328,7 @@ function IanShoppingCart4() {
           <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>S12345678</p>
         </div>
         <div className={`${styles['mb-15']} d-flex justify-content-between `}>
-          <p className={`${styles.mtgrey2}`}>訂單編號</p>
+          <p className={`${styles.mtgrey2}`}>訂單日期</p>
           <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>2023/01/01</p>
         </div>
         <div
@@ -329,17 +342,9 @@ function IanShoppingCart4() {
           <div className={`col-7`}></div>
           <div className={`col-5`}>
             <div className={`d-flex justify-content-between`}>
-              <p className={`${styles.mtgrey2}`}>小計</p>
-              <p className={`${styles.mtgrey1}`}>NTD $2,330</p>
-            </div>
-            <div className={`d-flex justify-content-between`}>
-              <p className={`${styles.mtgrey2}`}>優惠券</p>
-              <p className={`${styles.mtgrey1}`}>-NTD $100</p>
-            </div>
-            <div className={`d-flex justify-content-between`}>
-              <p className={`${styles['fw-600']} ${styles.mtgrey2}`}>合計</p>
-              <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>
-                NTD $2,230
+              <p className={`${styles['total']} ${styles.mtgrey2}`}>合計</p>
+              <p className={`${styles['total']} ${styles.mtgrey1}`}>
+                NTD ${payTotal}
               </p>
             </div>
           </div>
@@ -347,42 +352,78 @@ function IanShoppingCart4() {
 
         <div className={`${styles['shoppingcart-product']}`}>
           {/* web購物車商品細節 */}
-          <div
-            className={`${styles['product-col']} ${styles['mobile-none']} row d-flex w-100 justify-content-between`}
-          >
-            <div className={`${styles['mobile-none']} ${styles.w2}`}>
-              <div className={`row w-100`}>
-                <div className={`col-4`}>
-                  <div className={`${styles['product-img-wrap']}`}>
-                    <img src="/imgs/Ian_img/shopping-cart1.png" />
+          {cartItem.map((v, i) => {
+            return (
+              <div
+                key={i}
+                className={`${styles['product-col']} ${styles['mobile-none']} row d-flex w-100 justify-content-between`}
+              >
+                <div className={`${styles['mobile-none']} ${styles.w2}`}>
+                  <div className={`row w-100`}>
+                    <div className={`col-4`}>
+                      <div className={`${styles['product-img-wrap']}`}>
+                        <div
+                          className={`${styles.pic}`}
+                          style={{
+                            backgroundImage: `url('./imgs/Ian_img/${v.trail_img}')`,
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                    <div className={`col-8 px-0`}>
+                      <p className={`${styles['product-title']}`}>
+                        {v.trail_name}
+                      </p>
+                      <p className={`${styles['product-subtitle']} mb-0`}>
+                        {v.trail_name}單日行程
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className={`col-8 px-0`}>
-                  <p className={`${styles['product-title']}`}>
-                    草嶺古道｜探索新北一日遊探索新北一日遊
-                  </p>
-                  <p className={`${styles['product-subtitle']} mb-0`}>
-                    草嶺古道單日行程
-                  </p>
+                <div className={`${styles['mobile-none']} ${styles.w3} ps-0`}>
+                  <p className={`${styles.mtgrey3} mb-0`}>{v.batch_start}</p>
+                  <p className={`${styles.mtgrey3} mb-0`}>&emsp;&emsp;|</p>
+                  <p className={`${styles.mtgrey3} mb-0`}>{v.batch_end}</p>
+                </div>
+                <div className={`${styles['mobile-none']} ${styles.w4} ps-0`}>
+                  NTD {v.price}
+                </div>
+                <div className={`${styles['mobile-none']} ${styles.w5} ps-0`}>
+                  <div className={`d-flex`}>
+                    <p className={`${styles['product-number']} me-3`}>
+                      x {v.quantity}
+                    </p>
+                  </div>
+                </div>
+                <div className={`${styles['mobile-none']} ${styles.w6} ps-0 `}>
+                  NTD {v.itemTotal}
                 </div>
               </div>
-            </div>
-            <div className={`${styles['mobile-none']} ${styles.w3} ps-0`}>
-              <p className={`${styles.mtgrey3} mb-0`}>2023/01/01</p>
-              <p className={`${styles.mtgrey3} mb-0`}>&emsp;&emsp;|</p>
-              <p className={`${styles.mtgrey3} mb-0`}>2023/01/02</p>
-            </div>
-            <div className={`${styles['mobile-none']} ${styles.w4} ps-0`}>
-              NTD 1,200
-            </div>
-            <div className={`${styles['mobile-none']} ${styles.w5} ps-0`}>
-              <div className={`d-flex`}>
-                <p className={`${styles['product-number']} me-3`}>x 1</p>
-              </div>
-            </div>
-            <div className={`${styles['mobile-none']} ${styles.w6} ps-0 `}>
-              NTD 1,200
-            </div>
+            )
+          })}
+
+          <div className={`${styles['pd-40']}`}>
+            <form
+              action="post"
+              onSubmit={(e) => {
+                e.preventDefault()
+                axios
+                  .post(ORDER_HISTORY, {
+                    headers: {
+                      Authorization: `Bearer ${token}`,
+                      totalData: totalData,
+                    },
+                  })
+                  .then((res) => res.data)
+              }}
+            >
+              <button
+                type="submit"
+                className={`${styles.btnChecked} btn btn-unstyle`}
+              >
+                完成訂單
+              </button>
+            </form>
           </div>
           {/* mobile購物車商品細節 */}
           <div

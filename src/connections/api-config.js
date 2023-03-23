@@ -88,4 +88,5 @@ export const TRAILS_DIFFHARD = `${HOST}/difficultyHard`
 export const TRAILS_DIFFMEDIUM = `${HOST}/difficultyMedium`
 export const TRAILS_DIFFEASY = `${HOST}/difficultyEasy`
 export const ORDER_COUPON = `${HOST}/SC1`
-// export const ShoppingCart = `${HOST}/sc1`
+export const ORDER_HISTORY = `${HOST}/history`
+export const ORDERUSER_DATA = (mid) => `${HOST}/${mid}`
