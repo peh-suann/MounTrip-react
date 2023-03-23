@@ -31,7 +31,7 @@ function YichunTestPlayed() {
   const { newCoupon, setNewCoupon } = useContext(TestCouponContext)
   const handleClick = () => {
     // console.log('hi coupon')
-    // setNewCoupon((prev) => !prev)
+    setNewCoupon(true)
   }
   return (
     <>
