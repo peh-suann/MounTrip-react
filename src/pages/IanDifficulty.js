@@ -77,6 +77,8 @@ function IanDifficulty() {
     getDifficultHardData()
     getDifficultMediumData()
     getDifficultEasyData()
+
+    document.documentElement.scrollTop = 0
   }, [])
 
   return (

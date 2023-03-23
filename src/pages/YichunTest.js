@@ -7,7 +7,11 @@ import YichunQuestionSection from '../components/YichunQuestionSection'
 import Button from '../components/Button'
 
 // Connections
-import { TEST_QUES } from '../connections/api-config'
+import {
+  TEST_QUES,
+  TEST_PLAY,
+  TEST_TOGGLE_PLAY,
+} from '../connections/api-config'
 
 // Styles
 import styles from './../styles/yichun_styles/YichunTest.module.css'
@@ -24,6 +28,7 @@ function YichunTest() {
     false,
   ])
   const [correct, setCorrect] = useState([false, false, false, false, false])
+  const [play, setPlay] = useState({})
 
   // mountain moving effect
   const mountainG2Ref = useRef(null)
@@ -51,9 +56,65 @@ function YichunTest() {
     }
   }
 
+  const didPlay = async () => {
+    try {
+      const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+      console.log('account id:', currentAccount.accountId)
+      const response = await axios.get(TEST_PLAY, {
+        params: {
+          accountId: currentAccount.accountId,
+        },
+      })
+      console.log(response)
+      return response.data[0].played_status
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const togglePlay = async () => {
+    try {
+      const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+      console.log('account id:', currentAccount.accountId)
+      const response = await axios.get(TEST_TOGGLE_PLAY, {
+        params: {
+          accountId: currentAccount.accountId,
+        },
+      })
+      console.log(response)
+      return response.data[0].played_status
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  useEffect(() => {
+    if (display[5]) {
+      togglePlay()
+      didPlay()
+    }
+  }, [display])
+
   useEffect(() => {
     getListData()
+
+    const fetchData = async () => {
+      const test_play = await didPlay()
+      setPlay(test_play)
+    }
+
+    if (localStorage.getItem('myAuth')) {
+      fetchData()
+    } else {
+      console.log('no such acc')
+    }
   }, [])
+
+  useEffect(() => {
+    if (play === 1) {
+      console.log("you've played!")
+    }
+  }, [play])
 
   const scrollTo = async (index) => {
     const windowHeight = window.innerHeight
@@ -364,13 +425,11 @@ function YichunTest() {
                 const moveX = (mouseX - halfWidth) / halfWidth
                 const moveY = (mouseY - halfHeight) / halfHeight
 
-                console.log('----------------------')
-                console.log('mouseX: ', mouseX)
-                console.log('mouseY: ', mouseY)
-                console.log('moveX: ', moveX)
-                console.log('moveY: ', moveY)
-
-                console.log('mountainY1Ref', mountainY1Ref)
+                // console.log('----------------------')
+                // console.log('mouseX: ', mouseX)
+                // console.log('mouseY: ', mouseY)
+                // console.log('moveX: ', moveX)
+                // console.log('moveY: ', moveY)
 
                 prizemountainG2Ref.current.style.transform = `translate(${
                   moveX * 1

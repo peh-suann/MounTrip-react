@@ -9,6 +9,7 @@ import Login from './pages/KexinLogin'
 import YichunProducts from './pages/YichunProducts'
 import Member from './pages/Member'
 import YichunTest from './pages/YichunTest'
+import YichunTestPlayed from './pages/YichunTestPlayed'
 import Signin from './pages/KexinSignin'
 import Index from './pages/KexinIndex'
 import ResetPassword from './pages/KexinResetPassword'
@@ -28,28 +29,18 @@ import IanShoppingCart4 from './pages/IanShoppingCart4'
 
 import { CartContextProvider } from './components/IanUseCart'
 
-import { SearchContext } from './contexts/SearchContext'
+import { SearchContextProvider } from './contexts/SearchContext'
+import { TestContext } from './contexts/TestContext'
 
 import ProductList from './pages/TextIanShoppingCart'
 import DavisGpxLeaflet from './components/DavisTrailsDetail/DavisGpxLeaflet'
 import { useEffect, useState } from 'react'
 
 function App() {
-  // only for searching
-  const [search, setSearch] = useState({
-    location: '',
-    startDate: '',
-    endDate: '',
-  })
-
-  useEffect(() => {
-    console.log('App:', search)
-  }, [search])
-
   return (
     <>
       <Router>
-        <SearchContext.Provider value={{ search, setSearch }}>
+        <SearchContextProvider>
           <AuthContextProvider>
             <CartContextProvider>
               <Routes>
@@ -72,6 +63,11 @@ function App() {
                   <Route path="/SC3" element={<IanShoppingCart3 />} />
                   <Route path="/SC4" element={<IanShoppingCart4 />} />
                   <Route path="textsc" element={<ProductList />} />
+                  {1 > 0 ? (
+                    ''
+                  ) : (
+                    <Route path="/test" element={<YichunTestPlayed />} />
+                  )}
                 </Route>
                 <Route path="/">
                   {/* 登入頁面Navbar+Footer */}
@@ -79,12 +75,12 @@ function App() {
                   <Route path="/Signin" element={<Signin />} />
                   <Route path="/password" element={<ResetPassword />} />
                   <Route path="/Index" element={<Index />} />
-                  <Route path="/test" element={<YichunTest />} />
+                  {1 > 0 ? <Route path="/test" element={<YichunTest />} /> : ''}
                 </Route>
               </Routes>
             </CartContextProvider>
           </AuthContextProvider>
-        </SearchContext.Provider>
+        </SearchContextProvider>
       </Router>
     </>
   )

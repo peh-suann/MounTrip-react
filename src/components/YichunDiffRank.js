@@ -52,7 +52,12 @@ function YichunDiffRank(props) {
           <p>
             {el.diffCn}級山是大家的 <u>#{el.describe}</u>
           </p>
-          <Button text={'查看更多'} iconFront={0} iconEnd={1} />
+          <Button
+            text={'查看更多'}
+            iconFront={0}
+            iconEnd={1}
+            link={'difficulty'}
+          />
         </div>
       </div>
     </>
