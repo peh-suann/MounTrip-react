@@ -2,7 +2,7 @@
 // 上面寫HOST，下面寫路徑
 
 // hosts ---------------------------------------------------------------------------
-// export const HOST = 'http://localhost:3001'
+export const HOST = 'http://localhost:3001'
 // export const HOST = 'http://localhost:3002'
 
 //Lai's connect
@@ -14,7 +14,7 @@
 
 // 兩台電腦連線時，要用筆電wiki的ip，才能使用localstorage
 
-export const HOST = 'http://192.168.71.118:3001'
+// export const HOST = 'http://192.168.71.118:3001'
 
 //教室電腦的連線
 // export const HOST = '192.168.21.84:3002'
@@ -49,7 +49,8 @@ export const WEATHER_LOCATION = `${HOST}/weather_location`
 export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
 export const TEST_PLAY = `${HOST}/test_play`
-export const TEST_TOGGLE_PLAY = `${HOST}/toggle_play`
+export const TEST_INSERT_PLAY = `${HOST}/insert_play`
+export const TEST_INSERT_COUPON = `${HOST}/insert_coupon`
 
 // kexin's path
 export const LOGIN = `${HOST}/login`

@@ -4,10 +4,12 @@ section.played {
   margin-top: var(--navbar-height);
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 section.played h2 {
   font-weight: 900;
-  font-size: 100px;
+  font-size: 32px;
+  margin-bottom: 32px;
 }

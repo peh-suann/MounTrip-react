@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import styles from './../styles/Button.module.css'
 
 export default function Button(props) {
-  const { text, iconFront, iconEnd, style, link } = props
+  const { text, iconFront, iconEnd, style, link, handleClick } = props
   return (
     <Link to={`/${link}`} style={{ ...style, textDecoration: 'none' }}>
-      <button className={styles.btn}>
+      <button className={styles.btn} onClick={handleClick}>
         {iconFront ? (
           <svg
             width="20"
