@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './../styles/IanShoppingCart1.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../components/IanUseCart'
 import { ORDER_COUPON } from '../connections/api-config'
 import axios from 'axios'
@@ -55,10 +55,14 @@ function IanShoppingCart1() {
 
     getUseCoupon()
   }, [])
+  const navigate = useNavigate()
 
   const storage = localStorage.getItem('cart')
-  const QString = { storage: storage, finallyTotal: finallyTotal }
-
+  const j = JSON.parse(storage)
+  const total = { finallyTotal: finallyTotal }
+  const QString = j.concat(total)
+  const JsonStorage = JSON.stringify(QString)
+  // console.log('QString:', QString)
   return (
     <div className={`${styles.IanShoppingCartAll}`}>
       <section
@@ -271,7 +275,17 @@ function IanShoppingCart1() {
         </div>
       </section>
 
-      <form method="get" action={ORDER_COUPON}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          // if (storage.finallyTotal && storage.finallyTotal !== 'NAN') {
+          localStorage.setItem('order', JsonStorage)
+          navigate('/SC2')
+          // } else {
+          //   navigate('/SC1')
+          // }
+        }}
+      >
         <section className={`${styles['shopping-cart-contain']} row m-0`}>
           <div className={`col-lg-9 col-sm-12`}>
             <div
@@ -309,15 +323,6 @@ function IanShoppingCart1() {
             <div
               className={`${styles['product-col-title']} ${styles['mobile-none']} d-flex `}
             >
-              {/* <div className={`${styles['mobile-none']} ${styles.w1} `}> */}
-              {/* <input
-                type="checkbox"
-                checked={data.buy}
-                onChange={() => {
-                  setData(selectAll(data.sid))
-                }}
-              /> */}
-              {/* </div> */}
               <div
                 className={`${styles['mobile-none']} ${styles.w2} text-center`}
               >
@@ -599,17 +604,11 @@ function IanShoppingCart1() {
               </div>
             </div>
 
-            <Link to="/SC2" className={`w-100 btn`}>
-              <button
-                type="submit"
-                onSumit={() => {
-                  axios.get(ORDER_COUPON, QString).then((r) => r.json)
-                }}
-                className={`${styles.next} w-100 btn`}
-              >
-                下一步
-              </button>
-            </Link>
+            {/* <Link to="/SC2" className={`w-100 btn`}> */}
+            <button type="submit" className={`${styles.next} w-100 btn`}>
+              下一步
+            </button>
+            {/* </Link> */}
           </div>
         </section>
       </form>

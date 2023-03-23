@@ -1,23 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import styles from './../styles/IanShoppingCart2.module.css'
 import IanOrderData from '../components/IanOrderData'
 import IanOrderDetail from '../components/IanOrderDetail'
+import axios from 'axios'
+import { ORDERUSER_DATA } from '../connections/api-config'
 
 function IanShoppingCart2() {
   const [mypage, setPage] = useState('')
-  const [user, setUser] = useState([
-    {
-      id: '',
-      firstname: '',
-      lastname: '',
-      phone: '',
-      email: '',
-      idCard: '',
-      birthday: '',
-    },
-  ])
-
+  // const [user, setUser] = useState([
+  //   {
+  //     id: '',
+  //     firstname: '',
+  //     lastname: '',
+  //     phone: '',
+  //     email: '',
+  //     idCard: '',
+  //     birthday: '',
+  //   },
+  // ])
+  const [user, setUser] = useState({})
+  console.log(user)
   const [memberitems, setMemberItems] = useState([
     {
       id: 1,
@@ -29,9 +32,40 @@ function IanShoppingCart2() {
       birthday: '1987-01-20',
     },
   ])
+
+  const getUser2 = async (req, res) => {
+    const userString = localStorage.getItem('myAuth')
+    const userData = JSON.parse(userString)
+    // console.log('u.id:', user.accountId)
+    const token = userData.token
+    const mid = userData.accountId
+
+    try {
+      const res = await axios.get(ORDERUSER_DATA(mid), {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      if (!res) return res.sendStatus(401)
+      // const currentUserId = myAuth.sid
+      const currentUserData = res.data
+      setUser(currentUserData)
+      // TODO 大頭貼檔名 = user.img
+      const avatarName = res.data.img
+    } catch (error) {
+      console.log('uu:', user)
+      return []
+    }
+  }
+
+  useEffect(() => {
+    getUser2()
+  }, [])
   // const navigate = useNavigate()
   // const [search,setSearch]=useSearchParams()
   // console.log(search.toString(),12132156456654)
+  const navigate = useNavigate()
+  const jsonUser = { user: user }
+  const Jsonmember = JSON.stringify(jsonUser)
+  // const JsonStorage = JSON.stringify(QString)
   return (
     <>
       <div className={`${styles.shoppingCart2All}`}>
@@ -269,7 +303,13 @@ function IanShoppingCart2() {
           </section>
         </div>
 
-        <form action="" method="get">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            localStorage.setItem('member', Jsonmember)
+            navigate('/SC3')
+          }}
+        >
           <div
             className={`${styles['wrap-container']} ${styles['shopping-cart-contain']} ${styles['mb-88']} `}
           >
@@ -301,13 +341,18 @@ function IanShoppingCart2() {
               </svg>
               <h3
                 onClick={() => {
-                  setUser(memberitems)
+                  setUser(user)
                 }}
               >
                 訂購人資料
               </h3>
             </div>
-            <IanOrderData user={user} setMemberItems={setMemberItems} />
+            <IanOrderData
+              user={user}
+              setUser={setUser}
+              memberitems={memberitems}
+              setMemberItems={setMemberItems}
+            />
 
             <div
               className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center `}
@@ -346,10 +391,6 @@ function IanShoppingCart2() {
 
           <div className={`${styles['pd-40']} d-flex justify-content-center`}>
             <button
-              onClick={(e) => {
-                e.preventDefault()
-                // navigate('/SC3')
-              }}
               type="submit"
               className={`${styles.paybtn} btn btn-unstyle`}
             >

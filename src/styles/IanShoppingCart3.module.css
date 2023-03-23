@@ -96,7 +96,7 @@
     position: absolute;
   }
   
-  form.form-inline > div.mb-20  > input {
+  div.form-inline > div.mb-20  > input {
     background: rgba(206, 232, 203, 0.6);
     height: 55px;
     border: 2px solid var(--mtgreen-3);
@@ -104,14 +104,14 @@
     padding: 10px 15px;
   }
 
-form.form-inline > div.mb-48 > label.dataSame{
+div.form-inline > div.mb-48 > label.dataSame{
 font-weight: 350;
 font-size: 22px;
 line-height: 140%;
 letter-spacing: 0.1em;
 }
   
-  form.form-inline > div.mb-20 > div.form-group > input{
+  div.form-inline > div.mb-20 > div.form-group > input{
     width: 100%;
     background: rgba(206, 232, 203, 0.6);
     height: 55px;
@@ -120,22 +120,22 @@ letter-spacing: 0.1em;
     padding: 10px;
   }
 
-  form.form-inline > div.mb-20 > label  {
+  div.form-inline > div.mb-20 > label  {
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
     color: var(--mtgrey-1);
   }
-  form.form-inline > div.mb-20 > div.form-group{
+  div.form-inline > div.mb-20 > div.form-group{
     padding: 0px;
   }
 
 
-form.form-inline > div.mb-20 > div.form-group > input{
+div.form-inline > div.mb-20 > div.form-group > input{
   width: 100%;
   }
 
-  form.form-inline > div.mb-20 > div.form-group > label  {
+  div.form-inline > div.mb-20 > div.form-group > label  {
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;

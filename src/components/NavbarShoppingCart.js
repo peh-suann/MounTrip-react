@@ -148,13 +148,7 @@ function NavbarShoppingCart(props) {
               <div className={styles.order_price}>NTD {cart.cartTotal}</div>
             </div>
             {/* <Link to="/SC1" style={{ width: '100%' }}> */}
-            <Button
-              text={'前往結賬'}
-              style={{ width: '100%' }}
-              onClick={() => {
-                navigate('/SC1', { replace: true })
-              }}
-            />
+            <Button text={'前往結賬'} style={{ width: '100%' }} link="SC1" />
             {/* </Link> */}
           </div>
         </div>
