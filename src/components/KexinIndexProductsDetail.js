@@ -11,7 +11,7 @@ import { SELECT_COMMENT, SELECT_BATCH } from '../connections/api-config'
 function KexinIndexProductsDetail() {
   const { mapInteraction, setMapInteraction } = useContext(StatusContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
-  console.log('myProduct', myProduct)
+  // console.log('myProduct', myProduct)
 
   // 抓comment資料
   const [data, setData] = useState({
@@ -183,7 +183,7 @@ function KexinIndexProductsDetail() {
 
           {data.length
             ? data.map((v, i) => {
-                console.log(v, i)
+                {/* console.log(v, i) */}
                 return (
                   <>
                     <KexinComment key={i} el={v} />

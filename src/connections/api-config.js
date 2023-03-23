@@ -53,6 +53,7 @@ export const TEST_ANS = `${HOST}/answer`
 export const LOGIN = `${HOST}/login`
 export const SIGNIN = `${HOST}/signin`
 export const PASSWORD = `${HOST}/resetPassword`
+export const VERIFY = `${HOST}/vertify`
 export const SELECT_COUNTY = `${HOST}/select_products`
 export const SELECT_COMMENT = `${HOST}/select_comment`
 export const SELECT_BATCH = `${HOST}/select_batch`

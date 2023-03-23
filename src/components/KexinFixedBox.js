@@ -21,8 +21,8 @@ function KexinFixedBox(props) {
   const [count, setCount] = useState(1)
   const [detailCount, setDetailCount] = useState(0)
 
-  console.log('el', el)
-  console.log('myProduct', myProduct)
+  // console.log('el', el)
+  // console.log('myProduct', myProduct)
 
   const Rows = {
     batch_end: '2023-03-29',

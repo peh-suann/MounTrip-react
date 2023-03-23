@@ -6,6 +6,7 @@ import useRWD from '../contexts/useRWD'
 import KexinIndexProducts from '../components/KexinIndexProducts'
 import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
 import { useNavigate } from 'react-router-dom'
+import KexinWeather from '../components/KexinWeather'
 
 // context
 export const StatusContext = createContext({})
@@ -160,7 +161,7 @@ function KexinIndex() {
       .transition()
       .duration(750)
       .attr('transform', transformData[county].transform1)
-    setMapInteraction(1)
+    setMapInteraction(1) 
 
     d3.select('#landmark').remove()
     d3.select('#landmark1').remove()
@@ -287,6 +288,8 @@ function KexinIndex() {
           ) : (
             ' '
           )}
+          {mapInteraction===2 ? <KexinWeather selectCounty={selectCounty} /> : ''}
+          
         </ProductContext.Provider>
       </StatusContext.Provider>
     </>

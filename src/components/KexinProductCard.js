@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import * as d3 from 'd3'
 import { StylesContext } from './../pages/YichunProducts'
 import { StatusContext, ProductContext } from '../pages/KexinIndex'
-// import { SELECT_PRODUCT } from '../connections/api-config'
+import styles from '../styles/kexinLandmark.module.css'
 
 function KexinProductCard(props) {
   const { ranking, el, shadow } = props
@@ -38,6 +38,7 @@ function KexinProductCard(props) {
           d3.select('#mapZoom')
             .append('svg')
             .attr('id', 'landmark')
+            .attr('class', 'landmark')
             .attr('width', '10')
             .attr('height', '10')
             .attr('viewBox', '0 0 38 38')

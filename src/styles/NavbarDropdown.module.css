@@ -88,14 +88,6 @@
   /* cursor: 'pointer'; */
 }
 
-.showBox {
-  position: absolute;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px 16px;
-  transition-duration: 1.0s;
-  /* color: ; */
-}
 
 
 @media screen and (max-width: 390px) {

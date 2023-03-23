@@ -1,25 +1,55 @@
 import { useState, useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 // component
 import LoginNavbar from '../layouts/NavbarLogin'
 
 // BACKEND
-import { PASSWORD } from '../connections/api-config'
+import { VERIFY, PASSWORD } from '../connections/api-config'
 import axios from 'axios'
 
 // styles
 import signinStyles from '../styles/kexinSignin.module.css'
 
-
 // FontAwesome
-
 
 function KexinResetPassword() {
   const [samePassword, setSamePassword] = useState(false)
   const [signinSuccess, setSigninSuccess] = useState(false)
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [passwordVisible1, setPasswordVisible1] = useState(false)
+  const location = useLocation()
+  const usp = new URLSearchParams(location.search)
+
+  console.log(usp)
+  console.log(usp.get('token'))
+  const token = usp.get('token')
+
+  // const [token, setToken] = useState({
+  //   token: '',
+  // })
+  if (token) {
+    axios.post(VERIFY, token).then((response) => {
+      console.log(response.data)
+      // if (response.data.success) {
+      //   const { account, accountId, token } = response.data
+      //   localStorage.setItem(
+      //     'myAuth',
+      //     JSON.stringify({ account, accountId, token })
+      //   )
+      //   setMyAuth({
+      //     authorized: true,
+      //     account,
+      //     token,
+      //     sid: accountId,
+      //   })
+      //   navigate('/index')
+      //   setShowbox(2)
+      // } else {
+      //   // alert(response.data.error || '帳號或密碼錯誤')
+      // }
+    })
+  }
 
   const [myForm, setMyForm] = useState({
     email: '',
@@ -135,7 +165,6 @@ function KexinResetPassword() {
                   />
                   <div className="form-text"></div>
                 </div>
-
                 <div className={`${signinStyles['button']}`}>
                   <button
                     id={signinStyles['login']}
