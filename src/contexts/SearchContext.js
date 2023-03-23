@@ -40,6 +40,7 @@ export const SearchContextProvider = ({ children }) => {
   useEffect(() => {
     console.log('App:', search)
   }, [search])
+
   return (
     <SearchContext.Provider value={{ search: search, setSearch: setSearch }}>
       {children}

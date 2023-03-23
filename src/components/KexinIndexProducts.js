@@ -90,7 +90,12 @@ function KexinIndexProducts(props) {
               })
             : ''}
 
-          <Button text={'探索更多'} iconFront={0} iconEnd={1}/>
+          <Button
+            text={'探索更多'}
+            iconFront={0}
+            iconEnd={1}
+            link={'trails-filter'}
+          />
         </div>
       </div>
     </>

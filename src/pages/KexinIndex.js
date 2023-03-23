@@ -6,6 +6,13 @@ import useRWD from '../contexts/useRWD'
 import KexinIndexProducts from '../components/KexinIndexProducts'
 import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
 
+// Search Context
+import { useContext } from 'react'
+import { SearchContext } from '../contexts/SearchContext'
+import { format } from 'date-fns'
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
 // context
 export const StatusContext = createContext({})
 export const ProductContext = createContext({})
@@ -121,8 +128,6 @@ function KexinIndex() {
           .on('mouseover', mouseOverHandler)
           .on('mouseout', mouseOutHandler)
           .on('click', clickHandler)
-
-
       }
     }
   }, [device])
@@ -166,7 +171,6 @@ function KexinIndex() {
 
     setSelectCounty(county)
   }
-
 
   // console.log(selectCounty);
   // console.log('outside', mapInteraction)
@@ -216,10 +220,36 @@ function KexinIndex() {
       // 刪掉地標
       d3.select('#landmark').remove()
       d3.select('#landmark1').remove()
-      
+
       setMapInteraction(1)
     }
   }
+  // search context
+  const { search, setSearch } = useContext(SearchContext)
+
+  const [location, setLocation] = useState()
+
+  const [indexgeo, setIndexgeo] = useState('')
+
+  let startdate = new Date(2023, 1, 1)
+  let enddate = new Date(2024, 12, 31)
+  const formattedDate = format(startdate, 'yyyy-MM-dd')
+  const formattedDateEnd = format(enddate, 'yyyy-MM-dd')
+  const [newstartdate, setNewstartdate] = useState(formattedDate)
+  const [newenddate, setNewenddate] = useState(formattedDateEnd)
+
+  console.log(indexgeo)
+
+  useEffect(() => {
+    setIndexgeo(selectCounty)
+    const searchData = {
+      location: indexgeo,
+      startDate: newstartdate,
+      endDate: newenddate,
+    }
+    setSearch(searchData)
+    localStorage.setItem('mySearch', JSON.stringify(searchData))
+  }, [indexgeo])
 
   return (
     <>
@@ -230,6 +260,17 @@ function KexinIndex() {
             ref={mapRef}
             id={`${IndexStyles['info']}`}
             onClick={clickReset}
+            // onChange={() => {
+            //   const searchData = {
+            //     location: setSearch(selectCounty),
+            //     startDate: newstartdate,
+            //     endDate: newenddate,
+            //   }
+            //   setSearch(searchData)
+
+            //   localStorage.setItem('mySearch', JSON.stringify(searchData))
+            //   navigate('trails-filter')
+            // }}
           ></div>
           <KexinIndexProducts selectCounty={selectCounty} />
           <KexinIndexProductsDetail selectCounty={selectCounty} />

@@ -48,24 +48,25 @@ function DavisTrailsFilter() {
 
   useEffect(() => {
     console.log('initSearch render')
-    // if (search.initSearch) {
-    console.log('search:', search.initSearch.location)
-    setKeywordpr(search.initSearch.location)
-    setStartdatepr(search.initSearch.startDate)
-    setEnddatepr(search.initSearch.endDate)
-    // }
+
+    console.log('search:', search, search.location)
+
+    setKeywordpr(search.location)
+    setStartdatepr(search.startDate)
+    setEnddatepr(search.endDate)
   }, [search])
 
   const filterByKeyword = (rows_data, keywordpr, startdatepr, enddatepr) => {
     return rows_data.filter((v, i) => {
       const keywordMatch =
         v.trail_name.includes(keywordpr) ||
+        v.difficulty_describ.includes(keywordpr) ||
         v.geo_location_sid.includes(keywordpr) ||
         v.geo_location_town_sid.includes(keywordpr)
       const dateRangeMatch =
         Date.parse(v.batch_start) > Date.parse(startdatepr) &&
         Date.parse(v.batch_end) < Date.parse(enddatepr)
-      // console.log(maxpeplepr)
+      // console.log(data)
       // console.log(Date.parse(v.batch_start))
       const peopleCount = v.batch_max >= maxpeplepr
 
