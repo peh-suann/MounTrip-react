@@ -47,25 +47,17 @@ export default function NavBar() {
   // search context
   const { search, setSearch } = useContext(SearchContext)
 
-  const [navKeyWorld, setNavKeyWorld] = useState('')
-
+  const [navKeyWorld, setNavKeyWorld] = useState()
   let startdate = new Date(2023, 1, 1)
-
   let enddate = new Date(2024, 12, 31)
-
   const formattedDate = format(startdate, 'yyyy-MM-dd')
-
   const formattedDateEnd = format(enddate, 'yyyy-MM-dd')
-
   const [newstartdate, setNewstartdate] = useState(formattedDate)
-
   const [newenddate, setNewenddate] = useState(formattedDateEnd)
 
-  console.log(newstartdate) // output: 02/01/2023
-
   useEffect(() => {
-    console.log('navKeyWorld', search)
-  }, [search])
+    console.log('navKeyWorld', navKeyWorld)
+  }, [navKeyWorld])
 
   return (
     <>
@@ -161,20 +153,20 @@ export default function NavBar() {
                     placeholder="搜尋關鍵字、目的地"
                     onChange={(e) => {
                       setNavKeyWorld(e.target.value)
-                      const searchData = {
-                        location: navKeyWorld,
-                        startDate: newstartdate,
-                        endDate: newenddate,
-                      }
-                      setSearch(searchData)
-
-                      localStorage.setItem(
-                        'mySearch',
-                        JSON.stringify(searchData)
-                      )
                     }}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter') {
+                        const searchData = {
+                          location: navKeyWorld,
+                          startDate: newstartdate,
+                          endDate: newenddate,
+                        }
+                        setSearch(searchData)
+
+                        localStorage.setItem(
+                          'mySearch',
+                          JSON.stringify(searchData)
+                        )
                         navigate('/trails-filter')
                       }
                     }}

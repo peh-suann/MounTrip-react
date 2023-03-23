@@ -33,6 +33,11 @@ main .right_card {
   padding-bottom: 12px;
 }
 
+.left_card .enddate {
+  width: 300px;
+  padding-bottom: 36px;
+}
+
 .search_count {
   width: 300px;
   padding-bottom: 36px;

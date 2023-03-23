@@ -25,16 +25,12 @@ function DavisTrailsFilter() {
 
   const [keywordpr, setKeywordpr] = useState('')
 
-  const [startdatepr, setStartdatepr] = useState(
-    format(new Date(1), 'yyyy-MM-dd')
-  )
+  const [startdatepr, setStartdatepr] = useState('')
 
   const [enddatepr, setEnddatepr] = useState(format(new Date(), 'yyyy-MM-dd'))
 
   const [maxpeplepr, setMaxpeplepr] = useState()
 
-  // console.log(Date.parse(startdatepr))
-  // console.log(Date.parse(enddatepr))
   // trails_data
   const [data, setData] = useState({
     page: 0,
@@ -44,15 +40,16 @@ function DavisTrailsFilter() {
     totalRows: 0,
   })
 
-  const { search, searchtwo } = useContext(SearchContext)
+  const { search } = useContext(SearchContext)
 
   useEffect(() => {
-    console.log('initSearch render')
+    // console.log('initSearch render')
 
-    console.log('search:', search, search.location)
-
+    // console.log('search:', search, search.location)
+    // console.log('before startdatepr:', startdatepr)
     setKeywordpr(search.location)
     setStartdatepr(search.startDate)
+    // console.log('startdatepr:', startdatepr)
     setEnddatepr(search.endDate)
   }, [search])
 
@@ -68,9 +65,9 @@ function DavisTrailsFilter() {
         Date.parse(v.batch_end) < Date.parse(enddatepr)
       // console.log(data)
       // console.log(Date.parse(v.batch_start))
-      const peopleCount = v.batch_max >= maxpeplepr
+      // const peopleCount = v.batch_max >= maxpeplepr
 
-      return keywordMatch && dateRangeMatch && peopleCount
+      return keywordMatch && dateRangeMatch
     })
   }
 
@@ -103,6 +100,8 @@ function DavisTrailsFilter() {
           {/* FIXME: 日期選單 */}
           <DavisFilterComLeft
             data={data}
+            keywordpr={keywordpr}
+            startdatepr={startdatepr}
             setKeywordpr={setKeywordpr}
             setStartdatepr={setStartdatepr}
             setEnddatepr={setEnddatepr}

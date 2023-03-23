@@ -25,7 +25,7 @@ import { SearchContext } from '../contexts/SearchContext'
 import styles from './../styles/yichun_styles/YichunSearchBar.module.css'
 
 function YichunSearchBar() {
-  const [location, setLocation] = useState('想去的地方...')
+  const [location, setLocation] = useState('')
   const [dateRange, setDateRange] = useState([
     {
       startDate: new Date(),
@@ -69,7 +69,7 @@ function YichunSearchBar() {
               <input
                 type="text"
                 id="location"
-                placeholder={location}
+                placeholder="想去的地方..."
                 onChange={(e) => {
                   setLocation(e.target.value)
                 }}
@@ -141,7 +141,12 @@ function YichunSearchBar() {
               localStorage.setItem('mySearch', JSON.stringify(searchData))
             }}
           >
-            <Link to="/trails-filter">搜尋</Link>
+            <Link
+              className="text-decoration-none text-white"
+              to="/trails-filter"
+            >
+              搜尋
+            </Link>
           </button>
         </section>
       </form>

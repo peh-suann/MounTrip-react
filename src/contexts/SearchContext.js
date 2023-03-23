@@ -17,8 +17,9 @@ export const SearchContextProvider = ({ children }) => {
     if (str) {
       const localSearch = JSON.parse(str)
       if (
-        localSearch.location ||
-        (localSearch.endDate && localSearch.startDate)
+        localSearch.location &&
+        localSearch.endDate &&
+        localSearch.startDate
       ) {
         console.log(str)
         initSearch = {
