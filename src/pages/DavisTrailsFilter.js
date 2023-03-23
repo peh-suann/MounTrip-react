@@ -44,7 +44,7 @@ function DavisTrailsFilter() {
     totalRows: 0,
   })
 
-  const { search } = useContext(SearchContext)
+  const { search, searchtwo } = useContext(SearchContext)
 
   useEffect(() => {
     console.log('initSearch render')

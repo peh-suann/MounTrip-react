@@ -38,15 +38,15 @@ import { useEffect, useState } from 'react'
 function App() {
   // only for searching
   // const { search } = useContext(SearchContext)
-  const [search, setSearch] = useState({
-    location: '',
-    startDate: '',
-    endDate: '',
-  })
+  // const [search, setSearch] = useState({
+  //   location: '',
+  //   startDate: '',
+  //   endDate: '',
+  // })
 
-  useEffect(() => {
-    console.log('App:', search)
-  }, [search])
+  // useEffect(() => {
+  //   console.log('App:', search)
+  // }, [search])
 
   return (
     <>
