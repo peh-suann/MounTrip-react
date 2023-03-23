@@ -1,10 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './../styles/Favorite.module.css'
 import FavoriteAmount from './LaiFavoriteAmount'
 import FavoriteCard from './LaiFavoriteCard'
 import TreeAnimation2 from './LaiAchievementTreeAnimation2'
+import axios from 'axios'
+import { USER_FAV } from '../connections/api-config'
 
 export default function LaiFavoriteContent() {
+  const [fav, setFav] = useState([])
+  let currentFav = []
+
+  const getFavorite = async (req, res) => {
+    const userString = localStorage.getItem('myAuth')
+    const userData = JSON.parse(userString)
+    const token = userData.token
+    const mid = userData.accountId
+
+    try {
+      const res = await axios(USER_FAV, {
+        headers: { Authorization: `Bearer ${token}`, sid: mid },
+      })
+      if (!res.data) return res.sendStatus(401)
+
+      currentFav = res.data
+      setFav(currentFav)
+      console.log('Fav', fav)
+    } catch (err) {
+      console.log('coupon axios err')
+      return []
+    }
+  }
+
+  useEffect(() => {
+    getFavorite()
+  },[])
   return (
     <>
       <div className={styles['member-data']}>
@@ -24,7 +53,6 @@ export default function LaiFavoriteContent() {
               strokeLinejoin="round"
             />
           </svg>
-
           <h1>我的收藏</h1>
         </div>
         <div className={styles['container']}>
@@ -32,21 +60,21 @@ export default function LaiFavoriteContent() {
             <div className={styles['show-number']}>
               <p>已收藏</p>
               {/* TODO 連結真實的評論數 */}
-              <FavoriteAmount amount={10} />
+              <FavoriteAmount amount={fav.length} />
               {/* <p id={styles['fav-amount']}>5</p> */}
               <p>個行程</p>
             </div>
-            <div className={styles['filter-btn']}>
+            {/* <div className={styles['filter-btn']}>
               <select>
                 <option>排列順序</option>
                 <option>依照加入時間</option>
                 <option>依照價格排序</option>
                 <option>依照行程時間</option>
               </select>
-            </div>
+            </div> */}
           </div>
           <div className={styles['fav-list']}>
-            <FavoriteCard
+            {/* <FavoriteCard
               img={''}
               title={'草嶺古道｜探索新北一日遊'}
               describ={
@@ -56,10 +84,29 @@ export default function LaiFavoriteContent() {
               // TODO星星數量的傳值
               starAmount={''}
               price={'2,400'}
-            />
+            /> */}
+            {fav.map((v, i) => {
+              {
+                /* const priceFormat = v.price.toLocaleString() */
+              }
+              return (
+                <FavoriteCard
+                  key={v.trails_sid}
+                  img={v.trail_img}
+                  title={v.trail_name}
+                  describ={v.trail_short_describ}
+                  location={`${v.geo_location_sid}${v.geo_location_town_sid}`}
+                  starAmount={v.avg_score}
+                  trailSid={v.trails_sid}
+                  price={v.price}
+                  fav={fav}
+                  setFav={setFav}
+                  getFavorite={getFavorite}
+                />
+              )
+            })}
           </div>
           <TreeAnimation2 />
-          
         </div>
       </div>
     </>

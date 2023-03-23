@@ -170,8 +170,11 @@ export default function LaiAchievementCanvas(props) {
             {10001 < total && total < 15000 ? <Model2 /> : null}
             {15001 < total && total < 20000 ? <Model3 /> : null}
             {20001 < total && total < 25000 ? <Model4 /> : null}
-            {25001 < total && total < 30000 ? <Model5 /> : null}
-            {30001 < total && total < 35000 ? <Model6 /> : null}
+            {25001 < total && total < 35000 ? <Model5 /> : null}
+            {35001 < total && total < 45000 ? <Model6 /> : null}
+            {45001 < total && total < 55000 ? <Model7 /> : null}
+            {55001 < total && total < 65000 ? <Model8 /> : null}
+
             {/* <Model8 /> */}
             {/* <Model7 /> */}
 

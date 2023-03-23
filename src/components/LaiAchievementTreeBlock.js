@@ -17,8 +17,10 @@ export default function LaiAchievementTreeBlock(props) {
     if (10001 < t && t < 15000) return 2
     if (15001 < t && t < 20000) return 3
     if (20001 < t && t < 25000) return 4
-    if (25001 < t && t < 30000) return 5
-    if (30001 < t && t < 35000) return 6
+    if (25001 < t && t < 35000) return 5
+    if (35001 < t && t < 45000) return 6
+    if (45001 < t && t < 55000) return 7
+    if (55001 < t && t < 65000) return 8
   }
   return (
     <>
