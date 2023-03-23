@@ -8,7 +8,7 @@ import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
 import { useNavigate } from 'react-router-dom'
 import KexinWeather from '../components/KexinWeather'
 
-// context
+// context 
 export const StatusContext = createContext({})
 export const ProductContext = createContext({})
 
@@ -288,7 +288,7 @@ function KexinIndex() {
           ) : (
             ' '
           )}
-          {mapInteraction===2 ? <KexinWeather selectCounty={selectCounty} /> : ''}
+          {mapInteraction===1 || mapInteraction===2   ? <KexinWeather selectCounty={selectCounty} /> : ''}
           
         </ProductContext.Provider>
       </StatusContext.Provider>

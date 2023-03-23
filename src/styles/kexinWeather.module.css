@@ -8,6 +8,7 @@
   filter: drop-shadow(0px 0px 20px rgba(28, 28, 30, 0.1));
   border-radius: 10px;
   overflow: hidden;
+  transition-duration: 1s;
 }
 
 .weatherBox .weatherUp {
@@ -19,35 +20,44 @@
 }
 
 .weatherBox .icon {
-  font-size: 50px;
+  font-size: 70px;
+  color: var(--mtgrey-3);
+}
+
+.weatherBox .iconBig {
+  font-size: 70px;
   color: var(--mtgrey-3);
 }
 
 .weatherBox .weatherUp h2 {
-  font-weight: 900;
-  font-size: 45px;
+  font-weight: 700;
+  font-size: 28px;
   line-height: 140%;
   letter-spacing: 0.05em;
-  /* margin: 0; */
+  margin: 0;
   color: var(--mtgrey-1);
 }
 
 .weatherBox .weatherUp h3 {
   margin-top: 15px;
   margin-bottom: 15px;
+  text-align: end;
 }
 
 .weatherBox .weatherUp .weatherStatus {
   margin-bottom: 5px;
   font-size: 15px;
+  text-align: end;
 }
 
 .weatherBox .weatherUp .weatherH {
-  padding-left: 8px;
+  margin-bottom: 5px;
+  text-align: end;
 }
 
 .weatherBox .weatherUp .weatherText {
-  letter-spacing: 0.1em;
+  margin-bottom: 5px;
+  letter-spacing: 0.06em;
 }
 
 .weatherBox .weatherDown {
