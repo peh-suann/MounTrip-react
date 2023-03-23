@@ -227,8 +227,6 @@ function KexinIndex() {
   // search context
   const { search, setSearch } = useContext(SearchContext)
 
-  const [location, setLocation] = useState()
-
   const [indexgeo, setIndexgeo] = useState('')
 
   let startdate = new Date(2023, 1, 1)
@@ -238,7 +236,9 @@ function KexinIndex() {
   const [newstartdate, setNewstartdate] = useState(formattedDate)
   const [newenddate, setNewenddate] = useState(formattedDateEnd)
 
-  console.log(indexgeo)
+  useEffect(() => {
+    console.log(selectCounty)
+  }, [selectCounty])
 
   useEffect(() => {
     setIndexgeo(selectCounty)
@@ -247,9 +247,10 @@ function KexinIndex() {
       startDate: newstartdate,
       endDate: newenddate,
     }
-    setSearch(searchData)
+    setSearch(selectCounty)
     localStorage.setItem('mySearch', JSON.stringify(searchData))
-  }, [indexgeo])
+    console.log(indexgeo)
+  }, [selectCounty])
 
   return (
     <>
