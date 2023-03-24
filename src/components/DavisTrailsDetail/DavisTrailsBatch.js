@@ -4,33 +4,34 @@ import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 import styles from '../../styles/DavisTrailsDetail.module.css'
 
+// api
+import { TRAILS_BATCH_DATA } from '../../connections/api-config'
+
 function DavisTrailsBatch(props) {
   const { data, setDetailCount } = props
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
   const [myCount, setMyCount] = useState(0)
 
-  // const [data, setData] = useState({
-  //   rows: [],
-  // })
+  const [batch, setBatch] = useState({
+    rows: [],
+  })
+  const getBatchData = async (page) => {
+    const response = await axios.get(TRAILS_BATCH_DATA, {
+      params: {
+        page,
+      },
+    })
+    // console.log(response.data)
+    setBatch(response.data)
+  }
 
-  // const [count, setCount] = useState(0)
-
-  // const getListData = async (page = 1) => {
-  //   const response = await axios.get(TRAILS_BATCH_DATA, {
-  //     params: {
-  //       page,
-  //     },
-  //   })
-  //   setData(response.data)
-  // }
-
-  // useEffect(() => {
-  //   getListData(+usp.get('page'))
-  //   return () => {
-  //     console.log('unmount')
-  //   }
-  // }, [])
+  useEffect(() => {
+    getBatchData(+usp.get('page'))
+    return () => {
+      // console.log('unmount')
+    }
+  }, [])
 
   const [rotate, setRotate] = useState()
   const rows_data = data.rows
