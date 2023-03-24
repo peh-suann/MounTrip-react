@@ -6,7 +6,11 @@ import AchievementDescrib from './LaiAchievementDescrib'
 import AchievementTreeBlock from './LaiAchievementTreeBlock'
 import AchievementQuote from './LaiAchievementQuote'
 import axios from 'axios'
-import { USER_ORDER, USER_ORDER_SUCCESS } from '../connections/api-config'
+import {
+  USER_ORDER,
+  USER_ORDER_SUCCESS,
+  USER_LEVEL_UPDATE,
+} from '../connections/api-config'
 
 export default function LaiAchievementContent(props) {
   const { user, setUser } = props
@@ -71,6 +75,38 @@ export default function LaiAchievementContent(props) {
     getHistoryOrder()
   }, [])
 
+  const userString = localStorage.getItem('myAuth')
+  const userData = JSON.parse(userString)
+  const token = userData.token
+  const mid = userData.accountId
+  //判定會員升級的函式
+  const levelUp = async () => {
+    let url = null
+    let minTotal = null
+    if (user.level === 1 && orderList.total > 25000) {
+      url = USER_LEVEL_UPDATE
+      // minTotal = 25000
+    } else if (user.level === 2 && orderList.total > 50000) {
+      url = USER_LEVEL_UPDATE
+      // minTotal = 50000
+    } else {
+      return
+    }
+    try {
+      const update = await axios.post(
+        url,
+        { sid: mid },
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      console.log('level up success', update.data)
+    } catch (err) {
+      console.log('level up err', err)
+    }
+  }
+
+  useEffect(() => {
+    levelUp()
+  }, [orderList.total])
   // console.log(calcOrderTotal())
   const progressFormat = orderList.total.toLocaleString()
   // console.log('converted', progressFormat)
@@ -127,7 +163,7 @@ export default function LaiAchievementContent(props) {
             <ProgressBar current={progressFormat} target={'50,000'} />
           ) : null}
           {user.level === 3 ? (
-            <ProgressBar current={'50,000'} target={'50,000'} />
+            <ProgressBar current={progressFormat} target={progressFormat} />
           ) : null}
           <AchievementDescrib
             level={user.level}
@@ -136,7 +172,7 @@ export default function LaiAchievementContent(props) {
           />
           {/* FIXME */}
           <AchievementQuote level={clickedLevel} />
-          <AchievementTreeBlock total={orderList.total}/>
+          <AchievementTreeBlock total={orderList.total} />
           {/* <div className={styles['tree-block']}>
             <div className={styles['describ-rules']}>
               <p>

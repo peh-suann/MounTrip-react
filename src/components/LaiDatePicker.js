@@ -19,7 +19,7 @@ export default function LaiDatePicker(props) {
   //   const bdFormat = format(bd, 'yyyy-MM-dd')
   const [date, setDate] = useState(new Date())
   //   console.log('userInfo', userInfo)
-  console.log('date:', date)
+  // console.log('date:', date)
   //   console.log(
   //     'birthday',
   //     dayjs(userInfo.userData.birthday).format('YYYY-MM-DD')

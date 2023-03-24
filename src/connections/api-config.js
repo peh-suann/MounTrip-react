@@ -35,6 +35,7 @@ export const USER_COUPON = `${HOST}/member/me/coupon`
 export const USER_FAV = `${HOST}/member/me/favorite`
 export const USER_FAV_DELETE = `${HOST}/member/me/favorite/delete`
 export const USER_FAV_ADD = `${HOST}/member/me/favorite/add`
+export const USER_LEVEL_UPDATE = `${HOST}/member/me/member-level/update`
 export const USER_ORDER = `${HOST}/member/me/order`
 export const USER_ORDER_SUCCESS = `${HOST}/member/me/order/success`
 export const USER_ORDER_DETAIL = `${HOST}/member/me/order/product-detail`
