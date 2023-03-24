@@ -6,7 +6,7 @@ import AchievementDescrib from './LaiAchievementDescrib'
 import AchievementTreeBlock from './LaiAchievementTreeBlock'
 import AchievementQuote from './LaiAchievementQuote'
 import axios from 'axios'
-import { USER_ORDER } from '../connections/api-config'
+import { USER_ORDER, USER_ORDER_SUCCESS } from '../connections/api-config'
 
 export default function LaiAchievementContent(props) {
   const { user, setUser } = props
@@ -37,11 +37,12 @@ export default function LaiAchievementContent(props) {
     const mid = user.accountId
 
     try {
-      const res = await axios.get(USER_ORDER, {
+      const res = await axios.get(USER_ORDER_SUCCESS, {
         headers: { Authorization: `Bearer ${token}`, sid: mid },
       })
       if (!res) return res.sendStatus(401)
       // const currentUserId = myAuth.sid
+      //FIXME 應該要去除掉未付款/未成立的訂單
       currentOrderList = res.data.orderSidData
       // currentUserOrder = res.data.data
       dispatch({
@@ -72,8 +73,8 @@ export default function LaiAchievementContent(props) {
 
   // console.log(calcOrderTotal())
   const progressFormat = orderList.total.toLocaleString()
-  console.log('converted',progressFormat)
-  console.log('RDOC', orderList) //現在這是個useReducer了
+  // console.log('converted', progressFormat)
+  // console.log('RDOC', orderList) //現在這是個useReducer了
   return (
     <>
       <div className={styles['member-data']}>
@@ -128,34 +129,6 @@ export default function LaiAchievementContent(props) {
           {user.level === 3 ? (
             <ProgressBar current={'50,000'} target={'50,000'} />
           ) : null}
-          {/* <ProgressBar current={'19,800'} target={'25,000'} /> */}
-          {/* <div className={styles['progress-bars']}>
-            <div className={styles['bar-wrap']}>
-              <div className={styles['bar-base']}></div>
-              <div className={styles['bar-top']}></div>
-            </div>
-            <div className={styles['goal-number-wrap']}>
-              <div className={styles['current-num']}>7,800</div>
-              <div className={styles['goal-num']}>/25,000</div>
-            </div>
-          </div> */}
-          {/* <div className={styles['describ']}>
-            <div className={styles['describ-tag-wrap']}>
-              <div className={`${styles['des-tag']} ${styles['low']}`}>
-                新手山友
-              </div>
-              <div className={`${styles['des-tag']} ${styles['mid']}`}>
-                初級嚮導
-              </div>
-              <div className={`${styles['des-tag']} ${styles['high']}`}>
-                超級嚮導
-              </div>
-            </div>
-            <div className={styles['tag-border']}></div>
-            <div className={styles['describ-mid']}>
-              <h6>累計消費滿25,000元解鎖</h6>
-            </div>
-          </div> */}
           <AchievementDescrib
             level={user.level}
             setClickedLevel={setClickedLevel}
@@ -163,7 +136,7 @@ export default function LaiAchievementContent(props) {
           />
           {/* FIXME */}
           <AchievementQuote level={clickedLevel} />
-          <AchievementTreeBlock />
+          <AchievementTreeBlock total={orderList.total}/>
           {/* <div className={styles['tree-block']}>
             <div className={styles['describ-rules']}>
               <p>

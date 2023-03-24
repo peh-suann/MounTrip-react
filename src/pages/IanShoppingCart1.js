@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './../styles/IanShoppingCart1.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../components/IanUseCart'
 import { ORDER_COUPON } from '../connections/api-config'
 import axios from 'axios'
@@ -10,52 +10,59 @@ import axios from 'axios'
 
 function IanShoppingCart1() {
   const { cart, items, plusOne, minusOne, removeItem } = useCart()
-
   const [mypage, setPage] = useState('')
-
+  const [show, setShow] = useState(false)
   const [useCoupon, setUseCoupon] = useState([])
-
-  const [order, setOrder] = useState({
-    rows: [],
-    item: cart.cartTotal,
-    finallyTotal: 0,
+  const [mySelect, setMySelect] = useState('')
+  const price = useCoupon.map((v, i) => {
+    if (v.coupon_code === mySelect) {
+      return v.min_purchase
+    }
+  })
+  const [finalyPrice] = price.filter((v, i) => {
+    return v != undefined
   })
 
-  const [changeV, setChangeV] = useState('')
+  // console.log(finalyPrice)
+  // console.log(cart.cartTotal)
+  const finallyTotal = cart.cartTotal - finalyPrice
 
-  const getOrderCoupon = async (req, res) => {
-    // const userString = localStorage.getItem('myAuth')
-    // const userData = JSON.parse(userString)
-    // const token = userData.token
-    // const mid = userData.accountId
+  const getUseCoupon = async (req, res) => {
+    // const r = await fetch(ORDER_COUPON)
+    //   const c = await r.json()
+    //   console.log('c:', c)
+    //   setUseCoupon(c)
+    const userString = localStorage.getItem('myAuth')
+    const userData = JSON.parse(userString)
+    const token = userData.token
+    const mid = userData.accountId
+    try {
+      const res = await axios.get(ORDER_COUPON, {
+        headers: { Authorization: `Bearer ${token}`, sid: mid },
+      })
+      if (!res.data) return res.sendStatus(401)
 
-    // try {
-    //   const res = await axios.get(ORDER_COUPON, {
-    //     headers: { Authorization: `Bearer ${token}`, sid: mid },
-    //   })
-    //   if (!res.data) return res.sendStatus(401)
-
-    //   setUseCoupon(res.data)
-    //   // console.log(res.data)
-    // } catch (error) {
-    //   console.log('coupon axios err')
-    //   return []
-    // }
-
-    const r = await fetch(ORDER_COUPON)
-    const c = await r.json()
-    const d = c.rows
-    console.log('d:', d)
-    setUseCoupon(d)
+      setUseCoupon(res.data)
+      console.log('useCoupon:', res.data)
+    } catch (error) {
+      console.log('coupon axios err')
+      return []
+    }
   }
 
-  console.log('useCoupon:', useCoupon)
-  console.log('order:', order)
   useEffect(() => {
-    console.log('Effect')
-    getOrderCoupon()
-  }, [])
+    console.log('---Effect---')
 
+    getUseCoupon()
+  }, [])
+  const navigate = useNavigate()
+
+  const storage = localStorage.getItem('cart')
+  const j = JSON.parse(storage)
+  const total = { finallyTotal: finallyTotal }
+  const QString = j.concat(total)
+  const JsonStorage = JSON.stringify(QString)
+  // console.log('QString:', QString)
   return (
     <div className={`${styles.IanShoppingCartAll}`}>
       <section
@@ -268,338 +275,343 @@ function IanShoppingCart1() {
         </div>
       </section>
 
-      <section className={`${styles['shopping-cart-contain']} row m-0`}>
-        <div className={`col-lg-9 col-sm-12`}>
-          <div
-            className={`${styles['shopping-cart-title']} d-flex align-items-center mb-4`}
-          >
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          // if (storage.finallyTotal && storage.finallyTotal !== 'NAN') {
+          localStorage.setItem('order', JsonStorage)
+          navigate('/SC2')
+          // } else {
+          //   navigate('/SC1')
+          // }
+        }}
+      >
+        <section className={`${styles['shopping-cart-contain']} row m-0`}>
+          <div className={`col-lg-9 col-sm-12`}>
+            <div
+              className={`${styles['shopping-cart-title']} d-flex align-items-center mb-4`}
             >
-              <path
-                d="M11.909 26.3865C12.5241 26.3865 13.0227 25.8879 13.0227 25.2728C13.0227 24.6578 12.5241 24.1592 11.909 24.1592C11.294 24.1592 10.7954 24.6578 10.7954 25.2728C10.7954 25.8879 11.294 26.3865 11.909 26.3865Z"
-                stroke="#6CBA7C"
-                strokeWidth="1.5"
-                strokeLinecap="square"
-              />
-              <path
-                d="M24.159 26.3865C24.7741 26.3865 25.2727 25.8879 25.2727 25.2728C25.2727 24.6578 24.7741 24.1592 24.159 24.1592C23.544 24.1592 23.0454 24.6578 23.0454 25.2728C23.0454 25.8879 23.544 26.3865 24.159 26.3865Z"
-                stroke="#6CBA7C"
-                strokeWidth="1.5"
-                strokeLinecap="square"
-              />
-              <path
-                d="M3 3H7.45455L10.4391 17.9116C10.5409 18.4243 10.8199 18.8849 11.227 19.2126C11.6342 19.5404 12.1437 19.7146 12.6664 19.7045H23.4909C24.0135 19.7146 24.523 19.5404 24.9302 19.2126C25.3374 18.8849 25.6163 18.4243 25.7182 17.9116L27.5 8.56818H9.01364"
-                stroke="#6CBA7C"
-                strokeWidth="1.5"
-                strokeLinecap="square"
-              />
-            </svg>
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.909 26.3865C12.5241 26.3865 13.0227 25.8879 13.0227 25.2728C13.0227 24.6578 12.5241 24.1592 11.909 24.1592C11.294 24.1592 10.7954 24.6578 10.7954 25.2728C10.7954 25.8879 11.294 26.3865 11.909 26.3865Z"
+                  stroke="#6CBA7C"
+                  strokeWidth="1.5"
+                  strokeLinecap="square"
+                />
+                <path
+                  d="M24.159 26.3865C24.7741 26.3865 25.2727 25.8879 25.2727 25.2728C25.2727 24.6578 24.7741 24.1592 24.159 24.1592C23.544 24.1592 23.0454 24.6578 23.0454 25.2728C23.0454 25.8879 23.544 26.3865 24.159 26.3865Z"
+                  stroke="#6CBA7C"
+                  strokeWidth="1.5"
+                  strokeLinecap="square"
+                />
+                <path
+                  d="M3 3H7.45455L10.4391 17.9116C10.5409 18.4243 10.8199 18.8849 11.227 19.2126C11.6342 19.5404 12.1437 19.7146 12.6664 19.7045H23.4909C24.0135 19.7146 24.523 19.5404 24.9302 19.2126C25.3374 18.8849 25.6163 18.4243 25.7182 17.9116L27.5 8.56818H9.01364"
+                  stroke="#6CBA7C"
+                  strokeWidth="1.5"
+                  strokeLinecap="square"
+                />
+              </svg>
 
-            <h3>購物車</h3>
-          </div>
-          <div
-            className={`${styles['product-col-title']} ${styles['mobile-none']} d-flex `}
-          >
-            {/* <div className={`${styles['mobile-none']} ${styles.w1} `}> */}
-            {/* <input
-                type="checkbox"
-                checked={data.buy}
-                onChange={() => {
-                  setData(selectAll(data.sid))
-                }}
-              /> */}
-            {/* </div> */}
-            <div
-              className={`${styles['mobile-none']} ${styles.w2} text-center`}
-            >
-              商品資料
+              <h3>購物車</h3>
             </div>
             <div
-              className={`${styles['mobile-none']} ${styles.w3} text-center`}
+              className={`${styles['product-col-title']} ${styles['mobile-none']} d-flex `}
             >
-              日期
+              <div
+                className={`${styles['mobile-none']} ${styles.w2} text-center`}
+              >
+                商品資料
+              </div>
+              <div
+                className={`${styles['mobile-none']} ${styles.w3} text-center`}
+              >
+                日期
+              </div>
+              <div
+                className={`${styles['mobile-none']} ${styles.w4} text-center`}
+              >
+                單件價格
+              </div>
+              <div
+                className={`${styles['mobile-none']} ${styles.w5} text-center`}
+              >
+                數量
+              </div>
+              <div
+                className={`${styles['mobile-none']} ${styles.w6} text-center`}
+              >
+                小計
+              </div>
+              <div
+                className={`${styles['mobile-none']} ${styles.w7} text-center`}
+              ></div>
             </div>
-            <div
-              className={`${styles['mobile-none']} ${styles.w4} text-center`}
-            >
-              單件價格
-            </div>
-            <div
-              className={`${styles['mobile-none']} ${styles.w5} text-center`}
-            >
-              數量
-            </div>
-            <div
-              className={`${styles['mobile-none']} ${styles.w6} text-center`}
-            >
-              小計
-            </div>
-            <div
-              className={`${styles['mobile-none']} ${styles.w7} text-center`}
-            ></div>
-          </div>
-          {items.map((v, i) => {
-            return (
-              <div key={i} className={`${styles['shoppingcart-product']}`}>
-                <div
-                  className={`${styles['product-col']} ${styles['mobile-none']} d-flex`}
-                >
-                  {/* <div className={`${styles['mobile-none']} ${styles.w1} `}> */}
-                  {/* <input
+            {items.map((v, i) => {
+              return (
+                <div key={i} className={`${styles['shoppingcart-product']}`}>
+                  <div
+                    className={`${styles['product-col']} ${styles['mobile-none']} d-flex`}
+                  >
+                    {/* <div className={`${styles['mobile-none']} ${styles.w1} `}> */}
+                    {/* <input
                       type="checkbox"
                       checked={mycheck}
                       onChange={() => {
                         setMyCheck(wannaBuy(pid))
                       }}
                     /> */}
-                  {/* </div> */}
-                  <div className={`${styles['mobile-none']} ${styles.w2}`}>
-                    <div className={`row w-100`}>
-                      <div className={`col-4`}>
-                        <div className={`${styles['product-img-wrap']}`}>
-                          <div
-                            className={`${styles.pic}`}
-                            style={{
-                              backgroundImage: `url('./imgs/Ian_img/${v.trail_img}')`,
-                            }}
-                          ></div>
+                    {/* </div> */}
+                    <div className={`${styles['mobile-none']} ${styles.w2}`}>
+                      <div className={`row w-100`}>
+                        <div className={`col-4`}>
+                          <div className={`${styles['product-img-wrap']}`}>
+                            <div
+                              className={`${styles.pic}`}
+                              style={{
+                                backgroundImage: `url('./imgs/Ian_img/${v.trail_img}')`,
+                              }}
+                            ></div>
+                          </div>
+                        </div>
+                        <div className={`col-8 px-0`}>
+                          <p
+                            className={`${styles['product-title']}  mb-3 ps-lg-3`}
+                          >
+                            {v.trail_name}
+                          </p>
+                          <p
+                            className={`${styles['product-subtitle']} mb-0 ps-lg-3`}
+                          >
+                            {v.trail_name}單日行程
+                          </p>
                         </div>
                       </div>
-                      <div className={`col-8 px-0`}>
-                        <p
-                          className={`${styles['product-title']}  mb-3 ps-lg-3`}
-                        >
-                          {v.trail_name}
+                    </div>
+                    <div
+                      className={`${styles['mobile-none']} ${styles.w3} text-center`}
+                    >
+                      <p className={`mb-lg-2`}>{v.batch_start}</p>
+                      <p className={`mb-lg-2`}>|</p>
+                      <p className={`mb-0`}>{v.batch_end}</p>
+                    </div>
+                    <div
+                      className={`${styles['mobile-none']} ${styles.w4} text-center`}
+                    >
+                      NTD {v.price}
+                    </div>
+                    <div
+                      className={`${styles['mobile-none']} ${styles.w5}  text-center`}
+                    >
+                      <div className={`d-flex`}>
+                        <button className={`${styles['plus-button']}`}>
+                          <svg
+                            onClick={() => {
+                              console.log('plusclick:', v.sid)
+                              minusOne(v.sid)
+                            }}
+                            className={`${styles['minus-icon']} me-3`}
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M5 12.5H19"
+                              stroke="#6CBA7C"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </button>
+                        <p className={`${styles['product-number']}  mb-0 me-3`}>
+                          {v.quantity}
                         </p>
-                        <p
-                          className={`${styles['product-subtitle']} mb-0 ps-lg-3`}
-                        >
-                          {v.trail_name}單日行程
-                        </p>
+                        <button className={`${styles['plus-button']}`}>
+                          <svg
+                            onClick={() => {
+                              console.log('plusclick:', v.sid)
+                              plusOne(v.sid)
+                            }}
+                            className={`${styles['minus-icon']}`}
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12 5.5V19.5"
+                              stroke="#6CBA7C"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M5 12.5H19"
+                              stroke="#6CBA7C"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    className={`${styles['mobile-none']} ${styles.w3} text-center`}
-                  >
-                    <p className={`mb-lg-2`}>{v.batch_start}</p>
-                    <p className={`mb-lg-2`}>|</p>
-                    <p className={`mb-0`}>{v.batch_end}</p>
-                  </div>
-                  <div
-                    className={`${styles['mobile-none']} ${styles.w4} text-center`}
-                  >
-                    NTD {v.price}
-                  </div>
-                  <div
-                    className={`${styles['mobile-none']} ${styles.w5}  text-center`}
-                  >
-                    <div className={`d-flex`}>
-                      <button className={`${styles['plus-button']}`}>
-                        <svg
-                          onClick={() => {
-                            console.log('plusclick:', v.sid)
-                            minusOne(v.sid)
-                          }}
-                          className={`${styles['minus-icon']} me-3`}
-                          width="24"
-                          height="25"
-                          viewBox="0 0 24 25"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M5 12.5H19"
-                            stroke="#6CBA7C"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </button>
-                      <p className={`${styles['product-number']}  mb-0 me-3`}>
-                        {v.quantity}
-                      </p>
-                      <button className={`${styles['plus-button']}`}>
-                        <svg
-                          onClick={() => {
-                            console.log('plusclick:', v.sid)
-                            plusOne(v.sid)
-                          }}
-                          className={`${styles['minus-icon']}`}
-                          width="24"
-                          height="25"
-                          viewBox="0 0 24 25"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 5.5V19.5"
-                            stroke="#6CBA7C"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M5 12.5H19"
-                            stroke="#6CBA7C"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </button>
+                    <div
+                      className={`${styles['mobile-none']} ${styles.w6}   text-center`}
+                    >
+                      NTD {v.itemTotal}
+                    </div>
+                    <div className={`${styles['mobile-none']} ${styles.w7} `}>
+                      <svg
+                        onClick={() => {
+                          console.log('click')
+                          removeItem(v.sid)
+                        }}
+                        width="30"
+                        height="30"
+                        viewBox="0 0 30 30"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.75 7.5H6.25H26.25"
+                          stroke="#6CBA7C"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M23.75 7.5V25C23.75 25.663 23.4866 26.2989 23.0178 26.7678C22.5489 27.2366 21.913 27.5 21.25 27.5H8.75C8.08696 27.5 7.45107 27.2366 6.98223 26.7678C6.51339 26.2989 6.25 25.663 6.25 25V7.5M10 7.5V5C10 4.33696 10.2634 3.70107 10.7322 3.23223C11.2011 2.76339 11.837 2.5 12.5 2.5H17.5C18.163 2.5 18.7989 2.76339 19.2678 3.23223C19.7366 3.70107 20 4.33696 20 5V7.5"
+                          stroke="#6CBA7C"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M12.5 13.75V21.25"
+                          stroke="#6CBA7C"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M17.5 13.75V21.25"
+                          stroke="#6CBA7C"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
                     </div>
                   </div>
-                  <div
-                    className={`${styles['mobile-none']} ${styles.w6}   text-center`}
-                  >
-                    NTD {v.itemTotal}
-                  </div>
-                  <div className={`${styles['mobile-none']} ${styles.w7} `}>
-                    <svg
-                      onClick={() => {
-                        console.log('click')
-                        removeItem(v.sid)
-                      }}
-                      width="30"
-                      height="30"
-                      viewBox="0 0 30 30"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M3.75 7.5H6.25H26.25"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M23.75 7.5V25C23.75 25.663 23.4866 26.2989 23.0178 26.7678C22.5489 27.2366 21.913 27.5 21.25 27.5H8.75C8.08696 27.5 7.45107 27.2366 6.98223 26.7678C6.51339 26.2989 6.25 25.663 6.25 25V7.5M10 7.5V5C10 4.33696 10.2634 3.70107 10.7322 3.23223C11.2011 2.76339 11.837 2.5 12.5 2.5H17.5C18.163 2.5 18.7989 2.76339 19.2678 3.23223C19.7366 3.70107 20 4.33696 20 5V7.5"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12.5 13.75V21.25"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M17.5 13.75V21.25"
-                        stroke="#6CBA7C"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
                 </div>
-              </div>
-            )
-          })}
-        </div>
-
-        <div className={`${styles['shopping-cart-All']} col-lg-3 col-sm-12`}>
-          <div
-            className={`${styles['shopping-cart-title']} d-flex align-items-center mb-4`}
-          >
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M29.3334 14.7725V15.9992C29.3318 18.8744 28.4007 21.6721 26.6792 23.9749C24.9576 26.2778 22.5378 27.9625 19.7806 28.7777C17.0233 29.5929 14.0764 29.495 11.3794 28.4986C8.68232 27.5022 6.37962 25.6606 4.8147 23.2486C3.24977 20.8365 2.50647 17.9833 2.69565 15.1143C2.88483 12.2453 3.99636 9.51427 5.86445 7.3286C7.73255 5.14293 10.2571 3.61968 13.0617 2.98603C15.8662 2.35238 18.8004 2.64228 21.4268 3.8125"
-                stroke="#6CBA7C"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M29.3333 5.33398L16 18.6807L12 14.6807"
-                stroke="#6CBA7C"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-
-            <h3>訂單明細</h3>
+              )
+            })}
           </div>
 
-          {useCoupon.map((v, i) => {
-            return (
-              <>
-                <div
-                  className={`${styles['input-group']} ${styles['padding-30']}`}
-                >
-                  <div className={`${styles.orderCoupin} d-flex`}>
-                    <select name="" id="" className={`${styles.orderSelect}`}>
-                      <option
-                        value={v.coupon_code}
-                        onChange={(e) => {
-                          setUseCoupon(e.target.value)
-                        }}
-                      >
-                        {v.coupon_code}
-                      </option>
-                    </select>
-                    <button
-                      onClick={() => {
-                        getOrderCoupon()
-                      }}
-                      type="button"
-                      className={`col-3 ${styles.orderButton} btn btn-unstyle`}
-                    >
-                      套用
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className={`${styles['padding-30']} d-flex justify-content-between`}
-                  >
-                    <p className={`${styles.p} mb-0`}>小計</p>
-                    <p className={`${styles['p-bold']} mb-0`}>
-                      NTD {cart.cartTotal}
-                    </p>
-                  </div>
-                  <div
-                    className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex justify-content-between mb-lg-3`}
-                  >
-                    <p className={`${styles.p} mb-0`}>優惠碼 {v.coupon_code}</p>
-                    <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
-                      -NTD {v.min_purchase}
-                    </p>
-                  </div>
-                  <div
-                    className={`${styles['padding-30']} d-flex justify-content-between`}
-                  >
-                    <p className={`${styles['p-bold']} mb-0`}>合計</p>
-                    <p className={`${styles['p-bold']} mb-0`}>NTD $2,330</p>
-                  </div>
-                </div>
-              </>
-            )
-          })}
+          <div className={`${styles['shopping-cart-All']} col-lg-3 col-sm-12`}>
+            <div
+              className={`${styles['shopping-cart-title']} d-flex align-items-center mb-4`}
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M29.3334 14.7725V15.9992C29.3318 18.8744 28.4007 21.6721 26.6792 23.9749C24.9576 26.2778 22.5378 27.9625 19.7806 28.7777C17.0233 29.5929 14.0764 29.495 11.3794 28.4986C8.68232 27.5022 6.37962 25.6606 4.8147 23.2486C3.24977 20.8365 2.50647 17.9833 2.69565 15.1143C2.88483 12.2453 3.99636 9.51427 5.86445 7.3286C7.73255 5.14293 10.2571 3.61968 13.0617 2.98603C15.8662 2.35238 18.8004 2.64228 21.4268 3.8125"
+                  stroke="#6CBA7C"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M29.3333 5.33398L16 18.6807L12 14.6807"
+                  stroke="#6CBA7C"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
 
-          <Link to="/SC2" className={`w-100 btn`}>
-            <button className={`${styles.next} w-100 btn`}>下一步</button>
-          </Link>
-        </div>
-      </section>
+              <h3>訂單明細</h3>
+            </div>
+
+            <div className={`${styles['input-group']} ${styles['padding-30']}`}>
+              <div className={`${styles.orderCoupin} d-flex`}>
+                <select
+                  value={mySelect}
+                  onChange={(e) => {
+                    console.log(e.target.value)
+                    setMySelect(e.target.value)
+                    setShow(false)
+                  }}
+                  name=""
+                  id=""
+                  className={`${styles.orderSelect}`}
+                >
+                  {useCoupon.map((v, i) => {
+                    return <option key={i}>{v.coupon_code}</option>
+                  })}
+                </select>
+                <button
+                  onClick={() => {
+                    getUseCoupon()
+                    setShow(true)
+                  }}
+                  type="button"
+                  className={`col-3 ${styles.orderButton} btn btn-unstyle`}
+                >
+                  套用
+                </button>
+              </div>
+            </div>
+            <div>
+              <div
+                className={`${styles['padding-30']} d-flex justify-content-between`}
+              >
+                <p className={`${styles.p} mb-0`}>小計</p>
+                <p className={`${styles['p-bold']} mb-0`}>
+                  NTD {cart.cartTotal}
+                </p>
+              </div>
+              <div
+                className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex justify-content-between mb-lg-3`}
+              >
+                <p className={`${styles.p} mb-0`}>優惠碼 {mySelect}</p>
+                <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
+                  - NTD {price}
+                </p>
+              </div>
+              <div
+                className={`${styles['padding-30']} d-flex justify-content-between`}
+              >
+                <p className={`${styles['p-bold']} mb-0`}>合計</p>
+                <p className={`${styles['p-bold']} mb-0`}>
+                  NTD ${show && finallyTotal}
+                </p>
+              </div>
+            </div>
+
+            {/* <Link to="/SC2" className={`w-100 btn`}> */}
+            <button type="submit" className={`${styles.next} w-100 btn`}>
+              下一步
+            </button>
+            {/* </Link> */}
+          </div>
+        </section>
+      </form>
     </div>
     //   </div>
     // </div>

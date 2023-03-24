@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import styles from '../../styles/DavisTrailsFilter.module.css'
 import { addDays } from 'date-fns'
-import { format } from 'date-fns'
+import format from 'date-fns/format'
+// import { format } from 'date-fns'
 
 function DavisFilterComLeft(props) {
-  const { data, setKeywordpr, setStartdatepr, setEnddatepr, setMaxpeplepr } =
-    props
+  const {
+    data,
+    keywordpr,
+    startdatepr,
+    setKeywordpr,
+    setStartdatepr,
+    setEnddatepr,
+    setMaxpeplepr,
+  } = props
+
   const [keyword, setKeyword] = useState('')
   const [startdate, setStartdate] = useState(format(new Date(1), 'yyyy-MM-dd'))
   const [enddate, setEnddate] = useState(new Date(2024, 12, 31))
@@ -62,13 +71,12 @@ function DavisFilterComLeft(props) {
                 />
               </svg>
             </span>
-            {/* TODO: */}
             <div className="col">
               <div className={`${styles.input_wrap}`}>
                 <input
                   className={`${styles.input_style_first}`}
                   type="text"
-                  // placeholder=" 輸入行程"
+                  placeholder={keywordpr}
                   value={inputText}
                   onChange={(e) => {
                     setInputText(e.target.value)
@@ -132,17 +140,21 @@ function DavisFilterComLeft(props) {
                 onChange={(event) => {
                   const newDate = event.target.value
                   setNewstartdate(newDate)
+                  console.log(event.target.value)
                 }}
                 className={`${styles.input_style}`}
+                // FIXME:
                 type="date"
                 id="picker"
               />
+              {console.log('before startdatepr:', startdatepr)}
+              {/* {console.log(format(startdatepr, 'yyyy-MM-dd'))} */}
               {/* {console.log(startdate)} */}
             </div>
           </div>
         </div>
 
-        <div className={`d-flex flex-column ${styles.search}`}>
+        <div className={`d-flex flex-column ${styles.enddate}`}>
           <p className={`mb-0 ${styles.p_content}`}>返程日期</p>
           <div className={`d-flex flex-row ${styles.input_with_icon}`}>
             <span className={`${styles.icon_span}`}>
@@ -195,7 +207,7 @@ function DavisFilterComLeft(props) {
           </div>
         </div>
 
-        <div className={`d-flex flex-column ${styles.search_count}`}>
+        {/* <div className={`d-flex flex-column ${styles.search_count}`}>
           <p className={`mb-0 ${styles.p_content}`}>人數</p>
           <div className={`d-flex flex-row ${styles.input_with_icon}`}>
             <span className={`col ${styles.icon_span}`}>
@@ -236,7 +248,7 @@ function DavisFilterComLeft(props) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <button
           className={`${styles.btn_search}`}
           type="button"

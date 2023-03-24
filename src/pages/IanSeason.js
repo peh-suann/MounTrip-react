@@ -4,6 +4,8 @@ import styles from './../styles/IanSeason.module.css'
 import { TRAILS_SEASON } from '../connections/api-config'
 import { TRAILS_COMMENT } from '../connections/api-config'
 import dayjs from 'dayjs'
+import FavoriteBtnOff from './../components/FavoriteBtnOff'
+
 // import { ORDER_COUPON } from '../connections/api-config'
 
 // import { useCart } from '../components/IanUseCart'
@@ -106,6 +108,7 @@ function IanSeason() {
                     </svg>
                     {v.score}.0
                   </p>
+                  <FavoriteBtnOff trailSID={v.sid}/>
                   <p className={styles.difficulty}>
                     難度 {v.difficulty_short}級
                   </p>
