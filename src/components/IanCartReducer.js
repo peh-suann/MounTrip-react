@@ -141,9 +141,9 @@ export const init = (items) => {
 }
 
 export const reducer = (state, action) => {
-  console.log('reducer')
-  console.log('state:', state)
-  console.log('action:', action)
+  // console.log('reducer')
+  // console.log('state:', state)
+  // console.log('action:', action)
   switch (action.type) {
     case 'ADD_ITEM':
       return generateCartState(state, addItem(state, action))

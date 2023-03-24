@@ -1,33 +1,25 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 // import './../html/css/shoppingCart4.css'
 import styles from './../styles/IanShoppingCart4.module.css'
 import './../styles/Mountrip.module.css'
 import { ORDER_HISTORY } from '../connections/api-config'
+import { async } from 'q'
 
 function IanShoppingCart4() {
   const [mypage, setPage] = useState('')
   const cartItem = JSON.parse(localStorage.getItem('cart'))
-  const member = JSON.parse(localStorage.getItem('member'))
-  console.log(member)
-  const order = JSON.parse(localStorage.getItem('order'))
-  console.log(order)
-  const payTotal = JSON.parse(localStorage.getItem('order'))[2].finallyTotal
-  console.log(payTotal)
 
-  const totalData = { member: member, order: order, payTotal: payTotal }
-  console.log(totalData)
-
-  const userString = localStorage.getItem('myAuth')
-  const userData = JSON.parse(userString)
-  const token = userData.token
-  const mid = userData.accountId
+  const orderId = localStorage.getItem('lastSid')
+  const finalId = `MT230${orderId}`
+  const navigate = useNavigate()
+  const total = localStorage.getItem('total')
+  console.log(total)
+  // const
 
   return (
     <>
-      {/* <div className={`${styles['bg-image']}`}> */}
-      {/* <div className={`container`}> */}
       <div className={`${styles.IanShoppingCartAll}`}>
         <section
           className={`${styles['shopping-cart-process']} ${styles['mobile-none']} row justify-content-center`}
@@ -325,7 +317,7 @@ function IanShoppingCart4() {
         </div>
         <div className={`${styles['mb-15']} d-flex justify-content-between `}>
           <p className={`${styles.mtgrey2}`}>訂單編號</p>
-          <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>S12345678</p>
+          <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>{finalId}</p>
         </div>
         <div className={`${styles['mb-15']} d-flex justify-content-between `}>
           <p className={`${styles.mtgrey2}`}>訂單日期</p>
@@ -344,7 +336,7 @@ function IanShoppingCart4() {
             <div className={`d-flex justify-content-between`}>
               <p className={`${styles['total']} ${styles.mtgrey2}`}>合計</p>
               <p className={`${styles['total']} ${styles.mtgrey1}`}>
-                NTD ${payTotal}
+                NTD ${total}
               </p>
             </div>
           </div>
@@ -407,14 +399,9 @@ function IanShoppingCart4() {
               action="post"
               onSubmit={(e) => {
                 e.preventDefault()
-                axios
-                  .post(ORDER_HISTORY, {
-                    headers: {
-                      Authorization: `Bearer ${token}`,
-                      totalData: totalData,
-                    },
-                  })
-                  .then((res) => res.data)
+                localStorage.removeItem('lastSid')
+                localStorage.removeItem('total')
+                navigate('/member')
               }}
             >
               <button
@@ -519,7 +506,6 @@ function IanShoppingCart4() {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </>
   )
 }
