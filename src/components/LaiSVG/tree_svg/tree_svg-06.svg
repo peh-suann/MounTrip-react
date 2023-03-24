@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="tree5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <g id="brown">
+    <rect x="88.47" y="101.28" width="6.79" height="100.23" style="fill: #7f5440;"/>
+    <polygon points="90.01 149.92 71.01 126.62 68.68 130.21 90.01 155.48 90.01 149.92" style="fill: #7f5440;"/>
+    <polygon points="94.13 122.5 101.66 113.54 100 109.06 91.86 118.92 94.13 122.5" style="fill: #7f5440;"/>
+  </g>
+  <g id="pair2">
+    <circle cx="123.16" cy="86.6" r="40.03" style="fill: #7cb074;"/>
+    <circle cx="140.49" cy="91.97" r="11.7" style="fill: #4d7e52;"/>
+  </g>
+  <g id="pair1">
+    <circle cx="60.09" cy="118.94" r="19.25" style="fill: #7cb074;"/>
+    <circle cx="52.59" cy="123.39" r="5.63" style="fill: #4d7e52;"/>
+  </g>
+  <g id="pair4">
+    <circle cx="101.66" cy="42.89" r="40.91" style="fill: #2b4d30;"/>
+    <circle cx="81.81" cy="30.36" r="12.53" style="fill: #7cb074;"/>
+  </g>
+  <g id="pair3">
+    <circle cx="57.95" cy="73.95" r="27.38" style="fill: #2b4d30;"/>
+    <circle cx="49.77" cy="65.03" r="8.92" style="fill: #7cb074;"/>
+  </g>
+</svg>

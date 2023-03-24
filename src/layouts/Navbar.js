@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import AuthContext from '../contexts/AuthContexts'
+import { format } from 'date-fns'
 
 // styles
 import styles from './../styles/Navbar.module.css'
@@ -21,6 +22,8 @@ import NavbarShoppingCart from '../components/NavbarShoppingCart'
 import NavbarDropdown from '../components/NavbarDropdown'
 import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 import { useCart } from '../components/IanUseCart'
+// Search Context
+import { SearchContext } from '../contexts/SearchContext'
 
 export default function NavBar() {
   const { cart } = useCart()
@@ -40,6 +43,21 @@ export default function NavBar() {
     setShowListMobile(!showListMobile)
   }
   const navigate = useNavigate()
+
+  // search context
+  const { search, setSearch } = useContext(SearchContext)
+
+  const [navKeyWorld, setNavKeyWorld] = useState()
+  let startdate = new Date(2023, 1, 1)
+  let enddate = new Date(2024, 12, 31)
+  const formattedDate = format(startdate, 'yyyy-MM-dd')
+  const formattedDateEnd = format(enddate, 'yyyy-MM-dd')
+  const [newstartdate, setNewstartdate] = useState(formattedDate)
+  const [newenddate, setNewenddate] = useState(formattedDateEnd)
+
+  useEffect(() => {
+    console.log('navKeyWorld', navKeyWorld)
+  }, [navKeyWorld])
 
   return (
     <>
@@ -127,11 +145,31 @@ export default function NavBar() {
             <ul className={styles.nav_icons}>
               <li>
                 <FontAwesomeIcon icon={faSearch} />
+                {/* TODO: */}
                 {document.documentElement.clientWidth > 390 ? (
                   <input
                     className={styles.link}
                     href="/"
                     placeholder="搜尋關鍵字、目的地"
+                    onChange={(e) => {
+                      setNavKeyWorld(e.target.value)
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        const searchData = {
+                          location: navKeyWorld,
+                          startDate: newstartdate,
+                          endDate: newenddate,
+                        }
+                        setSearch(searchData)
+
+                        localStorage.setItem(
+                          'mySearch',
+                          JSON.stringify(searchData)
+                        )
+                        navigate('/trails-filter')
+                      }
+                    }}
                   />
                 ) : (
                   ''
@@ -142,11 +180,11 @@ export default function NavBar() {
                 onClick={(e) => {
                   e.preventDefault()
                   if (myAuth.account) {
-                      setOpen((prev) => !prev)
-                    } else {
-                      // TODO:請先登入會員
-                      navigate('/login')
-                    }
+                    setOpen((prev) => !prev)
+                  } else {
+                    // TODO:請先登入會員
+                    navigate('/login')
+                  }
                 }}
               >
                 <a className={styles.link} href="/">

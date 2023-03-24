@@ -32,7 +32,11 @@ export const USER_COMMENT = (mid) => `${HOST}/member/me/comment/${mid}`
 export const USER_UPLOAD = `${HOST}/member/me/upload`
 export const USER_AVATAR = `${HOST}/uploads/`
 export const USER_COUPON = `${HOST}/member/me/coupon`
+export const USER_FAV = `${HOST}/member/me/favorite`
+export const USER_FAV_DELETE = `${HOST}/member/me/favorite/delete`
+export const USER_FAV_ADD = `${HOST}/member/me/favorite/add`
 export const USER_ORDER = `${HOST}/member/me/order`
+export const USER_ORDER_SUCCESS = `${HOST}/member/me/order/success`
 export const USER_ORDER_DETAIL = `${HOST}/member/me/order/product-detail`
 
 // paths ---------------------------------------------------------------------------
@@ -78,10 +82,11 @@ export const FILTER_ALL_DATA = `${HOST}/trails-filter/all`
 // plz check ---------------------------------------------------------------------------
 // export const HOST = 'http://localhost:3000'
 
-export const TRAILS_SEASON = `${HOST}/Season`
+export const TRAILS_SEASON = `${HOST}/season`
 export const TRAILS_COMMENT = `${HOST}/seasonComment`
 export const TRAILS_DIFFHARD = `${HOST}/difficultyHard`
 export const TRAILS_DIFFMEDIUM = `${HOST}/difficultyMedium`
 export const TRAILS_DIFFEASY = `${HOST}/difficultyEasy`
 export const ORDER_COUPON = `${HOST}/SC1`
-// export const ShoppingCart = `${HOST}/sc1`
+export const ORDER_HISTORY = `${HOST}/history`
+export const ORDERUSER_DATA = (mid) => `${HOST}/${mid}`

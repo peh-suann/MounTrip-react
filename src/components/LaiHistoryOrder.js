@@ -41,13 +41,14 @@ export default function LaiHistoryOrder() {
 
       setUserOrder(currentUserOrder)
       setOrderList(currentOrderList)
-      // console.log('new sql', res.data.data)
+      console.log('sid', typeof currentOrderList[0].sid)
       // console.log('currentUO:', res)
     } catch (error) {
       console.log("there's an error in db connection")
       return []
     }
   }
+  console.log('orderList:', orderList)
   useEffect(() => {
     getHistoryOrder()
   }, [])
@@ -90,7 +91,9 @@ export default function LaiHistoryOrder() {
         >
         </OrderCard> */}
         {orderList.map((v, i) => {
-          const orderId = `MT2300${v.sid}`
+          const sidFormat = v.sid.toString().padStart(3, '0')
+          const priceFormat = v.total.toLocaleString()
+          const orderId = `MT230${sidFormat}`
           const statusString = convertStatus(v.order_status_sid)
           const originOrderSid = v.sid
 
@@ -99,7 +102,7 @@ export default function LaiHistoryOrder() {
               key={i}
               orderId={orderId}
               orderState={statusString}
-              tolPrice={v.total}
+              tolPrice={priceFormat}
               orderDate={v.orderDateFormat}
               orderPayment={'信用卡一次付清'}
               originOrderSid={originOrderSid}
