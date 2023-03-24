@@ -52,6 +52,9 @@ export const LOCATION_PRODUCTS = `${HOST}/products_location`
 export const WEATHER_LOCATION = `${HOST}/weather_location`
 export const TEST_QUES = `${HOST}/test`
 export const TEST_ANS = `${HOST}/answer`
+export const TEST_PLAY = `${HOST}/test_play`
+export const TEST_INSERT_PLAY = `${HOST}/insert_play`
+export const TEST_INSERT_COUPON = `${HOST}/insert_coupon`
 
 // kexin's path
 export const LOGIN = `${HOST}/login`

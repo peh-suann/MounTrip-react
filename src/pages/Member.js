@@ -18,6 +18,12 @@ import Modal from '../components/LaiBackdrop/Modal'
 import PasswordModal from '../components/LaiBackdrop/PasswordModal'
 // import Gift from '../../src/icons/gift.svg'
 
+// test coupon status
+import { TestCouponContext } from '../contexts/TestCouponContext'
+// test coupon style
+import Button from '../components/Button'
+import yichun_styles from './../styles/yichun_styles/YichunCouponStyle.module.css'
+
 export default function Member() {
   //modal彈出視窗的
   const [modalOpen, setModalOpen] = useState(false)
@@ -142,8 +148,35 @@ export default function Member() {
     15,
     Math.min(60, (scrollPosition / windowHeight) * 100)
   )
+
+  // yichun's coupon
+  const { newCoupon, setNewCoupon, sale } = useContext(TestCouponContext)
+  const handleCouponBox = () => {
+    setNewCoupon(false)
+  }
+
   return (
     <>
+      {newCoupon ? (
+        <div className={yichun_styles.coupon_note}>
+          <div className={yichun_styles.coupon_note_box}>
+            <h4>
+              恭喜您完成登山安全小測驗 <br />
+              您已收到一張 <span>{sale}折</span> 優惠券
+              <br />
+              祝您旅途平安！
+            </h4>
+            <Button
+              text={'知道了'}
+              link={'member'}
+              handleClick={handleCouponBox}
+            ></Button>
+          </div>
+        </div>
+      ) : (
+        ''
+      )}
+
       {modalOpen && (
         <Modal modalOpen={modalOpen} handleClose={close} text={'上傳大頭貼'} />
       )}

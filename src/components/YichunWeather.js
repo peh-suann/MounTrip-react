@@ -53,6 +53,17 @@ function YichunWeather(props) {
 
   return (
     <>
+      {/* <button
+        onClick={() => {
+          console.log(
+            'aaa',
+            weather?.filter((el, i) => el.locationName === location)[0]
+              ?.weatherElement[1].time[0].elementValue[1].value
+          )
+        }}
+      >
+        aaa
+      </button> */}
       <div className={styles.weather_box}>
         <div className={styles.weather_search}>
           <label htmlFor="">Location:</label>
@@ -74,6 +85,54 @@ function YichunWeather(props) {
           </select>
         </div>
         <div className={styles.current_weather}>
+          {weather &&
+            weather
+              ?.filter((el, i) => el.locationName === location)[0]
+              ?.weatherElement[1].time[1].elementValue.map((el, i) => {
+                let icon
+                if (i === 1) {
+                  switch (el.value) {
+                    case '01':
+                      icon = <FontAwesomeIcon icon={faSun} />
+                      break
+                    case '02':
+                    case '03':
+                      icon = <FontAwesomeIcon icon={faCloudSun} />
+                      break
+                    case '04':
+                    case '05':
+                    case '06':
+                    case '07':
+                      icon = <FontAwesomeIcon icon={faCloud} />
+                      break
+                    case '08':
+                    case '09':
+                    case '10':
+                    case '11':
+                    case '12':
+                    case '13':
+                    case '14':
+                    case '15':
+                    case '16':
+                    case '17':
+                    case '18':
+                      icon = <FontAwesomeIcon icon={faCloudShowersHeavy} />
+                      break
+                    case '19':
+                      icon = <FontAwesomeIcon icon={faCloudSunRain} />
+                      break
+                    case '20':
+                    case '21':
+                    case '22':
+                      icon = <FontAwesomeIcon icon={faCloudShowersHeavy} />
+                      break
+                    default:
+                      icon = <FontAwesomeIcon icon={faCloud} />
+                  }
+                }
+                return icon
+              })}
+          <div className={styles.orbit}></div>
           <h3 className={styles.temp}>
             {weather &&
               weather
@@ -166,10 +225,44 @@ function YichunWeather(props) {
                   default:
                     icon = <FontAwesomeIcon icon={faCloud} />
                 }
+                const dateTimeString = el.startTime // Replace with your date/time string
+                const date = dateTimeString.split(' ')[0].split('-')
+                const dateTime = new Date(dateTimeString)
+                const daysOfWeek = [
+                  'Sunday',
+                  'Monday',
+                  'Tuesday',
+                  'Wednesday',
+                  'Thursday',
+                  'Friday',
+                  'Saturday',
+                ]
+                const dayOfWeek = daysOfWeek[dateTime.getUTCDay()]
+                  .toUpperCase()
+                  .substring(0, 3)
                 return (
                   <div className={styles.daily} key={i}>
-                    <h6 className={styles.weekday}>{weekday[i]}</h6>
+                    <h6 className={styles.weekday}>{dayOfWeek}</h6>
+                    {/* <p>
+                      {date[1]}/{date[2]}
+                    </p> */}
                     {icon}
+                    <p>
+                      {weather &&
+                        weather
+                          ?.filter((el, i) => el.locationName === location)[0]
+                          ?.weatherElement[2].time?.filter(
+                            (el, i) => i % 2 !== 0
+                          )[i].elementValue[0].value}
+                      °-{' '}
+                      {weather &&
+                        weather
+                          ?.filter((el, i) => el.locationName === location)[0]
+                          ?.weatherElement[3].time?.filter(
+                            (el, i) => i % 2 !== 0
+                          )[i].elementValue[0].value}
+                      °
+                    </p>
                   </div>
                 )
               })}
