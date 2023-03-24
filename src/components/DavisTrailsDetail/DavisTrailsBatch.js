@@ -33,9 +33,25 @@ function DavisTrailsBatch(props) {
     }
   }, [])
 
+  let page_sid = data.rows[0].trail_sid
+
+  console.log(page_sid)
+
+  const filterFromBatch = (data) => {
+    if (!Array.isArray(data)) {
+      return []
+    }
+    return data.filter((v, i) => {
+      return v.trail_sid === page_sid
+    })
+  }
+
   const [rotate, setRotate] = useState()
+  const batch_data = batch.rows
+
   const rows_data = data.rows
 
+  // console.log(rows_data)
   return (
     <>
       <div className={`col ${styles.shop_btn_two}`}>
@@ -55,12 +71,12 @@ function DavisTrailsBatch(props) {
                 id=""
                 value={myCount}
                 onChange={(e) => {
-                  // console.log('trailsBatch:', e.target.value)
+                  console.log('trailsBatch:', e.target.value)
                   setMyCount(e.target.value)
                   setDetailCount(e.target.value)
                 }}
               >
-                {rows_data.map((r, i) => {
+                {filterFromBatch(batch_data).map((r, i) => {
                   return (
                     <option key={r.sid} id={i} value={i}>
                       {r.batch_start}-{r.batch_end}
