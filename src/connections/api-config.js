@@ -70,15 +70,12 @@ export const SELECT_BATCH = `${HOST}/select_batch`
 // export const LIST_DATA = `${HOST}/member`
 
 // someone's path
-// export const TRAILS_DATA = `${HOST}/trails?`
-// export const RATING_DATA = `${HOST}/trails/rating`
-// export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 
 export const TRAILS_DATA = `${HOST}/trails`
 
 export const RATING_DATA = `${HOST}/trails/rating`
 
-export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
+export const TRAILS_BATCH_DATA = `${HOST}/trails/batch`
 
 export const TRAILS_FILTER_DATA = `${HOST}/trails-filter`
 

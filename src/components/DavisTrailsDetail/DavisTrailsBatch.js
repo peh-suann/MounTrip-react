@@ -4,37 +4,54 @@ import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 import styles from '../../styles/DavisTrailsDetail.module.css'
 
+// api
+import { TRAILS_BATCH_DATA } from '../../connections/api-config'
+
 function DavisTrailsBatch(props) {
   const { data, setDetailCount } = props
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
   const [myCount, setMyCount] = useState(0)
 
-  // const [data, setData] = useState({
-  //   rows: [],
-  // })
+  const [batch, setBatch] = useState({
+    rows: [],
+  })
+  const getBatchData = async (page) => {
+    const response = await axios.get(TRAILS_BATCH_DATA, {
+      params: {
+        page,
+      },
+    })
+    // console.log(response.data)
+    setBatch(response.data)
+  }
 
-  // const [count, setCount] = useState(0)
+  useEffect(() => {
+    getBatchData(+usp.get('page'))
+    return () => {
+      // console.log('unmount')
+    }
+  }, [])
 
-  // const getListData = async (page = 1) => {
-  //   const response = await axios.get(TRAILS_BATCH_DATA, {
-  //     params: {
-  //       page,
-  //     },
-  //   })
-  //   setData(response.data)
-  // }
+  let page_sid = data.rows[0].trail_sid
 
-  // useEffect(() => {
-  //   getListData(+usp.get('page'))
-  //   return () => {
-  //     console.log('unmount')
-  //   }
-  // }, [])
+  console.log(page_sid)
+
+  const filterFromBatch = (data) => {
+    if (!Array.isArray(data)) {
+      return []
+    }
+    return data.filter((v, i) => {
+      return v.trail_sid === page_sid
+    })
+  }
 
   const [rotate, setRotate] = useState()
+  const batch_data = batch.rows
+
   const rows_data = data.rows
 
+  // console.log(rows_data)
   return (
     <>
       <div className={`col ${styles.shop_btn_two}`}>
@@ -54,12 +71,12 @@ function DavisTrailsBatch(props) {
                 id=""
                 value={myCount}
                 onChange={(e) => {
-                  // console.log('trailsBatch:', e.target.value)
+                  console.log('trailsBatch:', e.target.value)
                   setMyCount(e.target.value)
                   setDetailCount(e.target.value)
                 }}
               >
-                {rows_data.map((r, i) => {
+                {filterFromBatch(batch_data).map((r, i) => {
                   return (
                     <option key={r.sid} id={i} value={i}>
                       {r.batch_start}-{r.batch_end}

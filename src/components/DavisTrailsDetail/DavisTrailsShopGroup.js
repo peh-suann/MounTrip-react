@@ -13,8 +13,9 @@ function DavisTrailsShopGroup(props) {
   const [detailCount, setDetailCount] = useState(0)
 
   const Rows = { ...data }
-  console.log('Rows:', Rows)
-  const batch = Rows.rows[0].batch_start
+  console.log('Rows:', Rows.rows[0].batch_start)
+  // console.log('Rows:', Rows[1].trail_time)
+  // const batch = Rows.rows[0].batch_start
   // console.log(batch)
 
   const [productName, setProductName] = useState('')
@@ -162,12 +163,16 @@ function DavisTrailsShopGroup(props) {
             //   const item2 = { ...Rows.rows[1], quantity: 1 }
             //   addItem(item2)
             // }
-            console.log('123', Rows.rows[detailCount])
-            const item = { ...Rows.rows[detailCount], quantity: count }
-            console.log('124', item)
+            // FIXME:
+            // const item = { ...Rows[detailCount], quantity: count }
+            const item = { ...Rows.rows[0], quantity: count }
+            console.log('item:', item)
             addItem(item)
-            console.log('detailCount:', Rows.rows[detailCount])
-            showModal(Rows.rows[detailCount].trail_name)
+            // console.log('item:', item)
+            // console.log('detailCount:', Rows.rows[detailCount])
+            // console.log('item:', Rows)
+            showModal(Rows[detailCount].rows[0].trail_name)
+            // console.log('productName:', productName)
           }}
           type="button"
           className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}

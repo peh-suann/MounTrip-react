@@ -121,7 +121,7 @@ function DavisComFilterCardFilter(props) {
             <div className="row g-0 d-flex flex-row ">
               <div className={`col-4 ${styles.trails_img_wrap}`}>
                 <img
-                  src={`/images/public_images/product_image/${r.trail_sid}-2.jpg`}
+                  src={`/images/public_images/product_image/${r.trail_sid}-1.jpg`}
                   className={`rounded-start ${styles.trails_img}`}
                   alt="..."
                 />
