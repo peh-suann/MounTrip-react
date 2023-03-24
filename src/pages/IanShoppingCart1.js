@@ -57,12 +57,14 @@ function IanShoppingCart1() {
   }, [])
   const navigate = useNavigate()
 
-  const storage = localStorage.getItem('cart')
-  const j = JSON.parse(storage)
-  const total = { finallyTotal: finallyTotal }
-  const QString = j.concat(total)
-  const JsonStorage = JSON.stringify(QString)
-  // console.log('QString:', QString)
+  const storage = JSON.parse(localStorage.getItem('cart'))
+  const cartSid = storage.map((v, i) => {
+    return v.sid
+  })
+  // console.log('useId:', useId)
+  const total = [finallyTotal]
+  const JsonTotal = JSON.stringify(total)
+
   return (
     <div className={`${styles.IanShoppingCartAll}`}>
       <section
@@ -279,14 +281,17 @@ function IanShoppingCart1() {
         onSubmit={(e) => {
           e.preventDefault()
           // if (storage.finallyTotal && storage.finallyTotal !== 'NAN') {
-          localStorage.setItem('order', JsonStorage)
+          localStorage.setItem('cartSid', cartSid)
+          localStorage.setItem('total', JsonTotal)
           navigate('/SC2')
           // } else {
           //   navigate('/SC1')
           // }
         }}
       >
-        <section className={`${styles['shopping-cart-contain']} row m-0`}>
+        <section
+          className={`${styles['shopping-cart-contain']} row m-0 pb-lg-5`}
+        >
           <div className={`col-lg-9 col-sm-12`}>
             <div
               className={`${styles['shopping-cart-title']} d-flex align-items-center mb-4`}
@@ -409,7 +414,10 @@ function IanShoppingCart1() {
                       className={`${styles['mobile-none']} ${styles.w5}  text-center`}
                     >
                       <div className={`d-flex`}>
-                        <button className={`${styles['plus-button']}`}>
+                        <button
+                          type="button"
+                          className={`${styles['plus-button']}`}
+                        >
                           <svg
                             onClick={() => {
                               console.log('plusclick:', v.sid)
@@ -434,7 +442,10 @@ function IanShoppingCart1() {
                         <p className={`${styles['product-number']}  mb-0 me-3`}>
                           {v.quantity}
                         </p>
-                        <button className={`${styles['plus-button']}`}>
+                        <button
+                          type="button"
+                          className={`${styles['plus-button']}`}
+                        >
                           <svg
                             onClick={() => {
                               console.log('plusclick:', v.sid)
@@ -587,12 +598,15 @@ function IanShoppingCart1() {
                 </p>
               </div>
               <div
-                className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex justify-content-between mb-lg-3`}
+                className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex flex-column justify-content-between mb-lg-3`}
               >
-                <p className={`${styles.p} mb-0`}>優惠碼 {mySelect}</p>
-                <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
-                  - NTD {price}
-                </p>
+                <p className={`${styles.p} mb-0`}>優惠碼</p>
+                <div className={`d-flex justify-content-between`}>
+                  <p className={`${styles.p} mb-0`}>{mySelect}</p>
+                  <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
+                    -NTD{price}
+                  </p>
+                </div>
               </div>
               <div
                 className={`${styles['padding-30']} d-flex justify-content-between`}
