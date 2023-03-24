@@ -88,20 +88,12 @@ function KexinFixedBox(props) {
               <img src="images/kexin/svg/plus.svg" alt="" />
             </button>
           </div>
-          <button
+          {myProduct ? <button
             className={`${styles['like']} btn`}
-            // onClick={() => {
-            //   setLiked(!liked)
-            //   console.log(liked)
-            // }}
           >
             <FavoriteBtnOff trailSID={myProduct.sid}/>
-            {/* {liked ? (
-              <img src="images/kexin/svg/heart-red.svg" alt="" />
-            ) : (
-              <img src="images/kexin/svg/heart.svg" alt="" />
-            )} */}
-          </button>
+          </button> : '' }
+          
         </div>
         <div className="d-flex align-items-center">
           <div className={`${styles['w-15']} ${styles['dropdown-title']}`}>
