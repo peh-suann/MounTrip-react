@@ -1,11 +1,39 @@
 import { useState } from 'react'
+import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './../styles/IanShoppingCart3.module.css'
+import { ORDER_HISTORY } from '../connections/api-config'
+import { ORDER_HISTORY2 } from '../connections/api-config'
+import { useCart } from '../components/IanUseCart'
 
 function IanShoppingCart3() {
+  const { clearCart } = useCart()
   const [mypage, setPage] = useState('')
   const [cardName, setCardName] = useState('visa')
   const navigate = useNavigate()
+
+  const cartItem = JSON.parse(localStorage.getItem('cart'))
+  // console.log('cartItem:', cartItem)
+  const cartQuantitymap = cartItem.map((v, i) => {
+    return v.quantity
+  })
+  const cartSidmap = cartItem.map((v, i) => {
+    return v.sid
+  })
+  const cartSid = cartSidmap[0]
+  // console.log(cartSid)
+  const cartQuantity = cartQuantitymap[0]
+  // console.log('cartQuantity:', cartQuantity)
+  const userSid = JSON.parse(localStorage.getItem('member')).user.sid
+  // console.log('userSid:', userSid)
+  const [payTotal] = JSON.parse(localStorage.getItem('total'))
+  // console.log('payTotal:', payTotal)
+
+  const userString = localStorage.getItem('myAuth')
+  const userData = JSON.parse(userString)
+  const token = userData.token
+  const mid = userData.accountId
+
   return (
     <>
       <div className={`${styles.IanShoppingCartAll}`}>
@@ -243,13 +271,27 @@ function IanShoppingCart3() {
       </div>
 
       <form
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault()
+          const orderList_lastSid = await axios.post(ORDER_HISTORY, {
+            Authorization: `Bearer ${token}`,
+            userSid: userSid,
+            payTotal: payTotal,
+          })
+          const lastSid = orderList_lastSid.data[0].sid
+          // console.log(lastSid)
+          localStorage.setItem('lastSid', lastSid)
+          const order_detail = await axios.post(ORDER_HISTORY2, {
+            Authorization: `Bearer ${token}`,
+            lastSid: lastSid,
+            cartSid: cartSid,
+            cartQuantity: cartQuantity,
+          })
+          // console.log(order_detail)
+          localStorage.removeItem('cartSid')
+          localStorage.removeItem('member')
+          clearCart()
           navigate('/SC4')
-          // localStorage.removeItem('member')
-          // localStorage.removeItem('cart')
-          // localStorage.removeItem('order')
-          // localStorage.clear('cart')
         }}
       >
         <div

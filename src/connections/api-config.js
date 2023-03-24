@@ -70,15 +70,12 @@ export const SELECT_BATCH = `${HOST}/select_batch`
 // export const LIST_DATA = `${HOST}/member`
 
 // someone's path
-// export const TRAILS_DATA = `${HOST}/trails?`
-// export const RATING_DATA = `${HOST}/trails/rating`
-// export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 
 export const TRAILS_DATA = `${HOST}/trails`
 
 export const RATING_DATA = `${HOST}/trails/rating`
 
-export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
+export const TRAILS_BATCH_DATA = `${HOST}/trails/batch`
 
 export const TRAILS_FILTER_DATA = `${HOST}/trails-filter`
 
@@ -94,4 +91,5 @@ export const TRAILS_DIFFMEDIUM = `${HOST}/difficultyMedium`
 export const TRAILS_DIFFEASY = `${HOST}/difficultyEasy`
 export const ORDER_COUPON = `${HOST}/SC1`
 export const ORDER_HISTORY = `${HOST}/history`
+export const ORDER_HISTORY2 = `${HOST}/history2`
 export const ORDERUSER_DATA = (mid) => `${HOST}/${mid}`
