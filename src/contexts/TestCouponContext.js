@@ -1,17 +1,68 @@
 import React, { createContext, useEffect, useState } from 'react'
+import axios from 'axios'
+
+// Connections
+import {
+  TEST_QUES,
+  TEST_PLAY,
+  TEST_INSERT_PLAY,
+  TEST_INSERT_COUPON,
+} from '../connections/api-config'
 
 export const TestCouponContext = createContext(null)
 
 export const TestCouponContextProvider = ({ children }) => {
-  const [newCoupon, setNewCoupon] = useState(true)
+  const [newCoupon, setNewCoupon] = useState(false)
   const [sale, setSale] = useState()
   const [coupon, setCoupon] = useState()
+  const [test, setTest] = useState(false)
 
   // const [ifLogin, setIfLogin] = useState(false)
   // const isMyAuth = JSON.parse(localStorage.getItem('myAuth'))
   // if (isMyAuth) {
   //   setIfLogin(true)
   // }
+  const ifPlay = async () => {
+    try {
+      const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+      const response = await axios.get(TEST_PLAY, {
+        params: {
+          accountId: currentAccount.accountId,
+        },
+      })
+      console.log('ifplay',response.data)
+      return response.data
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  const insertMemberPlay = async () => {
+    try {
+      const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+      const response = await axios.get(TEST_INSERT_PLAY, {
+        params: {
+          accountId: currentAccount.accountId,
+        },
+      })
+      return response.data
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  const insertMemberCoupon = async () => {
+    try {
+      const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+      const response = await axios.get(TEST_INSERT_COUPON, {
+        params: {
+          accountId: currentAccount.accountId,
+          coupon: coupon,
+        },
+      })
+      return response.data
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   const toggleSale = (v) => {
     switch (v) {
@@ -49,6 +100,11 @@ export const TestCouponContextProvider = ({ children }) => {
         setSale,
         coupon,
         setCoupon,
+        insertMemberPlay,
+        insertMemberCoupon,
+        test,
+        setTest,
+        ifPlay,
       }}
     >
       {children}

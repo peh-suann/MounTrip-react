@@ -9,7 +9,9 @@ section.played {
   align-items: center;
 }
 section.played h2 {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 32px;
   margin-bottom: 32px;
+  margin-left: 8px;
+  letter-spacing: 0.1em;
 }

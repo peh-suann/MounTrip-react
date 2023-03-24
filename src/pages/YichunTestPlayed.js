@@ -34,14 +34,14 @@ function YichunTestPlayed() {
     // console.log('hi coupon')
     // 因為是已經有玩過的用戶
     // 不需要重新發送確認信
-    setNewCoupon(true)
-    localStorage.setItem('memberPage', 'member')
+    setNewCoupon(false)
+    localStorage.setItem('memberPage', 'coupon')
   }
   return (
     <>
       <Navbar />
       <section className={styles.played}>
-        <h2>you've already played!!</h2>
+        <h2>你已經領過優惠券了啦！</h2>
         <Button text={'前往優惠券'} handleClick={handleClick} link={'member'} />
       </section>
     </>
