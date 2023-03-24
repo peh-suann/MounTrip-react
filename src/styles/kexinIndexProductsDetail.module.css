@@ -198,10 +198,7 @@
   color: var(--mtyellow-4);
 }
 
-.map-product-detail .star-mark {
-  width: 30px;
-  height: 30px;
-}
+
 
 .map-product-detail .total-comment p {
   font-weight: 400;

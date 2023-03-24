@@ -148,27 +148,7 @@ function KexinIndexProductsDetail() {
               <div className={`${styles['mb-8']}`}>
                 <img
                   className={`${styles['star-mark']} ${styles['me-10']}`}
-                  src="images/kexin/svg/star-yellow.svg"
-                  alt=""
-                />
-                <img
-                  className={`${styles['star-mark']} ${styles['me-10']}`}
-                  src="images/kexin/svg/star-yellow.svg"
-                  alt=""
-                />
-                <img
-                  className={`${styles['star-mark']} ${styles['me-10']}`}
-                  src="images/kexin/svg/star-yellow.svg"
-                  alt=""
-                />
-                <img
-                  className={`${styles['star-mark']} ${styles['me-10']}`}
-                  src="images/kexin/svg/star-yellow.svg"
-                  alt=""
-                />
-                <img
-                  className={`${styles['star-mark']} ${styles['me-10']}`}
-                  src="images/kexin/svg/star-yellow.svg"
+                  src={myProduct.avg_score ? `images/kexin/svg/BigStars${myProduct.avg_score.slice(0, 3)}.svg` : ''}
                   alt=""
                 />
               </div>

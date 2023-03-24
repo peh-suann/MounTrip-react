@@ -139,13 +139,31 @@ function KexinWeather(props) {
             </div>
             <h2>
               {time === 1
-                ? `${
+                ? selectCounty==='花蓮縣' ? `${
                     weatherNow.length > 1 &&
                     weatherNow
                       .filter((el, i) => {
                         {
                           /* console.log('loc',el.locationName, selectCounty.slice(0,2)) */
                         }
+                        return (
+                          el.locationName ===
+                          selectCounty.slice(0,2)
+                        )
+                      })
+                      .map((el, i) => {
+                        {
+                          /* console.log(el,i) */
+                        }
+                        if (i === 0) {
+                          return el.weatherElement[0].elementValue
+                        }
+                      })
+                      .slice(0, 1)
+                  }°C` : `${
+                    weatherNow.length > 1 &&
+                    weatherNow
+                      .filter((el, i) => {
                         return (
                           el.parameter[0].parameterValue ===
                           selectCounty

@@ -5,6 +5,7 @@ import { StatusContext, ProductContext } from '../pages/KexinIndex'
 import { useCart } from './IanUseCart'
 import { LoginContext } from '../App'
 import AuthContext from '../contexts/AuthContexts'
+import FavoriteBtnOff from './FavoriteBtnOff'
 
 function KexinFixedBox(props) {
   const { el } = props
@@ -89,16 +90,17 @@ function KexinFixedBox(props) {
           </div>
           <button
             className={`${styles['like']} btn`}
-            onClick={() => {
-              setLiked(!liked)
-              console.log(liked)
-            }}
+            // onClick={() => {
+            //   setLiked(!liked)
+            //   console.log(liked)
+            // }}
           >
-            {liked ? (
+            <FavoriteBtnOff trailSID={myProduct.sid}/>
+            {/* {liked ? (
               <img src="images/kexin/svg/heart-red.svg" alt="" />
             ) : (
               <img src="images/kexin/svg/heart.svg" alt="" />
-            )}
+            )} */}
           </button>
         </div>
         <div className="d-flex align-items-center">
@@ -137,12 +139,6 @@ function KexinFixedBox(props) {
                       ))
                     : ''}
                 </select>
-                {/* <span className="px-3">2023/01/01 - 2023/01/03</span>
-                <img
-                  className={styles['chevron-down-type']}
-                  src="images/kexin/svg/chevron-down.svg"
-                  alt=""
-                /> */}
               </div>
             </button>
           </div>

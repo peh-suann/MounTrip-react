@@ -95,8 +95,7 @@ function KexinIndexProducts(props) {
 
         <div className={`${styles['card']} d-flex flex-column px-0`}>
           {/* // TODO: 沒要到資料也不要跳錯誤
-        // TODO: component樣式修改
-        // TODO: 點擊有地理位置 */}
+        // TODO: component樣式修改 */}
           {data.length
             ? data.map((v, i) => {
                 return (

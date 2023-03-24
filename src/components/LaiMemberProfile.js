@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Modal from './LaiBackdrop/Modal'
 import Backdrop from './LaiBackdrop/Backdrop'
 import { USER_AVATAR } from '../connections/api-config'
-import axios from 'axios'
+import axios from 'axios' 
 
 export default function LaiMemberProfile(props) {
   const {

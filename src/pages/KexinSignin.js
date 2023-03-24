@@ -21,13 +21,27 @@ function KexinSignin() {
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [passwordVisible1, setPasswordVisible1] = useState(false)
   const [focus, setFocus] = useState(false)
-  const [focus1, setFocus1] = useState(false)
+  const [accountVal, setAccountVal] = useState(0)
+  const [passVal, setPassVal] = useState(0)
+  const [passVal1, setPassVal1] = useState(0)
 
   const [myForm, setMyForm] = useState({
     account: '',
     password: '',
     password1: '',
   })
+
+  function checkAccount(str) {
+    var regExp = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{5,}$/
+    if (regExp.test(str)) return true
+    else return false
+  }
+
+  function checkPassword(str) {
+    var regExp = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{3,}$/
+    if (regExp.test(str)) return true
+    else return false
+  }
 
   const navigate = useNavigate()
   return (
@@ -113,43 +127,49 @@ function KexinSignin() {
                 onSubmit={(e) => {
                   e.preventDefault()
                   const form1 = document.forms['form1']
-                  if (form1.password.value != form1.password1.value) {
-                    setSamePassword(true)
-                    {
-                      document
-                        .querySelector('#password')
-                        .setAttribute(
-                          'class',
-                          `form-control ${signinStyles.danger}`
-                        )
-                    }
-                    {
-                      document
-                        .querySelector('#password1')
-                        .setAttribute(
-                          'class',
-                          `form-control ${signinStyles.danger}`
-                        )
-                    }
-                  } else {
-                    setSamePassword(false)
-                    {
-                      document
-                        .querySelector('#password')
-                        .setAttribute('class', `form-control`)
-                    }
-                    {
-                      document
-                        .querySelector('#password1')
-                        .setAttribute('class', `form-control`)
-                    }
-                    axios.post(SIGNIN, myForm).then((response) => {
-                      if (response.data['success']) {
-                        setSigninSuccess(true)
-                      } else {
-                        console.log('註冊失敗')
+                  // console.log(checkAccount(form1.account.value))
+                  if (
+                    checkAccount(form1.account.value) &&
+                    checkPassword(form1.password.value)
+                  ) {
+                    if (form1.password.value != form1.password1.value) {
+                      setSamePassword(true)
+                      {
+                        document
+                          .querySelector('#password')
+                          .setAttribute(
+                            'class',
+                            `form-control ${signinStyles.danger}`
+                          )
                       }
-                    })
+                      {
+                        document
+                          .querySelector('#password1')
+                          .setAttribute(
+                            'class',
+                            `form-control ${signinStyles.danger}`
+                          )
+                      }
+                    } else {
+                      setSamePassword(false)
+                      {
+                        document
+                          .querySelector('#password')
+                          .setAttribute('class', `form-control`)
+                      }
+                      {
+                        document
+                          .querySelector('#password1')
+                          .setAttribute('class', `form-control`)
+                      }
+                      axios.post(SIGNIN, myForm).then((response) => {
+                        if (response.data['success']) {
+                          setSigninSuccess(true)
+                        } else {
+                          console.log('註冊失敗')
+                        }
+                      })
+                    }
                   }
                 }}
               >
@@ -164,7 +184,13 @@ function KexinSignin() {
                     name="account"
                     required
                     onChange={(e) => {
-                      console.log(e.target.value)
+                      // console.log(e.target.value)
+                      if (!checkAccount(e.target.value)) {
+                        setAccountVal(1)
+                      } else {
+                        setAccountVal(0)
+                      }
+                      // setAccountVal(checkAccount(e.target.value))
                       setMyForm((prev) => ({
                         ...myForm,
                         account: e.target.value,
@@ -174,9 +200,17 @@ function KexinSignin() {
                       setFocus(true)
                     }}
                   />
-                  <div className="form-text">
-                    {focus ? '帳號需包含英文及數字, 超過5個字元' : ''}
-                  </div>
+                  {signinSuccess ? '' : accountVal === 1 ? (
+                    <span className={signinStyles.textnotes}>
+                      帳號不符合格式
+                    </span>
+                  ) : focus ? (
+                    <div className="form-text">
+                      帳號需包含英文及數字, 超過5個字元
+                    </div>
+                  ) : (
+                    ''
+                  )}
                 </div>
                 <div className={`${signinStyles['password-wrap']} mb-3`}>
                   <label htmlFor="password" className="form-label">
@@ -190,6 +224,11 @@ function KexinSignin() {
                     // placeholder="密碼需包含英文及數字"
                     required
                     onChange={(e) => {
+                      if (!checkPassword(e.target.value)) {
+                        setPassVal(1)
+                      } else {
+                        setPassVal(0)
+                      }
                       setMyForm((prev) => ({
                         ...myForm,
                         password: e.target.value,
@@ -213,7 +252,11 @@ function KexinSignin() {
                       <FontAwesomeIcon icon={faEyeSlash} />
                     )}
                   </button>
-                  {samePassword ? (
+                  {signinSuccess ? '' : passVal === 1 ? (
+                    <span className={signinStyles.textnotes}>
+                      帳號不符合格式
+                    </span>
+                  ) : samePassword ? (
                     <span className={signinStyles.textnotes}>
                       輸入密碼不相同
                     </span>
@@ -234,6 +277,12 @@ function KexinSignin() {
                     name="password1"
                     // placeholder="密碼需包含英文及數字"
                     onChange={(e) => {
+                      if (!checkPassword(e.target.value)) {
+                        setPassVal1(1)
+                      } else {
+                        setPassVal1(0)
+                      }
+
                       setMyForm((prev) => ({
                         ...myForm,
                         password1: e.target.value,
@@ -254,7 +303,11 @@ function KexinSignin() {
                       <FontAwesomeIcon icon={faEyeSlash} />
                     )}
                   </button>
-                  {samePassword ? (
+                  {signinSuccess ? '' : passVal1 === 1 ? (
+                    <span className={signinStyles.textnotes}>
+                      帳號不符合格式
+                    </span>
+                  ) : samePassword ? (
                     <span className={signinStyles.textnotes}>
                       輸入密碼不相同
                     </span>
