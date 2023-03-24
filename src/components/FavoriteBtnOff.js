@@ -16,6 +16,7 @@ export default function FavoriteBtnOff(props) {
   const fill = heartOn ? '#ed7f7d' : 'none'
 
   const toggleHeart = (e) => {
+    
     // setHeartOn((heartOn) => !heartOn)
     if (heartOn) {
       window.confirm('確定要將商品從我的收藏移除嗎？')
@@ -30,6 +31,7 @@ export default function FavoriteBtnOff(props) {
     getDataCallback()
   }
   const addFavorite = async () => {
+    // if (!token) return window.confirm('先登入會員才能進行我的收藏操作')
     try {
       const [rows] = await axios.post(
         USER_FAV_ADD,
@@ -49,6 +51,7 @@ export default function FavoriteBtnOff(props) {
     }
   }
   const removeFavorite = async () => {
+    // if (!token) return window.confirm('先登入會員才能進行我的收藏操作')
     try {
       const [rows] = await axios.delete(USER_FAV_DELETE, {
         headers: {

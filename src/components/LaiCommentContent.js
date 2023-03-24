@@ -24,7 +24,7 @@ export default function LaiComment() {
 
       currentUserComment = res.data.data
       setUserComment(currentUserComment)
-      // console.log('new sql', res.data.data)
+      console.log('new sql', res.data.data)
       // console.log('userComment:', userComment)
     } catch (error) {
       console.log("there's an error in db connection")
@@ -67,14 +67,14 @@ export default function LaiComment() {
               {/* <p id={styles['comment-amount']}>4</p> */}
               <p>則評論</p>
             </div>
-            <div className={styles['filter-btn']}>
+            {/* <div className={styles['filter-btn']}>
               <select>
                 <option>排列順序</option>
                 <option>未回覆在前</option>
                 <option>已回覆在前</option>
                 <option>依照評論順序</option>
               </select>
-            </div>
+            </div> */}
           </div>
           <div className={styles['comment-list']}>
             {userComment.map((v, i) => {

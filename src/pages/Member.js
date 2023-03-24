@@ -1,6 +1,6 @@
 import styles from './../styles/Member.module.css'
 import { useState, useEffect, useRef, useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import MemberContent from '../components/LaiMemberContent'
 import CouponContent from '../components/LaiCouponContent'
 import AchievementContent from '../components/LaiAchievementContent'
@@ -39,6 +39,8 @@ export default function Member() {
   const [user, setUser] = useState({})
   const [avatar, setAvatar] = useState('')
 
+  const authString = localStorage.getItem('myAuth')
+  const auth = JSON.parse(authString)
   //抓資料的函式，全部人的資料都在這個api
   // const getUser = async (req, res) => {
   //   try {
@@ -63,24 +65,28 @@ export default function Member() {
     // console.log('u.id:', user.accountId)
     const token = userData.token
     const mid = userData.accountId
-
-    try {
-      const res = await axios.get(USER_DATA(mid), {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      if (!res) return res.sendStatus(401)
-      // const currentUserId = myAuth.sid
-      const currentUserData = res.data
-      setUser(currentUserData)
-      // TODO 大頭貼檔名 = user.img
-      const avatarName = res.data.img
-      setAvatar(avatarName)
-      // console.log('檔名', avatar)
-      // console.log('member-data-rows:', res.data)
-      // console.log('user:', currentUserData)
-    } catch (error) {
-      console.log('uu:', user)
-      return []
+    if (!token || !mid) {
+      alert('您尚未登入，請先登入會員')
+      navigate('/login')
+    } else {
+      try {
+        const res = await axios.get(USER_DATA(mid), {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        if (!res) return res.sendStatus(401)
+        // const currentUserId = myAuth.sid
+        const currentUserData = res.data
+        setUser(currentUserData)
+        // TODO 大頭貼檔名 = user.img
+        const avatarName = res.data.img
+        setAvatar(avatarName)
+        // console.log('檔名', avatar)
+        // console.log('member-data-rows:', res.data)
+        // console.log('user:', currentUserData)
+      } catch (error) {
+        console.log('uu:', user)
+        return []
+      }
     }
   }
   //useContext Navbar選擇分頁，電腦版的分頁選擇也一起用這個state
@@ -88,16 +94,22 @@ export default function Member() {
   const { page, setPage } = useState('member')
 
   //用useEffect呼叫getUser()，並且把從mobile navbar得到的localstorage item設定為分頁的state
+  const navigate = useNavigate()
   useEffect(() => {
-    const pageState = localStorage.getItem('memberPage')
-    if (!pageState) {
-      setMemberPage('member')
+    if (auth) {
+      const pageState = localStorage.getItem('memberPage')
+      if (!pageState) {
+        setMemberPage('member')
+      } else {
+        setMemberPage(pageState)
+      }
+      getUser2()
+      window.scrollTo(0, 0)
     } else {
-      setMemberPage(pageState)
+      alert('您尚未登入，請先登入會員')
+      navigate('/login')
     }
-    getUser2()
-    window.scrollTo(0, 0)
-    // console.log('member.user:', user)
+    // naviagate('/'))
   }, [])
 
   const handleDisplayPage = (page) => {

@@ -213,14 +213,14 @@
     margin-top: 28px;
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-rows: repeat(4, 120px);
     /* grid-template-areas:
         "name name name name fname fname fname fname gender gender gender gender"
         "birth birth birth birth id id id id phone phone phone phone"
         "account account account account account account email email email email email email"
         "zip city city address address address address address address address address address"; */
     column-gap: 20px;
-    row-gap: 24px;
+    row-gap: 10px;
     /* grid-auto-columns: 1fr; */
     position: relative;
 }
@@ -251,6 +251,20 @@
     font-weight: 500;
     padding-left: 20px;
     padding-right: 20px;
+}
+.input-blocks input:invalid {
+    border: 2px solid var(--mtred-1);
+    background-color: rgba(206, 232, 203, 0.6);
+    outline:none;
+    color:var(--mtgreen-1);
+    background-color: var(--mtyellow-4);
+    box-shadow: 0 0 0 4px var(--mtred-4);
+}
+
+.error_label{
+    color: var(--mtred-1) !important;
+    font-size: 15px !important;
+    height: 15px;
 }
 .date_picker{
     border: 2px solid var(--mtgreen-3);
@@ -393,7 +407,7 @@
     /* height: 100%; */
     position: absolute;
     right:0;
-    top:510px;
+    top:520px;
     gap:25px;
     justify-content: flex-end;
 }
