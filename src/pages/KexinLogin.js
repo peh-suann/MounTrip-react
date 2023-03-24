@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
 
@@ -14,6 +14,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // FontAwesome
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
+// Context
+import { TestCouponContext } from './../contexts/TestCouponContext'
+
 function KexinLogin() {
   const [myForm, setMyForm] = useState({
     account: '',
@@ -23,6 +26,10 @@ function KexinLogin() {
   const navigate = useNavigate()
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [loginSuccess, setLoginSuccess] = useState(false)
+
+  // for Test
+  // useEffect(() => {}, [myForm])
+  const { newCoupon } = useContext(TestCouponContext)
 
   return (
     <>
@@ -130,7 +137,12 @@ function KexinLogin() {
                         token,
                         sid: accountId,
                       })
-                      navigate('/index')
+                      if (newCoupon) {
+                        navigate('/member')
+                        localStorage.setItem('memberPage', 'coupon')
+                      } else {
+                        navigate('/index')
+                      }
                     } else {
                       setLoginSuccess(true)
                       {

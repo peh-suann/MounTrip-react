@@ -1,6 +1,6 @@
 import styles from './../styles/Member.module.css'
 import { useState, useEffect, useRef, useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import MemberContent from '../components/LaiMemberContent'
 import CouponContent from '../components/LaiCouponContent'
 import AchievementContent from '../components/LaiAchievementContent'
@@ -150,9 +150,38 @@ export default function Member() {
   )
 
   // yichun's coupon
-  const { newCoupon, setNewCoupon, sale } = useContext(TestCouponContext)
-  const handleCouponBox = () => {
+  const {
+    newCoupon,
+    setNewCoupon,
+    sale,
+    insertMemberPlay,
+    insertMemberCoupon,
+    ifPlay,
+  } = useContext(TestCouponContext)
+  const navigate = useNavigate()
+  // 查看登入前是否有玩遊戲
+  useEffect(() => {
+    const fetchData = async () => {
+      const loginPlay = localStorage.getItem('test')
+      const play = await ifPlay()
+      console.log('1--')
+      if (loginPlay) {
+        if (play.length === 0) {
+          console.log('2--')
+
+          await Promise.all([insertMemberPlay(), insertMemberCoupon()])
+        } else {
+          console.log('3--')
+          // navigate('/test')
+        }
+      }
+    }
+    fetchData()
+  }, [])
+
+  const handleClick = () => {
     setNewCoupon(false)
+    localStorage.removeItem('test')
   }
 
   return (
@@ -169,7 +198,7 @@ export default function Member() {
             <Button
               text={'知道了'}
               link={'member'}
-              handleClick={handleCouponBox}
+              handleClick={handleClick}
             ></Button>
           </div>
         </div>

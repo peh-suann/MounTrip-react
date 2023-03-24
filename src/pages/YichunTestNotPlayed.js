@@ -13,19 +13,13 @@ import YichunQuestionSection from '../components/YichunQuestionSection'
 import Button from '../components/Button'
 
 // Connections
-import {
-  TEST_QUES,
-  TEST_PLAY,
-  TEST_INSERT_PLAY,
-  TEST_INSERT_COUPON,
-} from '../connections/api-config'
+import { TEST_QUES } from '../connections/api-config'
 
 // Context
 import { TestCouponContext } from '../contexts/TestCouponContext'
 
 // Styles
 import styles from './../styles/yichun_styles/YichunTest.module.css'
-import { useNavigate } from 'react-router-dom'
 export const StylesContext = createContext(styles)
 
 function YichunTestNotPlayed() {
@@ -39,8 +33,17 @@ function YichunTestNotPlayed() {
     false,
   ])
   const [correct, setCorrect] = useState([false, false, false, false, false])
-  const { newCoupon, setNewCoupon, toggleSale, sale, coupon } =
-    useContext(TestCouponContext)
+  const {
+    newCoupon,
+    setNewCoupon,
+    toggleSale,
+    sale,
+    coupon,
+    insertMemberPlay,
+    insertMemberCoupon,
+    test,
+    setTest,
+  } = useContext(TestCouponContext)
   const [ifLogin, setIfLogin] = useState(false)
 
   // mountain moving effect
@@ -68,40 +71,17 @@ function YichunTestNotPlayed() {
       return []
     }
   }
-  const insertMemberPlay = async () => {
-    try {
-      const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
-      const response = await axios.get(TEST_INSERT_PLAY, {
-        params: {
-          accountId: currentAccount.accountId,
-        },
-      })
-      return response.data
-    } catch (error) {
-      console.error(error)
-    }
-  }
-  const insertMemberCoupon = async () => {
-    try {
-      const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
-      const response = await axios.get(TEST_INSERT_COUPON, {
-        params: {
-          accountId: currentAccount.accountId,
-          coupon: coupon,
-        },
-      })
-      return response.data
-    } catch (error) {
-      console.error(error)
-    }
-  }
 
   const handleClick = () => {
     const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
     if (currentAccount) {
       // 已登入但未玩過
       console.log('已登入但未玩過')
+      setNewCoupon(true)
       setIfLogin(true)
+      setTest(false)
+      insertMemberPlay()
+      insertMemberCoupon()
     } else {
       // 未登入
       console.log('未登入')
@@ -112,12 +92,21 @@ function YichunTestNotPlayed() {
           coupon,
         })
       )
+      setNewCoupon(true)
       setIfLogin(true)
+      setTest(true)
     }
   }
 
   useEffect(() => {
     getListData()
+    localStorage.setItem('memberPage', 'coupon')
+    const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+    if (currentAccount) {
+      setIfLogin(true)
+    } else {
+      setIfLogin(false)
+    }
   }, [])
 
   useEffect(() => {
@@ -125,16 +114,6 @@ function YichunTestNotPlayed() {
       toggleSale(correct.filter(Boolean).length)
     }
   }, [display])
-
-  useEffect(() => {
-    // if logged in
-    if (localStorage.getItem('myAuth')) {
-      if (coupon) {
-        insertMemberPlay()
-        insertMemberCoupon()
-      }
-    }
-  }, [sale])
 
   const scrollTo = async (index) => {
     const windowHeight = window.innerHeight
@@ -426,7 +405,6 @@ function YichunTestNotPlayed() {
             )
           }
         })}
-
         <section
           className={`${styles.price} ${display[5] ? '' : styles.display}`}
           onMouseMove={(e) => {
