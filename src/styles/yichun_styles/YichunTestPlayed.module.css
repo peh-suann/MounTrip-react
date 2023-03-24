@@ -1,0 +1,15 @@
+section.played {
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+  margin-top: var(--navbar-height);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.played h2 {
+  font-weight: 900;
+  font-size: 32px;
+  margin-bottom: 32px;
+}

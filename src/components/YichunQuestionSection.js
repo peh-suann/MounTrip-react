@@ -15,7 +15,7 @@ import {
 import { TEST_ANS } from '../connections/api-config'
 
 // Styles
-import { StylesContext } from './../pages/YichunTest'
+import { StylesContext } from './../pages/YichunTestNotPlayed'
 
 function YichunQuestionSection(props) {
   const { index, odd, element, display, scrollTo, setCorrect } = props
@@ -32,7 +32,7 @@ function YichunQuestionSection(props) {
   const getListData = async () => {
     try {
       const response = await axios.get(TEST_ANS)
-      console.log(response.data)
+      // console.log(response.data)
       setAns(response.data)
       return response.data
     } catch (error) {
@@ -48,7 +48,7 @@ function YichunQuestionSection(props) {
   useEffect(() => {
     if (flip.filter(Boolean).length === 3) {
       if (window.innerWidth > 390) {
-        console.log('here------', cardRefs.current[0])
+        // console.log('here------', cardRefs.current[0])
         cardRefs.current[0].style.transform = 'rotateZ(-8deg) rotateY(180deg)'
         cardRefs.current[1].style.transform = 'rotateY(180deg)'
         cardRefs.current[2].style.transform = 'rotateZ(8deg) rotateY(180deg)'

@@ -120,7 +120,7 @@ function YichunProducts() {
   const getLocationProducts = async () => {
     try {
       const response = await axios.get(LOCATION_PRODUCTS)
-      // console.log('getLocationProducts', response.data)
+      console.log('getLocationProducts', response.data)
       return response.data
     } catch (error) {
       console.error(error)
