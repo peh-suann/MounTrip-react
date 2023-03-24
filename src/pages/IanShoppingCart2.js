@@ -19,6 +19,7 @@ function IanShoppingCart2() {
   //     birthday: '',
   //   },
   // ])
+  const [Auth, setAuth] = useState([])
   const [user, setUser] = useState({})
   console.log(user)
   const [memberitems, setMemberItems] = useState([
@@ -59,13 +60,11 @@ function IanShoppingCart2() {
   useEffect(() => {
     getUser2()
   }, [])
-  // const navigate = useNavigate()
   // const [search,setSearch]=useSearchParams()
   // console.log(search.toString(),12132156456654)
   const navigate = useNavigate()
   const jsonUser = { user: user }
   const Jsonmember = JSON.stringify(jsonUser)
-  // const JsonStorage = JSON.stringify(QString)
   return (
     <>
       <div className={`${styles.shoppingCart2All}`}>
@@ -348,8 +347,10 @@ function IanShoppingCart2() {
               </h3>
             </div>
             <IanOrderData
-              user={user}
+              // user={user}
+              Auth={Auth}
               setUser={setUser}
+              setAuth={setAuth}
               memberitems={memberitems}
               setMemberItems={setMemberItems}
             />

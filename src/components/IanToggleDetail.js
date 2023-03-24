@@ -10,7 +10,7 @@ function IanToggleDetail(props) {
   const id = items.map((v, i) => {
     return v.sid
   })
-  console.log(items)
+
   return (
     <>
       <div
@@ -130,6 +130,7 @@ function IanToggleDetail(props) {
           </div>
         </div>
       </div>
+
       <IanShowDetail
         toggleOpen={toggleOpen}
         memberitems={memberitems}

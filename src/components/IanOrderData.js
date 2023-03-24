@@ -7,7 +7,7 @@ function IanOrderData(props) {
   //   setUser(newUser)
   // }
 
-  const { user, setUser } = props
+  const { user, setUser, Auth, setAuth } = props
 
   // const [orderData, setOrderData] = useState(user)
   // setMemberItems(orderData)
@@ -24,7 +24,7 @@ function IanOrderData(props) {
               type="text"
               id="firstName"
               name="firstName"
-              value={user.firstname}
+              value={Auth.firstname}
               onChange={(e) => {
                 setUser(e.target.value)
               }}
@@ -37,7 +37,7 @@ function IanOrderData(props) {
               type="text"
               id="lastName"
               name="lastName"
-              value={user.lastname}
+              value={Auth.lastname}
               onChange={(e) => {
                 setUser(e.target.value)
               }}
@@ -51,7 +51,7 @@ function IanOrderData(props) {
             type="tel"
             id="phone"
             name="phone"
-            value={user.mobile}
+            value={Auth.mobile}
             onChange={(e) => {
               setUser(e.target.value)
             }}
@@ -64,7 +64,7 @@ function IanOrderData(props) {
             type="email"
             id="email"
             name="email"
-            value={user.email}
+            value={Auth.email}
             onChange={(e) => {
               setUser(e.target.value)
             }}
@@ -82,7 +82,7 @@ function IanOrderData(props) {
             <input
               type="text"
               id="idCard"
-              value={user.personal_id}
+              value={Auth.personal_id}
               name="idCard"
               onChange={(e) => {
                 setUser(e.target.value)
@@ -95,10 +95,10 @@ function IanOrderData(props) {
             <input
               type="date"
               id="birthday"
-              value={dayjs(user.birthday).format('YYYY-MM-DD')}
+              value={Auth.birthday}
               name="birthday"
               onChange={(e) => {
-                setUser(e.target.value)
+                setAuth(e.target.value)
               }}
               required
             />

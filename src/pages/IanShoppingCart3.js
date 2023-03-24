@@ -28,6 +28,8 @@ function IanShoppingCart3() {
   // console.log('userSid:', userSid)
   const [payTotal] = JSON.parse(localStorage.getItem('total'))
   // console.log('payTotal:', payTotal)
+  const AuthSid = JSON.parse(localStorage.getItem('myAuth')).accountId
+  // console.log('AuthSid:', AuthSid)
 
   const userString = localStorage.getItem('myAuth')
   const userData = JSON.parse(userString)

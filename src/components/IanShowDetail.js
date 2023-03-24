@@ -9,20 +9,21 @@ function IanShowDetail(props) {
 
   return (
     <>
-      {same ? (
-        <IanSameDetail
+      {/* {same ? ( */}
+      {/* <IanSameDetail
           toggleOpen={toggleOpen}
           memberitems={memberitems}
           same={same}
           setSame={setSame}
         />
-      ) : (
-        <IanEmptyDetail
-          toggleOpen={toggleOpen}
-          quantity={quantity}
-          setSame={setSame}
-        />
-      )}
+      ) : ( */}
+      <IanEmptyDetail
+        toggleOpen={toggleOpen}
+        quantity={quantity}
+        setSame={setSame}
+        memberitems={memberitems}
+      />
+      {/* )} */}
     </>
   )
 }

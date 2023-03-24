@@ -14,18 +14,7 @@ function IanShoppingCart1() {
   const [show, setShow] = useState(false)
   const [useCoupon, setUseCoupon] = useState([])
   const [mySelect, setMySelect] = useState('')
-  const price = useCoupon.map((v, i) => {
-    if (v.coupon_code === mySelect) {
-      return v.min_purchase
-    }
-  })
-  const [finalyPrice] = price.filter((v, i) => {
-    return v != undefined
-  })
-
-  // console.log(finalyPrice)
-  // console.log(cart.cartTotal)
-  const finallyTotal = cart.cartTotal - finalyPrice
+  const navigate = useNavigate()
 
   const getUseCoupon = async (req, res) => {
     // const r = await fetch(ORDER_COUPON)
@@ -43,7 +32,7 @@ function IanShoppingCart1() {
       if (!res.data) return res.sendStatus(401)
 
       setUseCoupon(res.data)
-      console.log('useCoupon:', res.data)
+      // console.log('useCoupon:', res.data)
     } catch (error) {
       console.log('coupon axios err')
       return []
@@ -51,18 +40,23 @@ function IanShoppingCart1() {
   }
 
   useEffect(() => {
-    console.log('---Effect---')
-
     getUseCoupon()
   }, [])
-  const navigate = useNavigate()
-
+  const price = useCoupon.map((v, i) => {
+    if (v.coupon_code === mySelect) {
+      return v.min_purchase
+    }
+  })
+  const [salePrice] = price.filter((v, i) => {
+    return v !== undefined
+  })
+  const finallyTotal = cart.cartTotal - salePrice
+  const AuthSid = JSON.parse(localStorage.getItem('myAuth')).accountId
   const storage = JSON.parse(localStorage.getItem('cart'))
   const cartSid = storage.map((v, i) => {
     return v.sid
   })
-  // console.log('useId:', useId)
-  const total = [finallyTotal]
+  const total = [show ? finallyTotal : cart.cartTotal]
   const JsonTotal = JSON.stringify(total)
 
   return (
@@ -280,13 +274,10 @@ function IanShoppingCart1() {
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          // if (storage.finallyTotal && storage.finallyTotal !== 'NAN') {
           localStorage.setItem('cartSid', cartSid)
           localStorage.setItem('total', JsonTotal)
+          localStorage.setItem('AuthSid', AuthSid)
           navigate('/SC2')
-          // } else {
-          //   navigate('/SC1')
-          // }
         }}
       >
         <section
@@ -559,64 +550,143 @@ function IanShoppingCart1() {
               <h3>訂單明細</h3>
             </div>
 
-            <div className={`${styles['input-group']} ${styles['padding-30']}`}>
-              <div className={`${styles.orderCoupin} d-flex`}>
-                <select
-                  value={mySelect}
-                  onChange={(e) => {
-                    console.log(e.target.value)
-                    setMySelect(e.target.value)
-                    setShow(false)
-                  }}
-                  name=""
-                  id=""
-                  className={`${styles.orderSelect}`}
+            {show ? (
+              <div>
+                <div
+                  className={`${styles['input-group']} ${styles['padding-30']}`}
                 >
-                  {useCoupon.map((v, i) => {
-                    return <option key={i}>{v.coupon_code}</option>
-                  })}
-                </select>
-                <button
-                  onClick={() => {
-                    getUseCoupon()
-                    setShow(true)
-                  }}
-                  type="button"
-                  className={`col-3 ${styles.orderButton} btn btn-unstyle`}
-                >
-                  套用
-                </button>
-              </div>
-            </div>
-            <div>
-              <div
-                className={`${styles['padding-30']} d-flex justify-content-between`}
-              >
-                <p className={`${styles.p} mb-0`}>小計</p>
-                <p className={`${styles['p-bold']} mb-0`}>
-                  NTD {cart.cartTotal}
-                </p>
-              </div>
-              <div
-                className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex flex-column justify-content-between mb-lg-3`}
-              >
-                <p className={`${styles.p} mb-0`}>優惠碼</p>
-                <div className={`d-flex justify-content-between`}>
-                  <p className={`${styles.p} mb-0`}>{mySelect}</p>
-                  <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
-                    -NTD{price}
-                  </p>
+                  <div className={`${styles.orderCoupin} d-flex`}>
+                    <select
+                      value={mySelect}
+                      onChange={(e) => {
+                        console.log(e.target.value)
+                        setMySelect(e.target.value)
+                        setShow(false)
+                      }}
+                      name=""
+                      id=""
+                      className={`${styles.orderSelect}`}
+                    >
+                      <option>請選擇優惠券</option>
+                      {useCoupon.map((v, i) => {
+                        return <option key={i}>{v.coupon_code}</option>
+                      })}
+                    </select>
+                    <button
+                      onClick={() => {
+                        getUseCoupon()
+                        setShow(true)
+                      }}
+                      type="button"
+                      className={`col-3 ${styles.orderButton} btn btn-unstyle`}
+                    >
+                      套用
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className={`${styles['padding-30']} d-flex justify-content-between`}
+                  >
+                    <p className={`${styles.p} mb-0`}>小計</p>
+                    <p className={`${styles['p-bold']} mb-0`}>
+                      NTD {cart.cartTotal}
+                    </p>
+                  </div>
+                  <div
+                    className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex flex-column justify-content-between mb-lg-3`}
+                  >
+                    <p className={`${styles.p} mb-0`}>優惠碼</p>
+                    <div className={`d-flex justify-content-between`}>
+                      <p className={`${styles.p} mb-0`}>
+                        {mySelect === '請選擇優惠券' ? null : mySelect}
+                      </p>
+                      <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
+                        -NTD {mySelect ? price : 0}
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    className={`${styles['padding-30']} d-flex justify-content-between`}
+                  >
+                    <p className={`${styles['p-bold']} mb-0`}>合計</p>
+                    <p className={`${styles['p-bold']} mb-0`}>
+                      NTD ${show ? finallyTotal : 0}
+                      {/* {finallyTotal} */}
+                      {/* {show ? finallyTotal : 0} */}
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div
-                className={`${styles['padding-30']} d-flex justify-content-between`}
-              >
-                <p className={`${styles['p-bold']} mb-0`}>合計</p>
-                <p className={`${styles['p-bold']} mb-0`}>
-                  NTD ${show && finallyTotal}
-                </p>
+            ) : (
+              <div>
+                <div
+                  className={`${styles['input-group']} ${styles['padding-30']}`}
+                >
+                  <div className={`${styles.orderCoupin} d-flex`}>
+                    <select
+                      value={mySelect}
+                      onChange={(e) => {
+                        console.log(e.target.value)
+                        setMySelect(e.target.value)
+                        setShow(false)
+                      }}
+                      name=""
+                      id=""
+                      className={`${styles.orderSelect}`}
+                    >
+                      <option>請選擇優惠券</option>
+                      {useCoupon.map((v, i) => {
+                        return <option key={i}>{v.coupon_code}</option>
+                      })}
+                    </select>
+                    <button
+                      onClick={() => {
+                        getUseCoupon()
+                        setShow(true)
+                      }}
+                      type="button"
+                      className={`col-3 ${styles.orderButton} btn btn-unstyle`}
+                    >
+                      套用
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className={`${styles['padding-30']} d-flex justify-content-between`}
+                  >
+                    <p className={`${styles.p} mb-0`}>小計</p>
+                    <p className={`${styles['p-bold']} mb-0`}>
+                      NTD {cart.cartTotal}
+                    </p>
+                  </div>
+                  <div
+                    className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex flex-column justify-content-between mb-lg-3`}
+                  >
+                    <p className={`${styles.p} mb-0`}>優惠碼</p>
+                    <div className={`d-flex justify-content-between`}>
+                      <p className={`${styles.p} mb-0`}>
+                        {mySelect === '請選擇優惠券' ? null : mySelect}
+                      </p>
+                      <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
+                        -NTD {mySelect ? price : 0}
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    className={`${styles['padding-30']} d-flex justify-content-between`}
+                  >
+                    <p className={`${styles['p-bold']} mb-0`}>合計</p>
+                    <p className={`${styles['p-bold']} mb-0`}>
+                      NTD ${cart.cartTotal}
+                      {/* {finallyTotal} */}
+                      {/* {show ? finallyTotal : 0} */}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* <Link to="/SC2" className={`w-100 btn`}> */}
             <button type="submit" className={`${styles.next} w-100 btn`}>
