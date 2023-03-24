@@ -27,7 +27,7 @@ export default function LaiCouponContent({ children }) {
  
       setUserCoupon(res.data)
       const output = res.data.length
-      console.log(res.data) //res.data是裡面包著n比obj資料的arr
+      console.log('res',res.data) //res.data是裡面包著n比obj資料的arr
       return output
     } catch (error) {
       console.log('coupon axios err')
@@ -110,15 +110,8 @@ export default function LaiCouponContent({ children }) {
               <CouponAmount amount={userCoupon.length} />
               <p>張優惠券</p>
             </div>
-            <div className={styles['filter-btn']}>
-              <select>
-                <option>排列順序</option>
-                <option>全部</option>
-                <option>未使用</option>
-                <option>已使用</option>
-                <option>即將到期</option>
-              </select>
-            </div>
+            {/* 
+             */}
           </div>
           <div className={styles['coupon-list']}>
             {userCoupon.map((v, i) => {
