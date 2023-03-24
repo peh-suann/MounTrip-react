@@ -6,6 +6,13 @@ export const TestCouponContextProvider = ({ children }) => {
   const [newCoupon, setNewCoupon] = useState(true)
   const [sale, setSale] = useState()
   const [coupon, setCoupon] = useState()
+
+  // const [ifLogin, setIfLogin] = useState(false)
+  // const isMyAuth = JSON.parse(localStorage.getItem('myAuth'))
+  // if (isMyAuth) {
+  //   setIfLogin(true)
+  // }
+
   const toggleSale = (v) => {
     switch (v) {
       case 5:

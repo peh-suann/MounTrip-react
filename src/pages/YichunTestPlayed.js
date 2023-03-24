@@ -28,9 +28,12 @@ import styles from './../styles/yichun_styles/YichunTestPlayed.module.css'
 export const StylesContext = createContext(styles)
 
 function YichunTestPlayed() {
-  const { newCoupon, setNewCoupon } = useContext(TestCouponContext)
+  const { setNewCoupon } = useContext(TestCouponContext)
+
   const handleClick = () => {
     // console.log('hi coupon')
+    // 因為是已經有玩過的用戶
+    // 不需要重新發送確認信
     setNewCoupon(true)
   }
   return (

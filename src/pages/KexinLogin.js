@@ -112,18 +112,12 @@ function KexinLogin() {
                       {
                         document
                           .querySelector('#account')
-                          .setAttribute(
-                            'class',
-                            `form-control`
-                          )
+                          .setAttribute('class', `form-control`)
                       }
                       {
                         document
                           .querySelector('#password')
-                          .setAttribute(
-                            'class',
-                            `form-control`
-                          )
+                          .setAttribute('class', `form-control`)
                       }
                       const { account, accountId, token } = response.data
                       localStorage.setItem(

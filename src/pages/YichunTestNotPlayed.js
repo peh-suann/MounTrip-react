@@ -25,6 +25,7 @@ import { TestCouponContext } from '../contexts/TestCouponContext'
 
 // Styles
 import styles from './../styles/yichun_styles/YichunTest.module.css'
+import { useNavigate } from 'react-router-dom'
 export const StylesContext = createContext(styles)
 
 function YichunTestNotPlayed() {
@@ -40,11 +41,7 @@ function YichunTestNotPlayed() {
   const [correct, setCorrect] = useState([false, false, false, false, false])
   const { newCoupon, setNewCoupon, toggleSale, sale, coupon } =
     useContext(TestCouponContext)
-
-  const handleClick = () => {
-    console.log('hi coupon')
-    setNewCoupon(true)
-  }
+  const [ifLogin, setIfLogin] = useState(false)
 
   // mountain moving effect
   const mountainG2Ref = useRef(null)
@@ -96,6 +93,26 @@ function YichunTestNotPlayed() {
       return response.data
     } catch (error) {
       console.error(error)
+    }
+  }
+
+  const handleClick = () => {
+    const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+    if (currentAccount) {
+      // 已登入但未玩過
+      console.log('已登入但未玩過')
+      setIfLogin(true)
+    } else {
+      // 未登入
+      console.log('未登入')
+      localStorage.setItem(
+        'test',
+        JSON.stringify({
+          sale,
+          coupon,
+        })
+      )
+      setIfLogin(true)
     }
   }
 
@@ -477,7 +494,7 @@ function YichunTestNotPlayed() {
               />
               <Button
                 text={'前往我的優惠券'}
-                link={'member'}
+                link={ifLogin ? 'member' : 'login'}
                 style={window.innerHeight > 390 ? '' : { width: '100%' }}
                 handleClick={handleClick}
               />

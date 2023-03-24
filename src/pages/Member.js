@@ -152,7 +152,7 @@ export default function Member() {
   // yichun's coupon
   const { newCoupon, setNewCoupon, sale } = useContext(TestCouponContext)
   const handleCouponBox = () => {
-    setNewCoupon(false)
+    setNewCoupon(true)
   }
 
   return (

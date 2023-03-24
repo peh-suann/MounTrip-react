@@ -39,7 +39,7 @@ function YichunTest() {
         const playStatus = await getPlayStatus()
         // 資料表中是否有該項會員的資料
         // 沒有就代表沒玩過
-        if (playStatus.length > 0) {
+        if (playStatus && playStatus.length > 0) {
           const play_status = playStatus[0].play_status
           setPlay(play_status)
         } else {
@@ -56,15 +56,7 @@ function YichunTest() {
     console.log('play has changed', play)
   }, [play])
 
-  return (
-    <>
-      {play ? (
-        <YichunTestPlayed />
-      ) : (
-        <YichunTestNotPlayed />
-      )}
-    </>
-  )
+  return <>{play ? <YichunTestPlayed /> : <YichunTestNotPlayed />}</>
 }
 
 export default YichunTest
