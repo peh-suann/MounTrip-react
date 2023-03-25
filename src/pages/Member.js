@@ -169,20 +169,34 @@ export default function Member() {
     insertMemberCoupon,
     ifPlay,
   } = useContext(TestCouponContext)
-  // const navigate = useNavigate()
-  // 查看登入前是否有玩遊戲
+
+  // YichunModal Content
+  const [content, setContent] = useState('')
+  const newCouponContent = `<h4>
+    恭喜您完成登山安全小測驗 <br />
+    您已收到一張 <span>${sale}折</span> 優惠券
+    <br />
+    祝您旅途平安！
+    </h4>`
+  const playedContent = `<h4>您已經領取過優惠券啦！</h4>`
+
   useEffect(() => {
     const fetchData = async () => {
+      // 查看登入前是否有玩遊戲
       const loginPlay = localStorage.getItem('test')
+      // 查看該帳號是否玩過遊戲
       const play = await ifPlay()
       console.log('1--')
       if (loginPlay) {
         if (play.length === 0) {
+          // 沒玩過遊戲
           console.log('2--')
-
+          setContent(newCouponContent)
           await Promise.all([insertMemberPlay(), insertMemberCoupon()])
         } else {
+          // 已玩過遊戲
           console.log('3--')
+          setContent(playedContent)
           // navigate('/test')
         }
       }
@@ -194,14 +208,6 @@ export default function Member() {
     setNewCoupon(false)
     localStorage.removeItem('test')
   }
-
-  // YichunModal Content
-  const content = `<h4>
-  恭喜您完成登山安全小測驗 <br />
-  您已收到一張 <span>${sale}折</span> 優惠券
-  <br />
-  祝您旅途平安！
-</h4>`
 
   return (
     <>
