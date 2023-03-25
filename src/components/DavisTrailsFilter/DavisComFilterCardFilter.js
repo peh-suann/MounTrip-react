@@ -75,12 +75,12 @@ function DavisComFilterCardFilter(props) {
   }
 
   // 分頁，分割同樣trails_sid的資料
-  const oddRows = (data) => {
-    if (!Array.isArray(data)) {
-      return []
-    }
-    return data.filter((_, index) => index % 2 === 0)
-  }
+  // const oddRows = (data) => {
+  //   if (!Array.isArray(data)) {
+  //     return []
+  //   }
+  //   return data.filter((_, index) => index % 2 === 0)
+  // }
 
   // getListData()
   useEffect(() => {
@@ -104,18 +104,14 @@ function DavisComFilterCardFilter(props) {
       {/* {console.log(startdatepr)} */}
       {/* {data.rows.map((r) => ( */}
       {dataSubset(
-        oddRows(
-          filterByKeyword(
-            collect,
-            keywordpr,
-            startdatepr,
-            enddatepr,
-            maxpeplepr
-          )
-        )
+        filterByKeyword(collect, keywordpr, startdatepr, enddatepr)
       ).map((r) => (
         <div className="col" key={r.sid}>
-          {/* {console.log(dataSubset(alldata.rows))} */}
+          {/* {console.log(
+            dataSubset(
+              filterByKeyword(collect, keywordpr, startdatepr, enddatepr)
+            )
+          )} */}
           {/* card*n  */}
           <div className={`${styles.trails_card}`}>
             <div className="row g-0 d-flex flex-row ">
@@ -256,13 +252,13 @@ function DavisComFilterCardFilter(props) {
                     // )
                     // oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
 
-                    r.becollect
-                      ? collectList.push(
-                          oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                        )
-                      : collectList.pop(
-                          oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                        )
+                    // r.becollect
+                    //   ? collectList.push(
+                    //       oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
+                    //     )
+                    //   : collectList.pop(
+                    //       oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
+                    //     )
                     // : collectList.filter((v) => {
                     //   return (
                     //     v !==
