@@ -16,18 +16,22 @@ export const TestCouponContextProvider = ({ children }) => {
   const [sale, setSale] = useState()
   const [coupon, setCoupon] = useState()
   const [test, setTest] = useState(false)
-  const [ifLogin, setIfLogin] = useState()
-  const [myAuth, setMyAuth] = useState()
+  // const [ifLogin, setIfLogin] = useState(false)
+  // const [loginAuth, setLoginAuth] = useState()
 
   const ifPlay = async () => {
     try {
-      if (ifLogin) {
+      const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+      if (currentAccount) {
         const response = await axios.get(TEST_PLAY, {
           params: {
-            accountId: myAuth.accountId,
+            accountId: currentAccount.accountId,
           },
         })
+        console.log('ifPlay', response.data)
         return response.data
+      } else {
+        console.log('false')
       }
     } catch (error) {
       console.error(error)
@@ -35,10 +39,11 @@ export const TestCouponContextProvider = ({ children }) => {
   }
   const insertMemberPlay = async () => {
     try {
-      if (ifLogin) {
+      const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+      if (currentAccount) {
         const response = await axios.get(TEST_INSERT_PLAY, {
           params: {
-            accountId: myAuth.accountId,
+            accountId: currentAccount.accountId,
           },
         })
         return response.data
@@ -49,10 +54,11 @@ export const TestCouponContextProvider = ({ children }) => {
   }
   const insertMemberCoupon = async () => {
     try {
-      if (ifLogin) {
+      const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+      if (currentAccount) {
         const response = await axios.get(TEST_INSERT_COUPON, {
           params: {
-            accountId: myAuth.accountId,
+            accountId: currentAccount.accountId,
             coupon: coupon,
           },
         })
@@ -86,16 +92,16 @@ export const TestCouponContextProvider = ({ children }) => {
     }
   }
 
-  useEffect(() => {
-    // if Logged in
-    const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
-    if (currentAccount) {
-      setMyAuth(currentAccount)
-      setIfLogin(true)
-    } else {
-      setIfLogin(false)
-    }
-  }, [])
+  // useEffect(() => {
+  //   // if Logged in
+  //   const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+  //   if (currentAccount) {
+  //     setLoginAuth(currentAccount)
+  //     setIfLogin(true)
+  //   } else {
+  //     setIfLogin(false)
+  //   }
+  // }, [])
 
   useEffect(() => {
     // console.log('newCoupon', newCoupon)

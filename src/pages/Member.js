@@ -186,19 +186,26 @@ export default function Member() {
       const loginPlay = localStorage.getItem('test')
       // 查看該帳號是否玩過遊戲
       const play = await ifPlay()
+      console.log('play', play)
       console.log('1--')
       if (loginPlay) {
-        if (play.length === 0) {
-          // 沒玩過遊戲
-          console.log('2--')
-          setContent(newCouponContent)
-          await Promise.all([insertMemberPlay(), insertMemberCoupon()])
-        } else {
+        // 登入前玩遊戲
+        console.log('play', play)
+        setNewCoupon(true)
+        // console.log('play', play)
+        if (play.length > 0 && play[0].play_status === 1) {
           // 已玩過遊戲
           console.log('3--')
           setContent(playedContent)
-          // navigate('/test')
+        } else {
+          // 沒玩過遊戲
+          console.log('2--')
+          await Promise.all([insertMemberPlay(), insertMemberCoupon()])
+          setContent(newCouponContent)
         }
+      } else {
+        // 登入狀態下玩遊戲
+        setContent(newCouponContent)
       }
     }
     fetchData()
