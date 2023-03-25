@@ -85,7 +85,14 @@ function KexinFixedBox(props) {
               <img src="images/kexin/svg/plus.svg" alt="" />
             </button>
           </div>
-          <button className={`${styles['like']} btn`}>
+          <button className={`${styles['like']} btn`}
+            onClick={() => {
+            if (myAuth.account) {
+            } else {
+              setShowbox(3)
+            }
+          }}
+          >
             <KexinFavoriteBtnOff trailSID={myProduct.sid} liked={liked} />
           </button>
         </div>
