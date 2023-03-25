@@ -4,13 +4,19 @@ import axios from 'axios'
 // component
 import styles from '../styles/kexinIndexProductsDetail.module.css'
 import { StatusContext, ProductContext } from '../pages/KexinIndex'
+import { LoginContext } from '../App'
 import KexinComment from './KexinComment'
 import KexinFixedBox from './KexinFixedBox'
+import AuthContext from '../contexts/AuthContexts'
 import { SELECT_COMMENT, SELECT_BATCH } from '../connections/api-config'
+import { USER_FAV } from '../connections/api-config'
 
 function KexinIndexProductsDetail() {
-  const { mapInteraction, setMapInteraction } = useContext(StatusContext)
+  const { mapInteraction, setMapInteraction } = useContext(LoginContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
+  const { myAuth, logout } = useContext(AuthContext)
+  const [fav, setFav] = useState([])
+  const [liked, setLiked] = useState(false)
   // console.log('myProduct', myProduct)
 
   // 抓comment資料
@@ -28,6 +34,8 @@ function KexinIndexProductsDetail() {
       setData(response.data)
     } catch (err) {}
   }
+
+  console.log(data)
 
   useEffect(() => {
     getCommentData(myProduct.sid)
@@ -54,6 +62,51 @@ function KexinIndexProductsDetail() {
   useEffect(() => {
     getBatchData(myProduct.sid)
   }, [myProduct.sid])
+
+
+
+  // 抓favorite資料
+
+  const getFavorite = async (req, res) => {
+    if (myAuth.account) {
+      // console.log('登入狀態')
+      const userString = localStorage.getItem('myAuth')
+      const userData = JSON.parse(userString)
+      const token = userData.token
+      const mid = userData.accountId
+
+      try {
+        const res = await axios(USER_FAV, {
+          headers: { Authorization: `Bearer ${token}`, sid: mid },
+        })
+        if (!res.data) return res.sendStatus(401)
+
+        const currentFav = res.data
+        setFav(currentFav)
+      } catch (err) {
+        console.log('coupon axios err')
+        return []
+      }
+    } else {
+      // console.log('未登入')
+      setLiked(false)
+    }
+  }
+
+  useEffect(() => {
+    getFavorite()
+  }, [myProduct.sid])
+
+  // console.log(fav)
+  // console.log(
+  //   fav.filter((el, i) => {
+  //     return el.trails_sid === myProduct.sid
+  //   }).length
+  // )
+
+  // setLiked(like)
+
+  // console.log(liked)
 
   return (
     <>
@@ -148,7 +201,14 @@ function KexinIndexProductsDetail() {
               <div className={`${styles['mb-8']}`}>
                 <img
                   className={`${styles['star-mark']} ${styles['me-10']}`}
-                  src={myProduct.avg_score ? `images/kexin/svg/BigStars${myProduct.avg_score.slice(0, 3)}.svg` : ''}
+                  src={
+                    myProduct.avg_score
+                      ? `images/kexin/svg/BigStars${myProduct.avg_score.slice(
+                          0,
+                          3
+                        )}.svg`
+                      : ''
+                  }
                   alt=""
                 />
               </div>
@@ -163,7 +223,9 @@ function KexinIndexProductsDetail() {
 
           {data.length
             ? data.map((v, i) => {
-                {/* console.log(v, i) */}
+                {
+                  /* console.log(v, i) */
+                }
                 return (
                   <>
                     <KexinComment key={i} el={v} />
@@ -172,7 +234,17 @@ function KexinIndexProductsDetail() {
               })
             : ''}
 
-          <KexinFixedBox el={batch}/>
+          <KexinFixedBox
+            el={batch}
+            liked={
+              fav &&
+              fav.filter((el, i) => {
+                return el.trails_sid === myProduct.sid
+              }).length > 0
+                ? true
+                : false
+            }
+          />
         </div>
       </div>
     </>

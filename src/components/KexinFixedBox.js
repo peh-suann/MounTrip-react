@@ -5,25 +5,22 @@ import { StatusContext, ProductContext } from '../pages/KexinIndex'
 import { useCart } from './IanUseCart'
 import { LoginContext } from '../App'
 import AuthContext from '../contexts/AuthContexts'
-import FavoriteBtnOff from './FavoriteBtnOff'
+import KexinFavoriteBtnOff from './KexinFavoriteBtnOff'
 
 function KexinFixedBox(props) {
-  const { el } = props
-  const { mapInteraction, setMapInteraction, cart, setCart } =
+  const { el, liked } = props
+  // console.log(liked)
+  const { cart, setCart } =
     useContext(StatusContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
-  const [liked, setLiked] = useState(false)
   const [chooseBatch, setChooseBatch] = useState(0)
   const { myAuth, logout } = useContext(AuthContext)
-  const { showBox, setShowbox } = useContext(LoginContext)
+  const { showBox, setShowbox,mapInteraction, setMapInteraction } = useContext(LoginContext)
 
   // 購物車
   const { addItem } = useCart()
   const [count, setCount] = useState(1)
   const [detailCount, setDetailCount] = useState(0)
-
-  // console.log('el', el)
-  // console.log('myProduct', myProduct)
 
   const Rows = {
     batch_end: '2023-03-29',
@@ -88,19 +85,15 @@ function KexinFixedBox(props) {
               <img src="images/kexin/svg/plus.svg" alt="" />
             </button>
           </div>
-          <button
-            className={`${styles['like']} btn`}
-            // onClick={() => {
-            //   setLiked(!liked)
-            //   console.log(liked)
-            // }}
+          <button className={`${styles['like']} btn`}
+            onClick={() => {
+            if (myAuth.account) {
+            } else {
+              setShowbox(3)
+            }
+          }}
           >
-            <FavoriteBtnOff trailSID={myProduct.sid}/>
-            {/* {liked ? (
-              <img src="images/kexin/svg/heart-red.svg" alt="" />
-            ) : (
-              <img src="images/kexin/svg/heart.svg" alt="" />
-            )} */}
+            <KexinFavoriteBtnOff trailSID={myProduct.sid} liked={liked} />
           </button>
         </div>
         <div className="d-flex align-items-center">

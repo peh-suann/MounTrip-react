@@ -56,6 +56,7 @@ export const TEST_ANS = `${HOST}/answer`
 export const TEST_PLAY = `${HOST}/test_play`
 export const TEST_INSERT_PLAY = `${HOST}/insert_play`
 export const TEST_INSERT_COUPON = `${HOST}/insert_coupon`
+export const MEMBER_INSERT_COUPON = `${HOST}/member_insert_coupon`
 
 // kexin's path
 export const LOGIN = `${HOST}/login`

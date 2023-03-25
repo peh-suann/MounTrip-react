@@ -21,8 +21,7 @@ import PasswordModal from '../components/LaiBackdrop/PasswordModal'
 // test coupon status
 import { TestCouponContext } from '../contexts/TestCouponContext'
 // test coupon style
-import Button from '../components/Button'
-import yichun_styles from './../styles/yichun_styles/YichunCouponStyle.module.css'
+import YichunModal from '../components/YichunModal'
 
 export default function Member() {
   //modal彈出視窗的
@@ -170,22 +169,43 @@ export default function Member() {
     insertMemberCoupon,
     ifPlay,
   } = useContext(TestCouponContext)
-  // const navigate = useNavigate()
-  // 查看登入前是否有玩遊戲
+
+  // YichunModal Content
+  const [content, setContent] = useState('')
+  const newCouponContent = `<h4>
+    恭喜您完成登山安全小測驗 <br />
+    您已收到一張 <span>${sale}折</span> 優惠券
+    <br />
+    祝您旅途平安！
+    </h4>`
+  const playedContent = `<h4>您已經領取過優惠券啦！</h4>`
+
   useEffect(() => {
     const fetchData = async () => {
+      // 查看登入前是否有玩遊戲
       const loginPlay = localStorage.getItem('test')
+      // 查看該帳號是否玩過遊戲
       const play = await ifPlay()
+      console.log('play', play)
       console.log('1--')
       if (loginPlay) {
-        if (play.length === 0) {
-          console.log('2--')
-
-          await Promise.all([insertMemberPlay(), insertMemberCoupon()])
-        } else {
+        // 登入前玩遊戲
+        console.log('play', play)
+        setNewCoupon(true)
+        // console.log('play', play)
+        if (play.length > 0 && play[0].play_status === 1) {
+          // 已玩過遊戲
           console.log('3--')
-          // navigate('/test')
+          setContent(playedContent)
+        } else {
+          // 沒玩過遊戲
+          console.log('2--')
+          await Promise.all([insertMemberPlay(), insertMemberCoupon()])
+          setContent(newCouponContent)
         }
+      } else {
+        // 登入狀態下玩遊戲
+        setContent(newCouponContent)
       }
     }
     fetchData()
@@ -199,21 +219,13 @@ export default function Member() {
   return (
     <>
       {newCoupon ? (
-        <div className={yichun_styles.coupon_note}>
-          <div className={yichun_styles.coupon_note_box}>
-            <h4>
-              恭喜您完成登山安全小測驗 <br />
-              您已收到一張 <span>{sale}折</span> 優惠券
-              <br />
-              祝您旅途平安！
-            </h4>
-            <Button
-              text={'知道了'}
-              link={'member'}
-              handleClick={handleClick}
-            ></Button>
-          </div>
-        </div>
+        <YichunModal
+          handleClick={handleClick}
+          content={content}
+          btnToggle={1}
+          btnText={'知道了'}
+          btnLink={'member'}
+        />
       ) : (
         ''
       )}

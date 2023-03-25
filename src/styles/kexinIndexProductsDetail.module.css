@@ -22,7 +22,6 @@
   color: var(--mtyellow-4);
 }
 
-
 .mb-8 {
   margin-bottom: 8px;
 }
@@ -30,7 +29,6 @@
 .mb-10 {
   margin-bottom: 10px;
 }
-
 
 .mb-16 {
   margin-bottom: 16px;
@@ -102,13 +100,13 @@
   right: 0;
   /* width: 630px; */
   width: 530px;
-  height: 713px;
+  height: 100%;
   overflow: auto;
   background-color: #fff;
   box-shadow: 0px 0px 20px rgba(1, 19, 6, 0.08);
-  padding: 0;
+  padding-bottom: 280px;
   z-index: 1005;
-  transition-duration: 1.0s;
+  transition-duration: 1s;
 }
 
 .map-product-detail button:focus {
@@ -126,7 +124,7 @@
   width: 100%;
 }
 
-.map-product-detail .detail-img-wrap>img {
+.map-product-detail .detail-img-wrap > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -198,7 +196,10 @@
   color: var(--mtyellow-4);
 }
 
-
+.map-product-detail .star-mark {
+  width: 195px;
+  height: 30px;
+}
 
 .map-product-detail .total-comment p {
   font-weight: 400;
@@ -217,7 +218,7 @@
   overflow: hidden;
 }
 
-.comment-detail .headsticker>img {
+.comment-detail .headsticker > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -266,7 +267,7 @@
   overflow: hidden;
 }
 
-.comment-detail .comment-photo>img {
+.comment-detail .comment-photo > img {
   width: 150%;
   /* height: 150%; */
   object-fit: cover;
@@ -282,7 +283,7 @@
   bottom: 0px;
   right: 0;
   background: #ffffff;
-  transition-duration: 1.0s;
+  transition-duration: 1s;
 }
 
 #map-shopping-choice button.minus {
@@ -365,7 +366,7 @@
   border-radius: 0px 5px 5px 0px;
 }
 
-#map-shopping-choice .dropdown-wrap>button {
+#map-shopping-choice .dropdown-wrap > button {
   letter-spacing: 0.1em;
   font-weight: 500;
   font-size: 20px;

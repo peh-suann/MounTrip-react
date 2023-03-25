@@ -1,4 +1,4 @@
-.coupon_note {
+.modalBg {
   position: fixed;
   top: 0;
   width: 100%;
@@ -10,7 +10,7 @@
   align-items: center;
   z-index: 2000;
 }
-.coupon_note_box {
+.modal_box {
   padding: 60px 120px;
   color: var(--mtgrey-1);
   background-color: var(--mtyellow-4);
@@ -21,13 +21,26 @@
   gap: 20px;
   border-radius: 10px;
 }
-.coupon_note_box h4 {
+.modal_box h4 {
   text-align: center;
   font-weight: 500;
   letter-spacing: 0.05em;
   line-height: 140%;
 }
-.coupon_note_box h4 span{
-    color: var(--mtgreen-1);
-    font-weight: 700;
+.modal_box h4 span {
+  color: var(--mtgreen-1);
+  font-weight: 700;
+}
+@media screen and (max-width: 390px) {
+  .modal_box {
+    width: 80%;
+    padding: 30px;
+  }
+  .modal_box h4 {
+    font-size: 14px;
+  }
+  .modal_box button {
+    font-size: 14px;
+    padding: 4px 20px;
+  }
 }

@@ -58,6 +58,7 @@
 .weatherBox .weatherUp .weatherText {
   margin-bottom: 5px;
   letter-spacing: 0.06em;
+  text-align: end;
 }
 
 .weatherBox .weatherDown {

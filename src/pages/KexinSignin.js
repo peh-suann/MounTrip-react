@@ -1,11 +1,11 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 // component
 import LoginNavbar from '../layouts/NavbarLogin'
 
 // BACKEND
-import { SIGNIN } from '../connections/api-config'
+import { SIGNIN, MEMBER_INSERT_COUPON } from '../connections/api-config'
 import axios from 'axios'
 
 // styles
@@ -42,6 +42,29 @@ function KexinSignin() {
     if (regExp.test(str)) return true
     else return false
   }
+
+  const [sign, setSign] = useState(false)
+  const sendNewMemCoupon = async (accountId) => {
+    try {
+      const response = await axios.get(MEMBER_INSERT_COUPON, {
+        params: {
+          accountId: accountId,
+        },
+      })
+      console.log('signup', response)
+      return response.data
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  useEffect(() => {
+    if (sign === true) {
+      if (localStorage.getItem('myAuth')) {
+        const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
+        sendNewMemCoupon(currentAccount.accountId)
+      }
+    }
+  }, [sign])
 
   const navigate = useNavigate()
   return (
@@ -156,15 +179,26 @@ function KexinSignin() {
                         document
                           .querySelector('#password')
                           .setAttribute('class', `form-control`)
-                      }
-                      {
                         document
                           .querySelector('#password1')
                           .setAttribute('class', `form-control`)
                       }
+                      {
+                        document.querySelector('#account').value = ''
+                        document.querySelector('#password').value = ''
+                        document.querySelector('#password1').value = ''
+                      }
                       axios.post(SIGNIN, myForm).then((response) => {
                         if (response.data['success']) {
                           setSigninSuccess(true)
+                          // setSign(true)
+                          if (myForm.account) {
+                            sendNewMemCoupon(myForm.account)
+                          }
+                          setTimeout(() => {
+                            navigate('/login')
+                          }, '2000')
+                          
                         } else {
                           console.log('註冊失敗')
                         }
@@ -200,7 +234,9 @@ function KexinSignin() {
                       setFocus(true)
                     }}
                   />
-                  {signinSuccess ? '' : accountVal === 1 ? (
+                  {signinSuccess ? (
+                    ''
+                  ) : accountVal === 1 ? (
                     <span className={signinStyles.textnotes}>
                       帳號不符合格式
                     </span>
@@ -252,7 +288,9 @@ function KexinSignin() {
                       <FontAwesomeIcon icon={faEyeSlash} />
                     )}
                   </button>
-                  {signinSuccess ? '' : passVal === 1 ? (
+                  {signinSuccess ? (
+                    ''
+                  ) : passVal === 1 ? (
                     <span className={signinStyles.textnotes}>
                       帳號不符合格式
                     </span>
@@ -303,7 +341,9 @@ function KexinSignin() {
                       <FontAwesomeIcon icon={faEyeSlash} />
                     )}
                   </button>
-                  {signinSuccess ? '' : passVal1 === 1 ? (
+                  {signinSuccess ? (
+                    ''
+                  ) : passVal1 === 1 ? (
                     <span className={signinStyles.textnotes}>
                       帳號不符合格式
                     </span>
