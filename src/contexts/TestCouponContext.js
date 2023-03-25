@@ -30,7 +30,7 @@ export const TestCouponContextProvider = ({ children }) => {
           accountId: currentAccount.accountId,
         },
       })
-      console.log('ifplay',response.data)
+      console.log('ifplay', response.data)
       return response.data
     } catch (error) {
       console.error(error)
@@ -52,13 +52,15 @@ export const TestCouponContextProvider = ({ children }) => {
   const insertMemberCoupon = async () => {
     try {
       const currentAccount = JSON.parse(localStorage.getItem('myAuth'))
-      const response = await axios.get(TEST_INSERT_COUPON, {
-        params: {
-          accountId: currentAccount.accountId,
-          coupon: coupon,
-        },
-      })
-      return response.data
+      if (currentAccount) {
+        const response = await axios.get(TEST_INSERT_COUPON, {
+          params: {
+            accountId: currentAccount.accountId,
+            coupon: coupon,
+          },
+        })
+        return response.data
+      }
     } catch (error) {
       console.error(error)
     }
