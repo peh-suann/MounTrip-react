@@ -4,6 +4,7 @@ import CommentAmount from './LaiCommentAmount'
 import CommentCard from './LaiCommentCard'
 import axios from 'axios'
 import { USER_COMMENT } from '../connections/api-config'
+import TreeAnimaion from './LaiAchievementTreeAnimation2'
 
 export default function LaiComment() {
   const [userComment, setUserComment] = useState([])
@@ -92,6 +93,7 @@ export default function LaiComment() {
               )
             })}
           </div>
+          <TreeAnimaion />
         </div>
       </div>
     </>

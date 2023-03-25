@@ -200,7 +200,9 @@ function KexinSignin() {
                       setFocus(true)
                     }}
                   />
-                  {signinSuccess ? '' : accountVal === 1 ? (
+                  {signinSuccess ? (
+                    ''
+                  ) : accountVal === 1 ? (
                     <span className={signinStyles.textnotes}>
                       帳號不符合格式
                     </span>
@@ -252,9 +254,11 @@ function KexinSignin() {
                       <FontAwesomeIcon icon={faEyeSlash} />
                     )}
                   </button>
-                  {signinSuccess ? '' : passVal === 1 ? (
+                  {signinSuccess ? (
+                    ''
+                  ) : passVal === 1 ? (
                     <span className={signinStyles.textnotes}>
-                      帳號不符合格式
+                      密碼不符合格式
                     </span>
                   ) : samePassword ? (
                     <span className={signinStyles.textnotes}>
@@ -303,9 +307,11 @@ function KexinSignin() {
                       <FontAwesomeIcon icon={faEyeSlash} />
                     )}
                   </button>
-                  {signinSuccess ? '' : passVal1 === 1 ? (
+                  {signinSuccess ? (
+                    ''
+                  ) : passVal1 === 1 ? (
                     <span className={signinStyles.textnotes}>
-                      帳號不符合格式
+                      密碼不符合格式
                     </span>
                   ) : samePassword ? (
                     <span className={signinStyles.textnotes}>

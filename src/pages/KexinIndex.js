@@ -8,7 +8,7 @@ import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
 import { useNavigate } from 'react-router-dom'
 import KexinWeather from '../components/KexinWeather'
 
-// context 
+// context
 export const StatusContext = createContext({})
 export const ProductContext = createContext({})
 
@@ -161,7 +161,7 @@ function KexinIndex() {
       .transition()
       .duration(750)
       .attr('transform', transformData[county].transform1)
-    setMapInteraction(1) 
+    setMapInteraction(1)
 
     d3.select('#landmark').remove()
     d3.select('#landmark1').remove()
@@ -258,7 +258,9 @@ function KexinIndex() {
                         }}
                       ></button>
                     </div>
-                    <div className={`modal-body`}>{`產品：' ${myProduct.trail_name} '已成功加入購物車`}</div>
+                    <div
+                      className={`modal-body`}
+                    >{`產品：' ${myProduct.trail_name} '已成功加入購物車`}</div>
                     <div className={`modal-footer`}>
                       <button
                         type="button"
@@ -268,7 +270,9 @@ function KexinIndex() {
                           setCart(0)
                         }}
                       >
-                        <span className={`${IndexStyles['buttontext']}`}>繼續購物</span>
+                        <span className={`${IndexStyles['buttontext']}`}>
+                          繼續購物
+                        </span>
                       </button>
                       <button
                         onClick={() => {
@@ -278,7 +282,9 @@ function KexinIndex() {
                         className={`${IndexStyles['buttonstyle']}`}
                         data-bs-dismiss="modal"
                       >
-                        <span className={`${IndexStyles['buttontext']}`}>查看購物車</span>
+                        <span className={`${IndexStyles['buttontext']}`}>
+                          查看購物車
+                        </span>
                       </button>
                     </div>
                   </div>
@@ -288,8 +294,11 @@ function KexinIndex() {
           ) : (
             ' '
           )}
-          {mapInteraction===1 || mapInteraction===2   ? <KexinWeather selectCounty={selectCounty} /> : ''}
-          
+          {mapInteraction === 1 || mapInteraction === 2 ? (
+            <KexinWeather selectCounty={selectCounty} />
+          ) : (
+            ''
+          )}
         </ProductContext.Provider>
       </StatusContext.Provider>
     </>

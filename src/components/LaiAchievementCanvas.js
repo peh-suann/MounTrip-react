@@ -154,7 +154,7 @@ export function Model0(props) {
 export default function LaiAchievementCanvas(props) {
   const { total } = props
   // const total = getHistoryOrder()
-  console.log('canvas:', total)
+  // console.log('canvas:', total)
   return (
     <>
       {/* <canvas className={styles.tree_animation}> */}
@@ -173,7 +173,7 @@ export default function LaiAchievementCanvas(props) {
             {25001 < total && total < 35000 ? <Model5 /> : null}
             {35001 < total && total < 45000 ? <Model6 /> : null}
             {45001 < total && total < 55000 ? <Model7 /> : null}
-            {55001 < total && total < 65000 ? <Model8 /> : null}
+            {55001 < total && total < 100000 ? <Model8 /> : null}
 
             {/* <Model8 /> */}
             {/* <Model7 /> */}

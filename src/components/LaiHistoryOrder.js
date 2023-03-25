@@ -4,6 +4,8 @@ import OrderCard from './../components/LaiHistoryOrderCard'
 import axios from 'axios'
 import { USER_ORDER } from '../connections/api-config'
 import HistoryProduct from './LaiHistoryProduct'
+import TreeAnimaion from './LaiAchievementTreeAnimation2'
+
 // import HistoryProduct from './../components/LaiHistoryProduct'
 
 export default function LaiHistoryOrder() {
@@ -82,14 +84,7 @@ export default function LaiHistoryOrder() {
 
           <h1>歷史訂單</h1>
         </div>
-        {/* <OrderCard
-          orderId={'S34567897'}
-          orderState={'訂單已成立'}
-          tolPrice={'7,200'}
-          orderDate={'2022/12/13'}
-          orderPayment={'信用卡一次付清'}
-        >
-        </OrderCard> */}
+
         {orderList.map((v, i) => {
           const sidFormat = v.sid.toString().padStart(3, '0')
           const priceFormat = v.total.toLocaleString()
@@ -109,38 +104,9 @@ export default function LaiHistoryOrder() {
             />
           )
         })}
-        {/* {userOrder.map((v, i) => {
-          const orderId = `MT2300${v.orderSID}`
-          
-          return (
-            <OrderCard
-              key={i}
-              orderId={orderId}
-              orderState={v.status}
-              tolPrice={v.total}
-              orderDate={v.orderDate}
-              orderPayment={'信用卡一次付清'}
-            >
-              <HistoryProduct />
-            </OrderCard>
-          )
-        })} */}
-        {/* <OrderCard
-          orderId={'S96998752'}
-          orderState={'訂單處理中'}
-          tolPrice={'4,800'}
-          orderDate={'2023/2/19'}
-          orderPayment={'信用卡一次付清'}
-        ></OrderCard> */}
-        {/* <OrderCard>
-          <HistoryProduct />
-          <HistoryProduct />
-          <HistoryProduct />
-        </OrderCard>
-        <OrderCard>
-          <HistoryProduct />
-        </OrderCard> */}
+
       </div>
+      {/* <TreeAnimaion /> */}
     </>
   )
 }

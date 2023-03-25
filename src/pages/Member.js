@@ -1,5 +1,5 @@
 import styles from './../styles/Member.module.css'
-import { useState, useEffect, useRef, useContext } from 'react'
+import { useState, useEffect, useRef, useContext, useReducer } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import MemberContent from '../components/LaiMemberContent'
 import CouponContent from '../components/LaiCouponContent'
@@ -11,7 +11,11 @@ import MobileDropdown from '../components/LaiMobileDropdown'
 import MemberProfile from '../components/LaiMemberProfile'
 import { MemberContext } from './../contexts/MemberContext.js'
 import AuthContext from './../contexts/AuthContexts.js'
-import { MEMBER_DATA, USER_DATA } from '../connections/api-config'
+import {
+  MEMBER_DATA,
+  USER_DATA,
+  USER_LEVEL_UPDATE,
+} from '../connections/api-config'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import Modal from '../components/LaiBackdrop/Modal'
@@ -121,25 +125,66 @@ export default function Member() {
   const handleDisplayPage = (page) => {
     setMemberPage(page)
   }
-  //電腦版的sidebar-tag 在該頁面會有active的樣式 //直接寫在sidebar連結的onclick事件就好
 
-  //手機版的menu 開合狀態
-  const [mobileMenu, setMobileMenu] = useState(false)
+  //fetch會員過去消費資料的
+  const [orderSum, setOrderSum] = useState('')
+  const totalReducer = (state, action) => {
+    switch (action.type) {
+      case 'initial':
+        return {
+          total: action.payload.reduce((acc, curr) => acc + curr.total, 0),
+        }
+      case 'reload':
+        return {
+          state,
+        }
+      default:
+        return {
+          total: action.payload.reduce((acc, curr) => acc + curr.total, 0),
+        }
+    }
+  }
+  const userString = localStorage.getItem('myAuth')
+  const userdata = JSON.parse(userString) //localstorage出來的東西都是字串，需要解析
+  const token = userdata.token
+  const mid = user.accountId
+  const [orderList, dispatch] = useReducer(totalReducer, { total: 0 })
+  //判定會員升級的函式
+  const levelUp = async () => {
+    let url = null
+    let futureLevel = 1
+    if (
+      user.level === 1 &&
+      orderList.total > 25000 &&
+      50000 > orderList.total
+    ) {
+      url = USER_LEVEL_UPDATE
+      futureLevel = 2
+    } else if (user.level === 2 && orderList.total > 50000) {
+      url = USER_LEVEL_UPDATE
+      futureLevel = 3
+    } else if (user.level === 1 && orderList.total > 50000) {
+      url = USER_LEVEL_UPDATE
+      futureLevel = 3
+    } else {
+      return
+    }
+    try {
+      // console.log('do update')
+      const update = await axios.post(
+        url,
+        { sid: mid, futurelevel: futureLevel },
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      console.log('level up success', update.data)
+    } catch (err) {
+      console.log('level up err', err)
+    }
+  }
 
-  //用useEffect讓手機menu點擊外面也可以關閉
-  let menuRef = useRef()
-
-  // useEffect(() => {
-  //   let handler = (e) => {
-  //     if (!menuRef.current?.contains(e.target)) {
-  //       setMobileMenu(false)
-  //     }
-  //   }
-  //   document.addEventListener('click', handler)
-  //   return () => {
-  //     document.removeEventListener('click', handler)
-  //   }
-  // }, [])
+  useEffect(() => {
+    levelUp()
+  }, [orderSum])
 
   //scroll位置改變mobile menu的位置
   const [scrollPosition, setScrollPosition] = useState(0)
