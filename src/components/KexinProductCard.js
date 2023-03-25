@@ -2,12 +2,13 @@ import React, { useContext, useState, useEffect } from 'react'
 import * as d3 from 'd3'
 import { StylesContext } from './../pages/YichunProducts'
 import { StatusContext, ProductContext } from '../pages/KexinIndex'
+import { LoginContext } from '../App'
 import styles from '../styles/kexinLandmark.module.css'
 
 function KexinProductCard(props) {
   const { ranking, el, shadow } = props
   const styles = useContext(StylesContext)
-  const { mapInteraction, setMapInteraction } = useContext(StatusContext)
+  const { mapInteraction, setMapInteraction } = useContext(LoginContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
 
   return (
@@ -16,7 +17,7 @@ function KexinProductCard(props) {
         className={styles.product}
         onClick={() => {
           // TODO: if抓不到資料該怎麼顯示
-          console.log(el.sid)
+          console.log('商品sid',el.sid)
           setMapInteraction(2)
           setMyProduct(el)
 
@@ -26,7 +27,6 @@ function KexinProductCard(props) {
           const WIDTH = window.innerWidth
           const HEIGHT = window.innerHeight
 
-          console.log(WIDTH, HEIGHT)
 
           const projection = d3
             .geoMercator()

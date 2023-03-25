@@ -4,6 +4,7 @@ import axios from 'axios'
 // component
 import styles from '../styles/kexinIndexProductsDetail.module.css'
 import { StatusContext, ProductContext } from '../pages/KexinIndex'
+import { LoginContext } from '../App'
 import KexinComment from './KexinComment'
 import KexinFixedBox from './KexinFixedBox'
 import AuthContext from '../contexts/AuthContexts'
@@ -11,7 +12,7 @@ import { SELECT_COMMENT, SELECT_BATCH } from '../connections/api-config'
 import { USER_FAV } from '../connections/api-config'
 
 function KexinIndexProductsDetail() {
-  const { mapInteraction, setMapInteraction } = useContext(StatusContext)
+  const { mapInteraction, setMapInteraction } = useContext(LoginContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
   const { myAuth, logout } = useContext(AuthContext)
   const [fav, setFav] = useState([])
@@ -33,6 +34,8 @@ function KexinIndexProductsDetail() {
       setData(response.data)
     } catch (err) {}
   }
+
+  console.log(data)
 
   useEffect(() => {
     getCommentData(myProduct.sid)
@@ -60,12 +63,13 @@ function KexinIndexProductsDetail() {
     getBatchData(myProduct.sid)
   }, [myProduct.sid])
 
+
+
   // 抓favorite資料
-  // console.log(myAuth)
 
   const getFavorite = async (req, res) => {
     if (myAuth.account) {
-      console.log('登入狀態')
+      // console.log('登入狀態')
       const userString = localStorage.getItem('myAuth')
       const userData = JSON.parse(userString)
       const token = userData.token
@@ -84,7 +88,7 @@ function KexinIndexProductsDetail() {
         return []
       }
     } else {
-      console.log('為登入')
+      // console.log('未登入')
       setLiked(false)
     }
   }
