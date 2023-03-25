@@ -26,8 +26,9 @@ import {
 import { contourDensity } from 'd3'
 
 function NavbarDropdown(props) {
-  const { mapInteraction } = useContext(StatusContext)
-  const { showBox, setShowbox } = useContext(LoginContext)
+  // const { mapInteraction } = useContext(LoginContext)
+ 
+  const {  mapInteraction,showBox, setShowbox } = useContext(LoginContext)
   const { showList, setShowList } = props
   const { myAuth, logout } = useContext(AuthContext)
   const navigate = useNavigate()
@@ -172,7 +173,7 @@ function NavbarDropdown(props) {
                 navigate('/index')
                 setShowList(!showList)
                 setShowbox(1)
-                console.log('looooog', showBox)
+                // console.log('looooog', showBox)
               }}
             >
               <FontAwesomeIcon icon={faArrowRightToBracket} />
