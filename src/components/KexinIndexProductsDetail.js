@@ -35,6 +35,8 @@ function KexinIndexProductsDetail() {
     } catch (err) {}
   }
 
+  console.log(data)
+
   useEffect(() => {
     getCommentData(myProduct.sid)
   }, [myProduct.sid])
@@ -61,8 +63,9 @@ function KexinIndexProductsDetail() {
     getBatchData(myProduct.sid)
   }, [myProduct.sid])
 
+
+
   // 抓favorite資料
-  // console.log(myAuth)
 
   const getFavorite = async (req, res) => {
     if (myAuth.account) {
