@@ -10,7 +10,7 @@ export default function LaiAchievementTreeAnimation() {
           className={styles.tree1_1}
           initial={{ scale: 0, translateY: 5 }}
           animate={{ scale: '100%', translateY: 0 }}
-          transition={{ delay: 2, duration: 3 }}
+          transition={{ delay: 4, duration: 3 }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
         >
@@ -50,7 +50,7 @@ export default function LaiAchievementTreeAnimation() {
           className={styles.tree2_1}
           initial={{ scale: 0, translateY: 4 }}
           animate={{ scale: '100%', translateY: 0 }}
-          transition={{ delay: 1.5, duration: 2.5 }}
+          transition={{ delay: 3.5, duration: 2.5 }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
         >
@@ -161,7 +161,7 @@ export default function LaiAchievementTreeAnimation() {
           className={styles.tree2_2}
           initial={{ scale: 0, translateY: 2 }}
           animate={{ scale: '100%', translateY: 0 }}
-          transition={{ delay: 2, duration: 1.5 }}
+          transition={{ delay: 4, duration: 1.5 }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
         >
@@ -285,7 +285,7 @@ export default function LaiAchievementTreeAnimation() {
           className={styles.tree3_1}
           initial={{ scale: 0, translateY: 4 }}
           animate={{ scale: '100%', translateY: 0 }}
-          transition={{ delay: 0.5, duration: 2.5 }}
+          transition={{ delay: 2.5, duration: 2.5 }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
         >
@@ -347,7 +347,7 @@ export default function LaiAchievementTreeAnimation() {
           className={styles.tree3_2}
           initial={{ scale: 0, translateY: 1 }}
           animate={{ scale: '100%', translateY: 0 }}
-          transition={{ delay: 1, duration: 3.5 }}
+          transition={{ delay: 3, duration: 3.5 }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
         >
@@ -403,7 +403,7 @@ export default function LaiAchievementTreeAnimation() {
           className={styles.sprout_1}
           initial={{ scale: 0, translateY: 1 }}
           animate={{ scale: '100%', translateY: 0 }}
-          transition={{ delay: 2.5, duration: 2.5 }}
+          transition={{ delay: 4.5, duration: 2.5 }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
         >
@@ -437,7 +437,7 @@ export default function LaiAchievementTreeAnimation() {
           className={styles.tree4_1}
           initial={{ scale: 0, translateY: 2 }}
           animate={{ scale: '100%', translateY: 0 }}
-          transition={{ delay: 3, duration: 0.8, type: 'spring' }}
+          transition={{ delay: 5, duration: 0.8, type: 'spring' }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
         >
@@ -521,7 +521,7 @@ export default function LaiAchievementTreeAnimation() {
           className={styles.tree4_2}
           initial={{ scale: 0, translateY: 0 }}
           animate={{ scale: '100%', translateY: 0 }}
-          transition={{ delay: 1, duration: 2 }}
+          transition={{ delay: 3, duration: 2 }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
         >
@@ -605,7 +605,7 @@ export default function LaiAchievementTreeAnimation() {
           className={styles.tree5_1}
           initial={{ scale: 0, translateY: 3 }}
           animate={{ scale: '100%', translateY: 0 }}
-          transition={{ delay: 1, duration: 3 }}
+          transition={{ delay: 3, duration: 3 }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
         >
@@ -703,7 +703,7 @@ export default function LaiAchievementTreeAnimation() {
           className={styles.tree5_2}
           initial={{ scale: 0, translateY: 2 }}
           animate={{ scale: '100%', translateY: 0 }}
-          transition={{ delay: 0.5, duration: 1.5 }}
+          transition={{ delay: 2.5, duration: 1.5 }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 200 200"
         >

@@ -33,7 +33,6 @@ function NavbarDropdown(props) {
   const { myAuth, logout } = useContext(AuthContext)
   const navigate = useNavigate()
   const { memberPage, setMemberPage } = useContext(MemberContext)
-  
 
   return (
     <>
@@ -186,9 +185,6 @@ function NavbarDropdown(props) {
           </div>
         </div>
       </div>
-      
-      
-      
     </>
   )
 }

@@ -25,12 +25,19 @@ export default function LaiAchievementContent(props) {
         return {
           total: action.payload.reduce((acc, curr) => acc + curr.total, 0),
         }
+      case 'reload':
+        return {
+          state,
+        }
       default:
-        return state
+        return {
+          total: action.payload.reduce((acc, curr) => acc + curr.total, 0),
+        }
     }
   }
+
   const [orderList, dispatch] = useReducer(totalReducer, { total: 0 })
-  // const [orderList, setOrderList] = useState([])
+  const [orderSum, setOrderSum] = useState('')
   let currentOrderList = []
   // const [current, ]
 
@@ -46,26 +53,28 @@ export default function LaiAchievementContent(props) {
       })
       if (!res) return res.sendStatus(401)
       // const currentUserId = myAuth.sid
-      //FIXME 應該要去除掉未付款/未成立的訂單
       currentOrderList = res.data.orderSidData
       // currentUserOrder = res.data.data
+      // console.log('fetch', currentOrderList)
+      // calcOrderTotal(currentOrderList)
+      const Sum = currentOrderList.reduce((acc, curr) => acc + curr.total, 0)
       dispatch({
         type: 'initial',
         payload: currentOrderList,
       })
-      // setUserOrder(currentUserOrder)
-      // setOrderList(currentOrderList)
-      // console.log('new sql', res.data.data)
-      // console.log('currentUO:', res)
+      // console.log('Sum', Sum)
+      // console.log('orderList', orderList)
+      setOrderSum(Sum)
     } catch (error) {
       console.log("there's an error in db connection")
       return []
     }
+    console.log('orderSum:', orderSum)
   }
 
   //加總過去會員的訂單金額
-  const calcOrderTotal = () => {
-    const total = orderList.reduce((acc, curr) => acc + curr[total], 0)
+  const calcOrderTotal = (e) => {
+    const total = e.reduce((acc, curr) => acc + curr[total], 0)
     //轉型為字串
     // const totalFormat = total.toLocaleString()
     // console.log('T', total)
@@ -73,7 +82,7 @@ export default function LaiAchievementContent(props) {
   }
   useEffect(() => {
     getHistoryOrder()
-  }, [])
+  }, [user])
 
   const userString = localStorage.getItem('myAuth')
   const userData = JSON.parse(userString)
@@ -82,20 +91,28 @@ export default function LaiAchievementContent(props) {
   //判定會員升級的函式
   const levelUp = async () => {
     let url = null
-    let minTotal = null
-    if (user.level === 1 && orderList.total > 25000) {
+    let futureLevel = 1
+    if (
+      user.level === 1 &&
+      orderList.total > 25000 &&
+      50000 > orderList.total
+    ) {
       url = USER_LEVEL_UPDATE
-      // minTotal = 25000
+      futureLevel = 2
     } else if (user.level === 2 && orderList.total > 50000) {
       url = USER_LEVEL_UPDATE
-      // minTotal = 50000
+      futureLevel = 3
+    } else if (user.level === 1 && orderList.total > 50000) {
+      url = USER_LEVEL_UPDATE
+      futureLevel = 3
     } else {
       return
     }
     try {
+      // console.log('do update')
       const update = await axios.post(
         url,
-        { sid: mid },
+        { sid: mid, futurelevel: futureLevel },
         { headers: { Authorization: `Bearer ${token}` } }
       )
       console.log('level up success', update.data)
@@ -106,7 +123,7 @@ export default function LaiAchievementContent(props) {
 
   useEffect(() => {
     levelUp()
-  }, [orderList.total])
+  }, [orderSum])
   // console.log(calcOrderTotal())
   const progressFormat = orderList.total.toLocaleString()
   // console.log('converted', progressFormat)

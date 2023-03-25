@@ -292,7 +292,7 @@ function KexinSignin() {
                     ''
                   ) : passVal === 1 ? (
                     <span className={signinStyles.textnotes}>
-                      帳號不符合格式
+                      密碼不符合格式
                     </span>
                   ) : samePassword ? (
                     <span className={signinStyles.textnotes}>
@@ -345,7 +345,7 @@ function KexinSignin() {
                     ''
                   ) : passVal1 === 1 ? (
                     <span className={signinStyles.textnotes}>
-                      帳號不符合格式
+                      密碼不符合格式
                     </span>
                   ) : samePassword ? (
                     <span className={signinStyles.textnotes}>

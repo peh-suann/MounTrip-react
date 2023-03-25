@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useReducer } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Calendar } from 'react-date-range'
 // import format from 'date-fns/format'
 import dayjs from 'dayjs'
@@ -9,7 +9,7 @@ import 'react-date-range/dist/theme/default.css' // theme css file
 import './../styles/LaiDatePicker.css'
 
 export default function LaiDatePicker(props) {
-  const { userInfo } = props
+  const { userInfo, onDateChange, onHandleUpdate } = props
   const refInput = useRef(null)
   // open close calendar select
   const [open, setOpen] = useState(false)
@@ -79,6 +79,8 @@ export default function LaiDatePicker(props) {
           }}
           onChange={(e) => {
             handleselect(e)
+            onHandleUpdate(e)
+
           }}
           readOnly
         />
@@ -90,6 +92,7 @@ export default function LaiDatePicker(props) {
                 className="calenderElement"
                 onChange={(e) => {
                   handleselect(e)
+                  onHandleUpdate(e)
                 }}
                 dateDisplayFormat="yyyy-MM-dd"
                 color="#6CBA7C"
@@ -100,6 +103,7 @@ export default function LaiDatePicker(props) {
                 className="calenderElementMobile"
                 onChange={(e) => {
                   handleselect(e)
+                  onHandleUpdate(e)
                 }}
                 dateDisplayFormat="yyyy-MM-dd"
                 color="#6CBA7C"

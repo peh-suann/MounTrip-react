@@ -7,7 +7,6 @@ import Backdrop from './LaiBackdrop/Backdrop'
 import axios from 'axios'
 import { USER_DATA_UPDATE } from '../connections/api-config'
 import LaiDatePicker from './LaiDatePicker'
-// import { setDate } from 'date-fns/esm'
 
 export default function MemberContent(props) {
   const {
@@ -76,9 +75,9 @@ export default function MemberContent(props) {
   //reducer會在我們呼叫dispatch的時候回傳新的state
 
   //daypicker子元件
-  const [date, setDate] = useState('')
+  const [selectedDate, setSelectedDate] = useState('')
   function handleChildDateChenge(newDate) {
-    setDate(newDate)
+    setSelectedDate(newDate)
   }
   function handleUpdate(e) {
     // e.preventDefault()
@@ -108,7 +107,7 @@ export default function MemberContent(props) {
     formData.append('firstname', userInfo.userData.firstname)
     formData.append('lastname', userInfo.userData.lastname)
     formData.append('gender', userInfo.userData.gender)
-    formData.append('birthday', date)
+    formData.append('birthday', selectedDate || userInfo.userData.bdFormat)
     formData.append('personalId', userInfo.userData.personal_id)
     formData.append('mobile', userInfo.userData.mobile)
     formData.append('account', userInfo.userData.account)
@@ -119,10 +118,12 @@ export default function MemberContent(props) {
 
     //validation
     setError(validation(userInfo.userData))
-    console.log('v', validation(userInfo.userData))
+    // console.log('v', validation(userInfo.userData))
 
     if (Object.keys(error).length !== 0) {
       console.log('error', error)
+      // setError({})
+      setIsSubmit(false)
       return
     } else {
       console.log('errorEmpty', error)
@@ -134,11 +135,12 @@ export default function MemberContent(props) {
         },
       })
       if (!res) return alert('上傳失敗')
-
+      // alert('更新成功')
       // alert('會員資料更新成功')
       setIsSubmit(true)
     }
   }
+  const realSubmit = async () => {}
   const validation = (values) => {
     const errors = {}
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/
@@ -192,9 +194,17 @@ export default function MemberContent(props) {
       type: ACTIONS.INITIAL,
       payload: user,
     })
+    // setSelectedDate(userInfo.userData.birthday)
   }, [user])
+
   useEffect(() => {
-    console.log('here', error)
+    // setError({})
+    handleSubmit()
+  }, [isSubmit])
+  useEffect(() => {
+    setError(validation(userInfo.userData))
+  }, [userInfo])
+  useEffect(() => {
     if (Object.keys(error).length === 0 && isSubmit) {
       // console.log(userInfo.userData)
       alert('會員資料更新成功')
@@ -328,8 +338,9 @@ export default function MemberContent(props) {
             <LaiDatePicker
               userInfo={userInfo}
               onDateChange={handleChildDateChenge}
+              onHandleUpdate={handleUpdate}
             />
-            <label className={styles.error_label}>{error.email}</label>
+            <label className={styles.error_label}>{error.birthday}</label>
           </div>
           <div className={`${styles['id-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="personal_id" className="">
@@ -469,7 +480,7 @@ export default function MemberContent(props) {
           </div>
           <div className={styles.btn_group}>
             {/* FIXME 按下enter視窗會自動 */}
-            <motion.button
+            {/* <motion.button
               className={styles.password_btn}
               whileHover={{ scale: 1.1 }}
               whileTop={{ scale: 0.9 }}
@@ -479,7 +490,7 @@ export default function MemberContent(props) {
               }}
             >
               更改密碼
-            </motion.button>
+            </motion.button> */}
             <motion.button
               className={styles['save-btn']}
               whileHover={{ scale: 1.1 }}
