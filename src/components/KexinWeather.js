@@ -102,15 +102,15 @@ function KexinWeather(props) {
     }
   }
 
-  console.log(
-    weather
-      .filter((el, i) => {
-        return el.locationName === selectCounty
-      })
-      .map((el, i) => {
-        return el.weatherElement[1].time[time].elementValue[1].value
-      })[0]
-  )
+  // console.log(
+  //   weather
+  //     .filter((el, i) => {
+  //       return el.locationName === selectCounty
+  //     })
+  //     .map((el, i) => {
+  //       return el.weatherElement[1].time[time].elementValue[1].value
+  //     })[0]
+  // )
 
   // console.log('icon', seticon('01'))
 
@@ -118,15 +118,21 @@ function KexinWeather(props) {
     <>
       <div className={styles.weatherBox}>
         <div className={`d-flex ${styles.weatherUp} justify-content-between`}>
-          <div className='d-flex flex-column justify-content-between'>
-            <div className={time===1 ? `${styles.icon}` : `${styles.icon} ${styles.iconBig}` }>
+          <div className="d-flex flex-column justify-content-between">
+            <div
+              className={
+                time === 1
+                  ? `${styles.icon}`
+                  : `${styles.icon} ${styles.iconBig}`
+              }
+            >
               {seticon(
-                weather.length > 1 &&
+                weather &&
                   weather
-                    .filter((el, i) => {
+                    ?.filter((el, i) => {
                       return el.locationName === selectCounty
                     })
-                    .map((el, i) => {
+                    ?.map((el, i) => {
                       {
                         /* console.log(
                         el.weatherElement[1].time[1].elementValue[1].value
@@ -139,46 +145,42 @@ function KexinWeather(props) {
             </div>
             <h2>
               {time === 1
-                ? selectCounty==='花蓮縣' ? `${
-                    weatherNow.length > 1 &&
-                    weatherNow
-                      .filter((el, i) => {
-                        {
-                          /* console.log('loc',el.locationName, selectCounty.slice(0,2)) */
-                        }
-                        return (
-                          el.locationName ===
-                          selectCounty.slice(0,2)
-                        )
-                      })
-                      .map((el, i) => {
-                        {
-                          /* console.log(el,i) */
-                        }
-                        if (i === 0) {
-                          return el.weatherElement[0].elementValue
-                        }
-                      })
-                      .slice(0, 1)
-                  }°C` : `${
-                    weatherNow.length > 1 &&
-                    weatherNow
-                      .filter((el, i) => {
-                        return (
-                          el.parameter[0].parameterValue ===
-                          selectCounty
-                        )
-                      })
-                      .map((el, i) => {
-                        {
-                          /* console.log(el,i) */
-                        }
-                        if (i === 0) {
-                          return el.weatherElement[0].elementValue
-                        }
-                      })
-                      .slice(0, 1)
-                  }°C`
+                ? selectCounty === '花蓮縣'
+                  ? `${
+                      weatherNow &&
+                      weatherNow
+                        ?.filter((el, i) => {
+                          {
+                            /* console.log('loc',el.locationName, selectCounty.slice(0,2)) */
+                          }
+                          return el.locationName === selectCounty.slice(0, 2)
+                        })
+                        ?.map((el, i) => {
+                          {
+                            /* console.log(el,i) */
+                          }
+                          if (i === 0) {
+                            return el.weatherElement[0].elementValue
+                          }
+                        })
+                        .slice(0, 1)
+                    }°C`
+                  : `${
+                      weatherNow > 1 &&
+                      weatherNow
+                        ?.filter((el, i) => {
+                          return el.parameter[0].parameterValue === selectCounty
+                        })
+                        ?.map((el, i) => {
+                          {
+                            /* console.log(el,i) */
+                          }
+                          if (i === 0) {
+                            return el.weatherElement[0].elementValue
+                          }
+                        })
+                        .slice(0, 1)
+                    }°C`
                 : ''}
             </h2>
           </div>
@@ -186,12 +188,12 @@ function KexinWeather(props) {
             <h3>{selectCounty}</h3>
             <div>
               <p className={`${styles.weatherH}`}>
-                {weather.length > 1 &&
+                {weather &&
                   weather
-                    .filter((el, i) => {
+                    ?.filter((el, i) => {
                       return el.locationName === selectCounty
                     })
-                    .map((el, i) => {
+                    ?.map((el, i) => {
                       console.log(el.weatherElement[1].time[1])
                       return el.weatherElement[0].time[time].elementValue[0]
                         .value
@@ -201,23 +203,23 @@ function KexinWeather(props) {
               <p
                 className={`${styles.weatherStatus} d-flex justify-content-end`}
               >
-                {weather.length > 1 &&
+                {weather > 1 &&
                   weather
-                    .filter((el, i) => {
+                    ?.filter((el, i) => {
                       return el.locationName === selectCounty
                     })
-                    .map((el, i) => {
+                    ?.map((el, i) => {
                       console.log(el.weatherElement[1].time[1])
                       return el.weatherElement[2].time[time].elementValue[0]
                         .value
                     })}
                 °C -{' '}
-                {weather.length > 1 &&
+                {weather &&
                   weather
-                    .filter((el, i) => {
+                    ?.filter((el, i) => {
                       return el.locationName === selectCounty
                     })
-                    .map((el, i) => {
+                    ?.map((el, i) => {
                       console.log(el.weatherElement[1].time[1])
                       return el.weatherElement[3].time[time].elementValue[0]
                         .value
@@ -227,12 +229,12 @@ function KexinWeather(props) {
             </div>
             <div className={`d-flex justify-content-end `}>
               <p className={`${styles.weatherText}`}>
-                {weather.length > 1 &&
+                {weather &&
                   weather
-                    .filter((el, i) => {
+                    ?.filter((el, i) => {
                       return el.locationName === selectCounty
                     })
-                    .map((el, i) => {
+                    ?.map((el, i) => {
                       console.log(el.weatherElement[1].time[1])
                       return el.weatherElement[1].time[time].elementValue[0]
                         .value
@@ -257,11 +259,12 @@ function KexinWeather(props) {
               setTime(2)
             }}
           >
-            {weather.length > 1 &&
+            {/* {weather &&
             weather[0].weatherElement[0].time[1].startTime.slice(11, 13) ===
               '18'
               ? '今晚'
-              : '明早'}
+              : '明早'} */}
+            今晚
           </button>
           <button
             className="flex-fill"
@@ -269,11 +272,12 @@ function KexinWeather(props) {
               setTime(3)
             }}
           >
-            {weather.length > 1 &&
+            {/* {weather &&
             weather[0].weatherElement[0].time[1].startTime.slice(11, 13) ===
               '18'
               ? '明早'
-              : '明晚'}
+              : '明晚'} */}
+            明晚
           </button>
         </div>
       </div>
