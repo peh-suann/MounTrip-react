@@ -217,6 +217,7 @@ function YichunProducts() {
   }, [])
 
   const rank = [1, 2, 3, 4, 5, 6]
+
   return (
     <>
       <StylesContext.Provider value={styles}>
