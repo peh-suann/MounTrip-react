@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useRef } from 'react'
+import { createContext, useEffect, useState, useRef, useContext } from 'react'
 import * as d3 from 'd3'
 import NavbarIndex from '../layouts/NavbarIndex'
 import IndexStyles from '../styles/kexinIndex.module.css'
@@ -7,8 +7,9 @@ import KexinIndexProducts from '../components/KexinIndexProducts'
 import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
 import { useNavigate } from 'react-router-dom'
 import KexinWeather from '../components/KexinWeather'
+import { LoginContext } from '../App'
 
-// context 
+// context
 export const StatusContext = createContext({})
 export const ProductContext = createContext({})
 
@@ -27,7 +28,7 @@ function KexinIndex() {
 
   const navigate = useNavigate()
   const mapRef = useRef(null)
-  const [mapInteraction, setMapInteraction] = useState(0)
+  const { mapInteraction, setMapInteraction } = useContext(LoginContext)
   const [selectCounty, setSelectCounty] = useState('')
   const [myProduct, setMyProduct] = useState({})
   const [cart, setCart] = useState(0)
@@ -38,7 +39,6 @@ function KexinIndex() {
   useEffect(() => {
     const WIDTH = window.innerWidth
     const HEIGHT = window.innerHeight
-    console.log(window.innerWidth, window.innerHeight)
     d3.select('#map').remove()
 
     if (data) {
@@ -107,7 +107,6 @@ function KexinIndex() {
         // Create a path generator
         const path = d3.geoPath(projection)
 
-        console.log('projection', projection([121, 23.5]))
 
         // Draw the map
         g.selectAll('path')
@@ -161,7 +160,7 @@ function KexinIndex() {
       .transition()
       .duration(750)
       .attr('transform', transformData[county].transform1)
-    setMapInteraction(1) 
+    setMapInteraction(1)
 
     d3.select('#landmark').remove()
     d3.select('#landmark1').remove()
@@ -188,13 +187,10 @@ function KexinIndex() {
 
     // d3.select('#landmark').remove()
     // d3.select('#landmark1').remove()
-    console.log(projection([121.3, 25.0]))
   }
 
   const clickReset = function (e) {
-    console.log(window.innerWidth, window.innerHeight)
     if (e.target.style.fill === 'none' && mapInteraction === 1) {
-      console.log('hiclick')
       console.log(d3.select('#mapZoom'))
       d3.select('#mapZoom')
         .transition()
@@ -222,12 +218,12 @@ function KexinIndex() {
     }
   }
 
-  console.log(myProduct)
+  // console.log(myProduct)
 
   return (
     <>
       <StatusContext.Provider
-        value={{ mapInteraction, setMapInteraction, cart, setCart }}
+        value={{ cart, setCart }}
       >
         <ProductContext.Provider value={{ myProduct, setMyProduct }}>
           <NavbarIndex />
@@ -240,56 +236,42 @@ function KexinIndex() {
           <KexinIndexProductsDetail selectCounty={selectCounty} />
           {cart === 1 ? (
             <>
-              <div className={` ${IndexStyles['modal-backdrop']}`}></div>
-              <div id="exampleModal" className={`${IndexStyles['mymodal']}`}>
-                <div className={`modal-dialog`}>
-                  <div className={`modal-content`}>
-                    <div className={`modal-header`}>
-                      <h1 className={`modal-title fs-5`} id="exampleModalLabel">
-                        已加入購物車
-                      </h1>
-                      <button
-                        type="button"
-                        className={`btn-close`}
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                        onClick={() => {
-                          setCart(0)
-                        }}
-                      ></button>
-                    </div>
-                    <div className={`modal-body`}>{`產品：' ${myProduct.trail_name} '已成功加入購物車`}</div>
-                    <div className={`modal-footer`}>
-                      <button
-                        type="button"
-                        className={`${IndexStyles['buttonstyle']}`}
-                        data-bs-dismiss="modal"
-                        onClick={() => {
-                          setCart(0)
-                        }}
-                      >
-                        <span className={`${IndexStyles['buttontext']}`}>繼續購物</span>
-                      </button>
-                      <button
-                        onClick={() => {
-                          navigate('/SC1')
-                        }}
-                        type="button"
-                        className={`${IndexStyles['buttonstyle']}`}
-                        data-bs-dismiss="modal"
-                      >
-                        <span className={`${IndexStyles['buttontext']}`}>查看購物車</span>
-                      </button>
-                    </div>
+              <div className={IndexStyles['showBox3-wrap']}>
+                <div
+                  id="showLoginFirst"
+                  className={`${IndexStyles['showBox3']}`}
+                >
+                  <h4>{`「${myProduct.trail_name}」行程已加入購物車`}</h4>
+                  <div className="d-flex">
+                    <button
+                      className={`${IndexStyles['btn-green']} ${IndexStyles['me-16']}`}
+                      onClick={() => {
+                        setCart(0)
+                      }}
+                    >
+                      繼續購物
+                    </button>
+                    <button
+                      className={IndexStyles['btn-green']}
+                      onClick={() => {
+                        navigate('/SC1')
+                      }}
+                    >
+                      查看購物車
+                    </button>
                   </div>
                 </div>
               </div>
+            
             </>
           ) : (
             ' '
           )}
-          {mapInteraction===1 || mapInteraction===2   ? <KexinWeather selectCounty={selectCounty} /> : ''}
-          
+          {mapInteraction === 1 || mapInteraction === 2 ? (
+            <KexinWeather selectCounty={selectCounty} />
+          ) : (
+            ''
+          )}
         </ProductContext.Provider>
       </StatusContext.Provider>
     </>

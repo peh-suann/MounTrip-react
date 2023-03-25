@@ -14,13 +14,13 @@ import Button from './Button'
 
 // Search Context
 import { SearchContext } from '../contexts/SearchContext'
+import { LoginContext } from '../App'
 import { format } from 'date-fns'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+
 
 function KexinIndexProducts(props) {
   const { selectCounty } = props
-  const { mapInteraction, setMapInteraction } = useContext(StatusContext)
+  const { mapInteraction, setMapInteraction } = useContext(LoginContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
   const [data, setData] = useState({
     rows: [],
@@ -60,11 +60,6 @@ function KexinIndexProducts(props) {
   const [newstartdate, setNewstartdate] = useState(formattedDate)
   const [newenddate, setNewenddate] = useState(formattedDateEnd)
 
-  useEffect(() => {
-    // setIndexgeo(selectCounty)
-    // console.log(indexgeo)
-    console.log(selectCounty)
-  }, [selectCounty])
 
   return (
     <>
@@ -102,7 +97,7 @@ function KexinIndexProducts(props) {
                   <>
                     <div className={styles['mb-16']}>
                       <KexinProductCard
-                        key={v.trails_sid}
+                        key={i}
                         el={v}
                         ranking={0}
                         shadow={0}

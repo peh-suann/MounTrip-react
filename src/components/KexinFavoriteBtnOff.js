@@ -8,7 +8,7 @@ import { USER_FAV } from '../connections/api-config'
 
 export default function KexinFavoriteBtnOff(props) {
   const { getDataCallback, trailSID, liked } = props
-  console.log(liked)
+  // console.log(liked)
   const [heartOn, setHeartOn] = useState(false)
   const { showBox, setShowbox } = useContext(LoginContext)
 
@@ -16,15 +16,13 @@ export default function KexinFavoriteBtnOff(props) {
     setHeartOn(liked)
   }, [trailSID])
 
-  console.log(heartOn)
-  // setHeartOn(liked)
+
   if (localStorage.getItem('myAuth')) {
     const userString = localStorage.getItem('myAuth')
     const userData = JSON.parse(userString)
     const token = userData.token || ''
     const mid = userData.accountId || ''
 
-    console.log(heartOn)
     const fill = heartOn ? '#ed7f7d' : 'none'
     const stroke = heartOn ? '#ed7f7d' : '#6cba7c'
 

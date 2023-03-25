@@ -10,12 +10,12 @@ import KexinFavoriteBtnOff from './KexinFavoriteBtnOff'
 function KexinFixedBox(props) {
   const { el, liked } = props
   // console.log(liked)
-  const { mapInteraction, setMapInteraction, cart, setCart } =
+  const { cart, setCart } =
     useContext(StatusContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
   const [chooseBatch, setChooseBatch] = useState(0)
   const { myAuth, logout } = useContext(AuthContext)
-  const { showBox, setShowbox } = useContext(LoginContext)
+  const { showBox, setShowbox,mapInteraction, setMapInteraction } = useContext(LoginContext)
 
   // 購物車
   const { addItem } = useCart()

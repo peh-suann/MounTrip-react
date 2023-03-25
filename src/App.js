@@ -41,6 +41,7 @@ export const LoginContext = createContext({})
 
 function App() {
   const [showBox, setShowbox] = useState(0)
+  const [mapInteraction, setMapInteraction] = useState(0)
   // only for searching
   // const { search } = useContext(SearchContext)
   // const [search, setSearch] = useState({
@@ -59,7 +60,7 @@ function App() {
         <SearchContextProvider>
           <AuthContextProvider>
             <CartContextProvider>
-              <LoginContext.Provider value={{ showBox, setShowbox }}>
+              <LoginContext.Provider value={{ mapInteraction, setMapInteraction, showBox, setShowbox }}>
                 <TestCouponContextProvider>
                   <Routes>
                     <Route path="/" element={<Layout />}>

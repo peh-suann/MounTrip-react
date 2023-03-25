@@ -22,7 +22,7 @@ function Modal(props) {
           ></Button>
         ) : (
           ''
-        )}
+        )} 
       </div>
     </div>
   )
