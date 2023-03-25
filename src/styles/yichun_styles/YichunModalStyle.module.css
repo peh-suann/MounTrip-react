@@ -27,7 +27,20 @@
   letter-spacing: 0.05em;
   line-height: 140%;
 }
-.modal_box h4 span{
-    color: var(--mtgreen-1);
-    font-weight: 700;
+.modal_box h4 span {
+  color: var(--mtgreen-1);
+  font-weight: 700;
+}
+@media screen and (max-width: 390px) {
+  .modal_box {
+    width: 80%;
+    padding: 30px;
+  }
+  .modal_box h4 {
+    font-size: 14px;
+  }
+  .modal_box button {
+    font-size: 14px;
+    padding: 4px 20px;
+  }
 }

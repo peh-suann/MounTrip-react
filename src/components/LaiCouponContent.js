@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './../styles/Coupon.module.css'
 import CouponCard from './../components/LaiCouponCard'
 import CouponAmount from './LaiCouponAmount'
 import axios from 'axios'
 import { USER_COUPON } from '../connections/api-config'
+import { TestCouponContext } from '../contexts/TestCouponContext'
 
 export default function LaiCouponContent({ children }) {
   const [userCoupon, setUserCoupon] = useState([])
   const [couponStartDate, setCouponStartDate] = useState([])
   const [couponEndDate, setCouponEndDate] = useState([])
+
+  // yichun's test coupon change
+  const { newCoupon } = useContext(TestCouponContext)
 
   const getUserCoupon = async (req, res) => {
     const userString = localStorage.getItem('myAuth')
@@ -24,10 +28,10 @@ export default function LaiCouponContent({ children }) {
       // let startDate = []
       // let endDate = []
       // let StartEnd = []
- 
+
       setUserCoupon(res.data)
       const output = res.data.length
-      console.log('res',res.data) //res.data是裡面包著n比obj資料的arr
+      console.log('res', res.data) //res.data是裡面包著n比obj資料的arr
       return output
     } catch (error) {
       console.log('coupon axios err')
@@ -53,6 +57,9 @@ export default function LaiCouponContent({ children }) {
     getUserCoupon()
     // console.log(userCoupon)
   }, [])
+  useEffect(() => {
+    getUserCoupon()
+  }, [newCoupon])
   return (
     <>
       <div className={styles['member-data']}>
@@ -110,7 +117,7 @@ export default function LaiCouponContent({ children }) {
               <CouponAmount amount={userCoupon.length} />
               <p>張優惠券</p>
             </div>
-            {/* 
+            {/*
              */}
           </div>
           <div className={styles['coupon-list']}>
