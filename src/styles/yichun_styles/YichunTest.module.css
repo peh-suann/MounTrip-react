@@ -507,7 +507,7 @@ section.questions {
   transition-duration: 10s;
 }
 section.questions.display {
-  /* display: none; */
+  display: none;
 }
 section.questions img:first-child {
   width: calc(100% - 200px);
@@ -743,7 +743,7 @@ section.price {
   overflow: hidden;
 }
 section.price.display {
-  /* display: none; */
+  display: none;
 }
 section.price .price-text {
   position: absolute;
