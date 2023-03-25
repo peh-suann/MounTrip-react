@@ -7,9 +7,56 @@ section.played {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+
+  overflow: hidden;
 }
 section.played h2 {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 32px;
   margin-bottom: 32px;
+  margin-left: 8px;
+  letter-spacing: 0.1em;
+}
+section.played a{
+  margin-bottom: 120px;
+}
+section.played img {
+  position: absolute;
+}
+section.played img.g2 {
+  left: -1%;
+  bottom: 6%;
+  transform: scale(1.1);
+
+  transition-duration: 1.5s ease;
+
+  pointer-events: none;
+}
+section.played img.y2 {
+  left: 1%;
+  bottom: 7%;
+  transform: scale(1.1);
+
+  transition-duration: 1.5s ease;
+
+  pointer-events: none;
+}
+section.played img.g1 {
+  left: 0.0006%;
+  bottom: 0.1%;
+  transform: scale(1.1);
+
+  transition-duration: 1.5s ease;
+
+  pointer-events: none;
+}
+section.played img.y1 {
+  left: 0%;
+  bottom: -0.3%;
+  transform: scale(1.1);
+
+  transition-duration: 1.5s ease;
+
+  pointer-events: none;
 }

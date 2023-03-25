@@ -420,7 +420,7 @@ function YichunProducts() {
               <br />
               整個浪漫到不行！
             </p>
-            <Button text={'探索更多'} iconFront={0} iconEnd={1} />
+            {/* <Button text={'探索更多'} iconFront={0} iconEnd={1} /> */}
           </div>
           <div className={styles['row-of-products']}>
             <button>

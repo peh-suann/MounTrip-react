@@ -2,8 +2,8 @@
 // 上面寫HOST，下面寫路徑
 
 // hosts ---------------------------------------------------------------------------
-// export const HOST = 'http://localhost:3001'
-export const HOST = 'http://localhost:3002'
+export const HOST = 'http://localhost:3001'
+// export const HOST = 'http://localhost:3002'
 
 //Lai's connect
 // export const HOST = 'http://192.168.71.105:3001'
@@ -35,6 +35,7 @@ export const USER_COUPON = `${HOST}/member/me/coupon`
 export const USER_FAV = `${HOST}/member/me/favorite`
 export const USER_FAV_DELETE = `${HOST}/member/me/favorite/delete`
 export const USER_FAV_ADD = `${HOST}/member/me/favorite/add`
+export const USER_LEVEL_UPDATE = `${HOST}/member/me/member-level/update`
 export const USER_ORDER = `${HOST}/member/me/order`
 export const USER_ORDER_SUCCESS = `${HOST}/member/me/order/success`
 export const USER_ORDER_DETAIL = `${HOST}/member/me/order/product-detail`
@@ -55,6 +56,7 @@ export const TEST_ANS = `${HOST}/answer`
 export const TEST_PLAY = `${HOST}/test_play`
 export const TEST_INSERT_PLAY = `${HOST}/insert_play`
 export const TEST_INSERT_COUPON = `${HOST}/insert_coupon`
+export const MEMBER_INSERT_COUPON = `${HOST}/member_insert_coupon`
 
 // kexin's path
 export const LOGIN = `${HOST}/login`
@@ -69,15 +71,12 @@ export const SELECT_BATCH = `${HOST}/select_batch`
 // export const LIST_DATA = `${HOST}/member`
 
 // someone's path
-// export const TRAILS_DATA = `${HOST}/trails?`
-// export const RATING_DATA = `${HOST}/trails/rating`
-// export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
 
 export const TRAILS_DATA = `${HOST}/trails`
 
 export const RATING_DATA = `${HOST}/trails/rating`
 
-export const TRAILS_BATCH_DATA = `${HOST}/trails-batch`
+export const TRAILS_BATCH_DATA = `${HOST}/trails/batch`
 
 export const TRAILS_FILTER_DATA = `${HOST}/trails-filter`
 
@@ -93,4 +92,5 @@ export const TRAILS_DIFFMEDIUM = `${HOST}/difficultyMedium`
 export const TRAILS_DIFFEASY = `${HOST}/difficultyEasy`
 export const ORDER_COUPON = `${HOST}/SC1`
 export const ORDER_HISTORY = `${HOST}/history`
+export const ORDER_HISTORY2 = `${HOST}/history2`
 export const ORDERUSER_DATA = (mid) => `${HOST}/${mid}`

@@ -6,7 +6,6 @@ import { motion } from 'framer-motion'
 import Backdrop from './LaiBackdrop/Backdrop'
 import axios from 'axios'
 import { USER_DATA_UPDATE } from '../connections/api-config'
-import { Calendar } from 'react-date-range'
 import LaiDatePicker from './LaiDatePicker'
 // import { setDate } from 'date-fns/esm'
 
@@ -45,9 +44,14 @@ export default function MemberContent(props) {
     },
     loading: false,
   }
+  const authString = localStorage.getItem('myAuth')
+  const auth = JSON.parse(authString)
+  // console.log('auth', auth)
+
   const userReducer = (state, action) => {
     switch (action.type) {
       case ACTIONS.INITIAL:
+        if (!auth) return alert('請先登入會員！')
         return {
           ...state,
           userData: action.payload,
@@ -83,8 +87,13 @@ export default function MemberContent(props) {
       payload: { name: e.target.name, value: e.target.value },
     })
   }
+  //驗證用
+  const [error, setError] = useState({})
+  const [isSubmit, setIsSubmit] = useState(false)
+
   const handleSubmit = async (e) => {
     e.preventDefault()
+
     const userString = localStorage.getItem('myAuth')
     const user = JSON.parse(userString)
     const sid = user.accountId
@@ -95,6 +104,7 @@ export default function MemberContent(props) {
     const month = String(convertBirthday.getMonth() + 1).padStart(2, '0')
     const day = String(convertBirthday.getDate()).padStart(2, '0')
     const birthdayFormat = `${year}-${month}-${day}`
+
     formData.append('firstname', userInfo.userData.firstname)
     formData.append('lastname', userInfo.userData.lastname)
     formData.append('gender', userInfo.userData.gender)
@@ -106,33 +116,74 @@ export default function MemberContent(props) {
     formData.append('zip', userInfo.userData.zip)
     formData.append('city', userInfo.userData.city)
     formData.append('address', userInfo.userData.address)
-    const res = await axios.post(USER_DATA_UPDATE(sid), formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-        Authorization: `Bearer ${token}`,
-        sid: `${sid}`,
-      },
-    })
-    // FIXME 生日資料還不能上傳
-    // FIXME 按下enter會跳出表單
-    // TODO  照片上傳錯誤的判斷
-    if (!res) return alert('上傳失敗')
+
+    //validation
+    setError(validation(userInfo.userData))
+    console.log('v', validation(userInfo.userData))
+
+    if (Object.keys(error).length !== 0) {
+      console.log('error', error)
+      return
+    } else {
+      console.log('errorEmpty', error)
+      const res = await axios.post(USER_DATA_UPDATE(sid), formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${token}`,
+          sid: `${sid}`,
+        },
+      })
+      if (!res) return alert('上傳失敗')
+
+      // alert('會員資料更新成功')
+      setIsSubmit(true)
+    }
   }
-  function handleLoad(e) {
-    dispatch({
-      type: ACTIONS.INITIAL,
-      payload: { name: e.user.name, value: e.user.value },
-    })
+  const validation = (values) => {
+    const errors = {}
+    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/
+    if (!values.firstname) {
+      errors.firstname = '名字不得為空'
+    }
+    if (!values.lastname) {
+      errors.lastname = '姓氏不得為空'
+    }
+    if (!values.email) {
+      errors.email = 'Email不得為空'
+    } else if (!regex.test(values.email)) {
+      errors.email = 'Email格式錯誤'
+    }
+    if (!values.birthday) {
+      errors.birthday = '未設定生日'
+    }
+    if (!values.account) {
+      errors.account = '帳號不得為空'
+    }
+    if (!values.mobile) {
+      errors.mobile = '手機不得為空'
+    } else if (values.mobile.length < 10) {
+      errors.mobile = '手機號碼長度不足'
+    } else if (values.mobile.length > 10) {
+      errors.mobile = '手機號碼格式錯誤'
+    }
+    if (!values.personal_id) {
+      errors.personalId = '身分證字號不得為空'
+    } else if (values.personal_id.length < 10) {
+      errors.personalId = '身分證字號格式錯誤'
+    } else if (values.personal_id.length > 10) {
+      errors.personalId = '身分證字號格式錯誤'
+    }
+    return errors
   }
-  function handleSubmitXX(e) {
-    e.preventDefault()
-    dispatch({
-      type: ACTIONS.SETDATA,
-      // payload: { name: e.target.name, value: e.target.value },
-    })
-  }
+  // function handleLoad(e) {
+  //   dispatch({
+  //     type: ACTIONS.INITIAL,
+  //     payload: { name: e.user.name, value: e.user.value },
+  //   })
+  // }
+
   // //現在的state
-  console.log('userInfo', userInfo)
+  // console.log('userInfo', userInfo)
   //資料庫的資料
   // console.log('user:', user)
 
@@ -142,6 +193,13 @@ export default function MemberContent(props) {
       payload: user,
     })
   }, [user])
+  useEffect(() => {
+    console.log('here', error)
+    if (Object.keys(error).length === 0 && isSubmit) {
+      // console.log(userInfo.userData)
+      alert('會員資料更新成功')
+    }
+  }, [error])
 
   //彈出重設密碼表單
   function modalControl() {
@@ -218,8 +276,8 @@ export default function MemberContent(props) {
                 handleUpdate(e)
               }}
               onKeyDown={(e) => preventModalShow(e)}
-              required
             />
+            <label className={styles.error_label}>{error.firstname}</label>
           </div>
           <div className={`${styles['fname-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="lastname" className={''}>
@@ -235,9 +293,10 @@ export default function MemberContent(props) {
                 handleUpdate(e)
               }}
               onKeyDown={(e) => preventModalShow(e)}
-              required
             />
+            <label className={styles.error_label}>{error.lastname}</label>
           </div>
+
           <div className={`${styles['gender-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="" className="">
               性別
@@ -270,6 +329,7 @@ export default function MemberContent(props) {
               userInfo={userInfo}
               onDateChange={handleChildDateChenge}
             />
+            <label className={styles.error_label}>{error.email}</label>
           </div>
           <div className={`${styles['id-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="personal_id" className="">
@@ -285,8 +345,8 @@ export default function MemberContent(props) {
                 handleUpdate(e)
               }}
               onKeyDown={(e) => preventModalShow(e)}
-              required
             />
+            <label className={styles.error_label}>{error.personalID}</label>
           </div>
           <div className={`${styles['phone-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="mobile" className="">
@@ -302,8 +362,8 @@ export default function MemberContent(props) {
                 handleUpdate(e)
               }}
               onKeyDown={(e) => preventModalShow(e)}
-              required
             />
+            <label className={styles.error_label}>{error.mobile}</label>
           </div>
           <div
             className={`${styles['account-wrap']} ${styles['input-blocks']}`}
@@ -321,8 +381,8 @@ export default function MemberContent(props) {
                 handleUpdate(e)
               }}
               onKeyDown={(e) => preventModalShow(e)}
-              required
             />
+            <label className={styles.error_label}>{error.account}</label>
           </div>
           <div className={`${styles['email-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="email" className="">
@@ -338,8 +398,8 @@ export default function MemberContent(props) {
                 handleUpdate(e)
               }}
               onKeyDown={(e) => preventModalShow(e)}
-              required
             />
+            <label className={styles.error_label}>{error.email}</label>
           </div>
           <div className={`${styles['zip-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="zip" className="">
@@ -355,8 +415,8 @@ export default function MemberContent(props) {
                 handleUpdate(e)
               }}
               onKeyDown={(e) => preventModalShow(e)}
-              required
             />
+            {/* <label className={styles.error_label}>{error.zip}</label> */}
           </div>
           <div className={`${styles['city-wrap']} ${styles['input-blocks']}`}>
             <div className={styles['fake-label-city']}></div>
@@ -389,6 +449,7 @@ export default function MemberContent(props) {
               <option>澎湖縣</option>
               <option>連江縣</option>
             </select>
+            {/* <label className={styles.error_label}>{error.city}</label> */}
           </div>
           <div
             className={`${styles['address-wrap']} ${styles['input-blocks']}`}
