@@ -452,9 +452,7 @@ export default function DavisTrailsDetail(rows) {
                   </div>
 
                   {/* paragraph  */}
-                  <p className={`mb-2 ${styles.paragraph_i}`}>
-                    {r.trail_describ}
-                  </p>
+                  <p className={` ${styles.paragraph_i}`}>{r.trail_describ}</p>
 
                   {/* 手機板 puctures FIXME:*/}
                   <div className="col flex-column d-flex d-lg-none mb-3">

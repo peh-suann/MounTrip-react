@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 // import { useLocation } from 'react-router-dom'
 
 import styles from '../../styles/DavisTrailsFilter.module.css'
-import FavoriteBtnOff from '../../components/FavoriteBtnOff'
+import KexinFavoriteBtnOff from '../KexinFavoriteBtnOff'
 
 // API
 import { FILTER_ALL_DATA } from '../../connections/api-config'
+
+// 讀取收藏
+import AuthContext from '../../contexts/AuthContexts'
+import { USER_FAV } from '../../connections/api-config'
 
 function DavisComFilterCardFilter(props) {
   const { filterByKeyword, keywordpr, startdatepr, enddatepr, maxpeplepr } =
@@ -53,6 +57,37 @@ function DavisComFilterCardFilter(props) {
     localStorage.setItem('collectList', JSON.stringify(collectList))
   }
 
+  // 讀取收藏
+  const { myAuth, logout } = useContext(AuthContext)
+  const [fav, setFav] = useState([])
+  const [liked, setLiked] = useState(false)
+
+  const getFavorite = async (req, res) => {
+    if (myAuth.account) {
+      // console.log('登入狀態')
+      const userString = localStorage.getItem('myAuth')
+      const userData = JSON.parse(userString)
+      const token = userData.token
+      const mid = userData.accountId
+
+      try {
+        const res = await axios(USER_FAV, {
+          headers: { Authorization: `Bearer ${token}`, sid: mid },
+        })
+        if (!res.data) return res.sendStatus(401)
+
+        const currentFav = res.data
+        setFav(currentFav)
+      } catch (err) {
+        console.log('coupon axios err')
+        return []
+      }
+    } else {
+      // console.log('未登入')
+      setLiked(false)
+    }
+  }
+
   // 分頁
   const [currentPage, setCurrentPage] = useState(1)
   const perPage = 10
@@ -95,6 +130,7 @@ function DavisComFilterCardFilter(props) {
   useEffect(() => {
     // console.log(' setCurrentPage useEffect--')
     setCurrentPage(currentPage)
+    getFavorite()
     return () => {
       // console.log('unmount AbList--')
     }
@@ -254,7 +290,17 @@ function DavisComFilterCardFilter(props) {
                 className={`col-1  d-flex justify-content-end align-items-start`}
               >
                 <span className={`${styles.heart_btn_position}`}>
-                  <FavoriteBtnOff trailSID={r.trail_sid} />
+                  <KexinFavoriteBtnOff
+                    trailSID={r.trail_sid}
+                    liked={
+                      fav &&
+                      fav.filter((v, i) => {
+                        return v.trails_sid === r.trail_sid
+                      }).length > 0
+                        ? true
+                        : false
+                    }
+                  />
                 </span>
 
                 {console.log(r.trail_sid)}
