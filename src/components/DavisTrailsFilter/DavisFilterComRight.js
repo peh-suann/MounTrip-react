@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import styles from '../../styles/DavisTrailsFilter.module.css'
-// import DavisComFilterCard from './DavisComFilterCard'
 import DavisComFilterCardFilter from './DavisComFilterCardFilter'
 import { useNavigate } from 'react-router-dom'
 

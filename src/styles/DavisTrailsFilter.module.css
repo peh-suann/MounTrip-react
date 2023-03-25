@@ -197,15 +197,28 @@ main .right_card {
   line-height: 150%;
 }
 
-.product_name .link_style {
+ .link_style {
   color: var(--mtgrey-1);
   text-decoration: none;
+  z-index: 0;
+}
+
+.link_style:hover {
+  color: var(--mtgrey-1);
+  z-index: 0;
 }
 
 .heart_btn {
   border: none;
   padding: 0;
   background-color: transparent;
+  z-index: 1;
+}
+
+.heart_btn_position{
+  width: 50px;
+  padding-top: 35px
+
 }
 
 .collect_heart{

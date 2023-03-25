@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styles from '../../styles/DavisTrailsDetail.module.css'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { RATING_DATA } from '../../connections/api-config'
 import axios from 'axios'
 
-//
+// comment api
 import { SELECT_COMMENT } from '../../connections/api-config'
+
+//login to commont
+import AuthContext from '../../contexts/AuthContexts'
+import { LoginContext } from '../../App'
 
 function DavisTrailsRating(props) {
   const { data } = props
@@ -79,6 +83,10 @@ function DavisTrailsRating(props) {
     console.log(comdata)
     getCommentData(page_sid)
   }, [page_sid])
+
+  //login to commont
+  const { myAuth } = useContext(AuthContext)
+  const { showBox, setShowbox } = useContext(LoginContext)
 
   return (
     <>
@@ -165,7 +173,14 @@ function DavisTrailsRating(props) {
         <button className={` d-lg-none ${styles.enter_commont_phone}`}>
           發布評論
         </button>
+        {/* FIXME:登錄評論 */}
         <button
+          onClick={() => {
+            if (myAuth.account) {
+            } else {
+              setShowbox(3)
+            }
+          }}
           className={`d-none d-lg-flex col-lg-10 align-self-center ${styles.enter_commont}`}
         >
           發布評論
