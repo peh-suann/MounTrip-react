@@ -64,7 +64,7 @@ function KexinWeather(props) {
     fetchData()
   }, [])
 
-  console.log(weatherNow)
+  // console.log(weatherNow)
   //   const time = weather[0].weatherElement[0].time[1].startTime.slice(11, 13)
   //   console.log(time)
 
@@ -166,7 +166,7 @@ function KexinWeather(props) {
                         .slice(0, 1)
                     }°C`
                   : `${
-                      weatherNow > 1 &&
+                      weatherNow  &&
                       weatherNow
                         ?.filter((el, i) => {
                           return el.parameter[0].parameterValue === selectCounty
@@ -203,7 +203,7 @@ function KexinWeather(props) {
               <p
                 className={`${styles.weatherStatus} d-flex justify-content-end`}
               >
-                {weather > 1 &&
+                {weatherNow &&
                   weather
                     ?.filter((el, i) => {
                       return el.locationName === selectCounty

@@ -179,20 +179,26 @@ function KexinSignin() {
                         document
                           .querySelector('#password')
                           .setAttribute('class', `form-control`)
-                      }
-                      {
                         document
                           .querySelector('#password1')
                           .setAttribute('class', `form-control`)
+                      }
+                      {
+                        document.querySelector('#account').value = ''
+                        document.querySelector('#password').value = ''
+                        document.querySelector('#password1').value = ''
                       }
                       axios.post(SIGNIN, myForm).then((response) => {
                         if (response.data['success']) {
                           setSigninSuccess(true)
                           // setSign(true)
-                          if(myForm.account){
+                          if (myForm.account) {
                             sendNewMemCoupon(myForm.account)
-
                           }
+                          setTimeout(() => {
+                            navigate('/login')
+                          }, '2000')
+                          
                         } else {
                           console.log('註冊失敗')
                         }
