@@ -21,8 +21,7 @@ import PasswordModal from '../components/LaiBackdrop/PasswordModal'
 // test coupon status
 import { TestCouponContext } from '../contexts/TestCouponContext'
 // test coupon style
-import Button from '../components/Button'
-import yichun_styles from './../styles/yichun_styles/YichunCouponStyle.module.css'
+import YichunModal from '../components/YichunModal'
 
 export default function Member() {
   //modal彈出視窗的
@@ -196,24 +195,24 @@ export default function Member() {
     localStorage.removeItem('test')
   }
 
+  // YichunModal Content
+  const content = `<h4>
+  恭喜您完成登山安全小測驗 <br />
+  您已收到一張 <span>${sale}折</span> 優惠券
+  <br />
+  祝您旅途平安！
+</h4>`
+
   return (
     <>
       {newCoupon ? (
-        <div className={yichun_styles.coupon_note}>
-          <div className={yichun_styles.coupon_note_box}>
-            <h4>
-              恭喜您完成登山安全小測驗 <br />
-              您已收到一張 <span>{sale}折</span> 優惠券
-              <br />
-              祝您旅途平安！
-            </h4>
-            <Button
-              text={'知道了'}
-              link={'member'}
-              handleClick={handleClick}
-            ></Button>
-          </div>
-        </div>
+        <YichunModal
+          handleClick={handleClick}
+          content={content}
+          btnToggle={1}
+          btnText={'知道了'}
+          btnLink={'member'}
+        />
       ) : (
         ''
       )}
