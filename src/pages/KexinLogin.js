@@ -8,7 +8,6 @@ import AuthContext from '../contexts/AuthContexts'
 import { LOGIN } from '../connections/api-config'
 import { LoginContext } from '../App'
 
-
 // styles
 import loginStyles from '../styles/kexinLogin.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,7 +28,7 @@ function KexinLogin() {
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [loginSuccess, setLoginSuccess] = useState(false)
   const { showBox, setShowbox } = useContext(LoginContext)
-  
+
   // for Test
   // useEffect(() => {}, [myForm])
   const { newCoupon } = useContext(TestCouponContext)

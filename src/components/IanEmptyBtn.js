@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styles from './../styles/IanShoppingCart2.module.css'
 
-function IanSameBtn(props) {
+function IanEmptyBtn(props) {
   const { setMycheck } = props
-  const [Same, setSame] = useState(true)
+  const [empty, setEmpty] = useState(false)
   return (
     <>
       <div className={`${styles['mb-48']} d-flex align-items-center`}>
@@ -11,11 +11,10 @@ function IanSameBtn(props) {
           type="checkbox"
           id="sameOrder"
           name="sameOrder"
-          checked={Same}
+          checked={empty}
           onChange={() => {
-            setMycheck(!Same)
-            console.log(!Same)
-            setSame(!Same)
+            setMycheck(!empty)
+            setEmpty(!empty)
           }}
         />
         <label htmlFor="sameOrder" className={`${styles.dataSame}`}>
@@ -26,4 +25,4 @@ function IanSameBtn(props) {
   )
 }
 
-export default IanSameBtn
+export default IanEmptyBtn

@@ -6,7 +6,15 @@ import IanShowDetail from './IanShowDetail'
 function IanToggleDetail(props) {
   const { items } = useCart()
   const [toggleOpen, setToggleOpen] = useState(false)
-  const { memberitems, trail_name, quantity, batch_start, batch_end } = props
+  const {
+    memberitems,
+    trail_name,
+    quantity,
+    batch_start,
+    batch_end,
+    traveler,
+    setAuth,
+  } = props
   const id = items.map((v, i) => {
     return v.sid
   })
@@ -135,6 +143,8 @@ function IanToggleDetail(props) {
         toggleOpen={toggleOpen}
         memberitems={memberitems}
         quantity={quantity}
+        traveler={traveler}
+        setAuth={setAuth}
       />
     </>
   )

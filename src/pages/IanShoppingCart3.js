@@ -5,6 +5,7 @@ import styles from './../styles/IanShoppingCart3.module.css'
 import { ORDER_HISTORY } from '../connections/api-config'
 import { ORDER_HISTORY2 } from '../connections/api-config'
 import { useCart } from '../components/IanUseCart'
+import { ORDER_DATE } from '../connections/api-config'
 
 function IanShoppingCart3() {
   const { clearCart } = useCart()
@@ -24,11 +25,12 @@ function IanShoppingCart3() {
   // console.log(cartSid)
   const cartQuantity = cartQuantitymap[0]
   // console.log('cartQuantity:', cartQuantity)
-  const userSid = JSON.parse(localStorage.getItem('member')).user.sid
-  // console.log('userSid:', userSid)
-  const [payTotal] = JSON.parse(localStorage.getItem('total'))
-  // console.log('payTotal:', payTotal)
-  const AuthSid = JSON.parse(localStorage.getItem('myAuth')).accountId
+  const userSid = JSON.parse(localStorage.getItem('AuthSid'))
+  console.log('userSid:', userSid)
+  const payTotal = JSON.parse(localStorage.getItem('total'))
+  const newPayTotal = payTotal.total
+  console.log('newPayTotal:', newPayTotal)
+  // const AuthSid = JSON.parse(localStorage.getItem('myAuth')).accountId
   // console.log('AuthSid:', AuthSid)
 
   const userString = localStorage.getItem('myAuth')
@@ -278,7 +280,7 @@ function IanShoppingCart3() {
           const orderList_lastSid = await axios.post(ORDER_HISTORY, {
             Authorization: `Bearer ${token}`,
             userSid: userSid,
-            payTotal: payTotal,
+            newPayTotal: newPayTotal,
           })
           const lastSid = orderList_lastSid.data[0].sid
           // console.log(lastSid)
@@ -289,7 +291,10 @@ function IanShoppingCart3() {
             cartSid: cartSid,
             cartQuantity: cartQuantity,
           })
-          // console.log(order_detail)
+          const Date = await axios.post(ORDER_DATE)
+          console.log(Date.data)
+          const orderDate = Date.data
+          localStorage.setItem('Date', orderDate)
           localStorage.removeItem('cartSid')
           localStorage.removeItem('member')
           clearCart()

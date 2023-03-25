@@ -44,19 +44,25 @@ function IanShoppingCart1() {
   }, [])
   const price = useCoupon.map((v, i) => {
     if (v.coupon_code === mySelect) {
-      return v.min_purchase
+      return 100 - v.coupon_rate
     }
   })
-  const [salePrice] = price.filter((v, i) => {
+  const floatPrice = useCoupon.map((v, i) => {
+    if (v.coupon_code === mySelect) {
+      return v.coupon_rate / 100
+    }
+  })
+  const [salePrice] = floatPrice.filter((v, i) => {
     return v !== undefined
   })
-  const finallyTotal = cart.cartTotal - salePrice
+
+  const finallyTotal = cart.cartTotal * salePrice
   const AuthSid = JSON.parse(localStorage.getItem('myAuth')).accountId
   const storage = JSON.parse(localStorage.getItem('cart'))
   const cartSid = storage.map((v, i) => {
     return v.sid
   })
-  const total = [show ? finallyTotal : cart.cartTotal]
+  const total = { total: show ? finallyTotal : cart.cartTotal }
   const JsonTotal = JSON.stringify(total)
 
   return (
@@ -602,7 +608,7 @@ function IanShoppingCart1() {
                         {mySelect === '請選擇優惠券' ? null : mySelect}
                       </p>
                       <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
-                        -NTD {mySelect ? price : 0}
+                        -{mySelect ? price : 0}%
                       </p>
                     </div>
                   </div>
@@ -670,7 +676,7 @@ function IanShoppingCart1() {
                         {mySelect === '請選擇優惠券' ? null : mySelect}
                       </p>
                       <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
-                        -NTD {mySelect ? price : 0}
+                        -{mySelect ? price : 0}%
                       </p>
                     </div>
                   </div>
