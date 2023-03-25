@@ -1,14 +1,11 @@
 import axios from 'axios'
 import React, { useReducer } from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 // components
-// import DavisTrailsDetailTable from '../components/DavisTrailsDetailTable'
 import DavisTrailsImgGroup from '../components/DavisTrailsDetail/DavisTrailsImgGroup'
-// import DavisTrailsBatch from '../components/DavisTrailsDetail/DavisTrailsBatch'
-// import DavisTrailsShopBtn from '../components/DavisTrailsDetail/DavisTrailsShopBtn'
 import DavisTrailsShopGroup from '../components/DavisTrailsDetail/DavisTrailsShopGroup'
 import DavisTrailsGpx from '../components/DavisTrailsDetail/DavisTrailsGpx'
 import DavisTrailsRating from '../components/DavisTrailsDetail/DavisTrailsRating'
@@ -20,6 +17,11 @@ import { TRAILS_DATA } from '../connections/api-config'
 
 //useReducer
 // import { useCart } from '../components/IanUseCart'
+
+// Search Context
+import { SearchContext } from '../contexts/SearchContext'
+import { LoginContext } from '../App'
+import { format } from 'date-fns'
 
 export default function DavisTrailsDetail(rows) {
   const location = useLocation()
@@ -63,6 +65,18 @@ export default function DavisTrailsDetail(rows) {
   // const [count, setCount] = useState(0)
   // console.log('filterFromBatch', filterFromBatch(rows_data))
 
+  // search context
+  const { search, setSearch } = useContext(SearchContext)
+
+  const [indexgeo, setIndexgeo] = useState()
+
+  let startdate = new Date(2022, 1, 1)
+  let enddate = new Date(2024, 12, 31)
+  const formattedDate = format(startdate, 'yyyy-MM-dd')
+  const formattedDateEnd = format(enddate, 'yyyy-MM-dd')
+  const [newstartdate, setNewstartdate] = useState(formattedDate)
+  const [newenddate, setNewenddate] = useState(formattedDateEnd)
+
   return (
     <>
       {filterFromBatch(data.rows).map((r) => (
@@ -84,7 +98,20 @@ export default function DavisTrailsDetail(rows) {
                 <li className="breadcrumb-item  ">
                   <Link
                     className={`text-decoration-none ${styles.li_font} `}
-                    to="/"
+                    to="/trails-filter"
+                    onClick={() => {
+                      const searchData = {
+                        location: `${r.geo_location_sid}`,
+                        startDate: newstartdate,
+                        endDate: newenddate,
+                      }
+                      setSearch(searchData)
+
+                      localStorage.setItem(
+                        'mySearch',
+                        JSON.stringify(searchData)
+                      )
+                    }}
                   >
                     {r.geo_location_sid}
                   </Link>

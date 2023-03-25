@@ -57,7 +57,7 @@ function DavisTrailsShopGroup(props) {
               </svg>
             </button>
 
-            <h3 className={`col mb-0 ${styles.count_style}`}>{count}</h3>
+            <h3 className={`col mb-0 ${styles.count_style}`}>{count}人</h3>
             <button
               onClick={() => {
                 setCount(count + 1)
