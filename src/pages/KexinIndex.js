@@ -8,6 +8,7 @@ import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
 import { useNavigate } from 'react-router-dom'
 import KexinWeather from '../components/KexinWeather'
 import { LoginContext } from '../App'
+import YichunLanding from './YichunLanding'
 
 // context
 export const StatusContext = createContext({})
@@ -106,7 +107,6 @@ function KexinIndex() {
 
         // Create a path generator
         const path = d3.geoPath(projection)
-
 
         // Draw the map
         g.selectAll('path')
@@ -218,13 +218,24 @@ function KexinIndex() {
     }
   }
 
-  // console.log(myProduct)
+  console.log(myProduct)
+
+  // landing page
+  const [visit, setVisit] = useState(false)
+  useEffect(() => {
+    const visitBefore = localStorage.getItem('visit')
+    if (visitBefore) {
+      setVisit(true)
+    } else {
+      localStorage.setItem('visit', true)
+      setVisit(false)
+    }
+  }, [])
 
   return (
     <>
-      <StatusContext.Provider
-        value={{ cart, setCart }}
-      >
+      {visit ? '' : <YichunLanding />}
+      <StatusContext.Provider value={{ cart, setCart }}>
         <ProductContext.Provider value={{ myProduct, setMyProduct }}>
           <NavbarIndex />
           <div
@@ -262,7 +273,6 @@ function KexinIndex() {
                   </div>
                 </div>
               </div>
-            
             </>
           ) : (
             ' '
