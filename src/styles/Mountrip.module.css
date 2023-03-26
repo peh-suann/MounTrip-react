@@ -40,7 +40,7 @@
 }
 
 /* Define the font family for English characters */
-@font-face {
+/* @font-face {
   font-family: 'Noto Sans';
   src: url('./fonts/NotoSans-Black.ttf');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
@@ -120,6 +120,87 @@
     U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
     U+FFFD;
   font-weight: 100;
+} */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-Black.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-ExtraBold.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-Bold.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-SemiBold.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-Medium.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-Regular.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-Light.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-ExtraLight.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-Thin.ttf');
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
+    U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
+    U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
+    U+FFFD;
+  font-weight: 100;
 }
 
 /* Define the font family for Traditional Chinese characters */
@@ -168,7 +249,8 @@
 
 * {
   /* font-family: 'Noto Sans', 'Noto Sans TC', sans-serif; */
-  font-family: 'Noto Sans', 'Noto Sans TC', sans-serif;
+  /* font-family: 'Noto Sans', 'Noto Sans TC', sans-serif; */
+  font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
 }
 
 /* global通用css屬性 */
