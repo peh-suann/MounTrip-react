@@ -33,7 +33,6 @@ import { SearchContextProvider } from './contexts/SearchContext'
 
 import { TestCouponContextProvider } from './contexts/TestCouponContext'
 
-import ProductList from './pages/TextIanShoppingCart'
 import DavisGpxLeaflet from './components/DavisTrailsDetail/DavisGpxLeaflet'
 import { createContext, useEffect, useState } from 'react'
 
@@ -80,7 +79,6 @@ function App() {
                       <Route path="/SC2" element={<IanShoppingCart2 />} />
                       <Route path="/SC3" element={<IanShoppingCart3 />} />
                       <Route path="/SC4" element={<IanShoppingCart4 />} />
-                      <Route path="textsc" element={<ProductList />} />
                     </Route>
                     <Route path="/">
                       {/* 登入頁面Navbar+Footer */}

@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../components/IanUseCart'
 import { ORDER_COUPON } from '../connections/api-config'
 import axios from 'axios'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // import IanShoppingCartTitle from '../components/IanShoppingCartTitle'
 // import './../html/css/shoppingCart1.css'
@@ -358,7 +360,7 @@ function IanShoppingCart1() {
               return (
                 <div key={i} className={`${styles['shoppingcart-product']}`}>
                   <div
-                    className={`${styles['product-col']} ${styles['mobile-none']} d-flex`}
+                    className={`${styles['product-col']} d-flex flex-column flex-lg-row`}
                   >
                     {/* <div className={`${styles['mobile-none']} ${styles.w1} `}> */}
                     {/* <input
@@ -369,7 +371,7 @@ function IanShoppingCart1() {
                       }}
                     /> */}
                     {/* </div> */}
-                    <div className={`${styles['mobile-none']} ${styles.w2}`}>
+                    <div className={`${styles.w2} ${styles.cartProduct}`}>
                       <div className={`row w-100`}>
                         <div className={`col-4`}>
                           <div className={`${styles['product-img-wrap']}`}>
@@ -381,7 +383,7 @@ function IanShoppingCart1() {
                             ></div>
                           </div>
                         </div>
-                        <div className={`col-8 px-0`}>
+                        <div className={`col-8 px-0 ps-3 ps-lg-0`}>
                           <p
                             className={`${styles['product-title']}  mb-3 ps-lg-3`}
                           >
@@ -392,25 +394,43 @@ function IanShoppingCart1() {
                           >
                             {v.trail_name}單日行程
                           </p>
+                          <div
+                            className={`${styles.w3}  ${styles.cartProduct_mobile_p} ${styles['web-none']} d-flex`}
+                          >
+                            <p className={`${styles['web-none']} mb-0 mb-lg-2`}>
+                              {v.batch_start}
+                            </p>
+                            <p className={`${styles['web-none']} mb-0 mb-lg-2`}>
+                              -
+                            </p>
+                            <p className={`${styles['web-none']} mb-0`}>
+                              {v.batch_end}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div
-                      className={`${styles['mobile-none']} ${styles.w3} text-center`}
+                      className={`${styles.w3} ${styles['mobile-none']} ${styles.cartProductp} text-center`}
                     >
                       <p className={`mb-lg-2`}>{v.batch_start}</p>
                       <p className={`mb-lg-2`}>|</p>
                       <p className={`mb-0`}>{v.batch_end}</p>
                     </div>
+
                     <div
                       className={`${styles['mobile-none']} ${styles.w4} text-center`}
                     >
                       NTD {v.price}
                     </div>
+
+                    {/* web-none */}
                     <div
-                      className={`${styles['mobile-none']} ${styles.w5}  text-center`}
+                      className={`${styles.w5} ${styles.priceBetween} d-flex justify-content-between text-center`}
                     >
-                      <div className={`d-flex`}>
+                      <div
+                        className={`d-flex align-items-center  align-items-lg-start`}
+                      >
                         <button
                           type="button"
                           className={`${styles['plus-button']}`}
@@ -472,12 +492,33 @@ function IanShoppingCart1() {
                           </svg>
                         </button>
                       </div>
+                      <div>
+                        <div
+                          className={`${styles.w4} ${styles['web-none']} ${styles.mobilePrice} text-center`}
+                        >
+                          NTD {v.price}
+                        </div>
+                        <div
+                          className={`${styles.w6} ${styles['web-none']} ${styles.mobileitemTotal} text-center m-0`}
+                        >
+                          NTD {v.itemTotal}
+                        </div>
+                      </div>
                     </div>
                     <div
-                      className={`${styles['mobile-none']} ${styles.w6}   text-center`}
+                      className={`${styles.w6} ${styles['mobile-none']}  text-center`}
                     >
                       NTD {v.itemTotal}
                     </div>
+                    <button
+                      // onClick={() => {
+                      //   console.log('click')
+                      //   removeItem(v.sid)
+                      // }}
+                      className={`${styles.cancel} ${styles['web-none']} btn btn-unstyle`}
+                    >
+                      <FontAwesomeIcon icon={faXmark} />
+                    </button>
                     <div className={`${styles['mobile-none']} ${styles.w7} `}>
                       <svg
                         onClick={() => {

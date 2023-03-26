@@ -222,8 +222,7 @@ button.paybtn {
 
 
 .shoppingCart2All{
-  /* height: 100%; */
-  height: 210vh;
+  height: 270vh;
 }
 
 div.shoppingSvgs{
@@ -256,11 +255,11 @@ div.shoppingSvgs > svg.shoppingSvg5{
 }
 div.IanShoppingCartAll{
   margin:0px;
-  height: 22vh;
+  height: 30vh;
 }
 div.shoppingbottom{
   position: absolute;
-  top: 7.7%;
+  top: 7.9%;
 }
 .shopping-cart-process{
   padding-top: 15%;

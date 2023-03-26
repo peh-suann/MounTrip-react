@@ -237,11 +237,11 @@ div.shoppingcart-product > div.product-col > div > div > div > p.product-title {
   }
   div.IanShoppingCartAll{
     margin:0px;
-    height: 25vh;
+    height: 30vh;
   }
   div.shoppingbottom{
     position: absolute;
-    top: 10.5%;
+    top: 9.4%;
   }
   .shopping-cart-process{
     padding-top: 15%;

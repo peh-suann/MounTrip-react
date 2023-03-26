@@ -3,7 +3,7 @@ import styles from './../styles/IanShoppingCart2.module.css'
 
 function IanSameBtn(props) {
   const { setMycheck } = props
-  const [Same, setSame] = useState(true)
+  const [Same, setSame] = useState(false)
   return (
     <>
       <div className={`${styles['mb-48']} d-flex align-items-center`}>

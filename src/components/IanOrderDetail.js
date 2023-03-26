@@ -5,7 +5,7 @@ import styles from './../styles/IanShoppingCart2.module.css'
 
 function IanOrderDetail(props) {
   const { items } = useCart()
-  const { memberitems, traveler, setAuth } = props
+  const { memberitems, traveler, setAuth, Auth } = props
 
   return (
     <>
@@ -19,6 +19,7 @@ function IanOrderDetail(props) {
               batch_start={v.batch_start}
               batch_end={v.batch_end}
               traveler={traveler}
+              Auth={Auth}
               setAuth={setAuth}
             />
           </Fragment>

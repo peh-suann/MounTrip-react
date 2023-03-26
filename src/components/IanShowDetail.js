@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react'
 import IanTravelerSame from './IanTravelerSame'
 
 function IanShowDetail(props) {
-  const { toggleOpen, quantity, memberitems, traveler, setAuth } = props
+  const { toggleOpen, quantity, memberitems, traveler, Auth, setAuth } = props
   const [mySame, setMySame] = useState(false)
   return (
     <>

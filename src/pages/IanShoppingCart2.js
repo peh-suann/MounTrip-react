@@ -386,7 +386,7 @@ function IanShoppingCart2() {
 
             <div
               onClick={() => {
-                // setAuth(traveler)
+                setAuth(traveler)
               }}
               className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center `}
             >
@@ -419,6 +419,7 @@ function IanShoppingCart2() {
             <IanOrderDetail
               memberitems={memberitems}
               traveler={traveler}
+              Auth={Auth}
               setAuth={setAuth}
             />
           </div>

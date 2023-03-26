@@ -16,6 +16,7 @@ function IanTravelerSame(props) {
     idCard,
     birthday,
     id,
+    traveler,
   } = props
   console.log(mycheck)
   return (
