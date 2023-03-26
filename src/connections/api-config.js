@@ -66,6 +66,7 @@ export const VERIFY = `${HOST}/vertify`
 export const SELECT_COUNTY = `${HOST}/select_products`
 export const SELECT_COMMENT = `${HOST}/select_comment`
 export const SELECT_BATCH = `${HOST}/select_batch`
+export const SELECT_MEMBER = `${HOST}/select_member`
 
 // // LAI's path
 // export const LIST_DATA = `${HOST}/member`
