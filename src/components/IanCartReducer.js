@@ -6,24 +6,24 @@ export const initialState = {
 }
 
 const addItem = (state, action) => {
-  console.log('addItem state:', state)
-  console.log('addItem action:', action)
+  // console.log('addItem state:', state)
+  // console.log('addItem action:', action)
   const ItemIndex = state.items.findIndex(
     (item) => item.sid === action.payload.sid
   )
-  console.log(ItemIndex)
+  // console.log(ItemIndex)
 
   const payloadQuantity = action.payload.quantity
 
   if (ItemIndex > -1) {
     const item = state.items[ItemIndex]
     const id = item.sid
-    console.log(item.quantity)
+    // console.log(item.quantity)
 
     const quantity = payloadQuantity
       ? item.quantity + payloadQuantity
       : item.quantity + 1
-    console.log(quantity)
+    // console.log(quantity)
     const action = {
       type: 'UPDATE_ITEM',
       payload: { id, quantity },
@@ -49,13 +49,13 @@ const removeItem = (state, action) => {
 }
 
 const updateItem = (state, action) => {
-  console.log('updatestate:', state)
-  console.log('updateaction:', action)
+  // console.log('updatestate:', state)
+  // console.log('updateaction:', action)
 
   const ItemIndex = state.items.findIndex(
     (item) => item.sid === action.payload.id
   )
-  console.log('updateItemIndex:', ItemIndex)
+  // console.log('updateItemIndex:', ItemIndex)
 
   if (ItemIndex > -1) {
     const newState = [...state.items]

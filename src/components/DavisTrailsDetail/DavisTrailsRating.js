@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styles from '../../styles/DavisTrailsDetail.module.css'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { RATING_DATA } from '../../connections/api-config'
 import axios from 'axios'
+
+// comment api
+import { SELECT_COMMENT } from '../../connections/api-config'
+
+//login to commont
+import AuthContext from '../../contexts/AuthContexts'
+import { LoginContext } from '../../App'
 
 function DavisTrailsRating(props) {
   const { data } = props
@@ -40,19 +47,6 @@ function DavisTrailsRating(props) {
 
   console.log(page_sid)
 
-  // const [commont, setCommont] = useState([])
-
-  // let batch_sid
-  // const filterCommomt = (commont, batch_sid) => {
-  //   return commont.filter((v, i) => {
-  //     if (v.batch_sid === batch_sid) {
-  //       return [setCommont(batch_sid)]
-  //     } else return { ...v }
-  //   })
-  // }
-
-  // let rows_data = data.rows
-
   const filterFromRating = (data) => {
     if (!Array.isArray(data)) {
       return []
@@ -69,10 +63,36 @@ function DavisTrailsRating(props) {
     }
   }, [])
 
+  // 抓comment資料
+  const [comdata, setComdata] = useState({
+    rows: [],
+  })
+
+  const getCommentData = async (sid) => {
+    try {
+      const response = await axios.get(SELECT_COMMENT, {
+        params: {
+          sid,
+        },
+      })
+      setComdata(response.data)
+    } catch (err) {}
+  }
+
+  useEffect(() => {
+    // console.log(comdata)
+    getCommentData(page_sid)
+  }, [page_sid])
+
+  //login to commont
+  const { myAuth } = useContext(AuthContext)
+  const { showBox, setShowbox } = useContext(LoginContext)
+
   return (
     <>
       {/* login commont */}
-      <div className="d-flex w-100 col flex-column ">
+      {/* FIXME:登錄評論 */}
+      {/* <div className="d-flex w-100 col flex-column ">
         <div
           className={`w-100 d-flex flex-row mb-lg-4 ${styles.login_commont_star}`}
         >
@@ -137,6 +157,7 @@ function DavisTrailsRating(props) {
             />
           </svg>
         </div>
+
         <textarea
           className={`d-none d-lg-flex col-lg-10 align-self-center ${styles.login_commont}`}
           name="login_commont"
@@ -154,12 +175,19 @@ function DavisTrailsRating(props) {
         <button className={` d-lg-none ${styles.enter_commont_phone}`}>
           發布評論
         </button>
+
         <button
+          onClick={() => {
+            if (myAuth.account) {
+            } else {
+              setShowbox(3)
+            }
+          }}
           className={`d-none d-lg-flex col-lg-10 align-self-center ${styles.enter_commont}`}
         >
           發布評論
         </button>
-      </div>
+      </div> */}
 
       <section id="commont_card">
         {/*commont card */}
@@ -247,126 +275,132 @@ function DavisTrailsRating(props) {
           {/* right-card */}
           <div className="col d-flex flex-column">
             {/* right-card * n */}
-            {filterFromRating(rating.rows).map((r) => (
-              <div
-                className={`col d-flex flex-row pb-3 mb-5 ${styles.card_b_b}`}
-              >
-                {/* head picture (left col-1) */}
-                <div className={`col-1 ${styles.rounded_circle}`}></div>
+            {comdata.length
+              ? comdata.map((comdata) => (
+                  <div
+                    className={`col d-flex flex-row pb-3 mb-5 ${styles.card_b_b}`}
+                  >
+                    {/* head picture (left col-1) */}
+                    <div className={`col-1 ${styles.rounded_circle}`}></div>
 
-                <div className="col d-flex flex-column ">
-                  {/* level1 */}
-                  <div className="col d-flex flex-row mb-3">
-                    <h5 className="mb-0 me-3">
-                      {r.lastname}
-                      {r.firstname}
-                    </h5>
-                    <div className="">
-                      <p className={`mb-0 ${styles.member_ca}`}>超級嚮導</p>
-                    </div>
-                  </div>
-                  {/* level2 */}
-                  <div className="col d-flex flex-row mb-3">
-                    <div
-                      className={`col-5 col-lg-1 d-flex flex-row ${styles.star}`}
-                    >
-                      <svg
-                        width="16"
-                        height="17"
-                        viewBox="0 0 16 17"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                          fill="#CEE8CB"
-                        />
-                      </svg>
-                      <svg
-                        width="16"
-                        height="17"
-                        viewBox="0 0 16 17"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                          fill="#CEE8CB"
-                        />
-                      </svg>
-                      <svg
-                        width="16"
-                        height="17"
-                        viewBox="0 0 16 17"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                          fill="#CEE8CB"
-                        />
-                      </svg>
-                      <svg
-                        width="16"
-                        height="17"
-                        viewBox="0 0 16 17"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                          fill="#CEE8CB"
-                        />
-                      </svg>
-                      <svg
-                        width="16"
-                        height="17"
-                        viewBox="0 0 16 17"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                          fill="#CEE8CB"
-                        />
-                      </svg>
-                    </div>
-                    <div className="col-2">
-                      <p className="mb-0 pb-1">{r.rate_date}</p>
-                    </div>
-                    <div className="col"></div>
-                  </div>
-                  {/* level3 內文與圖片 */}
-                  <div className="col d-flex flex-column flex-lg-row">
-                    <div className="col col-lg-7 ">
-                      <p className={`${styles.commont_p}`}>{r.comment}</p>
-                    </div>
-                    {/* imges */}
-                    <div className="col col-lg-5 d-flex flex-row">
-                      <img
-                        className={`me-1 ${styles.img_cover}`}
-                        src={`/images/public_images/product_image/${r.trails_sid}-1.jpg`}
-                        alt=""
-                      />
-                      <img
-                        className={`me-1 ${styles.img_cover}`}
-                        src={`/images/public_images/product_image/${r.trails_sid}-2.jpg`}
-                        alt=""
-                      />
-                      {/* FIXME: background url 寫在css 要如何置換圖片 */}
-                      {/* <img className="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> */}
-                      <div
-                        className={`d-flex justify-content-around ${styles.img_wrap}`}
-                      >
-                        <h4 className="mb-0 lh-lg fw-bold align-self-center ">
-                          +2張
-                        </h4>
+                    <div className="col d-flex flex-column ">
+                      {/* level1 */}
+                      <div className="col d-flex flex-row mb-3">
+                        <h5 className="mb-0 me-3">
+                          {comdata.lastname}
+                          {comdata.firstname}
+                        </h5>
+                        <div className="">
+                          <p className={`mb-0 ${styles.member_ca}`}>超級嚮導</p>
+                        </div>
+                      </div>
+                      {/* level2 */}
+                      <div className="col d-flex flex-row mb-3">
+                        <div
+                          className={`col-5 col-lg-1 d-flex flex-row ${styles.star}`}
+                        >
+                          <svg
+                            width="16"
+                            height="17"
+                            viewBox="0 0 16 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                              fill="#CEE8CB"
+                            />
+                          </svg>
+                          <svg
+                            width="16"
+                            height="17"
+                            viewBox="0 0 16 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                              fill="#CEE8CB"
+                            />
+                          </svg>
+                          <svg
+                            width="16"
+                            height="17"
+                            viewBox="0 0 16 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                              fill="#CEE8CB"
+                            />
+                          </svg>
+                          <svg
+                            width="16"
+                            height="17"
+                            viewBox="0 0 16 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                              fill="#CEE8CB"
+                            />
+                          </svg>
+                          <svg
+                            width="16"
+                            height="17"
+                            viewBox="0 0 16 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
+                              fill="#CEE8CB"
+                            />
+                          </svg>
+                        </div>
+                        <div className="col-2">
+                          <p className="mb-0 pb-1">
+                            {comdata.rate_date.slice(0, 10)}
+                          </p>
+                        </div>
+                        <div className="col"></div>
+                      </div>
+                      {/* level3 內文與圖片 */}
+                      <div className="col d-flex flex-column flex-lg-row">
+                        <div className="col col-lg-7 ">
+                          <p className={`${styles.commont_p}`}>
+                            {comdata.comment}
+                          </p>
+                        </div>
+                        {/* imges */}
+                        <div className="col col-lg-5 d-flex flex-row">
+                          <img
+                            className={`me-1 ${styles.img_cover}`}
+                            src={`/images/public_images/product_image/${comdata.trails_sid}-1.jpg`}
+                            alt=""
+                          />
+                          <img
+                            className={`me-1 ${styles.img_cover}`}
+                            src={`/images/public_images/product_image/${comdata.trails_sid}-2.jpg`}
+                            alt=""
+                          />
+                          {/* FIXME: background url 寫在css 要如何置換圖片 */}
+                          {/* <img className="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> */}
+                          <div
+                            className={`d-flex justify-content-around ${styles.img_wrap}`}
+                          >
+                            <h4 className="mb-0 lh-lg fw-bold align-self-center ">
+                              +2張
+                            </h4>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                ))
+              : ''}
             {/* pagination */}
             <div
               className={`page-bar col d-none d-lg-flex align-self-center ${styles.details_pagination}`}

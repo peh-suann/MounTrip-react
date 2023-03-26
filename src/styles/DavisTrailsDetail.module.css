@@ -108,6 +108,7 @@ body {
   line-height: 28px;
   text-align: justify;
   padding-bottom: 40px;
+  margin-bottom: -20px;
 }
 
 .img_contain {
@@ -420,12 +421,12 @@ height: 30px;
   width: 797px;
   height: 560px;
   position: relative;
-  top: -60px;
+  top: -90px;
   border: none;
 }
 
 .gpx_wrap {
-  height: 500px;
+  height: 450px;
   border: 2px solid #eee;
   display: inline-block;
   overflow: hidden;

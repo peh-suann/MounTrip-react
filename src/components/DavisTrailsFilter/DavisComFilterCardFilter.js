@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 // import { useLocation } from 'react-router-dom'
 
 import styles from '../../styles/DavisTrailsFilter.module.css'
+import KexinFavoriteBtnOff from '../KexinFavoriteBtnOff'
 
 // API
 import { FILTER_ALL_DATA } from '../../connections/api-config'
+
+// 讀取收藏
+import AuthContext from '../../contexts/AuthContexts'
+import { USER_FAV } from '../../connections/api-config'
 
 function DavisComFilterCardFilter(props) {
   const { filterByKeyword, keywordpr, startdatepr, enddatepr, maxpeplepr } =
@@ -52,6 +57,37 @@ function DavisComFilterCardFilter(props) {
     localStorage.setItem('collectList', JSON.stringify(collectList))
   }
 
+  // 讀取收藏
+  const { myAuth, logout } = useContext(AuthContext)
+  const [fav, setFav] = useState([])
+  const [liked, setLiked] = useState(false)
+
+  const getFavorite = async (req, res) => {
+    if (myAuth.account) {
+      // console.log('登入狀態')
+      const userString = localStorage.getItem('myAuth')
+      const userData = JSON.parse(userString)
+      const token = userData.token
+      const mid = userData.accountId
+
+      try {
+        const res = await axios(USER_FAV, {
+          headers: { Authorization: `Bearer ${token}`, sid: mid },
+        })
+        if (!res.data) return res.sendStatus(401)
+
+        const currentFav = res.data
+        setFav(currentFav)
+      } catch (err) {
+        console.log('coupon axios err')
+        return []
+      }
+    } else {
+      // console.log('未登入')
+      setLiked(false)
+    }
+  }
+
   // 分頁
   const [currentPage, setCurrentPage] = useState(1)
   const perPage = 10
@@ -75,12 +111,12 @@ function DavisComFilterCardFilter(props) {
   }
 
   // 分頁，分割同樣trails_sid的資料
-  const oddRows = (data) => {
-    if (!Array.isArray(data)) {
-      return []
-    }
-    return data.filter((_, index) => index % 2 === 0)
-  }
+  // const oddRows = (data) => {
+  //   if (!Array.isArray(data)) {
+  //     return []
+  //   }
+  //   return data.filter((_, index) => index % 2 === 0)
+  // }
 
   // getListData()
   useEffect(() => {
@@ -94,6 +130,7 @@ function DavisComFilterCardFilter(props) {
   useEffect(() => {
     // console.log(' setCurrentPage useEffect--')
     setCurrentPage(currentPage)
+    getFavorite()
     return () => {
       // console.log('unmount AbList--')
     }
@@ -104,45 +141,50 @@ function DavisComFilterCardFilter(props) {
       {/* {console.log(startdatepr)} */}
       {/* {data.rows.map((r) => ( */}
       {dataSubset(
-        oddRows(
-          filterByKeyword(
-            collect,
-            keywordpr,
-            startdatepr,
-            enddatepr,
-            maxpeplepr
-          )
-        )
+        filterByKeyword(collect, keywordpr, startdatepr, enddatepr)
       ).map((r) => (
         <div className="col" key={r.sid}>
-          {/* {console.log(dataSubset(alldata.rows))} */}
+          {/* {console.log(
+            dataSubset(
+              filterByKeyword(collect, keywordpr, startdatepr, enddatepr)
+            )
+          )} */}
           {/* card*n  */}
+
           <div className={`${styles.trails_card}`}>
             <div className="row g-0 d-flex flex-row ">
               <div className={`col-4 ${styles.trails_img_wrap}`}>
-                <img
-                  src={`/images/public_images/product_image/${r.trail_sid}-1.jpg`}
-                  className={`rounded-start ${styles.trails_img}`}
-                  alt="..."
-                />
+                <Link
+                  className={`${styles.link_style}`}
+                  //後端要有 ${trails.sid} or ${batch.trail_sid}
+                  to={`/trails-detail?page=${r.trail_sid}`}
+                >
+                  <img
+                    src={`/images/public_images/product_image/${r.trail_sid}-1.jpg`}
+                    className={`rounded-start ${styles.trails_img}`}
+                    alt="..."
+                  />
+                </Link>
               </div>
               <div className="col ">
                 <div className={`card-body ${styles.card_padding}`}>
-                  <h5 className={`${styles.product_name}`}>
+                  <Link
+                    className={`${styles.link_style}`}
+                    to={`/trails-detail?page=${r.trail_sid}`}
+                  >
+                    <h5 className={`${styles.product_name}`}>{r.trail_name}</h5>
+                  </Link>
+                  <div className="mb-2">
                     <Link
                       className={`${styles.link_style}`}
-                      //後端要有 ${trails.sid} or ${batch.trail_sid}
                       to={`/trails-detail?page=${r.trail_sid}`}
                     >
-                      {r.trail_name}
+                      <p
+                        className={`mb-0 ${styles['overflow_p']} ${styles['p_line_clamp']} `}
+                      >
+                        {r.trail_describ}
+                      </p>
                     </Link>
-                  </h5>
-                  <div className="mb-2">
-                    <p
-                      className={`mb-0 ${styles['overflow_p']} ${styles['p_line_clamp']} `}
-                    >
-                      {r.trail_describ}
-                    </p>
                   </div>
                   <div className="d-flex flex-row align-items-center mb-3">
                     <div className="mb-2 me-2">
@@ -244,33 +286,27 @@ function DavisComFilterCardFilter(props) {
                 </div>
               </div>
               {/* 收藏button FIXME: */}
-              <div className="col-1  d-flex justify-content-end align-items-start">
-                <button
+              <div
+                className={`col-1  d-flex justify-content-end align-items-start`}
+              >
+                <span className={`${styles.heart_btn_position}`}>
+                  <KexinFavoriteBtnOff
+                    trailSID={r.trail_sid}
+                    liked={
+                      fav &&
+                      fav.filter((v, i) => {
+                        return v.trails_sid === r.trail_sid
+                      }).length > 0
+                        ? true
+                        : false
+                    }
+                  />
+                </span>
+
+                {console.log(r.trail_sid)}
+                {/* <button
                   onClick={() => {
                     setCollect(toggleCollect(collect, r.sid))
-                    // storage()
-                    // 回傳batch的sid
-                    // console.log(alldata.rows[`${r.trail_sid}`])
-                    // console.log(
-                    //   oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                    // )
-                    // oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-
-                    r.becollect
-                      ? collectList.push(
-                          oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                        )
-                      : collectList.pop(
-                          oddRows(alldata.rows)[`${r.trail_sid - 1}`].trail_sid
-                        )
-                    // : collectList.filter((v) => {
-                    //   return (
-                    //     v !==
-                    //     oddRows(alldata.rows)[`${r.trail_sid - 1}`]
-                    //       .trail_sid
-                    //   )
-                    // })
-                    updateLocalStorage(collectList)
                   }}
                   className={`${styles.heart_btn}`}
                 >
@@ -308,7 +344,7 @@ function DavisComFilterCardFilter(props) {
                       />
                     </svg>
                   )}
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
