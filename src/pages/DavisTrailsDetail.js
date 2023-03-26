@@ -60,7 +60,7 @@ export default function DavisTrailsDetail(rows) {
     return rows_data.slice(0, 1)
   }
 
-  // console.log('filterFromBatch', filterFromBatch(rows_data))
+  // console.log('filterFromBatch', data.rows[0].lat)
 
   // const [count, setCount] = useState(0)
   // console.log('filterFromBatch', filterFromBatch(rows_data))
@@ -76,6 +76,10 @@ export default function DavisTrailsDetail(rows) {
   const formattedDateEnd = format(enddate, 'yyyy-MM-dd')
   const [newstartdate, setNewstartdate] = useState(formattedDate)
   const [newenddate, setNewenddate] = useState(formattedDateEnd)
+
+  // gpx props
+  let newdata = data.rows[0]
+  console.log('filterFromBatch', newdata)
 
   return (
     <>
@@ -483,7 +487,8 @@ export default function DavisTrailsDetail(rows) {
                   </div>
 
                   {/* gpx */}
-                  <DavisTrailsGpx />
+                  <DavisTrailsGpx newdata={newdata} />
+                  {/* <DavisGpxLeaflet newdata={newdata} /> */}
 
                   {/* shop-button-group TODO: */}
                   <DavisTrailsShopGroup

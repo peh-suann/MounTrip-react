@@ -80,7 +80,7 @@ function DavisTrailsRating(props) {
   }
 
   useEffect(() => {
-    console.log(comdata)
+    // console.log(comdata)
     getCommentData(page_sid)
   }, [page_sid])
 
@@ -91,7 +91,8 @@ function DavisTrailsRating(props) {
   return (
     <>
       {/* login commont */}
-      <div className="d-flex w-100 col flex-column ">
+      {/* FIXME:登錄評論 */}
+      {/* <div className="d-flex w-100 col flex-column ">
         <div
           className={`w-100 d-flex flex-row mb-lg-4 ${styles.login_commont_star}`}
         >
@@ -156,6 +157,7 @@ function DavisTrailsRating(props) {
             />
           </svg>
         </div>
+
         <textarea
           className={`d-none d-lg-flex col-lg-10 align-self-center ${styles.login_commont}`}
           name="login_commont"
@@ -173,7 +175,7 @@ function DavisTrailsRating(props) {
         <button className={` d-lg-none ${styles.enter_commont_phone}`}>
           發布評論
         </button>
-        {/* FIXME:登錄評論 */}
+
         <button
           onClick={() => {
             if (myAuth.account) {
@@ -185,7 +187,7 @@ function DavisTrailsRating(props) {
         >
           發布評論
         </button>
-      </div>
+      </div> */}
 
       <section id="commont_card">
         {/*commont card */}

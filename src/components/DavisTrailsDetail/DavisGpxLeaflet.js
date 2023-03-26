@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react'
 import 'leaflet/dist/leaflet.css'
 // import mapData from './mapdata1.geo.json'
 // import mapData from './gpx檔/1.象山親山步道.geo.json'
-import mapData from './gpx檔/2.七星山主東0423.json'
+import mapData from './gpx檔/2.json'
 
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
+
+import styles from '../../styles/DavisTrailsDetail.module.css'
 
 // 地圖上的mark標記
 // const demoDataFromServer = [
@@ -28,7 +30,15 @@ const customMarker = new L.Icon({
   popupAnchor: [2, -40],
 })
 
-function DavisGpxLeaflet() {
+const customMarkertwo = new L.Icon({
+  iconUrl: 'https://unpkg.com/leaflet@1.5.1/dist/images/marker-icon.png',
+  iconSize: [25, 41],
+  iconAnchor: [10, 41],
+  popupAnchor: [2, -40],
+})
+
+function DavisGpxLeaflet(props) {
+  const { newdata } = props
   const [state, setState] = useState([])
 
   console.log(mapData)
@@ -42,31 +52,41 @@ function DavisGpxLeaflet() {
   }, [])
 
   return (
-    <MapContainer
-      center={[25.166165, 121.56336]}
-      zoom={10}
-      style={{ height: '100vh' }}
-    >
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
-      />
-      {/* {state.map(({ lat, lng }, index) => (
+    <div className={`col mb-2 mb-3 ${styles.gpx_wrap}`}>
+      {/* {newdata.map((v) => ( */}
+      <MapContainer
+        center={[newdata.lat, newdata.lon]}
+        // center={[25.166165, 121.56336]}
+        zoom={15}
+        style={{ height: '100vh' }}
+        className={`col mb-2 ${styles.gpx_iframe}`}
+      >
+        {/* {console.log('MapContainer', newdata)} */}
+        {console.log('MapContainer', newdata.trail_name)}
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
+        />
+        {/* {state.map(({ lat, lng }, index) => (
         <Marker position={[lat, lng]} icon={customMarker} key={index}>
           <Popup>
             {index + 1} is for popup with lat: {lat} and lon {lng}
           </Popup>
         </Marker>
       ))} */}
-      <Marker
-        position={[25.166165, 121.56336]}
-        // position={[25.027352, 121.570639]}
-        icon={customMarker}
-      >
-        <Popup>is for popup with lat:</Popup>
+        {/* <Marker
+          position={[newdata.lat, newdata.lon]}
+          // position={[25.176844, 121.547393]}
+
+          icon={customMarker}
+        >
+          <Popup>is for popup with lat:</Popup>
+        </Marker> */}
+        {/* <Marker position={[25.176844, 121.547393]} icon={customMarkertwo} /> */}
         <GeoJSON data={mapData} />
-      </Marker>
-    </MapContainer>
+      </MapContainer>
+      {/* ))} */}
+    </div>
   )
 }
 
