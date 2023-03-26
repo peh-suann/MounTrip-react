@@ -123,7 +123,7 @@
 } */
 @font-face {
   font-family: 'Montserrat';
-  src: url('./fonts/Montserrat/static/Montserrat-Black.ttf');
+  src: url('./fonts/Montserrat/Montserrat-Black.ttf');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
     U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
     U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -132,7 +132,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./fonts/Montserrat/static/Montserrat-ExtraBold.ttf');
+  src: url('./fonts/Montserrat/Montserrat-ExtraBold.ttf');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
     U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
     U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -141,7 +141,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./fonts/Montserrat/static/Montserrat-Bold.ttf');
+  src: url('./fonts/Montserrat/Montserrat-Bold.ttf');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
     U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
     U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -150,7 +150,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./fonts/Montserrat/static/Montserrat-SemiBold.ttf');
+  src: url('./fonts/Montserrat/Montserrat-SemiBold.ttf');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
     U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
     U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -159,7 +159,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./fonts/Montserrat/static/Montserrat-Medium.ttf');
+  src: url('./fonts/Montserrat/Montserrat-Medium.ttf');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
     U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
     U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -168,7 +168,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./fonts/Montserrat/static/Montserrat-Regular.ttf');
+  src: url('./fonts/Montserrat/Montserrat-Regular.ttf');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
     U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
     U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -177,7 +177,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./fonts/Montserrat/static/Montserrat-Light.ttf');
+  src: url('./fonts/Montserrat/Montserrat-Light.ttf');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
     U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
     U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -186,7 +186,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./fonts/Montserrat/static/Montserrat-ExtraLight.ttf');
+  src: url('./fonts/Montserrat/Montserrat-ExtraLight.ttf');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
     U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
     U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
@@ -195,7 +195,7 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('./fonts/Montserrat/static/Montserrat-Thin.ttf');
+  src: url('./fonts/Montserrat/Montserrat-Thin.ttf');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2074, U+20A0-20CF,
     U+2100-214F, U+2153-215F, U+2190-21FF, U+2200-22FF, U+2302-23F3, U+2460-24FF,
     U+2500-257F, U+25A0-25FF, U+2600-26FF, U+2C60-2C7F, U+A720-A7FF, U+FB00-FB06,
