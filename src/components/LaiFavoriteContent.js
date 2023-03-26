@@ -33,7 +33,7 @@ export default function LaiFavoriteContent() {
 
   useEffect(() => {
     getFavorite()
-  },[])
+  }, [])
   return (
     <>
       <div className={styles['member-data']}>
@@ -64,31 +64,9 @@ export default function LaiFavoriteContent() {
               {/* <p id={styles['fav-amount']}>5</p> */}
               <p>個行程</p>
             </div>
-            {/* <div className={styles['filter-btn']}>
-              <select>
-                <option>排列順序</option>
-                <option>依照加入時間</option>
-                <option>依照價格排序</option>
-                <option>依照行程時間</option>
-              </select>
-            </div> */}
           </div>
           <div className={styles['fav-list']}>
-            {/* <FavoriteCard
-              img={''}
-              title={'草嶺古道｜探索新北一日遊'}
-              describ={
-                '你見過南橫之美嗎？自從2009年8月，南橫公路中斷之後，美麗的南橫三星便淪為黑山、少有人探訪，直到最近才又終於開放了許多山友鍾情的南橫三星！塔關山、關山嶺山、庫哈諾辛山皆為A級百岳，是適合當日來回的平易、絕美山嶺，封閉多年的原始森林風華更甚以往，台灣368還安排了專車接送往返民宿及各登山口，讓你飽覽南橫的沿線風光、更讓你輕鬆的入手三座百岳。'
-              }
-              location={'宜蘭縣頭城鎮'}
-              // TODO星星數量的傳值
-              starAmount={''}
-              price={'2,400'}
-            /> */}
             {fav.map((v, i) => {
-              {
-                /* const priceFormat = v.price.toLocaleString() */
-              }
               return (
                 <FavoriteCard
                   key={v.trails_sid}

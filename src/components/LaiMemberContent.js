@@ -15,10 +15,10 @@ export default function MemberContent(props) {
     modalOpen,
     pwdModalOpen,
     handlePwdModalOpen,
-    pwdClose,
-    pwdOpen,
     close,
     open,
+    updateModal,
+    setUpdateModal,
   } = props
 
   // console.log('user:',user)
@@ -137,6 +137,7 @@ export default function MemberContent(props) {
       if (!res) return alert('上傳失敗')
       // alert('更新成功')
       // alert('會員資料更新成功')
+      setUpdateModal(true)
       setIsSubmit(true)
     }
   }
@@ -207,18 +208,18 @@ export default function MemberContent(props) {
   useEffect(() => {
     if (Object.keys(error).length === 0 && isSubmit) {
       // console.log(userInfo.userData)
-      alert('會員資料更新成功')
+      // alert('會員資料更新成功')
     }
   }, [error])
 
   //彈出重設密碼表單
-  function modalControl() {
-    if (pwdModalOpen) {
-      pwdClose()
-    } else {
-      pwdOpen()
-    }
-  }
+  // function modalControl() {
+  //   if (pwdModalOpen) {
+  //     pwdClose()
+  //   } else {
+  //     pwdOpen()
+  //   }
+  // }
   //預防按下enter彈出表單
   function preventModalShow(e) {
     if (e.key === 'Enter') {

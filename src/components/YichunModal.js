@@ -15,14 +15,16 @@ function Modal(props) {
       <div className={styles.modal_box}>
         <div dangerouslySetInnerHTML={{ __html: content }}></div>
         {btnToggle ? (
-          <Button
-            text={btnText}
-            link={btnLink}
-            handleClick={handleClick}
-          ></Button>
+          <>
+            <Button
+              text={btnText}
+              link={btnLink}
+              handleClick={handleClick}
+            ></Button>
+          </>
         ) : (
           ''
-        )} 
+        )}
       </div>
     </div>
   )

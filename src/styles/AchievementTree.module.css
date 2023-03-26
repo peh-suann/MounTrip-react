@@ -95,3 +95,107 @@
     bottom: 0px;
     left:40%
 }
+@media screen and (max-width:390px) {
+    .tree_div{
+        width: 100%;
+        height: 150px;
+        border-radius: 15px;
+        position: relative;
+    }
+    .tree1_1{
+        /* width: 60%; */
+        height: 100%;
+        position:absolute;
+        bottom: 0px;
+        left:-6%;
+        transform-origin: bottom;
+        transform-box: fill-box;
+    }
+    .tree2_1{
+        /* width: 50%; */
+        display: none;
+        height: 30%;
+        position:absolute;
+        transform-origin: bottom;
+        transform-box: fill-box;
+        bottom: 0px;
+        left: 45%;
+        
+    }
+    .tree2_2{
+        /* width: 50%; */
+        height: 100%;
+        position:absolute;
+        transform-origin: bottom;
+        transform-box: fill-box;
+        bottom: 0px;
+        left: 60%;
+    }
+    .tree3_1{
+        /* width: 50%; */
+        height: 100%;
+        position:absolute;
+        transform-origin: bottom;
+        transform-box: fill-box;
+        bottom: 0px;
+        left:65%;
+    }
+    .tree3_2{
+        /* width: 50%; */
+        height: 100%;
+        position:absolute;
+        transform-origin: bottom;
+        transform-box: fill-box;
+        bottom: 0px;
+        left:5%;
+    }
+    .tree4_1{
+        /* width: 50%; */
+        display: none;
+        height: 65%;
+        position:absolute;
+        transform-origin: bottom;
+        transform-box: fill-box;
+        bottom: 0px;
+        left: 28%;
+    }
+    .tree4_2{
+        /* width: 50%; */
+        display: none;
+        height: 110%;
+        position:absolute;
+        transform-origin: bottom;
+        transform-box: fill-box;
+        bottom: 0px;
+        left: 65%;
+    }
+    .tree5_1{
+        /* width: 50%; */
+        display: none;
+        /* height: 90%;
+        position:absolute;
+        transform-origin: bottom;
+        transform-box: fill-box;
+        bottom: 0px;
+        left:78%; */
+    }
+    .tree5_2{
+        /* width: 50%; */
+        height: 100%;
+        position:absolute;
+        transform-origin: bottom;
+        transform-box: fill-box;
+        bottom: 0px;
+        left:10%;
+    }
+    .sprout_1{
+        /* width: 50%; */
+        height: 100%;
+        position:absolute;
+        transform-origin: bottom;
+        transform-box: fill-box;
+        bottom: 0px;
+        left:30%
+    }
+    
+}

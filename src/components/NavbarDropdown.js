@@ -27,8 +27,8 @@ import { contourDensity } from 'd3'
 
 function NavbarDropdown(props) {
   // const { mapInteraction } = useContext(LoginContext)
- 
-  const {  mapInteraction,showBox, setShowbox } = useContext(LoginContext)
+
+  const { mapInteraction, showBox, setShowbox } = useContext(LoginContext)
   const { showList, setShowList } = props
   const { myAuth, logout } = useContext(AuthContext)
   const navigate = useNavigate()
@@ -95,31 +95,31 @@ function NavbarDropdown(props) {
               className={`d-flex align-items-center ${DropdownCss['member-list']}`}
             >
               <FontAwesomeIcon icon={faAward} />
-              <a
+              <Link
                 className={`${DropdownCss['dropdown-p']} mb-0`}
-                href="/member"
+                to="/member"
                 onClick={() => {
                   setMemberPage('achievement')
                   localStorage.setItem('memberPage', 'achievement')
                 }}
               >
                 成就獎章
-              </a>
+              </Link>
             </div>
             <div
               className={`d-flex align-items-center ${DropdownCss['member-list']}`}
             >
               <FontAwesomeIcon icon={faClock} />
-              <a
+              <Link
                 className={`${DropdownCss['dropdown-p']} mb-0`}
-                href="/member"
+                to="/member"
                 onClick={() => {
                   setMemberPage('history-order')
                   localStorage.setItem('memberPage', 'history-order')
                 }}
               >
                 歷史訂單
-              </a>
+              </Link>
             </div>
             <div className="d-flex align-items-center">
               <svg
@@ -137,31 +137,31 @@ function NavbarDropdown(props) {
                   strokeLinejoin="round"
                 />
               </svg>
-              <a
+              <Link
                 className={`${DropdownCss['dropdown-p']} mb-0`}
-                href="/member"
+                to="/member"
                 onClick={() => {
                   setMemberPage('comment')
                   localStorage.setItem('memberPage', 'comment')
                 }}
               >
                 過往評論
-              </a>
+              </Link>
             </div>
             <div
               className={`${DropdownCss['bottom-line']} d-flex align-items-center ${DropdownCss['member-list']}`}
             >
               <FontAwesomeIcon icon={faHeart} />
-              <a
+              <Link
                 className={`${DropdownCss['dropdown-p']} mb-0`}
-                href="/member"
+                to="/member"
                 onClick={() => {
                   setMemberPage('favorite')
                   localStorage.setItem('memberPage', 'favorite')
                 }}
               >
                 收藏路線
-              </a>
+              </Link>
             </div>
 
             <button

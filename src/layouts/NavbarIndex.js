@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import AuthContext from '../contexts/AuthContexts'
 import { StatusContext } from '../pages/KexinIndex'
 import { LoginContext } from '../App'
@@ -9,7 +9,6 @@ import { SELECT_MEMBER } from '../connections/api-config'
 import YichunModal from '../components/YichunModal'
 import axios from 'axios'
 import { USER_AVATAR } from '../connections/api-config'
-
 
 // styles
 import styles from './../styles/NavbarIndex.module.css'
@@ -54,7 +53,7 @@ export default function NavBar() {
   const [data, setData] = useState({
     rows: [],
   })
-  // const getMember = function 
+  // const getMember = function
   const getMember = async (sid) => {
     try {
       const response = await axios.get(SELECT_MEMBER, {
@@ -66,14 +65,12 @@ export default function NavBar() {
     } catch (err) {}
   }
 
-
   useEffect(() => {
     getMember(myAuth.accountId)
   }, [])
 
-
-  console.log('data',data[0])
-  console.log('data',!!data[0])
+  console.log('data', data[0])
+  console.log('data', !!data[0])
 
   if (showBox === 2 || showBox === 1) {
     setTimeout(() => {

@@ -723,7 +723,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 200px;
+        margin-bottom: 0px;
         
         /* justify-content: center; */
     }
@@ -762,4 +762,19 @@
     width: 100%;
     height: 350px;
     border-radius: 15px;
+}
+@media  screen and (max-width:390px) {
+    .levelText{
+        /* display: none; */
+        font-size: 135px;
+        font-weight: 900;
+        color: var(--mtgreen-5);
+        z-index: 5;
+        position: absolute;
+        top:-60px;
+        left:50%;
+        /* right:0; */
+    
+    
+    }
 }
