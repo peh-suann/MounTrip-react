@@ -64,7 +64,7 @@ function IanShoppingCart1() {
   const cartSid = storage.map((v, i) => {
     return v.sid
   })
-  const total = { total: show ? finallyTotal : cart.cartTotal }
+  const total = { total: mySelect ? finallyTotal : cart.cartTotal }
   const JsonTotal = JSON.stringify(total)
 
   return (
@@ -338,7 +338,7 @@ function IanShoppingCart1() {
                 日期
               </div>
               <div
-                className={`${styles['mobile-none']} ${styles.w4} text-center`}
+                className={`${styles['mobile-none']} ${styles.w4} text-center d-flex justify-content-center`}
               >
                 單件價格
               </div>
@@ -411,11 +411,11 @@ function IanShoppingCart1() {
                       </div>
                     </div>
                     <div
-                      className={`${styles.w3} ${styles['mobile-none']} ${styles.cartProductp} text-center`}
+                      className={`${styles['mobile-none']} ${styles.cartProductp} text-center me-lg-5`}
                     >
-                      <p className={`mb-lg-2`}>{v.batch_start}</p>
+                      <p className={`mb-lg-2 w-100`}>{v.batch_start}</p>
                       <p className={`mb-lg-2`}>|</p>
-                      <p className={`mb-0`}>{v.batch_end}</p>
+                      <p className={`mb-0 w-100`}>{v.batch_end}</p>
                     </div>
 
                     <div
@@ -623,6 +623,7 @@ function IanShoppingCart1() {
                       onClick={() => {
                         getUseCoupon()
                         setShow(true)
+                        console.log(mySelect)
                       }}
                       type="button"
                       className={`col-3 ${styles.orderButton} btn btn-unstyle`}
@@ -658,7 +659,7 @@ function IanShoppingCart1() {
                   >
                     <p className={`${styles['p-bold']} mb-0`}>合計</p>
                     <p className={`${styles['p-bold']} mb-0`}>
-                      NTD ${show ? finallyTotal : 0}
+                      NTD ${mySelect === '' ? cart.cartTotal : finallyTotal}
                       {/* {finallyTotal} */}
                       {/* {show ? finallyTotal : 0} */}
                     </p>

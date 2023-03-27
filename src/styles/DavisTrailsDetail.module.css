@@ -199,7 +199,14 @@ body {
   height: 43px;
   padding: 6px 24px;
 }
-
+.modal{
+  background-color: var(--mtyellow-4);
+  border-radius: 10px;
+}
+.modalContent{
+  background-color: var(--mtyellow-4);
+  border-radius: 10px;
+}
 .shopModal_footer{
   height: 70px;
 }

@@ -213,7 +213,7 @@ function IanDifficulty() {
                       </div>
                       <div>
                         <p className={'d-flex justify-content-end mb-1'}>NTD</p>
-                        <p>{v.price}</p>
+                        <h4 className={`${styles.tPSSCardDiv_p}`}>{v.price}</h4>
                       </div>
                     </div>
                   </div>
@@ -276,7 +276,7 @@ function IanDifficulty() {
                       </div>
                       <div>
                         <p className={'d-flex justify-content-end mb-1'}>NTD</p>
-                        <p>{v.price}</p>
+                        <h4 className={`${styles.tPSSCardDiv_p}`}>{v.price}</h4>
                       </div>
                     </div>
                   </div>
@@ -339,7 +339,7 @@ function IanDifficulty() {
                       </div>
                       <div className={`${styles.tPSSCard_div}`}>
                         <p className={'d-flex justify-content-end mb-1'}>NTD</p>
-                        <p className={`${styles.tPSSCardDiv_p}`}>{v.price}</p>
+                        <h4 className={`${styles.tPSSCardDiv_p}`}>{v.price}</h4>
                       </div>
                     </div>
                   </div>

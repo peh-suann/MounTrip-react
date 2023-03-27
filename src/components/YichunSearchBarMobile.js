@@ -41,16 +41,6 @@ function YichunSearchBarMobile() {
             />
           </div>
         </div>
-        <div className={styles.mobile_input}>
-          <label htmlFor="num_of_ppl">人數</label>
-          <div className={styles.input_icon}>
-            <input type="text" name="num_of_ppl" id="num_of_ppl" />
-            <FontAwesomeIcon
-              icon={faUser}
-              style={{ color: 'var(--mtgreen-1)', fontSize: '18px' }}
-            />
-          </div>
-        </div>
       </div>
       <div className={styles.input_field}>
         <label htmlFor="date">日期</label>
@@ -67,7 +57,11 @@ function YichunSearchBarMobile() {
           </div>
         </div>
       </div>
-      <Button text={'搜尋'} style={{ width: '100%', paddingTop: '10px' }} />
+      <Button
+        text={'搜尋'}
+        style={{ width: '100%', paddingTop: '10px' }}
+        link={'trails-filter'}
+      />
     </div>
   )
 }

@@ -520,6 +520,10 @@ section.weather {
   border-radius: 10px;
   overflow: hidden;
 }
+.weather_layout {
+  display: flex;
+  width: 100%;
+}
 .weather_box .weather_search {
   padding: 30px 60px;
   display: flex;
@@ -588,7 +592,7 @@ section.weather {
     /* top: 35px; */
     transform: scale(1.05);
   }
-  100%{
+  100% {
     /* top: 40px; */
   }
 }
@@ -754,10 +758,7 @@ section.test .test_info button {
     flex-direction: column;
   }
   .search_bar .mobile_input:first-child {
-    width: 60%;
-  }
-  .search_bar .mobile_input:last-child {
-    width: 36%;
+    width: 100%;
   }
   .search_bar label {
     font-weight: 400;
@@ -802,6 +803,18 @@ section.test .test_info button {
   .search_bar > a > button {
     width: 100%;
     border-radius: 10px;
+  }
+  .filter_buttons {
+    gap: 12px;
+  }
+  .filter_buttons button {
+    padding: 8px 12px;
+    line-height: 120%;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  .filter_buttons button.disable {
+    border: 1px solid var(--mtgreen-1);
   }
   /* products -------------------------------------------- */
   section.products {
@@ -879,6 +892,7 @@ section.test .test_info button {
 
     width: 100%;
     flex-direction: column;
+    display: none;
   }
   section.difficulty .diff_intro_list {
     flex-direction: row;
@@ -908,6 +922,14 @@ section.test .test_info button {
   }
   section.difficulty .diff_recommend .diff_products {
     flex-direction: column;
+  }
+  /* weather -------------------------------------------- */
+  section.weather {
+    padding: 40px 15px;
+    display: none;
+  }
+  .weather_box {
+    /* flex-direction: row; */
   }
   /* test -------------------------------------------- */
   section.test {

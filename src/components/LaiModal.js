@@ -1,8 +1,9 @@
 // Packages
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import axios from 'axios'
 import { USER_UPLOAD } from '../connections/api-config'
 import { motion } from 'framer-motion'
+import { UploadContext } from '../App'
 
 // Components
 import Button from './Button'
@@ -44,7 +45,9 @@ function Modal(props) {
   }
   const [image, setImage] = useState({ preview: '', data: '' })
   const [status, setStatus] = useState('')
-  const [uploaded, setUploaded] = useState(false)
+  // const [uploaded, setUploaded] = useState(false)
+  const { uploaded, setUploaded } = useContext(UploadContext)
+
   useEffect(() => {
     getUser()
   }, [uploaded])

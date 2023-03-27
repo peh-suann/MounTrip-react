@@ -359,12 +359,11 @@ color: rgba(27, 39, 39, 0.8);
 }
 
 
-div.tPSSCard_div > p.tPSSCardDiv_p{
-font-weight: 400;
-font-size: 14px;
+h4.tPSSCardDiv_p{
+font-weight: 800;
 line-height: 140%;
 letter-spacing: 0.05em;
-background-color: var(--mtgreen-1);
+color: var(--mtgreen-1);
 }
     
     

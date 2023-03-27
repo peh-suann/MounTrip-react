@@ -10,12 +10,12 @@ import KexinFavoriteBtnOff from './KexinFavoriteBtnOff'
 function KexinFixedBox(props) {
   const { el, liked } = props
   // console.log(liked)
-  const { cart, setCart } =
-    useContext(StatusContext)
+  const { cart, setCart } = useContext(StatusContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
   const [chooseBatch, setChooseBatch] = useState(0)
   const { myAuth, logout } = useContext(AuthContext)
-  const { showBox, setShowbox,mapInteraction, setMapInteraction } = useContext(LoginContext)
+  const { showBox, setShowbox, mapInteraction, setMapInteraction } =
+    useContext(LoginContext)
 
   // 購物車
   const { addItem } = useCart()
@@ -48,11 +48,45 @@ function KexinFixedBox(props) {
     trail_time: myProduct.trail_time,
     trails_display: 0,
   }
-  // // console.log('Rows:', Rows)
+  console.log('Rows:', Rows)
+  console.log('el:', el)
   // const batch = Rows.rows[0].batch_start
   // // const handleChange(event) {
   // //   setChooseBatch(event);
   // // }
+  if (el && el.length > 0) {
+    Rows.batch_start = el
+      ?.filter((v, i) => {
+        // console.log(v.batch_sid)
+        return v.batch_sid === +detailCount
+      })[0]
+      ?.batch_start.slice(0, 10)
+
+    Rows.batch_end = el
+      ?.filter((v, i) => {
+        // console.log(v.batch_sid)
+        return v.batch_sid === +detailCount
+      })[0]
+      ?.batch_end.slice(0, 10)
+
+    console.log(
+      el?.filter((v, i) => {
+        // console.log(v.batch_sid)
+        return v.batch_sid === +detailCount
+      })[0]
+    )
+  }
+
+  // console.log(+detailCount)
+  // console.log(
+  //   'el',
+  //   el
+  //     ?.filter((v, i) => {
+  //       // console.log(v.batch_sid)
+  //       return v.batch_sid === +detailCount
+  //     })[0]
+  //     .batch_start.slice(0, 10)
+  // )
 
   return (
     <>
@@ -85,13 +119,14 @@ function KexinFixedBox(props) {
               <img src="images/kexin/svg/plus.svg" alt="" />
             </button>
           </div>
-          <button className={`${styles['like']} btn`}
+          <button
+            className={`${styles['like']} btn`}
             onClick={() => {
-            if (myAuth.account) {
-            } else {
-              setShowbox(3)
-            }
-          }}
+              if (myAuth.account) {
+              } else {
+                setShowbox(3)
+              }
+            }}
           >
             <KexinFavoriteBtnOff trailSID={myProduct.sid} liked={liked} />
           </button>
@@ -113,15 +148,28 @@ function KexinFixedBox(props) {
               <div className="d-flex justify-content-between align-items-center">
                 <select
                   onChange={(e) => {
+                    console.log(e.target.value)
+                    // console.log( el[detailCount].batch_start)
                     setDetailCount(e.target.value)
-                    Rows.batch_start = el[detailCount].batch_start
-                    Rows.end = el[detailCount].end
-                    Rows.sid = el[detailCount].batch_sid
+                    // console.log(e.target.value, detailCount)
+                    // console.log(
+                    //   el
+                    //     ?.filter((v,i) => {
+                    //       return v.batch_start === detailCount
+                    //     })
+                    //     ?.map((v) => {
+                    //       return v.batch_start
+                    //     })
+                    // )
+
+                    // Rows.batch_start = el[detailCount].batch_start
+                    // Rows.end = el[detailCount].end
+                    // Rows.sid = el[detailCount].batch_sid
                   }}
                 >
                   {el.length
                     ? el.map((v, i) => (
-                        <option key={i} value={i}>
+                        <option key={i} value={v.batch_sid}>
                           {v.trail_time > 24
                             ? `${v.batch_start.slice(
                                 0,

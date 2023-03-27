@@ -81,12 +81,12 @@ function NavbarDropdown(props) {
               </a>
             </li>
             <li>
-              <a className={DropdownMobileCss['link']} href="/">
+              <a className={DropdownMobileCss['link']} href="/difficulty">
                 難易分級
               </a>
             </li>
             <li>
-              <a className={DropdownMobileCss['link']} href="/">
+              <a className={DropdownMobileCss['link']} href="/season">
                 季節推薦
               </a>
             </li>
@@ -105,88 +105,88 @@ function NavbarDropdown(props) {
             >
               <FontAwesomeIcon icon={faUser} />
               <a
-              className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              href="/member"
-              onClick={() => {
-                setMemberPage('member')
-                localStorage.setItem('memberPage', 'member')
-              }}
-            >
-              會員中心
-            </a>
+                className={`${DropdownMobileCss['dropdown-p']} mb-0`}
+                href="/member"
+                onClick={() => {
+                  setMemberPage('member')
+                  localStorage.setItem('memberPage', 'member')
+                }}
+              >
+                會員中心
+              </a>
             </div>
             <div
               className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
             >
               <FontAwesomeIcon icon={faGift} />
               <a
-              className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              href="/member"
-              onClick={() => {
-                setMemberPage('coupon')
-                localStorage.setItem('memberPage', 'coupon')
-              }}
-            >
-              我的優惠券
-            </a>
+                className={`${DropdownMobileCss['dropdown-p']} mb-0`}
+                href="/member"
+                onClick={() => {
+                  setMemberPage('coupon')
+                  localStorage.setItem('memberPage', 'coupon')
+                }}
+              >
+                我的優惠券
+              </a>
             </div>
             <div
               className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
             >
               <FontAwesomeIcon icon={faAward} />
               <a
-              className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              href="/member"
-              onClick={() => {
-                setMemberPage('achievement')
-                localStorage.setItem('memberPage', 'achievement')
-              }}
-            >
-              成就獎章
-            </a>
+                className={`${DropdownMobileCss['dropdown-p']} mb-0`}
+                href="/member"
+                onClick={() => {
+                  setMemberPage('achievement')
+                  localStorage.setItem('memberPage', 'achievement')
+                }}
+              >
+                成就獎章
+              </a>
             </div>
             <div
               className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
             >
               <FontAwesomeIcon icon={faClock} />
               <a
-              className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              href="/member"
-              onClick={() => {
-                setMemberPage('history-order')
-                localStorage.setItem('memberPage', 'history-order')
-              }}
-            >
-              歷史訂單
-            </a>
+                className={`${DropdownMobileCss['dropdown-p']} mb-0`}
+                href="/member"
+                onClick={() => {
+                  setMemberPage('history-order')
+                  localStorage.setItem('memberPage', 'history-order')
+                }}
+              >
+                歷史訂單
+              </a>
             </div>
             <div
               className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center`}
             >
               <FontAwesomeIcon icon={faComment} />
               <a
-              className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              href="/member"
-              onClick={() => {
-                setMemberPage('comment')
-                localStorage.setItem('memberPage', 'comment')
-              }}
-            >
-              過往評論
-            </a>
+                className={`${DropdownMobileCss['dropdown-p']} mb-0`}
+                href="/member"
+                onClick={() => {
+                  setMemberPage('comment')
+                  localStorage.setItem('memberPage', 'comment')
+                }}
+              >
+                過往評論
+              </a>
             </div>
             <div className="d-flex align-items-center">
               <FontAwesomeIcon icon={faHeart} />
               <a
-              className={`${DropdownMobileCss['dropdown-p']} mb-0`}
-              href="/member"
-              onClick={() => {
-                setMemberPage('favorite')
-                localStorage.setItem('memberPage', 'favorite')
-              }}
-            >
-              收藏路線
-            </a>
+                className={`${DropdownMobileCss['dropdown-p']} mb-0`}
+                href="/member"
+                onClick={() => {
+                  setMemberPage('favorite')
+                  localStorage.setItem('memberPage', 'favorite')
+                }}
+              >
+                收藏路線
+              </a>
             </div>
             <div
               className={`${DropdownMobileCss['bottom-padding']} d-flex align-items-center 

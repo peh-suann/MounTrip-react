@@ -1,5 +1,5 @@
 // component
-import React, { useReducer } from 'react'
+import React from 'react'
 import { useEffect, useState } from 'react'
 import DavisTrailsBatch from './DavisTrailsBatch'
 import styles from '../../styles/DavisTrailsDetail.module.css'
@@ -186,8 +186,8 @@ function DavisTrailsShopGroup(props) {
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <div className={`modal-dialog`}>
-            <div className={`modal-content`}>
+          <div className={`modal-dialog ${styles.modal}`}>
+            <div className={`modal-content ${styles.modalContent}`}>
               <div className={`modal-header`}>
                 <h1 className={`modal-title fs-5`} id="exampleModalLabel">
                   已加入購物車
@@ -199,7 +199,9 @@ function DavisTrailsShopGroup(props) {
                   aria-label="Close"
                 ></button>
               </div>
-              <div className={`modal-body`}>{productName}</div>
+              <div className={`modal-body`}>
+                <h5>{productName}</h5>
+              </div>
               <div className={`modal-footer ${styles.shopModal_footer}`}>
                 <button
                   type="button"

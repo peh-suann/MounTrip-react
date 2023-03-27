@@ -244,9 +244,7 @@ export default function Member() {
     }
     setImage(img)
   }
-  useEffect(() => {
-    // getUser2()
-  }, [uploaded])
+
 
   // yichun's coupon
   const {
