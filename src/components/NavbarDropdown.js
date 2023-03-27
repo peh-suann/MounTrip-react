@@ -1,6 +1,7 @@
 // Hooks
 import { useContext, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { useCart } from './IanUseCart'
 
 // Components
 import AuthContext from '../contexts/AuthContexts'
@@ -33,6 +34,7 @@ function NavbarDropdown(props) {
   const { myAuth, logout } = useContext(AuthContext)
   const navigate = useNavigate()
   const { memberPage, setMemberPage } = useContext(MemberContext)
+  const { clearCart } = useCart()
 
   return (
     <>
@@ -172,7 +174,8 @@ function NavbarDropdown(props) {
                 navigate('/index')
                 setShowList(!showList)
                 setShowbox(1)
-                // console.log('looooog', showBox)
+                clearCart()
+                console.log('looooog', showBox)
               }}
             >
               <FontAwesomeIcon icon={faArrowRightToBracket} />

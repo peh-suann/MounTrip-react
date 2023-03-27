@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
-// import './../html/css/shoppingCart4.css'
+import dayjs from 'dayjs'
 import styles from './../styles/IanShoppingCart4.module.css'
 import './../styles/Mountrip.module.css'
 import { ORDER_HISTORY } from '../connections/api-config'
@@ -14,9 +14,10 @@ function IanShoppingCart4() {
   const orderId = localStorage.getItem('lastSid')
   const finalId = `MT230${orderId}`
   const navigate = useNavigate()
-  const total = localStorage.getItem('total')
-  console.log(total)
-  // const
+  const payTotal = JSON.parse(localStorage.getItem('total'))
+  const newPayTotal = payTotal.total
+  console.log('newPayTotal:', newPayTotal)
+  const Date = localStorage.getItem('Date')
 
   return (
     <>
@@ -321,7 +322,9 @@ function IanShoppingCart4() {
         </div>
         <div className={`${styles['mb-15']} d-flex justify-content-between `}>
           <p className={`${styles.mtgrey2}`}>訂單日期</p>
-          <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>2023/01/01</p>
+          <p className={`${styles['fw-600']} ${styles.mtgrey1}`}>
+            {dayjs(Date).format('YYYY-MM-DD')}
+          </p>
         </div>
         <div
           className={`${styles['border-green']} d-flex justify-content-between`}
@@ -336,7 +339,7 @@ function IanShoppingCart4() {
             <div className={`d-flex justify-content-between`}>
               <p className={`${styles['total']} ${styles.mtgrey2}`}>合計</p>
               <p className={`${styles['total']} ${styles.mtgrey1}`}>
-                NTD ${total}
+                NTD ${newPayTotal}
               </p>
             </div>
           </div>
@@ -401,6 +404,8 @@ function IanShoppingCart4() {
                 e.preventDefault()
                 localStorage.removeItem('lastSid')
                 localStorage.removeItem('total')
+                localStorage.removeItem('Date')
+                localStorage.removeItem('AuthSid')
                 navigate('/member')
               }}
             >

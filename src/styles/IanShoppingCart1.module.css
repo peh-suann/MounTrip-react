@@ -136,6 +136,7 @@ section.shopping-cart-contain > div > div.shopping-cart-title > svg {
   width: 5%;
 }
 
+
 .product-col-title {
   color: var(--mtgrey-3);
   margin-bottom: 40px;
@@ -155,12 +156,12 @@ section.shopping-cart-contain > div > div.shopping-cart-title > svg {
   /* border: 1px solid black; */
   /* overflow: hidden; */
 }
-.product-img-wrap .pic {
+.product-img-wrap > div.pic {
   width: 110px;
   height: 110px;
   background-size: cover;
   border-radius: 5px;
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
 }
 .product-title {
   font-weight: 700;
@@ -301,7 +302,7 @@ button.next {
 @media screen and (max-width: 400px) {
   div.IanShoppingCartAll{
     margin: 0px;
-    height: 130vh;
+    height: 145vh;
     padding-top:5% ;
   }
 
@@ -339,17 +340,31 @@ div.shoppingNavbar{
   }
   div.shoppingbottom{
     position: absolute;
-    top: 15%;
+    top: 14%;
   }
   .shopping-cart-process{
     padding-top: 15%;
-    height: 20vh;
+    height: 27vh;
   }
 
   .shopping-cart-process.web-none > a > svg {
     height: 20vh;
   }
-
+.cartProduct{
+  width: 100%;
+  margin: 0px;
+}
+.cartProductp{
+  width: 100%;
+}
+.cartProduct_mobile_p{
+width: 100%;
+font-weight: 400;
+font-size: 14px;
+line-height: 32px;
+letter-spacing: 0.05em;
+margin: 0px;
+}
 
   .web-none {
     display: block;
@@ -411,11 +426,19 @@ div.shoppingNavbar{
     letter-spacing: 0.05em;
   }
 
-  /* #x-green img {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-  } */
+.cancel {
+  position: absolute;
+  left: 90%;
+  border: none;
+  background-color: transparent;
+  padding:0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: var(--mtgreen-1);
+}
+
 
   .product-col-mobile {
     margin-bottom: 24px;
@@ -427,6 +450,9 @@ div.shoppingNavbar{
     line-height: 32px;
     letter-spacing: 0.05em;
   }
+  .priceBetween{
+    width: 100%;
+  }
 
   .single-price {
     font-weight: 400;
@@ -435,6 +461,24 @@ div.shoppingNavbar{
     /* text-align: end; */
     letter-spacing: 0.05em;
   }
+
+.mobilePrice{
+display: flex;
+justify-content: end;
+font-weight: 400;
+font-size: 14px;
+line-height: 150%;
+letter-spacing: 0.05em;
+width: 100%;
+color: var(--mtgrey-1);
+}
+.mobileitemTotal{
+width: 100%;
+font-weight: 700;
+font-size: 18px;
+line-height: 150%;
+letter-spacing: 0.05em;
+}
 
   .total-price {
     font-weight: 700;

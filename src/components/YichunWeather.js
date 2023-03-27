@@ -65,107 +65,76 @@ function YichunWeather(props) {
         aaa
       </button> */}
       <div className={styles.weather_box}>
-        <div className={styles.weather_search}>
-          <label htmlFor="">Location:</label>
-          <select
-            name=""
-            onChange={(e) => {
-              setLocation(e.target.value)
-            }}
-            value={location}
-          >
-            {weather &&
-              weather.map((el, i) => {
-                return (
-                  <option key={el.geocode} value={el.locationName}>
-                    {el.locationName}
-                  </option>
-                )
-              })}
-          </select>
-        </div>
-        <div className={styles.current_weather}>
-          {weather &&
-            weather
-              ?.filter((el, i) => el.locationName === location)[0]
-              ?.weatherElement[1].time[1].elementValue.map((el, i) => {
-                let icon
-                if (i === 1) {
-                  switch (el.value) {
-                    case '01':
-                      icon = <FontAwesomeIcon icon={faSun} />
-                      break
-                    case '02':
-                    case '03':
-                      icon = <FontAwesomeIcon icon={faCloudSun} />
-                      break
-                    case '04':
-                    case '05':
-                    case '06':
-                    case '07':
-                      icon = <FontAwesomeIcon icon={faCloud} />
-                      break
-                    case '08':
-                    case '09':
-                    case '10':
-                    case '11':
-                    case '12':
-                    case '13':
-                    case '14':
-                    case '15':
-                    case '16':
-                    case '17':
-                    case '18':
-                      icon = <FontAwesomeIcon icon={faCloudShowersHeavy} />
-                      break
-                    case '19':
-                      icon = <FontAwesomeIcon icon={faCloudSunRain} />
-                      break
-                    case '20':
-                    case '21':
-                    case '22':
-                      icon = <FontAwesomeIcon icon={faCloudShowersHeavy} />
-                      break
-                    default:
-                      icon = <FontAwesomeIcon icon={faCloud} />
-                  }
-                }
-                return icon
-              })}
-          <div className={styles.orbit}></div>
-          <h3 className={styles.temp}>
+        <div className={styles.weather_layout}>
+          <div className={styles.weather_search}>
+            <label htmlFor="">Location:</label>
+            <select
+              name=""
+              onChange={(e) => {
+                setLocation(e.target.value)
+              }}
+              value={location}
+            >
+              {weather &&
+                weather.map((el, i) => {
+                  return (
+                    <option key={el.geocode} value={el.locationName}>
+                      {el.locationName}
+                    </option>
+                  )
+                })}
+            </select>
+          </div>
+          <div className={styles.current_weather}>
             {weather &&
               weather
-                .filter((el, i) => {
-                  return el.locationName === location
-                })
-                .map((el, i) => {
-                  return el.weatherElement[2].time[0].elementValue[0].value
+                ?.filter((el, i) => el.locationName === location)[0]
+                ?.weatherElement[1].time[1].elementValue.map((el, i) => {
+                  let icon
+                  if (i === 1) {
+                    switch (el.value) {
+                      case '01':
+                        icon = <FontAwesomeIcon icon={faSun} />
+                        break
+                      case '02':
+                      case '03':
+                        icon = <FontAwesomeIcon icon={faCloudSun} />
+                        break
+                      case '04':
+                      case '05':
+                      case '06':
+                      case '07':
+                        icon = <FontAwesomeIcon icon={faCloud} />
+                        break
+                      case '08':
+                      case '09':
+                      case '10':
+                      case '11':
+                      case '12':
+                      case '13':
+                      case '14':
+                      case '15':
+                      case '16':
+                      case '17':
+                      case '18':
+                        icon = <FontAwesomeIcon icon={faCloudShowersHeavy} />
+                        break
+                      case '19':
+                        icon = <FontAwesomeIcon icon={faCloudSunRain} />
+                        break
+                      case '20':
+                      case '21':
+                      case '22':
+                        icon = <FontAwesomeIcon icon={faCloudShowersHeavy} />
+                        break
+                      default:
+                        icon = <FontAwesomeIcon icon={faCloud} />
+                    }
+                  }
+                  return icon
                 })}
-            °C
-          </h3>
-          <div className={styles.weather_describe}>
-            <h6 className={styles.describe}>
-              {weather &&
-                weather
-                  .filter((el, i) => {
-                    return el.locationName === location
-                  })
-                  .map((el, i) => {
-                    return el.weatherElement[1].time[0].elementValue[0].value
-                  })}
-            </h6>
-            <p className={styles.temperature}>
-              H:{' '}
-              {weather &&
-                weather
-                  .filter((el, i) => {
-                    return el.locationName === location
-                  })
-                  .map((el, i) => {
-                    return el.weatherElement[3].time[0].elementValue[0].value
-                  })}
-              ° L:{' '}
+            <div className={styles.orbit}></div>
+            <h3 className={styles.temp}>
               {weather &&
                 weather
                   .filter((el, i) => {
@@ -174,10 +143,44 @@ function YichunWeather(props) {
                   .map((el, i) => {
                     return el.weatherElement[2].time[0].elementValue[0].value
                   })}
-              °
-            </p>
+              °C
+            </h3>
+            <div className={styles.weather_describe}>
+              <h6 className={styles.describe}>
+                {weather &&
+                  weather
+                    .filter((el, i) => {
+                      return el.locationName === location
+                    })
+                    .map((el, i) => {
+                      return el.weatherElement[1].time[0].elementValue[0].value
+                    })}
+              </h6>
+              <p className={styles.temperature}>
+                H:{' '}
+                {weather &&
+                  weather
+                    .filter((el, i) => {
+                      return el.locationName === location
+                    })
+                    .map((el, i) => {
+                      return el.weatherElement[3].time[0].elementValue[0].value
+                    })}
+                ° L:{' '}
+                {weather &&
+                  weather
+                    .filter((el, i) => {
+                      return el.locationName === location
+                    })
+                    .map((el, i) => {
+                      return el.weatherElement[2].time[0].elementValue[0].value
+                    })}
+                °
+              </p>
+            </div>
           </div>
         </div>
+
         <div className={styles.daily_weather}>
           {weather &&
             weather

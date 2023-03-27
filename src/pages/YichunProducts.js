@@ -158,21 +158,23 @@ function YichunProducts() {
     }
   }
   const toggleFlag = () => {
-    switch (diff) {
-      case 1:
-        flag01.current.style.transform = `translateY(0%)`
-        flag02.current.style.transform = `translateY(-100%)`
-        flag03.current.style.transform = `translateY(0%)`
-        break
-      case 2:
-        flag01.current.style.transform = `translateY(0%)`
-        flag02.current.style.transform = `translateY(0%)`
-        flag03.current.style.transform = `translateY(-100%)`
-        break
-      default:
-        flag01.current.style.transform = `translateY(-100%)`
-        flag02.current.style.transform = `translateY(0%)`
-        flag03.current.style.transform = `translateY(0%)`
+    if (flag01.current && flag02.current && flag03.current) {
+      switch (diff) {
+        case 1:
+          flag01.current.style.transform = `translateY(0%)`
+          flag02.current.style.transform = `translateY(-100%)`
+          flag03.current.style.transform = `translateY(0%)`
+          break
+        case 2:
+          flag01.current.style.transform = `translateY(0%)`
+          flag02.current.style.transform = `translateY(0%)`
+          flag03.current.style.transform = `translateY(-100%)`
+          break
+        default:
+          flag01.current.style.transform = `translateY(-100%)`
+          flag02.current.style.transform = `translateY(0%)`
+          flag03.current.style.transform = `translateY(0%)`
+      }
     }
   }
 
