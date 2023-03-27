@@ -37,10 +37,12 @@ import DavisGpxLeaflet from './components/DavisTrailsDetail/DavisGpxLeaflet'
 import { createContext, useEffect, useState } from 'react'
 
 export const LoginContext = createContext({})
+export const UploadContext = createContext({})
 
 function App() {
   const [showBox, setShowbox] = useState(0)
   const [mapInteraction, setMapInteraction] = useState(0)
+  const [uploaded, setUploaded] = useState(false)
   // only for searching
   // const { search } = useContext(SearchContext)
   // const [search, setSearch] = useState({
@@ -59,39 +61,48 @@ function App() {
         <SearchContextProvider>
           <AuthContextProvider>
             <CartContextProvider>
-              <LoginContext.Provider value={{ mapInteraction, setMapInteraction, showBox, setShowbox }}>
-                <TestCouponContextProvider>
-                  <Routes>
-                    <Route path="/" element={<Layout />}>
-                      {/* 其他頁面Navbar+Footer */}{' '}
-                      <Route path="/products" element={<YichunProducts />} />
-                      <Route path="/member" element={<Member />} />
-                      <Route
-                        path="/trails-detail"
-                        element={<DavisTrailsDetail />}
-                      />
-                      <Route
-                        path="/trails-filter"
-                        element={<DavisTrailsFilter />}
-                      />
-                      <Route path="/difficulty" element={<IanDifficulty />} />
-                      <Route path="/season" element={<IanSeason />} />
-                      <Route path="/SC1" element={<IanShoppingCart1 />} />
-                      <Route path="/SC2" element={<IanShoppingCart2 />} />
-                      <Route path="/SC3" element={<IanShoppingCart3 />} />
-                      <Route path="/SC4" element={<IanShoppingCart4 />} />
-                    </Route>
-                    <Route path="/">
-                      {/* 登入頁面Navbar+Footer */}
-                      <Route path="/Login" element={<Login />} />
-                      <Route path="/Signin" element={<Signin />} />
-                      <Route path="/Index" element={<Index />} />
-                      <Route path="/password" element={<ResetPassword />} />
-                      {/* <Route path="/reset" element={<Reset />} /> */}
-                      <Route path="/test" element={<YichunTest />} />
-                    </Route>
-                  </Routes>
-                </TestCouponContextProvider>
+              <LoginContext.Provider
+                value={{
+                  mapInteraction,
+                  setMapInteraction,
+                  showBox,
+                  setShowbox,
+                }}
+              >
+                <UploadContext.Provider value={{ uploaded, setUploaded }}>
+                  <TestCouponContextProvider>
+                    <Routes>
+                      <Route path="/" element={<Layout />}>
+                        {/* 其他頁面Navbar+Footer */}{' '}
+                        <Route path="/products" element={<YichunProducts />} />
+                        <Route path="/member" element={<Member />} />
+                        <Route
+                          path="/trails-detail"
+                          element={<DavisTrailsDetail />}
+                        />
+                        <Route
+                          path="/trails-filter"
+                          element={<DavisTrailsFilter />}
+                        />
+                        <Route path="/difficulty" element={<IanDifficulty />} />
+                        <Route path="/season" element={<IanSeason />} />
+                        <Route path="/SC1" element={<IanShoppingCart1 />} />
+                        <Route path="/SC2" element={<IanShoppingCart2 />} />
+                        <Route path="/SC3" element={<IanShoppingCart3 />} />
+                        <Route path="/SC4" element={<IanShoppingCart4 />} />
+                      </Route>
+                      <Route path="/">
+                        {/* 登入頁面Navbar+Footer */}
+                        <Route path="/Login" element={<Login />} />
+                        <Route path="/Signin" element={<Signin />} />
+                        <Route path="/Index" element={<Index />} />
+                        <Route path="/password" element={<ResetPassword />} />
+                        {/* <Route path="/reset" element={<Reset />} /> */}
+                        <Route path="/test" element={<YichunTest />} />
+                      </Route>
+                    </Routes>
+                  </TestCouponContextProvider>
+                </UploadContext.Provider>
               </LoginContext.Provider>
             </CartContextProvider>
           </AuthContextProvider>

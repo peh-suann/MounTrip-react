@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import AuthContext from '../contexts/AuthContexts'
 import { StatusContext } from '../pages/KexinIndex'
-import { LoginContext } from '../App'
+import { LoginContext,UploadContext } from '../App'
 import { SELECT_MEMBER } from '../connections/api-config'
 import YichunModal from '../components/YichunModal'
 import axios from 'axios'
@@ -37,6 +37,7 @@ export default function NavBar() {
   const { myAuth, logout } = useContext(AuthContext)
   const [open, setOpen] = useState(false)
   const { showBox, setShowbox } = useContext(LoginContext)
+  const { uploaded } = useContext(UploadContext)
 
   //轉換會員頁面用
   const [memberPage, setMemberPage] = useState('member')
@@ -65,10 +66,16 @@ export default function NavBar() {
     } catch (err) {}
   }
 
-  useEffect(() => {
-    getMember(myAuth.accountId)
-  }, [])
 
+  useEffect(() => {
+    const id = myAuth.accountId || myAuth.sid
+    getMember(id)
+  }, [myAuth,uploaded])
+
+
+
+  console.log('data', data)
+  console.log(myAuth.sid)
   console.log('data', data[0])
   console.log('data', !!data[0])
 
@@ -256,12 +263,19 @@ export default function NavBar() {
                   }}
                 >
                   <div className={styles.profile}>
+                    {/* {data[0] && myAuth.account ? (
+                      <div
+                        className={styles.avatar_pic}
+                        style={{
+                          background: `url('${avatarUrl}') 0% 0% / cover`,
+                          backgroundSize: 'cover',
+                        }}
+                      ></div>
+                    ) : (
+                      ''
+                    )} */}
                     {data[0] && myAuth.account ? (
-                      <img
-                        src={`${USER_AVATAR}${data[0].img}`}
-                        // src={``}
-                        alt=""
-                      />
+                      <img src={`${USER_AVATAR}${data[0].img}`} alt="" />
                     ) : (
                       ''
                     )}

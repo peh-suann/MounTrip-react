@@ -27,9 +27,8 @@ export default function LaiDatePicker(props) {
   //   console.log('birthday2', typeof userInfo.userData.birthday)
 
   const handleselect = (date) => {
-    // console.log(format(date, 'yyyy-MM-dd'))
     setDate(dayjs(date).format('YYYY-MM-DD'))
-    props.onDateChange(dayjs(date).format('YYYY-MM-DD'))
+    onDateChange(dayjs(date).format('YYYY-MM-DD'))
   }
   // hide on click outside
   const hideOnKeyDown = (e) => {
@@ -70,9 +69,6 @@ export default function LaiDatePicker(props) {
           className="calendarInput"
           id="birthday"
           name="birthday"
-          //   placeholder={`${format(date, 'yyyy-MM-dd')}`}
-          //   placeholder={format(new Date(date), 'yyyy-MM-dd')}
-          // value={format(date, 'yyyy-MM-dd')}
           value={date}
           onClick={() => {
             setOpen((open) => !open)
@@ -80,9 +76,8 @@ export default function LaiDatePicker(props) {
           onChange={(e) => {
             handleselect(e)
             onHandleUpdate(e)
-
+            // onDateChange(e)
           }}
-          readOnly
         />
         <div ref={refInput}>
           {open &&
@@ -90,9 +85,11 @@ export default function LaiDatePicker(props) {
               <Calendar
                 date={new Date(date)}
                 className="calenderElement"
+                name="birthday"
                 onChange={(e) => {
                   handleselect(e)
                   onHandleUpdate(e)
+                  // onDateChange(e.value)
                 }}
                 dateDisplayFormat="yyyy-MM-dd"
                 color="#6CBA7C"
@@ -101,9 +98,11 @@ export default function LaiDatePicker(props) {
               <Calendar
                 date={new Date(date)}
                 className="calenderElementMobile"
+                name="birthday"
                 onChange={(e) => {
                   handleselect(e)
                   onHandleUpdate(e)
+                  // onDateChange(e.value)
                 }}
                 dateDisplayFormat="yyyy-MM-dd"
                 color="#6CBA7C"

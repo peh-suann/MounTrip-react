@@ -35,7 +35,8 @@ function KexinIndexProductsDetail() {
     } catch (err) {}
   }
 
-  console.log(data)
+  console.log('comment',data)
+  console.log('myProduct',myProduct)
 
   useEffect(() => {
     getCommentData(myProduct.sid)
