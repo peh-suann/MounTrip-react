@@ -94,4 +94,5 @@ export const TRAILS_DIFFEASY = `${HOST}/difficultyEasy`
 export const ORDER_COUPON = `${HOST}/SC1`
 export const ORDER_HISTORY = `${HOST}/history`
 export const ORDER_HISTORY2 = `${HOST}/history2`
+export const ORDER_DATE = `${HOST}/orderDate`
 export const ORDERUSER_DATA = (mid) => `${HOST}/${mid}`

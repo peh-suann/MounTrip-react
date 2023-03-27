@@ -2,15 +2,25 @@ import React, { useState } from 'react'
 import styles from './../styles/IanShoppingCart2.module.css'
 import { useCart } from '../components/IanUseCart'
 import IanShowDetail from './IanShowDetail'
+import IanFakeTraveler from './IanFakeTraveler'
 
 function IanToggleDetail(props) {
   const { items } = useCart()
   const [toggleOpen, setToggleOpen] = useState(false)
-  const { memberitems, trail_name, quantity, batch_start, batch_end } = props
+  const {
+    memberitems,
+    trail_name,
+    quantity,
+    batch_start,
+    batch_end,
+    traveler,
+    Auth,
+    setAuth,
+  } = props
   const id = items.map((v, i) => {
     return v.sid
   })
-  console.log(items)
+
   return (
     <>
       <div
@@ -130,11 +140,19 @@ function IanToggleDetail(props) {
           </div>
         </div>
       </div>
-      <IanShowDetail
-        toggleOpen={toggleOpen}
-        memberitems={memberitems}
-        quantity={quantity}
-      />
+
+      {toggleOpen ? (
+        <IanFakeTraveler Auth={Auth} memberitems={memberitems}/>
+      ) : (
+        <IanShowDetail
+          toggleOpen={toggleOpen}
+          memberitems={memberitems}
+          quantity={quantity}
+          traveler={traveler}
+          Auth={Auth}
+          setAuth={setAuth}
+        />
+      )}
     </>
   )
 }

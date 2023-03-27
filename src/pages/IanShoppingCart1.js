@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../components/IanUseCart'
 import { ORDER_COUPON } from '../connections/api-config'
 import axios from 'axios'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // import IanShoppingCartTitle from '../components/IanShoppingCartTitle'
 // import './../html/css/shoppingCart1.css'
@@ -14,18 +16,7 @@ function IanShoppingCart1() {
   const [show, setShow] = useState(false)
   const [useCoupon, setUseCoupon] = useState([])
   const [mySelect, setMySelect] = useState('')
-  const price = useCoupon.map((v, i) => {
-    if (v.coupon_code === mySelect) {
-      return v.min_purchase
-    }
-  })
-  const [finalyPrice] = price.filter((v, i) => {
-    return v != undefined
-  })
-
-  // console.log(finalyPrice)
-  // console.log(cart.cartTotal)
-  const finallyTotal = cart.cartTotal - finalyPrice
+  const navigate = useNavigate()
 
   const getUseCoupon = async (req, res) => {
     // const r = await fetch(ORDER_COUPON)
@@ -43,7 +34,7 @@ function IanShoppingCart1() {
       if (!res.data) return res.sendStatus(401)
 
       setUseCoupon(res.data)
-      console.log('useCoupon:', res.data)
+      // console.log('useCoupon:', res.data)
     } catch (error) {
       console.log('coupon axios err')
       return []
@@ -51,18 +42,29 @@ function IanShoppingCart1() {
   }
 
   useEffect(() => {
-    console.log('---Effect---')
-
     getUseCoupon()
   }, [])
-  const navigate = useNavigate()
+  const price = useCoupon.map((v, i) => {
+    if (v.coupon_code === mySelect) {
+      return 100 - v.coupon_rate
+    }
+  })
+  const floatPrice = useCoupon.map((v, i) => {
+    if (v.coupon_code === mySelect) {
+      return v.coupon_rate / 100
+    }
+  })
+  const [salePrice] = floatPrice.filter((v, i) => {
+    return v !== undefined
+  })
 
+  const finallyTotal = cart.cartTotal * salePrice
+  const AuthSid = JSON.parse(localStorage.getItem('myAuth')).accountId
   const storage = JSON.parse(localStorage.getItem('cart'))
   const cartSid = storage.map((v, i) => {
     return v.sid
   })
-  // console.log('useId:', useId)
-  const total = [finallyTotal]
+  const total = { total: show ? finallyTotal : cart.cartTotal }
   const JsonTotal = JSON.stringify(total)
 
   return (
@@ -280,13 +282,10 @@ function IanShoppingCart1() {
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          // if (storage.finallyTotal && storage.finallyTotal !== 'NAN') {
           localStorage.setItem('cartSid', cartSid)
           localStorage.setItem('total', JsonTotal)
+          localStorage.setItem('AuthSid', AuthSid)
           navigate('/SC2')
-          // } else {
-          //   navigate('/SC1')
-          // }
         }}
       >
         <section
@@ -361,7 +360,7 @@ function IanShoppingCart1() {
               return (
                 <div key={i} className={`${styles['shoppingcart-product']}`}>
                   <div
-                    className={`${styles['product-col']} ${styles['mobile-none']} d-flex`}
+                    className={`${styles['product-col']} d-flex flex-column flex-lg-row`}
                   >
                     {/* <div className={`${styles['mobile-none']} ${styles.w1} `}> */}
                     {/* <input
@@ -372,7 +371,7 @@ function IanShoppingCart1() {
                       }}
                     /> */}
                     {/* </div> */}
-                    <div className={`${styles['mobile-none']} ${styles.w2}`}>
+                    <div className={`${styles.w2} ${styles.cartProduct}`}>
                       <div className={`row w-100`}>
                         <div className={`col-4`}>
                           <div className={`${styles['product-img-wrap']}`}>
@@ -384,7 +383,7 @@ function IanShoppingCart1() {
                             ></div>
                           </div>
                         </div>
-                        <div className={`col-8 px-0`}>
+                        <div className={`col-8 px-0 ps-3 ps-lg-0`}>
                           <p
                             className={`${styles['product-title']}  mb-3 ps-lg-3`}
                           >
@@ -395,25 +394,43 @@ function IanShoppingCart1() {
                           >
                             {v.trail_name}單日行程
                           </p>
+                          <div
+                            className={`${styles.w3}  ${styles.cartProduct_mobile_p} ${styles['web-none']} d-flex`}
+                          >
+                            <p className={`${styles['web-none']} mb-0 mb-lg-2`}>
+                              {v.batch_start}
+                            </p>
+                            <p className={`${styles['web-none']} mb-0 mb-lg-2`}>
+                              -
+                            </p>
+                            <p className={`${styles['web-none']} mb-0`}>
+                              {v.batch_end}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div
-                      className={`${styles['mobile-none']} ${styles.w3} text-center`}
+                      className={`${styles.w3} ${styles['mobile-none']} ${styles.cartProductp} text-center`}
                     >
                       <p className={`mb-lg-2`}>{v.batch_start}</p>
                       <p className={`mb-lg-2`}>|</p>
                       <p className={`mb-0`}>{v.batch_end}</p>
                     </div>
+
                     <div
                       className={`${styles['mobile-none']} ${styles.w4} text-center`}
                     >
                       NTD {v.price}
                     </div>
+
+                    {/* web-none */}
                     <div
-                      className={`${styles['mobile-none']} ${styles.w5}  text-center`}
+                      className={`${styles.w5} ${styles.priceBetween} d-flex justify-content-between text-center`}
                     >
-                      <div className={`d-flex`}>
+                      <div
+                        className={`d-flex align-items-center  align-items-lg-start`}
+                      >
                         <button
                           type="button"
                           className={`${styles['plus-button']}`}
@@ -475,12 +492,33 @@ function IanShoppingCart1() {
                           </svg>
                         </button>
                       </div>
+                      <div>
+                        <div
+                          className={`${styles.w4} ${styles['web-none']} ${styles.mobilePrice} text-center`}
+                        >
+                          NTD {v.price}
+                        </div>
+                        <div
+                          className={`${styles.w6} ${styles['web-none']} ${styles.mobileitemTotal} text-center m-0`}
+                        >
+                          NTD {v.itemTotal}
+                        </div>
+                      </div>
                     </div>
                     <div
-                      className={`${styles['mobile-none']} ${styles.w6}   text-center`}
+                      className={`${styles.w6} ${styles['mobile-none']}  text-center`}
                     >
                       NTD {v.itemTotal}
                     </div>
+                    <button
+                      // onClick={() => {
+                      //   console.log('click')
+                      //   removeItem(v.sid)
+                      // }}
+                      className={`${styles.cancel} ${styles['web-none']} btn btn-unstyle`}
+                    >
+                      <FontAwesomeIcon icon={faXmark} />
+                    </button>
                     <div className={`${styles['mobile-none']} ${styles.w7} `}>
                       <svg
                         onClick={() => {
@@ -559,64 +597,143 @@ function IanShoppingCart1() {
               <h3>訂單明細</h3>
             </div>
 
-            <div className={`${styles['input-group']} ${styles['padding-30']}`}>
-              <div className={`${styles.orderCoupin} d-flex`}>
-                <select
-                  value={mySelect}
-                  onChange={(e) => {
-                    console.log(e.target.value)
-                    setMySelect(e.target.value)
-                    setShow(false)
-                  }}
-                  name=""
-                  id=""
-                  className={`${styles.orderSelect}`}
+            {show ? (
+              <div>
+                <div
+                  className={`${styles['input-group']} ${styles['padding-30']}`}
                 >
-                  {useCoupon.map((v, i) => {
-                    return <option key={i}>{v.coupon_code}</option>
-                  })}
-                </select>
-                <button
-                  onClick={() => {
-                    getUseCoupon()
-                    setShow(true)
-                  }}
-                  type="button"
-                  className={`col-3 ${styles.orderButton} btn btn-unstyle`}
-                >
-                  套用
-                </button>
-              </div>
-            </div>
-            <div>
-              <div
-                className={`${styles['padding-30']} d-flex justify-content-between`}
-              >
-                <p className={`${styles.p} mb-0`}>小計</p>
-                <p className={`${styles['p-bold']} mb-0`}>
-                  NTD {cart.cartTotal}
-                </p>
-              </div>
-              <div
-                className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex flex-column justify-content-between mb-lg-3`}
-              >
-                <p className={`${styles.p} mb-0`}>優惠碼</p>
-                <div className={`d-flex justify-content-between`}>
-                  <p className={`${styles.p} mb-0`}>{mySelect}</p>
-                  <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
-                    -NTD{price}
-                  </p>
+                  <div className={`${styles.orderCoupin} d-flex`}>
+                    <select
+                      value={mySelect}
+                      onChange={(e) => {
+                        console.log(e.target.value)
+                        setMySelect(e.target.value)
+                        setShow(false)
+                      }}
+                      name=""
+                      id=""
+                      className={`${styles.orderSelect}`}
+                    >
+                      <option>請選擇優惠券</option>
+                      {useCoupon.map((v, i) => {
+                        return <option key={i}>{v.coupon_code}</option>
+                      })}
+                    </select>
+                    <button
+                      onClick={() => {
+                        getUseCoupon()
+                        setShow(true)
+                      }}
+                      type="button"
+                      className={`col-3 ${styles.orderButton} btn btn-unstyle`}
+                    >
+                      套用
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className={`${styles['padding-30']} d-flex justify-content-between`}
+                  >
+                    <p className={`${styles.p} mb-0`}>小計</p>
+                    <p className={`${styles['p-bold']} mb-0`}>
+                      NTD {cart.cartTotal}
+                    </p>
+                  </div>
+                  <div
+                    className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex flex-column justify-content-between mb-lg-3`}
+                  >
+                    <p className={`${styles.p} mb-0`}>優惠碼</p>
+                    <div className={`d-flex justify-content-between`}>
+                      <p className={`${styles.p} mb-0`}>
+                        {mySelect === '請選擇優惠券' ? null : mySelect}
+                      </p>
+                      <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
+                        -{mySelect ? price : 0}%
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    className={`${styles['padding-30']} d-flex justify-content-between`}
+                  >
+                    <p className={`${styles['p-bold']} mb-0`}>合計</p>
+                    <p className={`${styles['p-bold']} mb-0`}>
+                      NTD ${show ? finallyTotal : 0}
+                      {/* {finallyTotal} */}
+                      {/* {show ? finallyTotal : 0} */}
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div
-                className={`${styles['padding-30']} d-flex justify-content-between`}
-              >
-                <p className={`${styles['p-bold']} mb-0`}>合計</p>
-                <p className={`${styles['p-bold']} mb-0`}>
-                  NTD ${show && finallyTotal}
-                </p>
+            ) : (
+              <div>
+                <div
+                  className={`${styles['input-group']} ${styles['padding-30']}`}
+                >
+                  <div className={`${styles.orderCoupin} d-flex`}>
+                    <select
+                      value={mySelect}
+                      onChange={(e) => {
+                        console.log(e.target.value)
+                        setMySelect(e.target.value)
+                        setShow(false)
+                      }}
+                      name=""
+                      id=""
+                      className={`${styles.orderSelect}`}
+                    >
+                      <option>請選擇優惠券</option>
+                      {useCoupon.map((v, i) => {
+                        return <option key={i}>{v.coupon_code}</option>
+                      })}
+                    </select>
+                    <button
+                      onClick={() => {
+                        getUseCoupon()
+                        setShow(true)
+                      }}
+                      type="button"
+                      className={`col-3 ${styles.orderButton} btn btn-unstyle`}
+                    >
+                      套用
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className={`${styles['padding-30']} d-flex justify-content-between`}
+                  >
+                    <p className={`${styles.p} mb-0`}>小計</p>
+                    <p className={`${styles['p-bold']} mb-0`}>
+                      NTD {cart.cartTotal}
+                    </p>
+                  </div>
+                  <div
+                    className={`${styles['padding-30']} {styles['margin-30']} ${styles.coupon} d-flex flex-column justify-content-between mb-lg-3`}
+                  >
+                    <p className={`${styles.p} mb-0`}>優惠碼</p>
+                    <div className={`d-flex justify-content-between`}>
+                      <p className={`${styles.p} mb-0`}>
+                        {mySelect === '請選擇優惠券' ? null : mySelect}
+                      </p>
+                      <p className={`${styles.mtgreen1} ${styles.p}  mb-0`}>
+                        -{mySelect ? price : 0}%
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    className={`${styles['padding-30']} d-flex justify-content-between`}
+                  >
+                    <p className={`${styles['p-bold']} mb-0`}>合計</p>
+                    <p className={`${styles['p-bold']} mb-0`}>
+                      NTD ${cart.cartTotal}
+                      {/* {finallyTotal} */}
+                      {/* {show ? finallyTotal : 0} */}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* <Link to="/SC2" className={`w-100 btn`}> */}
             <button type="submit" className={`${styles.next} w-100 btn`}>
