@@ -520,10 +520,6 @@ section.weather {
   border-radius: 10px;
   overflow: hidden;
 }
-.weather_layout {
-  display: flex;
-  width: 100%;
-}
 .weather_box .weather_search {
   padding: 30px 60px;
   display: flex;
@@ -571,9 +567,6 @@ section.weather {
   line-height: 140%;
   letter-spacing: 0.05em;
   color: var(--mtgrey-1);
-}
-.weather_box .current_weather .orbit {
-  position: absolute;
 }
 .weather_box .current_weather svg {
   position: absolute;
@@ -892,18 +885,38 @@ section.test .test_info button {
 
     width: 100%;
     flex-direction: column;
-    display: none;
+    /* display: none; */
   }
   section.difficulty .diff_intro_list {
+    width: 100%;
     flex-direction: row;
-    gap: 10px;
+    /* gap: 10px; */
+    justify-content: space-between;
   }
   section.difficulty .diff_intro_list .rank {
     flex-direction: column;
     align-items: center;
+    gap: 4px;
+  }
+  section.difficulty .diff_intro_list .rank .img_wrapper img {
+    object-position: center 10px;
+    transform: scale(0.8);
+  }
+  section.difficulty .diff_intro_list .rank:last-of-type .img_wrapper img {
+    object-position: center 10px;
+    transform: scale(0.8);
+  }
+  section.difficulty .diff_intro_list .rank .img_wrapper {
+    width: 110px;
+    height: 130px;
+    margin-bottom: 12px;
+    /* border: 1px solid red; */
+  }
+  section.difficulty .diff_intro_list .rank .img_wrapper img.on {
+    transform: scale(1.05);
   }
   section.difficulty .diff_intro_list .diff_intro {
-    width: 110px;
+    width: fit-content;
   }
   section.difficulty .diff_intro_list .diff_intro h4 {
     font-weight: 700;
@@ -913,23 +926,79 @@ section.test .test_info button {
     letter-spacing: 0.1em;
   }
   section.difficulty .diff_intro_list .diff_intro p {
-    font-size: 14px;
+    width: 96px;
+    font-size: 12px;
     line-height: 20px;
     letter-spacing: 0.1em;
   }
   section.difficulty .diff_intro_list .diff_intro button {
     display: none;
   }
+  section.difficulty .diff_recommend{
+    width: 100%;
+    margin-top: 0px;
+    justify-content: flex-start;
+    gap: 0;
+  }
   section.difficulty .diff_recommend .diff_products {
     flex-direction: column;
+    width: 100%;
   }
   /* weather -------------------------------------------- */
   section.weather {
-    padding: 40px 15px;
-    display: none;
+    padding: 20px 15px;
+    /* display: none; */
   }
   .weather_box {
-    /* flex-direction: row; */
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+  .weather_box .weather_search {
+    padding: 16px 24px;
+  }
+  .weather_box .weather_search label {
+    font-size: 14px;
+  }
+  .weather_box .weather_search select {
+    font-size: 18px;
+    width: 100%;
+  }
+  .weather_box .current_weather {
+    padding: 16px 24px;
+  }
+  .weather_box .current_weather h3 {
+    font-size: 32px;
+  }
+  .weather_box .current_weather svg {
+    top: 30px;
+    right: 40px;
+    font-size: 44px;
+  }
+  .weather_box .current_weather .weather_describe {
+    justify-content: flex-start;
+  }
+  .weather_box .current_weather .weather_describe h6 {
+    font-size: 16px;
+  }
+  .weather_box .current_weather .weather_describe p {
+    font-size: 16px;
+  }
+  .weather_box .daily_weather {
+    padding: 16px 24px;
+    justify-content: space-between;
+    gap: 0px;
+  }
+  .weather_box .daily_weather .daily {
+    width: fit-content;
+  }
+  .weather_box .daily_weather h6 {
+    font-size: 14px;
+  }
+  .weather_box .daily_weather svg {
+    font-size: 20px;
+  }
+  .weather_box .daily_weather p {
+    display: none;
   }
   /* test -------------------------------------------- */
   section.test {

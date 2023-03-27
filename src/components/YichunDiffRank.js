@@ -12,37 +12,21 @@ function YichunDiffRank(props) {
   return (
     <>
       <div className={styles.rank}>
-        {document.documentElement.clientWidth > 390 ? (
-          <>
-            <div
-              className={styles.img_wrapper}
-              onClick={() => {
-                toggleDiff(el)
-              }}
-            >
-              <div
-                className={`${styles.circle} ${
-                  index === diff ? styles.on : ''
-                }`}
-              ></div>
-              <img
-                className={index === diff ? styles.on : ''}
-                src={`images/yichun/1x/2x/0${index}.png`}
-                alt=""
-              />
-            </div>
-          </>
-        ) : (
-          <svg
-            width="80"
-            height="80"
-            viewBox="0 0 80 80"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="40" cy="40" r="40" fill="#CEE8CB" />
-          </svg>
-        )}
+        <div
+          className={styles.img_wrapper}
+          onClick={() => {
+            toggleDiff(el)
+          }}
+        >
+          <div
+            className={`${styles.circle} ${index === diff ? styles.on : ''}`}
+          ></div>
+          <img
+            className={index === diff ? styles.on : ''}
+            src={`images/yichun/1x/2x/0${index}.png`}
+            alt=""
+          />
+        </div>
         <div className={styles.diff_intro}>
           <h4>
             {el.diffCn}級{' '}

@@ -560,7 +560,7 @@ function YichunProducts() {
                   />
                 </>
               ) : (
-                <img src="images/yichun/ridge.png" alt="" />
+                ''
               )}
             </div>
             <div className={styles.diff_products}>
