@@ -31,7 +31,15 @@ function DavisTrailsRating(props) {
       },
     })
     setRating(response.data)
+    // console.log(rating.rows)
   }
+
+  useEffect(() => {
+    getListData(+usp.get('page'))
+    return () => {
+      console.log('unmount')
+    }
+  }, [])
 
   const filterFromBatch = (rows_data) => {
     if (!Array.isArray(rows_data)) {
@@ -52,16 +60,9 @@ function DavisTrailsRating(props) {
       return []
     }
     return data.filter((v, i) => {
-      return v.trails_sid === page_sid
+      return v.sid === page_sid
     })
   }
-
-  useEffect(() => {
-    getListData(+usp.get('page'))
-    return () => {
-      console.log('unmount')
-    }
-  }, [])
 
   // 抓comment資料
   const [comdata, setComdata] = useState({
@@ -80,13 +81,15 @@ function DavisTrailsRating(props) {
   }
 
   useEffect(() => {
-    // console.log(comdata)
+    console.log(comdata)
     getCommentData(page_sid)
   }, [page_sid])
 
   //login to commont
   const { myAuth } = useContext(AuthContext)
   const { showBox, setShowbox } = useContext(LoginContext)
+
+  // avg rating point
 
   return (
     <>
@@ -193,84 +196,43 @@ function DavisTrailsRating(props) {
         {/*commont card */}
         <div className="d-flex flex-column flex-lg-row ">
           {/* left-card */}
-          <div
-            className={`col col-lg-3 d-flex flex-lg-row align-content-center mb-3 ${styles.left_card}`}
-          >
+          {filterFromRating(rating.rows).map((point) => (
             <div
-              className={`col-lg-2  me-3 col-4 rounded-3 ${styles.rate_point}`}
+              className={`col col-lg-3 d-flex flex-lg-row align-content-center mb-3 ${styles.left_card}`}
             >
-              <h1 className={`mb-0 lh-lg ${styles.point_h1}`}>4.5</h1>
-            </div>
-
-            <div className="col-8 d-flex flex-column ">
-              <div className="col d-flex flex-row p-2">
-                <svg
-                  width="32"
-                  height="29"
-                  viewBox="0 0 32 29"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.8824 0L21.1012 8.89775L31.2353 11.077L24.3265 18.7554L25.371 29L15.8824 24.8477L6.39376 29L7.43829 18.7554L0.529465 11.077L10.6637 8.89775L15.8824 0Z"
-                    fill="#FFCB45"
-                  />
-                </svg>
-                <svg
-                  width="32"
-                  height="29"
-                  viewBox="0 0 32 29"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.8824 0L21.1012 8.89775L31.2353 11.077L24.3265 18.7554L25.371 29L15.8824 24.8477L6.39376 29L7.43829 18.7554L0.529465 11.077L10.6637 8.89775L15.8824 0Z"
-                    fill="#FFCB45"
-                  />
-                </svg>
-                <svg
-                  width="32"
-                  height="29"
-                  viewBox="0 0 32 29"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.8824 0L21.1012 8.89775L31.2353 11.077L24.3265 18.7554L25.371 29L15.8824 24.8477L6.39376 29L7.43829 18.7554L0.529465 11.077L10.6637 8.89775L15.8824 0Z"
-                    fill="#FFCB45"
-                  />
-                </svg>
-                <svg
-                  width="32"
-                  height="29"
-                  viewBox="0 0 32 29"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.8824 0L21.1012 8.89775L31.2353 11.077L24.3265 18.7554L25.371 29L15.8824 24.8477L6.39376 29L7.43829 18.7554L0.529465 11.077L10.6637 8.89775L15.8824 0Z"
-                    fill="#FFCB45"
-                  />
-                </svg>
-                <svg
-                  width="32"
-                  height="29"
-                  viewBox="0 0 32 29"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.8824 0L21.1012 8.89775L31.2353 11.077L24.3265 18.7554L25.371 29L15.8824 24.8477L6.39376 29L7.43829 18.7554L0.529465 11.077L10.6637 8.89775L15.8824 0Z"
-                    fill="#FFCB45"
-                  />
-                </svg>
+              <div
+                className={`d-flex justify-content-center align-items-center ${styles['average-rate']} ${styles['me-20']}`}
+              >
+                <p className="mb-0">
+                  {point.avg_score ? point.avg_score.slice(0, 3) : ''}
+                </p>
               </div>
-              {/* <div className="col ps-2">
-                <p className="mb-0">1000個人已評論</p>
-              </div> */}
+
+              <div className="">
+                <div className={`${styles['mb-8']}`}>
+                  <img
+                    className={`${styles['star-mark']} ${styles['me-10']}`}
+                    src={
+                      point.avg_score
+                        ? `images/kexin/svg/BigStars${point.avg_score.slice(
+                            0,
+                            3
+                          )}.svg`
+                        : ''
+                    }
+                    alt=""
+                  />
+                </div>
+                <div className={`d-flex ${styles['total-comment']}`}>
+                  <p className={`mb-0 ${styles['me-8']}`}>
+                    {comdata.length ? comdata.length : ''}
+                  </p>
+                  <p className="mb-0">個人已評論</p>
+                </div>
+              </div>
+              <div className="col"></div>
             </div>
-            <div className="col"></div>
-          </div>
+          ))}
 
           {/* right-card */}
           <div className="col d-flex flex-column">
@@ -290,13 +252,28 @@ function DavisTrailsRating(props) {
                           {comdata.lastname}
                           {comdata.firstname}
                         </h5>
-                        <div className="">
-                          <p className={`mb-0 ${styles.member_ca}`}>超級嚮導</p>
+                        <div
+                          className={`${styles['gradehashtag']}`}
+                          style={
+                            comdata.level === 1
+                              ? { background: '#6cba7c' }
+                              : comdata.level === 2
+                              ? { background: '#add9b1' }
+                              : { background: '#f7db97' }
+                          }
+                        >
+                          <p className="mb-0">
+                            {comdata.level === 1
+                              ? '新手山友'
+                              : comdata.level === 2
+                              ? '初級嚮導'
+                              : '超級嚮導'}
+                          </p>
                         </div>
                       </div>
-                      {/* level2 */}
+                      {/* level2 FIXME:星數 */}
                       <div className="col d-flex flex-row mb-3">
-                        <div
+                        {/* <div
                           className={`col-5 col-lg-1 d-flex flex-row ${styles.star}`}
                         >
                           <svg
@@ -308,7 +285,7 @@ function DavisTrailsRating(props) {
                           >
                             <path
                               d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                              fill="#CEE8CB"
+                              fill="#FFCB45"
                             />
                           </svg>
                           <svg
@@ -320,7 +297,7 @@ function DavisTrailsRating(props) {
                           >
                             <path
                               d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                              fill="#CEE8CB"
+                              fill="#FFCB45"
                             />
                           </svg>
                           <svg
@@ -332,7 +309,7 @@ function DavisTrailsRating(props) {
                           >
                             <path
                               d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                              fill="#CEE8CB"
+                              fill="#FFCB45"
                             />
                           </svg>
                           <svg
@@ -344,7 +321,7 @@ function DavisTrailsRating(props) {
                           >
                             <path
                               d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                              fill="#CEE8CB"
+                              fill="#FFCB45"
                             />
                           </svg>
                           <svg
@@ -356,10 +333,20 @@ function DavisTrailsRating(props) {
                           >
                             <path
                               d="M8.00004 1.83334L10.06 6.00668L14.6667 6.68001L11.3334 9.92668L12.12 14.5133L8.00004 12.3467L3.88004 14.5133L4.66671 9.92668L1.33337 6.68001L5.94004 6.00668L8.00004 1.83334Z"
-                              fill="#CEE8CB"
+                              fill="#FFCB45"
                             />
                           </svg>
-                        </div>
+                        </div> */}
+                        <img
+                          className={`${styles['me-13']}`}
+                          src={`images/kexin/svg/Stars${comdata.score}.svg`}
+                          alt=""
+                        />
+                        <img
+                          className={`${styles['me-13']}`}
+                          src="images/kexin/svg/dot.svg"
+                          alt=""
+                        />
                         <div className="col-2">
                           <p className="mb-0 pb-1">
                             {comdata.rate_date.slice(0, 10)}
@@ -375,19 +362,28 @@ function DavisTrailsRating(props) {
                           </p>
                         </div>
                         {/* imges */}
-                        <div className="col col-lg-5 d-flex flex-row">
+                        {/* <div className="col col-lg-5 d-flex flex-row">
                           <img
                             className={`me-1 ${styles.img_cover}`}
-                            src={`/images/public_images/product_image/${comdata.trails_sid}-1.jpg`}
+                            src={`/images/public_images/product_image/${
+                              page_sid + 1
+                            }-1.jpg`}
                             alt=""
                           />
                           <img
                             className={`me-1 ${styles.img_cover}`}
-                            src={`/images/public_images/product_image/${comdata.trails_sid}-2.jpg`}
+                            src={`/images/public_images/product_image/${
+                              page_sid + 2
+                            }-2.jpg`}
                             alt=""
                           />
-                          {/* FIXME: background url 寫在css 要如何置換圖片 */}
-                          {/* <img className="img_cover me-1 " src="./imgs/5-1.jpg" alt=""> */}
+                          <img
+                            className={`me-1 ${styles.img_cover}`}
+                            src={`/images/public_images/product_image/${
+                              page_sid + 3
+                            }-3.jpg`}
+                            alt=""
+                          />
                           <div
                             className={`d-flex justify-content-around ${styles.img_wrap}`}
                           >
@@ -395,7 +391,7 @@ function DavisTrailsRating(props) {
                               +2張
                             </h4>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
