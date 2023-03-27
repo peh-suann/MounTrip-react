@@ -76,3 +76,13 @@
   letter-spacing: 0.1em;
   padding: 15px 5px;
 }
+
+
+@media screen and (max-width: 400px) {
+  .weatherBox {
+    display: none;
+
+  }
+
+
+}

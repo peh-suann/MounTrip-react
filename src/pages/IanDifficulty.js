@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useContext } from 'react'
 import styles from '../styles/IanDifficulty.module.css'
 // import Footer from './Footer'
 import IanDifficultyMountain from '../components/IanDifficultyMountain'
 import { TRAILS_DIFFHARD } from '../connections/api-config'
 import { TRAILS_DIFFMEDIUM } from '../connections/api-config'
 import { TRAILS_DIFFEASY } from '../connections/api-config'
+import { LoginContext } from '../App'
 
 function IanDifficulty() {
   const [diff, setDiff] = useState({
@@ -25,6 +26,8 @@ function IanDifficulty() {
   const productEasy = useRef(null)
 
   const [whoId, setWhoId] = useState('')
+
+  const { setMapInteraction} = useContext(LoginContext)
 
   // const getData = async () => {
   //   const r = await fetch(TRAILS_DIFFHARD)
@@ -74,6 +77,7 @@ function IanDifficulty() {
   }
 
   useEffect(() => {
+    setMapInteraction(0)
     getDifficultHardData()
     getDifficultMediumData()
     getDifficultEasyData()

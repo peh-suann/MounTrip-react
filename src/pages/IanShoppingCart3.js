@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect, useContext } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './../styles/IanShoppingCart3.module.css'
@@ -6,6 +6,8 @@ import { ORDER_HISTORY } from '../connections/api-config'
 import { ORDER_HISTORY2 } from '../connections/api-config'
 import { useCart } from '../components/IanUseCart'
 import { ORDER_DATE } from '../connections/api-config'
+import { LoginContext } from '../App'
+
 
 function IanShoppingCart3() {
   const { clearCart } = useCart()
@@ -38,6 +40,8 @@ function IanShoppingCart3() {
   const token = userData.token
   const mid = userData.accountId
 
+  const { setMapInteraction} = useContext(LoginContext)
+
   const [credit, setCredit] = useState([
     {
       number: '',
@@ -53,6 +57,11 @@ function IanShoppingCart3() {
       three: '123',
     },
   ])
+
+  useEffect(() => {
+    setMapInteraction(0)
+  }, [])
+
   return (
     <>
       <div className={`${styles.IanShoppingCartAll}`}>

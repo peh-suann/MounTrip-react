@@ -13,6 +13,7 @@ function KexinFixedBox(props) {
   const { cart, setCart } = useContext(StatusContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
   const [chooseBatch, setChooseBatch] = useState(0)
+  // const [Rows, setRows] = useState({})
   const { myAuth, logout } = useContext(AuthContext)
   const { showBox, setShowbox, mapInteraction, setMapInteraction } =
     useContext(LoginContext)
@@ -21,13 +22,14 @@ function KexinFixedBox(props) {
   const { addItem } = useCart()
   const [count, setCount] = useState(1)
   const [detailCount, setDetailCount] = useState(0)
+  // const [] = useState(0)
 
   const Rows = {
-    batch_end: el[0].batch_end.slice(0, 10) || '2023-03-29',
+    batch_end: '2023-03-29',
     batch_max: 10,
     batch_min: 2,
     batch_sold: 0,
-    batch_start: el[0].batch_start.slice(0, 10) || '2023-03-29',
+    batch_start: '2023-03-29',
     batch_switch: 1,
     coupon_status: 1,
     difficulty_describ: '初階行程',
@@ -48,44 +50,6 @@ function KexinFixedBox(props) {
     trail_time: myProduct.trail_time,
     trails_display: 0,
   }
-  console.log('Rows:', Rows)
-  console.log('el:', el)
-  // const batch = Rows.rows[0].batch_start
-  // // const handleChange(event) {
-  // //   setChooseBatch(event);
-  // // }
-  if (el && el.length > 0) {
-    Rows.batch_start = el
-      ?.filter((v, i) => {
-        // console.log(v.batch_sid)
-        return v.batch_sid === +detailCount
-      })[0]
-      ?.batch_start.slice(0, 10)
-
-    Rows.batch_end = el
-      ?.filter((v, i) => {
-        // console.log(v.batch_sid)
-        return v.batch_sid === +detailCount
-      })[0]
-      ?.batch_end.slice(0, 10)
-
-    console.log( el
-        ?.filter((v, i) => {
-          // console.log(v.batch_sid)
-          return v.batch_sid === +detailCount
-        })[0])
-  }
-
-  // console.log(+detailCount)
-  // console.log(
-  //   'el',
-  //   el
-  //     ?.filter((v, i) => {
-  //       // console.log(v.batch_sid)
-  //       return v.batch_sid === +detailCount
-  //     })[0]
-  //     .batch_start.slice(0, 10)
-  // )
 
   return (
     <>
@@ -146,29 +110,17 @@ function KexinFixedBox(props) {
             >
               <div className="d-flex justify-content-between align-items-center">
                 <select
+                  name=""
+                  id=""
+                  value={detailCount}
                   onChange={(e) => {
                     console.log(e.target.value)
-                    // console.log( el[detailCount].batch_start)
                     setDetailCount(e.target.value)
-                    // console.log(e.target.value, detailCount)
-                    // console.log(
-                    //   el
-                    //     ?.filter((v,i) => {
-                    //       return v.batch_start === detailCount
-                    //     })
-                    //     ?.map((v) => {
-                    //       return v.batch_start
-                    //     })
-                    // )
-
-                    // Rows.batch_start = el[detailCount].batch_start
-                    // Rows.end = el[detailCount].end
-                    // Rows.sid = el[detailCount].batch_sid
                   }}
                 >
                   {el.length
                     ? el.map((v, i) => (
-                        <option key={i} value={v.batch_sid}>
+                        <option key={i} value={i}>
                           {v.trail_time > 24
                             ? `${v.batch_start.slice(
                                 0,
@@ -206,7 +158,9 @@ function KexinFixedBox(props) {
           onClick={() => {
             if (myAuth.account) {
               setCart(1)
-
+              Rows.batch_start = el[detailCount].batch_start.slice(0,10)
+              Rows.batch_end = el[detailCount].batch_end.slice(0,10)
+              Rows.sid = el[detailCount].batch_sid
               const item = { ...Rows, quantity: count }
               addItem(item)
               console.log(detailCount)

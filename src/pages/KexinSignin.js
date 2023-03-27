@@ -1,5 +1,6 @@
 import { useState, useContext, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { LoginContext } from '../App'
 
 // component
 import LoginNavbar from '../layouts/NavbarLogin'
@@ -24,6 +25,7 @@ function KexinSignin() {
   const [accountVal, setAccountVal] = useState(0)
   const [passVal, setPassVal] = useState(0)
   const [passVal1, setPassVal1] = useState(0)
+  const { setMapInteraction} = useContext(LoginContext)
 
   const [myForm, setMyForm] = useState({
     account: '',
@@ -65,6 +67,10 @@ function KexinSignin() {
       }
     }
   }, [sign])
+
+  useEffect(() => {
+    setMapInteraction(0)
+  }, [])
 
   const navigate = useNavigate()
   return (

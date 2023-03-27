@@ -26,6 +26,7 @@ import { format } from 'date-fns'
 export default function DavisTrailsDetail(rows) {
   const location = useLocation()
   const usp = new URLSearchParams(location.search)
+  const { setMapInteraction} = useContext(LoginContext)
   // trails_data
 
   const [data, setData] = useState({
@@ -47,6 +48,7 @@ export default function DavisTrailsDetail(rows) {
   }
 
   useEffect(() => {
+    setMapInteraction(0)
     getListData(+usp.get('page'))
     return () => {
       // console.log('unmount')

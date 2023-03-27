@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import styles from './../styles/IanShoppingCart2.module.css'
 import IanOrderData from '../components/IanOrderData'
 import IanOrderDetail from '../components/IanOrderDetail'
 import axios from 'axios'
 import { ORDERUSER_DATA } from '../connections/api-config'
+import { LoginContext } from '../App'
 
 function IanShoppingCart2() {
   const [mypage, setPage] = useState('')
+  const { setMapInteraction} = useContext(LoginContext)
   // const [user, setUser] = useState([
   //   {
   //     id: '',
@@ -88,6 +90,7 @@ function IanShoppingCart2() {
   // }
 
   useEffect(() => {
+    setMapInteraction(0)
     // getUser2()
   }, [])
   // const [search,setSearch]=useSearchParams()

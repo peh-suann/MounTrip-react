@@ -7,7 +7,7 @@ import KexinIndexProducts from '../components/KexinIndexProducts'
 import KexinIndexProductsDetail from '../components/KexinIndexProductsDetail'
 import { useNavigate } from 'react-router-dom'
 import KexinWeather from '../components/KexinWeather'
-import { LoginContext } from '../App'
+import { LoginContext, RWDContext } from '../App'
 import YichunLanding from './YichunLanding'
 
 // context
@@ -35,7 +35,7 @@ function KexinIndex() {
   const [cart, setCart] = useState(0)
 
   // RWD
-  const device = useRWD()
+  const { device, setDevice } = useContext(RWDContext)
 
   useEffect(() => {
     const WIDTH = window.innerWidth
@@ -146,47 +146,73 @@ function KexinIndex() {
     // const [x, y] = [121.6, 25.2]
 
     // console.log(x,y)
+    if (device === 'PC') {
+      d3.select(mapRef.current)
+        .selectAll('path')
+        .style('fill', 'rgba(10, 140, 45, 0.2)')
 
-    d3.select(mapRef.current)
-      .selectAll('path')
-      .style('fill', 'rgba(10, 140, 45, 0.2)')
+      d3.select(this).style('fill', CLICK_COLOR)
 
-    d3.select(this).style('fill', CLICK_COLOR)
+      const county = i.properties.COUNTYNAME
 
-    const county = i.properties.COUNTYNAME
+      const svg = document.querySelector('#mapZoom')
+      d3.select('#mapZoom')
+        .transition()
+        .duration(750)
+        .attr('transform', transformData[county].transform1)
+      setMapInteraction(1)
 
-    const svg = document.querySelector('#mapZoom')
-    d3.select('#mapZoom')
-      .transition()
-      .duration(750)
-      .attr('transform', transformData[county].transform1)
-    setMapInteraction(1)
+      d3.select('#landmark').remove()
+      d3.select('#landmark1').remove()
 
-    d3.select('#landmark').remove()
-    d3.select('#landmark1').remove()
+      setSelectCounty(county)
+    } else {
+      d3.select(mapRef.current)
+        .selectAll('path')
+        .style('fill', 'rgba(10, 140, 45, 0.2)')
 
-    setSelectCounty(county)
+      d3.select(this).style('fill', CLICK_COLOR)
+
+      const county = i.properties.COUNTYNAME
+
+      const svg = document.querySelector('#mapZoom')
+      d3.select('#mapZoom')
+        .transition()
+        .duration(750)
+        .attr(
+          'transform',
+          'translate(-799.3762640977505,-483.83898874499005) scale(3.4822022531844996)'
+        )
+      setMapInteraction(1)
+
+      d3.select('#landmark').remove()
+      d3.select('#landmark1').remove()
+
+      setSelectCounty(county)
+    }
   }
 
   // console.log(selectCounty);
   // console.log('outside', mapInteraction)
-  if (mapInteraction === 2) {
-    const WIDTH = window.innerWidth
-    const HEIGHT = window.innerHeight
+  if (device === 'PC') {
+    if (mapInteraction === 2) {
+      const WIDTH = window.innerWidth
+      const HEIGHT = window.innerHeight
 
-    const projection = d3
-      .geoMercator()
-      .center([121, 23.58])
-      .scale(10000)
-      .translate([WIDTH / 2, HEIGHT / 2])
+      const projection = d3
+        .geoMercator()
+        .center([121, 23.58])
+        .scale(10000)
+        .translate([WIDTH / 2, HEIGHT / 2])
 
-    d3.select('#mapZoom')
-      .transition()
-      .duration(750)
-      .attr('transform', transformData[selectCounty].transform2)
+      d3.select('#mapZoom')
+        .transition()
+        .duration(750)
+        .attr('transform', transformData[selectCounty].transform2)
 
-    // d3.select('#landmark').remove()
-    // d3.select('#landmark1').remove()
+      // d3.select('#landmark').remove()
+      // d3.select('#landmark1').remove()
+    }
   }
 
   const clickReset = function (e) {
@@ -217,8 +243,6 @@ function KexinIndex() {
       setMapInteraction(1)
     }
   }
-
-  console.log(myProduct)
 
   // landing page
   const [visit, setVisit] = useState(false)

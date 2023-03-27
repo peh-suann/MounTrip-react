@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useContext } from 'react'
 import styles from './../styles/IanShoppingCart1.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../components/IanUseCart'
@@ -6,6 +6,7 @@ import { ORDER_COUPON } from '../connections/api-config'
 import axios from 'axios'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { LoginContext } from '../App'
 
 // import IanShoppingCartTitle from '../components/IanShoppingCartTitle'
 // import './../html/css/shoppingCart1.css'
@@ -17,6 +18,7 @@ function IanShoppingCart1() {
   const [useCoupon, setUseCoupon] = useState([])
   const [mySelect, setMySelect] = useState('')
   const navigate = useNavigate()
+  const { setMapInteraction} = useContext(LoginContext)
 
   const getUseCoupon = async (req, res) => {
     // const r = await fetch(ORDER_COUPON)
@@ -27,6 +29,8 @@ function IanShoppingCart1() {
     const userData = JSON.parse(userString)
     const token = userData.token
     const mid = userData.accountId
+
+
     try {
       const res = await axios.get(ORDER_COUPON, {
         headers: { Authorization: `Bearer ${token}`, sid: mid },
@@ -42,6 +46,7 @@ function IanShoppingCart1() {
   }
 
   useEffect(() => {
+    setMapInteraction(0)
     getUseCoupon()
   }, [])
   const price = useCoupon.map((v, i) => {

@@ -35,12 +35,14 @@ import {
 
 // Search Context
 import { SearchContext } from '../contexts/SearchContext'
+import { LoginContext } from '../App'
 
 // Styles
 import styles from './../styles/yichun_styles/YichunProducts.module.css'
 export const StylesContext = createContext(styles)
 
 function YichunProducts() {
+  const { setMapInteraction} = useContext(LoginContext)
   const [popProducts, setPopProducts] = useState([])
   const [hotSpringProducts, setHotSpringProducts] = useState([])
   const [locationProducts, setLocationProducts] = useState({})
@@ -219,6 +221,10 @@ function YichunProducts() {
   }, [])
 
   const rank = [1, 2, 3, 4, 5, 6]
+
+  useEffect(() => {
+    setMapInteraction(0)
+  }, [])
 
   return (
     <>

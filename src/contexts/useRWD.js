@@ -1,24 +1,25 @@
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 
-const useRWD = () => {
-  const [device, setDevice] = useState('PC')
+
+// const useRWD = () => {
+//   const [device, setDevice] = useState('PC')
   
-  const handleRWD = () => {
-    if (window.innerWidth > 500) setDevice('PC')
-    else setDevice('mobile')
-  }
+//   const handleRWD = () => {
+//     if (window.innerWidth > 500) setDevice('PC')
+//     else setDevice('mobile')
+//   }
 
 
-  useEffect(() => {
-    window.addEventListener('resize', handleRWD)
-    handleRWD(); //加入此行判斷初始裝置狀態
+//   useEffect(() => {
+//     window.addEventListener('resize', handleRWD)
+//     handleRWD(); //加入此行判斷初始裝置狀態
 
-    return () => {
-      window.removeEventListener('resize', handleRWD)
-    }
-  }, [])
+//     return () => {
+//       window.removeEventListener('resize', handleRWD)
+//     }
+//   }, [])
 
-  return device
-}
+//   return device
+// }
 
-export default useRWD
+// export default useRWD

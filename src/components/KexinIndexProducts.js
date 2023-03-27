@@ -14,7 +14,7 @@ import Button from './Button'
 
 // Search Context
 import { SearchContext } from '../contexts/SearchContext'
-import { LoginContext } from '../App'
+import { LoginContext, RWDContext } from '../App'
 import { format } from 'date-fns'
 
 
@@ -22,6 +22,7 @@ function KexinIndexProducts(props) {
   const { selectCounty } = props
   const { mapInteraction, setMapInteraction } = useContext(LoginContext)
   const { myProduct, setMyProduct } = useContext(ProductContext)
+  const {device} = useContext(RWDContext)
   const [data, setData] = useState({
     rows: [],
   })
@@ -64,17 +65,17 @@ function KexinIndexProducts(props) {
   return (
     <>
       <div
-        className={`${styles['map-product']} d-flex flex-column align-items-center justify-content-between px-0`}
-        style={
-          mapInteraction === 2
+        className={`${styles['map-product']} d-flex flex-column align-items-center justify-content-between px-0 ${styles['mobile-none']}`}
+        style={ device === 'PC' ? (mapInteraction === 2 && device === 'PC'
             ? { right: '530px' }
-            : mapInteraction === 1
+            : mapInteraction === 1 && device === 'PC'
             ? { right: '0' }
-            : { right: '-450px' }
+            : { right: '-450px' }) : (mapInteraction === 1 && device === 'mobile' ? {top: '450px'} :{top: '884px'} )
+          
         }
       >
         <div
-          className={`${styles['search-input2']} align-items-center ${styles['mb-20']} ${styles['mt-19']}`}
+          className={`${styles['search-input2']} align-items-center ${styles['mb-20']} ${styles['mt-19']} ${styles['mobile-none']}`}
         >
           <FontAwesomeIcon icon={faSearch} />
           <input
@@ -88,14 +89,14 @@ function KexinIndexProducts(props) {
           />
         </div>
 
-        <div className={`${styles['card']} d-flex flex-column px-0`}>
+        <div className={`${styles['card']} d-flex flex-column px-0  ${styles['mobile-none']}`}>
           {/* // TODO: 沒要到資料也不要跳錯誤
         // TODO: component樣式修改 */}
           {data.length
             ? data.map((v, i) => {
                 return (
                   <>
-                    <div className={styles['mb-16']}>
+                    <div className={`${styles['mb-16']}  ${styles['mobile-none']}`}>
                       <KexinProductCard
                         key={i}
                         el={v}

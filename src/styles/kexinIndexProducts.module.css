@@ -3,7 +3,7 @@
 }
 
 .mtgrey2 {
-  color: var(--mtgrey-2);
+  color: var(--mtgrey-2); 
 }
 
 .mtgrey3 {
@@ -159,4 +159,16 @@
 .map-product button {
   width: 100%;
   margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 400px) {
+  .map-product {
+    left: 0;
+    width: 100%;
+    top: 1000px;
+
+  }
+
+
 }

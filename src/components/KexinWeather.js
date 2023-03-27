@@ -102,6 +102,7 @@ function KexinWeather(props) {
     }
   }
 
+  // console.log(weather[0].weatherElement[0].time[1].startTime.slice(11, 13))
   // console.log(
   //   weather
   //     .filter((el, i) => {
@@ -166,7 +167,7 @@ function KexinWeather(props) {
                         .slice(0, 1)
                     }°C`
                   : `${
-                      weatherNow  &&
+                      weatherNow &&
                       weatherNow
                         ?.filter((el, i) => {
                           return el.parameter[0].parameterValue === selectCounty
@@ -194,7 +195,9 @@ function KexinWeather(props) {
                       return el.locationName === selectCounty
                     })
                     ?.map((el, i) => {
-                      {/* console.log(el.weatherElement[1].time[1]) */}
+                      {
+                        /* console.log(el.weatherElement[1].time[1]) */
+                      }
                       return el.weatherElement[0].time[time].elementValue[0]
                         .value
                     })}
@@ -209,7 +212,9 @@ function KexinWeather(props) {
                       return el.locationName === selectCounty
                     })
                     ?.map((el, i) => {
-                      {/* console.log(el.weatherElement[1].time[1]) */}
+                      {
+                        /* console.log(el.weatherElement[1].time[1]) */
+                      }
                       return el.weatherElement[2].time[time].elementValue[0]
                         .value
                     })}
@@ -220,7 +225,9 @@ function KexinWeather(props) {
                       return el.locationName === selectCounty
                     })
                     ?.map((el, i) => {
-                      {/* console.log(el.weatherElement[1].time[1]) */}
+                      {
+                        /* console.log(el.weatherElement[1].time[1]) */
+                      }
                       return el.weatherElement[3].time[time].elementValue[0]
                         .value
                     })}{' '}
@@ -235,7 +242,9 @@ function KexinWeather(props) {
                       return el.locationName === selectCounty
                     })
                     ?.map((el, i) => {
-                      {/* console.log(el.weatherElement[1].time[1]) */}
+                      {
+                        /* console.log(el.weatherElement[1].time[1]) */
+                      }
                       return el.weatherElement[1].time[time].elementValue[0]
                         .value
                     })}
@@ -259,12 +268,15 @@ function KexinWeather(props) {
               setTime(2)
             }}
           >
-            {/* {weather &&
-            weather[0].weatherElement[0].time[1].startTime.slice(11, 13) ===
-              '18'
-              ? '今晚'
-              : '明早'} */}
-            今晚
+            {/* {console.log(weather)} */}
+            {weather
+              ? weather[0]?.weatherElement[0].time[1].startTime.slice(
+                  11,
+                  13
+                ) === '18'
+                ? '今晚'
+                : '明早'
+              : '今晚'}
           </button>
           <button
             className="flex-fill"
@@ -272,12 +284,14 @@ function KexinWeather(props) {
               setTime(3)
             }}
           >
-            {/* {weather &&
-            weather[0].weatherElement[0].time[1].startTime.slice(11, 13) ===
-              '18'
-              ? '明早'
-              : '明晚'} */}
-            明晚
+            {weather
+              ? weather[0]?.weatherElement[0].time[1].startTime.slice(
+                  11,
+                  13
+                ) === '18'
+                ? '明早'
+                : '明晚'
+              : '明早'}
           </button>
         </div>
       </div>

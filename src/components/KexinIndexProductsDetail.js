@@ -35,8 +35,6 @@ function KexinIndexProductsDetail() {
     } catch (err) {}
   }
 
-  console.log('comment',data)
-  console.log('myProduct',myProduct)
 
   useEffect(() => {
     getCommentData(myProduct.sid)
@@ -63,8 +61,6 @@ function KexinIndexProductsDetail() {
   useEffect(() => {
     getBatchData(myProduct.sid)
   }, [myProduct.sid])
-
-
 
   // 抓favorite資料
 

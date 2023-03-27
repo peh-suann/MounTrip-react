@@ -10,6 +10,7 @@ import FavoriteContent from '../components/LaiFavoriteContent'
 import MobileDropdown from '../components/LaiMobileDropdown'
 import MemberProfile from '../components/LaiMemberProfile'
 import { MemberContext } from './../contexts/MemberContext.js'
+import { LoginContext } from '../App'
 import AuthContext from './../contexts/AuthContexts.js'
 import {
   MEMBER_DATA,
@@ -245,7 +246,6 @@ export default function Member() {
     setImage(img)
   }
 
-
   // yichun's coupon
   const {
     newCoupon,
@@ -266,7 +266,12 @@ export default function Member() {
     </h4>`
   const playedContent = `<h4>您已經領取過優惠券啦！</h4>`
 
+  const { setMapInteraction } = useContext(LoginContext)
+
   useEffect(() => {
+    // kexin navbar調整
+
+    setMapInteraction(0)
     const fetchData = async () => {
       // 查看登入前是否有玩遊戲
       const loginPlay = localStorage.getItem('test')

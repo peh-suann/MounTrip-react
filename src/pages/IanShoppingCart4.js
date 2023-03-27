@@ -1,11 +1,12 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useRef,useContext,useEffect } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import dayjs from 'dayjs'
 import styles from './../styles/IanShoppingCart4.module.css'
 import './../styles/Mountrip.module.css'
 import { ORDER_HISTORY } from '../connections/api-config'
 import { async } from 'q'
+import { LoginContext } from '../App'
 
 function IanShoppingCart4() {
   const [mypage, setPage] = useState('')
@@ -18,6 +19,12 @@ function IanShoppingCart4() {
   const newPayTotal = payTotal.total
   console.log('newPayTotal:', newPayTotal)
   const Date = localStorage.getItem('Date')
+  const { setMapInteraction} = useContext(LoginContext)
+
+
+  useEffect(() => {
+    setMapInteraction(0)
+  }, [])
 
   return (
     <>

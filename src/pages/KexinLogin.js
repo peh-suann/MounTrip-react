@@ -27,11 +27,15 @@ function KexinLogin() {
   const navigate = useNavigate()
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [loginSuccess, setLoginSuccess] = useState(false)
-  const { showBox, setShowbox } = useContext(LoginContext)
+  const { showBox, setShowbox, setMapInteraction} = useContext(LoginContext)
 
   // for Test
   // useEffect(() => {}, [myForm])
   const { newCoupon } = useContext(TestCouponContext)
+
+  useEffect(() => {
+    setMapInteraction(0)
+  }, [])
 
   return (
     <>

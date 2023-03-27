@@ -1,10 +1,11 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef,useContext } from 'react'
 import styles from './../styles/IanSeason.module.css'
 // import './../html/css/season.css'
 import { TRAILS_SEASON } from '../connections/api-config'
 import { TRAILS_COMMENT } from '../connections/api-config'
 import dayjs from 'dayjs'
 import FavoriteBtnOff from './../components/FavoriteBtnOff'
+import { LoginContext } from '../App'
 
 // import { ORDER_COUPON } from '../connections/api-config'
 
@@ -24,6 +25,7 @@ function IanSeason() {
   //   const cdata = c.rows
   //   addCoupon(cdata)
   // }
+  const { setMapInteraction} = useContext(LoginContext)
 
   const [data, setData] = useState({
     rows: [],
@@ -48,6 +50,7 @@ function IanSeason() {
   }
 
   useEffect(() => {
+    setMapInteraction(0)
     getSeasonData()
   }, [])
 

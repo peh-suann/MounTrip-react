@@ -15,6 +15,7 @@ import DavisFilterMoBo from '../components/DavisTrailsFilter/DavisFilterMoBo'
 
 // search context
 import { SearchContext } from '../contexts/SearchContext'
+import { LoginContext } from '../App'
 
 // api
 import { TRAILS_FILTER_DATA } from '../connections/api-config'
@@ -41,8 +42,10 @@ function DavisTrailsFilter() {
   })
 
   const { search } = useContext(SearchContext)
+  const { setMapInteraction} = useContext(LoginContext)
 
   useEffect(() => {
+    setMapInteraction(0)
     // console.log('initSearch render')
 
     // console.log('search:', search, search.location)
