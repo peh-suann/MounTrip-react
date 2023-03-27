@@ -263,12 +263,19 @@ export default function NavBar() {
                   }}
                 >
                   <div className={styles.profile}>
+                    {/* {data[0] && myAuth.account ? (
+                      <div
+                        className={styles.avatar_pic}
+                        style={{
+                          background: `url('${avatarUrl}') 0% 0% / cover`,
+                          backgroundSize: 'cover',
+                        }}
+                      ></div>
+                    ) : (
+                      ''
+                    )} */}
                     {data[0] && myAuth.account ? (
-                      <img
-                        src={`${USER_AVATAR}${data[0].img}`}
-                        // src={``}
-                        alt=""
-                      />
+                      <img src={`${USER_AVATAR}${data[0].img}`} alt="" />
                     ) : (
                       ''
                     )}

@@ -126,7 +126,7 @@ function NavbarShoppingCart(props) {
                           }}
                         />
                       </button>
-                      <span>{v.quantity}</span>
+                      <span>{v.quantity} 人</span>
                       <button>
                         <FontAwesomeIcon
                           icon={faAdd}

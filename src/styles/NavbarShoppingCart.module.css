@@ -256,7 +256,7 @@ section#nav_cart .checkout button {
   width: 100%;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 391px) {
   section#nav_cart {
     width: 300px;
   }
