@@ -23,11 +23,11 @@ function KexinFixedBox(props) {
   const [detailCount, setDetailCount] = useState(0)
 
   const Rows = {
-    batch_end: el[0].batch_end.slice(0, 10) || '2023-03-29',
+    batch_end: '2023-03-29',
     batch_max: 10,
     batch_min: 2,
     batch_sold: 0,
-    batch_start: el[0].batch_start.slice(0, 10) || '2023-03-29',
+    batch_start: '2023-03-29',
     batch_switch: 1,
     coupon_status: 1,
     difficulty_describ: '初階行程',
@@ -69,11 +69,12 @@ function KexinFixedBox(props) {
       })[0]
       ?.batch_end.slice(0, 10)
 
-    console.log( el
-        ?.filter((v, i) => {
-          // console.log(v.batch_sid)
-          return v.batch_sid === +detailCount
-        })[0])
+    console.log(
+      el?.filter((v, i) => {
+        // console.log(v.batch_sid)
+        return v.batch_sid === +detailCount
+      })[0]
+    )
   }
 
   // console.log(+detailCount)
