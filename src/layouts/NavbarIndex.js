@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import AuthContext from '../contexts/AuthContexts'
 import { StatusContext } from '../pages/KexinIndex'
-import { LoginContext,UploadContext } from '../App'
+import { LoginContext, UploadContext } from '../App'
 import { SELECT_MEMBER } from '../connections/api-config'
 import YichunModal from '../components/YichunModal'
 import axios from 'axios'
@@ -66,13 +66,10 @@ export default function NavBar() {
     } catch (err) {}
   }
 
-
   useEffect(() => {
     const id = myAuth.accountId || myAuth.sid
     getMember(id)
-  }, [myAuth,uploaded])
-
-
+  }, [myAuth, uploaded])
 
   console.log('data', data)
   console.log(myAuth.sid)
@@ -275,7 +272,11 @@ export default function NavBar() {
                       ''
                     )} */}
                     {data[0] && myAuth.account ? (
-                      <img src={`${USER_AVATAR}${data[0].img}`} alt="" />
+                      data[0].img ? (
+                        <img src={`${USER_AVATAR}${data[0].img}`} alt="123" />
+                      ) : (
+                        ''
+                      )
                     ) : (
                       ''
                     )}

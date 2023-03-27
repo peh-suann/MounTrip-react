@@ -758,10 +758,7 @@ section.test .test_info button {
     flex-direction: column;
   }
   .search_bar .mobile_input:first-child {
-    width: 60%;
-  }
-  .search_bar .mobile_input:last-child {
-    width: 36%;
+    width: 100%;
   }
   .search_bar label {
     font-weight: 400;
