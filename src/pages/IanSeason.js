@@ -108,7 +108,10 @@ function IanSeason() {
                     </svg>
                     {v.score}.0
                   </p>
-                  <FavoriteBtnOff trailSID={v.sid}/>
+                  <div className={`${styles.heartfavorite}`}>
+                    <FavoriteBtnOff trailSID={v.sid} />
+                  </div>
+
                   <p className={styles.difficulty}>
                     難度 {v.difficulty_short}級
                   </p>
@@ -244,12 +247,12 @@ function IanSeason() {
                 >
                   <div>
                     <h5>
-                      <span className={styles.account}>
+                      <span className={`${styles.account} me-lg-2`}>
                         @{v2.lastname}
                         {v2.firstname}
                       </span>
-                      <span>•</span>
-                      <span className={styles.date}>
+                      <span className={`me-lg-2`}>•</span>
+                      <span className={`${styles.date}`}>
                         {dayjs(v2.rate_date).format('YYYY-MM-DD')}
                       </span>
                     </h5>

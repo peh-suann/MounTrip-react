@@ -1,11 +1,14 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import AuthContext from '../contexts/AuthContexts'
 import { StatusContext } from '../pages/KexinIndex'
 import { LoginContext } from '../App'
+import { SELECT_MEMBER } from '../connections/api-config'
 import YichunModal from '../components/YichunModal'
+import axios from 'axios'
+import { USER_AVATAR } from '../connections/api-config'
 
 // styles
 import styles from './../styles/NavbarIndex.module.css'
@@ -23,6 +26,10 @@ import NavbarShoppingCart from '../components/NavbarShoppingCart'
 import NavbarDropdown from '../components/NavbarDropdown'
 import NavbarDropdownMobile from '../components/NavbarDropdownMobile'
 import { useCart } from '../components/IanUseCart'
+
+// search
+import { format } from 'date-fns'
+import { SearchContext } from '../contexts/SearchContext'
 
 export default function NavBar() {
   const { cart } = useCart()
@@ -42,11 +49,49 @@ export default function NavBar() {
   const [showListMobile, setShowListMobile] = useState(false)
   const navigate = useNavigate()
 
+  // 抓member資料
+  const [data, setData] = useState({
+    rows: [],
+  })
+  // const getMember = function
+  const getMember = async (sid) => {
+    try {
+      const response = await axios.get(SELECT_MEMBER, {
+        params: {
+          sid,
+        },
+      })
+      setData(response.data)
+    } catch (err) {}
+  }
+
+  useEffect(() => {
+    getMember(myAuth.accountId)
+  }, [])
+
+  console.log('data', data[0])
+  console.log('data', !!data[0])
+
   if (showBox === 2 || showBox === 1) {
     setTimeout(() => {
       setShowbox(0)
     }, '2000')
   }
+
+  // search context
+  const { search, setSearch } = useContext(SearchContext)
+
+  const [navKeyWorld, setNavKeyWorld] = useState()
+  let startdate = new Date(2022, 1, 1)
+  let enddate = new Date(2024, 12, 31)
+  const formattedDate = format(startdate, 'yyyy-MM-dd')
+  const formattedDateEnd = format(enddate, 'yyyy-MM-dd')
+  const [newstartdate, setNewstartdate] = useState(formattedDate)
+  const [newenddate, setNewenddate] = useState(formattedDateEnd)
+
+  useEffect(() => {
+    console.log('navKeyWorld', navKeyWorld)
+  }, [navKeyWorld])
 
   return (
     <>
@@ -144,6 +189,25 @@ export default function NavBar() {
                     className={styles.link}
                     href="/"
                     placeholder="搜尋關鍵字、目的地"
+                    onChange={(e) => {
+                      setNavKeyWorld(e.target.value)
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        const searchData = {
+                          location: navKeyWorld,
+                          startDate: newstartdate,
+                          endDate: newenddate,
+                        }
+                        setSearch(searchData)
+
+                        localStorage.setItem(
+                          'mySearch',
+                          JSON.stringify(searchData)
+                        )
+                        navigate('/trails-filter')
+                      }
+                    }}
                   />
                 ) : (
                   ''
@@ -191,7 +255,17 @@ export default function NavBar() {
                     }
                   }}
                 >
-                  <div className={styles.profile}></div>
+                  <div className={styles.profile}>
+                    {data[0] && myAuth.account ? (
+                      <img
+                        src={`${USER_AVATAR}${data[0].img}`}
+                        // src={``}
+                        alt=""
+                      />
+                    ) : (
+                      ''
+                    )}
+                  </div>
                 </Link>
               </li>
             </ul>

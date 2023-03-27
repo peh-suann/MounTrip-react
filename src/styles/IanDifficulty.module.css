@@ -52,7 +52,7 @@ z-index: 0;
   text-align: center;
   letter-spacing: 0.1em;
   }
-.difficulty_secondText,.difficulty_secondText >span  {
+.difficulty_secondText,.difficulty_secondText > span  {
 font-weight: 400;
 font-size: 18px; 
 line-height: 26px;
@@ -174,16 +174,16 @@ stroke: rgb(127, 222, 127);
     
     
     
-    /* section2 */
-    .totalProduct_secondSection{
-    padding: 0px 120px;
-    background-color: rgba(255, 255, 242, 0.9);
-    height:120vh ;
-    }
-    .titleAll{
-      width: 200px;
-      position: relative;
-    }
+/* section2 */
+.totalProduct_secondSection{
+padding: 0px 120px;
+background-color: rgba(255, 255, 242, 0.9);
+height:120vh ;
+}
+.titleAll{
+  width: 200px;
+  position: relative;
+}
 
 .tPSecondSectionH5_text{
     font-weight: 900;
@@ -206,14 +206,14 @@ stroke: rgb(127, 222, 127);
       opacity: 0;
   }
 .tPSecondSectionH3_text{
-        font-weight: 900;
-        margin: 0;
-        color: var(--mtgreen-1);
-        font-weight: 700;
-        line-height: 26px;
-        letter-spacing: 0.1em;
-        position: absolute;
-        opacity: 0;
+font-weight: 900;
+margin: 0;
+color: var(--mtgreen-1);
+font-weight: 700;
+line-height: 26px;
+letter-spacing: 0.1em;
+position: absolute;
+opacity: 0;
 }
 
 .productAll{
@@ -236,123 +236,135 @@ stroke: rgb(127, 222, 127);
 
 
 
-    div.tPSSCard_num{
-    width: 60px;
-    position: absolute;
-    top:-15px
-    }
-    div.tPSSCard_numsvg{
-    width: 100%;
-    position: relative;
-    padding: 0px;
-    }
-    .overflowpic1{
-      position: relative;
-      overflow:hidden;
-    }
-    .tPSSCard_pic1{
-    height: 250px;
-    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-1.jpg") no-repeat; */
-    background-size: cover;
-    background-position: center center;
-    flex-grow: 1;
-    border-radius: 10px;
+div.tPSSCard_num{
+width: 60px;
+position: absolute;
+top:-15px
+}
+div.tPSSCard_numsvg{
+width: 100%;
+position: relative;
+padding: 0px;
+}
+.overflowpic1{
+  position: relative;
+  overflow:hidden;
+}
+.tPSSCard_pic1{
+height: 250px;
+/* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-1.jpg") no-repeat; */
+background-size: cover;
+background-position: center center;
+flex-grow: 1;
+border-radius: 10px;
+
+}
+.tPSSCard_pic1:hover{
+  transition: 1s;
+  transform: scale(1.2,1.2);
+}
+.tPSSCard_pic2{
+height: 250px;
+/* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-2.jpg") no-repeat; */
+background-size: cover;
+flex-grow: 1;
+border-radius: 10px;
+}
+.tPSSCard_pic2:hover{
+  transition: 1s;
+  transform: scale(1.2,1.2);
+}
+.tPSSCard_pic3{
+height: 250px;
+/* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-3.jpg") no-repeat; */
+background-size: cover;
+flex-grow: 1;
+border-radius: 10px;
+}
+.tPSSCard_pic3:hover{
+  transition: 1s;
+  transform: scale(1.2,1.2);
+}
+.tPSSCard_pic4{
+height: 250px;
+/* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-1.jpg") no-repeat; */
+background-size: cover;
+flex-grow: 1;
+border-radius: 10px;
+}
+.tPSSCard_pic4:hover{
+  transition: 1s;
+  transform: scale(1.2,1.2);
+}
+.tPSSCard_pic5{
+height: 250px;
+/* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-2.jpg") no-repeat; */
+background-size: cover;
+flex-grow: 1;
+border-radius: 10px;
+}
+.tPSSCard_pic5:hover{
+  transition: 1s;
+  transform: scale(1.2,1.2);
+}
+.tPSSCard_pic6{
+height: 250px;
+/* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-3.jpg") no-repeat; */
+background-size: cover;
+flex-grow: 1;
+border-radius: 10px;
+}
+.tPSSCard_pic6:hover{
+  transition: 1s;
+  transform: scale(1.2,1.2);
+}
     
-    }
-    .tPSSCard_pic1:hover{
-      transition: 1s;
-      transform: scale(1.2,1.2);
-    }
-    .tPSSCard_pic2{
-    height: 250px;
-    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-2.jpg") no-repeat; */
-    background-size: cover;
-    flex-grow: 1;
-    border-radius: 10px;
-    }
-    .tPSSCard_pic2:hover{
-      transition: 1s;
-      transform: scale(1.2,1.2);
-    }
-    .tPSSCard_pic3{
-    height: 250px;
-    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/101-3.jpg") no-repeat; */
-    background-size: cover;
-    flex-grow: 1;
-    border-radius: 10px;
-    }
-    .tPSSCard_pic3:hover{
-      transition: 1s;
-      transform: scale(1.2,1.2);
-    }
-    .tPSSCard_pic4{
-    height: 250px;
-    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-1.jpg") no-repeat; */
-    background-size: cover;
-    flex-grow: 1;
-    border-radius: 10px;
-    
-    }
-    .tPSSCard_pic4:hover{
-      transition: 1s;
-      transform: scale(1.2,1.2);
-    }
-    .tPSSCard_pic5{
-    height: 250px;
-    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-2.jpg") no-repeat; */
-    background-size: cover;
-    flex-grow: 1;
-    border-radius: 10px;
-    
-    }
-    .tPSSCard_pic5:hover{
-      transition: 1s;
-      transform: scale(1.2,1.2);
-    }
-    .tPSSCard_pic6{
-    height: 250px;
-    /* background:linear-gradient(180deg, rgba(0, 0, 0, 0) 71.43%, rgba(0, 0, 0, 0.74) 96.19%),url("./../html/img/102-3.jpg") no-repeat; */
-    background-size: cover;
-    flex-grow: 1;
-    border-radius: 10px;
-    
-    }
-    .tPSSCard_pic6:hover{
-      transition: 1s;
-      transform: scale(1.2,1.2);
-    }
-    
-    
-    .tPSSCard_num{
-    position: relative;
-    top: -18px;
-    left:480px;
-    }
-    .tPSSCard_bottom{
-    width: 100%;
-    position: absolute;
-    top: 215px;
-    padding: 0px 15px;
-    }
-    .tPSSCard_bottom p{
-    color: white;
-    margin: 0;
-    }
-    div.tPSSCard_numsvg > h3{
-    color:white;
-    position: absolute;
-    top:13px;
-    left: 19px;
-    font-weight: 700;
-    }
-    .tPSSCard_body{
-    padding: 10px 0px;
-    }
-    .first_p{
-    margin: 0;
-    font-size: 20px;
-    font-weight: 700;
-    }
+
+.tPSSCard_num{
+  position: relative;
+  top: -18px;
+  left:480px;
+}
+.tPSSCard_bottom{
+  width: 100%;
+  position: absolute;
+  top: 215px;
+  padding: 0px 15px;
+}
+.tPSSCard_bottom p{
+  color: white;
+  margin: 0;
+}
+div.tPSSCard_numsvg > h3{
+  color:white;
+  position: absolute;
+  top:13px;
+  left: 19px;
+  font-weight: 700;
+}
+.tPSSCard_body{
+  padding: 10px 0px;
+}
+.first_p{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+p.firstP_p{
+font-weight: 350;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0.1em;
+color: rgba(27, 39, 39, 0.8);
+}
+
+
+h4.tPSSCardDiv_p{
+font-weight: 800;
+line-height: 140%;
+letter-spacing: 0.05em;
+color: var(--mtgreen-1);
+}
     
     
     /* button */
@@ -374,19 +386,18 @@ stroke: rgb(127, 222, 127);
     
     
     
-    @media screen and (max-width:391px) {
+@media screen and (max-width:391px) {
     
-    .difficultyAll{
-      height: 55vh;
-    }
-    
-    .difficulty{
-      height: 60vh;
-      position: relative;
-    }
-    
-    
-    
+.difficultyAll{
+  height: 80vh;
+  padding-top: 30%;
+}
+
+.difficulty{
+  height: 60vh;
+  position: relative;
+  /* background-color: gray; */
+}
 .hard_svg{
   display: none;
 }
@@ -425,33 +436,34 @@ display: none;
 
 .dMountain_hard{
 position: absolute;
-  top: 60%;
+top: 80%;
     }
-  .difficultyHard_flag > svg{
-    width: 70%;
-  }
-  .difficultyHard_flag{
+.difficultyHard_flag > svg{
+  width: 50%;
+}
+.difficultyHard_flag{
     position: absolute;
-    top: 50%;
+    top: 69%;
     left: 23%;
-  }
+}
 .difficultyMountainHard_focus{
 width: 90px;
 height: 90px;
 position: absolute;
-top: 47%;
+top: 65%;
 left: 14%;
 z-index: 0;
+opacity: 1;
 }
 
     
 .dMountain_medium{
   position: absolute;
-  top: 66%;
+  top: 85%;
   left: 35%;
   }
 .difficultyMedium_flag > svg{
-  width: 70%;
+  width: 50%;
 }
 .difficultyMedium_flag{
 position: absolute;
@@ -472,11 +484,11 @@ opacity: 0;
 
 .dMountain_easy{
 position: absolute;
-top: 71%;
+top: 91%;
 left: 66%;
   }
 .difficultyEasy_flag > svg{
-  width: 70%;
+  width: 50%;
 }
 .difficultyEasy_flag{
 position: absolute;
@@ -499,9 +511,9 @@ top: 100%;
 /* difficultyMountain_text */
 .difficultyHard_text{
 width: 100%;
-  position: absolute;
-  top: 10%;
-  left: 0%;
+position: absolute;
+top: 0%;
+left: 0%;
 }
 .difficultyMedium_text{
 width: 100%;
@@ -521,8 +533,8 @@ z-index: 0;
 /* secondSection2 */
 .totalProduct_secondSection{
 padding: 0px;
-  height: 300vh;
-  background-color: var(--mtyellow-4);
+height: 420vh;
+background-color: var(--mtyellow-4);
 }
 .difficulty_firstText > span{
 font-size: 22px;
@@ -537,6 +549,29 @@ font-size: 16px;
 font-size: 13px;
   line-height: 18.82px;
   }
+
+
+.productAll{
+    height: 385vh;
+    position: relative;
+}
+
+.tPSSection_cards1{
+    position: absolute;
+    top: 0px;
+    opacity: 1;
+}
+.tPSSection_cards2{
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+}
+.tPSSection_cards3{
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+}
+
 
 /* difficultyMountain_mountain */
 

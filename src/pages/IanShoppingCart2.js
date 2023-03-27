@@ -19,8 +19,28 @@ function IanShoppingCart2() {
   //     birthday: '',
   //   },
   // ])
-  const [user, setUser] = useState({})
-  console.log(user)
+  const [Auth, setAuth] = useState([
+    {
+      id: '',
+      firstname: '',
+      lastname: '',
+      phone: '',
+      email: '',
+      idCard: '',
+      birthday: '',
+    },
+  ])
+  const [user, setUser] = useState([
+    {
+      id: '',
+      firstname: '',
+      lastname: '',
+      phone: '',
+      email: '',
+      idCard: '',
+      birthday: '',
+    },
+  ])
   const [memberitems, setMemberItems] = useState([
     {
       id: 1,
@@ -29,43 +49,52 @@ function IanShoppingCart2() {
       phone: '0912345678',
       email: 'abc@xxx.gmail.com',
       idCard: 'Z123456789',
-      birthday: '1987-01-20',
+      birthday: '1990-01-31',
+    },
+  ])
+  const [traveler, setTraveler] = useState([
+    {
+      id: 2,
+      firstname: 'john',
+      lastname: 'Wu',
+      phone: '0987654321',
+      email: 'johnWu@gmail.com',
+      idCard: 'A123454321',
+      birthday: '2000-07-18',
     },
   ])
 
-  const getUser2 = async (req, res) => {
-    const userString = localStorage.getItem('myAuth')
-    const userData = JSON.parse(userString)
-    // console.log('u.id:', user.accountId)
-    const token = userData.token
-    const mid = userData.accountId
+  // const getUser2 = async (req, res) => {
+  //   const userString = localStorage.getItem('myAuth')
+  //   const userData = JSON.parse(userString)
+  //   // console.log('u.id:', user.accountId)
+  //   const token = userData.token
+  //   const mid = userData.accountId
 
-    try {
-      const res = await axios.get(ORDERUSER_DATA(mid), {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      if (!res) return res.sendStatus(401)
-      // const currentUserId = myAuth.sid
-      const currentUserData = res.data
-      setUser(currentUserData)
-      // TODO 大頭貼檔名 = user.img
-      const avatarName = res.data.img
-    } catch (error) {
-      console.log('uu:', user)
-      return []
-    }
-  }
+  //   try {
+  //     const res = await axios.get(ORDERUSER_DATA(mid), {
+  //       headers: { Authorization: `Bearer ${token}` },
+  //     })
+  //     if (!res) return res.sendStatus(401)
+  //     const currentUserId = myAuth.sid
+  //     const currentUserData = res.data
+  //     setUser(currentUserData)
+  //     // TODO 大頭貼檔名 = user.img
+  //     const avatarName = res.data.img
+  //   } catch (error) {
+  //     console.log('uu:', user)
+  //     return []
+  //   }
+  // }
 
   useEffect(() => {
-    getUser2()
+    // getUser2()
   }, [])
-  // const navigate = useNavigate()
   // const [search,setSearch]=useSearchParams()
   // console.log(search.toString(),12132156456654)
   const navigate = useNavigate()
-  const jsonUser = { user: user }
-  const Jsonmember = JSON.stringify(jsonUser)
-  // const JsonStorage = JSON.stringify(QString)
+  // const jsonUser = { user: user }
+  // const Jsonmember = JSON.stringify(jsonUser)
   return (
     <>
       <div className={`${styles.shoppingCart2All}`}>
@@ -306,7 +335,7 @@ function IanShoppingCart2() {
         <form
           onSubmit={(e) => {
             e.preventDefault()
-            localStorage.setItem('member', Jsonmember)
+            // localStorage.setItem('member', Jsonmember)
             navigate('/SC3')
           }}
         >
@@ -341,7 +370,7 @@ function IanShoppingCart2() {
               </svg>
               <h3
                 onClick={() => {
-                  setUser(user)
+                  setUser(memberitems)
                 }}
               >
                 訂購人資料
@@ -350,11 +379,15 @@ function IanShoppingCart2() {
             <IanOrderData
               user={user}
               setUser={setUser}
+              setAuth={setAuth}
               memberitems={memberitems}
               setMemberItems={setMemberItems}
             />
 
             <div
+              onClick={() => {
+                setAuth(traveler)
+              }}
               className={`${styles['shopping-cart-title']} ${styles['mb-28']} d-flex align-items-center `}
             >
               <svg
@@ -385,7 +418,9 @@ function IanShoppingCart2() {
             </div>
             <IanOrderDetail
               memberitems={memberitems}
-              setMemberItems={setMemberItems}
+              traveler={traveler}
+              Auth={Auth}
+              setAuth={setAuth}
             />
           </div>
 

@@ -108,6 +108,7 @@ body {
   line-height: 28px;
   text-align: justify;
   padding-bottom: 40px;
+  margin-bottom: -20px;
 }
 
 .img_contain {
@@ -198,7 +199,14 @@ body {
   height: 43px;
   padding: 6px 24px;
 }
-
+.modal{
+  background-color: var(--mtyellow-4);
+  border-radius: 10px;
+}
+.modalContent{
+  background-color: var(--mtyellow-4);
+  border-radius: 10px;
+}
 .shopModal_footer{
   height: 70px;
 }
@@ -420,12 +428,12 @@ height: 30px;
   width: 797px;
   height: 560px;
   position: relative;
-  top: -60px;
+  top: -90px;
   border: none;
 }
 
 .gpx_wrap {
-  height: 500px;
+  height: 450px;
   border: 2px solid #eee;
   display: inline-block;
   overflow: hidden;

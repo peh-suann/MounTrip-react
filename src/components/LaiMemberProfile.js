@@ -21,7 +21,8 @@ export default function LaiMemberProfile(props) {
     open,
   } = props
   const avatarUrl = USER_AVATAR + avatar
-  // console.log('avatar:', avatar)
+  // console.log('avatar:', avatarUrl)
+  // console.log('avatar:', avatar) 
 
   return (
     <>
@@ -64,7 +65,7 @@ export default function LaiMemberProfile(props) {
               <div
                 className={styles.avatar_pic}
                 style={{
-                  background: `url('${avatarUrl}')`,
+                  background: `url('${avatarUrl}') 0% 0% / cover`,
                   backgroundSize: 'cover',
                 }}
               ></div>

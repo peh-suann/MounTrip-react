@@ -1,14 +1,11 @@
 import axios from 'axios'
 import React, { useReducer } from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 // components
-// import DavisTrailsDetailTable from '../components/DavisTrailsDetailTable'
 import DavisTrailsImgGroup from '../components/DavisTrailsDetail/DavisTrailsImgGroup'
-// import DavisTrailsBatch from '../components/DavisTrailsDetail/DavisTrailsBatch'
-// import DavisTrailsShopBtn from '../components/DavisTrailsDetail/DavisTrailsShopBtn'
 import DavisTrailsShopGroup from '../components/DavisTrailsDetail/DavisTrailsShopGroup'
 import DavisTrailsGpx from '../components/DavisTrailsDetail/DavisTrailsGpx'
 import DavisTrailsRating from '../components/DavisTrailsDetail/DavisTrailsRating'
@@ -20,6 +17,11 @@ import { TRAILS_DATA } from '../connections/api-config'
 
 //useReducer
 // import { useCart } from '../components/IanUseCart'
+
+// Search Context
+import { SearchContext } from '../contexts/SearchContext'
+import { LoginContext } from '../App'
+import { format } from 'date-fns'
 
 export default function DavisTrailsDetail(rows) {
   const location = useLocation()
@@ -58,10 +60,26 @@ export default function DavisTrailsDetail(rows) {
     return rows_data.slice(0, 1)
   }
 
-  // console.log('filterFromBatch', filterFromBatch(rows_data))
+  // console.log('filterFromBatch', data.rows[0].lat)
 
   // const [count, setCount] = useState(0)
   // console.log('filterFromBatch', filterFromBatch(rows_data))
+
+  // search context
+  const { search, setSearch } = useContext(SearchContext)
+
+  const [indexgeo, setIndexgeo] = useState()
+
+  let startdate = new Date(2022, 1, 1)
+  let enddate = new Date(2024, 12, 31)
+  const formattedDate = format(startdate, 'yyyy-MM-dd')
+  const formattedDateEnd = format(enddate, 'yyyy-MM-dd')
+  const [newstartdate, setNewstartdate] = useState(formattedDate)
+  const [newenddate, setNewenddate] = useState(formattedDateEnd)
+
+  // gpx props
+  let newdata = data.rows[0]
+  console.log('filterFromBatch', newdata)
 
   return (
     <>
@@ -84,7 +102,20 @@ export default function DavisTrailsDetail(rows) {
                 <li className="breadcrumb-item  ">
                   <Link
                     className={`text-decoration-none ${styles.li_font} `}
-                    to="/"
+                    to="/trails-filter"
+                    onClick={() => {
+                      const searchData = {
+                        location: `${r.geo_location_sid}`,
+                        startDate: newstartdate,
+                        endDate: newenddate,
+                      }
+                      setSearch(searchData)
+
+                      localStorage.setItem(
+                        'mySearch',
+                        JSON.stringify(searchData)
+                      )
+                    }}
                   >
                     {r.geo_location_sid}
                   </Link>
@@ -425,9 +456,7 @@ export default function DavisTrailsDetail(rows) {
                   </div>
 
                   {/* paragraph  */}
-                  <p className={`mb-2 ${styles.paragraph_i}`}>
-                    {r.trail_describ}
-                  </p>
+                  <p className={` ${styles.paragraph_i}`}>{r.trail_describ}</p>
 
                   {/* 手機板 puctures FIXME:*/}
                   <div className="col flex-column d-flex d-lg-none mb-3">
@@ -458,7 +487,8 @@ export default function DavisTrailsDetail(rows) {
                   </div>
 
                   {/* gpx */}
-                  <DavisTrailsGpx />
+                  <DavisTrailsGpx newdata={newdata} />
+                  {/* <DavisGpxLeaflet newdata={newdata} /> */}
 
                   {/* shop-button-group TODO: */}
                   <DavisTrailsShopGroup

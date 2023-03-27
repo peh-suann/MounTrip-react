@@ -22,7 +22,7 @@ function DavisTrailsBatch(props) {
         page,
       },
     })
-    // console.log(response.data)
+    console.log(response.data)
     setBatch(response.data)
   }
 
@@ -35,7 +35,7 @@ function DavisTrailsBatch(props) {
 
   let page_sid = data.rows[0].trail_sid
 
-  console.log(page_sid)
+  // console.log(page_sid)
 
   const filterFromBatch = (data) => {
     if (!Array.isArray(data)) {

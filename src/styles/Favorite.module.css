@@ -528,9 +528,12 @@
         padding-right: 0px;
     }
     .btn-wrap{
-        padding-top: 10px;
+        padding-top: 0px;
         padding-right: 10px;
-        display: none;
+        position: absolute;
+        right:0px;
+        bottom:20px;
+        /* display: none; */
     }
     .fav-btn{
         fill:var(--mtgreen-1);

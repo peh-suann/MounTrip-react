@@ -1,28 +1,35 @@
-import React, { useState } from 'react'
-import styles from './../styles/IanShoppingCart2.module.css'
-import IanEmptyDetail from './IanEmptyDetail'
-import IanSameDetail from './IanSameDetail'
+import React, { useState, Fragment } from 'react'
+import IanTravelerSame from './IanTravelerSame'
 
 function IanShowDetail(props) {
-  const { toggleOpen, quantity, memberitems } = props
-  const [same, setSame] = useState(false)
-
+  const { toggleOpen, quantity, memberitems, traveler, Auth, setAuth } = props
+  const [mySame, setMySame] = useState(false)
   return (
     <>
-      {same ? (
-        <IanSameDetail
-          toggleOpen={toggleOpen}
-          memberitems={memberitems}
-          same={same}
-          setSame={setSame}
-        />
-      ) : (
-        <IanEmptyDetail
-          toggleOpen={toggleOpen}
-          quantity={quantity}
-          setSame={setSame}
-        />
-      )}
+      {toggleOpen
+        ? Array(quantity)
+            .fill(1)
+            .map((v, i) => {
+              return (
+                <Fragment key={i}>
+                  <IanTravelerSame
+                    mySame={mySame}
+                    memberitems={memberitems}
+                    firstname={v.firstname}
+                    lastname={v.lastname}
+                    phone={v.phone}
+                    email={v.email}
+                    idCard={v.idCard}
+                    birthday={v.birthday}
+                    id={i}
+                    setMySame={setMySame}
+                    traveler={traveler}
+                    setAuth={setAuth}
+                  />
+                </Fragment>
+              )
+            })
+        : null}
     </>
   )
 }

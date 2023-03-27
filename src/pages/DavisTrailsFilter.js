@@ -89,8 +89,6 @@ function DavisTrailsFilter() {
     }
   }, [location.search])
 
-  // FIXME:
-
   return (
     <>
       <main>

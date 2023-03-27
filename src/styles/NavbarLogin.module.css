@@ -143,7 +143,7 @@ nav#loginNavbar {
   background-color: var(--mtgreen-1);
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 391px) {
   body {
     padding-top: env(safe-area-inset-top);
     background-color: transparent;

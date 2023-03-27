@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styles from './../styles/IanShoppingCart2.module.css'
+import IanSameBtn from './IanSameBtn'
 
 function IanSameDetail(props) {
   const { toggleOpen, same, memberitems, setSame } = props
+  const [mySame, setMySame] = useState(false)
   return (
     <>
       {toggleOpen
@@ -90,20 +92,7 @@ function IanSameDetail(props) {
                     />
                   </div>
                 </div>
-                <div className={`${styles['mb-48']} d-flex align-items-center`}>
-                  <input
-                    type="checkbox"
-                    id="sameOrder"
-                    name="sameOrder"
-                    checked={same}
-                    onClick={() => {
-                      setSame(!same)
-                    }}
-                  />
-                  <label htmlFor="sameOrder" className={`${styles.dataSame}`}>
-                    同訂購人資料
-                  </label>
-                </div>
+                <IanSameBtn mySame={mySame} setMySame={setMySame} />
               </div>
             )
           })

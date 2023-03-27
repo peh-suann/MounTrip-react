@@ -5,6 +5,7 @@ import styles from './../styles/IanShoppingCart3.module.css'
 import { ORDER_HISTORY } from '../connections/api-config'
 import { ORDER_HISTORY2 } from '../connections/api-config'
 import { useCart } from '../components/IanUseCart'
+import { ORDER_DATE } from '../connections/api-config'
 
 function IanShoppingCart3() {
   const { clearCart } = useCart()
@@ -24,16 +25,34 @@ function IanShoppingCart3() {
   // console.log(cartSid)
   const cartQuantity = cartQuantitymap[0]
   // console.log('cartQuantity:', cartQuantity)
-  const userSid = JSON.parse(localStorage.getItem('member')).user.sid
-  // console.log('userSid:', userSid)
-  const [payTotal] = JSON.parse(localStorage.getItem('total'))
-  // console.log('payTotal:', payTotal)
+  const userSid = JSON.parse(localStorage.getItem('AuthSid'))
+  console.log('userSid:', userSid)
+  const payTotal = JSON.parse(localStorage.getItem('total'))
+  const newPayTotal = payTotal.total
+  console.log('newPayTotal:', newPayTotal)
+  // const AuthSid = JSON.parse(localStorage.getItem('myAuth')).accountId
+  // console.log('AuthSid:', AuthSid)
 
   const userString = localStorage.getItem('myAuth')
   const userData = JSON.parse(userString)
   const token = userData.token
   const mid = userData.accountId
 
+  const [credit, setCredit] = useState([
+    {
+      number: '',
+      date: '',
+      three: '',
+    },
+  ])
+
+  const [payCredit, setPayCredit] = useState([
+    {
+      number: '1234567887654321',
+      date: '2024-03-31',
+      three: '123',
+    },
+  ])
   return (
     <>
       <div className={`${styles.IanShoppingCartAll}`}>
@@ -276,7 +295,7 @@ function IanShoppingCart3() {
           const orderList_lastSid = await axios.post(ORDER_HISTORY, {
             Authorization: `Bearer ${token}`,
             userSid: userSid,
-            payTotal: payTotal,
+            newPayTotal: newPayTotal,
           })
           const lastSid = orderList_lastSid.data[0].sid
           // console.log(lastSid)
@@ -287,7 +306,10 @@ function IanShoppingCart3() {
             cartSid: cartSid,
             cartQuantity: cartQuantity,
           })
-          // console.log(order_detail)
+          const Date = await axios.post(ORDER_DATE)
+          console.log(Date.data)
+          const orderDate = Date.data
+          localStorage.setItem('Date', orderDate)
           localStorage.removeItem('cartSid')
           localStorage.removeItem('member')
           clearCart()
@@ -331,10 +353,16 @@ function IanShoppingCart3() {
               </defs>
             </svg>
 
-            <h3>付款方式</h3>
+            <h3
+              onClick={() => {
+                setCredit(payCredit)
+              }}
+            >
+              付款方式
+            </h3>
           </div>
           <div
-            className={`${styles['credit-card-type']} d-flex align-items-center justify-content-between`}
+            className={`${styles['credit-card-type']} d-flex align-items-center justify-content-around`}
           >
             <div
               className={`${styles.svgPosition} col-3`}
@@ -509,7 +537,7 @@ function IanShoppingCart3() {
               </svg>
             </div>
 
-            <div
+            {/* <div
               className={`${styles.svgPosition} col-3`}
               onClick={() => {
                 setCardName('linepay')
@@ -643,51 +671,64 @@ function IanShoppingCart3() {
                   </clipPath>
                 </defs>
               </svg>
-            </div>
+            </div> */}
           </div>
-          <div className={`${styles['form-inline']} mb-5`}>
-            <div className={`${styles['mb-20']} col-12 d-flex flex-column`}>
-              <label htmlFor="creditcard" className={`${styles['form-group']}`}>
-                信用卡號碼
-              </label>
-              <input
-                type="tel"
-                maxLength="16"
-                id="creditcard"
-                placeholder="4512&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-"
-                required
-              />
-            </div>
-            <div className={`${styles['mb-20']} d-flex flex-row`}>
-              <div
-                className={`${styles['form-group']} d-flex flex-column col-8`}
-              >
-                <label
-                  htmlFor="
+          {credit.map((v, i) => {
+            return (
+              <div className={`${styles['form-inline']} mb-5`}>
+                <div className={`${styles['mb-20']} col-12 d-flex flex-column`}>
+                  <label
+                    htmlFor="creditcard"
+                    className={`${styles['form-group']}`}
+                  >
+                    信用卡號碼
+                  </label>
+                  <input
+                    type="tel"
+                    value={v.number}
+                    onChange={() => {}}
+                    maxLength="16"
+                    id="creditcard"
+                    placeholder="4512&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;&nbsp;&nbsp;-&nbsp;-&nbsp;-&nbsp;-"
+                    required
+                  />
+                </div>
+                <div className={`${styles['mb-20']} d-flex flex-row`}>
+                  <div
+                    className={`${styles['form-group']} d-flex flex-column col-8`}
+                  >
+                    <label
+                      htmlFor="
               expirationdate"
-                >
-                  有效期限
-                </label>
-                <input
-                  type="date"
-                  id="expirationdate"
-                  name="expirationdate"
-                  required
-                />
+                    >
+                      有效期限
+                    </label>
+                    <input
+                      type="date"
+                      value={v.date}
+                      onChange={() => {}}
+                      id="expirationdate"
+                      name="expirationdate"
+                      required
+                    />
+                  </div>
+                  <div className={`${styles['form-group']} col-lg ms-3`}>
+                    <label htmlFor="CVV2">末三碼</label>
+                    <input
+                      type="tel"
+                      maxLength="3"
+                      value={v.three}
+                      onChange={() => {}}
+                      id="CVV2"
+                      name="CVV2"
+                      className={styles.threeinput}
+                      required
+                    />
+                  </div>
+                </div>
               </div>
-              <div className={`${styles['form-group']} col-lg ms-3`}>
-                <label htmlFor="CVV2">末三碼</label>
-                <input
-                  type="tel"
-                  maxLength="3"
-                  id="CVV2"
-                  name="CVV2"
-                  className={styles.threeinput}
-                  required
-                />
-              </div>
-            </div>
-          </div>
+            )
+          })}
           <p className={`${styles['mb-50']} ${styles.description} `}>
             請注意本平台不會向您收取任何平台交易手續費，但你下單時使用的信用卡或第三方支付平台可能會向您收取相關手續費，請參考其相關服務政策和規定，並向你所選的交易服務商取得更多資訊。
           </p>

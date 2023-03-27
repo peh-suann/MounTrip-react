@@ -7,6 +7,7 @@ import {
   USER_FAV_ADD,
   USER_FAV_DELETE,
 } from '../connections/api-config'
+import LaiModalConfirm from './LaiModalConfirm'
 
 export default function FavoriteBtn(props) {
   const { getDataCallback, trailSID } = props
@@ -18,52 +19,79 @@ export default function FavoriteBtn(props) {
   const mid = userData.accountId
 
   const fill = heartOn ? '#ed7f7d' : 'none'
+  //confirm modal
+  const [showModal, setShowModal] = useState(false)
+  const [fetchFav, setFetchFav] = useState(false)
+  const closeModal = () => {
+    getDataCallback()
+    setShowModal(false)
+  }
+  // {() => {setShowModal(false) getDataCallback()}}
 
   const toggleHeart = (e) => {
     // setHeartOn((heartOn) => !heartOn)
     if (heartOn) {
-      window.confirm('確定要將商品從我的收藏移除嗎？')
-      setHeartOn(false)
-      removeFavorite()
+      // window.confirm('確定要將商品從我的收藏移除嗎？')
+      setShowModal(true)
+      // setHeartOn(false)
+      // removeFavorite()
     } else {
-      setHeartOn(true)
-      addFavorite()
+      // setHeartOn(true)
+      // addFavorite()
     }
     //refresh
     getDataCallback()
   }
-  const addFavorite = async () => {
-    try {
-      const [rows] = await axios.post(USER_FAV_ADD, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          sid: mid,
-          trails_sid: trailSID,
-        },
-      })
-      return alert('已新增商品至我的收藏')
-    } catch (err) {
-      console.log("there's an error")
-      return []
-    }
-  }
-  const removeFavorite = async () => {
-    try {
-      const [rows] = await axios.delete(USER_FAV_DELETE, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          sid: mid,
-          trails_sid: trailSID,
-        },
-      })
-      return alert('已從我的收藏')
-    } catch (err) {
-      console.log("there's an error delete")
-      return []
-    }
-  }
+  // const addFavorite = async () => {
+  //   try {
+  //     const [rows] = await axios.post(USER_FAV_ADD, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //         sid: mid,
+  //         trails_sid: trailSID,
+  //       },
+  //     })
+  //     return alert('已新增商品至我的收藏')
+  //   } catch (err) {
+  //     console.log("there's an error")
+  //     return []
+  //   }
+  // }
+  // const removeFavorite = async () => {
+  //   try {
+  //     const [rows] = await axios.delete(USER_FAV_DELETE, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //         sid: mid,
+  //         trails_sid: trailSID,
+  //       },
+  //     })
+  //     // return alert('已從我的收藏')
+  //   } catch (err) {
+  //     console.log("there's an error delete")
+  //     return []
+  //   }
+  // }
   return (
     <>
+      {showModal && (
+        <LaiModalConfirm
+          // handleClick={}
+          handleClose={closeModal}
+          trailSID={trailSID}
+          heartOn={heartOn}
+          setHeartOn={setHeartOn}
+          getDataCallback={getDataCallback}
+          // getUser={getUser2}
+          // showModal={showModal}
+          // setShowModal={setShowModal}
+          fetchFav={fetchFav}
+          setFetchFav={setFetchFav}
+          btnToggle={1}
+          // btnText={'確定要將商品從我的收藏移除嗎？'}
+        />
+      )}
+
       <motion.svg
         className={styles['fav-btn']}
         width="20"

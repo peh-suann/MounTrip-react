@@ -1,10 +1,15 @@
 // component
-import React, { useReducer } from 'react'
+import React from 'react'
 import { useEffect, useState } from 'react'
 import DavisTrailsBatch from './DavisTrailsBatch'
 import styles from '../../styles/DavisTrailsDetail.module.css'
 import { useCart } from '../IanUseCart'
 import { useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import axios from 'axios'
+
+// api
+import { TRAILS_BATCH_DATA } from '../../connections/api-config'
 
 function DavisTrailsShopGroup(props) {
   const { data, filterFromBatch, plusOne, setData } = props
@@ -13,7 +18,7 @@ function DavisTrailsShopGroup(props) {
   const [detailCount, setDetailCount] = useState(0)
 
   const Rows = { ...data }
-  console.log('Rows:', Rows.rows[0].batch_start)
+  console.log('Rows:', Rows.rows[0].trail_sid)
   // console.log('Rows:', Rows[1].trail_time)
   // const batch = Rows.rows[0].batch_start
   // console.log(batch)
@@ -23,6 +28,40 @@ function DavisTrailsShopGroup(props) {
     setProductName('產品：' + name + '已成功加入購物車')
   }
   const navigate = useNavigate()
+
+  // batch data
+  const location = useLocation()
+  const usp = new URLSearchParams(location.search)
+  const [batch, setBatch] = useState({
+    rows: [],
+  })
+  const getBatchData = async (page) => {
+    const response = await axios.get(TRAILS_BATCH_DATA, {
+      params: {
+        page,
+      },
+    })
+    console.log(response.data)
+    setBatch(response.data)
+  }
+
+  useEffect(() => {
+    getBatchData(+usp.get('page'))
+    return () => {
+      // console.log('unmount')
+    }
+  }, [])
+
+  let page_sid = Rows.rows[0].trail_sid
+
+  const filterBatch = (data) => {
+    if (!Array.isArray(data)) {
+      return []
+    }
+    return data.filter((v, i) => {
+      return v.trail_sid === page_sid
+    })
+  }
 
   return (
     <>
@@ -57,7 +96,7 @@ function DavisTrailsShopGroup(props) {
               </svg>
             </button>
 
-            <h3 className={`col mb-0 ${styles.count_style}`}>{count}</h3>
+            <h3 className={`col mb-0 ${styles.count_style}`}>{count}人</h3>
             <button
               onClick={() => {
                 setCount(count + 1)
@@ -111,68 +150,24 @@ function DavisTrailsShopGroup(props) {
             </svg>
           </button>
         </div>
-        {/* level2 TODO:*/}
+        {/* level2 */}
 
         <DavisTrailsBatch data={data} setDetailCount={setDetailCount} />
 
         {/* level3 shop_btn TODO:  */}
-        {/* {filterFromBatch(data.rows).map((r) => (
-          <div key={r.trail_name}>{r.trail_name}</div>
-        ))} */}
-        {/* <button
-          className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
-          onClick={() => {
-            if (batch === Rows.rows[0].batch_start) {
-              const item = { ...Rows.rows[0], quantity: 1 }
-              addItem(item)
-            } else {
-              const item2 = { ...Rows.rows[1], quantity: 1 }
-              addItem(item2)
-            }
-            const item = { ...Rows.rows[0], quantity: 1 }
-            addItem(item)
-          }}
-        >
-          <h5 className={`mb-0 ${styles.btn_font}`}>加入購物車</h5>
-          <span className="align-self-center">
-            <svg
-              className=""
-              width="24"
-              height="25"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 18.5L15 12.5L9 6.5"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-        </button> */}
 
         <button
           onClick={() => {
-            // if (batch === Rows.rows[0].batch_start) {
-            //   const item = { ...Rows.rows[0], quantity: 1 }
-            //   addItem(item)
-            // } else {
-            //   const item2 = { ...Rows.rows[1], quantity: 1 }
-            //   addItem(item2)
-            // }
-            // FIXME:
             // const item = { ...Rows[detailCount], quantity: count }
-            const item = { ...Rows.rows[0], quantity: count }
-            console.log('item:', item)
+            console.log('filterBatch(batch):', filterBatch(batch.rows))
+            const item = {
+              ...filterBatch(batch.rows)[detailCount],
+              quantity: count,
+            }
+
             addItem(item)
             // console.log('item:', item)
-            // console.log('detailCount:', Rows.rows[detailCount])
-            // console.log('item:', Rows)
-            showModal(Rows[detailCount].rows[0].trail_name)
-            // console.log('productName:', productName)
+            showModal(filterBatch(batch.rows)[detailCount].trail_name)
           }}
           type="button"
           className={`col d-flex flex-row justify-content-center mb-2 ${styles.shop_btn_three}`}
@@ -191,8 +186,8 @@ function DavisTrailsShopGroup(props) {
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <div className={`modal-dialog`}>
-            <div className={`modal-content`}>
+          <div className={`modal-dialog ${styles.modal}`}>
+            <div className={`modal-content ${styles.modalContent}`}>
               <div className={`modal-header`}>
                 <h1 className={`modal-title fs-5`} id="exampleModalLabel">
                   已加入購物車
@@ -204,7 +199,9 @@ function DavisTrailsShopGroup(props) {
                   aria-label="Close"
                 ></button>
               </div>
-              <div className={`modal-body`}>{productName}</div>
+              <div className={`modal-body`}>
+                <h5>{productName}</h5>
+              </div>
               <div className={`modal-footer ${styles.shopModal_footer}`}>
                 <button
                   type="button"

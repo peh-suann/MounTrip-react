@@ -15,6 +15,7 @@ import {
   MEMBER_DATA,
   USER_DATA,
   USER_LEVEL_UPDATE,
+  USER_UPLOAD,
 } from '../connections/api-config'
 import axios from 'axios'
 import { motion } from 'framer-motion'
@@ -26,8 +27,13 @@ import PasswordModal from '../components/LaiBackdrop/PasswordModal'
 import { TestCouponContext } from '../contexts/TestCouponContext'
 // test coupon style
 import YichunModal from '../components/YichunModal'
+import LaiModal from '../components/LaiModal'
+import LaiModalUpdate from '../components/LaiModalUpdate'
 
 export default function Member() {
+  //member-data update success modal
+  const [updateModal, setUpdateModal] = useState(false)
+  const closeUpdateModal = () => setUpdateModal(false)
   //modal彈出視窗的
   const [modalOpen, setModalOpen] = useState(false)
   const open = () => setModalOpen(true)
@@ -46,7 +52,6 @@ export default function Member() {
   const { myAuth, setMyAuth, logout } = useContext(AuthContext)
   //先設定為空陣列，在把一個個user obj放進去
   const [user, setUser] = useState({})
-  const [avatar, setAvatar] = useState('')
 
   const authString = localStorage.getItem('myAuth')
   const auth = JSON.parse(authString)
@@ -205,6 +210,44 @@ export default function Member() {
     Math.min(60, (scrollPosition / windowHeight) * 100)
   )
 
+  //upload avatar modal
+  const [image, setImage] = useState({ preview: '', data: '' })
+  const [status, setStatus] = useState('')
+  const [uploaded, setUploaded] = useState(false)
+  const [avatar, setAvatar] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const userString = localStorage.getItem('myAuth')
+    const user = JSON.parse(userString)
+    const sid = user.accountId
+    const token = user.token
+    // console.log(image)
+    let formData = new FormData()
+    formData.append('file', image.data)
+    const res = await axios.post(USER_UPLOAD, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer ${token}`,
+        sid: `${sid}`,
+      },
+    })
+    // TODO  照片上傳錯誤的判斷
+    if (res) return setStatus('上傳成功'), setUploaded(true)
+    // setStatus('上傳成功')
+    // alert(res.status)
+  }
+  const handleFiles = (e) => {
+    const img = {
+      preview: URL.createObjectURL(e.target.files[0]),
+      data: e.target.files[0],
+    }
+    setImage(img)
+  }
+  useEffect(() => {
+    // getUser2()
+  }, [uploaded])
+
   // yichun's coupon
   const {
     newCoupon,
@@ -231,20 +274,20 @@ export default function Member() {
       const loginPlay = localStorage.getItem('test')
       // 查看該帳號是否玩過遊戲
       const play = await ifPlay()
-      console.log('play', play)
-      console.log('1--')
+      // console.log('play', play)
+      // console.log('1--')
       if (loginPlay) {
         // 登入前玩遊戲
-        console.log('play', play)
+        // console.log('play', play)
         setNewCoupon(true)
         // console.log('play', play)
         if (play.length > 0 && play[0].play_status === 1) {
           // 已玩過遊戲
-          console.log('3--')
+          // console.log('3--')
           setContent(playedContent)
         } else {
           // 沒玩過遊戲
-          console.log('2--')
+          // console.log('2--')
           await Promise.all([insertMemberPlay(), insertMemberCoupon()])
           setContent(newCouponContent)
         }
@@ -274,17 +317,31 @@ export default function Member() {
       ) : (
         ''
       )}
-
-      {modalOpen && (
-        <Modal modalOpen={modalOpen} handleClose={close} text={'上傳大頭貼'} />
-      )}
-      {pwdModalOpen && (
-        <PasswordModal
-          pwdModalOpen={pwdModalOpen}
-          handleClose={pwdClose}
-          text={'重設密碼'}
+      {modalOpen ? (
+        <LaiModal
+          handleClick={handleSubmit}
+          handleClose={close}
+          getUser={getUser2}
+          // content={uploadContent}
+          btnToggle={1}
+          btnText={'更換大頭貼'}
+          btnLink={'member'}
         />
+      ) : (
+        ''
       )}
+      {updateModal ? (
+        <LaiModalUpdate
+          handleClose={closeUpdateModal}
+          getUser={getUser2}
+          btnToggle={1}
+          btnText={'會員資料更新成功！'}
+          btnLink={'member'}
+        />
+      ) : (
+        ''
+      )}
+
       <div className={styles['grid-container']}>
         <div className={styles['sidebar']}>
           <MemberProfile
@@ -498,8 +555,6 @@ export default function Member() {
             </li>
           </div>
         </div>
-        {/* <MemberContent /> */}
-        {/* <CouponContent /> */}
 
         {memberPage === 'member' && (
           <MemberContent
@@ -509,8 +564,8 @@ export default function Member() {
             close={close}
             open={open}
             handlePwdModalOpen={handlePwdModalOpen}
-            pwdClose={pwdClose}
-            pwdOpen={pwdOpen}
+            updateModal={updateModal}
+            setUpdateModal={setUpdateModal}
           />
         )}
         {memberPage === 'coupon' && (
@@ -529,41 +584,6 @@ export default function Member() {
           <FavoriteContent user={user} setUser={setUser} />
         )}
       </div>
-      {/* <div className={styles['mobile-menu']}>
-        <div
-          className={styles['mobile-dropdown-btn']}
-          style={{ top: `${btnTopPosition}%` }}
-          onClick={(e) => {
-            e.stopPropagation()
-            setMobileMenu(!mobileMenu)
-          }}
-        >
-          <svg
-            className={`${styles['dropdown-icon']}`}
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            viewBox="0 0 50 50"
-            fill="#6CBA7C"
-          >
-            <path
-              stroke="#6CBA7C"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M168.2 384.9c-15-5.4-31.7-3.1-44.6 6.4c-8.2 6-22.3 14.8-39.4 22.7c5.6-14.7 9.9-31.3 11.3-49.4c1-12.9-3.3-25.7-11.8-35.5C60.4 302.8 48 272 48 240c0-79.5 83.3-160 208-160s208 80.5 208 160s-83.3 160-208 160c-31.6 0-61.3-5.5-87.8-15.1zM26.3 423.8c-1.6 2.7-3.3 5.4-5.1 8.1l-.3 .5c-1.6 2.3-3.2 4.6-4.8 6.9c-3.5 4.7-7.3 9.3-11.3 13.5c-4.6 4.6-5.9 11.4-3.4 17.4c2.5 6 8.3 9.9 14.8 9.9c5.1 0 10.2-.3 15.3-.8l.7-.1c4.4-.5 8.8-1.1 13.2-1.9c.8-.1 1.6-.3 2.4-.5c17.8-3.5 34.9-9.5 50.1-16.1c22.9-10 42.4-21.9 54.3-30.6c31.8 11.5 67 17.9 104.1 17.9c141.4 0 256-93.1 256-208S397.4 32 256 32S0 125.1 0 240c0 45.1 17.7 86.8 47.7 120.9c-1.9 24.5-11.4 46.3-21.4 62.9zM144 272a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm144-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm80 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
-            />
-          </svg>
-        </div> */}
-      {/* {mobileMenu === true && (
-          <MobileDropdown
-            memberPage={memberPage}
-            setMemberPage={setMemberPage}
-            ref={menuRef}
-            scrollPosition={btnTopPosition}
-          />
-        )} */}
-      {/* </div> */}
     </>
   )
 }
