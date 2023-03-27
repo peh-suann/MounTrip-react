@@ -80,7 +80,6 @@ export default function MemberContent(props) {
     setSelectedDate(newDate)
   }
   function handleUpdate(e) {
-    // e.preventDefault()
     dispatch({
       type: ACTIONS.UPDATE,
       payload: { name: e.target.name, value: e.target.value },
@@ -122,7 +121,6 @@ export default function MemberContent(props) {
 
     if (Object.keys(error).length !== 0) {
       console.log('error', error)
-      // setError({})
       setIsSubmit(false)
       return
     } else {
@@ -139,9 +137,10 @@ export default function MemberContent(props) {
       // alert('會員資料更新成功')
       setUpdateModal(true)
       setIsSubmit(true)
+      // setError({})
     }
   }
-  const realSubmit = async () => {}
+  // const realSubmit = async () => {}
   const validation = (values) => {
     const errors = {}
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/
@@ -156,9 +155,9 @@ export default function MemberContent(props) {
     } else if (!regex.test(values.email)) {
       errors.email = 'Email格式錯誤'
     }
-    if (!values.birthday) {
-      errors.birthday = '未設定生日'
-    }
+    // if (!values.birthday) {
+    //   errors.birthday = '未設定生日'
+    // }
     if (!values.account) {
       errors.account = '帳號不得為空'
     }
@@ -178,12 +177,14 @@ export default function MemberContent(props) {
     }
     return errors
   }
-  // function handleLoad(e) {
-  //   dispatch({
-  //     type: ACTIONS.INITIAL,
-  //     payload: { name: e.user.name, value: e.user.value },
-  //   })
-  // }
+
+  const bdValidation = (values)=>{
+    const errors = {}
+    if (!values) {
+      errors.birthday = '未設定生日'
+    }
+    return errors
+  }
 
   // //現在的state
   // console.log('userInfo', userInfo)
@@ -202,16 +203,14 @@ export default function MemberContent(props) {
     // setError({})
     handleSubmit()
   }, [isSubmit])
+
   useEffect(() => {
     setError(validation(userInfo.userData))
   }, [userInfo])
-  useEffect(() => {
-    if (Object.keys(error).length === 0 && isSubmit) {
-      // console.log(userInfo.userData)
-      // alert('會員資料更新成功')
-    }
-  }, [error])
 
+  useEffect(()=>{
+    setError(bdValidation(selectedDate))
+  },[selectedDate])
   //彈出重設密碼表單
   // function modalControl() {
   //   if (pwdModalOpen) {
@@ -358,7 +357,7 @@ export default function MemberContent(props) {
               }}
               onKeyDown={(e) => preventModalShow(e)}
             />
-            <label className={styles.error_label}>{error.personalID}</label>
+            <label className={styles.error_label}>{error.personalId}</label>
           </div>
           <div className={`${styles['phone-wrap']} ${styles['input-blocks']}`}>
             <label htmlFor="mobile" className="">
