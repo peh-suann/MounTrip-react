@@ -510,16 +510,16 @@ function YichunTestNotPlayed() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
+            {/* <path
               id="curve"
               d="M 5 1080 V 110 a50,50 0 0 1 50,-50 H 1900 a50,50 0 0 1 20,20 V 1080 H30"
               strokeLinejoin="round"
-            />
-            {/* <path
+            /> */}
+            <path
               id="curve"
               d="M -80 1080 V 120 a50,50 0 0 1 50,-50 H 1980 a50,50 0 0 1 20,20 V 1080 H30"
               strokeLinejoin="round"
-            /> */}
+            />
             <text>
               <textPath
                 alignmentBaseline="middle"

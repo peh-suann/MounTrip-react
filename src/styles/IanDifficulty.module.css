@@ -70,7 +70,7 @@ letter-spacing: 0.1em;
 
 .dMountain_hard{
 position: absolute;
-top:65%;
+top:67%;
 left: 0%;
 z-index: 1;
 }
@@ -81,7 +81,7 @@ stroke: rgb(127, 222, 127);
 }
     .difficultyHard_flag{
     position: absolute;
-    top: 56%;
+    top: 59%;
     left: 26.5%;
     }
     .difficultyMountainHard_focus{
@@ -90,7 +90,7 @@ stroke: rgb(127, 222, 127);
     background-color: var(--mtgreen-4);
     border-radius: 50%;
     position: absolute;
-    top: 45%;
+    top: 48%;
     left: 22.5%;
     z-index: 0;
     }
@@ -108,7 +108,7 @@ stroke: rgb(127, 222, 127);
     
     .dMountain_medium{
     position: absolute;
-    top: 77%;
+    top: 79%;
     left: 39%;
     z-index: 2;
     /* background-color:rgba(255, 255, 242, 0.9) */
@@ -133,7 +133,7 @@ stroke: rgb(127, 222, 127);
     background-color: var(--mtgreen-4);
     border-radius: 50%;
     position: absolute;
-    top: 59%;
+    top: 61%;
     left: 50.5%;
     z-index: 1;
     opacity: 0;
@@ -143,7 +143,7 @@ stroke: rgb(127, 222, 127);
     
     .dMountain_easy{
     position: absolute;
-    top: 86%;
+    top: 88%;
     left:71%;
     z-index: 3;
     }
@@ -155,7 +155,7 @@ stroke: rgb(127, 222, 127);
     .difficultyEasy_flag{
       position: absolute;
       /* top: 77%; */
-      top: 100%;
+      top: 101%;
       left: 88%;
     }
     .difficultyMountainEasy_focus{
@@ -164,7 +164,7 @@ stroke: rgb(127, 222, 127);
       background-color: var(--mtgreen-4);
       border-radius: 50%;
       position: absolute;
-      top: 67%;
+      top: 68%;
       left: 84%;
       z-index: 0;
       opacity: 0;
