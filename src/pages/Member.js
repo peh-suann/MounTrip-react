@@ -55,23 +55,7 @@ export default function Member() {
 
   const authString = localStorage.getItem('myAuth')
   const auth = JSON.parse(authString)
-  //抓資料的函式，全部人的資料都在這個api
-  // const getUser = async (req, res) => {
-  //   try {
-  //     const res = await axios.get(MEMBER_DATA)
-  //     const currentUserId = myAuth.sid
-  //     const currentUserData = res.data.rows[currentUserId - 1]
-  //     setUser(currentUserData)
-  //     console.log('member-data-rows:', res.data.rows)
-  //     console.log('user:', currentUserData)
-  //     // return currentUserData
-  //   } catch (error) {
-  //     console.log('u:', user)
-  //     // console.log()
 
-  //     return []
-  //   }
-  // }
   //抓資料的函式，只抓登入會員的資料
   const getUser2 = async (req, res) => {
     const userString = localStorage.getItem('myAuth')
