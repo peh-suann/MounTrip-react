@@ -210,6 +210,7 @@
 
     position: relative;
     margin-right: 24px;
+    overflow: hidden;
     
 }
 .bar-base{
