@@ -2,8 +2,8 @@
 // 上面寫HOST，下面寫路徑
 
 // hosts ---------------------------------------------------------------------------
-export const HOST = 'http://localhost:3001'
-// export const HOST = 'http://localhost:3002'
+// export const HOST = 'http://localhost:3001'
+export const HOST = 'http://localhost:3002'
 
 //Lai's connect
 // export const HOST = 'http://192.168.71.105:3001'
@@ -94,5 +94,6 @@ export const TRAILS_DIFFEASY = `${HOST}/difficultyEasy`
 export const ORDER_COUPON = `${HOST}/SC1`
 export const ORDER_HISTORY = `${HOST}/history`
 export const ORDER_HISTORY2 = `${HOST}/history2`
-export const ORDER_DATE = `${HOST}/orderDate`
+export const ORDER_HISTORY3 = `${HOST}/history3`
+export const ORDER_DATE = `${HOST}/orderDates`
 export const ORDERUSER_DATA = (mid) => `${HOST}/${mid}`

@@ -247,6 +247,7 @@ position: relative;
 padding: 0px;
 }
 .overflowpic1{
+  width: 100%;
   position: relative;
   overflow:hidden;
 }
@@ -343,6 +344,7 @@ div.tPSSCard_numsvg > h3{
   font-weight: 700;
 }
 .tPSSCard_body{
+  width: 100%;
   padding: 10px 0px;
 }
 .first_p{

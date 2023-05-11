@@ -59,7 +59,14 @@ function App() {
         <SearchContextProvider>
           <AuthContextProvider>
             <CartContextProvider>
-              <LoginContext.Provider value={{ mapInteraction, setMapInteraction, showBox, setShowbox }}>
+              <LoginContext.Provider
+                value={{
+                  mapInteraction,
+                  setMapInteraction,
+                  showBox,
+                  setShowbox,
+                }}
+              >
                 <TestCouponContextProvider>
                   <Routes>
                     <Route path="/" element={<Layout />}>

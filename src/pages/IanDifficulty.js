@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import styles from '../styles/IanDifficulty.module.css'
-// import Footer from './Footer'
 import IanDifficultyMountain from '../components/IanDifficultyMountain'
-import { TRAILS_DIFFHARD } from '../connections/api-config'
-import { TRAILS_DIFFMEDIUM } from '../connections/api-config'
-import { TRAILS_DIFFEASY } from '../connections/api-config'
+import {
+  TRAILS_DIFFHARD,
+  TRAILS_DIFFMEDIUM,
+  TRAILS_DIFFEASY,
+} from '../connections/api-config'
+import DifficultyProducts from '../components/DifficultyProducts'
 
 function IanDifficulty() {
   const [diff, setDiff] = useState({
@@ -19,38 +22,11 @@ function IanDifficulty() {
   const h2titleHard = useRef(null)
   const h2titleMedium = useRef(null)
   const h2titleEasy = useRef(null)
-
   const productHard = useRef(null)
   const productMedium = useRef(null)
   const productEasy = useRef(null)
 
   const [whoId, setWhoId] = useState('')
-
-  // const getData = async () => {
-  //   const r = await fetch(TRAILS_DIFFHARD)
-  //   const hard = await r.json()
-  //   console.log(hard)
-  //   setDiff(hard)
-  // }
-
-  // const getDifficultData = async () => {
-  //   if (whoId === 'easyMountain') {
-  //     const r = await fetch(TRAILS_DIFFEASY)
-  //     const easy = await r.json()
-  //     console.log(easy)
-  //     setDiff(easy)
-  //   } else if (whoId === 'mediumMountain') {
-  //     const r = await fetch(TRAILS_DIFFMEDIUM)
-  //     const medium = await r.json()
-  //     console.log(medium)
-  //     setDiff(medium)
-  //   } else {
-  //     const r = await fetch(TRAILS_DIFFHARD)
-  //     const hard = await r.json()
-  //     console.log(hard)
-  //     setDiff(hard)
-  //   }
-  // }
 
   const getDifficultHardData = async () => {
     const r = await fetch(TRAILS_DIFFHARD)
@@ -163,65 +139,12 @@ function IanDifficulty() {
             ref={productHard}
             className={`${styles.tPSSection_cards1} w-100`}
           >
-            <div className={'w-100 d-flex flex-wrap'}>
+            <div className={' d-flex flex-wrap'}>
               {diff.rows.map((v, i) => {
-                return (
-                  <div className={'col-12 p-3 col-lg-4 pe-lg-2'} key={i}>
-                    <div className={styles.overflowpic1}>
-                      <div
-                        className={styles.tPSSCard_pic1}
-                        style={{
-                          backgroundImage: `linear-gradient(180deg, rgba(1, 19, 6, 0) 66.99%, #011306 100%),
-                  url(/imgs/Ian_img/${v.trail_img})`,
-                        }}
-                      ></div>
-                      <div
-                        className={`${styles.tPSSCard_bottom} d-flex justify-content-between`}
-                      >
-                        <div className={'d-flex align-items-center'}>
-                          <svg
-                            width="17"
-                            height="17"
-                            viewBox="0 0 17 17"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.49967 1.83398L10.5597 6.00732L15.1663 6.68065L11.833 9.92732L12.6197 14.514L8.49967 12.3473L4.37967 14.514L5.16634 9.92732L1.83301 6.68065L6.43967 6.00732L8.49967 1.83398Z"
-                              fill="#CEE8CB"
-                            />
-                          </svg>
-                          <p className={'ms-1'}>{v.score}.0</p>
-                        </div>
-                        <div className={'d-flex'}>
-                          <p>難度</p>
-                          <p className={'ms-2'}>{v.difficulty_short}級</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={`${styles.tPSSCard_body} d-flex justify-content-between`}
-                    >
-                      <div>
-                        <p className={`${styles.first_p} mb-1`}>
-                          {v.trail_name}
-                        </p>
-                        <p>
-                          {v.geo_location_sid}
-                          {v.geo_location_town_sid}
-                        </p>
-                      </div>
-                      <div>
-                        <p className={'d-flex justify-content-end mb-1'}>NTD</p>
-                        <h4 className={`${styles.tPSSCardDiv_p}`}>{v.price}</h4>
-                      </div>
-                    </div>
-                  </div>
-                )
+                return <DifficultyProducts v={v} i={i} />
               })}
             </div>
           </div>
-
           <div
             ref={productMedium}
             className={`${styles.tPSSection_cards2} w-100`}
@@ -350,26 +273,28 @@ function IanDifficulty() {
         </div>
 
         {/* button  */}
-        <button
-          className={`${styles.allSection_btn} d-flex justify-content-center align-items-center mt-lg-4`}
-        >
-          <span className={'pe-1'}>探索更多</span>
-          <svg
-            width="25"
-            height="25"
-            viewBox="0 0 25 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <Link to={'/trails-filter'} style={{ textDecoration: 'none' }}>
+          <button
+            className={`${styles.allSection_btn} d-flex justify-content-center align-items-center mt-lg-4`}
           >
-            <path
-              d="M9.5 18.5L15.5 12.5L9.5 6.5"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+            <span className={'pe-1'}>探索更多</span>
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.5 18.5L15.5 12.5L9.5 6.5"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </Link>
       </section>
     </>
   )

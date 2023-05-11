@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './../styles/IanShoppingCart3.module.css'
-import { ORDER_HISTORY } from '../connections/api-config'
+import { ORDER_HISTORY, ORDER_HISTORY3 } from '../connections/api-config'
 import { ORDER_HISTORY2 } from '../connections/api-config'
 import { useCart } from '../components/IanUseCart'
 import { ORDER_DATE } from '../connections/api-config'
@@ -21,9 +21,9 @@ function IanShoppingCart3() {
   const cartSidmap = cartItem.map((v, i) => {
     return v.sid
   })
-  const cartSid = cartSidmap[0]
+  const cartSid = cartSidmap
   // console.log(cartSid)
-  const cartQuantity = cartQuantitymap[0]
+  const cartQuantity = cartQuantitymap
   // console.log('cartQuantity:', cartQuantity)
   const userSid = JSON.parse(localStorage.getItem('AuthSid'))
   console.log('userSid:', userSid)
@@ -300,18 +300,26 @@ function IanShoppingCart3() {
           const lastSid = orderList_lastSid.data[0].sid
           // console.log(lastSid)
           localStorage.setItem('lastSid', lastSid)
+
           const order_detail = await axios.post(ORDER_HISTORY2, {
             Authorization: `Bearer ${token}`,
             lastSid: lastSid,
             cartSid: cartSid,
             cartQuantity: cartQuantity,
           })
+          // const order_detail = await axios.post(ORDER_HISTORY3, {
+          //   Authorization: `Bearer ${token}`,
+          //   userSid: userSid,
+          //   cartSid: cartSid,
+          //   cartQuantity: cartQuantity,
+          //   newPayTotal: newPayTotal,
+          // })
+          console.log(order_detail)
           const Date = await axios.post(ORDER_DATE)
           console.log(Date.data)
           const orderDate = Date.data
           localStorage.setItem('Date', orderDate)
           localStorage.removeItem('cartSid')
-          localStorage.removeItem('member')
           clearCart()
           navigate('/SC4')
         }}
