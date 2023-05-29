@@ -35,15 +35,6 @@ const addItem = (state, action) => {
   return [...state.items, action.payload]
 }
 
-// const addCoupon = (state, action) => {
-//   console.log('addCoupon state:', state)
-//   console.log('addCoupon action:', action)
-//   const newCoupon = [...state.coupon, action.payload]
-//   console.log('newCoupon:', newCoupon)
-//   console.log([...state.coupon, newCoupon])
-//   return [...state, newCoupon]
-// }
-
 const removeItem = (state, action) => {
   return state.items.filter((item) => item.sid !== action.payload.id)
 }

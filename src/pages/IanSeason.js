@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from 'react'
 import styles from './../styles/IanSeason.module.css'
-// import './../html/css/season.css'
 import { TRAILS_SEASON } from '../connections/api-config'
 import { TRAILS_COMMENT } from '../connections/api-config'
 import dayjs from 'dayjs'
 import FavoriteBtnOff from './../components/FavoriteBtnOff'
+import { IanSwiper } from '../components/IanSwiper'
 
 // import { ORDER_COUPON } from '../connections/api-config'
 
@@ -209,85 +209,10 @@ function IanSeason() {
             </svg>
           </span>
         </div>
-        <div className={styles.commentFirst_svg}>
-          <svg
-            onClick={() => {
-              console.log('left click')
-              myMove.current.style.transition = '1s'
-              myMove.current.style.transform = 'translateX(0px)'
-            }}
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M18.75 25L8.75 15L18.75 5"
-              stroke="#6CBA7C"
-              strokeWidth="3.75"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+      </section>
 
-        <div className={`${styles.comment_carousel}`}>
-          {/* <Slider {...settings}> */}
-          <div className={`d-flex`} ref={myMove}>
-            {comment.rows.map((v2, i2) => {
-              return (
-                <div
-                  key={i2}
-                  className={`${styles.comment}`}
-                  style={{
-                    backgroundImage: `linear-gradient(180deg, rgba(1, 19, 6, 0) 66.99%, #011306 100%),
-                  url(/imgs/Ian_img/${v2.rating_img})`,
-                  }}
-                >
-                  <div>
-                    <h5>
-                      <span className={`${styles.account} me-lg-2`}>
-                        @{v2.lastname}
-                        {v2.firstname}
-                      </span>
-                      <span className={`me-lg-2`}>•</span>
-                      <span className={`${styles.date}`}>
-                        {dayjs(v2.rate_date).format('YYYY-MM-DD')}
-                      </span>
-                    </h5>
-                    <p>{v2.comment}</p>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-
-          {/* </Slider> */}
-        </div>
-
-        <div className={styles.commentSecond_svg}>
-          <svg
-            onClick={() => {
-              console.log('right click')
-              myMove.current.style.transition = '1s'
-              myMove.current.style.transform = 'translateX(-1660px)'
-            }}
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11.25 25L21.25 15L11.25 5"
-              stroke="#6CBA7C"
-              strokeWidth="3.75"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+      <section className={styles.comment2}>
+        <IanSwiper comment={comment} />
       </section>
     </>
   )

@@ -139,7 +139,7 @@ function IanDifficulty() {
             ref={productHard}
             className={`${styles.tPSSection_cards1} w-100`}
           >
-            <div className={' d-flex flex-wrap'}>
+            <div className={'d-flex flex-wrap'}>
               {diff.rows.map((v, i) => {
                 return <DifficultyProducts v={v} i={i} />
               })}
